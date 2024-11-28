@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(loadCSVData);
+
+      function loadCSVData() {
+        fetch('National_Initiatives_Figure_Data.csv')
+          .then(response => response.text())
+          .then(csvText => {
+            Papa.parse(csvText, {
+              header: true,
+              complete: function(results) {
+                console.log(results.meta.fields)
+                const extraData = additionaDataDisplay(results.data, results.meta.fields);
+                drawRegionsMap(results.data, [results.meta.fields[1],results.meta.fields[8]], extraData);
+              }
+            });
+          });
+      }
+
+      // Obtains DataTable for the display menu 
+      function additionaDataDisplay(data, fields) {
+        var extraDataTable = new google.visualization.DataTable();
+        const notStringFields = ["project status (number)"];
+
+        fields.forEach(field => {
+          if (notStringFields.includes(field)) {
+            extraDataTable.addColumn('number', field)
+          } else {
+            extraDataTable.addColumn('string', field)
+          }
+        })
+        
+        data.forEach(row => {
+          extraDataTable.addRow([
+            row[fields[0]], 
+            row[fields[1]], 
+            row[fields[2]], 
+            row[fields[3]], 
+            row[fields[4]], 
+            row[fields[5]], 
+            row[fields[6]], 
+            row[fields[7]],
+            parseFloat(row[fields[8]]),
+            row[fields[9]]
+          ])
+        });
+
+        return extraDataTable;
+      }
+
+      // Draws the map from just the "ISO" and "project status" columns
+      function drawRegionsMap(data, fields, extra) {
+
+        var mapDataArray = [fields.slice(0, 2)];
+        var mapDataTable = new google.visualization.DataTable();
+        
+        mapDataTable.addColumn('string', mapDataArray[0][0]);
+        mapDataTable.addColumn('number', mapDataArray[0][1]);
+        data.forEach(row => {
+          mapDataTable.addRow([row[fields[0]], parseFloat(row[fields[1]])]);
+        });
+
+        /**
+         * @param selectedItem ...
+         * 
+         * @returns an array of data about the country of interest
+         */
+        function getCountryInfo(selectedItem) {
+          var country_info = [];
+          for (var i=0; i<10; i++) {
+            country_info.push(extra.getValue(selectedItem, i));
+          }
+          return country_info;
+        }
+        
+
+        var options = {
+          //colorAxis: {colors: ['#000000', '#69172F', '#882C4A', '#FFEABA', '#E6C8A1', '#E4A94F']}, // order: [no, limited scope, H3 Africa, finished, planned, active]
+          colorAxis: {colors: ['#000000', '#AAFFFF']}, // order: [no, limited scope, H3 Africa, finished, planned, active]
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        chart.draw(mapDataTable, options);
+
+        // event listener for 'select' event
+        google.visualization.events.addListener(chart, 'select', function() {
+          var selection = chart.getSelection();
+          if (selection.length > 0) {
+            var selectedItem = selection[0];
+            var countryIso = mapDataTable.getValue(selectedItem.row, 0);
+            var active = mapDataTable.getValue(selectedItem.row, 1);
+            showMenu(getCountryInfo(selectedItem.row));
+          }
+        });
+      }
+
+      function showMenu(specifics) {
+        var menu = document.getElementById('info-menu');
+        menu.innerHTML = specifics;
+
+        menu.style.display = 'block';
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="regions_div"></div>
+    <div id=info-menu class="info-menu w3-third">
+      <h2>National Initiative</h2>
+      <table class="w3-table w3-striped w3-bordered w3-border">
+        <thead class="w3-teal"><th style="width:30%"></th><th></th></thead>
+        <tr><td style="width:30%"></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+      </table>
+      
+
+    </div>
+    
+    <div class="legend">
+      <h3>Legend:</h3>
+      <ul>
+        <li>
+          <span class="legend-colorBox" style="background-color: #E4A94F;"></span>
+          <span class="legend-text">Active</span>
+        </li>
+        <li>
+          <span class="legend-colorBox" style="background-color: #E6C8A1;"></span>
+          <span class="legend-text">Planned</span>
+        </li>
+        <li>
+          <span class="legend-colorBox" style="background-color: #b08175;"></span>
+          <span class="legend-text">Finished</span>
+        </li>
+        <li>
+          <span class="legend-colorBox" style="background-color: #C33152;"></span>
+          <span class="legend-text">H3 Africa</span>
+        </li>
+        <li>
+          <span class="legend-colorBox" style="background-color: #882C4A;"></span>
+          <span class="legend-text">Limited Scope</span>
+        </li>
+        <li>
+          <span class="legend-colorBox" style="background-color: #000000;"></span>
+          <span class="legend-text">None</span>
+        </li>
+      </ul>
+      
+    </div>
+  </body>
+  <style>
+    .legend {
+      position: sticky;
+      bottom: 10px;
+      left: 10px;
+      max-width: fit-content;
+      
+      border: 1px solid black;
+      padding: 10px;
+    }
+    .legend ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .legend li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .legend-text {
+      margin-left: 10px;
+    }
+    .legend-colorBox {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline-block;
+    }
+    .info-menu {
+      display: none; 
+      position: absolute; 
+      top: 10px;
+      left: 10px;
+      background-color: white;
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</html>

@@ -1,0 +1,48 @@
+{
+  "name": "sv-components",
+  "description": "An Aurelia 2 client application.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "???"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@aurelia/router": "latest",
+    "@aurelia/web-components": "latest",
+    "aurelia": "latest",
+    "chart.js": "^4.4.6",
+    "chartjs-chart-geo": "^4.3.4",
+    "handsontable": "^14.6.1",
+    "iso-3166-1": "^2.1.1"
+  },
+  "devDependencies": {
+    "@aurelia/testing": "latest",
+    "@aurelia/vite-plugin": "latest",
+    "@babel/core": "^7.25.7",
+    "@babel/eslint-parser": "^7.25.7",
+    "@babel/plugin-proposal-decorators": "^7.25.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.25.7",
+    "eslint": "^9.12.0",
+    "globals": "^15.10.0",
+    "jsdom": "^25.0.1",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1",
+    "vite": "^5.4.8",
+    "vite-plugin-babel": "^1.2.0",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "vitest": "^2.1.2"
+  },
+  "scripts": {
+    "lint:js": "eslint src test",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css",
+    "pretest": "npm run lint",
+    "start": "vite",
+    "build": "vite build; cp -r dist/* ../docs",
+    "buildwc": "vite build --config vite.webcomponents.config.js ; cp dist-webcomponents/* ../docs",
+    "test": "vitest"
+  },
+  "type": "module"
+}

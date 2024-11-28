@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown-It with Sequential Script Execution</title>
+</head>
+<body>
+    <div id="content"></div>
+
+    <!-- Include markdown-it -->
+    <script src="./markdown-it.min.js"></script>
+    <script>
+        const md = window.markdownit({
+            html: true,
+            linkify: true,
+            typographer: true,
+        });
+
+        // Function to load scripts sequentially
+        async function loadScriptsSequentially(scripts) {
+            for (const oldScript of scripts) {
+                await new Promise((resolve, reject) => {
+                    const newScript = document.createElement('script');
+
+                    // Copy all attributes
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+
+                    // Handle inline scripts
+                    if (oldScript.src) {
+                        newScript.src = oldScript.src;
+                        newScript.onload = () => resolve();
+                        newScript.onerror = () => reject(new Error(`Failed to load script: ${oldScript.src}`));
+                    } else {
+                        newScript.text = oldScript.text;
+                        resolve();
+                    }
+
+                    document.body.appendChild(newScript);
+                }).catch(error => {
+                    console.error(error);
+                });
+
+                // Remove the old script tag
+                oldScript.parentNode.removeChild(oldScript);
+            }
+        }
+
+        // Fetch the markdown content
+        fetch('circos.md')
+            .then(response => response.text())
+            .then(async markdown => {
+                const renderedHTML = md.render(markdown);
+                const contentElement = document.getElementById('content');
+                contentElement.innerHTML = renderedHTML;
+
+                // Select all script tags within the content
+                const scripts = contentElement.querySelectorAll('script');
+
+                // Load and execute scripts sequentially
+                await loadScriptsSequentially(scripts);
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
