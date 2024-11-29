@@ -92,6 +92,16 @@ export class ChartjsGeo {
 //        console.log(this.selected)
     }
 
+    bind(){
+        // Get location of data src from url hash
+        this.paramshash = window.location.hash
+        this.params = this.paramshash.split(';');
+        if (length(this.params)>0) {
+            const lastindex= this.params.length - 1;
+            this.datasrc = this.params[lastindex]; 
+        }
+    }
+
     attached() {
         console.log('attached')
 
