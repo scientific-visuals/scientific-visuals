@@ -1,10 +1,11 @@
-import { WcCustomElementRegistry } from '@aurelia/web-components'; // Import your registry implementation
+import { WcCustomElementRegistry } from '@aurelia/web-components'; 
 import { DI, Registration  } from '@aurelia/kernel';
-import { Aurelia, CustomElement, StandardConfiguration, IPlatform } from '@aurelia/runtime-html';
+import { StandardConfiguration, IPlatform } from '@aurelia/runtime-html';
 import {BrowserPlatform} from '@aurelia/platform-browser'
 
 // Create the Aurelia container
 const container = DI.createContainer();
+// Register the platform
 container.register(
   Registration.instance(IPlatform, BrowserPlatform.getOrCreate(globalThis)));
 // Register the StandardConfiguration
@@ -22,4 +23,4 @@ registry.define('sv-table', Table);
 registry.define('sv-chartjs-geo', ChartjsGeo);
 
 // Optionally, export the registry for further use
-export { registry };
+//export { registry };

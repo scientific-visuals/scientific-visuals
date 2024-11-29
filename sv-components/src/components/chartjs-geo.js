@@ -65,14 +65,14 @@ export class ChartjsGeo {
                 // Otherwise, append the current character to the current column
                 arr[row][col] += cc;
             }
-            console.log('parseCSV arr:',arr)
+            //console.log('parseCSV arr:',arr)
             return arr;
         }
     
     showSelected(selectedid){
         if (this.countryDataDesc) {
             this.selected = this.countryDataDesc[selectedid];
-            console.log('showselected',selectedid, this.selected)
+            //console.log('showselected',selectedid, this.selected)
             if (this.selected) {
               this.countryName = this.selected[0];
               this.projectName = this.selected[3];
@@ -82,7 +82,7 @@ export class ChartjsGeo {
               if (this.selected[4]) {
                 this.projecturls = this.selected[4].split(' / ');
               }
-              console.log('countryName',this.countryName)            
+              //console.log('countryName',this.countryName)            
             } else 
             console.warn('showselected this.selected is null')
             
