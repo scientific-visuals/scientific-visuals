@@ -6,6 +6,8 @@ import { whereNumeric,whereAlpha2 } from 'iso-3166-1'
 import { inject} from 'aurelia';
 import { PLATFORM } from 'aurelia';
 
+const removeFirstHash = str => str.startsWith('#') ? str.slice(1) : str;
+
 @customElement('sv-chartjs-geo')
 //@inject(TaskQueue)
 export class ChartjsGeo {
@@ -92,24 +94,27 @@ export class ChartjsGeo {
 //        console.log(this.selected)
     }
 
-    bind(){
+    bound(){
+        console.log('bound()')
         // Get location of data src from url hash
         this.paramshash = window.location.hash
         this.params = this.paramshash.split(';');
-        if (length(this.params)>0) {
+        if (this.params.length>0) {
             const lastindex= this.params.length - 1;
-            this.datasrc = this.params[lastindex]; 
+            this.datasrc = removeFirstHash(this.params[lastindex]); 
+
+            console.log('hash contains url:'+this.datasrc);
         }
     }
 
     attached() {
         console.log('attached')
 
-this.task = PLATFORM.taskQueue.queueTask(() => {
+/*this.task = PLATFORM.taskQueue.queueTask(() => {
     // Task to be executed after the delay
     console.log('task delayed 100ms');
   }, { delay: 100 });
-  
+  */
 
         Chart.register(ChoroplethController, GeoFeature, ProjectionScale, ColorScale, ...registerables);
         Promise.all([
@@ -203,7 +208,7 @@ this.task = PLATFORM.taskQueue.queueTask(() => {
 
     detached(){
           // Cancel the task if needed
-  this.task.cancel();
+  //this.task.cancel();
 
     }
 }
