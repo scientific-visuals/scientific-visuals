@@ -15,6 +15,21 @@ export class ChartjsGeo {
     geochart;
     countryDataDesc = {};
     projecturls = [];
+    projections = ['azimuthalEqualArea',
+        'azimuthalEquidistant',
+        'gnomonic',
+        'orthographic',
+        'stereographic',
+        'equalEarth',
+        'albers',
+        'albersUsa',
+        'conicConformal',
+        'conicEqualArea',
+        'conicEquidistant',
+        'equirectangular',
+        'mercator',
+        'transverseMercator',
+        'naturalEarth1'];
     @observable countryName='';
 
         parseCSV(str) {
@@ -170,11 +185,8 @@ export class ChartjsGeo {
                     },
                     scales: {
                         projection: {
-                            axis: 'x',
-                            projection: 'equalEarth',
-                            projectionScale:1,
-                            projectionOffset: [0,0],
-                            
+                                  axis:'x',                                  
+                                  projection: 'equalEarth', 
                         },
                         color: {
                             axis: 'x',
@@ -320,5 +332,14 @@ export class ChartjsGeo {
 
         // Re-render the chart
         this.chart.update();
+    }
+    switchProjection(p) {
+        console.log('switching projection:',p)
+        this.chart.options.scales.projection.projection = p ;
+        //this.chart.scales.projection.projection.scales
+        this.chart.update();
+    }
+    resetView(){
+        this.switchProjection('equalEarth');this.switchToWorld()
     }
 }
