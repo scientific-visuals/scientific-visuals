@@ -76197,15 +76197,29 @@ the last node, the show column modification can be applied.`);
   })], []).c;
   UU();
   const GU = "chartjs-geo", tP = `<div class="chartjsgeocontainer">
+    <div class="w3-bar w3-light-grey w3-small">
+        <button class="w3-bar-item w3-button" click.trigger="resetView()">Home</button>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Projection</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+              <button repeat.for="item of projections" click.trigger='switchProjection(item)' class="w3-bar-item w3-button w3-ripple">\${item}</button>                           
+          </div>
+        </div>
+        <div class="w3-dropdown-hover">
+          <button class="w3-button">Continent</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <button click.trigger='switchToEurope()' class="w3-bar-item w3-button w3-ripple">Europe</button> 
+            <button click.trigger='switchToAsia()' class="w3-bar-item w3-button w3-ripple">Asia</button> 
+            <button click.trigger='switchToNAmerica()' class="w3-bar-item w3-button w3-ripple">N.America</button> 
+            <button click.trigger='switchToSAmerica()' class="w3-bar-item w3-button w3-ripple">S.America</button>
+            <button click.trigger='switchToAfrica()' class="w3-bar-item w3-button w3-ripple">Africa</button> 
+            <button click.trigger='switchToPacific()' class="w3-bar-item w3-button w3-ripple">Pacific</button> 
+            <button click.trigger='switchToWorld()' class="w3-bar-item w3-button w3-ripple">World</button>          
+        </div>
+      </div>
+      </div>
 <canvas ref="geochart" class="chartjsgeo"></canvas>
 <div class="chartjsgeodesc">    
-    <button click.trigger='switchToEurope()' class="w3-blue w3-btn w3-ripple">Europe</button> 
-    <button click.trigger='switchToAsia()' class="w3-blue w3-btn w3-ripple">Asia</button> 
-    <button click.trigger='switchToNAmerica()' class="w3-blue w3-btn w3-ripple">N.America</button> 
-    <button click.trigger='switchToSAmerica()' class="w3-blue w3-btn w3-ripple">S.America</button><br/>    
-    <button click.trigger='switchToAfrica()' class="w3-blue w3-btn w3-ripple">Africa</button> 
-    <button click.trigger='switchToPacific()' class="w3-blue w3-btn w3-ripple">Pacific</button> 
-    <button click.trigger='switchToWorld()' class="w3-blue w3-btn w3-ripple">World</button><br/>
     click country for details: <b>\${countryName}</b><br/>
     <span>\${projectName} \${projectStatus} \${projectStatusText}</span><br/>
     <i>\${projectPublication}</i><br/>
@@ -80401,7 +80415,7 @@ the last node, the show column modification can be applied.`);
   let eG;
   class dVe {
     constructor() {
-      this.datasrc = KY(this, "g/National_Initiatives_Figure_Data.csv"), this.countriessrc = (qY(this), XY(this, "g/countries-50m.json")), this.geochart = void QY(this), this.countryDataDesc = {}, this.projecturls = [], this.countryName = ZY(this, ""), JY(this);
+      this.datasrc = KY(this, "g/National_Initiatives_Figure_Data.csv"), this.countriessrc = (qY(this), XY(this, "g/countries-50m.json")), this.geochart = void QY(this), this.countryDataDesc = {}, this.projecturls = [], this.projections = ["azimuthalEqualArea", "azimuthalEquidistant", "gnomonic", "orthographic", "stereographic", "equalEarth", "albers", "albersUsa", "conicConformal", "conicEqualArea", "conicEquidistant", "equirectangular", "mercator", "transverseMercator", "naturalEarth1"], this.countryName = ZY(this, ""), JY(this);
     }
     parseCSV(e) {
       const t = [];
@@ -80495,9 +80509,7 @@ the last node, the show column modification can be applied.`);
             scales: {
               projection: {
                 axis: "x",
-                projection: "equalEarth",
-                projectionScale: 1,
-                projectionOffset: [0, 0]
+                projection: "equalEarth"
               },
               color: {
                 axis: "x",
@@ -80559,6 +80571,12 @@ the last node, the show column modification can be applied.`);
     }
     switchToworld2() {
       this.chart.data.labels = this.worldcountries.map((e) => e.properties.name), this.chart.data.datasets[0].data = this.worlddata, this.chart.data.outline = this.worldcountries, this.chart.update();
+    }
+    switchProjection(e) {
+      console.log("switching projection:", e), this.chart.options.scales.projection.projection = e, this.chart.update();
+    }
+    resetView() {
+      this.switchProjection("equalEarth"), this.switchToWorld();
     }
   }
   YY = dVe;
