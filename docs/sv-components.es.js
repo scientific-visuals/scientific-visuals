@@ -80519,25 +80519,33 @@ the last node, the show column modification can be applied.`);
     detached() {
     }
     switchToEurope() {
-      this.chart.options.scales.projection.projectionScale = 4, this.chart.options.scales.projection.projectionOffset = [0, 950], this.chart.update();
+      console.log("switch chart:", this.chart);
+      let e = 4;
+      this.chart.options.scales.projection.projectionScale = e;
+      let t = e * (3 / 8 * this.chart.chartArea.height);
+      this.chart.options.scales.projection.projectionOffset = [0, t], this.chart.update();
     }
     switchToWorld() {
       this.chart.options.scales.projection.projectionScale = 1, this.chart.options.scales.projection.projectionOffset = [0, 0], this.chart.update();
     }
     switchToAsia() {
-      this.chart.options.scales.projection.projectionScale = 2.3, this.chart.options.scales.projection.projectionOffset = [-1100, 250], this.chart.update();
+      let e = 2.3, t = -e * (2 / 8 * this.chart.chartArea.width), i = e * (3 / 16 * this.chart.chartArea.height);
+      this.chart.options.scales.projection.projectionScale = e, this.chart.options.scales.projection.projectionOffset = [t, i], this.chart.update();
     }
     switchToNAmerica() {
-      this.chart.options.scales.projection.projectionScale = 2.5, this.chart.options.scales.projection.projectionOffset = [1100, 550], this.chart.update();
+      let e = 2.5, t = e * (2 / 8 * this.chart.chartArea.width), i = e * (2 / 8 * this.chart.chartArea.height);
+      this.chart.options.scales.projection.projectionScale = e, this.chart.options.scales.projection.projectionOffset = [t, i], this.chart.update();
     }
     switchToSAmerica() {
-      this.chart.options.scales.projection.projectionScale = 2, this.chart.options.scales.projection.projectionOffset = [800, -250], this.chart.update();
+      let e = 2, t = e * (1 / 8 * this.chart.chartArea.width), i = -e * (5 / 32 * this.chart.chartArea.height);
+      this.chart.options.scales.projection.projectionScale = e, this.chart.options.scales.projection.projectionOffset = [t, i], this.chart.update();
     }
     switchToAfrica() {
       this.chart.options.scales.projection.projectionScale = 1.8, this.chart.options.scales.projection.projectionOffset = [0, 0], this.chart.update();
     }
     switchToPacific() {
-      this.chart.options.scales.projection.projectionScale = 2, this.chart.options.scales.projection.projectionOffset = [-1300, -250], this.chart.update();
+      let e = 2, t = -e * (5 / 16 * this.chart.chartArea.width), i = -e * (1 / 8 * this.chart.chartArea.height);
+      this.chart.options.scales.projection.projectionScale = e, this.chart.options.scales.projection.projectionOffset = [t, i], this.chart.update();
     }
     zoomChart(e, t, i) {
       console.log("zoomChart:", e), e.options.scales.xy.projection.center = t, e.options.scales.xy.projection.scale = i, e.update();
