@@ -1,5 +1,5 @@
 var sG = (n, e) => () => (e || n((e = { exports: {} }).exports, e), e.exports);
-var dVe = sG((XVe, $C) => {
+var fVe = sG((QVe, $C) => {
   function rG() {
     Symbol.metadata ?? (Symbol.metadata = Symbol.for("Symbol.metadata"));
   }
@@ -37,7 +37,7 @@ var dVe = sG((XVe, $C) => {
       const t = e[Symbol.metadata];
       t != null && Reflect.deleteProperty(t, n);
     }
-  }, Dw = Object.freeze, FW = Object.assign, oG = String, Ia = nc.get, qb = nc.define, _i = (n) => n instanceof Promise, Qn = (n) => n instanceof Array, Kg = (n) => n instanceof Set, eu = (n) => n instanceof Map, BW = (n) => n instanceof Object;
+  }, Dw = Object.freeze, BW = Object.assign, oG = String, Ia = nc.get, qb = nc.define, _i = (n) => n instanceof Promise, Qn = (n) => n instanceof Array, Kg = (n) => n instanceof Set, eu = (n) => n instanceof Map, VW = (n) => n instanceof Object;
   function FC(n) {
     return typeof n == "object" && n !== null || typeof n == "function";
   }
@@ -90,8 +90,8 @@ var dVe = sG((XVe, $C) => {
           return !1;
       }
     };
-  })(), VW = /* @__PURE__ */ function() {
-    const n = FW(Zt(), {
+  })(), WW = /* @__PURE__ */ function() {
+    const n = BW(Zt(), {
       0: !0,
       1: !0,
       2: !0,
@@ -116,19 +116,19 @@ var dVe = sG((XVe, $C) => {
     const n = Zt(), e = (t, i) => i ? t.toUpperCase() : t.toLowerCase();
     return (t) => {
       let i = n[t];
-      return i === void 0 && (i = n[t] = VW(t, e)), i;
+      return i === void 0 && (i = n[t] = WW(t, e)), i;
     };
-  }(), WW = /* @__PURE__ */ function() {
+  }(), jW = /* @__PURE__ */ function() {
     const n = Zt();
     return (e) => {
       let t = n[e];
       return t === void 0 && (t = xi(e), t.length > 0 && (t = t[0].toUpperCase() + t.slice(1)), n[e] = t), t;
     };
-  }(), jW = /* @__PURE__ */ function() {
+  }(), zW = /* @__PURE__ */ function() {
     const n = Zt(), e = (t, i) => i ? `-${t.toLowerCase()}` : t.toLowerCase();
     return (t) => {
       let i = n[t];
-      return i === void 0 && (i = n[t] = VW(t, e)), i;
+      return i === void 0 && (i = n[t] = WW(t, e)), i;
     };
   }(), b1 = (n) => {
     const e = n.length, t = Array(e);
@@ -180,9 +180,9 @@ var dVe = sG((XVe, $C) => {
     };
   }();
   function YT(...n) {
-    return FW(Zt(), ...n);
+    return BW(Zt(), ...n);
   }
-  const WD = /* @__PURE__ */ (() => {
+  const jD = /* @__PURE__ */ (() => {
     const n = /* @__PURE__ */ new WeakMap();
     let e = !1, t = "", i = 0;
     return (s) => (e = n.get(s), e == null && (i = (t = s.toString()).length, e = i > 28 && t.indexOf("[native code] }") === i - 15, n.set(s, e)), e);
@@ -191,9 +191,9 @@ var dVe = sG((XVe, $C) => {
     for (; s < r; ++s)
       e = n[s], _i(e = n[s]) && (t === void 0 ? t = e : i === void 0 ? i = [t, e] : i.push(e));
     return i === void 0 ? t : Promise.all(i);
-  }, hG = (n, e) => new Vr(n, 0, e), Qb = (n, e) => new Vr(n, 1, e), zW = (n, e) => new Vr(n, 2, e), dG = (n, e) => new Vr(n, 3, e), fG = (n, e) => new Vr(n, 3, UW(e)), BC = (n, e) => new Vr(e, 5, n), gG = (n, ...e) => new PG(n, e), jD = /* @__PURE__ */ new WeakMap(), UW = (n) => (e, t, i) => {
-    let s = jD.get(e);
-    if (s === void 0 && jD.set(e, s = /* @__PURE__ */ new WeakMap()), s.has(i))
+  }, hG = (n, e) => new Vr(n, 0, e), Qb = (n, e) => new Vr(n, 1, e), UW = (n, e) => new Vr(n, 2, e), dG = (n, e) => new Vr(n, 3, e), fG = (n, e) => new Vr(n, 3, YW(e)), BC = (n, e) => new Vr(e, 5, n), gG = (n, ...e) => new PG(n, e), zD = /* @__PURE__ */ new WeakMap(), YW = (n) => (e, t, i) => {
+    let s = zD.get(e);
+    if (s === void 0 && zD.set(e, s = /* @__PURE__ */ new WeakMap()), s.has(i))
       return s.get(i);
     const r = n(e, t, i);
     return s.set(i, r), r;
@@ -230,7 +230,7 @@ var dVe = sG((XVe, $C) => {
      * @param key - key to register the transient class with
      * @param value - the class to instantiate when a container resolves the associated key
      */
-    transient: zW,
+    transient: UW,
     /**
      * Creates an instance from the method passed.
      * Every time you request this {@linkcode Key} you will get a new instance.
@@ -298,16 +298,16 @@ var dVe = sG((XVe, $C) => {
     },
     isKey: (n) => n.startsWith(Zh),
     keyFor: tu
-  }), _a = "au:resource", kd = (n, e, t) => `${_a}:${n}`, YW = {
+  }), _a = "au:resource", kd = (n, e, t) => `${_a}:${n}`, GW = {
     annotation: mG
-  }, GW = Object.prototype.hasOwnProperty;
+  }, KW = Object.prototype.hasOwnProperty;
   function pr(n, e, t, i) {
     let s = Ia(tu(n), t);
-    return s === void 0 ? (s = e[n], s === void 0 ? (s = t[n], s === void 0 || !GW.call(t, n) ? i() : s) : s) : s;
+    return s === void 0 ? (s = e[n], s === void 0 ? (s = t[n], s === void 0 || !KW.call(t, n) ? i() : s) : s) : s;
   }
   function eo(n, e, t) {
     let i = Ia(tu(n), e);
-    return i === void 0 ? (i = e[n], i === void 0 || !GW.call(e, n) ? t() : i) : i;
+    return i === void 0 ? (i = e[n], i === void 0 || !KW.call(e, n) ? t() : i) : i;
   }
   function to(n, e, t) {
     const i = e[n];
@@ -444,7 +444,7 @@ var dVe = sG((XVe, $C) => {
         for (; s != null; )
           if (r = s._resolvers.get(e), r == null) {
             if (s._parent == null)
-              return o = YD(e) ? this : s, t ? this._jitRegister(e, o) : null;
+              return o = GD(e) ? this : s, t ? this._jitRegister(e, o) : null;
             s = s._parent;
           } else
             return r;
@@ -466,7 +466,7 @@ var dVe = sG((XVe, $C) => {
         for (; i != null; )
           if (s = i._resolvers.get(e), s == null) {
             if (i._parent == null)
-              return r = YD(e) ? this : i, s = this._jitRegister(e, r), s.resolve(i, this);
+              return r = GD(e) ? this : i, s = this._jitRegister(e, r), s.resolve(i, this);
             i = i._parent;
           } else
             return s.resolve(i, this);
@@ -482,7 +482,7 @@ var dVe = sG((XVe, $C) => {
       try {
         if (t) {
           for (; r != null; )
-            o = r._resolvers.get(e), o != null && (a = a.concat(UD(o, r, s))), r = r._parent;
+            o = r._resolvers.get(e), o != null && (a = a.concat(YD(o, r, s))), r = r._parent;
           return a;
         }
         for (; r != null; )
@@ -490,14 +490,14 @@ var dVe = sG((XVe, $C) => {
             if (r = r._parent, r == null)
               return ct;
           } else
-            return UD(o, r, s);
+            return YD(o, r, s);
       } finally {
         yn = i;
       }
       return ct;
     }
     invoke(e, t) {
-      if (WD(e))
+      if (jD(e))
         throw ii(15, e);
       const i = yn;
       yn = this;
@@ -528,7 +528,7 @@ var dVe = sG((XVe, $C) => {
     getFactory(e) {
       let t = this._factories.get(e);
       if (t === void 0) {
-        if (WD(e))
+        if (jD(e))
           throw ii(15, e);
         this._factories.set(e, t = new CG(e, Jf(e)));
       }
@@ -604,7 +604,7 @@ var dVe = sG((XVe, $C) => {
           throw Ig(`[DEV:aurelia] Error during construction of ${this.Type.name ? this.Type.name : `(Anonymous) ${String(this.Type)}`}, caused by dependency: ${String(o)}`), yn = i, a;
         }
         try {
-          return t === void 0 ? s = new this.Type(...r) : s = new this.Type(...r, ...t), this.transformers == null ? s : this.transformers.reduce(zD, s);
+          return t === void 0 ? s = new this.Type(...r) : s = new this.Type(...r, ...t), this.transformers == null ? s : this.transformers.reduce(UD, s);
         } catch (a) {
           throw Ig(`[DEV:aurelia] Error during construction of ${this.Type.name ? this.Type.name : `(Anonymous) ${String(this.Type)}`}`), a;
         } finally {
@@ -612,7 +612,7 @@ var dVe = sG((XVe, $C) => {
         }
       }
       try {
-        return t === void 0 ? s = new this.Type(...this.dependencies.map(Zb, e)) : s = new this.Type(...this.dependencies.map(Zb, e), ...t), this.transformers == null ? s : this.transformers.reduce(zD, s);
+        return t === void 0 ? s = new this.Type(...this.dependencies.map(Zb, e)) : s = new this.Type(...this.dependencies.map(Zb, e), ...t), this.transformers == null ? s : this.transformers.reduce(UD, s);
       } finally {
         yn = i;
       }
@@ -621,7 +621,7 @@ var dVe = sG((XVe, $C) => {
       (this.transformers ?? (this.transformers = [])).push(e);
     }
   }
-  function zD(n, e) {
+  function UD(n, e) {
     return e(n);
   }
   function Sp(n) {
@@ -653,7 +653,7 @@ var dVe = sG((XVe, $C) => {
     }
     return n.length === 1 ? yn.get(n[0]) : n.map(Zb, yn);
   }
-  const UD = (n, e, t) => {
+  const YD = (n, e, t) => {
     if (n instanceof Vr && n._strategy === 4) {
       const i = n._state, s = i.length, r = Array(s);
       let o = 0;
@@ -667,7 +667,7 @@ var dVe = sG((XVe, $C) => {
     resolve(n, e) {
       return e;
     }
-  }, Nm = (n) => Lt(n == null ? void 0 : n.register), _G = (n) => Nm(n) && typeof n.registerInRequestor == "boolean", YD = (n) => _G(n) && n.registerInRequestor, RG = (n) => n.prototype !== void 0, w1 = (n) => Ct(n) && n.indexOf(":") > 0;
+  }, Nm = (n) => Lt(n == null ? void 0 : n.register), _G = (n) => Nm(n) && typeof n.registerInRequestor == "boolean", GD = (n) => _G(n) && n.registerInRequestor, RG = (n) => n.prototype !== void 0, w1 = (n) => Ct(n) && n.indexOf(":") > 0;
   class xG {
     constructor(e, t) {
       this._container = e, this._key = t;
@@ -685,7 +685,7 @@ var dVe = sG((XVe, $C) => {
       return this._registerResolver(3, e);
     }
     cachedCallback(e) {
-      return this._registerResolver(3, UW(e));
+      return this._registerResolver(3, YW(e));
     }
     aliasTo(e) {
       return this._registerResolver(5, e);
@@ -702,7 +702,7 @@ var dVe = sG((XVe, $C) => {
     for (let r = 0; r < i; ++r)
       s = t[r], Xb(s) || (e[s] = n[s]);
     return e;
-  }, Z0 = tu("di:paramtypes"), EG = (n) => Ia(Z0, n), KW = (n) => Ia("design:paramtypes", n), GD = (n) => {
+  }, Z0 = tu("di:paramtypes"), EG = (n) => Ia(Z0, n), qW = (n) => Ia("design:paramtypes", n), KD = (n) => {
     var e;
     return (e = n.metadata)[Z0] ?? (e[Z0] = []);
   }, Jf = (n) => {
@@ -711,7 +711,7 @@ var dVe = sG((XVe, $C) => {
     if (t === void 0) {
       const i = n.inject;
       if (i === void 0) {
-        const s = KW(n), r = EG(n);
+        const s = qW(n), r = EG(n);
         if (s === void 0)
           if (r === void 0) {
             const o = Object.getPrototypeOf(n);
@@ -751,17 +751,17 @@ var dVe = sG((XVe, $C) => {
       register: t != null ? (r, o) => t(new xG(r, o ?? s)) : void 0
     };
     return s;
-  }, CP = (...n) => (e, t) => {
+  }, SP = (...n) => (e, t) => {
     switch (t.kind) {
       case "class": {
-        const i = GD(t);
+        const i = KD(t);
         let s, r = 0;
         for (; r < n.length; ++r)
           s = n[r], s !== void 0 && (i[r] = s);
         break;
       }
       case "field": {
-        const i = GD(t), s = n[0];
+        const i = KD(t), s = n[0];
         s !== void 0 && (i[t.name] = s);
         break;
       }
@@ -770,7 +770,7 @@ var dVe = sG((XVe, $C) => {
     }
   }, Hd = (rG(), {
     createContainer: wG,
-    getDesignParamtypes: KW,
+    getDesignParamtypes: qW,
     // getAnnotationParamtypes,
     // getOrCreateAnnotationParamTypes,
     getDependencies: Jf,
@@ -816,7 +816,7 @@ var dVe = sG((XVe, $C) => {
      * - @param configureOrName - supply a string to improve error messaging
      */
     createInterface: yu,
-    inject: CP,
+    inject: SP,
     /**
      * Registers the `target` class as a transient dependency; each time the dependency is resolved
      * a new instance will be created.
@@ -837,7 +837,7 @@ var dVe = sG((XVe, $C) => {
      */
     transient(n) {
       return n.register = function(e) {
-        return zW(n, n).register(e, n);
+        return UW(n, n).register(e, n);
       }, n.registerInRequestor = !1, n;
     },
     /**
@@ -863,11 +863,11 @@ var dVe = sG((XVe, $C) => {
       }, n.registerInRequestor = e.scoped, n;
     }
   }), qg = /* @__PURE__ */ yu("IContainer"), TG = qg;
-  function KD(n, e) {
+  function qD(n, e) {
     return Hd.transient(n);
   }
   function MG(n, e) {
-    return n == null ? KD : KD(n);
+    return n == null ? qD : qD(n);
   }
   const AG = { scoped: !1 };
   class Vr {
@@ -953,26 +953,26 @@ var dVe = sG((XVe, $C) => {
       e.has(this.key, !0) ? e.get(this.key).register(e, ...this.params) : e.register(...this.params.filter((t) => typeof t == "object"));
     }
   }
-  const ct = Dw([]), qW = Dw({});
+  const ct = Dw([]), XW = Dw({});
   function Ta() {
   }
   const Xg = /* @__PURE__ */ yu("IPlatform");
   function Lw(n) {
     return function(e) {
       function t(i, s) {
-        CP(t)(i, s);
+        SP(t)(i, s);
       }
       return t.$isResolver = !0, t.resolve = function(i, s) {
         return n(e, i, s);
       }, t;
     };
   }
-  const SP = (n, e = !1) => {
+  const _P = (n, e = !1) => {
     function t(i, s) {
-      CP(t)(i, s);
+      SP(t)(i, s);
     }
     return t.$isResolver = !0, t.resolve = (i, s) => s.getAll(n, e), t;
-  }, XW = /* @__PURE__ */ Lw((n, e, t) => {
+  }, QW = /* @__PURE__ */ Lw((n, e, t) => {
     if (t.has(n, !0))
       return t.get(n);
   }), IG = /* @__PURE__ */ Lw((n, e, t) => t.has(n, !1) ? t.get(n) : void 0), Og = /* @__PURE__ */ Lw((n, e, t) => t.has(n, !1) ? t.get(n) : t.root.get(n)), OG = /* @__PURE__ */ Lw((n, e, t) => t.has(n, !1) ? t.get(n) : t.root.has(n, !1) ? t.root.get(n) : void 0), kG = /* @__PURE__ */ Lw((n, e, t) => (
@@ -1037,7 +1037,7 @@ var dVe = sG((XVe, $C) => {
      * No messages should be written.
      */
     none: DG
-  }), QW = /* @__PURE__ */ yu("ILogConfig", (n) => n.instance(new VG("no-colors", bg))), LG = /* @__PURE__ */ yu("ISink"), $G = /* @__PURE__ */ yu("ILogEventFactory", (n) => n.singleton(jG)), cd = /* @__PURE__ */ yu("ILogger", (n) => n.singleton(zG)), FG = /* @__PURE__ */ yu("ILogScope"), BG = /* @__PURE__ */ Dw({
+  }), ZW = /* @__PURE__ */ yu("ILogConfig", (n) => n.instance(new VG("no-colors", bg))), LG = /* @__PURE__ */ yu("ISink"), $G = /* @__PURE__ */ yu("ILogEventFactory", (n) => n.singleton(jG)), cd = /* @__PURE__ */ yu("ILogger", (n) => n.singleton(zG)), FG = /* @__PURE__ */ yu("ILogScope"), BG = /* @__PURE__ */ Dw({
     key: tu("logger-sink-handles"),
     define(n, e) {
       qb(e.handles, n, this.key);
@@ -1098,20 +1098,20 @@ var dVe = sG((XVe, $C) => {
       })
     };
     return (e, t) => e <= Jm ? n[t].TRC : e <= eb ? n[t].DBG : e <= tb ? n[t].INF : e <= bg ? n[t].WRN : e <= nb ? n[t].ERR : e <= ib ? n[t].FTL : n[t].QQQ;
-  }(), qD = (n, e) => e === "no-colors" ? n.join(".") : n.map(Sl.cyan).join("."), y1 = (n, e) => e === "no-colors" ? new Date(n).toISOString() : Sl.grey(new Date(n).toISOString());
+  }(), XD = (n, e) => e === "no-colors" ? n.join(".") : n.map(Sl.cyan).join("."), y1 = (n, e) => e === "no-colors" ? new Date(n).toISOString() : Sl.grey(new Date(n).toISOString());
   class WG {
     constructor(e, t, i, s, r, o) {
       this.severity = e, this.message = t, this.optionalParams = i, this.scope = s, this.colorOptions = r, this.timestamp = o;
     }
     toString() {
       const { severity: e, message: t, scope: i, colorOptions: s, timestamp: r } = this;
-      return i.length === 0 ? `${y1(r, s)} [${v1(e, s)}] ${t}` : `${y1(r, s)} [${v1(e, s)} ${qD(i, s)}] ${t}`;
+      return i.length === 0 ? `${y1(r, s)} [${v1(e, s)}] ${t}` : `${y1(r, s)} [${v1(e, s)} ${XD(i, s)}] ${t}`;
     }
     getFormattedLogInfo(e = !1) {
       const { severity: t, message: i, scope: s, colorOptions: r, timestamp: o, optionalParams: a } = this;
       let l = null, c = "";
       e && i instanceof Error ? l = i : c = i;
-      const u = s.length === 0 ? "" : ` ${qD(s, r)}`;
+      const u = s.length === 0 ? "" : ` ${XD(s, r)}`;
       let h = `${y1(o, r)} [${v1(t, r)}${u}] ${c}`;
       if (a === void 0 || a.length === 0)
         return l === null ? [h] : [h, l];
@@ -1123,7 +1123,7 @@ var dVe = sG((XVe, $C) => {
   }
   class jG {
     constructor() {
-      this.config = fe(QW);
+      this.config = fe(ZW);
     }
     createLogEvent(e, t, i, s) {
       return new WG(t, i, s, e.scope, this.config.colorOptions, Date.now());
@@ -1134,7 +1134,7 @@ var dVe = sG((XVe, $C) => {
     let e = [], t, i, s, r, o, a;
     return n = class {
       /* eslint-disable default-param-last */
-      constructor(c = fe(QW), u = fe($G), h = fe(SP(LG)), d = fe(XW(FG)) ?? [], f = null) {
+      constructor(c = fe(ZW), u = fe($G), h = fe(_P(LG)), d = fe(QW(FG)) ?? [], f = null) {
         this.scope = (HG(this, e), d), this._scopedLoggers = Zt();
         let g, p, m, w, y, C;
         if (this.config = c, this._factory = u, this.sinks = h, f === null) {
@@ -1206,8 +1206,8 @@ var dVe = sG((XVe, $C) => {
       t = [Zd], i = [Zd], s = [Zd], r = [Zd], o = [Zd], a = [Zd], Jd(n, null, t, { kind: "method", name: "trace", static: !1, private: !1, access: { has: (c) => "trace" in c, get: (c) => c.trace }, metadata: l }, null, e), Jd(n, null, i, { kind: "method", name: "debug", static: !1, private: !1, access: { has: (c) => "debug" in c, get: (c) => c.debug }, metadata: l }, null, e), Jd(n, null, s, { kind: "method", name: "info", static: !1, private: !1, access: { has: (c) => "info" in c, get: (c) => c.info }, metadata: l }, null, e), Jd(n, null, r, { kind: "method", name: "warn", static: !1, private: !1, access: { has: (c) => "warn" in c, get: (c) => c.warn }, metadata: l }, null, e), Jd(n, null, o, { kind: "method", name: "error", static: !1, private: !1, access: { has: (c) => "error" in c, get: (c) => c.error }, metadata: l }, null, e), Jd(n, null, a, { kind: "method", name: "fatal", static: !1, private: !1, access: { has: (c) => "fatal" in c, get: (c) => c.fatal }, metadata: l }, null, e), l && Object.defineProperty(n, Symbol.metadata, { enumerable: !0, configurable: !0, writable: !0, value: l });
     })(), n;
   })();
-  const ZW = "AccessThis", UG = "AccessBoundary", _P = "AccessGlobal", RP = "AccessScope", YG = "ArrayLiteral", GG = "ObjectLiteral", KG = "PrimitiveLiteral", qG = "Template", XG = "Unary", QG = "CallScope", ZG = "CallMember", JG = "CallFunction", eK = "CallGlobal", T_ = "AccessMember", JW = "AccessKeyed", tK = "TaggedTemplate", nK = "Binary", iK = "Conditional", sK = "Assign", rK = "ArrowFunction", oK = "ValueConverter", aK = "BindingBehavior", e3 = "ArrayBindingPattern", t3 = "ObjectBindingPattern", n3 = "BindingIdentifier", lK = "ForOfStatement", cK = "Interpolation", i3 = "ArrayDestructuring", uK = "ObjectDestructuring", hK = "DestructuringAssignmentLeaf", dK = "Custom";
-  class s3 {
+  const JW = "AccessThis", UG = "AccessBoundary", RP = "AccessGlobal", xP = "AccessScope", YG = "ArrayLiteral", GG = "ObjectLiteral", KG = "PrimitiveLiteral", qG = "Template", XG = "Unary", QG = "CallScope", ZG = "CallMember", JG = "CallFunction", eK = "CallGlobal", T_ = "AccessMember", e3 = "AccessKeyed", tK = "TaggedTemplate", nK = "Binary", iK = "Conditional", sK = "Assign", rK = "ArrowFunction", oK = "ValueConverter", aK = "BindingBehavior", t3 = "ArrayBindingPattern", n3 = "ObjectBindingPattern", i3 = "BindingIdentifier", lK = "ForOfStatement", cK = "Interpolation", s3 = "ArrayDestructuring", uK = "ObjectDestructuring", hK = "DestructuringAssignmentLeaf", dK = "Custom";
+  class r3 {
     constructor(e) {
       this.value = e, this.$kind = dK;
     }
@@ -1246,12 +1246,12 @@ var dVe = sG((XVe, $C) => {
   }
   class bK {
     constructor(e) {
-      this.name = e, this.$kind = _P;
+      this.name = e, this.$kind = RP;
     }
   }
   class sb {
     constructor(e = 0) {
-      this.ancestor = e, this.$kind = ZW;
+      this.ancestor = e, this.$kind = JW;
     }
   }
   class wK {
@@ -1261,21 +1261,21 @@ var dVe = sG((XVe, $C) => {
   }
   class rb {
     constructor(e, t = 0) {
-      this.name = e, this.ancestor = t, this.$kind = RP;
+      this.name = e, this.ancestor = t, this.$kind = xP;
     }
   }
-  const r3 = (n) => n.$kind === _P || (n.$kind === T_ || n.$kind === JW) && n.accessGlobal;
+  const o3 = (n) => n.$kind === RP || (n.$kind === T_ || n.$kind === e3) && n.accessGlobal;
   class GT {
     constructor(e, t, i = !1) {
-      this.object = e, this.name = t, this.optional = i, this.$kind = T_, this.accessGlobal = r3(e);
-    }
-  }
-  class o3 {
-    constructor(e, t, i = !1) {
-      this.object = e, this.key = t, this.optional = i, this.$kind = JW, this.accessGlobal = r3(e);
+      this.object = e, this.name = t, this.optional = i, this.$kind = T_, this.accessGlobal = o3(e);
     }
   }
   class a3 {
+    constructor(e, t, i = !1) {
+      this.object = e, this.key = t, this.optional = i, this.$kind = e3, this.accessGlobal = o3(e);
+    }
+  }
+  class l3 {
     constructor(e, t, i = 0, s = !1) {
       this.name = e, this.args = t, this.ancestor = i, this.optional = s, this.$kind = QG;
     }
@@ -1300,7 +1300,7 @@ var dVe = sG((XVe, $C) => {
       this.operation = e, this.left = t, this.right = i, this.$kind = nK;
     }
   }
-  class XD {
+  class QD {
     constructor(e, t, i = 0) {
       this.operation = e, this.expression = t, this.pos = i, this.$kind = XG;
     }
@@ -1333,7 +1333,7 @@ var dVe = sG((XVe, $C) => {
     }
   }
   WC.$empty = new WC([""]);
-  class l3 {
+  class c3 {
     constructor(e, t, i, s = ct) {
       this.cooked = e, this.func = i, this.expressions = s, this.$kind = tK, e.raw = t;
     }
@@ -1341,18 +1341,18 @@ var dVe = sG((XVe, $C) => {
   class CK {
     // We'll either have elements, or keys+values, but never all 3
     constructor(e) {
-      this.elements = e, this.$kind = e3;
+      this.elements = e, this.$kind = t3;
     }
   }
   class SK {
     // We'll either have elements, or keys+values, but never all 3
     constructor(e, t) {
-      this.keys = e, this.values = t, this.$kind = t3;
+      this.keys = e, this.values = t, this.$kind = n3;
     }
   }
   class jC {
     constructor(e) {
-      this.name = e, this.$kind = n3;
+      this.name = e, this.$kind = i3;
     }
   }
   class _K {
@@ -1370,7 +1370,7 @@ var dVe = sG((XVe, $C) => {
       this.$kind = e, this.list = t, this.source = i, this.initializer = s;
     }
   }
-  class c3 {
+  class u3 {
     constructor(e, t, i) {
       this.target = e, this.source = t, this.initializer = i, this.$kind = hK;
     }
@@ -1448,22 +1448,22 @@ var dVe = sG((XVe, $C) => {
     }
     return t;
   }, Qg = /* @__PURE__ */ Hd.createInterface("IExpressionParser");
-  class u3 {
+  class h3 {
     constructor() {
       this._expressionLookup = eC(), this._forOfLookup = eC(), this._interpolationLookup = eC();
     }
     parse(e, t) {
       let i;
       switch (t) {
-        case f3:
-          return new s3(e);
+        case g3:
+          return new r3(e);
         case zC:
           return i = this._interpolationLookup[e], i === void 0 && (i = this._interpolationLookup[e] = this.$parse(e, t)), i;
         case kl:
           return i = this._forOfLookup[e], i === void 0 && (i = this._forOfLookup[e] = this.$parse(e, t)), i;
         default: {
           if (e.length === 0) {
-            if (t === OK || t === QD)
+            if (t === OK || t === ZD)
               return Mi.$empty;
             throw KK();
           }
@@ -1473,11 +1473,11 @@ var dVe = sG((XVe, $C) => {
     }
     /** @internal */
     $parse(e, t) {
-      return At = e, dt = 0, Oa = e.length, tr = 0, ud = 0, ye = 6291456, un = "", nn = hd(0), Nt = !0, Et = !1, Lm = !0, EP = -1, Wn(61, t === void 0 ? QD : t);
+      return At = e, dt = 0, Oa = e.length, tr = 0, ud = 0, ye = 6291456, un = "", nn = hd(0), Nt = !0, Et = !1, Lm = !0, TP = -1, Wn(61, t === void 0 ? ZD : t);
     }
   }
-  u3.register = Nw(Qg);
-  function xP(n) {
+  h3.register = Nw(Qg);
+  function EP(n) {
     switch (n) {
       case 98:
         return 8;
@@ -1501,12 +1501,12 @@ var dVe = sG((XVe, $C) => {
         return n;
     }
   }
-  const MK = Mi.$false, AK = Mi.$true, PK = Mi.$null, h3 = Mi.$undefined, ob = new sb(0), C1 = new sb(1), IK = new wK(), Ul = "None", zC = "Interpolation", kl = "IsIterator", d3 = "IsChainable", OK = "IsFunction", QD = "IsProperty", f3 = "IsCustom";
-  let At = "", dt = 0, Oa = 0, tr = 0, ud = 0, ye = 6291456, un = "", nn, Nt = !0, Et = !1, Lm = !0, EP = -1;
+  const MK = Mi.$false, AK = Mi.$true, PK = Mi.$null, d3 = Mi.$undefined, ob = new sb(0), C1 = new sb(1), IK = new wK(), Ul = "None", zC = "Interpolation", kl = "IsIterator", f3 = "IsChainable", OK = "IsFunction", ZD = "IsProperty", g3 = "IsCustom";
+  let At = "", dt = 0, Oa = 0, tr = 0, ud = 0, ye = 6291456, un = "", nn, Nt = !0, Et = !1, Lm = !0, TP = -1;
   const Jb = String.fromCharCode, hd = (n) => At.charCodeAt(n), Yl = () => At.slice(ud, dt), kK = "Infinity NaN isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent Array BigInt Boolean Date Map Number Object RegExp Set String JSON Math Intl".split(" ");
   function Wn(n, e) {
-    if (e === f3)
-      return new s3(At);
+    if (e === g3)
+      return new r3(At);
     if (dt === 0) {
       if (e === zC)
         return VK();
@@ -1520,7 +1520,7 @@ var dVe = sG((XVe, $C) => {
         ye & 63
         /* Token.Type */
       ];
-      Ve(), i = new XD(r, Wn(514, e)), Nt = !1;
+      Ve(), i = new QD(r, Wn(514, e)), Nt = !1;
     } else {
       e: switch (ye) {
         case 12295:
@@ -1564,7 +1564,7 @@ var dVe = sG((XVe, $C) => {
             /* Token.Arrow */
           )) {
             if (ye === 524297)
-              throw w3();
+              throw v3();
             const o = Et, a = tr;
             ++tr;
             const l = Wn(62, Ul);
@@ -1628,7 +1628,7 @@ var dVe = sG((XVe, $C) => {
       switch (ye) {
         case 2228280:
         case 2228281:
-          i = new XD(jf[
+          i = new QD(jf[
             ye & 63
             /* Token.Type */
           ], i, 1), Ve(), Nt = !1;
@@ -1638,11 +1638,11 @@ var dVe = sG((XVe, $C) => {
         return i;
       if (ye === 11 || ye === 12)
         throw pl();
-      if (i.$kind === ZW)
+      if (i.$kind === JW)
         switch (ye) {
           case 2162701:
             if (Et = !0, Nt = !1, Ve(), !(ye & 13312))
-              throw TP();
+              throw MP();
             if (ye & 12288)
               i = new rb(un, i.ancestor), Ve();
             else if (ye === 2688008)
@@ -1667,7 +1667,7 @@ var dVe = sG((XVe, $C) => {
             i = tC(i, t);
             break;
           case 2163760:
-            i = ZD(i);
+            i = JD(i);
             break;
           case 2163761:
             i = S1(e, i, !0);
@@ -1681,13 +1681,13 @@ var dVe = sG((XVe, $C) => {
           case 65546:
             if (Ve(), !(ye & 12288))
               throw pl();
-            i = g3(i, !1);
+            i = p3(i, !1);
             break;
           case 11:
           case 12:
             throw pl();
           case 2688008:
-            i.$kind === RP ? i = new a3(i.name, Co(), i.ancestor, !1) : i.$kind === T_ ? i = new VC(i.object, i.name, Co(), i.optional, !1) : i.$kind === _P ? i = new vK(i.name, Co()) : i = new J0(i, Co(), !1);
+            i.$kind === xP ? i = new l3(i.name, Co(), i.ancestor, !1) : i.$kind === T_ ? i = new VC(i.object, i.name, Co(), i.optional, !1) : i.$kind === RP ? i = new vK(i.name, Co()) : i = new J0(i, Co(), !1);
             break;
           case 2688019:
             i = tC(i, !1);
@@ -1695,7 +1695,7 @@ var dVe = sG((XVe, $C) => {
           case 2163760:
             if (Et)
               throw nC();
-            i = ZD(i);
+            i = JD(i);
             break;
           case 2163761:
             if (Et)
@@ -1784,17 +1784,17 @@ var dVe = sG((XVe, $C) => {
     if (ye !== 6291456) {
       if (e === zC && ye === 7340046)
         return i;
-      if (e === d3 && ye === 6291478) {
+      if (e === f3 && ye === 6291478) {
         if (dt === Oa)
           throw _1();
-        return EP = dt - 1, i;
+        return TP = dt - 1, i;
       }
       throw Yl() === "of" ? ZK() : _1();
     }
     return i;
   }
   function HK() {
-    const n = [], e = new xK(i3, n, void 0, void 0);
+    const n = [], e = new xK(s3, n, void 0, void 0);
     let t = "", i = !0, s = 0;
     for (; i; )
       switch (Ve(), ye) {
@@ -1815,7 +1815,7 @@ var dVe = sG((XVe, $C) => {
       /* Token.CloseBracket */
     ), e;
     function r() {
-      t !== "" ? (n.push(new c3(new GT(ob, t), new o3(ob, new Mi(s++)), void 0)), t = "") : s++;
+      t !== "" ? (n.push(new u3(new GT(ob, t), new a3(ob, new Mi(s++)), void 0)), t = "") : s++;
     }
   }
   function Co() {
@@ -1834,30 +1834,30 @@ var dVe = sG((XVe, $C) => {
   }
   function tC(n, e) {
     const t = Et;
-    return Ve(), n = new o3(n, Wn(62, Ul), e), Eo(
+    return Ve(), n = new a3(n, Wn(62, Ul), e), Eo(
       7340052
       /* Token.CloseBracket */
     ), Nt = !t, Et = t, n;
   }
   function DK(n) {
     if (Et = !0, Nt = !1, Ve(), !(ye & 13312))
-      throw TP();
+      throw MP();
     if (ye & 12288)
-      return g3(n, !0);
+      return p3(n, !0);
     if (ye === 2688008)
-      return n.$kind === RP ? new a3(n.name, Co(), n.ancestor, !0) : n.$kind === T_ ? new VC(n.object, n.name, Co(), n.optional, !0) : new J0(n, Co(), !0);
+      return n.$kind === xP ? new l3(n.name, Co(), n.ancestor, !0) : n.$kind === T_ ? new VC(n.object, n.name, Co(), n.optional, !0) : new J0(n, Co(), !0);
     if (ye === 2688019)
       return tC(n, !0);
     throw nC();
   }
-  function g3(n, e) {
+  function p3(n, e) {
     const t = un;
     switch (ye) {
       case 2162701: {
         Et = !0, Nt = !1;
         const i = dt, s = ud, r = ye, o = nn, a = un, l = Nt, c = Et;
         if (Ve(), !(ye & 13312))
-          throw TP();
+          throw MP();
         return ye === 2688008 ? new VC(n, t, Co(), e, !0) : (dt = i, ud = s, ye = r, nn = o, un = a, Nt = l, Et = c, new GT(n, t, e));
       }
       case 2688008:
@@ -1929,7 +1929,7 @@ var dVe = sG((XVe, $C) => {
     if (ye === 51) {
       if (l === 1) {
         if (Ve(), ye === 524297)
-          throw w3();
+          throw v3();
         const d = Et, f = tr;
         ++tr;
         const g = Wn(62, Ul);
@@ -1937,7 +1937,7 @@ var dVe = sG((XVe, $C) => {
       }
       throw Iv();
     } else if (l === 1 && a.length === 0)
-      throw b3(
+      throw w3(
         51
         /* Token.Arrow */
       );
@@ -1946,9 +1946,9 @@ var dVe = sG((XVe, $C) => {
         case 2:
           throw Iv();
         case 3:
-          throw tN();
-        case 4:
           throw nN();
+        case 4:
+          throw iN();
       }
     dt = e, ud = t, ye = i, nn = s, un = r, Et = o;
     const u = Et, h = Wn(62, n);
@@ -1960,9 +1960,9 @@ var dVe = sG((XVe, $C) => {
         case 2:
           throw Iv();
         case 3:
-          throw tN();
-        case 4:
           throw nN();
+        case 4:
+          throw iN();
       }
     return h;
   }
@@ -1975,7 +1975,7 @@ var dVe = sG((XVe, $C) => {
         6291472
         /* Token.Comma */
       )) {
-        if (t.push(h3), ye === 7340052)
+        if (t.push(d3), ye === 7340052)
           break;
       } else if (t.push(Wn(62, n === kl ? Ul : n)), pa(
         6291472
@@ -1990,13 +1990,13 @@ var dVe = sG((XVe, $C) => {
       /* Token.CloseBracket */
     ), n === kl ? new CK(t) : (Nt = !1, new KT(t));
   }
-  const $K = [e3, t3, n3, i3, uK];
+  const $K = [t3, n3, i3, s3, uK];
   function FK(n) {
     if (!$K.includes(n.$kind) || ye !== 4204594)
-      throw eN(n.$kind);
+      throw tN(n.$kind);
     Ve();
-    const e = n, t = Wn(61, d3);
-    return new _K(e, t, EP);
+    const e = n, t = Wn(61, f3);
+    return new _K(e, t, TP);
   }
   function BK(n) {
     const e = Et, t = new Array(), i = new Array();
@@ -2039,7 +2039,7 @@ var dVe = sG((XVe, $C) => {
             i += "$";
           break;
         case 92:
-          i += Jb(xP(ze()));
+          i += Jb(EP(ze()));
           break;
         default:
           i += Jb(nn);
@@ -2060,12 +2060,12 @@ var dVe = sG((XVe, $C) => {
         2163761
         /* Token.TemplateContinuation */
       ), r.push(Wn(62, n));
-    return s.push(un), Nt = !1, Et = i, t ? (Ve(), new l3(s, s, e, r)) : (Ve(), new WC(s, r));
+    return s.push(un), Nt = !1, Et = i, t ? (Ve(), new c3(s, s, e, r)) : (Ve(), new WC(s, r));
   }
-  function ZD(n) {
+  function JD(n) {
     Nt = !1;
     const e = [un];
-    return Ve(), new l3(e, e, n);
+    return Ve(), new c3(e, e, n);
   }
   function Ve() {
     for (; dt < Oa; )
@@ -2082,7 +2082,7 @@ var dVe = sG((XVe, $C) => {
     const n = rq[un = Yl()];
     return n === void 0 ? 4096 : n;
   }
-  function JD(n) {
+  function eN(n) {
     let e = nn;
     if (n === !1) {
       do
@@ -2109,7 +2109,7 @@ var dVe = sG((XVe, $C) => {
     let i = dt;
     for (; nn !== n; )
       if (nn === 92)
-        t.push(At.slice(i, dt)), ze(), e = xP(nn), ze(), t.push(Jb(e)), i = dt;
+        t.push(At.slice(i, dt)), ze(), e = EP(nn), ze(), t.push(Jb(e)), i = dt;
       else {
         if (dt >= Oa)
           throw tq();
@@ -2118,7 +2118,7 @@ var dVe = sG((XVe, $C) => {
     const s = At.slice(i, dt);
     return ze(), t.push(s), un = t.join(""), 16384;
   }
-  function p3() {
+  function m3() {
     let n = !0, e = "";
     for (; ze() !== 96; )
       if (nn === 36)
@@ -2128,34 +2128,34 @@ var dVe = sG((XVe, $C) => {
         } else
           e += "$";
       else if (nn === 92)
-        e += Jb(xP(ze()));
+        e += Jb(EP(ze()));
       else {
         if (dt >= Oa)
-          throw m3();
+          throw b3();
         e += Jb(nn);
       }
     return ze(), un = e, n ? 2163760 : 2163761;
   }
   const zK = () => {
     if (dt >= Oa)
-      throw m3();
-    return dt--, p3();
+      throw b3();
+    return dt--, m3();
   }, pa = (n) => ye === n ? (Ve(), !0) : !1, Eo = (n) => {
     if (ye === n)
       Ve();
     else
-      throw b3(n);
+      throw w3(n);
   }, UK = () => on(151, At), ZT = () => on(152, At), pl = () => on(153, At), YK = () => on(154, At), GK = () => on(155, At), _1 = () => on(156, Yl(), dt, At), KK = () => on(
     157
     /* ErrorNames.parse_invalid_empty */
-  ), qK = () => on(158, At), XK = () => on(159, At), QK = () => on(160, At), ZK = () => on(161, At), JK = () => on(162, At), eN = (n) => on(163, At, n), eq = () => on(164, At), tq = () => on(165, At), m3 = () => on(166, At), b3 = (n) => on(167, jf[
+  ), qK = () => on(158, At), XK = () => on(159, At), QK = () => on(160, At), ZK = () => on(161, At), JK = () => on(162, At), tN = (n) => on(163, At, n), eq = () => on(164, At), tq = () => on(165, At), b3 = () => on(166, At), w3 = (n) => on(167, jf[
     n & 63
     /* Token.Type */
-  ], At), nq = () => on(170, Yl(), dt, At), TP = () => on(171, Yl(), dt - 1, At), nC = () => on(172, At), Iv = () => on(173, At), tN = () => on(174, At), nN = () => on(175, At), iq = () => on(176, At), w3 = () => on(178, At), sq = () => on(179, dt - 1, At), jf = [
+  ], At), nq = () => on(170, Yl(), dt, At), MP = () => on(171, Yl(), dt - 1, At), nC = () => on(172, At), Iv = () => on(173, At), nN = () => on(174, At), iN = () => on(175, At), iq = () => on(176, At), v3 = () => on(178, At), sq = () => on(179, dt - 1, At), jf = [
     MK,
     AK,
     PK,
-    h3,
+    d3,
     "this",
     "$this",
     null,
@@ -2251,7 +2251,7 @@ var dVe = sG((XVe, $C) => {
         f = f > 0 ? f : d + 1, o && o.fill(c, d, f);
       }
     }, i = /* @__PURE__ */ ((o) => (t(o, null, e.IdStart, 1), t(o, null, e.Digit, 1), o))(new Uint8Array(65535)), s = (o) => () => (ze(), o), r = new Array(65535);
-    return r.fill(n, 0, 65535), t(r, null, e.Skip, () => (ze(), null)), t(r, null, e.IdStart, WK), t(r, null, e.Digit, () => JD(!1)), r[
+    return r.fill(n, 0, 65535), t(r, null, e.Skip, () => (ze(), null)), t(r, null, e.IdStart, WK), t(r, null, e.Digit, () => eN(!1)), r[
       34
       /* Char.DoubleQuote */
     ] = r[
@@ -2260,7 +2260,7 @@ var dVe = sG((XVe, $C) => {
     ] = () => jK(), r[
       96
       /* Char.Backtick */
-    ] = () => p3(), r[
+    ] = () => m3(), r[
       33
       /* Char.Exclamation */
     ] = () => ze() !== 61 ? 131119 : ze() !== 61 ? 6553950 : (ze(), 6553952), r[
@@ -2284,7 +2284,7 @@ var dVe = sG((XVe, $C) => {
     }, r[
       46
       /* Char.Dot */
-    ] = () => ze() <= 57 && nn >= 48 ? JD(!0) : nn === 46 ? ze() !== 46 ? 11 : (ze(), 12) : 65546, r[
+    ] = () => ze() <= 57 && nn >= 48 ? eN(!0) : nn === 46 ? ze() !== 46 ? 11 : (ze(), 12) : 65546, r[
       60
       /* Char.LessThan */
     ] = () => ze() !== 61 ? 6554017 : (ze(), 6554019), r[
@@ -2363,7 +2363,7 @@ var dVe = sG((XVe, $C) => {
       7340046
       /* Token.CloseBrace */
     ), { CharScanners: r, IdParts: i };
-  })(), Va = Hd.createInterface, Zg = Object.freeze, { aliasTo: iN, singleton: MP } = ld, no = "Interpolation", v3 = "IsFunction", Wa = "IsProperty", zf = "custom-element", $w = /* @__PURE__ */ Zg({
+  })(), Va = Hd.createInterface, Zg = Object.freeze, { aliasTo: sN, singleton: AP } = ld, no = "Interpolation", y3 = "IsFunction", Wa = "IsProperty", zf = "custom-element", $w = /* @__PURE__ */ Zg({
     /**
      * Unspecified mode, bindings may act differently with this mode
      */
@@ -2372,7 +2372,7 @@ var dVe = sG((XVe, $C) => {
     toView: 2,
     fromView: 4,
     twoWay: 6
-  }), M_ = /* @__PURE__ */ Va("ITemplateCompiler"), y3 = /* @__PURE__ */ Va("IAttrMapper"), Fn = (n, ...e) => new Error(`AUR${String(n).padStart(4, "0")}: ${cq(n, ...e)}`), lq = {
+  }), M_ = /* @__PURE__ */ Va("ITemplateCompiler"), C3 = /* @__PURE__ */ Va("IAttrMapper"), Fn = (n, ...e) => new Error(`AUR${String(n).padStart(4, "0")}: ${cq(n, ...e)}`), lq = {
     88: "AttributeParser is already initialized; cannot add patterns after initialization.",
     89: 'Attribute pattern "{{0}}" has already been registered.',
     99: "Method {{0}} not implemented",
@@ -2460,8 +2460,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return "";
     }
   }
-  var C3, S3, _3, R3, x3;
-  class AP {
+  var S3, _3, R3, x3, E3;
+  class PP {
     constructor(e, t, i, s) {
       if (this.chars = e, this.repeat = t, this.isSymbol = i, this.isInverted = s, s)
         switch (e.length) {
@@ -2535,7 +2535,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       t[e] !== void 0 && (i = this._partsRecord, i[e] === void 0 ? i[e] = [t[e]] : i[e].push(t[e]), t[e] = void 0);
     }
   }
-  class PP {
+  class IP {
     get _pattern() {
       return this._isEndpoint ? this._patterns[0] : null;
     }
@@ -2554,7 +2554,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const i = this._patterns;
       i.includes(t) || i.push(t);
       let s = this.findChild(e);
-      return s == null && (s = new PP(e, t), this._nextStates.push(s), e.repeat && s._nextStates.push(s)), s;
+      return s == null && (s = new IP(e, t), this._nextStates.push(s), e.repeat && s._nextStates.push(s)), s;
     }
     findMatches(e, t) {
       const i = [], s = this._nextStates, r = s.length;
@@ -2570,13 +2570,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return i;
     }
   }
-  class sN {
+  class rN {
     constructor(e) {
       this.text = e;
       const t = this._len = e.length, i = this._specs = [];
       let s = 0;
       for (; t > s; ++s)
-        i.push(new AP(e[s], !1, !1, !1));
+        i.push(new PP(e[s], !1, !1, !1));
     }
     eachChar(e) {
       const t = this._len, i = this._specs;
@@ -2587,7 +2587,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   class dq {
     constructor(e) {
-      this.text = "PART", this._spec = new AP(e, !0, !1, !0);
+      this.text = "PART", this._spec = new PP(e, !0, !1, !0);
     }
     eachChar(e) {
       e(this._spec);
@@ -2595,7 +2595,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   class fq {
     constructor(e) {
-      this.text = e, this._spec = new AP(e, !1, !0, !1);
+      this.text = e, this._spec = new PP(e, !1, !0, !1);
     }
     eachChar(e) {
       e(this._spec);
@@ -2609,7 +2609,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   const pq = /* @__PURE__ */ Va("ISyntaxInterpreter", (n) => n.singleton(mq));
   class mq {
     constructor() {
-      this._rootState = new PP(null), this._initialStates = [this._rootState];
+      this._rootState = new IP(null), this._initialStates = [this._rootState];
     }
     // todo: this only works if this method is ever called only once
     add(e) {
@@ -2644,8 +2644,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const i = [], s = e.pattern, r = s.length, o = e.symbols;
       let a = 0, l = 0, c = "";
       for (; a < r; )
-        c = s.charAt(a), o.length === 0 || !o.includes(c) ? a === l && c === "P" && s.slice(a, a + 4) === "PART" ? (l = a = a + 4, i.push(new dq(o)), ++t.dynamics) : ++a : a !== l ? (i.push(new sN(s.slice(l, a))), ++t.statics, l = a) : (i.push(new fq(s.slice(l, a + 1))), ++t.symbols, l = ++a);
-      return l !== a && (i.push(new sN(s.slice(l, a))), ++t.statics), i;
+        c = s.charAt(a), o.length === 0 || !o.includes(c) ? a === l && c === "P" && s.slice(a, a + 4) === "PART" ? (l = a = a + 4, i.push(new dq(o)), ++t.dynamics) : ++a : a !== l ? (i.push(new rN(s.slice(l, a))), ++t.statics, l = a) : (i.push(new fq(s.slice(l, a + 1))), ++t.symbols, l = ++a);
+      return l !== a && (i.push(new rN(s.slice(l, a))), ++t.statics), i;
     }
   }
   function bq(n) {
@@ -2660,7 +2660,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.rawName = e, this.rawValue = t, this.target = i, this.command = s, this.parts = r;
     }
   }
-  const vq = /* @__PURE__ */ Va("IAttributePattern"), IP = /* @__PURE__ */ Va("IAttributeParser", (n) => n.singleton(yq));
+  const vq = /* @__PURE__ */ Va("IAttributePattern"), OP = /* @__PURE__ */ Va("IAttributeParser", (n) => n.singleton(yq));
   class yq {
     constructor() {
       this._cache = {}, this._patterns = {}, this._initialized = !1, this._allDefinitions = [], this._interpreter = fe(pq), this._container = fe(qg);
@@ -2699,7 +2699,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     create(n, e) {
       return {
         register(t) {
-          t.get(IP).registerPattern(n, e), MP(vq, e).register(t);
+          t.get(OP).registerPattern(n, e), AP(vq, e).register(t);
         }
       };
     }
@@ -2712,8 +2712,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ar(e, t, `${i[0]}.${i[1]}`, i[2]);
     }
   }
-  C3 = Symbol.metadata;
-  JT[C3] = {
+  S3 = Symbol.metadata;
+  JT[S3] = {
     [Ba]: /* @__PURE__ */ Cu.create([
       { pattern: "PART.PART", symbols: "." },
       { pattern: "PART.PART.PART", symbols: "." }
@@ -2728,8 +2728,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return s === "view-model" && (s = "component", console.warn(`[aurelia] Detected view-model.ref usage: "${e}=${t}". This is deprecated and component.ref should be used instead`)), new ar(e, t, s, "ref");
     }
   }
-  S3 = Symbol.metadata;
-  eM[S3] = {
+  _3 = Symbol.metadata;
+  eM[_3] = {
     [Ba]: /* @__PURE__ */ Cu.create([
       { pattern: "ref", symbols: "" },
       { pattern: "PART.ref", symbols: "." }
@@ -2743,23 +2743,23 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ar(e, t, i[0], "capture", i);
     }
   }
-  _3 = Symbol.metadata;
-  tM[_3] = {
+  R3 = Symbol.metadata;
+  tM[R3] = {
     [Ba]: /* @__PURE__ */ Cu.create([
       { pattern: "PART.trigger:PART", symbols: ".:" },
       { pattern: "PART.capture:PART", symbols: ".:" }
     ], tM)
   };
-  class rN {
+  class oN {
     ":PART"(e, t, i) {
       return new ar(e, t, i[0], "bind");
     }
   }
-  R3 = Symbol.metadata;
-  rN[R3] = {
-    [Ba]: /* @__PURE__ */ Cu.create([{ pattern: ":PART", symbols: ":" }], rN)
+  x3 = Symbol.metadata;
+  oN[x3] = {
+    [Ba]: /* @__PURE__ */ Cu.create([{ pattern: ":PART", symbols: ":" }], oN)
   };
-  class oN {
+  class aN {
     "@PART"(e, t, i) {
       return new ar(e, t, i[0], "trigger");
     }
@@ -2767,109 +2767,104 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ar(e, t, i[0], "trigger", [i[0], "trigger", ...i.slice(1)]);
     }
   }
-  x3 = Symbol.metadata;
-  oN[x3] = {
+  E3 = Symbol.metadata;
+  aN[E3] = {
     [Ba]: /* @__PURE__ */ Cu.create([
       { pattern: "@PART", symbols: "@" },
       { pattern: "@PART:PART", symbols: "@:" }
-    ], oN)
+    ], aN)
   };
-  const nM = nc.get, aN = nc.define, E3 = "ra", T3 = "rb", M3 = "rc", A3 = "rd", P3 = "re", I3 = "rf", OP = "rg", O3 = "ri", k3 = "rj", H3 = "rk", D3 = "rl", N3 = "ha", L3 = "hb", $3 = "hc", Cq = "hd", F3 = "he", B3 = "hf", V3 = "hg", W3 = "hs", j3 = "hp", z3 = "svb", oi = /* @__PURE__ */ Zg({
-    hydrateElement: E3,
-    hydrateAttribute: T3,
-    hydrateTemplateController: M3,
-    hydrateLetElement: A3,
-    setProperty: P3,
-    interpolation: I3,
-    propertyBinding: OP,
-    letBinding: O3,
-    refBinding: k3,
-    iteratorBinding: H3,
-    multiAttr: D3,
-    textBinding: N3,
-    listenerBinding: L3,
-    attributeBinding: $3,
+  const nM = nc.get, lN = nc.define, T3 = "ra", M3 = "rb", A3 = "rc", P3 = "rd", I3 = "re", O3 = "rf", kP = "rg", k3 = "ri", H3 = "rj", D3 = "rk", N3 = "rl", L3 = "ha", $3 = "hb", F3 = "hc", Cq = "hd", B3 = "he", V3 = "hf", W3 = "hg", j3 = "hs", z3 = "hp", U3 = "svb", oi = /* @__PURE__ */ Zg({
+    hydrateElement: T3,
+    hydrateAttribute: M3,
+    hydrateTemplateController: A3,
+    hydrateLetElement: P3,
+    setProperty: I3,
+    interpolation: O3,
+    propertyBinding: kP,
+    letBinding: k3,
+    refBinding: H3,
+    iteratorBinding: D3,
+    multiAttr: N3,
+    textBinding: L3,
+    listenerBinding: $3,
+    attributeBinding: F3,
     stylePropertyBinding: Cq,
-    setAttribute: F3,
-    setClassAttribute: B3,
-    setStyleAttribute: V3,
-    spreadTransferedBinding: W3,
-    spreadElementProp: j3,
-    spreadValueBinding: z3
+    setAttribute: B3,
+    setClassAttribute: V3,
+    setStyleAttribute: W3,
+    spreadTransferedBinding: j3,
+    spreadElementProp: z3,
+    spreadValueBinding: U3
   }), Jg = /* @__PURE__ */ Va("Instruction");
   class Ja {
-    constructor(e, t) {
-      this.from = e, this.to = t, this.type = I3;
-    }
-  }
-  class Fw {
-    constructor(e, t, i) {
-      this.from = e, this.to = t, this.mode = i, this.type = OP;
-    }
-  }
-  class Sq {
-    constructor(e, t, i) {
-      this.forOf = e, this.to = t, this.props = i, this.type = H3;
-    }
-  }
-  class _q {
-    constructor(e, t) {
-      this.from = e, this.to = t, this.type = k3;
-    }
-  }
-  class ef {
-    constructor(e, t) {
-      this.value = e, this.to = t, this.type = P3;
-    }
-  }
-  class Rq {
-    constructor(e, t, i) {
-      this.value = e, this.to = t, this.command = i, this.type = D3;
-    }
-  }
-  class xq {
-    constructor(e, t, i, s, r, o) {
-      this.res = e, this.props = t, this.projections = i, this.containerless = s, this.captures = r, this.data = o, this.type = E3;
-    }
-  }
-  class R1 {
-    constructor(e, t, i) {
-      this.res = e, this.alias = t, this.props = i, this.type = T3;
-    }
-  }
-  class Eq {
-    constructor(e, t, i, s) {
-      this.def = e, this.res = t, this.alias = i, this.props = s, this.type = M3;
-    }
-  }
-  class Tq {
-    constructor(e, t) {
-      this.instructions = e, this.toBindingContext = t, this.type = A3;
-    }
-  }
-  class lN {
     constructor(e, t) {
       this.from = e, this.to = t, this.type = O3;
     }
   }
-  class Mq {
-    constructor(e) {
-      this.from = e, this.type = N3;
+  class Fw {
+    constructor(e, t, i) {
+      this.from = e, this.to = t, this.mode = i, this.type = kP;
     }
   }
-  class U3 {
+  class Sq {
+    constructor(e, t, i) {
+      this.forOf = e, this.to = t, this.props = i, this.type = D3;
+    }
+  }
+  class _q {
+    constructor(e, t) {
+      this.from = e, this.to = t, this.type = H3;
+    }
+  }
+  class ef {
+    constructor(e, t) {
+      this.value = e, this.to = t, this.type = I3;
+    }
+  }
+  class Rq {
+    constructor(e, t, i) {
+      this.value = e, this.to = t, this.command = i, this.type = N3;
+    }
+  }
+  class xq {
+    constructor(e, t, i, s, r, o) {
+      this.res = e, this.props = t, this.projections = i, this.containerless = s, this.captures = r, this.data = o, this.type = T3;
+    }
+  }
+  class R1 {
+    constructor(e, t, i) {
+      this.res = e, this.alias = t, this.props = i, this.type = M3;
+    }
+  }
+  class Eq {
     constructor(e, t, i, s) {
-      this.from = e, this.to = t, this.capture = i, this.modifier = s, this.type = L3;
+      this.def = e, this.res = t, this.alias = i, this.props = s, this.type = A3;
+    }
+  }
+  class Tq {
+    constructor(e, t) {
+      this.instructions = e, this.toBindingContext = t, this.type = P3;
     }
   }
   class cN {
     constructor(e, t) {
-      this.value = e, this.to = t, this.type = F3;
+      this.from = e, this.to = t, this.type = k3;
+    }
+  }
+  class Mq {
+    constructor(e) {
+      this.from = e, this.type = L3;
+    }
+  }
+  class Y3 {
+    constructor(e, t, i, s) {
+      this.from = e, this.to = t, this.capture = i, this.modifier = s, this.type = $3;
     }
   }
   class uN {
-    constructor(e) {
-      this.value = e, this.type = B3;
+    constructor(e, t) {
+      this.value = e, this.to = t, this.type = B3;
     }
   }
   class hN {
@@ -2877,24 +2872,29 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.value = e, this.type = V3;
     }
   }
-  class kP {
-    constructor(e, t, i) {
-      this.attr = e, this.from = t, this.to = i, this.type = $3;
+  class dN {
+    constructor(e) {
+      this.value = e, this.type = W3;
     }
   }
-  class dN {
-    constructor() {
-      this.type = W3;
+  class HP {
+    constructor(e, t, i) {
+      this.attr = e, this.from = t, this.to = i, this.type = F3;
     }
   }
   class fN {
+    constructor() {
+      this.type = j3;
+    }
+  }
+  class gN {
     constructor(e) {
-      this.instruction = e, this.type = j3;
+      this.instruction = e, this.type = z3;
     }
   }
   class iM {
     constructor(e, t) {
-      this.target = e, this.from = t, this.type = z3;
+      this.target = e, this.from = t, this.type = U3;
     }
   }
   class UC {
@@ -2907,14 +2907,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     register(e, t) {
       const i = this.Type, s = typeof t == "string" ? wg(t) : this.key, r = this.aliases;
-      e.has(s, !1) ? console.warn(`[DEV:aurelia] ${Fn(157, this.name)}`) : e.register(e.has(i, !1) ? null : MP(i, i), iN(i, s), ...r.map((o) => iN(i, wg(o))));
+      e.has(s, !1) ? console.warn(`[DEV:aurelia] ${Fn(157, this.name)}`) : e.register(e.has(i, !1) ? null : AP(i, i), sN(i, s), ...r.map((o) => sN(i, wg(o))));
     }
   }
-  const Ji = "binding-command", iC = /* @__PURE__ */ kd(Ji), wg = (n) => `${iC}:${n}`, sM = (n, e) => nM(YW.annotation.keyFor(e), n), Aq = /* @__PURE__ */ (() => {
+  const Ji = "binding-command", iC = /* @__PURE__ */ kd(Ji), wg = (n) => `${iC}:${n}`, sM = (n, e) => nM(GW.annotation.keyFor(e), n), Aq = /* @__PURE__ */ (() => {
     const n = "__au_static_resource__", e = (t, i, s) => {
       var o;
       let r = nM(n, t);
-      return r == null && ((o = t.$au) == null ? void 0 : o.type) === i && (r = s(t.$au, t), aN(r, t, n)), r;
+      return r == null && ((o = t.$au) == null ? void 0 : o.type) === i && (r = s(t.$au, t), lN(r, t, n)), r;
     };
     return Zg({
       name: iC,
@@ -2924,7 +2924,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       // },
       define(t, i) {
         const s = UC.create(t, i), r = s.Type;
-        return aN(s, r, iC, _a), r;
+        return lN(s, r, iC, _a), r;
       },
       getAnnotation: sM,
       find(t, i) {
@@ -2949,7 +2949,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     });
   })();
-  class Y3 {
+  class G3 {
     get ignoreAttr() {
       return !1;
     }
@@ -2963,11 +2963,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       );
     }
   }
-  Y3.$au = {
+  G3.$au = {
     type: Ji,
     name: "one-time"
   };
-  class G3 {
+  class K3 {
     get ignoreAttr() {
       return !1;
     }
@@ -2981,11 +2981,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       );
     }
   }
-  G3.$au = {
+  K3.$au = {
     type: Ji,
     name: "to-view"
   };
-  class K3 {
+  class q3 {
     get ignoreAttr() {
       return !1;
     }
@@ -3000,11 +3000,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       );
     }
   }
-  K3.$au = {
+  q3.$au = {
     type: Ji,
     name: "from-view"
   };
-  class q3 {
+  class X3 {
     get ignoreAttr() {
       return !1;
     }
@@ -3019,11 +3019,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       );
     }
   }
-  q3.$au = {
+  X3.$au = {
     type: Ji,
     name: "two-way"
   };
-  class X3 {
+  class Q3 {
     get ignoreAttr() {
       return !1;
     }
@@ -3033,13 +3033,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return o = o === "" ? xi(a) : o, r == null ? (c = i.isTwoWay(e.node, a) ? 6 : 2, a = i.map(e.node, a) ?? xi(a)) : (l = e.def.defaultBindingMode ?? 0, c = r.mode === 0 || r.mode == null ? l == null || l === 0 ? 2 : l : r.mode, a = r.name), new Fw(t.parse(o, Wa), a, Ct(c) ? $w[c] ?? 0 : c);
     }
   }
-  X3.$au = {
+  Q3.$au = {
     type: Ji,
     name: "bind"
   };
-  class Q3 {
+  class Z3 {
     constructor() {
-      this._attrParser = fe(IP);
+      this._attrParser = fe(OP);
     }
     get ignoreAttr() {
       return !1;
@@ -3057,22 +3057,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new Sq(s, i, r);
     }
   }
-  Q3.$au = {
-    type: Ji,
-    name: "for"
-  };
-  class Z3 {
-    get ignoreAttr() {
-      return !0;
-    }
-    build(e, t) {
-      var i;
-      return new U3(t.parse(e.attr.rawValue, v3), e.attr.target, !1, ((i = e.attr.parts) == null ? void 0 : i[2]) ?? null);
-    }
-  }
   Z3.$au = {
     type: Ji,
-    name: "trigger"
+    name: "for"
   };
   class J3 {
     get ignoreAttr() {
@@ -3080,52 +3067,65 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     build(e, t) {
       var i;
-      return new U3(t.parse(e.attr.rawValue, v3), e.attr.target, !0, ((i = e.attr.parts) == null ? void 0 : i[2]) ?? null);
+      return new Y3(t.parse(e.attr.rawValue, y3), e.attr.target, !1, ((i = e.attr.parts) == null ? void 0 : i[2]) ?? null);
     }
   }
   J3.$au = {
     type: Ji,
+    name: "trigger"
+  };
+  class ej {
+    get ignoreAttr() {
+      return !0;
+    }
+    build(e, t) {
+      var i;
+      return new Y3(t.parse(e.attr.rawValue, y3), e.attr.target, !0, ((i = e.attr.parts) == null ? void 0 : i[2]) ?? null);
+    }
+  }
+  ej.$au = {
+    type: Ji,
     name: "capture"
   };
-  class e6 {
+  class tj {
     get ignoreAttr() {
       return !0;
     }
     build(e, t) {
       const i = e.attr, s = i.target;
       let r = i.rawValue;
-      return r = r === "" ? xi(s) : r, new kP(s, t.parse(r, Wa), s);
+      return r = r === "" ? xi(s) : r, new HP(s, t.parse(r, Wa), s);
     }
   }
-  e6.$au = {
+  tj.$au = {
     type: Ji,
     name: "attr"
   };
-  class t6 {
+  class nj {
     get ignoreAttr() {
       return !0;
     }
     build(e, t) {
-      return new kP("style", t.parse(e.attr.rawValue, Wa), e.attr.target);
+      return new HP("style", t.parse(e.attr.rawValue, Wa), e.attr.target);
     }
   }
-  t6.$au = {
+  nj.$au = {
     type: Ji,
     name: "style"
   };
-  class n6 {
+  class ij {
     get ignoreAttr() {
       return !0;
     }
     build(e, t) {
-      return new kP("class", t.parse(e.attr.rawValue, Wa), e.attr.target);
+      return new HP("class", t.parse(e.attr.rawValue, Wa), e.attr.target);
     }
   }
-  n6.$au = {
+  ij.$au = {
     type: Ji,
     name: "class"
   };
-  class i6 {
+  class sj {
     get ignoreAttr() {
       return !0;
     }
@@ -3133,11 +3133,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new _q(t.parse(e.attr.rawValue, Wa), e.attr.target);
     }
   }
-  i6.$au = {
+  sj.$au = {
     type: Ji,
     name: "ref"
   };
-  class s6 {
+  class rj {
     get ignoreAttr() {
       return !1;
     }
@@ -3145,11 +3145,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new iM(e.attr.target, e.attr.rawValue);
     }
   }
-  s6.$au = {
+  rj.$au = {
     type: Ji,
     name: "spread"
   };
-  const Pq = /* @__PURE__ */ Va("ITemplateElementFactory", (n) => n.singleton(Iq)), gN = {};
+  const Pq = /* @__PURE__ */ Va("ITemplateElementFactory", (n) => n.singleton(Iq)), pN = {};
   class Iq {
     constructor() {
       this.p = fe(Xg), this._template = this.t();
@@ -3160,12 +3160,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     createTemplate(e) {
       var i;
       if (Ct(e)) {
-        let s = gN[e];
+        let s = pN[e];
         if (s === void 0) {
           const r = this._template;
           r.innerHTML = e;
           const o = r.content.firstElementChild;
-          t(o) ? (this._template = this.t(), s = r) : (r.content.removeChild(o), s = o), gN[e] = s;
+          t(o) ? (this._template = this.t(), s = r) : (r.content.removeChild(o), s = o), pN[e] = s;
         }
         return s.cloneNode(!0);
       }
@@ -3193,20 +3193,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   }
-  const x1 = "au-start", E1 = "au-end", T1 = (n, e, t) => n.insertBefore(e, t), pN = (n, e, t) => {
+  const x1 = "au-start", E1 = "au-end", T1 = (n, e, t) => n.insertBefore(e, t), mN = (n, e, t) => {
     if (n === null)
       return;
     const i = t.length;
     let s = 0;
     for (; i > s; )
       n.insertBefore(t[s], e), ++s;
-  }, Du = (n, e) => n.content.appendChild(e), mN = (n, e) => {
+  }, Du = (n, e) => n.content.appendChild(e), bN = (n, e) => {
     const t = e.length;
     let i = 0;
     for (; t > i; )
       n.content.appendChild(e[i]), ++i;
-  }, bN = (n) => n.nodeType === 1, wN = (n) => n.nodeType === 3, Rp = "au-slot", vN = "default", xp = /* @__PURE__ */ ((n) => () => `anonymous-${++n}`)(0);
-  class r6 {
+  }, wN = (n) => n.nodeType === 1, vN = (n) => n.nodeType === 3, Rp = "au-slot", yN = "default", xp = /* @__PURE__ */ ((n) => () => `anonymous-${++n}`)(0);
+  class oj {
     constructor() {
       this.debug = !1, this.resolveResources = !0;
     }
@@ -3237,7 +3237,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let d = 0, f, g = null, p, m, w, y, C, R = null, _, x, M, I;
       for (; h > d; ++d) {
         if (f = t[d], M = f.target, I = f.rawValue, M === "...$attrs") {
-          a.push(new dN());
+          a.push(new fN());
           continue;
         }
         if (R = o._getCommand(f), R !== null && R.ignoreAttr) {
@@ -3245,7 +3245,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           continue;
         }
         if (c && (w = o._getBindables(l), y = w.attrs[M], y !== void 0)) {
-          R == null ? (_ = u.parse(I, no), a.push(new fN(_ == null ? new ef(I, y.name) : new Ja(_, y.name)))) : (Te.node = s, Te.attr = f, Te.bindable = y, Te.def = l, a.push(new fN(R.build(Te, o._exprParser, o._attrMapper))));
+          R == null ? (_ = u.parse(I, no), a.push(new gN(_ == null ? new ef(I, y.name) : new Ja(_, y.name)))) : (Te.node = s, Te.attr = f, Te.bindable = y, Te.def = l, a.push(new gN(R.build(Te, o._exprParser, o._attrMapper))));
           continue;
         }
         if (g = o._findAttr(M), g !== null) {
@@ -3276,13 +3276,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           else
             switch (M) {
               case "class":
-                a.push(new uN(I));
-                break;
-              case "style":
                 a.push(new hN(I));
                 break;
+              case "style":
+                a.push(new dN(I));
+                break;
               default:
-                a.push(new cN(I, M));
+                a.push(new uN(I, M));
             }
         else
           Te.node = s, Te.attr = f, Te.bindable = null, Te.def = null, a.push(R.build(Te, o._exprParser, o._attrMapper));
@@ -3326,13 +3326,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           else
             switch (c) {
               case "class":
-                i.push(new uN(_));
-                break;
-              case "style":
                 i.push(new hN(_));
                 break;
+              case "style":
+                i.push(new dN(_));
+                break;
               default:
-                i.push(new cN(_, c));
+                i.push(new uN(_, c));
             }
         else
           Te.node = e, Te.attr = h, Te.bindable = null, Te.def = null, i.push(w.build(Te, t._exprParser, t._attrMapper));
@@ -3374,12 +3374,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         }
         if (u = t._attrParser.parse(h, d), g = u.target, p = u.rawValue, f = t._getCommand(u), f !== null) {
           if (u.command === "bind")
-            r.push(new lN(o.parse(p, Wa), xi(g)));
+            r.push(new cN(o.parse(p, Wa), xi(g)));
           else
             throw Fn(704, u);
           continue;
         }
-        m = o.parse(p, no), m === null && console.warn(`[DEV:aurelia] Property "${g}" is declared with literal string ${p}. Did you mean ${g}.bind="${p}"?`), r.push(new lN(m === null ? new Mi(p) : m, xi(g)));
+        m = o.parse(p, no), m === null && console.warn(`[DEV:aurelia] Property "${g}" is declared with literal string ${p}. Did you mean ${g}.bind="${p}"?`), r.push(new cN(m === null ? new Mi(p) : m, xi(g)));
       }
       return t.rows.push([new Tq(r, a)]), this._markAsTarget(e, t).nextSibling;
     }
@@ -3414,7 +3414,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           }
         }
         if (te === "...$attrs") {
-          (_ ?? (_ = [])).push(new dN()), d();
+          (_ ?? (_ = [])).push(new fN()), d();
           continue;
         }
         if (B != null && B.ignoreAttr) {
@@ -3495,7 +3495,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (j != null) {
         p = j.length - 1, m = p, Y = j[m];
         let ce;
-        yN(e) ? (ce = t.t(), mN(ce, [
+        CN(e) ? (ce = t.t(), bN(ce, [
           // context.h(MARKER_NODE_NAME),
           t._marker(),
           t._comment(x1),
@@ -3505,10 +3505,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         let _e, P, k = !1, L, G, V, Q, U, W, K = 0, q = 0, ee = e.firstChild, ge = !1;
         if (b !== !1)
           for (; ee !== null; ) {
-            if (P = bN(ee) ? ee.getAttribute(Rp) : null, k = P !== null || o && !a, _e = ee.nextSibling, k) {
+            if (P = wN(ee) ? ee.getAttribute(Rp) : null, k = P !== null || o && !a, _e = ee.nextSibling, k) {
               if (!o)
                 throw Fn(706, P, s);
-              (ue = ee.removeAttribute) == null || ue.call(ee, Rp), ge = wN(ee) && ee.textContent.trim() === "", ge || ((re = G ?? (G = {}))[Ie = P || vN] ?? (re[Ie] = [])).push(ee), e.removeChild(ee);
+              (ue = ee.removeAttribute) == null || ue.call(ee, Rp), ge = vN(ee) && ee.textContent.trim() === "", ge || ((re = G ?? (G = {}))[Ie = P || yN] ?? (re[Ie] = [])).push(ee), e.removeChild(ee);
             }
             ee = _e;
           }
@@ -3540,7 +3540,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           instructions: Se.rows,
           needsCompile: !1
         }; m-- > 0; )
-          Y = j[m], ce = t.t(), U = t._marker(), mN(ce, [
+          Y = j[m], ce = t.t(), U = t._marker(), bN(ce, [
             U,
             t._comment(x1),
             t._comment(E1)
@@ -3557,10 +3557,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         let ce = e.firstChild, Be, Se, _e = !1, P = null, k, L, G, V, Q, U = !1, W = 0, K = 0;
         if (b !== !1)
           for (; ce !== null; ) {
-            if (Se = bN(ce) ? ce.getAttribute(Rp) : null, _e = Se !== null || o && !a, Be = ce.nextSibling, _e) {
+            if (Se = wN(ce) ? ce.getAttribute(Rp) : null, _e = Se !== null || o && !a, Be = ce.nextSibling, _e) {
               if (!o)
                 throw Fn(706, Se, s);
-              (xe = ce.removeAttribute) == null || xe.call(ce, Rp), U = wN(ce) && ce.textContent.trim() === "", U || ((J = k ?? (k = {}))[oe = Se || vN] ?? (J[oe] = [])).push(ce), e.removeChild(ce);
+              (xe = ce.removeAttribute) == null || xe.call(ce, Rp), U = vN(ce) && ce.textContent.trim() === "", U || ((J = k ?? (k = {}))[oe = Se || yN] ?? (J[oe] = [])).push(ce), e.removeChild(ce);
             }
             ce = Be;
           }
@@ -3591,7 +3591,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let o, a, l, c, u;
       if (s !== null) {
         for ({ parts: o, expressions: a } = s, (u = o[0]) && T1(i, t._text(u), e), l = 0, c = a.length; c > l; ++l)
-          pN(i, e, [
+          mN(i, e, [
             // context.h(MARKER_NODE_NAME),
             t._marker(),
             // empty text node will not be cloned when doing fragment.cloneNode()
@@ -3654,8 +3654,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           if (_ !== null && p.has(_) || g.has(R))
             throw Fn(712, g, _);
           _ !== null && p.add(_), g.add(R);
-          const x = b1(C.attributes).filter((M) => !CN.includes(M.name));
-          return x.length > 0 && console.warn(`[DEV:aurelia] The attribute(s) ${x.map((M) => M.name).join(", ")} will be ignored for ${C.outerHTML}. Only ${CN.join(", ")} are processed.`), C.remove(), y[R] = {
+          const x = b1(C.attributes).filter((M) => !SN.includes(M.name));
+          return x.length > 0 && console.warn(`[DEV:aurelia] The attribute(s) ${x.map((M) => M.name).join(", ")} will be ignored for ${C.outerHTML}. Only ${SN.join(", ")} are processed.`), C.remove(), y[R] = {
             name: R,
             attribute: _ ?? void 0,
             mode: C.getAttribute(
@@ -3671,7 +3671,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           name: h,
           template: u,
           bindables: m
-        }, Reflect.defineProperty(w, "name", { value: WW(h) }), l.push(w), s.removeChild(u);
+        }, Reflect.defineProperty(w, "name", { value: jW(h) }), l.push(w), s.removeChild(u);
       }
       const c = (t.root.def.dependencies ?? []).concat(t.root.def.Type == null ? ct : [t.root.def.Type]);
       for (const u of l)
@@ -3680,7 +3680,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     /** @internal */
     _shouldReorderAttrs(e, t) {
       const i = e.nodeName;
-      return i === "INPUT" && Hq[e.type] === 1 || i === "SELECT" && (e.hasAttribute("multiple") || (t == null ? void 0 : t.some((s) => s.type === OP && s.to === "multiple")));
+      return i === "INPUT" && Hq[e.type] === 1 || i === "SELECT" && (e.hasAttribute("multiple") || (t == null ? void 0 : t.some((s) => s.type === kP && s.to === "multiple")));
     }
     /** @internal */
     _reorder(e, t) {
@@ -3734,24 +3734,24 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
      * @internal
      */
     _replaceByMarker(e, t) {
-      if (yN(e))
+      if (CN(e))
         return e;
       const i = e.parentNode, s = t._marker();
-      return pN(i, e, [
+      return mN(i, e, [
         s,
         t._comment(x1),
         t._comment(E1)
       ]), i.removeChild(e), s;
     }
   }
-  r6.register = Nw(M_);
-  const M1 = "TEMPLATE", yN = (n) => n.nodeValue === "au*";
+  oj.register = Nw(M_);
+  const M1 = "TEMPLATE", CN = (n) => n.nodeValue === "au*";
   class YC {
     constructor(e, t, i, s, r) {
       var a;
       this.hasSlot = !1, this.deps = null;
       const o = i !== null;
-      if (this.c = t, this.root = s === null ? this : s, this.def = e, this.parent = i, this._resourceResolver = o ? i._resourceResolver : t.get(o6), this._commandResolver = o ? i._commandResolver : t.get(Dq), this._templateFactory = o ? i._templateFactory : t.get(Pq), this._attrParser = o ? i._attrParser : t.get(IP), this._exprParser = o ? i._exprParser : t.get(Qg), this._attrMapper = o ? i._attrMapper : t.get(y3), this._logger = o ? i._logger : t.get(cd), typeof ((a = (this.p = o ? i.p : t.get(Xg)).document) == null ? void 0 : a.nodeType) != "number")
+      if (this.c = t, this.root = s === null ? this : s, this.def = e, this.parent = i, this._resourceResolver = o ? i._resourceResolver : t.get(aj), this._commandResolver = o ? i._commandResolver : t.get(Dq), this._templateFactory = o ? i._templateFactory : t.get(Pq), this._attrParser = o ? i._attrParser : t.get(OP), this._exprParser = o ? i._exprParser : t.get(Qg), this._attrMapper = o ? i._attrMapper : t.get(C3), this._logger = o ? i._logger : t.get(cd), typeof ((a = (this.p = o ? i.p : t.get(Xg)).document) == null ? void 0 : a.nodeType) != "number")
         throw Fn(
           722
           /* ErrorNames.compiler_no_dom_api */
@@ -3842,7 +3842,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     checkbox: 1,
     radio: 1
     // todo: range is also sensitive to order, for min/max
-  }, o6 = /* @__PURE__ */ Va("IResourceResolver"), Dq = /* @__PURE__ */ Va("IBindingCommandResolver", (n) => {
+  }, aj = /* @__PURE__ */ Va("IResourceResolver"), Dq = /* @__PURE__ */ Va("IBindingCommandResolver", (n) => {
     class e {
       constructor() {
         this._cache = /* @__PURE__ */ new WeakMap();
@@ -3853,7 +3853,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
     return n.singleton(e);
-  }), CN = Zg([
+  }), SN = Zg([
     "name",
     "attribute",
     "mode"
@@ -3865,17 +3865,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (t.has(i))
       throw Fn(716, i, n);
     return t.add(i), e.removeAttribute(rM), i;
-  }, SN = /* @__PURE__ */ Va("ITemplateCompilerHooks"), Lq = Zg({
+  }, _N = /* @__PURE__ */ Va("ITemplateCompilerHooks"), Lq = Zg({
     name: /* @__PURE__ */ kd("compiler-hooks"),
     define(n) {
       return {
         register(e) {
-          MP(SN, n).register(e);
+          AP(_N, n).register(e);
         }
       };
     },
     findAll(n) {
-      return n.get(kG(SN));
+      return n.get(kG(_N));
     }
   }), $q = Object.prototype.hasOwnProperty, To = Reflect.defineProperty;
   function ka(n, e, t) {
@@ -3889,7 +3889,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Al(n, e, t) {
     e in n || ka(n, e, t);
   }
-  const a6 = Object.assign, HP = Object.freeze, dd = String, A_ = Hd.createInterface, Fq = nc.get, Bq = nc.define, Ge = (n, ...e) => new Error(`AUR${dd(n).padStart(4, "0")}: ${Wq(n, ...e)}`), Vq = {
+  const lj = Object.assign, DP = Object.freeze, dd = String, A_ = Hd.createInterface, Fq = nc.get, Bq = nc.define, Ge = (n, ...e) => new Error(`AUR${dd(n).padStart(4, "0")}: ${Wq(n, ...e)}`), Vq = {
     99: "Method {{0}} not implemented",
     101: 'Ast eval error: binding behavior "{{0}}" could not be found. Did you forget to register it as a dependency?',
     102: 'Ast eval error: binding behavior "{{0}}" already applied.',
@@ -4007,9 +4007,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           204
           /* ErrorNames.create_scope_with_null_context */
         );
-      return new ri(null, e, t ?? new RN(), i ?? !1);
+      return new ri(null, e, t ?? new xN(), i ?? !1);
     }
-    static fromParent(e, t, i = new RN()) {
+    static fromParent(e, t, i = new xN()) {
       if (e == null)
         throw Ge(
           203
@@ -4018,12 +4018,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ri(e, t, i, !1);
     }
   }
-  class _N {
+  class RN {
     constructor(e, t) {
       e !== void 0 && (this[e] = t);
     }
   }
-  class RN {
+  class xN {
   }
   const { astAssign: ew, astEvaluate: xn, astBind: Su, astUnbind: _u } = /* @__PURE__ */ (() => {
     const n = "AccessThis", e = "AccessBoundary", t = "AccessGlobal", i = "AccessScope", s = "ArrayLiteral", r = "ObjectLiteral", o = "PrimitiveLiteral", a = "Template", l = "Unary", c = "CallScope", u = "CallMember", h = "CallFunction", d = "CallGlobal", f = "AccessMember", g = "AccessKeyed", p = "TaggedTemplate", m = "Binary", w = "Conditional", y = "Assign", C = "ArrowFunction", R = "ValueConverter", _ = "BindingBehavior", x = "ArrayBindingPattern", M = "ObjectBindingPattern", I = "BindingIdentifier", A = "ForOfStatement", O = "Interpolation", D = "ArrayDestructuring", j = "ObjectDestructuring", Y = "DestructuringAssignmentLeaf", Z = "Custom", $ = ri.getContext;
@@ -4371,7 +4371,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           break;
         }
         case Y: {
-          if (b instanceof c3) {
+          if (b instanceof u3) {
             if (T == null)
               return;
             if (typeof T != "object")
@@ -4462,7 +4462,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         throw Ge(99, t);
       });
     });
-  }, l6 = /* @__PURE__ */ Hd.createInterface("ICoercionConfiguration"), P_ = 0, ic = 1, zq = 2, Uq = 4, DP = /* @__PURE__ */ HP({
+  }, cj = /* @__PURE__ */ Hd.createInterface("ICoercionConfiguration"), P_ = 0, ic = 1, zq = 2, Uq = 4, NP = /* @__PURE__ */ DP({
     None: P_,
     Observer: ic,
     Node: zq,
@@ -4535,7 +4535,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return n;
   })();
-  class c6 {
+  class uj {
     constructor(e) {
       this.owner = e, this.type = ic, this._value = (this._obj = e.collection).length;
     }
@@ -4553,8 +4553,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (this._value = s) !== i && (this.subs.notifyDirty(), this.subs.notify(this._value, i));
     }
   }
-  u6(c6);
-  class NP {
+  hj(uj);
+  class LP {
     constructor(e) {
       this.owner = e, this.type = ic, this._value = (this._obj = e.collection).size;
     }
@@ -4575,8 +4575,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (this._value = s) !== i && this.subs.notify(this._value, i);
     }
   }
-  u6(NP);
-  function u6(n) {
+  hj(LP);
+  function hj(n) {
     const e = n.prototype;
     return Al(e, "subscribe", Gq), Al(e, "unsubscribe", Kq), Wr(n, null);
   }
@@ -4753,7 +4753,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         this.indexMap = fd(C), m.notifyCollection(y, w);
       }
       getLengthObserver() {
-        return this.lenObs ?? (this.lenObs = new c6(this));
+        return this.lenObs ?? (this.lenObs = new uj(this));
       }
       getIndexObserver(m) {
         var w;
@@ -4856,7 +4856,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         this.indexMap = fd(f), u.notifyCollection(d, h);
       }
       getLengthObserver() {
-        return this.lenObs ?? (this.lenObs = new NP(this));
+        return this.lenObs ?? (this.lenObs = new LP(this));
       }
     }
     return Wr(l, null), function(u) {
@@ -4930,14 +4930,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         this.indexMap = fd(f), u.notifyCollection(d, h);
       }
       getLengthObserver() {
-        return this.lenObs ?? (this.lenObs = new NP(this));
+        return this.lenObs ?? (this.lenObs = new LP(this));
       }
     }
     return Wr(l, null), function(u) {
       let h = e.get(u);
       return h === void 0 && (e.set(u, h = new l(u)), a(u)), h;
     };
-  })(), xN = /* @__PURE__ */ (() => {
+  })(), EN = /* @__PURE__ */ (() => {
     class n {
       constructor(u) {
         this.version = 0, this.count = 0, this.o = /* @__PURE__ */ new Map(), this.b = u;
@@ -4997,7 +4997,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     };
   })();
   function No(n, e) {
-    return n == null ? xN : xN(n, e);
+    return n == null ? EN : EN(n, e);
   }
   let mt = null;
   const eg = [];
@@ -5011,7 +5011,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function I_() {
     return mt;
   }
-  function LP(n) {
+  function $P(n) {
     if (n == null)
       throw Ge(
         206
@@ -5028,7 +5028,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       );
     eg.push(n), mt = n, ql = !0;
   }
-  function $P(n) {
+  function FP(n) {
     if (n == null)
       throw Ge(
         208
@@ -5041,19 +5041,19 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       );
     eg.pop(), mt = eg.length > 0 ? eg[eg.length - 1] : null, ql = mt != null;
   }
-  const Qq = /* @__PURE__ */ HP({
+  const Qq = /* @__PURE__ */ DP({
     get current() {
       return mt;
     },
     get connecting() {
       return ql;
     },
-    enter: LP,
-    exit: $P,
+    enter: $P,
+    exit: FP,
     pause: qq,
     resume: Xq
   }), kg = Reflect.get, Zq = Object.prototype.toString, oM = /* @__PURE__ */ new WeakMap(), Jq = "__au_nw__", eX = "__au_nw";
-  function h6(n) {
+  function dj(n) {
     switch (Zq.call(n)) {
       case "[object Object]":
         return n.constructor[Jq] !== !0;
@@ -5067,7 +5067,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   const ep = "__raw__";
   function gt(n) {
-    return h6(n) ? O_(n) : n;
+    return dj(n) ? O_(n) : n;
   }
   function O_(n) {
     return oM.get(n) ?? tX(n);
@@ -5076,9 +5076,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return n[ep] ?? n;
   }
   function bs(n) {
-    return h6(n) && n[ep] || n;
+    return dj(n) && n[ep] || n;
   }
-  function FP(n, e) {
+  function BP(n, e) {
     return e === "constructor" || e === "__proto__" || e === "$observers" || e === Symbol.toPrimitive || e === Symbol.toStringTag || n.constructor[`${eX}_${dd(e)}__`] === !0;
   }
   function tX(n) {
@@ -5090,13 +5090,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (e === ep)
         return n;
       const i = I_();
-      return !ql || FP(n, e) || i == null ? kg(n, e, t) : (i.observe(n, e), gt(kg(n, e, t)));
+      return !ql || BP(n, e) || i == null ? kg(n, e, t) : (i.observe(n, e), gt(kg(n, e, t)));
     }
   }, iX = {
     get(n, e, t) {
       if (e === ep)
         return n;
-      if (!ql || FP(n, e) || mt == null)
+      if (!ql || BP(n, e) || mt == null)
         return kg(n, e, t);
       switch (e) {
         case "length":
@@ -5146,7 +5146,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         case "sort":
           return SX;
         case "keys":
-          return d6;
+          return fj;
         case "values":
         case Symbol.iterator:
           return aM;
@@ -5255,7 +5255,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (e === ep)
         return n;
       const i = I_();
-      if (!ql || FP(n, e) || i == null)
+      if (!ql || BP(n, e) || i == null)
         return kg(n, e, t);
       switch (e) {
         case "size":
@@ -5281,7 +5281,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         case "has":
           return MX;
         case "keys":
-          return d6;
+          return fj;
         case "values":
           return aM;
         case "entries":
@@ -5324,7 +5324,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function kX(n) {
     return gt(It(this).delete(bs(n)));
   }
-  function d6() {
+  function fj() {
     const n = It(this);
     Dn(mt, n);
     const e = n.keys();
@@ -5366,7 +5366,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     };
   }
-  const Dn = (n, e) => n == null ? void 0 : n.observeCollection(e), HX = /* @__PURE__ */ HP({
+  const Dn = (n, e) => n == null ? void 0 : n.observeCollection(e), HX = /* @__PURE__ */ DP({
     getProxy: O_,
     getRaw: It,
     wrap: gt,
@@ -5424,14 +5424,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     compute() {
       this._isRunning = !0, this.obs.version++;
       try {
-        return LP(this), this._value = bs(this.$get.call(this._wrapped, this._wrapped, this));
+        return $P(this), this._value = bs(this.$get.call(this._wrapped, this._wrapped, this));
       } finally {
-        this.obs.clear(), this._isRunning = !1, $P(this);
+        this.obs.clear(), this._isRunning = !1, FP(this);
       }
     }
   }
   No(qC, null), Wr(qC, null);
-  const BP = /* @__PURE__ */ A_(
+  const VP = /* @__PURE__ */ A_(
     "IDirtyChecker",
     (n) => n.callback(() => {
       throw Ge(
@@ -5471,7 +5471,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   };
   class NX {
     static register(e) {
-      e.register(ld.singleton(this, this), ld.aliasTo(this, BP));
+      e.register(ld.singleton(this, this), ld.aliasTo(this, VP));
     }
     constructor() {
       this.tracked = [], this._task = null, this._elapsedFrames = 0, this.p = fe(Xg), this.check = () => {
@@ -5482,10 +5482,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         let i, s = 0;
         for (; s < t; ++s)
           i = e[s], i.isDirty() && i.flush();
-      }, Wr(EN, null);
+      }, Wr(TN, null);
     }
     createProperty(e, t) {
-      return new EN(this, e, t);
+      return new TN(this, e, t);
     }
     addProperty(e) {
       this.tracked.push(e), this.tracked.length === 1 && (this._task = this.p.taskQueue.queueTask(this.check, { persistent: !0 }));
@@ -5494,7 +5494,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.tracked.splice(this.tracked.indexOf(e), 1), this.tracked.length === 0 && (this._task.cancel(), this._task = null);
     }
   }
-  class EN {
+  class TN {
     constructor(e, t, i) {
       this.obj = t, this.key = i, this.type = P_, this._oldValue = void 0, this._dirtyChecker = e;
     }
@@ -5535,7 +5535,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     unsubscribe() {
     }
   }
-  class f6 {
+  class gj {
     constructor() {
       this.type = P_;
     }
@@ -5546,7 +5546,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       t[i] = e;
     }
   }
-  class VP {
+  class WP {
     constructor(e, t) {
       this.type = ic, this._value = void 0, this._observing = !1, this._callback = void 0, this._coercer = void 0, this._coercionConfig = void 0, this._obj = e, this._key = t;
     }
@@ -5575,7 +5575,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this._observing === !1 && (this._observing = !0, this._value = this._obj[this._key], To(this._obj, this._key, {
         enumerable: !0,
         configurable: !0,
-        get: a6(() => this.getValue(), { getObserver: () => this }),
+        get: lj(() => this.getValue(), { getObserver: () => this }),
         set: (e) => {
           this.setValue(e);
         }
@@ -5590,9 +5590,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }), this._observing = !1), this;
     }
   }
-  Wr(VP, null);
+  Wr(WP, null);
   let kv;
-  const cM = new f6(), tp = /* @__PURE__ */ A_("IObserverLocator", (n) => n.singleton(BX)), WP = /* @__PURE__ */ A_("INodeObserverLocator", (n) => n.cachedCallback((e) => (e.getAll(cd).forEach((t) => {
+  const cM = new gj(), tp = /* @__PURE__ */ A_("IObserverLocator", (n) => n.singleton(BX)), jP = /* @__PURE__ */ A_("INodeObserverLocator", (n) => n.cachedCallback((e) => (e.getAll(cd).forEach((t) => {
     t.error("Using default INodeObserverLocator implementation. Will not be able to observe nodes (HTML etc...).");
   }), new $X())));
   class $X {
@@ -5612,7 +5612,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return To(t, i, {
         enumerable: s.enumerable,
         configurable: !0,
-        get: a6(() => o.getValue(), { getObserver: () => o }),
+        get: lj(() => o.getValue(), { getObserver: () => o }),
         set: (a) => {
           o.setValue(a);
         }
@@ -5621,7 +5621,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }));
   class BX {
     constructor() {
-      this._adapters = [], this._dirtyChecker = fe(BP), this._nodeObserverLocator = fe(WP), this._computedObserverLocator = fe(FX);
+      this._adapters = [], this._dirtyChecker = fe(VP), this._nodeObserverLocator = fe(jP), this._computedObserverLocator = fe(FX);
     }
     addAdapter(e) {
       this._adapters.push(e);
@@ -5629,11 +5629,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     getObserver(e, t) {
       if (e == null)
         throw Ge(199, t);
-      if (!BW(e))
+      if (!VW(e))
         return new LX(e, Lt(t) ? "" : t);
       if (Lt(t))
         return new qC(e, t, void 0, this, !0);
-      const i = g6(e);
+      const i = pj(e);
       let s = i[t];
       return s === void 0 && (s = this.createObserver(e, t), s.doNotCache || (i[t] = s)), s;
     }
@@ -5671,17 +5671,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
             return ab(e).getIndexObserver(Number(t));
           break;
       }
-      let i = MN(e, t);
+      let i = AN(e, t);
       if (i === void 0) {
-        let o = TN(e);
-        for (; o !== null && (i = MN(o, t), i === void 0); )
-          o = TN(o);
+        let o = MN(e);
+        for (; o !== null && (i = AN(o, t), i === void 0); )
+          o = MN(o);
       }
       if (i !== void 0 && !$q.call(i, "value")) {
         let o = this._getAdapterObserver(e, t, i);
         return o == null && (o = (r = (s = i.get) == null ? void 0 : s.getObserver) == null ? void 0 : r.call(s, e)), o ?? (i.configurable ? this._computedObserverLocator.getObserver(e, t, i, this) : this._dirtyChecker.createProperty(e, t));
       }
-      return new VP(e, t);
+      return new WP(e, t);
     }
     // /** @internal */
     // private _createComputedObserver(obj: object, key: PropertyKey, pd: PropertyDescriptor, useProxy?: boolean) {
@@ -5707,10 +5707,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return null;
     }
   }
-  const jP = (n) => {
+  const zP = (n) => {
     let e;
     return Qn(n) ? e = ab(n) : eu(n) ? e = KC(n) : Kg(n) && (e = GC(n)), e;
-  }, TN = Object.getPrototypeOf, MN = Object.getOwnPropertyDescriptor, g6 = (n) => {
+  }, MN = Object.getPrototypeOf, AN = Object.getOwnPropertyDescriptor, pj = (n) => {
     let e = n.$observers;
     return e === void 0 && To(n, "$observers", {
       enumerable: !1,
@@ -5729,9 +5729,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         if (!this.running) {
           ++this.runCount, this.running = !0, this.queued = !1, ++this.obs.version;
           try {
-            (i = this._cleanupTask) == null || i.call(void 0), LP(this), this._cleanupTask = this.fn(this);
+            (i = this._cleanupTask) == null || i.call(void 0), $P(this), this._cleanupTask = this.fn(this);
           } finally {
-            this.obs.clear(), this.running = !1, $P(this);
+            this.obs.clear(), this.running = !1, FP(this);
           }
           if (this.queued) {
             if (this.runCount > this.maxRunCount)
@@ -5756,7 +5756,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   }
   No(VX, null);
-  class AN {
+  class PN {
     constructor(e, t, i, s) {
       this.oL = t, this._value = void 0, this.boundFn = !1, this._scope = e, this.ast = i, this._callback = s;
     }
@@ -5775,7 +5775,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.obs.clearAll(), this._value = void 0;
     }
   }
-  No(AN, null), jq(AN);
+  No(PN, null), jq(PN);
   const WX = /* @__PURE__ */ (() => {
     function n(r) {
       return r.$observers === void 0 && To(r, "$observers", { value: {} }), r.$observers;
@@ -5784,7 +5784,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     function t(r, o) {
       s.mixed || (s.mixed = !0, Wr(s, null));
       let a = !1, l;
-      if (typeof r == "object" ? l = r : r != null ? (l = { name: r }, a = !0) : l = qW, arguments.length === 0)
+      if (typeof r == "object" ? l = r : r != null ? (l = { name: r }, a = !0) : l = XW, arguments.length === 0)
         return function(h, d) {
           if (d.kind !== "field")
             throw Ge(
@@ -5864,22 +5864,22 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
     return s.mixed = !1, t;
-  })(), Ep = "pending", sC = "running", P1 = "completed", Hv = "canceled", I1 = /* @__PURE__ */ new Map(), PN = (n) => () => {
+  })(), Ep = "pending", sC = "running", P1 = "completed", Hv = "canceled", I1 = /* @__PURE__ */ new Map(), IN = (n) => () => {
     throw gd(`AUR1005: The PLATFORM did not receive a valid reference to the global function '${n}'.`);
   };
-  class zP {
+  class UP {
     constructor(e, t = {}) {
       var i, s;
       this.macroTaskRequested = !1, this.macroTaskHandle = -1, this.globalThis = e, "decodeURI decodeURIComponent encodeURI encodeURIComponent Date Reflect console".split(" ").forEach((r) => {
         this[r] = r in t ? t[r] : e[r];
       }), "clearInterval clearTimeout queueMicrotask setInterval setTimeout".split(" ").forEach((r) => {
         var o;
-        this[r] = r in t ? t[r] : ((o = e[r]) == null ? void 0 : o.bind(e)) ?? PN(r);
-      }), this.performanceNow = "performanceNow" in t ? t.performanceNow : ((s = (i = e.performance) == null ? void 0 : i.now) == null ? void 0 : s.bind(e.performance)) ?? PN("performance.now"), this.flushMacroTask = this.flushMacroTask.bind(this), this.taskQueue = new UP(this, this.requestMacroTask.bind(this), this.cancelMacroTask.bind(this));
+        this[r] = r in t ? t[r] : ((o = e[r]) == null ? void 0 : o.bind(e)) ?? IN(r);
+      }), this.performanceNow = "performanceNow" in t ? t.performanceNow : ((s = (i = e.performance) == null ? void 0 : i.now) == null ? void 0 : s.bind(e.performance)) ?? IN("performance.now"), this.flushMacroTask = this.flushMacroTask.bind(this), this.taskQueue = new YP(this, this.requestMacroTask.bind(this), this.cancelMacroTask.bind(this));
     }
     static getOrCreate(e, t = {}) {
       let i = I1.get(e);
-      return i === void 0 && I1.set(e, i = new zP(e, t)), i;
+      return i === void 0 && I1.set(e, i = new UP(e, t)), i;
     }
     static set(e, t) {
       I1.set(e, t);
@@ -5894,7 +5894,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.macroTaskHandle = -1, this.macroTaskRequested === !0 && (this.macroTaskRequested = !1, this.taskQueue.flush());
     }
   }
-  class UP {
+  class YP {
     get isEmpty() {
       return this._pendingAsyncCount === 0 && this._processing.length === 0 && this._pending.length === 0 && this._delayed.length === 0;
     }
@@ -5959,7 +5959,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
      * If `yield()` is called multiple times in a row when there are one or more persistent tasks in the queue, each call will await exactly one cycle of those tasks.
      */
     async yield() {
-      this._tracer.enabled && this._tracer.enter(this, "yield"), this.isEmpty ? this._tracer.enabled && this._tracer.leave(this, "yield empty") : (this._yieldPromise === void 0 && (this._tracer.enabled && this._tracer.trace(this, "yield - creating promise"), this._yieldPromise = b6()), await this._yieldPromise, this._tracer.enabled && this._tracer.leave(this, "yield task"));
+      this._tracer.enabled && this._tracer.enter(this, "yield"), this.isEmpty ? this._tracer.enabled && this._tracer.leave(this, "yield empty") : (this._yieldPromise === void 0 && (this._tracer.enabled && this._tracer.trace(this, "yield - creating promise"), this._yieldPromise = wj()), await this._yieldPromise, this._tracer.enabled && this._tracer.leave(this, "yield task"));
     }
     queueTask(e, t) {
       this._tracer.enabled && this._tracer.enter(this, "queueTask");
@@ -6034,7 +6034,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (e === void 0)
         switch (this._status) {
           case Ep: {
-            const t = this._result = b6();
+            const t = this._result = wj();
             return this._resolve = t.resolve, this._reject = t.reject, t;
           }
           case sC:
@@ -6105,7 +6105,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.log(`${"  ".repeat(this.depth)}- `, e, t);
     }
     log(e, t, i) {
-      if (t instanceof UP) {
+      if (t instanceof YP) {
         const s = t._processing.length, r = t._pending.length, o = t._delayed.length, a = t._flushRequested, l = !!t._suspenderTask, c = `processing=${s} pending=${r} delayed=${o} flushReq=${a} susTask=${l}`;
         this.console.log(`${e}[Q.${i}] ${c}`);
       } else {
@@ -6120,14 +6120,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     persistent: !1,
     suspend: !1
   };
-  let p6, m6;
+  let mj, bj;
   const GX = (n, e) => {
-    p6 = n, m6 = e;
-  }, b6 = () => {
+    mj = n, bj = e;
+  }, wj = () => {
     const n = new Promise(GX);
-    return n.resolve = p6, n.reject = m6, n;
+    return n.resolve = mj, n.reject = bj, n;
   }, O1 = (n) => n.persistent, KX = () => gd("AUR1006: Invalid arguments: preempt cannot be combined with a greater-than-zero delay"), qX = () => gd("AUR1007: Invalid arguments: preempt cannot be combined with persistent"), gd = (n) => new Error(n);
-  class zc extends zP {
+  class zc extends UP {
     static getOrCreate(e, t = {}) {
       let i = zc._lookup.get(e);
       return i === void 0 && zc._lookup.set(e, i = new zc(e, t)), i;
@@ -6166,27 +6166,27 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           s = !1, r > -1 && (this.cancelAnimationFrame(r), r = -1);
         }, l = () => {
           r = -1, s === !0 && (s = !1, c.flush());
-        }, c = new UP(this, o, a);
+        }, c = new YP(this, o, a);
         return c;
       })();
     }
   }
   zc._lookup = /* @__PURE__ */ new WeakMap();
-  const { default: YP, oneTime: k_, toView: zn, fromView: Xl, twoWay: w6 } = $w, es = nc.get, H_ = nc.has, Io = nc.define, { annotation: XX } = YW, sc = XX.keyFor, Bw = Object, pd = String, v6 = Bw.prototype, Vh = v6.hasOwnProperty, rc = Bw.freeze, y6 = Bw.assign, C6 = Bw.getOwnPropertyNames, GP = Bw.keys, IN = /* @__PURE__ */ Zt(), hM = (n, e, t) => {
-    if (IN[e] === !0)
+  const { default: GP, oneTime: k_, toView: zn, fromView: Xl, twoWay: vj } = $w, es = nc.get, H_ = nc.has, Io = nc.define, { annotation: XX } = GW, sc = XX.keyFor, Bw = Object, pd = String, yj = Bw.prototype, Vh = yj.hasOwnProperty, rc = Bw.freeze, Cj = Bw.assign, Sj = Bw.getOwnPropertyNames, KP = Bw.keys, ON = /* @__PURE__ */ Zt(), hM = (n, e, t) => {
+    if (ON[e] === !0)
       return !0;
     if (!Ct(e))
       return !1;
     const i = e.slice(0, 5);
-    return IN[e] = i === "aria-" || i === "data-" || t.isStandardSvgAttribute(n, e);
+    return ON[e] = i === "aria-" || i === "data-" || t.isStandardSvgAttribute(n, e);
   }, dM = (n) => {
     throw n;
-  }, S6 = Reflect.defineProperty, nr = (n, e, t) => (S6(n, e, {
+  }, _j = Reflect.defineProperty, nr = (n, e, t) => (_j(n, e, {
     enumerable: !1,
     configurable: !0,
     writable: !0,
     value: t
-  }), t), _6 = (n, e, t) => n.addSignalListener(e, t), R6 = (n, e, t) => n.removeSignalListener(e, t), QX = "Interpolation", ZX = "IsIterator", JX = "IsFunction", Ha = "IsProperty", ON = "pending", k1 = "running", KP = DP.Observer, Ru = DP.Node, ja = DP.Layout, Ce = (n, ...e) => new Error(`AUR${pd(n).padStart(4, "0")}: ${tQ(n, ...e)}`), eQ = {
+  }), t), Rj = (n, e, t) => n.addSignalListener(e, t), xj = (n, e, t) => n.removeSignalListener(e, t), QX = "Interpolation", ZX = "IsIterator", JX = "IsFunction", Ha = "IsProperty", kN = "pending", k1 = "running", qP = NP.Observer, Ru = NP.Node, ja = NP.Layout, Ce = (n, ...e) => new Error(`AUR${pd(n).padStart(4, "0")}: ${tQ(n, ...e)}`), eQ = {
     99: "Method {{0}} not implemented",
     101: 'Ast eval error: binding behavior "{{0}}" could not be found. Did you forget to register it as a dependency?',
     102: 'Ast eval error: binding behavior "{{0}}" already applied.',
@@ -6349,7 +6349,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return "";
     }
   }
-  function kN(n, e) {
+  function HN(n, e) {
     let t;
     function i(s, r) {
       var c;
@@ -6412,7 +6412,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         e[o] = a instanceof Hl ? a : Hl.create(o, a === !0 ? {} : a);
       }
       function r(o) {
-        t(o) ? o.forEach((a) => Ct(a) ? i(a) : s(a.name, a)) : o instanceof Hl ? e[o.name] = o : o !== void 0 && GP(o).forEach((a) => s(a, o[a]));
+        t(o) ? o.forEach((a) => Ct(a) ? i(a) : s(a.name, a)) : o instanceof Hl ? e[o.name] = o : o !== void 0 && KP(o).forEach((a) => s(a, o[a]));
       }
       return n.forEach(r), e;
     },
@@ -6438,7 +6438,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     static create(e, t = {}) {
       const i = t.mode ?? zn;
-      return new Hl(t.attribute ?? jW(e), t.callback ?? `${e}Changed`, Ct(i) ? $w[i] ?? YP : i, t.primary ?? !1, t.name ?? e, t.set ?? iQ(t));
+      return new Hl(t.attribute ?? zW(e), t.callback ?? `${e}Changed`, Ct(i) ? $w[i] ?? GP : i, t.primary ?? !1, t.name ?? e, t.set ?? iQ(t));
     }
   }
   const fM = {
@@ -6486,14 +6486,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     static create(e, t) {
       let i, s;
-      return Ct(e) ? (i = e, s = { name: i }) : (i = e.name, s = e), new lb(t, Lc(HN(t, "name"), i), ni(HN(t, "aliases"), s.aliases, t.aliases), x6.keyFrom(i));
+      return Ct(e) ? (i = e, s = { name: i }) : (i = e.name, s = e), new lb(t, Lc(DN(t, "name"), i), ni(DN(t, "aliases"), s.aliases, t.aliases), Ej.keyFrom(i));
     }
     register(e, t) {
       const i = this.Type, s = typeof t == "string" ? cb(t) : this.key, r = this.aliases;
       e.has(s, !1) ? console.warn(`[DEV:aurelia] ${Ce(156, this.name)}`) : e.register(e.has(i, !1) ? null : za(i, i), cu(i, s), ...r.map((o) => cu(i, cb(o))));
     }
   }
-  const Lr = "binding-behavior", Uf = /* @__PURE__ */ kd(Lr), HN = (n, e) => es(sc(e), n), cb = (n) => `${Uf}:${n}`, x6 = /* @__PURE__ */ rc({
+  const Lr = "binding-behavior", Uf = /* @__PURE__ */ kd(Lr), DN = (n, e) => es(sc(e), n), cb = (n) => `${Uf}:${n}`, Ej = /* @__PURE__ */ rc({
     name: Uf,
     keyFrom: cb,
     isType(n) {
@@ -6531,32 +6531,32 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       t.mode = H1.get(t), H1.delete(t);
     }
   }
-  class E6 extends N_ {
+  class Tj extends N_ {
     get mode() {
       return k_;
     }
   }
-  E6.$au = D_("oneTime");
-  class T6 extends N_ {
+  Tj.$au = D_("oneTime");
+  class Mj extends N_ {
     get mode() {
       return zn;
     }
   }
-  T6.$au = D_("toView");
-  class M6 extends N_ {
+  Mj.$au = D_("toView");
+  class Aj extends N_ {
     get mode() {
       return Xl;
     }
   }
-  M6.$au = D_("fromView");
-  class A6 extends N_ {
+  Aj.$au = D_("fromView");
+  class Pj extends N_ {
     get mode() {
-      return w6;
+      return vj;
     }
   }
-  A6.$au = D_("twoWay");
+  Pj.$au = D_("twoWay");
   const D1 = /* @__PURE__ */ new WeakMap(), lQ = 200;
-  class P6 {
+  class Ij {
     constructor() {
       this._platform = fe(Xg);
     }
@@ -6576,7 +6576,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (i = D1.get(t)) == null || i.dispose(), D1.delete(t);
     }
   }
-  P6.$au = {
+  Ij.$au = {
     type: Lr,
     name: "debounce"
   };
@@ -6602,7 +6602,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (i = this.signals[e]) == null || i.delete(t);
     }
   }
-  class I6 {
+  class Oj {
     constructor() {
       this._lookup = /* @__PURE__ */ new Map(), this._signaler = fe(XC);
     }
@@ -6620,22 +6620,22 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._lookup.set(t, i);
       let s;
       for (s of i)
-        _6(this._signaler, s, t);
+        Rj(this._signaler, s, t);
     }
     unbind(e, t) {
       const i = this._lookup.get(t);
       this._lookup.delete(t);
       let s;
       for (s of i)
-        R6(this._signaler, s, t);
+        xj(this._signaler, s, t);
     }
   }
-  I6.$au = {
+  Oj.$au = {
     type: Lr,
     name: "signal"
   };
   const N1 = /* @__PURE__ */ new WeakMap(), uQ = 200;
-  class O6 {
+  class kj {
     constructor() {
       ({ performanceNow: this._now, taskQueue: this._taskQueue } = fe(Xg));
     }
@@ -6655,7 +6655,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (i = N1.get(t)) == null || i.dispose(), N1.delete(t);
     }
   }
-  O6.$au = {
+  kj.$au = {
     type: Lr,
     name: "throttle"
   };
@@ -6685,7 +6685,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const r = Lc(ml(t, "defaultBindingMode"), s.defaultBindingMode, t.defaultBindingMode, zn);
       for (const o of Object.values(Ks.from(s.bindables)))
         Ks._add(o, t);
-      return new md(t, Lc(ml(t, "name"), i), ni(ml(t, "aliases"), s.aliases, t.aliases), vg(i), Ct(r) ? $w[r] ?? YP : r, Lc(ml(t, "isTemplateController"), s.isTemplateController, t.isTemplateController, !1), Ks.from(...Ks.getAll(t), ml(t, "bindables"), t.bindables, s.bindables), Lc(ml(t, "noMultiBindings"), s.noMultiBindings, t.noMultiBindings, !1), ni(gM.getDefinitions(t), t.watches), ni(ml(t, "dependencies"), s.dependencies, t.dependencies), Lc(ml(t, "containerStrategy"), s.containerStrategy, t.containerStrategy, "reuse"));
+      return new md(t, Lc(ml(t, "name"), i), ni(ml(t, "aliases"), s.aliases, t.aliases), vg(i), Ct(r) ? $w[r] ?? GP : r, Lc(ml(t, "isTemplateController"), s.isTemplateController, t.isTemplateController, !1), Ks.from(...Ks.getAll(t), ml(t, "bindables"), t.bindables, s.bindables), Lc(ml(t, "noMultiBindings"), s.noMultiBindings, t.noMultiBindings, !1), ni(gM.getDefinitions(t), t.watches), ni(ml(t, "dependencies"), s.dependencies, t.dependencies), Lc(ml(t, "containerStrategy"), s.containerStrategy, t.containerStrategy, "reuse"));
     }
     register(e, t) {
       const i = this.Type, s = typeof t == "string" ? vg(t) : this.key, r = this.aliases;
@@ -6699,10 +6699,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   const ts = "custom-attribute", Hg = /* @__PURE__ */ kd(ts), vg = (n) => `${Hg}:${n}`, ml = (n, e) => es(sc(e), n), hQ = (n) => {
     var e;
     return Lt(n) && (H_(Hg, n) || ((e = n.$au) == null ? void 0 : e.type) === ts);
-  }, k6 = (n, e) => og(n, vg(e)) ?? void 0, qP = (n, e) => {
+  }, Hj = (n, e) => og(n, vg(e)) ?? void 0, XP = (n, e) => {
     const t = md.create(n, e), i = t.Type;
     return Io(t, i, Hg, _a), i;
-  }, XP = (n) => {
+  }, QP = (n) => {
     const e = es(Hg, n) ?? uu(n, ts, md.create);
     if (e === void 0)
       throw Ce(759, n);
@@ -6712,7 +6712,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (Ct(e))
       t = vg(e), i = e;
     else {
-      const r = XP(e);
+      const r = QP(e);
       t = r.key, i = r.name;
     }
     let s = n;
@@ -6723,14 +6723,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       s = JC(s);
     }
     return null;
-  }, QP = /* @__PURE__ */ rc({
+  }, ZP = /* @__PURE__ */ rc({
     name: Hg,
     keyFrom: vg,
     isType: hQ,
-    for: k6,
+    for: Hj,
     closest: dQ,
-    define: qP,
-    getDefinition: XP,
+    define: XP,
+    getDefinition: QP,
     annotate(n, e, t) {
       Io(t, n, sc(e));
     },
@@ -6745,7 +6745,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.definition = e, this.instance = t;
     }
   }
-  class ZP {
+  class JP {
     constructor(e, t) {
       this.Type = e, this.propertyNames = t;
     }
@@ -6755,15 +6755,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     static create(e, t) {
       const i = /* @__PURE__ */ new Set();
       let s = t.prototype;
-      for (; s !== v6; ) {
-        for (const r of C6(s))
+      for (; s !== yj; ) {
+        for (const r of Sj(s))
           r !== "constructor" && !r.startsWith("_") && i.add(r);
         s = Object.getPrototypeOf(s);
       }
-      return new ZP(t, i);
+      return new JP(t, i);
     }
   }
-  const DN = /* @__PURE__ */ (() => {
+  const NN = /* @__PURE__ */ (() => {
     const n = /* @__PURE__ */ new WeakMap(), e = /* @__PURE__ */ new WeakMap();
     return rc({
       // name: lhBaseName,
@@ -6771,7 +6771,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
        * @param def - Placeholder for future extensions. Currently always an empty object.
        */
       define(t, i) {
-        const s = ZP.create(t, i), r = s.Type;
+        const s = JP.create(t, i), r = s.Type;
         return e.set(r, s), {
           register(o) {
             za(tf, r).register(o);
@@ -6806,14 +6806,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     static create(e, t) {
       let i, s;
-      return Ct(e) ? (i = e, s = { name: i }) : (i = e.name, s = e), new ub(t, Lc(pM(t, "name"), i), ni(pM(t, "aliases"), s.aliases, t.aliases), H6.keyFrom(i));
+      return Ct(e) ? (i = e, s = { name: i }) : (i = e.name, s = e), new ub(t, Lc(pM(t, "name"), i), ni(pM(t, "aliases"), s.aliases, t.aliases), Dj.keyFrom(i));
     }
     register(e, t) {
       const i = this.Type, s = typeof t == "string" ? hb(t) : this.key, r = this.aliases;
       e.has(s, !1) ? console.warn(`[DEV:aurelia] ${Ce(155, this.name)}`) : e.register(e.has(i, !1) ? null : za(i, i), cu(i, s), ...r.map((o) => cu(i, hb(o))));
     }
   }
-  const tg = "value-converter", Yf = /* @__PURE__ */ kd(tg), pM = (n, e) => es(sc(e), n), hb = (n) => `${Yf}:${n}`, H6 = rc({
+  const tg = "value-converter", Yf = /* @__PURE__ */ kd(tg), pM = (n, e) => es(sc(e), n), hb = (n) => `${Yf}:${n}`, Dj = rc({
     name: Yf,
     keyFrom: hb,
     isType(n) {
@@ -6876,7 +6876,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     function r(d, f) {
       let g = t.get(d);
-      return g == null && t.set(d, g = new n()), g[f] ?? (g[f] = x6.get(d.l, f));
+      return g == null && t.set(d, g = new n()), g[f] ?? (g[f] = Ej.get(d.l, f));
     }
     function o(d, f, g) {
       var w;
@@ -6895,7 +6895,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     function l(d, f) {
       let g = e.get(d);
-      return g == null && e.set(d, g = new n()), g[f] ?? (g[f] = H6.get(d.l, f));
+      return g == null && e.set(d, g = new n()), g[f] ?? (g[f] = Dj.get(d.l, f));
     }
     function c(d) {
       const f = l(this, d);
@@ -6967,7 +6967,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         a == null || a.cancel(), o == null || o.cancel(), a = o = void 0;
       };
       return d.flush = () => {
-        c = (o == null ? void 0 : o.status) === ON, f(), c && h();
+        c = (o == null ? void 0 : o.status) === kN, f(), c && h();
       }, d;
     }, t = (i, s, r) => {
       let o, a, l = 0, c = 0, u, h = !1;
@@ -6979,7 +6979,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         a == null || a.cancel(), o == null || o.cancel(), a = o = void 0;
       };
       return p.flush = () => {
-        h = (o == null ? void 0 : o.status) === ON, m(), h && g();
+        h = (o == null ? void 0 : o.status) === kN, m(), h && g();
       }, p;
     };
     return (i, s) => {
@@ -6991,9 +6991,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           );
         n.add(this);
         const o = s(this, r), a = r.signals, l = a.length > 0 ? this.get(XC) : null, c = this[o], u = (...f) => c.call(this, ...f), h = r.type === "debounce" ? e(r, u, this) : t(r, u, this), d = l ? { handleChange: h.flush } : null;
-        return this[o] = h, l && a.forEach((f) => _6(l, f, d)), {
+        return this[o] = h, l && a.forEach((f) => Rj(l, f, d)), {
           dispose: () => {
-            l && a.forEach((f) => R6(l, f, d)), n.delete(this), h.dispose(), delete this[o];
+            l && a.forEach((f) => xj(l, f, d)), n.delete(this), h.dispose(), delete this[o];
           }
         };
       });
@@ -7386,7 +7386,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   ng.mix = xu(function() {
     Dd(ng), Nd(ng, () => "callSource"), oc(ng);
   });
-  const L_ = /* @__PURE__ */ Nn("IEventModifier"), D6 = /* @__PURE__ */ Nn("IKeyMapping", (n) => n.instance({
+  const L_ = /* @__PURE__ */ Nn("IEventModifier"), Nj = /* @__PURE__ */ Nn("IKeyMapping", (n) => n.instance({
     meta: rc(["ctrl", "alt", "shift", "meta"]),
     keys: {
       escape: "Escape",
@@ -7400,12 +7400,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }, {})
     }
   }));
-  class JP {
+  class eI {
     constructor() {
-      this.type = ["click", "mousedown", "mousemove", "mouseup", "dblclick", "contextmenu"], this._mapping = fe(D6), this._mouseButtons = ["left", "middle", "right"];
+      this.type = ["click", "mousedown", "mousemove", "mouseup", "dblclick", "contextmenu"], this._mapping = fe(Nj), this._mouseButtons = ["left", "middle", "right"];
     }
     static register(e) {
-      e.register(za(L_, JP));
+      e.register(za(L_, eI));
     }
     getHandler(e) {
       const t = e.split(/[:+.]/);
@@ -7434,12 +7434,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
   }
-  class eI {
+  class tI {
     constructor() {
-      this._mapping = fe(D6), this.type = ["keydown", "keyup"];
+      this._mapping = fe(Nj), this.type = ["keydown", "keyup"];
     }
     static register(e) {
-      e.register(za(L_, eI));
+      e.register(za(L_, tI));
     }
     getHandler(e) {
       const t = e.split(/[:+.]/);
@@ -7467,12 +7467,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
   }
-  class tI {
+  class nI {
     constructor() {
       this.type = ["$ALL"];
     }
     static register(e) {
-      e.register(za(L_, tI));
+      e.register(za(L_, nI));
     }
     getHandler(e) {
       const t = e.split(/[:+.]/);
@@ -7493,15 +7493,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
   }
-  const N6 = /* @__PURE__ */ Nn("IEventModifierHandler", (n) => n.instance({
+  const Lj = /* @__PURE__ */ Nn("IEventModifierHandler", (n) => n.instance({
     getHandler: () => (console.warn("No event modifier handler registered"), null)
   }));
-  class nI {
+  class iI {
     constructor() {
-      this._reg = fe(SP(L_)).reduce((e, t) => ((Qn(t.type) ? t.type : [t.type]).forEach((s) => e[s] = t), e), {});
+      this._reg = fe(_P(L_)).reduce((e, t) => ((Qn(t.type) ? t.type : [t.type]).forEach((s) => e[s] = t), e), {});
     }
     static register(e) {
-      e.register(za(N6, nI));
+      e.register(za(Lj, iI));
     }
     getHandler(e, t) {
       var i;
@@ -7510,7 +7510,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   const xQ = {
     register(n) {
-      n.register(nI, JP, eI, tI);
+      n.register(iI, eI, tI, nI);
     }
   }, hr = /* @__PURE__ */ Nn("IViewFactory");
   class $_ {
@@ -7546,8 +7546,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     let s = 0;
     for (; i > s; )
       n.insertBefore(t[s], e), ++s;
-  }, L6 = (n, e) => new n.ownerDocument.defaultView.MutationObserver(e), TQ = (n) => n.nodeType === 1, $6 = "default", MQ = "au-slot", F6 = /* @__PURE__ */ Nn("IAuSlotsInfo");
-  class B6 {
+  }, $j = (n, e) => new n.ownerDocument.defaultView.MutationObserver(e), TQ = (n) => n.nodeType === 1, Fj = "default", MQ = "au-slot", Bj = /* @__PURE__ */ Nn("IAuSlotsInfo");
+  class Vj {
     constructor(e) {
       this.projectedSlots = e;
     }
@@ -7669,7 +7669,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     _createBindings(e, t) {
       var o, a;
       let i;
-      if (!BW(e)) {
+      if (!VW(e)) {
         console.warn(`[DEV:aurelia] $bindable spread is given a non object for properties: "${this.targetKeys.join(", ")}" of ${this.target.constructor.name}`);
         for (i in this._bindingCache)
           (o = this._bindingCache[i]) == null || o.unbind();
@@ -7685,33 +7685,33 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     Dd(ma), Nd(ma, () => "updateTarget"), No(ma, null), oc(ma);
   });
   ma._astCache = {};
-  const NN = (n, e, t, i) => {
+  const LN = (n, e, t, i) => {
     n.addEventListener(e, t, i);
-  }, LN = (n, e, t, i) => {
+  }, $N = (n, e, t, i) => {
     n.removeEventListener(e, t, i);
-  }, iI = (n) => {
+  }, sI = (n) => {
     let e;
     const t = n.prototype;
     nr(t, "subscribe", function(i) {
       var s;
       if (this.subs.add(i) && this.subs.count === 1) {
         for (e of this._config.events)
-          NN(this._el, e, this);
+          LN(this._el, e, this);
         this._listened = !0, (s = this._start) == null || s.call(this);
       }
     }), nr(t, "unsubscribe", function(i) {
       var s;
       if (this.subs.remove(i) && this.subs.count === 0) {
         for (e of this._config.events)
-          LN(this._el, e, this);
+          $N(this._el, e, this);
         this._listened = !1, (s = this._stop) == null || s.call(this);
       }
     }), nr(t, "useConfig", function(i) {
       if (this._config = i, this._listened) {
         for (e of this._config.events)
-          LN(this._el, e, this);
+          $N(this._el, e, this);
         for (e of this._config.events)
-          NN(this._el, e, this);
+          LN(this._el, e, this);
       }
     });
   }, B_ = (n) => {
@@ -7732,7 +7732,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     /** @internal */
     _flushChanges() {
-      const e = this._nameIndex, t = ++this._version, i = this.obj.classList, s = V6(this._value), r = s.length;
+      const e = this._nameIndex, t = ++this._version, i = this.obj.classList, s = Wj(this._value), r = s.length;
       let o = 0, a;
       if (r > 0)
         for (; o < r; o++)
@@ -7743,9 +7743,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   }
   B_(V_);
-  function V6(n) {
+  function Wj(n) {
     if (Ct(n))
-      return $N(n);
+      return FN(n);
     if (typeof n != "object")
       return ct;
     if (Qn(n)) {
@@ -7754,7 +7754,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         const s = [];
         let r = 0;
         for (; i > r; ++r)
-          s.push(...V6(n[r]));
+          s.push(...Wj(n[r]));
         return s;
       } else
         return ct;
@@ -7762,25 +7762,25 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const e = [];
     let t;
     for (t in n)
-      n[t] && (t.includes(" ") ? e.push(...$N(t)) : e.push(t));
+      n[t] && (t.includes(" ") ? e.push(...FN(t)) : e.push(t));
     return e;
   }
-  function $N(n) {
+  function FN(n) {
     const e = n.match(/\S+/g);
     return e === null ? ct : e;
   }
-  const W6 = (n) => ({
+  const jj = (n) => ({
     $isResolver: !0,
     resolve(e, t) {
       return t.get(bd).controller.container.get(IG(n));
     }
-  }), j6 = /* @__PURE__ */ Nn("IRenderer");
+  }), zj = /* @__PURE__ */ Nn("IRenderer");
   function Ai(n, e) {
     var i;
     const t = n[i = Symbol.metadata] ?? (n[i] = /* @__PURE__ */ Object.create(null));
     return t[Ba] = {
       register(s) {
-        za(j6, n).register(s);
+        za(zj, n).register(s);
       }
     }, n;
   }
@@ -7804,7 +7804,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       case "component":
         return Jh(n).viewModel;
       default: {
-        const t = k6(n, e);
+        const t = Hj(n, e);
         if (t !== void 0)
           return t.viewModel;
         const i = Jh(n, { name: e });
@@ -7850,7 +7850,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         /* location         */
         g,
         /* SlotsInfo      */
-        h == null ? void 0 : new B6(GP(h))
+        h == null ? void 0 : new Vj(KP(h))
       );
       l = p.invoke(a.Type), c = sr.$el(
         /* own container       */
@@ -7880,13 +7880,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let a = e.container, l;
       switch (typeof i.res) {
         case "string":
-          if (l = QP.find(a, i.res), l == null)
+          if (l = ZP.find(a, i.res), l == null)
             throw Ce(753, i, e);
           break;
         default:
           l = i.res;
       }
-      const c = K6(
+      const c = qj(
         /* platform         */
         s,
         /* attr definition  */
@@ -7927,13 +7927,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let a = e.container, l;
       switch (typeof i.res) {
         case "string":
-          if (l = QP.find(a, i.res), l == null)
+          if (l = ZP.find(a, i.res), l == null)
             throw Ce(754, i, e);
           break;
         default:
           l = i.res;
       }
-      const c = this._rendering.getViewFactory(i.def, l.containerStrategy === "new" ? a.createChild({ inheritParentResources: !0 }) : a), u = tw(t), h = K6(
+      const c = this._rendering.getViewFactory(i.def, l.containerStrategy === "new" ? a.createChild({ inheritParentResources: !0 }) : a), u = tw(t), h = qj(
         /* platform         */
         s,
         /* attr definition  */
@@ -7990,7 +7990,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     render(e, t, i, s, r, o) {
       const a = e.container, l = new CQ(e, a, o, s.domQueue, Da(r, i.from, QX), W_(t), i.to, zn, e.strict ?? !1);
       if (i.to === "class" && l.target.nodeType > 0) {
-        const c = a.get(W6(QC));
+        const c = a.get(jj(QC));
         l.useAccessor(new V_(l.target, c));
       }
       e.addBinding(l);
@@ -8002,7 +8002,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     render(e, t, i, s, r, o) {
       const a = e.container, l = new ps(e, a, o, s.domQueue, Da(r, i.from, Ha), W_(t), i.to, i.mode, e.strict ?? !1);
       if (i.to === "class" && l.target.nodeType > 0) {
-        const c = a.get(W6(QC));
+        const c = a.get(jj(QC));
         l.useTargetObserver(new V_(l.target, c));
       }
       e.addBinding(l);
@@ -8031,7 +8031,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   })), WQ = /* @__PURE__ */ Ai(class {
     constructor() {
-      this.target = oi.listenerBinding, this._modifierHandler = fe(N6), this._defaultOptions = fe(VQ), ng.mix();
+      this.target = oi.listenerBinding, this._modifierHandler = fe(Lj), this._defaultOptions = fe(VQ), ng.mix();
     }
     render(e, t, i, s, r) {
       e.addBinding(new ng(e.container, Da(r, i.from, JX), t, i.to, new RQ(this._defaultOptions.prevent, i.capture, this._defaultOptions.onError), this._modifierHandler.getHandler(i.to, i.modifier), e.strict ?? !1));
@@ -8118,7 +8118,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     render(e, t, i, s, r, o) {
       const a = i.target;
       if (a === "$bindables")
-        e.addBinding(new ma(e, t.viewModel, GP(t.definition.bindables), r.parse(i.from, Ha), o, e.container, s.domQueue, e.strict ?? !1));
+        e.addBinding(new ma(e, t.viewModel, KP(t.definition.bindables), r.parse(i.from, Ha), o, e.container, s.domQueue, e.strict ?? !1));
       else
         throw Ce(820, a);
     }
@@ -8129,12 +8129,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     for (let s = 0; s < t; ++s)
       e.charCodeAt(s) === 32 ? (s !== i && n.add(e.slice(i, s)), i = s + 1) : s + 1 === t && n.add(e.slice(i));
   }
-  const z6 = "IController", U6 = "IInstruction", JQ = "IRenderLocation", Y6 = "ISlotsInfo";
+  const Uj = "IController", Yj = "IInstruction", JQ = "IRenderLocation", Gj = "ISlotsInfo";
   function eZ(n, e, t, i, s, r) {
     const o = e.container.createChild();
-    return sI(o, t, n), si(o, j_, new qi(z6, e)), si(o, Jg, new qi(U6, i)), si(o, ws, s == null ? X6 : new q6(s)), si(o, hr, Q6), si(o, F6, r == null ? Z6 : new qi(Y6, r)), o;
+    return rI(o, t, n), si(o, j_, new qi(Uj, e)), si(o, Jg, new qi(Yj, i)), si(o, ws, s == null ? Qj : new Xj(s)), si(o, hr, Zj), si(o, Bj, r == null ? Jj : new qi(Gj, r)), o;
   }
-  class G6 {
+  class Kj {
     get $isResolver() {
       return !0;
     }
@@ -8156,15 +8156,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return e;
     }
   }
-  function K6(n, e, t, i, s, r, o, a) {
+  function qj(n, e, t, i, s, r, o, a) {
     const l = t instanceof sr ? t : t.$controller, c = l.container.createChild();
-    return sI(c, i, n), si(c, j_, new qi(z6, l)), si(c, Jg, new qi(U6, s)), si(c, ws, o == null ? X6 : new qi(JQ, o)), si(c, hr, r == null ? Q6 : new G6(r)), si(
+    return rI(c, i, n), si(c, j_, new qi(Uj, l)), si(c, Jg, new qi(Yj, s)), si(c, ws, o == null ? Qj : new qi(JQ, o)), si(c, hr, r == null ? Zj : new Kj(r)), si(
       c,
-      F6,
-      Z6
+      Bj,
+      Jj
     ), { vm: c.invoke(e.Type), ctn: c };
   }
-  class q6 {
+  class Xj {
     get name() {
       return "IRenderLocation";
     }
@@ -8178,10 +8178,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this._location;
     }
   }
-  const X6 = new q6(null), Q6 = new G6(null), Z6 = new qi(Y6, new B6(ct)), Eu = /* @__PURE__ */ Nn("IRendering", (n) => n.singleton(tZ));
+  const Qj = new Xj(null), Zj = new Kj(null), Jj = new qi(Gj, new Vj(ct)), Eu = /* @__PURE__ */ Nn("IRendering", (n) => n.singleton(tZ));
   class tZ {
     get renderers() {
-      return this._renderers ?? (this._renderers = this._ctn.getAll(j6, !1).reduce((e, t) => {
+      return this._renderers ?? (this._renderers = this._ctn.getAll(zj, !1).reduce((e, t) => {
         var i;
         return e[t.target] !== void 0 && console.warn(`[DEV:aurelia] Renderer for target ${t.target} already exists.`), e[i = t.target] ?? (e[i] = t), e;
       }, Zt()));
@@ -8243,8 +8243,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return e;
     }
   }
-  const FN = /* @__PURE__ */ Nn("IShadowDOMStyles"), nZ = /* @__PURE__ */ Nn("IShadowDOMGlobalStyles", (n) => n.instance({ applyTo: Ta })), { enter: iZ, exit: sZ } = Qq, { wrap: rZ, unwrap: oZ } = HX;
-  class J6 {
+  const BN = /* @__PURE__ */ Nn("IShadowDOMStyles"), nZ = /* @__PURE__ */ Nn("IShadowDOMGlobalStyles", (n) => n.instance({ applyTo: Ta })), { enter: iZ, exit: sZ } = Qq, { wrap: rZ, unwrap: oZ } = HX;
+  class e6 {
     get value() {
       return this._value;
     }
@@ -8278,7 +8278,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   }
-  No(J6, null);
+  No(e6, null);
   class bM {
     get value() {
       return this._value;
@@ -8336,7 +8336,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return (e = this.definition) == null ? void 0 : e.strict;
     }
     constructor(e, t, i, s, r, o, a) {
-      this.container = e, this.vmKind = t, this.definition = i, this.viewFactory = s, this.host = o, this.head = null, this.tail = null, this.next = null, this.parent = null, this.bindings = null, this.children = null, this.hasLockedScope = !1, this.scope = null, this.isBound = !1, this._isBindingDone = !1, this.hostController = null, this.mountTarget = ej, this.shadowRoot = null, this.nodes = null, this.location = null, this._lifecycleHooks = null, this.state = L1, this._fullyNamed = !1, this.$initiator = null, this.$resolve = void 0, this.$reject = void 0, this.$promise = void 0, this._activatingStack = 0, this._detachingStack = 0, this._unbindingStack = 0, this._vm = r, this._vmHooks = t === Fi ? ig.none : new ig(r), this.logger = null, this.debug = !1, this.location = a, this._rendering = e.root.get(Eu), this.coercion = t === Fi ? void 0 : e.get(cZ);
+      this.container = e, this.vmKind = t, this.definition = i, this.viewFactory = s, this.host = o, this.head = null, this.tail = null, this.next = null, this.parent = null, this.bindings = null, this.children = null, this.hasLockedScope = !1, this.scope = null, this.isBound = !1, this._isBindingDone = !1, this.hostController = null, this.mountTarget = t6, this.shadowRoot = null, this.nodes = null, this.location = null, this._lifecycleHooks = null, this.state = L1, this._fullyNamed = !1, this.$initiator = null, this.$resolve = void 0, this.$reject = void 0, this.$promise = void 0, this._activatingStack = 0, this._detachingStack = 0, this._unbindingStack = 0, this._vm = r, this._vmHooks = t === Fi ? ig.none : new ig(r), this.logger = null, this.debug = !1, this.location = a, this._rendering = e.root.get(Eu), this.coercion = t === Fi ? void 0 : e.get(cZ);
     }
     static getCached(e) {
       return gc.get(e);
@@ -8360,7 +8360,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return gc.get(t);
       if (r == null)
         try {
-          r = sj(t.constructor);
+          r = r6(t.constructor);
         } catch (c) {
           throw console.error(`[DEV:aurelia] Custom element definition not found for creating a controller with host: <${i.nodeName} /> and component ${t.constructor.name || "(Anonymous) class"}`), c;
         }
@@ -8380,8 +8380,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         i,
         /* location       */
         o
-      ), l = e.get(XW(bd));
-      return r.dependencies.length > 0 && e.register(...r.dependencies), si(e, bd, new qi("IHydrationContext", new tj(a, s, l))), gc.set(t, a), (s == null || s.hydrate !== !1) && a._hydrateCustomElement(s), a;
+      ), l = e.get(QW(bd));
+      return r.dependencies.length > 0 && e.register(...r.dependencies), si(e, bd, new qi("IHydrationContext", new n6(a, s, l))), gc.set(t, a), (s == null || s.hydrate !== !1) && a._hydrateCustomElement(s), a;
     }
     /**
      * Create a controller for a custom attribute based on a given set of parameters
@@ -8396,7 +8396,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     static $attr(e, t, i, s) {
       if (gc.has(t))
         return gc.get(t);
-      s = s ?? XP(t.constructor), si(e, s.Type, new qi(s.key, t, s.Type));
+      s = s ?? QP(t.constructor), si(e, s.Type, new qi(s.key, t, s.Type));
       const r = new sr(
         /* own ct         */
         e,
@@ -8447,7 +8447,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     _hydrateCustomElement(e) {
       this.logger = this.container.get(cd).root, this.debug = this.logger.config.level <= NG.debug, this.debug && (this.logger = this.logger.scopeTo(this.name));
       const t = this.container, i = this._vm, s = this.definition;
-      this.scope = ri.create(i, null, !0), s.watches.length > 0 && WN(this, t, s, i), BN(this, s, i), this._lifecycleHooks = DN.resolve(t), t.register(s.Type), s.injectable !== null && si(t, s.injectable, new qi("definition.injectable", i)), (e == null || e.hydrate !== !1) && (this._hydrate(e == null ? void 0 : e.hostController), this._hydrateChildren());
+      this.scope = ri.create(i, null, !0), s.watches.length > 0 && jN(this, t, s, i), VN(this, s, i), this._lifecycleHooks = NN.resolve(t), t.register(s.Type), s.injectable !== null && si(t, s.injectable, new qi("definition.injectable", i)), (e == null || e.hydrate !== !1) && (this._hydrate(e == null ? void 0 : e.hostController), this._hydrateChildren());
     }
     /** @internal */
     _hydrate(e) {
@@ -8475,12 +8475,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         this._compiledDef,
         /* host       */
         this.host
-      ), this._lifecycleHooks.created !== void 0 && this._lifecycleHooks.created.forEach(jN, this), this._vmHooks._created && (this.debug && this.logger.trace("invoking created() hook"), this._vm.created(this));
+      ), this._lifecycleHooks.created !== void 0 && this._lifecycleHooks.created.forEach(zN, this), this._vmHooks._created && (this.debug && this.logger.trace("invoking created() hook"), this._vm.created(this));
     }
     /** @internal */
     _hydrateCustomAttribute() {
       const e = this.definition, t = this._vm;
-      e.watches.length > 0 && WN(this, this.container, e, t), BN(this, e, t), t.$controller = this, this._lifecycleHooks = DN.resolve(this.container), this._lifecycleHooks.created !== void 0 && this._lifecycleHooks.created.forEach(jN, this), this._vmHooks._created && (this.debug && this.logger.trace("invoking created() hook"), this._vm.created(this));
+      e.watches.length > 0 && jN(this, this.container, e, t), VN(this, e, t), t.$controller = this, this._lifecycleHooks = NN.resolve(this.container), this._lifecycleHooks.created !== void 0 && this._lifecycleHooks.created.forEach(zN, this), this._vmHooks._created && (this.debug && this.logger.trace("invoking created() hook"), this._vm.created(this));
     }
     /** @internal */
     _hydrateSynthetic() {
@@ -8582,7 +8582,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           break;
         case Th: {
           const i = this.container;
-          (i.has(FN, !1) ? i.get(FN) : i.get(nZ)).applyTo(this.shadowRoot), this.nodes.appendTo(this.shadowRoot);
+          (i.has(BN, !1) ? i.get(BN) : i.get(nZ)).applyTo(this.shadowRoot), this.nodes.appendTo(this.shadowRoot);
           break;
         }
         case Mh:
@@ -8784,15 +8784,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   }
-  const gc = /* @__PURE__ */ new WeakMap(), ej = 0, Eh = 1, Th = 2, Mh = 3, aZ = rc({
-    none: ej,
+  const gc = /* @__PURE__ */ new WeakMap(), t6 = 0, Eh = 1, Th = 2, Mh = 3, aZ = rc({
+    none: t6,
     host: Eh,
     shadowRoot: Th,
     location: Mh
-  }), lZ = { optional: !0 }, cZ = OG(l6);
-  function BN(n, e, t) {
+  }), lZ = { optional: !0 }, cZ = OG(cj);
+  function VN(n, e, t) {
     var c, u;
-    const i = e.bindables, s = C6(i), r = s.length, o = n.container.get(tp), a = "propertiesChanged" in t;
+    const i = e.bindables, s = Sj(i), r = s.length, o = n.container.get(tp), a = "propertiesChanged" in t;
     if (r === 0)
       return;
     const l = a ? (() => {
@@ -8822,17 +8822,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   }
-  const VN = /* @__PURE__ */ new Map(), uZ = (n) => {
-    let e = VN.get(n);
-    return e == null && (e = new rb(n, 0), VN.set(n, e)), e;
+  const WN = /* @__PURE__ */ new Map(), uZ = (n) => {
+    let e = WN.get(n);
+    return e == null && (e = new rb(n, 0), WN.set(n, e)), e;
   };
-  function WN(n, e, t, i) {
+  function jN(n, e, t, i) {
     const s = e.get(tp), r = e.get(Qg), o = t.watches, a = n.vmKind === xr ? n.scope : ri.create(i, null, !0), l = o.length;
     let c, u, h, d = 0;
     for (; l > d; ++d) {
       if ({ expression: c, callback: u } = o[d], u = Lt(u) ? u : Reflect.get(i, u), !Lt(u))
         throw Ce(506, u);
-      Lt(c) ? n.addBinding(new J6(i, s, c, u, !0)) : (h = Ct(c) ? r.parse(c, Ha) : uZ(c), n.addBinding(new bM(a, e, s, h, u)));
+      Lt(c) ? n.addBinding(new e6(i, s, c, u, !0)) : (h = Ct(c) ? r.parse(c, Ha) : uZ(c), n.addBinding(new bM(a, e, s, h, u)));
     }
   }
   class ig {
@@ -8849,7 +8849,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return (n & ir) === ir && e.push("activating"), (n & $h) === $h && e.push("activated"), (n & db) === db && e.push("deactivating"), (n & sg) === sg && e.push("deactivated"), (n & rg) === rg && e.push("released"), (n & Ic) === Ic && e.push("disposed"), e.length === 0 ? "none" : e.join("|");
   }
   const j_ = /* @__PURE__ */ Nn("IController"), bd = /* @__PURE__ */ Nn("IHydrationContext");
-  class tj {
+  class n6 {
     constructor(e, t, i) {
       this.instruction = t, this.parent = i, this.controller = e;
     }
@@ -8857,7 +8857,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function fZ(n) {
     n.dispose();
   }
-  function jN(n) {
+  function zN(n) {
     n.instance.created(this._vm, this);
   }
   function gZ(n) {
@@ -8929,12 +8929,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       ZC.set(n, e);
   }
   function tw(n) {
-    if (nj(n))
+    if (i6(n))
       return n;
     const e = n.ownerDocument.createComment("au-end"), t = e.$start = n.ownerDocument.createComment("au-start"), i = n.parentNode;
     return i !== null && (i.replaceChild(e, n), i.insertBefore(t, e)), e;
   }
-  function nj(n) {
+  function i6(n) {
     return n.textContent === "au-end";
   }
   class B1 {
@@ -9004,18 +9004,18 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._isLinked = !1, this.next = void 0, this.ref = void 0;
     }
     link(e) {
-      this._isLinked = !0, nj(e) ? this.ref = e : (this.next = e, this._obtainRefNode());
+      this._isLinked = !0, i6(e) ? this.ref = e : (this.next = e, this._obtainRefNode());
     }
     /** @internal */
     _obtainRefNode() {
       this.next !== void 0 ? this.ref = this.next.firstChild : this.ref = void 0;
     }
   }
-  const sI = (n, e, t = n.get(Gr)) => (si(n, t.HTMLElement, si(n, t.Element, si(n, Vw, new qi("ElementResolver", e)))), n);
+  const rI = (n, e, t = n.get(Gr)) => (si(n, t.HTMLElement, si(n, t.Element, si(n, Vw, new qi("ElementResolver", e)))), n);
   function z_(n) {
     return function(e, t) {
       return t.addInitializer(function() {
-        ij(n, this);
+        s6(n, this);
       }), e;
     };
   }
@@ -9033,7 +9033,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         if (Ct(s))
           throw Ce(761, e);
         const r = to("name", s, wM);
-        Lt(s.Type) ? t = s.Type : t = rj(WW(r));
+        Lt(s.Type) ? t = s.Type : t = o6(jW(r));
         for (const o of Object.values(Ks.from(s.bindables)))
           Ks._add(o, t);
         return new ms(
@@ -9093,7 +9093,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, mr = () => null, W1 = () => {
   }, br = () => !1, j1 = () => !0, xZ = () => ct, wd = "custom-element", ki = /* @__PURE__ */ kd(wd), Gf = (n) => `${ki}:${n}`, wM = /* @__PURE__ */ ((n) => () => `unnamed-${++n}`)(0), EZ = (n, e, t) => {
     Io(t, n, sc(e));
-  }, ij = (n, e) => {
+  }, s6 = (n, e) => {
     const t = ms.create(n, e), i = t.Type;
     return Io(t, i, ki, _a), i;
   }, TZ = (n) => {
@@ -9135,7 +9135,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       t = JC(t);
     }
     throw Ce(765, n);
-  }, Ws = (n, e) => es(sc(e), n), sj = (n) => {
+  }, Ws = (n, e) => es(sc(e), n), r6 = (n) => {
     const e = es(ki, n) ?? uu(n, wd, ms.create);
     if (e == null)
       throw Ce(760, n);
@@ -9159,7 +9159,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     };
     return n;
-  }, rj = /* @__PURE__ */ function() {
+  }, o6 = /* @__PURE__ */ function() {
     const n = {
       value: "",
       writable: !1,
@@ -9169,33 +9169,33 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return function(t, i = e) {
       const s = class {
       };
-      return n.value = t, S6(s, "name", n), i !== e && y6(s.prototype, i), s;
+      return n.value = t, _j(s, "name", n), i !== e && Cj(s.prototype, i), s;
     };
   }(), rr = /* @__PURE__ */ rc({
     name: ki,
     keyFrom: Gf,
     isType: TZ,
     for: Jh,
-    define: ij,
-    getDefinition: sj,
+    define: s6,
+    getDefinition: r6,
     annotate: EZ,
     getAnnotation: Ws,
     generateName: wM,
     createInjectable: MZ,
-    generateType: rj,
+    generateType: o6,
     find(n, e) {
       const t = n.find(wd, e);
       return t == null ? null : es(ki, t) ?? uu(t, wd, ms.create) ?? null;
     }
-  }), oj = /* @__PURE__ */ Nn("ISVGAnalyzer", (n) => n.singleton(AZ));
+  }), a6 = /* @__PURE__ */ Nn("ISVGAnalyzer", (n) => n.singleton(AZ));
   class AZ {
     isStandardSvgAttribute(e, t) {
       return !1;
     }
   }
-  class aj {
+  class l6 {
     constructor() {
-      this.fns = [], this._tagAttrMap = Zt(), this._globalAttrMap = Zt(), this.svg = fe(oj), this.useMapping({
+      this.fns = [], this._tagAttrMap = Zt(), this._globalAttrMap = Zt(), this.svg = fe(a6), this.useMapping({
         LABEL: { for: "htmlFor" },
         IMG: { usemap: "useMap" },
         INPUT: {
@@ -9233,7 +9233,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         t = e[s], i = (o = this._tagAttrMap)[s] ?? (o[s] = Zt());
         for (r in t) {
           if (i[r] !== void 0)
-            throw zN(r, s);
+            throw UN(r, s);
           i[r] = t[r];
         }
       }
@@ -9246,7 +9246,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const t = this._globalAttrMap;
       for (const i in e) {
         if (t[i] !== void 0)
-          throw zN(i, "*");
+          throw UN(i, "*");
         t[i] = e[i];
       }
     }
@@ -9271,7 +9271,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return ((i = this._tagAttrMap[e.nodeName]) == null ? void 0 : i[t]) ?? this._globalAttrMap[t] ?? (hM(e, t, this.svg) ? t : null);
     }
   }
-  aj.register = Nw(y3);
+  l6.register = Nw(C3);
   function PZ(n, e) {
     switch (n.nodeName) {
       case "INPUT":
@@ -9298,12 +9298,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         }
     }
   }
-  function zN(n, e) {
+  function UN(n, e) {
     return Ce(719, n, e);
   }
   const IZ = {
     register(n) {
-      n.register(r6, aj, lj);
+      n.register(oj, l6, c6);
     }
   };
   class OZ {
@@ -9311,17 +9311,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.attrs = e, this.bindables = t, this.primary = i;
     }
   }
-  class lj {
+  class c6 {
     constructor() {
       this._resourceCache = /* @__PURE__ */ new WeakMap(), this._bindableCache = /* @__PURE__ */ new WeakMap();
     }
     el(e, t) {
       let i = this._resourceCache.get(e);
-      return i == null && this._resourceCache.set(e, i = new UN()), t in i._element ? i._element[t] : i._element[t] = rr.find(e, t);
+      return i == null && this._resourceCache.set(e, i = new YN()), t in i._element ? i._element[t] : i._element[t] = rr.find(e, t);
     }
     attr(e, t) {
       let i = this._resourceCache.get(e);
-      return i == null && this._resourceCache.set(e, i = new UN()), t in i._attr ? i._attr[t] : i._attr[t] = QP.find(e, t);
+      return i == null && this._resourceCache.set(e, i = new YN()), t in i._attr ? i._attr[t] : i._attr[t] = ZP.find(e, t);
     }
     bindables(e) {
       let t = this._bindableCache.get(e);
@@ -9336,13 +9336,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           } else !a && l == null && (l = r);
           s[c] = Hl.create(o, r);
         }
-        r == null && e.type === "custom-attribute" && (l = s.value = Hl.create("value", { mode: e.defaultBindingMode ?? YP })), this._bindableCache.set(e, t = new OZ(s, i, l ?? null));
+        r == null && e.type === "custom-attribute" && (l = s.value = Hl.create("value", { mode: e.defaultBindingMode ?? GP })), this._bindableCache.set(e, t = new OZ(s, i, l ?? null));
       }
       return t;
     }
   }
-  lj.register = Nw(o6);
-  class UN {
+  c6.register = Nw(aj);
+  class YN {
     constructor() {
       this._element = Zt(), this._attr = Zt();
     }
@@ -9363,7 +9363,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   }
   B_(nw);
-  class cj {
+  class u6 {
     constructor() {
       this.type = Ru | ja;
     }
@@ -9374,8 +9374,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       e == null ? t.removeAttribute(i) : t.setAttribute(i, e);
     }
   }
-  B_(cj);
-  const rC = /* @__PURE__ */ new cj();
+  B_(u6);
+  const rC = /* @__PURE__ */ new u6();
   class ed {
     /** @internal */
     static _getSelectedOptions(e) {
@@ -9393,7 +9393,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return e === t;
     }
     constructor(e, t, i, s) {
-      this.type = Ru | KP | ja, this._value = void 0, this._oldValue = void 0, this._hasChanges = !1, this._arrayObserver = void 0, this._nodeObserver = void 0, this._observing = !1, this._listened = !1, this._el = e, this._observerLocator = s, this._config = i;
+      this.type = Ru | qP | ja, this._value = void 0, this._oldValue = void 0, this._hasChanges = !1, this._arrayObserver = void 0, this._nodeObserver = void 0, this._observing = !1, this._listened = !1, this._el = e, this._observerLocator = s, this._config = i;
     }
     getValue() {
       return this._observing ? this._value : this._el.multiple ? ed._getSelectedOptions(this._el.options) : this._el.value;
@@ -9453,7 +9453,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
      * @internal
      */
     _start() {
-      (this._nodeObserver = L6(this._el, this._handleNodeChange.bind(this))).observe(this._el, {
+      (this._nodeObserver = $j(this._el, this._handleNodeChange.bind(this))).observe(this._el, {
         childList: !0,
         subtree: !0,
         characterData: !0
@@ -9494,9 +9494,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._oldValue = this._value, this.subs.notify(this._value, e);
     }
   }
-  iI(ed), Wr(ed, null);
+  sI(ed), Wr(ed, null);
   const kZ = "--";
-  class uj {
+  class h6 {
     constructor(e) {
       this.obj = e, this.type = Ru | ja, this._value = "", this._oldValue = "", this.styles = {}, this.version = 0, this._hasChanges = !1;
     }
@@ -9530,7 +9530,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
               s.push([i, t]);
               continue;
             }
-            s.push([jW(i), t]);
+            s.push([zW(i), t]);
             continue;
           }
           s.push(...this._getStyleTuples(t));
@@ -9579,10 +9579,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._value = this._oldValue = this.obj.style.cssText;
     }
   }
-  B_(uj);
+  B_(h6);
   class vM {
     constructor(e, t, i) {
-      this.type = Ru | KP | ja, this._value = "", this._oldValue = "", this._hasChanges = !1, this._listened = !1, this._el = e, this._key = t, this._config = i;
+      this.type = Ru | qP | ja, this._value = "", this._oldValue = "", this._hasChanges = !1, this._listened = !1, this._el = e, this._key = t, this._config = i;
     }
     getValue() {
       return this._value;
@@ -9611,10 +9611,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._oldValue = this._value, this.subs.notify(this._value, e);
     }
   }
-  iI(vM), Wr(vM, null);
-  const YN = (() => {
+  sI(vM), Wr(vM, null);
+  const GN = (() => {
     const n = "http://www.w3.org/1999/xlink", e = "http://www.w3.org/XML/1998/namespace", t = "http://www.w3.org/2000/xmlns/";
-    return y6(Zt(), {
+    return Cj(Zt(), {
       "xlink:actuate": ["actuate", n],
       "xlink:arcrole": ["arcrole", n],
       "xlink:href": ["href", n],
@@ -9627,11 +9627,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       xmlns: ["xmlns", t],
       "xmlns:xlink": ["xlink", t]
     });
-  })(), hj = new f6();
-  hj.type = Ru | ja;
-  class rI {
+  })(), d6 = new gj();
+  d6.type = Ru | ja;
+  class oI {
     constructor() {
-      this.allowDirtyCheck = !0, this._events = Zt(), this._globalEvents = Zt(), this._overrides = Zt(), this._globalOverrides = Zt(), this._locator = fe(TG), this._platform = fe(Gr), this._dirtyChecker = fe(BP), this.svg = fe(oj);
+      this.allowDirtyCheck = !0, this._events = Zt(), this._globalEvents = Zt(), this._overrides = Zt(), this._globalOverrides = Zt(), this._locator = fe(TG), this._platform = fe(Gr), this._dirtyChecker = fe(VP), this.svg = fe(a6);
       const e = ["change", "input"], t = { events: e, default: "" };
       this.useConfig({
         INPUT: {
@@ -9686,7 +9686,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     // deepscan-disable-nextline
     getAccessor(e, t, i) {
-      if (t in this._globalOverrides || t in (this._overrides[e.tagName] ?? qW))
+      if (t in this._globalOverrides || t in (this._overrides[e.tagName] ?? XW))
         return this.getObserver(e, t, i);
       switch (t) {
         case "src":
@@ -9702,8 +9702,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         case "popovertargetaction":
           return (t === "popovertarget" || t === "popovertargetaction") && e.nodeName !== "INPUT" && e.nodeName !== "BUTTON" && console.warn(`[aurelia] Popover API are only valid on <input> or <button>. Detected ${t} on <${e.nodeName.toLowerCase()}>`), rC;
         default: {
-          const s = YN[t];
-          return s !== void 0 ? nw.forNs(s[1]) : hM(e, t, this.svg) ? rC : hj;
+          const s = GN[t];
+          return s !== void 0 ? nw.forNs(s[1]) : hM(e, t, this.svg) ? rC : d6;
         }
       }
     }
@@ -9734,7 +9734,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       var o;
       const s = ((o = this._events[e.tagName]) == null ? void 0 : o[t]) ?? this._globalEvents[t];
       let r;
-      return s != null ? (r = new (s.type ?? vM)(e, t, s, i, this._locator), r.doNotCache || (g6(e)[t] = r), r) : null;
+      return s != null ? (r = new (s.type ?? vM)(e, t, s, i, this._locator), r.doNotCache || (pj(e)[t] = r), r) : null;
     }
     getObserver(e, t, i) {
       switch (t) {
@@ -9742,12 +9742,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           return new V_(e);
         case "css":
         case "style":
-          return new uj(e);
+          return new h6(e);
       }
       const s = this.getNodeObserver(e, t, i);
       if (s != null)
         return s;
-      const r = YN[t];
+      const r = GN[t];
       if (r !== void 0)
         return nw.forNs(r[1]);
       if (hM(e, t, this.svg))
@@ -9757,10 +9757,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           return this._dirtyChecker.createProperty(e, t);
         throw Ce(652, t);
       } else
-        return new VP(e, t);
+        return new WP(e, t);
     }
   }
-  rI.register = Nw(WP);
+  oI.register = Nw(jP);
   function HZ(n, e) {
     if (n instanceof Array)
       return e.getArrayObserver(n);
@@ -9772,12 +9772,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Nv(n, e) {
     throw Ce(653, n, e);
   }
-  function GN(n, e) {
+  function KN(n, e) {
     return n === e;
   }
   class yM {
     constructor(e, t, i, s) {
-      this.type = Ru | KP | ja, this._value = void 0, this._oldValue = void 0, this._collectionObserver = void 0, this._valueObserver = void 0, this._listened = !1, this._el = e, this.oL = s, this._config = i;
+      this.type = Ru | qP | ja, this._value = void 0, this._oldValue = void 0, this._collectionObserver = void 0, this._valueObserver = void 0, this._listened = !1, this._el = e, this.oL = s, this._config = i;
     }
     getValue() {
       return this._value;
@@ -9794,7 +9794,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     /** @internal */
     _synchronizeElement() {
-      const e = this._value, t = this._el, i = Vh.call(t, "model") ? t.model : t.value, s = t.type === "radio", r = t.matcher !== void 0 ? t.matcher : GN;
+      const e = this._value, t = this._el, i = Vh.call(t, "model") ? t.model : t.value, s = t.type === "radio", r = t.matcher !== void 0 ? t.matcher : KN;
       if (s)
         t.checked = !!r(e, i);
       else if (e === !0)
@@ -9822,7 +9822,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     handleEvent() {
       let e = this._oldValue = this._value;
-      const t = this._el, i = Vh.call(t, "model") ? t.model : t.value, s = t.checked, r = t.matcher !== void 0 ? t.matcher : GN;
+      const t = this._el, i = Vh.call(t, "model") ? t.model : t.value, s = t.checked, r = t.matcher !== void 0 ? t.matcher : KN;
       if (t.type === "checkbox") {
         if (Qn(e)) {
           const o = e.findIndex((a) => !!r(a, i));
@@ -9885,20 +9885,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (s = this._valueObserver ?? (this._valueObserver = ((t = e.$observers) == null ? void 0 : t.model) ?? ((i = e.$observers) == null ? void 0 : i.value))) == null || s.subscribe(this), (r = this._collectionObserver) == null || r.unsubscribe(this), this._collectionObserver = void 0, e.type === "checkbox" && ((o = this._collectionObserver = HZ(this._value, this.oL)) == null || o.subscribe(this));
     }
   }
-  iI(yM), Wr(yM, null);
+  sI(yM), Wr(yM, null);
   let U1;
-  class dj {
+  class f6 {
     bind(e, t) {
       if (!(t instanceof ps))
         throw Ce(9994, t);
       t.useTargetObserver(rC);
     }
   }
-  dj.$au = {
+  f6.$au = {
     type: Lr,
     name: "attr"
   };
-  class fj {
+  class g6 {
     bind(e, t) {
       if (!("handleEvent" in t))
         throw Ce(
@@ -9911,16 +9911,16 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       t.self = !1;
     }
   }
-  fj.$au = {
+  g6.$au = {
     type: Lr,
     name: "self"
   };
-  class gj {
+  class p6 {
     constructor() {
-      this._observerLocator = fe(tp), this._nodeObserverLocator = fe(WP);
+      this._observerLocator = fe(tp), this._nodeObserverLocator = fe(jP);
     }
     bind(e, t, ...i) {
-      if (!(this._nodeObserverLocator instanceof rI))
+      if (!(this._nodeObserverLocator instanceof oI))
         throw Ce(
           9993
           /* ErrorNames.update_trigger_behavior_not_supported */
@@ -9942,7 +9942,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       r.useConfig({ readonly: s.readonly, default: s.default, events: i }), t.useTargetObserver(r);
     }
   }
-  gj.$au = {
+  p6.$au = {
     type: Lr,
     name: "updateTrigger"
   };
@@ -9996,7 +9996,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   };
-  class pj {
+  class m6 {
     constructor() {
       this._factory = fe(hr);
     }
@@ -10013,7 +10013,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         );
     }
   }
-  pj.$au = {
+  m6.$au = {
     type: "custom-attribute",
     name: "else",
     isTemplateController: !0
@@ -10025,7 +10025,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     "BindingBehavior",
     "ValueConverter"
   ];
-  class mj {
+  class b6 {
     constructor() {
       this.views = [], this.key = null, this._oldViews = [], this._scopes = [], this._oldScopes = [], this._scopeMap = /* @__PURE__ */ new Map(), this._observer = void 0, this._observingInnerItems = !1, this._reevaluating = !1, this._innerItemsExpression = null, this._normalizedItems = void 0, this._hasDestructuredLocal = !1, this._location = fe(ws), this._parent = fe(j_), this._factory = fe(hr), this._resolver = fe($Z);
       const t = fe(Jg).props[0].props[0];
@@ -10101,10 +10101,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         else if (r) {
           const m = Array(i);
           for (p = 0; p < i; ++p)
-            m[p] = eL(g, s, d, o[p], f, l);
+            m[p] = tL(g, s, d, o[p], f, l);
           const w = Array(i);
           for (p = 0; p < u; ++p)
-            w[p] = eL(g, s, d, a[p], f, l);
+            w[p] = tL(g, s, d, a[p], f, l);
           for (p = 0; p < u; ++p)
             m.includes(w[p]) ? e[p] = m.indexOf(w[p]) : e[p] = -2;
           for (p = 0; p < i; ++p)
@@ -10217,7 +10217,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   }
-  mj.$au = {
+  b6.$au = {
     type: ts,
     name: "repeat",
     isTemplateController: !0,
@@ -10246,7 +10246,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       el[r] = 0;
     return u;
   }
-  class KN {
+  class qN {
     get $odd() {
       return !this.$even;
     }
@@ -10271,11 +10271,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, $Z = /* @__PURE__ */ Nn("IRepeatableHandlerResolver", (n) => n.singleton(FZ));
   class FZ {
     constructor() {
-      this._handlers = fe(SP(BZ));
+      this._handlers = fe(_P(BZ));
     }
     resolve(e) {
-      if (qN.handles(e))
-        return qN;
       if (XN.handles(e))
         return XN;
       if (QN.handles(e))
@@ -10284,13 +10282,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return ZN;
       if (JN.handles(e))
         return JN;
+      if (eL.handles(e))
+        return eL;
       const t = this._handlers.find((i) => i.handles(e));
       return t !== void 0 ? t : VZ;
     }
   }
-  const BZ = /* @__PURE__ */ Nn("IRepeatableHandler"), qN = {
+  const BZ = /* @__PURE__ */ Nn("IRepeatableHandler"), XN = {
     handles: Qn,
-    getObserver: jP,
+    getObserver: zP,
     /* istanbul ignore next */
     iterate(n, e) {
       const t = n.length;
@@ -10299,25 +10299,25 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         e(n[i], i, n);
     }
     // getCount: items => items.length,
-  }, XN = {
+  }, QN = {
     handles: Kg,
-    getObserver: jP,
+    getObserver: zP,
     iterate(n, e) {
       let t = 0, i;
       for (i of n.keys())
         e(i, t++, n);
     }
     // getCount: s => s.size,
-  }, QN = {
+  }, ZN = {
     handles: eu,
-    getObserver: jP,
+    getObserver: zP,
     iterate(n, e) {
       let t = 0, i;
       for (i of n.entries())
         e(i, t++, n);
     }
     // getCount: s => s.size,
-  }, ZN = {
+  }, JN = {
     handles: aG,
     iterate(n, e) {
       let t = 0;
@@ -10325,7 +10325,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         e(t, t, n);
     }
     // getCount: v => v,
-  }, JN = {
+  }, eL = {
     handles: (n) => n == null,
     iterate() {
     }
@@ -10340,7 +10340,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     // getCount: () => 0,
   }, WZ = (n, e, t, i, s, r) => {
     n ? ew(e, t, i, r) : t.bindingContext[s] = r;
-  }, oC = (n, e, t, i, s) => n ? xn(e, t, i, null) : t.bindingContext[s], eL = (n, e, t, i, s, r) => typeof e == "string" ? oC(n, t, i, s, r)[e] : xn(e, i, s, null), jZ = (n, e, t, i, s, r, o, a) => {
+  }, oC = (n, e, t, i, s) => n ? xn(e, t, i, null) : t.bindingContext[s], tL = (n, e, t, i, s, r) => typeof e == "string" ? oC(n, t, i, s, r)[e] : xn(e, i, s, null), jZ = (n, e, t, i, s, r, o, a) => {
     let l = n.get(t);
     if (l === void 0 ? l = zZ(t, i, s, r, o, a) : l instanceof ri ? n.delete(t) : l.length === 1 ? (l = l[0], n.delete(t)) : l = l.shift(), e.has(t)) {
       const c = e.get(t);
@@ -10350,12 +10350,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return WZ(a, i.declaration, l, r, o, t), l;
   }, zZ = (n, e, t, i, s, r) => {
     if (r) {
-      const o = ri.fromParent(t, new _N(), new KN());
+      const o = ri.fromParent(t, new RN(), new qN());
       ew(e.declaration, o, i, n);
     }
-    return ri.fromParent(t, new _N(s, n), new KN());
+    return ri.fromParent(t, new RN(s, n), new qN());
   }, UZ = (n, e) => n - e;
-  class bj {
+  class w6 {
     constructor() {
       this.view = fe(hr).create().setLocation(fe(ws));
     }
@@ -10382,13 +10382,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return !0;
     }
   }
-  bj.$au = {
+  w6.$au = {
     type: ts,
     name: "with",
     isTemplateController: !0,
     bindables: ["value"]
   };
-  class oI {
+  class aI {
     constructor() {
       this.cases = [], this.activeCases = [], this.promise = void 0, this._factory = fe(hr), this._location = fe(ws);
     }
@@ -10480,14 +10480,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return !0;
     }
   }
-  oI.$au = {
+  aI.$au = {
     type: ts,
     name: "switch",
     isTemplateController: !0,
     bindables: ["value"]
   };
   let YZ = 0;
-  const wj = [
+  const v6 = [
     "value",
     {
       name: "fallThrough",
@@ -10504,13 +10504,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   ];
-  class aI {
+  class lI {
     constructor() {
       this.id = ++YZ, this.fallThrough = !1, this.view = void 0, this._factory = fe(hr), this._locator = fe(tp), this._location = fe(ws), this._logger = fe(cd).scopeTo(`${this.constructor.name}-#${this.id}`);
     }
     link(e, t, i, s) {
       const r = e.parent, o = r == null ? void 0 : r.viewModel;
-      if (o instanceof oI)
+      if (o instanceof aI)
         this.$switch = o, this.linkToSwitch(o);
       else
         throw Ce(
@@ -10560,8 +10560,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this.$controller.accept(e) === !0 ? !0 : (t = this.view) == null ? void 0 : t.accept(e);
     }
   }
-  qP({ name: "case", bindables: wj, isTemplateController: !0 }, aI);
-  class vj extends aI {
+  XP({ name: "case", bindables: v6, isTemplateController: !0 }, lI);
+  class y6 extends lI {
     linkToSwitch(e) {
       if (e.defaultCase !== void 0)
         throw Ce(
@@ -10571,9 +10571,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       e.defaultCase = this;
     }
   }
-  qP({ name: "default-case", bindables: wj, isTemplateController: !0 }, vj);
-  var yj, Cj, Sj;
-  class lI {
+  XP({ name: "default-case", bindables: v6, isTemplateController: !0 }, y6);
+  var C6, S6, _6;
+  class cI {
     constructor() {
       this.preSettledTask = null, this.postSettledTask = null, this._factory = fe(hr), this._location = fe(ws), this._platform = fe(Gr), this.logger = fe(cd).scopeTo("promise.resolve");
     }
@@ -10632,18 +10632,18 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (e = this.view) == null || e.dispose(), this.view = void 0;
     }
   }
-  lI.$au = {
+  cI.$au = {
     type: ts,
     name: "promise",
     isTemplateController: !0,
     bindables: ["value"]
   };
-  class _j {
+  class R6 {
     constructor() {
       this.view = void 0, this._factory = fe(hr), this._location = fe(ws);
     }
     link(e, t, i, s) {
-      cI(e).pending = this;
+      uI(e).pending = this;
     }
     activate(e, t) {
       let i = this.view;
@@ -10663,7 +10663,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (e = this.view) == null || e.dispose(), this.view = void 0;
     }
   }
-  _j.$au = {
+  R6.$au = {
     type: ts,
     name: "pending",
     isTemplateController: !0,
@@ -10671,12 +10671,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       value: { mode: zn }
     }
   };
-  class Rj {
+  class x6 {
     constructor() {
       this.view = void 0, this._factory = fe(hr), this._location = fe(ws);
     }
     link(e, t, i, s) {
-      cI(e).fulfilled = this;
+      uI(e).fulfilled = this;
     }
     activate(e, t, i) {
       this.value = i;
@@ -10697,7 +10697,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (e = this.view) == null || e.dispose(), this.view = void 0;
     }
   }
-  Rj.$au = {
+  x6.$au = {
     type: ts,
     name: "then",
     isTemplateController: !0,
@@ -10705,12 +10705,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       value: { mode: Xl }
     }
   };
-  class xj {
+  class E6 {
     constructor() {
       this.view = void 0, this._factory = fe(hr), this._location = fe(ws);
     }
     link(e, t, i, s) {
-      cI(e).rejected = this;
+      uI(e).rejected = this;
     }
     activate(e, t, i) {
       this.value = i;
@@ -10731,7 +10731,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       (e = this.view) == null || e.dispose(), this.view = void 0;
     }
   }
-  xj.$au = {
+  E6.$au = {
     type: ts,
     name: "catch",
     isTemplateController: !0,
@@ -10739,9 +10739,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       value: { mode: Xl }
     }
   };
-  function cI(n) {
+  function uI(n) {
     const e = n.parent, t = e == null ? void 0 : e.viewModel;
-    if (t instanceof lI)
+    if (t instanceof cI)
       return t;
     throw Ce(
       813
@@ -10753,8 +10753,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ar(e, t, "promise", "bind");
     }
   }
-  yj = Symbol.metadata;
-  CM[yj] = {
+  C6 = Symbol.metadata;
+  CM[C6] = {
     [Ba]: Cu.create([{ pattern: "promise.resolve", symbols: "" }], CM)
   };
   class SM {
@@ -10762,8 +10762,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ar(e, t, "then", "from-view");
     }
   }
-  Cj = Symbol.metadata;
-  SM[Cj] = {
+  S6 = Symbol.metadata;
+  SM[S6] = {
     [Ba]: Cu.create([{ pattern: "then", symbols: "" }], SM)
   };
   class _M {
@@ -10771,11 +10771,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return new ar(e, t, "catch", "from-view");
     }
   }
-  Sj = Symbol.metadata;
-  _M[Sj] = {
+  _6 = Symbol.metadata;
+  _M[_6] = {
     [Ba]: Cu.create([{ pattern: "catch", symbols: "" }], _M)
   };
-  class Ej {
+  class T6 {
     constructor() {
       this._needsApply = !1, this._element = fe(Vw), this._platform = fe(Gr);
     }
@@ -10823,14 +10823,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this._element === this._platform.document.activeElement;
     }
   }
-  Ej.$au = {
+  T6.$au = {
     type: ts,
     name: "focus",
     bindables: {
-      value: { mode: w6 }
+      value: { mode: vj }
     }
   };
-  class Tj {
+  class M6 {
     constructor() {
       this.position = "beforeend", this.strict = !1;
       const e = fe(hr), t = fe(ws), i = fe(Gr);
@@ -10961,7 +10961,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return !0;
     }
   }
-  Tj.$au = {
+  M6.$au = {
     type: ts,
     name: "portal",
     isTemplateController: !0,
@@ -10993,7 +10993,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     constructor() {
       var h, d, f, g;
       this._parentScope = null, this._outerScope = null, this._attached = !1, this.expose = null, this.slotchange = null, this._subs = /* @__PURE__ */ new Set(), this._observer = null;
-      const e = fe(bd), t = fe(ws), i = fe(Jg), s = fe(Eu), r = this.name = i.data.name, o = (h = i.projections) == null ? void 0 : h[$6], a = (f = (d = e.instruction) == null ? void 0 : d.projections) == null ? void 0 : f[r], l = e.controller.container;
+      const e = fe(bd), t = fe(ws), i = fe(Jg), s = fe(Eu), r = this.name = i.data.name, o = (h = i.projections) == null ? void 0 : h[Fj], a = (f = (d = e.instruction) == null ? void 0 : d.projections) == null ? void 0 : f[r], l = e.controller.container;
       let c, u;
       a == null ? (u = l.createChild({ inheritParentResources: !0 }), c = s.getViewFactory(o ?? GZ ?? (GZ = ms.create({
         name: "au-slot-empty-template",
@@ -11047,7 +11047,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (this._observer != null)
         return;
       const e = this._location, t = e.parentElement;
-      t != null && (this._observer = L6(t, (i) => {
+      t != null && (this._observer = $j(t, (i) => {
         KZ(e, i) && this._notifySlotChange();
       })).observe(t, { childList: !0 });
     }
@@ -11072,7 +11072,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     template: null,
     containerless: !0,
     processContent(n, e, t) {
-      t.name = n.getAttribute("name") ?? $6;
+      t.name = n.getAttribute("name") ?? Fj;
       let i = n.firstChild, s = null;
       for (; i !== null; )
         s = i.nextSibling, TQ(i) && i.hasAttribute(MQ) && (console.warn("[DEV:aurelia] detected [au-slot] attribute on a child node", `of an <au-slot> element: "<${i.nodeName} au-slot>".`, "This element will be ignored and removed"), n.removeChild(i)), i = s;
@@ -11093,7 +11093,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return !0;
     }
   };
-  class Mj {
+  class A6 {
     constructor() {
       this.scopeBehavior = "auto", this._composition = void 0, this.tag = null, this._container = fe(qg), this.parent = fe(j_), this._host = fe(Vw), this._location = fe(ws), this._platform = fe(Gr), this._rendering = fe(Eu), this._instruction = fe(Jg), this._contextFactory = fe(MG(XZ)), this._compiler = fe(M_), this._hydrationContext = fe(bd), this._exprParser = fe(Qg), this._observerLocator = fe(tp);
     }
@@ -11104,7 +11104,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this._composition;
     }
     attaching(e, t) {
-      return this._composing = xt(this.queue(new tL(this.template, this.component, this.model, void 0), e), (i) => {
+      return this._composing = xt(this.queue(new nL(this.template, this.component, this.model, void 0), e), (i) => {
         this._contextFactory._isCurrent(i) && (this._composing = void 0);
       });
     }
@@ -11124,7 +11124,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           console.warn("[DEV:aurelia] Changing tag name of a custom element composition is ignored.");
           return;
         }
-        this._composing = xt(this._composing, () => xt(this.queue(new tL(this.template, this.component, this.model, e), void 0), (i) => {
+        this._composing = xt(this._composing, () => xt(this.queue(new nL(this.template, this.component, this.model, e), void 0), (i) => {
           this._contextFactory._isCurrent(i) && (this._composing = void 0);
         }));
       }
@@ -11162,7 +11162,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
             projections: l.projections,
             captures: y
           }, c, d);
-          return this._createSpreadBindings(h, c, C).forEach((_) => R.addBinding(_)), new iL(
+          return this._createSpreadBindings(h, c, C).forEach((_) => R.addBinding(_)), new sL(
             R,
             (_) => R.activate(_ ?? R, o, o.scope.parent),
             // todo: call deactivate on the component component
@@ -11180,7 +11180,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
             name: rr.generateName(),
             template: t
           }), y = this._rendering.getViewFactory(w, u), C = sr.$view(y, o), R = this.scopeBehavior === "auto" ? ri.fromParent(this.parent.scope, g) : ri.create(g);
-          return C.setHost(h), d == null ? this._createSpreadBindings(h, w, m).forEach((_) => C.addBinding(_)) : C.setLocation(d), new iL(
+          return C.setHost(h), d == null ? this._createSpreadBindings(h, w, m).forEach((_) => C.addBinding(_)) : C.setLocation(d), new sL(
             C,
             (_) => C.activate(_ ?? C, o, R),
             // todo: call deactivate on the component
@@ -11206,7 +11206,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (typeof t == "object")
         return t;
       const r = this._platform;
-      sI(e, i, r), si(e, ws, new qi("IRenderLocation", s));
+      rI(e, i, r), si(e, ws, new qi("IRenderLocation", s));
       const o = e.invoke(t);
       return si(e, t, new qi("au-compose.component", o)), o;
     }
@@ -11223,11 +11223,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     /** @internal */
     _createSpreadBindings(e, t, i) {
-      const s = new tj(this.$controller, { projections: null, captures: i }, this._hydrationContext.parent);
+      const s = new n6(this.$controller, { projections: null, captures: i }, this._hydrationContext.parent);
       return F_.create(s, e, t, this._rendering, this._compiler, this._platform, this._exprParser, this._observerLocator);
     }
   }
-  Mj.$au = {
+  A6.$au = {
     type: wd,
     name: "au-compose",
     capture: !0,
@@ -11263,15 +11263,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.id++;
     }
   }
-  class tL {
+  class nL {
     constructor(e, t, i, s) {
       this._template = e, this._component = t, this._model = i, this._src = s;
     }
     load() {
-      return _i(this._template) || _i(this._component) ? Promise.all([this._template, this._component]).then(([e, t]) => new nL(e, t, this._model, this._src)) : new nL(this._template, this._component, this._model, this._src);
+      return _i(this._template) || _i(this._component) ? Promise.all([this._template, this._component]).then(([e, t]) => new iL(e, t, this._model, this._src)) : new iL(this._template, this._component, this._model, this._src);
     }
   }
-  class nL {
+  class iL {
     constructor(e, t, i, s) {
       this._template = e, this._component = t, this._model = i, this._src = s;
     }
@@ -11281,7 +11281,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this.id = e, this.change = t;
     }
   }
-  class iL {
+  class sL {
     constructor(e, t, i, s, r) {
       this.controller = e, this.start = t, this.stop = i, this.update = s, this.context = r, this.state = 0;
     }
@@ -11309,7 +11309,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       throw Ce(99, "sanitize");
     }
   }));
-  class Aj {
+  class P6 {
     constructor() {
       this._sanitizer = fe(ZZ);
     }
@@ -11322,11 +11322,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return e == null ? null : this._sanitizer.sanitize(e);
     }
   }
-  Aj.$au = {
+  P6.$au = {
     type: tg,
     name: "sanitize"
   };
-  class Pj {
+  class I6 {
     constructor() {
       this.el = fe(Vw), this.p = fe(Gr), this._isActive = !1, this._task = null, this.$val = "", this.$prio = "", this.update = () => {
         this._task = null, !!this.value !== this._isToggled && (this._isToggled === this._base ? (this._isToggled = !this._base, this.$val = this.el.style.getPropertyValue("display"), this.$prio = this.el.style.getPropertyPriority("display"), this.el.style.setProperty("display", "none", "important")) : (this._isToggled = this._base, this.el.style.setProperty("display", this.$val, this.$prio), this.el.getAttribute("style") === "" && this.el.removeAttribute("style")));
@@ -11345,7 +11345,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._isActive && this._task === null && (this._task = this.p.domQueue.queueTask(this.update));
     }
   }
-  Pj.$au = {
+  I6.$au = {
     type: ts,
     name: "show",
     bindables: ["value"],
@@ -11354,56 +11354,56 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   const JZ = [
     IZ,
     NX,
-    rI
+    oI
   ], eJ = [
     eM,
     JT,
     tM,
     xQ
   ], tJ = [
-    X3,
-    Y3,
-    K3,
+    Q3,
     G3,
     q3,
-    Q3,
-    i6,
+    K3,
+    X3,
     Z3,
+    sj,
     J3,
-    n6,
-    t6,
-    e6,
-    s6
+    ej,
+    ij,
+    nj,
+    tj,
+    rj
   ], nJ = [
-    P6,
-    E6,
-    T6,
-    M6,
-    I6,
-    O6,
-    A6,
+    Ij,
+    Tj,
+    Mj,
     Aj,
+    Oj,
+    kj,
+    Pj,
+    P6,
     eS,
-    pj,
-    mj,
-    bj,
-    oI,
+    m6,
+    b6,
+    w6,
     aI,
-    vj,
     lI,
-    _j,
-    Rj,
-    xj,
+    y6,
+    cI,
+    R6,
+    x6,
+    E6,
     CM,
     SM,
     _M,
-    dj,
-    fj,
-    gj,
-    Mj,
-    Tj,
-    Ej,
-    Pj,
+    f6,
+    g6,
+    p6,
+    A6,
+    M6,
+    T6,
+    I6,
     U_
   ], iJ = [
     $Q,
@@ -11424,8 +11424,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     BQ,
     XQ,
     QQ
-  ], sJ = /* @__PURE__ */ Ij(Ta);
-  function Ij(n) {
+  ], sJ = /* @__PURE__ */ O6(Ta);
+  function O6(n) {
     return {
       optionsProvider: n,
       /**
@@ -11438,10 +11438,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
             coerceNullish: !1
           }
         };
-        return n(t), e.register(rQ(l6, t.coercingOptions), u3, ...JZ, ...nJ, ...eJ, ...tJ, ...iJ);
+        return n(t), e.register(rQ(cj, t.coercingOptions), h3, ...JZ, ...nJ, ...eJ, ...tJ, ...iJ);
       },
       customize(e) {
-        return Ij(e ?? n);
+        return O6(e ?? n);
       }
     };
   }
@@ -11504,20 +11504,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this.p.customElements.define(e, u, i), u;
     }
   }
-  const Y1 = (n, e, t) => n.registerResolver(e, t), G1 = (n) => new Error(n), Oj = "chartjs", RM = `<div>
+  const Y1 = (n, e, t) => n.registerResolver(e, t), G1 = (n) => new Error(n), k6 = "chartjs", RM = `<div>
     <canvas ref="mychart"></canvas>
 </div>
-`, kj = [], Hj = {};
+`, H6 = [], D6 = {};
   let K1;
   function oJ(n) {
-    K1 || (K1 = rr.define({ name: Oj, template: RM, dependencies: kj, bindables: Hj })), n.register(K1);
+    K1 || (K1 = rr.define({ name: k6, template: RM, dependencies: H6, bindables: D6 })), n.register(K1);
   }
   const aJ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    bindables: Hj,
+    bindables: D6,
     default: RM,
-    dependencies: kj,
-    name: Oj,
+    dependencies: H6,
+    name: k6,
     register: oJ,
     template: RM
   }, Symbol.toStringTag, { value: "Module" }));
@@ -11540,7 +11540,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Ml(n) {
     return Uc(Ww(n / 2.55) / 100, 0, 1);
   }
-  function sL(n) {
+  function rL(n) {
     return Uc(Ww(n * 100), 0, 100);
   }
   const wr = {
@@ -11587,7 +11587,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return n ? "#" + e(n.r) + e(n.g) + e(n.b) + dJ(n.a, e) : void 0;
   }
   const gJ = /^(hsla?|hwb|hsv)\(\s*([-+.e\d]+)(?:deg)?[\s,]+([-+.e\d]+)%[\s,]+([-+.e\d]+)%(?:[\s,]+([-+.e\d]+)(%)?)?\s*\)$/;
-  function Dj(n, e, t) {
+  function N6(n, e, t) {
     const i = e * Math.min(t, 1 - t), s = (r, o = (r + n / 30) % 12) => t - i * Math.max(Math.min(o - 3, 9 - o, 1), -1);
     return [s(0), s(8), s(4)];
   }
@@ -11596,7 +11596,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return [i(5), i(3), i(1)];
   }
   function mJ(n, e, t) {
-    const i = Dj(n, 1, 0.5);
+    const i = N6(n, 1, 0.5);
     let s;
     for (e + t > 1 && (s = 1 / (e + t), e *= s, t *= s), s = 0; s < 3; s++)
       i[s] *= 1 - e - t, i[s] += e;
@@ -11605,24 +11605,24 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function bJ(n, e, t, i, s) {
     return n === s ? (e - t) / i + (e < t ? 6 : 0) : e === s ? (t - n) / i + 2 : (n - e) / i + 4;
   }
-  function uI(n) {
+  function hI(n) {
     const t = n.r / 255, i = n.g / 255, s = n.b / 255, r = Math.max(t, i, s), o = Math.min(t, i, s), a = (r + o) / 2;
     let l, c, u;
     return r !== o && (u = r - o, c = a > 0.5 ? u / (2 - r - o) : u / (r + o), l = bJ(t, i, s, u, r), l = l * 60 + 0.5), [l | 0, c || 0, a];
   }
-  function hI(n, e, t, i) {
+  function dI(n, e, t, i) {
     return (Array.isArray(e) ? n(e[0], e[1], e[2]) : n(e, t, i)).map(nu);
   }
-  function dI(n, e, t) {
-    return hI(Dj, n, e, t);
+  function fI(n, e, t) {
+    return dI(N6, n, e, t);
   }
   function wJ(n, e, t) {
-    return hI(mJ, n, e, t);
+    return dI(mJ, n, e, t);
   }
   function vJ(n, e, t) {
-    return hI(pJ, n, e, t);
+    return dI(pJ, n, e, t);
   }
-  function Nj(n) {
+  function L6(n) {
     return (n % 360 + 360) % 360;
   }
   function yJ(n) {
@@ -11631,8 +11631,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (!e)
       return;
     e[5] !== i && (t = e[6] ? $m(+e[5]) : nu(+e[5]));
-    const s = Nj(+e[2]), r = +e[3] / 100, o = +e[4] / 100;
-    return e[1] === "hwb" ? i = wJ(s, r, o) : e[1] === "hsv" ? i = vJ(s, r, o) : i = dI(s, r, o), {
+    const s = L6(+e[2]), r = +e[3] / 100, o = +e[4] / 100;
+    return e[1] === "hwb" ? i = wJ(s, r, o) : e[1] === "hsv" ? i = vJ(s, r, o) : i = fI(s, r, o), {
       r: i[0],
       g: i[1],
       b: i[2],
@@ -11640,16 +11640,16 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     };
   }
   function CJ(n, e) {
-    var t = uI(n);
-    t[0] = Nj(t[0] + e), t = dI(t), n.r = t[0], n.g = t[1], n.b = t[2];
+    var t = hI(n);
+    t[0] = L6(t[0] + e), t = fI(t), n.r = t[0], n.g = t[1], n.b = t[2];
   }
   function SJ(n) {
     if (!n)
       return;
-    const e = uI(n), t = e[0], i = sL(e[1]), s = sL(e[2]);
+    const e = hI(n), t = e[0], i = rL(e[1]), s = rL(e[2]);
     return n.a < 255 ? `hsla(${t}, ${i}%, ${s}%, ${Ml(n.a)})` : `hsl(${t}, ${i}%, ${s}%)`;
   }
-  const rL = {
+  const oL = {
     x: "dark",
     Z: "light",
     Y: "re",
@@ -11677,7 +11677,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     H: "ea",
     I: "ightg",
     J: "wh"
-  }, oL = {
+  }, aL = {
     OiceXe: "f0f8ff",
     antiquewEte: "faebd7",
     aqua: "ffff",
@@ -11828,12 +11828,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     LwgYF: "9acd32"
   };
   function _J() {
-    const n = {}, e = Object.keys(oL), t = Object.keys(rL);
+    const n = {}, e = Object.keys(aL), t = Object.keys(oL);
     let i, s, r, o, a;
     for (i = 0; i < e.length; i++) {
       for (o = a = e[i], s = 0; s < t.length; s++)
-        r = t[s], a = a.replace(r, rL[r]);
-      r = parseInt(oL[o], 16), n[a] = [r >> 16 & 255, r >> 8 & 255, r & 255];
+        r = t[s], a = a.replace(r, oL[r]);
+      r = parseInt(aL[o], 16), n[a] = [r >> 16 & 255, r >> 8 & 255, r & 255];
     }
     return n;
   }
@@ -11880,14 +11880,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   function Wv(n, e, t) {
     if (n) {
-      let i = uI(n);
-      i[e] = Math.max(0, Math.min(i[e] + i[e] * t, e === 0 ? 360 : 1)), i = dI(i), n.r = i[0], n.g = i[1], n.b = i[2];
+      let i = hI(n);
+      i[e] = Math.max(0, Math.min(i[e] + i[e] * t, e === 0 ? 360 : 1)), i = fI(i), n.r = i[0], n.g = i[1], n.b = i[2];
     }
   }
-  function Lj(n, e) {
+  function $6(n, e) {
     return n && Object.assign(e || {}, n);
   }
-  function aL(n) {
+  function lL(n) {
     var e = {
       r: 0,
       g: 0,
@@ -11899,7 +11899,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       g: n[1],
       b: n[2],
       a: 255
-    }, n.length > 3 && (e.a = nu(n[3]))) : (e = Lj(n, {
+    }, n.length > 3 && (e.a = nu(n[3]))) : (e = $6(n, {
       r: 0,
       g: 0,
       b: 0,
@@ -11909,23 +11909,23 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function AJ(n) {
     return n.charAt(0) === "r" ? EJ(n) : yJ(n);
   }
-  let $j = class EM {
+  let F6 = class EM {
     constructor(e) {
       if (e instanceof EM)
         return e;
       const t = typeof e;
       let i;
-      t === "object" ? i = aL(e) : t === "string" && (i = hJ(e) || RJ(e) || AJ(e)), this._rgb = i, this._valid = !!i;
+      t === "object" ? i = lL(e) : t === "string" && (i = hJ(e) || RJ(e) || AJ(e)), this._rgb = i, this._valid = !!i;
     }
     get valid() {
       return this._valid;
     }
     get rgb() {
-      var e = Lj(this._rgb);
+      var e = $6(this._rgb);
       return e && (e.a = Ml(e.a)), e;
     }
     set rgb(e) {
-      this._rgb = aL(e);
+      this._rgb = lL(e);
     }
     rgbString() {
       return this._valid ? TJ(this._rgb) : void 0;
@@ -12019,7 +12019,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function qe(n, e) {
     return typeof n > "u" ? e : n;
   }
-  const IJ = (n, e) => typeof n == "string" && n.endsWith("%") ? parseFloat(n) / 100 : +n / e, Fj = (n, e) => typeof n == "string" && n.endsWith("%") ? parseFloat(n) / 100 * e : +n;
+  const IJ = (n, e) => typeof n == "string" && n.endsWith("%") ? parseFloat(n) / 100 : +n / e, B6 = (n, e) => typeof n == "string" && n.endsWith("%") ? parseFloat(n) / 100 * e : +n;
   function cn(n, e, t) {
     if (n && typeof n.call == "function")
       return n.apply(t, e);
@@ -12054,11 +12054,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return n;
   }
-  function Bj(n) {
+  function V6(n) {
     return ["__proto__", "prototype", "constructor"].indexOf(n) === -1;
   }
   function OJ(n, e, t, i) {
-    if (!Bj(n))
+    if (!V6(n))
       return;
     const s = e[n], r = t[n];
     bt(s) && bt(r) ? lr(s, r, i) : e[n] = iS(r);
@@ -12085,12 +12085,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     });
   }
   function kJ(n, e, t) {
-    if (!Bj(n))
+    if (!V6(n))
       return;
     const i = e[n], s = t[n];
     bt(i) && bt(s) ? fb(i, s) : Object.prototype.hasOwnProperty.call(e, n) || (e[n] = iS(s));
   }
-  const lL = {
+  const cL = {
     // Chart.helpers.core resolveObjectKey should resolve empty key to root object
     "": (n) => n,
     // default resolvers
@@ -12116,12 +12116,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     };
   }
   function hu(n, e) {
-    return (lL[e] || (lL[e] = DJ(e)))(n);
+    return (cL[e] || (cL[e] = DJ(e)))(n);
   }
-  function fI(n) {
+  function gI(n) {
     return n.charAt(0).toUpperCase() + n.slice(1);
   }
-  const iw = (n) => typeof n < "u", du = (n) => typeof n == "function", cL = (n, e) => {
+  const iw = (n) => typeof n < "u", du = (n) => typeof n == "function", uL = (n, e) => {
     if (n.size !== e.size)
       return !1;
     for (const t of n)
@@ -12132,11 +12132,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function NJ(n) {
     return n.type === "mouseup" || n.type === "click" || n.type === "contextmenu";
   }
-  const pn = Math.PI, gn = 2 * pn, LJ = gn + pn, sS = Number.POSITIVE_INFINITY, $J = pn / 180, Xn = pn / 2, Lu = pn / 4, uL = pn * 2 / 3, Yc = Math.log10, Ma = Math.sign;
+  const pn = Math.PI, gn = 2 * pn, LJ = gn + pn, sS = Number.POSITIVE_INFINITY, $J = pn / 180, Xn = pn / 2, Lu = pn / 4, hL = pn * 2 / 3, Yc = Math.log10, Ma = Math.sign;
   function gb(n, e, t) {
     return Math.abs(n - e) < t;
   }
-  function hL(n) {
+  function dL(n) {
     const e = Math.round(n);
     n = gb(n, e, n / 1e3) ? e : n;
     const t = Math.pow(10, Math.floor(Yc(n))), i = n / t;
@@ -12156,7 +12156,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const t = Math.round(n);
     return t - e <= n && t + e >= n;
   }
-  function Vj(n, e, t) {
+  function W6(n, e, t) {
     let i, s, r;
     for (i = 0, s = n.length; i < s; i++)
       r = n[i][t], isNaN(r) || (e.min = Math.min(e.min, r), e.max = Math.max(e.max, r));
@@ -12164,10 +12164,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Ro(n) {
     return n * (pn / 180);
   }
-  function gI(n) {
+  function pI(n) {
     return n * (180 / pn);
   }
-  function dL(n) {
+  function fL(n) {
     if (!Un(n))
       return;
     let e = 1, t = 0;
@@ -12175,7 +12175,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       e *= 10, t++;
     return t;
   }
-  function Wj(n, e) {
+  function j6(n, e) {
     const t = e.x - n.x, i = e.y - n.y, s = Math.sqrt(t * t + i * i);
     let r = Math.atan2(i, t);
     return r < -0.5 * pn && (r += gn), {
@@ -12205,7 +12205,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Dl(n, e, t, i = 1e-6) {
     return n >= Math.min(e, t) - i && n <= Math.max(e, t) + i;
   }
-  function pI(n, e, t) {
+  function mI(n, e, t) {
     t = t || ((o) => n[o] < e);
     let i = n.length - 1, s = 0, r;
     for (; i - s > 1; )
@@ -12215,10 +12215,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       hi: i
     };
   }
-  const Nl = (n, e, t, i) => pI(n, t, i ? (s) => {
+  const Nl = (n, e, t, i) => mI(n, t, i ? (s) => {
     const r = n[s][e];
     return r < t || r === t && n[s + 1][e] === t;
-  } : (s) => n[s][e] < t), jJ = (n, e, t) => pI(n, t, (i) => n[i][e] >= t);
+  } : (s) => n[s][e] < t), jJ = (n, e, t) => mI(n, t, (i) => n[i][e] >= t);
   function zJ(n, e, t) {
     let i = 0, s = n.length;
     for (; i < s && n[i] < e; )
@@ -12227,7 +12227,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       s--;
     return i > 0 || s < n.length ? n.slice(i, s) : n;
   }
-  const jj = ["push", "pop", "shift", "splice", "unshift"];
+  const z6 = ["push", "pop", "shift", "splice", "unshift"];
   function UJ(n, e) {
     if (n._chartjs) {
       n._chartjs.listeners.push(e);
@@ -12239,8 +12239,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       value: {
         listeners: [e]
       }
-    }), jj.forEach((t) => {
-      const i = "_onData" + fI(t), s = n[t];
+    }), z6.forEach((t) => {
+      const i = "_onData" + gI(t), s = n[t];
       Object.defineProperty(n, t, {
         configurable: !0,
         enumerable: !1,
@@ -12253,28 +12253,28 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     });
   }
-  function fL(n, e) {
+  function gL(n, e) {
     const t = n._chartjs;
     if (!t)
       return;
     const i = t.listeners, s = i.indexOf(e);
-    s !== -1 && i.splice(s, 1), !(i.length > 0) && (jj.forEach((r) => {
+    s !== -1 && i.splice(s, 1), !(i.length > 0) && (z6.forEach((r) => {
       delete n[r];
     }), delete n._chartjs);
   }
-  function zj(n) {
+  function U6(n) {
     const e = new Set(n);
     return e.size === n.length ? n : Array.from(e);
   }
-  const Uj = function() {
+  const Y6 = function() {
     return typeof window > "u" ? function(n) {
       return n();
     } : window.requestAnimationFrame;
   }();
-  function Yj(n, e) {
+  function G6(n, e) {
     let t = [], i = !1;
     return function(...s) {
-      t = s, i || (i = !0, Uj.call(window, () => {
+      t = s, i || (i = !0, Y6.call(window, () => {
         i = !1, n.apply(e, t);
       }));
     };
@@ -12285,8 +12285,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return e ? (clearTimeout(t), t = setTimeout(n, e, i)) : n.apply(this, i), e;
     };
   }
-  const mI = (n) => n === "start" ? "left" : n === "end" ? "right" : "center", Yi = (n, e, t) => n === "start" ? e : n === "end" ? t : (e + t) / 2, GJ = (n, e, t, i) => n === (i ? "left" : "right") ? t : n === "center" ? (e + t) / 2 : e;
-  function Gj(n, e, t) {
+  const bI = (n) => n === "start" ? "left" : n === "end" ? "right" : "center", Yi = (n, e, t) => n === "start" ? e : n === "end" ? t : (e + t) / 2, GJ = (n, e, t, i) => n === (i ? "left" : "right") ? t : n === "center" ? (e + t) / 2 : e;
+  function K6(n, e, t) {
     const i = e.length;
     let s = 0, r = i;
     if (n._sorted) {
@@ -12316,7 +12316,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       count: r
     };
   }
-  function Kj(n) {
+  function q6(n) {
     const {
       xScale: e,
       yScale: t,
@@ -12332,7 +12332,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const r = i.xmin !== e.min || i.xmax !== e.max || i.ymin !== t.min || i.ymax !== t.max;
     return Object.assign(i, s), r;
   }
-  const jv = (n) => n === 0 || n === 1, gL = (n, e, t) => -(Math.pow(2, 10 * (n -= 1)) * Math.sin((n - e) * gn / t)), pL = (n, e, t) => Math.pow(2, -10 * n) * Math.sin((n - e) * gn / t) + 1, pb = {
+  const jv = (n) => n === 0 || n === 1, pL = (n, e, t) => -(Math.pow(2, 10 * (n -= 1)) * Math.sin((n - e) * gn / t)), mL = (n, e, t) => Math.pow(2, -10 * n) * Math.sin((n - e) * gn / t) + 1, pb = {
     linear: (n) => n,
     easeInQuad: (n) => n * n,
     easeOutQuad: (n) => -n * (n - 2),
@@ -12355,10 +12355,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     easeInCirc: (n) => n >= 1 ? n : -(Math.sqrt(1 - n * n) - 1),
     easeOutCirc: (n) => Math.sqrt(1 - (n -= 1) * n),
     easeInOutCirc: (n) => (n /= 0.5) < 1 ? -0.5 * (Math.sqrt(1 - n * n) - 1) : 0.5 * (Math.sqrt(1 - (n -= 2) * n) + 1),
-    easeInElastic: (n) => jv(n) ? n : gL(n, 0.075, 0.3),
-    easeOutElastic: (n) => jv(n) ? n : pL(n, 0.075, 0.3),
+    easeInElastic: (n) => jv(n) ? n : pL(n, 0.075, 0.3),
+    easeOutElastic: (n) => jv(n) ? n : mL(n, 0.075, 0.3),
     easeInOutElastic(n) {
-      return jv(n) ? n : n < 0.5 ? 0.5 * gL(n * 2, 0.1125, 0.45) : 0.5 + 0.5 * pL(n * 2 - 1, 0.1125, 0.45);
+      return jv(n) ? n : n < 0.5 ? 0.5 * pL(n * 2, 0.1125, 0.45) : 0.5 + 0.5 * mL(n * 2 - 1, 0.1125, 0.45);
     },
     easeInBack(n) {
       return n * n * ((1.70158 + 1) * n - 1.70158);
@@ -12376,18 +12376,18 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     },
     easeInOutBounce: (n) => n < 0.5 ? pb.easeInBounce(n * 2) * 0.5 : pb.easeOutBounce(n * 2 - 1) * 0.5 + 0.5
   };
-  function bI(n) {
+  function wI(n) {
     if (n && typeof n == "object") {
       const e = n.toString();
       return e === "[object CanvasPattern]" || e === "[object CanvasGradient]";
     }
     return !1;
   }
-  function mL(n) {
-    return bI(n) ? n : new $j(n);
+  function bL(n) {
+    return wI(n) ? n : new F6(n);
   }
   function X1(n) {
-    return bI(n) ? n : new $j(n).saturate(0.5).darken(0.1).hexString();
+    return wI(n) ? n : new F6(n).saturate(0.5).darken(0.1).hexString();
   }
   const KJ = ["x", "y", "borderWidth", "radius", "tension"], qJ = ["color", "borderColor", "backgroundColor"];
   function XJ(n) {
@@ -12462,17 +12462,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     });
   }
-  const bL = /* @__PURE__ */ new Map();
+  const wL = /* @__PURE__ */ new Map();
   function ZJ(n, e) {
     e = e || {};
     const t = n + JSON.stringify(e);
-    let i = bL.get(t);
-    return i || (i = new Intl.NumberFormat(n, e), bL.set(t, i)), i;
+    let i = wL.get(t);
+    return i || (i = new Intl.NumberFormat(n, e), wL.set(t, i)), i;
   }
   function jw(n, e, t) {
     return ZJ(e, t).format(n);
   }
-  const qj = {
+  const X6 = {
     values(n) {
       return Sn(n) ? n : "" + n;
     },
@@ -12496,7 +12496,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (n === 0)
         return "0";
       const i = t[e].significand || n / Math.pow(10, Math.floor(Yc(n)));
-      return [1, 2, 3, 5, 10, 15].includes(i) || e > 0.8 * t.length ? qj.numeric.call(this, n, e, t) : "";
+      return [1, 2, 3, 5, 10, 15].includes(i) || e > 0.8 * t.length ? X6.numeric.call(this, n, e, t) : "";
     }
   };
   function JJ(n, e) {
@@ -12504,7 +12504,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return Math.abs(t) >= 1 && n !== Math.floor(n) && (t = n - Math.floor(n)), t;
   }
   var Y_ = {
-    formatters: qj
+    formatters: X6
   };
   function eee(n) {
     n.set("scale", {
@@ -12677,13 +12677,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const i = n.currentDevicePixelRatio, s = t !== 0 ? Math.max(t / 2, 0.5) : 0;
     return Math.round((e - s) * i) / i + s;
   }
-  function wL(n, e) {
+  function vL(n, e) {
     !e && !n || (e = e || n.getContext("2d"), e.save(), e.resetTransform(), e.clearRect(0, 0, n.width, n.height), e.restore());
   }
   function oS(n, e, t, i) {
-    Xj(n, e, t, i, null);
+    Q6(n, e, t, i, null);
   }
-  function Xj(n, e, t, i, s) {
+  function Q6(n, e, t, i, s) {
     let r, o, a, l, c, u, h, d;
     const f = e.pointStyle, g = e.rotation, p = e.radius;
     let m = (g || 0) * $J;
@@ -12697,7 +12697,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           s ? n.ellipse(t, i, s / 2, p, 0, 0, gn) : n.arc(t, i, p, 0, gn), n.closePath();
           break;
         case "triangle":
-          u = s ? s / 2 : p, n.moveTo(t + Math.sin(m) * u, i - Math.cos(m) * p), m += uL, n.lineTo(t + Math.sin(m) * u, i - Math.cos(m) * p), m += uL, n.lineTo(t + Math.sin(m) * u, i - Math.cos(m) * p), n.closePath();
+          u = s ? s / 2 : p, n.moveTo(t + Math.sin(m) * u, i - Math.cos(m) * p), m += hL, n.lineTo(t + Math.sin(m) * u, i - Math.cos(m) * p), m += hL, n.lineTo(t + Math.sin(m) * u, i - Math.cos(m) * p), n.closePath();
           break;
         case "rectRounded":
           c = p * 0.516, l = p - c, o = Math.cos(m + Lu) * l, h = Math.cos(m + Lu) * (s ? s / 2 - c : l), a = Math.sin(m + Lu) * l, d = Math.sin(m + Lu) * (s ? s / 2 - c : l), n.arc(t - h, i - a, c, m - pn, m - Xn), n.arc(t + d, i - o, c, m - Xn, m), n.arc(t + h, i + a, c, m, m + Xn), n.arc(t - d, i + o, c, m + Xn, m + pn), n.closePath();
@@ -12800,14 +12800,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return e * n;
   }
   const dee = (n) => +n || 0;
-  function wI(n, e) {
+  function vI(n, e) {
     const t = {}, i = bt(e), s = i ? Object.keys(e) : e, r = bt(n) ? i ? (o) => qe(n[o], n[e[o]]) : (o) => n[o] : () => n;
     for (const o of s)
       t[o] = dee(r(o));
     return t;
   }
-  function Qj(n) {
-    return wI(n, {
+  function Z6(n) {
+    return vI(n, {
       top: "y",
       right: "x",
       bottom: "y",
@@ -12815,10 +12815,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     });
   }
   function id(n) {
-    return wI(n, ["topLeft", "topRight", "bottomLeft", "bottomRight"]);
+    return vI(n, ["topLeft", "topRight", "bottomLeft", "bottomRight"]);
   }
   function ns(n) {
-    const e = Qj(n);
+    const e = Z6(n);
     return e.width = e.left + e.right, e.height = e.top + e.bottom, e;
   }
   function pi(n, e) {
@@ -12847,7 +12847,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const {
       min: i,
       max: s
-    } = n, r = Fj(e, (s - i) / 2), o = (a, l) => t && a === 0 ? 0 : a + l;
+    } = n, r = B6(e, (s - i) / 2), o = (a, l) => t && a === 0 ? 0 : a + l;
     return {
       min: o(i, -Math.abs(r)),
       max: o(s, r)
@@ -12856,9 +12856,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Tu(n, e) {
     return Object.assign(Object.create(n), e);
   }
-  function vI(n, e = [""], t, i, s = () => n[0]) {
+  function yI(n, e = [""], t, i, s = () => n[0]) {
     const r = t || n;
-    typeof i > "u" && (i = t5("_fallback", n));
+    typeof i > "u" && (i = n5("_fallback", n));
     const o = {
       [Symbol.toStringTag]: "Object",
       _cacheable: !0,
@@ -12866,7 +12866,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       _rootScopes: r,
       _fallback: i,
       _getTarget: s,
-      override: (a) => vI([a, ...n], e, r, i)
+      override: (a) => yI([a, ...n], e, r, i)
     };
     return new Proxy(o, {
       /**
@@ -12879,7 +12879,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       * A trap for getting property values.
       */
       get(a, l) {
-        return Jj(a, l, () => Cee(l, e, n, a));
+        return e5(a, l, () => Cee(l, e, n, a));
       },
       /**
       * A trap for Object.getOwnPropertyDescriptor.
@@ -12898,13 +12898,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       * A trap for the in operator.
       */
       has(a, l) {
-        return yL(a).includes(l);
+        return CL(a).includes(l);
       },
       /**
       * A trap for Object.getOwnPropertyNames and Object.getOwnPropertySymbols.
       */
       ownKeys(a) {
-        return yL(a);
+        return CL(a);
       },
       /**
       * A trap for setting property values.
@@ -12922,7 +12922,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       _context: e,
       _subProxy: t,
       _stack: /* @__PURE__ */ new Set(),
-      _descriptors: Zj(n, i),
+      _descriptors: J6(n, i),
       setContext: (r) => Ng(n, r, t, i),
       override: (r) => Ng(n.override(r), e, t, i)
     };
@@ -12937,7 +12937,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       * A trap for getting property values.
       */
       get(r, o, a) {
-        return Jj(r, o, () => pee(r, o, a));
+        return e5(r, o, () => pee(r, o, a));
       },
       /**
       * A trap for Object.getOwnPropertyDescriptor.
@@ -12975,7 +12975,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     });
   }
-  function Zj(n, e = {
+  function J6(n, e = {
     scriptable: !0,
     indexable: !0
   }) {
@@ -12992,8 +12992,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       isIndexable: du(i) ? i : () => i
     };
   }
-  const gee = (n, e) => n ? n + fI(e) : e, yI = (n, e) => bt(e) && n !== "adapters" && (Object.getPrototypeOf(e) === null || e.constructor === Object);
-  function Jj(n, e, t) {
+  const gee = (n, e) => n ? n + gI(e) : e, CI = (n, e) => bt(e) && n !== "adapters" && (Object.getPrototypeOf(e) === null || e.constructor === Object);
+  function e5(n, e, t) {
     if (Object.prototype.hasOwnProperty.call(n, e) || e === "constructor")
       return n[e];
     const i = t();
@@ -13007,7 +13007,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       _descriptors: o
     } = n;
     let a = i[e];
-    return du(a) && o.isScriptable(e) && (a = mee(e, a, n, t)), Sn(a) && a.length && (a = bee(e, a, n, o.isIndexable)), yI(e, a) && (a = Ng(a, s, r && r[e], o)), a;
+    return du(a) && o.isScriptable(e) && (a = mee(e, a, n, t)), Sn(a) && a.length && (a = bee(e, a, n, o.isIndexable)), CI(e, a) && (a = Ng(a, s, r && r[e], o)), a;
   }
   function mee(n, e, t, i) {
     const {
@@ -13020,7 +13020,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       throw new Error("Recursion detected: " + Array.from(a).join("->") + "->" + n);
     a.add(n);
     let l = e(r, o || i);
-    return a.delete(n), yI(n, l) && (l = CI(s._scopes, s, n, l)), l;
+    return a.delete(n), CI(n, l) && (l = SI(s._scopes, s, n, l)), l;
   }
   function bee(n, e, t, i) {
     const {
@@ -13035,13 +13035,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const l = e, c = s._scopes.filter((u) => u !== l);
       e = [];
       for (const u of l) {
-        const h = CI(c, s, n, u);
+        const h = SI(c, s, n, u);
         e.push(Ng(h, r, o && o[n], a));
       }
     }
     return e;
   }
-  function e5(n, e, t) {
+  function t5(n, e, t) {
     return du(n) ? n(e, t) : n;
   }
   const wee = (n, e) => n === !0 ? e : typeof n == "string" ? hu(e, n) : void 0;
@@ -13050,7 +13050,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const o = wee(t, r);
       if (o) {
         n.add(o);
-        const a = e5(o._fallback, t, s);
+        const a = t5(o._fallback, t, s);
         if (typeof a < "u" && a !== t && a !== i)
           return a;
       } else if (o === !1 && typeof i < "u" && t !== i)
@@ -13058,13 +13058,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return !1;
   }
-  function CI(n, e, t, i) {
-    const s = e._rootScopes, r = e5(e._fallback, t, i), o = [...n, ...s], a = /* @__PURE__ */ new Set();
+  function SI(n, e, t, i) {
+    const s = e._rootScopes, r = t5(e._fallback, t, i), o = [...n, ...s], a = /* @__PURE__ */ new Set();
     a.add(i);
-    let l = vL(a, o, t, r || t, i);
-    return l === null || typeof r < "u" && r !== t && (l = vL(a, o, r, l, i), l === null) ? !1 : vI(Array.from(a), [""], s, r, () => yee(e, t, i));
+    let l = yL(a, o, t, r || t, i);
+    return l === null || typeof r < "u" && r !== t && (l = yL(a, o, r, l, i), l === null) ? !1 : yI(Array.from(a), [""], s, r, () => yee(e, t, i));
   }
-  function vL(n, e, t, i, s) {
+  function yL(n, e, t, i, s) {
     for (; t; )
       t = vee(n, e, t, i, s);
     return t;
@@ -13078,10 +13078,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Cee(n, e, t, i) {
     let s;
     for (const r of e)
-      if (s = t5(gee(r, n), t), typeof s < "u")
-        return yI(n, s) ? CI(t, i, n, s) : s;
+      if (s = n5(gee(r, n), t), typeof s < "u")
+        return CI(n, s) ? SI(t, i, n, s) : s;
   }
-  function t5(n, e) {
+  function n5(n, e) {
     for (const t of e) {
       if (!t)
         continue;
@@ -13090,7 +13090,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return i;
     }
   }
-  function yL(n) {
+  function CL(n) {
     let e = n._keys;
     return e || (e = n._keys = See(n._scopes)), e;
   }
@@ -13101,7 +13101,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         e.add(i);
     return Array.from(e);
   }
-  function n5(n, e, t, i) {
+  function i5(n, e, t, i) {
     const {
       iScale: s
     } = n, {
@@ -13114,7 +13114,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     return o;
   }
-  const _ee = Number.EPSILON || 1e-14, Lg = (n, e) => e < n.length && !n[e].skip && n[e], i5 = (n) => n === "x" ? "y" : "x";
+  const _ee = Number.EPSILON || 1e-14, Lg = (n, e) => e < n.length && !n[e].skip && n[e], s5 = (n) => n === "x" ? "y" : "x";
   function Ree(n, e, t, i) {
     const s = n.skip ? e : n, r = e, o = t.skip ? e : t, a = TM(r, s), l = TM(o, r);
     let c = a / (a + l), u = l / (a + l);
@@ -13144,7 +13144,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
   }
   function Eee(n, e, t = "x") {
-    const i = i5(t), s = n.length;
+    const i = s5(t), s = n.length;
     let r, o, a, l = Lg(n, 0);
     for (let c = 0; c < s; ++c) {
       if (o = a, a = l, l = Lg(n, c + 1), !a)
@@ -13154,7 +13154,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   }
   function Tee(n, e = "x") {
-    const t = i5(e), i = n.length, s = Array(i).fill(0), r = Array(i);
+    const t = s5(e), i = n.length, s = Array(i).fill(0), r = Array(i);
     let o, a, l, c = Lg(n, 0);
     for (o = 0; o < i; ++o)
       if (a = l, l = c, c = Lg(n, o + 1), !!l) {
@@ -13185,10 +13185,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     e.capBezierPoints && Mee(n, t);
   }
-  function SI() {
+  function _I() {
     return typeof window < "u" && typeof document < "u";
   }
-  function _I(n) {
+  function RI(n) {
     let e = n.parentNode;
     return e && e.toString() === "[object ShadowRoot]" && (e = e.host), e;
   }
@@ -13252,7 +13252,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Hee(n, e, t) {
     let i, s;
     if (e === void 0 || t === void 0) {
-      const r = n && _I(n);
+      const r = n && RI(n);
       if (!r)
         e = n.clientWidth, t = n.clientHeight;
       else {
@@ -13283,7 +13283,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       height: u
     };
   }
-  function CL(n, e, t) {
+  function SL(n, e, t) {
     const i = e || 1, s = Math.floor(n.height * i), r = Math.floor(n.width * i);
     n.height = Math.floor(n.height), n.width = Math.floor(n.width);
     const o = n.canvas;
@@ -13297,12 +13297,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           return n = !0, !1;
         }
       };
-      SI() && (window.addEventListener("test", null, e), window.removeEventListener("test", null, e));
+      _I() && (window.addEventListener("test", null, e), window.removeEventListener("test", null, e));
     } catch {
     }
     return n;
   }();
-  function SL(n, e) {
+  function _L(n, e) {
     const t = Pee(n, e), i = t && t.match(/^(\d+)(\.\d+)?px$/);
     return i ? +i[1] : void 0;
   }
@@ -13367,14 +13367,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function yg(n, e, t) {
     return n ? Fee(e, t) : Bee();
   }
-  function s5(n, e) {
+  function r5(n, e) {
     let t, i;
     (e === "ltr" || e === "rtl") && (t = n.canvas.style, i = [t.getPropertyValue("direction"), t.getPropertyPriority("direction")], t.setProperty("direction", e, "important"), n.prevTextDirection = i);
   }
-  function r5(n, e) {
+  function o5(n, e) {
     e !== void 0 && (delete n.prevTextDirection, n.canvas.style.setProperty("direction", e[0], e[1]));
   }
-  function o5(n) {
+  function a5(n) {
     return n === "angle" ? {
       between: sw,
       compare: VJ,
@@ -13385,7 +13385,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       normalize: (e) => e
     };
   }
-  function _L({
+  function RL({
     start: n,
     end: e,
     count: t,
@@ -13407,7 +13407,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     } = t, {
       between: o,
       normalize: a
-    } = o5(i), l = e.length;
+    } = a5(i), l = e.length;
     let {
       start: c,
       end: u,
@@ -13425,7 +13425,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       style: n.style
     };
   }
-  function a5(n, e, t) {
+  function l5(n, e, t) {
     if (!t)
       return [n];
     const {
@@ -13436,7 +13436,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       compare: a,
       between: l,
       normalize: c
-    } = o5(i), {
+    } = a5(i), {
       start: u,
       end: h,
       loop: d,
@@ -13445,14 +13445,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     let p = !1, m = null, w, y, C;
     const R = () => l(s, C, w) && a(s, C) !== 0, _ = () => a(r, w) === 0 || l(r, C, w), x = () => p || R(), M = () => !p || _();
     for (let I = u, A = u; I <= h; ++I)
-      y = e[I % o], !y.skip && (w = c(y[i]), w !== C && (p = l(w, s, r), m === null && x() && (m = a(w, s) === 0 ? I : A), m !== null && M() && (g.push(_L({
+      y = e[I % o], !y.skip && (w = c(y[i]), w !== C && (p = l(w, s, r), m === null && x() && (m = a(w, s) === 0 ? I : A), m !== null && M() && (g.push(RL({
         start: m,
         end: I,
         loop: d,
         count: o,
         style: f
       })), m = null), A = I, C = w));
-    return m !== null && g.push(_L({
+    return m !== null && g.push(RL({
       start: m,
       end: h,
       loop: d,
@@ -13460,10 +13460,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       style: f
     })), g;
   }
-  function l5(n, e) {
+  function c5(n, e) {
     const t = [], i = n.segments;
     for (let s = 0; s < i.length; s++) {
-      const r = a5(i[s], n.points, e);
+      const r = l5(i[s], n.points, e);
       r.length && t.push(...r);
     }
     return t;
@@ -13508,19 +13508,19 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       end: a
     } = Wee(t, s, r, i);
     if (i === !0)
-      return RL(n, [{
+      return xL(n, [{
         start: o,
         end: a,
         loop: r
       }], t, e);
     const l = a < o ? a + s : a, c = !!n._fullLoop && o === 0 && a === s - 1;
-    return RL(n, jee(t, o, l, c), t, e);
+    return xL(n, jee(t, o, l, c), t, e);
   }
-  function RL(n, e, t, i) {
+  function xL(n, e, t, i) {
     return !i || !i.setContext || !t ? e : Uee(n, e, t, i);
   }
   function Uee(n, e, t, i) {
-    const s = n._chart.getContext(), r = xL(n.options), {
+    const s = n._chart.getContext(), r = EL(n.options), {
       _datasetIndex: o,
       options: {
         spanGaps: a
@@ -13547,7 +13547,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let p = t[h % l], m;
       for (d = h + 1; d <= g.end; d++) {
         const w = t[d % l];
-        m = xL(i.setContext(Tu(s, {
+        m = EL(i.setContext(Tu(s, {
           type: "segment",
           p0: p,
           p1: w,
@@ -13560,7 +13560,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return c;
   }
-  function xL(n) {
+  function EL(n) {
     return {
       backgroundColor: n.backgroundColor,
       borderCapStyle: n.borderCapStyle,
@@ -13575,7 +13575,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (!e)
       return !1;
     const t = [], i = function(s, r) {
-      return bI(r) ? (t.includes(r) || t.push(r), t.indexOf(r)) : r;
+      return wI(r) ? (t.includes(r) || t.push(r), t.indexOf(r)) : r;
     };
     return JSON.stringify(n, i) !== JSON.stringify(e, i);
   }
@@ -13599,7 +13599,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }));
     }
     _refresh() {
-      this._request || (this._running = !0, this._request = Uj.call(window, () => {
+      this._request || (this._running = !0, this._request = Y6.call(window, () => {
         this._update(), this._request = null, this._running && this._refresh();
       }));
     }
@@ -13662,12 +13662,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   }
   var bl = /* @__PURE__ */ new Gee();
-  const EL = "transparent", Kee = {
+  const TL = "transparent", Kee = {
     boolean(n, e, t) {
       return t > 0.5 ? e : n;
     },
     color(n, e, t) {
-      const i = mL(n || EL), s = i.valid && mL(e || EL);
+      const i = bL(n || TL), s = i.valid && bL(e || TL);
       return s && s.valid ? s.mix(i, t).hexString() : e;
     },
     number(n, e, t) {
@@ -13722,7 +13722,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         i[s][t]();
     }
   }
-  class c5 {
+  class u5 {
     constructor(e, t) {
       this._chart = e, this._properties = /* @__PURE__ */ new Map(), this.configure(t);
     }
@@ -13811,7 +13811,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       $animations: {}
     })), t;
   }
-  function TL(n, e) {
+  function ML(n, e) {
     const t = n && n.options || {}, i = t.reverse, s = t.min === void 0 ? e : 0, r = t.max === void 0 ? e : 0;
     return {
       start: i ? r : s,
@@ -13821,7 +13821,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Zee(n, e, t) {
     if (t === !1)
       return !1;
-    const i = TL(n, t), s = TL(e, t);
+    const i = ML(n, t), s = ML(e, t);
     return {
       top: s.end,
       right: i.end,
@@ -13839,14 +13839,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       disabled: n === !1
     };
   }
-  function u5(n, e) {
+  function h5(n, e) {
     const t = [], i = n._getSortedDatasetMetas(e);
     let s, r;
     for (s = 0, r = i.length; s < r; ++s)
       t.push(i[s].index);
     return t;
   }
-  function ML(n, e, t, i = {}) {
+  function AL(n, e, t, i = {}) {
     const s = n.keys, r = i.mode === "single";
     let o, a, l, c;
     if (e === null)
@@ -13898,7 +13898,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const i = n[e] || (n[e] = {});
     return i[t] || (i[t] = {});
   }
-  function AL(n, e, t, i) {
+  function PL(n, e, t, i) {
     for (const s of e.getMatchingVisibleMetas(i).reverse()) {
       const r = n[s.index];
       if (t && r > 0 || !t && r < 0)
@@ -13906,7 +13906,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return null;
   }
-  function PL(n, e) {
+  function IL(n, e) {
     const {
       chart: t,
       _cachedMeta: i
@@ -13921,7 +13921,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         [l]: p,
         [c]: m
       } = g, w = g._stacks || (g._stacks = {});
-      d = w[c] = ite(s, u, p), d[a] = m, d._top = AL(d, o, !0, i.type), d._bottom = AL(d, o, !1, i.type);
+      d = w[c] = ite(s, u, p), d[a] = m, d._top = PL(d, o, !0, i.type), d._bottom = PL(d, o, !1, i.type);
       const y = d._visualValues || (d._visualValues = {});
       y[a] = m;
     }
@@ -13964,8 +13964,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   }
-  const ex = (n) => n === "reset" || n === "none", IL = (n, e) => e ? n : Object.assign({}, n), ote = (n, e, t) => n && !e.hidden && e._stacked && {
-    keys: u5(t, !0),
+  const ex = (n) => n === "reset" || n === "none", OL = (n, e) => e ? n : Object.assign({}, n), ote = (n, e, t) => n && !e.hidden && e._stacked && {
+    keys: h5(t, !0),
     values: null
   };
   class Kr {
@@ -14001,7 +14001,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     _destroy() {
       const e = this._cachedMeta;
-      this._data && fL(this._data, this), e._stacked && Mp(e);
+      this._data && gL(this._data, this), e._stacked && Mp(e);
     }
     _dataCheck() {
       const e = this.getDataset(), t = e.data || (e.data = []), i = this._data;
@@ -14010,7 +14010,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         this._data = ete(t, s);
       } else if (i !== t) {
         if (i) {
-          fL(i, this);
+          gL(i, this);
           const s = this._cachedMeta;
           Mp(s), s._parsed = [];
         }
@@ -14026,7 +14026,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let s = !1;
       this._dataCheck();
       const r = t._stacked;
-      t._stacked = Z1(t.vScale, t), t.stack !== i.stack && (s = !0, Mp(t), t.stack = i.stack), this._resyncElements(e), (s || r !== t._stacked) && (PL(this, t._parsed), t._stacked = Z1(t.vScale, t));
+      t._stacked = Z1(t.vScale, t), t.stack !== i.stack && (s = !0, Mp(t), t.stack = i.stack), this._resyncElements(e), (s || r !== t._stacked) && (IL(this, t._parsed), t._stacked = Z1(t.vScale, t));
     }
     configure() {
       const e = this.chart.config, t = e.datasetScopeKeys(this._type), i = e.getOptionScopes(this.getDataset(), t, !0);
@@ -14050,7 +14050,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           i._parsed[u + e] = h = d[u], l && (f() && (l = !1), c = h);
         i._sorted = l;
       }
-      o && PL(this, d);
+      o && IL(this, d);
     }
     parsePrimitiveData(e, t, i, s) {
       const {
@@ -14102,10 +14102,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     applyStack(e, t, i) {
       const s = this.chart, r = this._cachedMeta, o = t[e.axis], a = {
-        keys: u5(s, !0),
+        keys: h5(s, !0),
         values: t._stacks[e.axis]._visualValues
       };
-      return ML(a, o, r.index, {
+      return AL(a, o, r.index, {
         mode: i
       });
     }
@@ -14113,7 +14113,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const r = i[t.axis];
       let o = r === null ? NaN : r;
       const a = s && i._stacks[t.axis];
-      s && a && (s.values = a, o = ML(s, r, this._cachedMeta.index)), e.min = Math.min(e.min, o), e.max = Math.max(e.max, o);
+      s && a && (s.values = a, o = AL(s, r, this._cachedMeta.index)), e.min = Math.min(e.min, o), e.max = Math.max(e.max, o);
     }
     getMinMax(e, t) {
       const i = this._cachedMeta, s = i._parsed, r = i._sorted && e === i.iScale, o = s.length, a = this._getOtherScale(e), l = ote(t, i, this.chart), c = {
@@ -14196,9 +14196,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     _resolveElementOptions(e, t = "default", i) {
       const s = t === "active", r = this._cachedDataOpts, o = e + "-" + t, a = r[o], l = this.enableOptionSharing && iw(i);
       if (a)
-        return IL(a, l);
+        return OL(a, l);
       const c = this.chart.config, u = c.datasetElementScopeKeys(this._type, e), h = s ? [`${e}Hover`, "hover", e, ""] : [e, ""], d = c.getOptionScopes(this.getDataset(), u), f = Object.keys(Rn.elements[e]), g = () => this.getContext(i, s, t), p = c.resolveNamedOptions(d, f, g, h);
-      return p.$shared && (p.$shared = l, r[o] = Object.freeze(IL(p, l))), p;
+      return p.$shared && (p.$shared = l, r[o] = Object.freeze(OL(p, l))), p;
     }
     _resolveAnimations(e, t, i) {
       const s = this.chart, r = this._cachedDataOpts, o = `animation-${t}`, a = r[o];
@@ -14209,7 +14209,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         const u = this.chart.config, h = u.datasetAnimationScopeKeys(this._type, t), d = u.getOptionScopes(this.getDataset(), h);
         l = u.createResolver(d, this.getContext(e, i, t));
       }
-      const c = new c5(s, l && l.animations);
+      const c = new u5(s, l && l.animations);
       return l && l._cacheable && (r[o] = Object.freeze(c)), c;
     }
     getSharedOptions(e) {
@@ -14319,7 +14319,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let i = [];
       for (let s = 0, r = t.length; s < r; s++)
         i = i.concat(t[s].controller.getAllParsedValues(n));
-      n._cache.$bar = zj(i.sort((s, r) => s - r));
+      n._cache.$bar = U6(i.sort((s, r) => s - r));
     }
     return n._cache.$bar;
   }
@@ -14368,14 +14368,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       max: a
     };
   }
-  function h5(n, e, t, i) {
+  function d5(n, e, t, i) {
     return Sn(n) ? hte(n, e, t, i) : e[t.axis] = t.parse(n, i), e;
   }
-  function OL(n, e, t, i) {
+  function kL(n, e, t, i) {
     const s = n.iScale, r = n.vScale, o = s.getLabels(), a = s === r, l = [];
     let c, u, h, d;
     for (c = t, u = t + i; c < u; ++c)
-      d = e[c], h = {}, h[s.axis] = a || s.parse(o[c], c), l.push(h5(d, h, r, c));
+      d = e[c], h = {}, h[s.axis] = a || s.parse(o[c], c), l.push(d5(d, h, r, c));
     return l;
   }
   function tx(n) {
@@ -14417,15 +14417,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       top: c,
       bottom: u
     } = fte(n);
-    s === "middle" && t && (n.enableBorderRadius = !0, (t._top || 0) === i ? s = c : (t._bottom || 0) === i ? s = u : (r[kL(u, o, a, l)] = !0, s = c)), r[kL(s, o, a, l)] = !0, n.borderSkipped = r;
+    s === "middle" && t && (n.enableBorderRadius = !0, (t._top || 0) === i ? s = c : (t._bottom || 0) === i ? s = u : (r[HL(u, o, a, l)] = !0, s = c)), r[HL(s, o, a, l)] = !0, n.borderSkipped = r;
   }
-  function kL(n, e, t, i) {
-    return i ? (n = pte(n, e, t), n = HL(n, t, e)) : n = HL(n, e, t), n;
+  function HL(n, e, t, i) {
+    return i ? (n = pte(n, e, t), n = DL(n, t, e)) : n = DL(n, e, t), n;
   }
   function pte(n, e, t) {
     return n === e ? t : n === t ? e : n;
   }
-  function HL(n, e, t) {
+  function DL(n, e, t) {
     return n === "start" ? e : n === "end" ? t : n;
   }
   function mte(n, {
@@ -14435,10 +14435,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   class K_ extends Kr {
     parsePrimitiveData(e, t, i, s) {
-      return OL(e, t, i, s);
+      return kL(e, t, i, s);
     }
     parseArrayData(e, t, i, s) {
-      return OL(e, t, i, s);
+      return kL(e, t, i, s);
     }
     parseObjectData(e, t, i, s) {
       const {
@@ -14450,7 +14450,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       } = this._parsing, c = r.axis === "x" ? a : l, u = o.axis === "x" ? a : l, h = [];
       let d, f, g, p;
       for (d = i, f = i + s; d < f; ++d)
-        p = t[d], g = {}, g[r.axis] = r.parse(hu(p, c), d), h.push(h5(hu(p, u), g, o, d));
+        p = t[d], g = {}, g[r.axis] = r.parse(hu(p, c), d), h.push(d5(hu(p, u), g, o, d));
       return h;
     }
     updateRangeFromParsed(e, t, i, s) {
@@ -14784,7 +14784,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         ratioY: f,
         offsetX: g,
         offsetY: p
-      } = bte(h, u, l), m = (i.width - o) / d, w = (i.height - o) / f, y = Math.max(Math.min(m, w) / 2, 0), C = Fj(this.options.radius, y), R = Math.max(C * l, 0), _ = (C - R) / this._getVisibleDatasetWeightTotal();
+      } = bte(h, u, l), m = (i.width - o) / d, w = (i.height - o) / f, y = Math.max(Math.min(m, w) / 2, 0), C = B6(this.options.radius, y), R = Math.max(C * l, 0), _ = (C - R) / this._getVisibleDatasetWeightTotal();
       this.offsetX = g * C, this.offsetY = p * C, s.total = this.calculateTotal(), this.outerRadius = C - _ * this._getRingWeightOffset(this.index), this.innerRadius = Math.max(this.outerRadius - _ * c, 0), this.updateElements(r, 0, r.length, e);
     }
     _circumference(e, t) {
@@ -14945,8 +14945,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let {
         start: a,
         count: l
-      } = Gj(t, s, o);
-      this._drawStart = a, this._drawCount = l, Kj(t) && (a = 0, l = s.length), i._chart = this.chart, i._datasetIndex = this.index, i._decimated = !!r._decimated, i.points = s;
+      } = K6(t, s, o);
+      this._drawStart = a, this._drawCount = l, q6(t) && (a = 0, l = s.length), i._chart = this.chart, i._datasetIndex = this.index, i._decimated = !!r._decimated, i.points = s;
       const c = this.resolveDatasetElementOptions(e);
       this.options.showLine || (c.borderWidth = 0), c.segment = this.options.segment, this.updateElement(i, void 0, {
         animated: !o,
@@ -15018,7 +15018,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
     parseObjectData(e, t, i, s) {
-      return n5.bind(this)(e, t, i, s);
+      return i5.bind(this)(e, t, i, s);
     }
     update(e) {
       const t = this._cachedMeta.data;
@@ -15140,10 +15140,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   };
-  class RI extends Ld {
+  class xI extends Ld {
   }
-  RI.id = "pie";
-  RI.defaults = {
+  xI.id = "pie";
+  xI.defaults = {
     cutout: 0,
     rotation: 0,
     circumference: 360,
@@ -15158,7 +15158,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
     parseObjectData(e, t, i, s) {
-      return n5.bind(this)(e, t, i, s);
+      return i5.bind(this)(e, t, i, s);
     }
     update(e) {
       const t = this._cachedMeta, i = t.dataset, s = t.data || [], r = t.iScale.getLabels();
@@ -15226,8 +15226,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       let {
         start: r,
         count: o
-      } = Gj(t, i, s);
-      if (this._drawStart = r, this._drawCount = o, Kj(t) && (r = 0, o = i.length), this.options.showLine) {
+      } = K6(t, i, s);
+      if (this._drawStart = r, this._drawCount = o, q6(t) && (r = 0, o = i.length), this.options.showLine) {
         this.datasetElementType || this.addElements();
         const {
           dataset: a,
@@ -15306,7 +15306,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     BubbleController: q_,
     DoughnutController: Ld,
     LineController: X_,
-    PieController: RI,
+    PieController: xI,
     PolarAreaController: zw,
     RadarController: Q_,
     ScatterController: Z_
@@ -15314,7 +15314,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Fu() {
     throw new Error("This method is not implemented: Check that a complete date adapter is provided.");
   }
-  class xI {
+  class EI {
     /**
     * Override default date adapter methods.
     * Accepts type parameter to define options type.
@@ -15326,7 +15326,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     * })
     */
     static override(e) {
-      Object.assign(xI.prototype, e);
+      Object.assign(EI.prototype, e);
     }
     constructor(e) {
       this.options = void 0, this.options = e || {};
@@ -15357,7 +15357,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   }
   var vte = {
-    _date: xI
+    _date: EI
   };
   function yte(n, e, t, i) {
     const {
@@ -15426,7 +15426,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         endAngle: u
       } = o.getProps(["startAngle", "endAngle"], i), {
         angle: h
-      } = Wj(o, {
+      } = j6(o, {
         x: e.x,
         y: e.y
       });
@@ -15465,7 +15465,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function ix(n, e, t, i, s, r) {
     return !r && !n.isPointInArea(e) ? [] : t === "r" && !i ? Ste(n, e, t, s) : _te(n, e, t, i, s, r);
   }
-  function DL(n, e, t, i, s) {
+  function NL(n, e, t, i, s) {
     const r = [], o = t === "x" ? "inXRange" : "inYRange";
     let a = !1;
     return Uw(n, t, e, (l, c, u) => {
@@ -15515,20 +15515,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       },
       x(n, e, t, i) {
         const s = Ph(e, n);
-        return DL(n, s, "x", t.intersect, i);
+        return NL(n, s, "x", t.intersect, i);
       },
       y(n, e, t, i) {
         const s = Ph(e, n);
-        return DL(n, s, "y", t.intersect, i);
+        return NL(n, s, "y", t.intersect, i);
       }
     }
   };
-  const d5 = ["left", "top", "right", "bottom"];
+  const f5 = ["left", "top", "right", "bottom"];
   function Ap(n, e) {
     return n.filter((t) => t.pos === e);
   }
-  function NL(n, e) {
-    return n.filter((t) => d5.indexOf(t.pos) === -1 && t.box.axis === e);
+  function LL(n, e) {
+    return n.filter((t) => f5.indexOf(t.pos) === -1 && t.box.axis === e);
   }
   function Pp(n, e) {
     return n.sort((t, i) => {
@@ -15565,7 +15565,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         pos: s,
         stackWeight: r
       } = t;
-      if (!i || !d5.includes(s))
+      if (!i || !f5.includes(s))
         continue;
       const o = e[i] || (e[i] = {
         count: 0,
@@ -15593,7 +15593,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return t;
   }
   function Mte(n) {
-    const e = xte(n), t = Pp(e.filter((c) => c.box.fullSize), !0), i = Pp(Ap(e, "left"), !0), s = Pp(Ap(e, "right")), r = Pp(Ap(e, "top"), !0), o = Pp(Ap(e, "bottom")), a = NL(e, "x"), l = NL(e, "y");
+    const e = xte(n), t = Pp(e.filter((c) => c.box.fullSize), !0), i = Pp(Ap(e, "left"), !0), s = Pp(Ap(e, "right")), r = Pp(Ap(e, "top"), !0), o = Pp(Ap(e, "bottom")), a = LL(e, "x"), l = LL(e, "y");
     return {
       fullSize: t,
       leftAndTop: i.concat(r),
@@ -15603,10 +15603,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       horizontal: r.concat(o).concat(a)
     };
   }
-  function LL(n, e, t, i) {
+  function $L(n, e, t, i) {
     return Math.max(n[t], e[t]) + Math.max(n[i], e[i]);
   }
-  function f5(n, e) {
+  function g5(n, e) {
     n.top = Math.max(n.top, e.top), n.left = Math.max(n.left, e.left), n.bottom = Math.max(n.bottom, e.bottom), n.right = Math.max(n.right, e.right);
   }
   function Ate(n, e, t, i) {
@@ -15622,8 +15622,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
       h.size = Math.max(h.size, t.horizontal ? r.height : r.width), t.size = h.size / h.count, n[s] += t.size;
     }
-    r.getPadding && f5(o, r.getPadding());
-    const a = Math.max(0, e.outerWidth - LL(o, n, "left", "right")), l = Math.max(0, e.outerHeight - LL(o, n, "top", "bottom")), c = a !== n.w, u = l !== n.h;
+    r.getPadding && g5(o, r.getPadding());
+    const a = Math.max(0, e.outerWidth - $L(o, n, "left", "right")), l = Math.max(0, e.outerHeight - $L(o, n, "top", "bottom")), c = a !== n.w, u = l !== n.h;
     return n.w = a, n.h = l, t.horizontal ? {
       same: c,
       other: u
@@ -15671,7 +15671,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Yv(n, e, t, i, s) {
     n.top = t, n.left = e, n.right = e + i, n.bottom = t + s, n.width = i, n.height = s;
   }
-  function $L(n, e, t, i) {
+  function FL(n, e, t, i) {
     const s = t.padding;
     let {
       x: r,
@@ -15727,7 +15727,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         vBoxMaxWidth: r / 2 / u,
         hBoxMaxHeight: o / 2
       }), d = Object.assign({}, s);
-      f5(d, ns(i));
+      g5(d, ns(i));
       const f = Object.assign({
         maxPadding: d,
         w: r,
@@ -15735,7 +15735,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         x: s.left,
         y: s.top
       }, s), g = Tte(l.concat(c), h);
-      Bm(a.fullSize, f, h, g), Bm(l, f, h, g), Bm(c, f, h, g) && Bm(l, f, h, g), Pte(f), $L(a.leftAndTop, f, h, g), f.x += f.w, f.y += f.h, $L(a.rightAndBottom, f, h, g), n.chartArea = {
+      Bm(a.fullSize, f, h, g), Bm(l, f, h, g), Bm(c, f, h, g) && Bm(l, f, h, g), Pte(f), FL(a.leftAndTop, f, h, g), f.x += f.w, f.y += f.h, FL(a.rightAndBottom, f, h, g), n.chartArea = {
         left: f.left,
         top: f.top,
         right: f.left + f.w,
@@ -15753,7 +15753,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     }
   };
-  class g5 {
+  class p5 {
     acquireContext(e, t) {
     }
     releaseContext(e) {
@@ -15778,7 +15778,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     updateConfig(e) {
     }
   }
-  class Ote extends g5 {
+  class Ote extends p5 {
     acquireContext(e) {
       return e && e.getContext && e.getContext("2d") || null;
     }
@@ -15796,7 +15796,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     pointerup: "mouseup",
     pointerleave: "mouseout",
     pointerout: "mouseout"
-  }, FL = (n) => n === null || n === "";
+  }, BL = (n) => n === null || n === "";
   function Hte(n, e) {
     const t = n.style, i = n.getAttribute("height"), s = n.getAttribute("width");
     if (n[aC] = {
@@ -15809,27 +15809,27 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           width: t.width
         }
       }
-    }, t.display = t.display || "block", t.boxSizing = t.boxSizing || "border-box", FL(s)) {
-      const r = SL(n, "width");
+    }, t.display = t.display || "block", t.boxSizing = t.boxSizing || "border-box", BL(s)) {
+      const r = _L(n, "width");
       r !== void 0 && (n.width = r);
     }
-    if (FL(i))
+    if (BL(i))
       if (n.style.height === "")
         n.height = n.width / (e || 2);
       else {
-        const r = SL(n, "height");
+        const r = _L(n, "height");
         r !== void 0 && (n.height = r);
       }
     return n;
   }
-  const p5 = Nee ? {
+  const m5 = Nee ? {
     passive: !0
   } : !1;
   function Dte(n, e, t) {
-    n && n.addEventListener(e, t, p5);
+    n && n.addEventListener(e, t, m5);
   }
   function Nte(n, e, t) {
-    n && n.canvas && n.canvas.removeEventListener(e, t, p5);
+    n && n.canvas && n.canvas.removeEventListener(e, t, m5);
   }
   function Lte(n, e) {
     const t = kte[n.type] || n.type, {
@@ -15874,24 +15874,24 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }), s;
   }
   const ow = /* @__PURE__ */ new Map();
-  let BL = 0;
-  function m5() {
+  let VL = 0;
+  function b5() {
     const n = window.devicePixelRatio;
-    n !== BL && (BL = n, ow.forEach((e, t) => {
+    n !== VL && (VL = n, ow.forEach((e, t) => {
       t.currentDevicePixelRatio !== n && e();
     }));
   }
   function Bte(n, e) {
-    ow.size || window.addEventListener("resize", m5), ow.set(n, e);
+    ow.size || window.addEventListener("resize", b5), ow.set(n, e);
   }
   function Vte(n) {
-    ow.delete(n), ow.size || window.removeEventListener("resize", m5);
+    ow.delete(n), ow.size || window.removeEventListener("resize", b5);
   }
   function Wte(n, e, t) {
-    const i = n.canvas, s = i && _I(i);
+    const i = n.canvas, s = i && RI(i);
     if (!s)
       return;
-    const r = Yj((a, l) => {
+    const r = G6((a, l) => {
       const c = s.clientWidth;
       t(a, l), c < s.clientWidth && t();
     }, window), o = new ResizeObserver((a) => {
@@ -15904,12 +15904,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     t && t.disconnect(), e === "resize" && Vte(n);
   }
   function jte(n, e, t) {
-    const i = n.canvas, s = Yj((r) => {
+    const i = n.canvas, s = G6((r) => {
       n.ctx !== null && t(Lte(r, n));
     }, n);
     return Dte(i, e, s), s;
   }
-  class zte extends g5 {
+  class zte extends p5 {
     acquireContext(e, t) {
       const i = e && e.getContext && e.getContext("2d");
       return i && i.canvas === e ? (Hte(e, t), i) : null;
@@ -15954,12 +15954,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return Dee(e, t, i, s);
     }
     isAttached(e) {
-      const t = e && _I(e);
+      const t = e && RI(e);
       return !!(t && t.isConnected);
     }
   }
   function Ute(n) {
-    return !SI() || typeof OffscreenCanvas < "u" && n instanceof OffscreenCanvas ? Ote : zte;
+    return !_I() || typeof OffscreenCanvas < "u" && n instanceof OffscreenCanvas ? Ote : zte;
   }
   class qr {
     constructor() {
@@ -16050,8 +16050,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return !1;
     return i;
   }
-  const Zte = (n) => n === "left" ? "right" : n === "right" ? "left" : n, VL = (n, e, t) => e === "top" || e === "left" ? n[e] + t : n[e] - t, WL = (n, e) => Math.min(e || n, n);
-  function jL(n, e) {
+  const Zte = (n) => n === "left" ? "right" : n === "right" ? "left" : n, WL = (n, e, t) => e === "top" || e === "left" ? n[e] + t : n[e] - t, jL = (n, e) => Math.min(e || n, n);
+  function zL(n, e) {
     const t = [], i = n.length / e, s = n.length;
     let r = 0;
     for (; r < s; r += i)
@@ -16078,7 +16078,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Ip(n) {
     return n.drawTicks ? n.tickLength : 0;
   }
-  function zL(n, e) {
+  function UL(n, e) {
     if (!n.display)
       return 0;
     const t = pi(n.font, e), i = ns(n.padding);
@@ -16098,7 +16098,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     });
   }
   function ine(n, e, t) {
-    let i = mI(n);
+    let i = bI(n);
     return (t && e !== "right" || !t && e === "right") && (i = Zte(i)), i;
   }
   function sne(n, e, t, i) {
@@ -16118,13 +16118,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (f = Yi(i, r, a), bt(t)) {
         const w = Object.keys(t)[0], y = t[w];
         g = u[w].getPixelForValue(y) + p - e;
-      } else t === "center" ? g = (c.bottom + c.top) / 2 + p - e : g = VL(n, t, e);
+      } else t === "center" ? g = (c.bottom + c.top) / 2 + p - e : g = WL(n, t, e);
       d = a - r;
     } else {
       if (bt(t)) {
         const w = Object.keys(t)[0], y = t[w];
         f = u[w].getPixelForValue(y) - m + e;
-      } else t === "center" ? f = (c.left + c.right) / 2 - m + e : f = VL(n, t, e);
+      } else t === "center" ? f = (c.left + c.right) / 2 - m + e : f = WL(n, t, e);
       g = Yi(i, o, s), h = t === "left" ? -Xn : Xn;
     }
     return {
@@ -16220,7 +16220,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         bottom: 0
       }, i), this.ticks = null, this._labelSizes = null, this._gridLineItems = null, this._labelItems = null, this.beforeSetDimensions(), this.setDimensions(), this.afterSetDimensions(), this._maxLength = this.isHorizontal() ? this.width + i.left + i.right : this.height + i.top + i.bottom, this._dataLimitsCached || (this.beforeDataLimits(), this.determineDataLimits(), this.afterDataLimits(), this._range = fee(this, r, s), this._dataLimitsCached = !0), this.beforeBuildTicks(), this.ticks = this.buildTicks() || [], this.afterBuildTicks();
       const l = a < this.ticks.length;
-      this._convertTicksToLabels(l ? jL(this.ticks, a) : this.ticks), this.configure(), this.beforeCalculateLabelRotation(), this.calculateLabelRotation(), this.afterCalculateLabelRotation(), o.display && (o.autoSkip || o.source === "auto") && (this.ticks = Yte(this, this.ticks), this._labelSizes = null, this.afterAutoSkip()), l && this._convertTicksToLabels(this.ticks), this.beforeFit(), this.fit(), this.afterFit(), this.afterUpdate();
+      this._convertTicksToLabels(l ? zL(this.ticks, a) : this.ticks), this.configure(), this.beforeCalculateLabelRotation(), this.calculateLabelRotation(), this.afterCalculateLabelRotation(), o.display && (o.autoSkip || o.source === "auto") && (this.ticks = Yte(this, this.ticks), this._labelSizes = null, this.afterAutoSkip()), l && this._convertTicksToLabels(this.ticks), this.beforeFit(), this.fit(), this.afterFit(), this.afterUpdate();
     }
     configure() {
       let e = this.options.reverse, t, i;
@@ -16274,14 +16274,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       cn(this.options.beforeCalculateLabelRotation, [this]);
     }
     calculateLabelRotation() {
-      const e = this.options, t = e.ticks, i = WL(this.ticks.length, e.ticks.maxTicksLimit), s = t.minRotation || 0, r = t.maxRotation;
+      const e = this.options, t = e.ticks, i = jL(this.ticks.length, e.ticks.maxTicksLimit), s = t.minRotation || 0, r = t.maxRotation;
       let o = s, a, l, c;
       if (!this._isVisible() || !t.display || s >= r || i <= 1 || !this.isHorizontal()) {
         this.labelRotation = s;
         return;
       }
       const u = this._getLabelSizes(), h = u.widest.width, d = u.highest.height, f = Ti(this.chart.width - h, 0, this.maxWidth);
-      a = e.offset ? this.maxWidth / i : f / (i - 1), h + 6 > a && (a = f / (i - (e.offset ? 0.5 : 1)), l = this.maxHeight - Ip(e.grid) - t.padding - zL(e.title, this.chart.options.font), c = Math.sqrt(h * h + d * d), o = gI(Math.min(Math.asin(Ti((u.highest.height + 6) / a, -1, 1)), Math.asin(Ti(l / c, -1, 1)) - Math.asin(Ti(d / c, -1, 1)))), o = Math.max(s, Math.min(r, o))), this.labelRotation = o;
+      a = e.offset ? this.maxWidth / i : f / (i - 1), h + 6 > a && (a = f / (i - (e.offset ? 0.5 : 1)), l = this.maxHeight - Ip(e.grid) - t.padding - UL(e.title, this.chart.options.font), c = Math.sqrt(h * h + d * d), o = pI(Math.min(Math.asin(Ti((u.highest.height + 6) / a, -1, 1)), Math.asin(Ti(l / c, -1, 1)) - Math.asin(Ti(d / c, -1, 1)))), o = Math.max(s, Math.min(r, o))), this.labelRotation = o;
     }
     afterCalculateLabelRotation() {
       cn(this.options.afterCalculateLabelRotation, [this]);
@@ -16304,7 +16304,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         }
       } = this, o = this._isVisible(), a = this.isHorizontal();
       if (o) {
-        const l = zL(s, t.options.font);
+        const l = UL(s, t.options.font);
         if (a ? (e.width = this.maxWidth, e.height = Ip(r) + l) : (e.height = this.maxHeight, e.width = Ip(r) + l), i.display && this.ticks.length) {
           const {
             first: c,
@@ -16369,7 +16369,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (!e) {
         const t = this.options.ticks.sampleSize;
         let i = this.ticks;
-        t < i.length && (i = jL(i, t)), this._labelSizes = e = this._computeLabelSizes(i, i.length, this.options.ticks.maxTicksLimit);
+        t < i.length && (i = zL(i, t)), this._labelSizes = e = this._computeLabelSizes(i, i.length, this.options.ticks.maxTicksLimit);
       }
       return e;
     }
@@ -16377,7 +16377,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const {
         ctx: s,
         _longestTextCache: r
-      } = this, o = [], a = [], l = Math.floor(t / WL(t, i));
+      } = this, o = [], a = [], l = Math.floor(t / jL(t, i));
       let c = 0, u = 0, h, d, f, g, p, m, w, y, C, R, _;
       for (h = 0; h < t; h += l) {
         if (g = e[h].label, p = this._resolveTickFontOptions(h), s.font = m = p.string, w = r[m] = r[m] || {
@@ -16892,7 +16892,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     }
     _exec(e, t, i) {
-      const s = fI(e);
+      const s = gI(e);
       cn(i["before" + s], [], i), t[e](i), cn(i["after" + s], [], i);
     }
     _getRegistryForType(e) {
@@ -17003,7 +17003,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function pne(n, e) {
     return n === e ? "_index_" : "_value_";
   }
-  function UL(n) {
+  function YL(n) {
     if (n === "x" || n === "y" || n === "r")
       return n;
   }
@@ -17014,16 +17014,16 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return "y";
   }
   function PM(n, ...e) {
-    if (UL(n))
+    if (YL(n))
       return n;
     for (const t of e) {
-      const i = t.axis || mne(t.position) || n.length > 1 && UL(n[0].toLowerCase());
+      const i = t.axis || mne(t.position) || n.length > 1 && YL(n[0].toLowerCase());
       if (i)
         return i;
     }
     throw new Error(`Cannot determine type of '${n}' axis. Please provide 'axis' or 'position' option.`);
   }
-  function YL(n, e, t) {
+  function GL(n, e, t) {
     if (t[e + "AxisID"] === n)
       return {
         axis: e
@@ -17033,7 +17033,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (e.data && e.data.datasets) {
       const t = e.data.datasets.filter((i) => i.xAxisID === n || i.yAxisID === n);
       if (t.length)
-        return YL(n, "x", t[0]) || YL(n, "y", t[0]);
+        return GL(n, "x", t[0]) || GL(n, "y", t[0]);
     }
     return {};
   }
@@ -17064,20 +17064,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       fb(a, [Rn.scales[a.type], Rn.scale]);
     }), r;
   }
-  function b5(n) {
+  function w5(n) {
     const e = n.options || (n.options = {});
     e.plugins = qe(e.plugins, {}), e.scales = wne(n, e);
   }
-  function w5(n) {
+  function v5(n) {
     return n = n || {}, n.datasets = n.datasets || [], n.labels = n.labels || [], n;
   }
   function vne(n) {
-    return n = n || {}, n.data = w5(n.data), b5(n), n;
+    return n = n || {}, n.data = v5(n.data), w5(n), n;
   }
-  const GL = /* @__PURE__ */ new Map(), v5 = /* @__PURE__ */ new Set();
+  const KL = /* @__PURE__ */ new Map(), y5 = /* @__PURE__ */ new Set();
   function qv(n, e) {
-    let t = GL.get(n);
-    return t || (t = e(), GL.set(n, t), v5.add(t)), t;
+    let t = KL.get(n);
+    return t || (t = e(), KL.set(n, t), y5.add(t)), t;
   }
   const Op = (n, e, t) => {
     const i = hu(e, t);
@@ -17100,7 +17100,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this._config.data;
     }
     set data(e) {
-      this._config.data = w5(e);
+      this._config.data = v5(e);
     }
     get options() {
       return this._config.options;
@@ -17113,7 +17113,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     update() {
       const e = this._config;
-      this.clearCache(), b5(e);
+      this.clearCache(), w5(e);
     }
     clearCache() {
       this._scopeCache.clear(), this._resolverCache.clear();
@@ -17148,7 +17148,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         e && (l.add(e), u.forEach((h) => Op(l, e, h))), u.forEach((h) => Op(l, s, h)), u.forEach((h) => Op(l, vd[r] || {}, h)), u.forEach((h) => Op(l, Rn, h)), u.forEach((h) => Op(l, MM, h));
       });
       const c = Array.from(l);
-      return c.length === 0 && c.push(/* @__PURE__ */ Object.create(null)), v5.has(t) && o.set(t, c), c;
+      return c.length === 0 && c.push(/* @__PURE__ */ Object.create(null)), y5.has(t) && o.set(t, c), c;
     }
     chartOptionScopes() {
       const {
@@ -17165,7 +17165,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }, {
         resolver: o,
         subPrefixes: a
-      } = KL(this._resolverCache, e, s);
+      } = qL(this._resolverCache, e, s);
       let l = o;
       if (Sne(o, t)) {
         r.$shared = !1, i = du(i) ? i() : i;
@@ -17179,17 +17179,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     createResolver(e, t, i = [""], s) {
       const {
         resolver: r
-      } = KL(this._resolverCache, e, i);
+      } = qL(this._resolverCache, e, i);
       return bt(t) ? Ng(r, t, void 0, s) : r;
     }
   }
-  function KL(n, e, t) {
+  function qL(n, e, t) {
     let i = n.get(e);
     i || (i = /* @__PURE__ */ new Map(), n.set(e, i));
     const s = t.join();
     let r = i.get(s);
     return r || (r = {
-      resolver: vI(e, t),
+      resolver: yI(e, t),
       subPrefixes: t.filter((a) => !a.toLowerCase().includes("hover"))
     }, i.set(s, r)), r;
   }
@@ -17198,7 +17198,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const {
       isScriptable: t,
       isIndexable: i
-    } = Zj(n);
+    } = J6(n);
     for (const s of e) {
       const r = t(s), o = i(s), a = (o || r) && n[s];
       if (r && (du(a) || Cne(a)) || o && Sn(a))
@@ -17208,15 +17208,15 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   var _ne = "4.4.6";
   const Rne = ["top", "bottom", "left", "right", "chartArea"];
-  function qL(n, e) {
+  function XL(n, e) {
     return n === "top" || n === "bottom" || Rne.indexOf(n) === -1 && e === "x";
   }
-  function XL(n, e) {
+  function QL(n, e) {
     return function(t, i) {
       return t[n] === i[n] ? t[e] - i[e] : t[n] - i[n];
     };
   }
-  function QL(n) {
+  function ZL(n) {
     const e = n.chart, t = e.options.animation;
     e.notifyPlugins("afterRender"), cn(t && t.onComplete, [n], e);
   }
@@ -17224,11 +17224,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const e = n.chart, t = e.options.animation;
     cn(t && t.onProgress, [n], e);
   }
-  function y5(n) {
-    return SI() && typeof n == "string" ? n = document.getElementById(n) : n && n.length && (n = n[0]), n && n.canvas && (n = n.canvas), n;
+  function C5(n) {
+    return _I() && typeof n == "string" ? n = document.getElementById(n) : n && n.length && (n = n[0]), n && n.canvas && (n = n.canvas), n;
   }
-  const cS = {}, C5 = (n) => {
-    const e = y5(n);
+  const cS = {}, S5 = (n) => {
+    const e = C5(n);
     return Object.values(cS).filter((t) => t.canvas === e).pop();
   };
   function Ene(n, e, t) {
@@ -17261,13 +17261,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   class cr {
     static register(...e) {
-      ds.add(...e), ZL();
+      ds.add(...e), JL();
     }
     static unregister(...e) {
-      ds.remove(...e), ZL();
+      ds.remove(...e), JL();
     }
     constructor(e, t) {
-      const i = this.config = new yne(t), s = y5(e), r = C5(s);
+      const i = this.config = new yne(t), s = C5(e), r = S5(s);
       if (r)
         throw new Error("Canvas is already in use. Chart with ID '" + r.id + "' must be destroyed before the canvas with ID '" + r.canvas.id + "' can be reused.");
       const o = i.createResolver(i.chartOptionScopes(), this.getContext());
@@ -17277,7 +17277,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         console.error("Failed to create chart: can't acquire context from the given item");
         return;
       }
-      bl.listen(this, "complete", QL), bl.listen(this, "progress", xne), this._initialize(), this.attached && this.update();
+      bl.listen(this, "complete", ZL), bl.listen(this, "progress", xne), this._initialize(), this.attached && this.update();
     }
     get aspectRatio() {
       const {
@@ -17307,10 +17307,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return ds;
     }
     _initialize() {
-      return this.notifyPlugins("beforeInit"), this.options.responsive ? this.resize() : CL(this, this.options.devicePixelRatio), this.bindEvents(), this.notifyPlugins("afterInit"), this;
+      return this.notifyPlugins("beforeInit"), this.options.responsive ? this.resize() : SL(this, this.options.devicePixelRatio), this.bindEvents(), this.notifyPlugins("afterInit"), this;
     }
     clear() {
-      return wL(this.canvas, this.ctx), this;
+      return vL(this.canvas, this.ctx), this;
     }
     stop() {
       return bl.stop(this), this;
@@ -17323,7 +17323,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     _resize(e, t) {
       const i = this.options, s = this.canvas, r = i.maintainAspectRatio && this.aspectRatio, o = this.platform.getMaximumSize(s, e, t, r), a = i.devicePixelRatio || this.platform.getDevicePixelRatio(), l = this.width ? "resize" : "attach";
-      this.width = o.width, this.height = o.height, this._aspectRatio = this.aspectRatio, CL(this, a, !0) && (this.notifyPlugins("resize", {
+      this.width = o.width, this.height = o.height, this._aspectRatio = this.aspectRatio, SL(this, a, !0) && (this.notifyPlugins("resize", {
         size: o
       }), cn(i.onResize, [this, o], this), this.attached && this._doResize(l) && this.render());
     }
@@ -17345,7 +17345,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         };
       }))), Gt(r, (o) => {
         const a = o.options, l = a.id, c = PM(l, a), u = qe(a.type, o.dtype);
-        (a.position === void 0 || qL(a.position, c) !== qL(o.dposition)) && (a.position = o.dposition), s[l] = !0;
+        (a.position === void 0 || XL(a.position, c) !== XL(o.dposition)) && (a.position = o.dposition), s[l] = !0;
         let h = null;
         if (l in i && i[l].type === u)
           h = i[l];
@@ -17372,7 +17372,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           this._destroyDatasetMeta(s);
         e.splice(t, i - t);
       }
-      this._sortedMetasets = e.slice(0).sort(XL("order", "index"));
+      this._sortedMetasets = e.slice(0).sort(QL("order", "index"));
     }
     _removeUnreferencedMetasets() {
       const {
@@ -17437,7 +17437,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         c.reset();
       }), this._updateDatasets(e), this.notifyPlugins("afterUpdate", {
         mode: e
-      }), this._layers.sort(XL("z", "_idx"));
+      }), this._layers.sort(QL("z", "_idx"));
       const {
         _active: a,
         _lastEvent: l
@@ -17451,7 +17451,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     _checkEventBindings() {
       const e = this.options, t = new Set(Object.keys(this._listeners)), i = new Set(e.events);
-      (!cL(t, i) || !!this._responsiveListeners !== e.responsive) && (this.unbindEvents(), this.bindEvents());
+      (!uL(t, i) || !!this._responsiveListeners !== e.responsive) && (this.unbindEvents(), this.bindEvents());
     }
     _updateHiddenIndices() {
       const {
@@ -17473,7 +17473,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       this._dataChanges = [];
       const t = this.data.datasets.length, i = (r) => new Set(e.filter((o) => o[0] === r).map((o, a) => a + "," + o.splice(1).join(","))), s = i(0);
       for (let r = 1; r < t; r++)
-        if (!cL(s, i(r)))
+        if (!uL(s, i(r)))
           return;
       return Array.from(s).map((r) => r.split(",")).map((r) => ({
         method: r[1],
@@ -17522,7 +17522,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     render() {
       this.notifyPlugins("beforeRender", {
         cancelable: !0
-      }) !== !1 && (bl.has(this) ? this.attached && !bl.running(this) && bl.start(this) : (this.draw(), QL({
+      }) !== !1 && (bl.has(this) ? this.attached && !bl.running(this) && bl.start(this) : (this.draw(), ZL({
         chart: this
       })));
     }
@@ -17659,7 +17659,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         canvas: e,
         ctx: t
       } = this;
-      this._stop(), this.config.clearCache(), e && (this.unbindEvents(), wL(e, t), this.platform.releaseContext(t), this.canvas = null, this.ctx = null), delete cS[this.id], this.notifyPlugins("afterDestroy");
+      this._stop(), this.config.clearCache(), e && (this.unbindEvents(), vL(e, t), this.platform.releaseContext(t), this.canvas = null, this.ctx = null), delete cS[this.id], this.notifyPlugins("afterDestroy");
     }
     toBase64Image(...e) {
       return this.canvas.toDataURL(...e);
@@ -17772,8 +17772,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   cr.overrides = vd;
   cr.registry = ds;
   cr.version = _ne;
-  cr.getChart = C5;
-  function ZL() {
+  cr.getChart = S5;
+  function JL() {
     return Gt(cr.instances, (n) => n._plugins.invalidate());
   }
   function Ane(n, e, t) {
@@ -17789,7 +17789,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     n.beginPath(), n.arc(r, o, a, i - c, t + c), l > s ? (c = s / l, n.arc(r, o, l, t + c, i - c, !0)) : n.arc(r, o, s, t + Xn, i - Xn), n.closePath(), n.clip();
   }
   function Pne(n) {
-    return wI(n, ["outerStart", "outerEnd", "innerStart", "innerEnd"]);
+    return vI(n, ["outerStart", "outerEnd", "innerStart", "innerEnd"]);
   }
   function Ine(n, e, t, i) {
     const s = Pne(n.options.borderRadius), r = (t - e) / 2, o = Math.min(r, i * e / 2), a = (l) => {
@@ -17906,7 +17906,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const s = this.getProps(["x", "y"], i), {
         angle: r,
         distance: o
-      } = Wj(s, {
+      } = j6(s, {
         x: e,
         y: t
       }), {
@@ -17973,7 +17973,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     _scriptable: !0,
     _indexable: (n) => n !== "borderDash"
   };
-  function S5(n, e, t = e) {
+  function _5(n, e, t = e) {
     n.lineCap = qe(t.borderCapStyle, e.borderCapStyle), n.setLineDash(qe(t.borderDash, e.borderDash)), n.lineDashOffset = qe(t.borderDashOffset, e.borderDashOffset), n.lineJoin = qe(t.borderJoinStyle, e.borderJoinStyle), n.lineWidth = qe(t.borderWidth, e.borderWidth), n.strokeStyle = qe(t.borderColor, e.borderColor);
   }
   function Hne(n, e, t) {
@@ -17982,7 +17982,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   function Dne(n) {
     return n.stepped ? see : n.tension || n.cubicInterpolationMode === "monotone" ? ree : Hne;
   }
-  function _5(n, e, t = {}) {
+  function R5(n, e, t = {}) {
     const i = n.length, {
       start: s = 0,
       end: r = i - 1
@@ -18006,7 +18006,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       start: a,
       loop: l,
       ilen: c
-    } = _5(s, t, i), u = Dne(r);
+    } = R5(s, t, i), u = Dne(r);
     let {
       move: h = !0,
       reverse: d
@@ -18020,7 +18020,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       count: r,
       start: o,
       ilen: a
-    } = _5(s, t, i), {
+    } = R5(s, t, i), {
       move: l = !0,
       reverse: c
     } = i || {};
@@ -18045,7 +18045,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   function Fne(n, e, t, i) {
     let s = e._path;
-    s || (s = e._path = new Path2D(), e.path(s, t, i) && s.closePath()), S5(n, e.options), n.stroke(s);
+    s || (s = e._path = new Path2D(), e.path(s, t, i) && s.closePath()), _5(n, e.options), n.stroke(s);
   }
   function Bne(n, e, t, i) {
     const {
@@ -18053,7 +18053,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       options: r
     } = e, o = IM(e);
     for (const a of s)
-      S5(n, r, a.style), n.beginPath(), o(n, e, a, {
+      _5(n, r, a.style), n.beginPath(), o(n, e, a, {
         start: t,
         end: t + i - 1
       }) && n.closePath(), n.stroke();
@@ -18091,7 +18091,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return i && t[e[i - 1].end];
     }
     interpolate(e, t) {
-      const i = this.options, s = e[t], r = this.points, o = l5(this, {
+      const i = this.options, s = e[t], r = this.points, o = c5(this, {
         property: t,
         start: s,
         end: s
@@ -18155,7 +18155,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     _scriptable: !0,
     _indexable: (n) => n !== "borderDash" && n !== "fill"
   };
-  function JL(n, e, t, i) {
+  function e$(n, e, t, i) {
     const s = n.options, {
       [t]: r
     } = n.getProps([t], i);
@@ -18173,10 +18173,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return Math.pow(e - r, 2) + Math.pow(t - o, 2) < Math.pow(s.hitRadius + s.radius, 2);
     }
     inXRange(e, t) {
-      return JL(this, e, "x", t);
+      return e$(this, e, "x", t);
     }
     inYRange(e, t) {
-      return JL(this, e, "y", t);
+      return e$(this, e, "y", t);
     }
     getCenterPoint(e) {
       const {
@@ -18218,7 +18218,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     backgroundColor: "backgroundColor",
     borderColor: "borderColor"
   };
-  function R5(n, e) {
+  function x5(n, e) {
     const {
       x: t,
       y: i,
@@ -18238,7 +18238,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return n ? 0 : Ti(e, t, i);
   }
   function jne(n, e, t) {
-    const i = n.options.borderWidth, s = n.borderSkipped, r = Qj(i);
+    const i = n.options.borderWidth, s = n.borderSkipped, r = Z6(i);
     return {
       t: Gc(s.top, r.top, 0, t),
       r: Gc(s.right, r.right, 0, e),
@@ -18258,7 +18258,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     };
   }
   function Une(n) {
-    const e = R5(n), t = e.right - e.left, i = e.bottom - e.top, s = jne(n, t / 2, i / 2), r = zne(n, t / 2, i / 2);
+    const e = x5(n), t = e.right - e.left, i = e.bottom - e.top, s = jne(n, t / 2, i / 2), r = zne(n, t / 2, i / 2);
     return {
       outer: {
         x: e.left,
@@ -18282,7 +18282,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     };
   }
   function rx(n, e, t, i) {
-    const s = e === null, r = t === null, a = n && !(s && r) && R5(n, i);
+    const s = e === null, r = t === null, a = n && !(s && r) && x5(n, i);
     return a && (s || Dl(e, a.left, a.right)) && (r || Dl(t, a.top, a.bottom));
   }
   function Yne(n) {
@@ -18371,21 +18371,21 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     "rgb(153, 102, 255)",
     "rgb(201, 203, 207)"
     // grey
-  ], e$ = /* @__PURE__ */ OM.map((n) => n.replace("rgb(", "rgba(").replace(")", ", 0.5)"));
-  function x5(n) {
+  ], t$ = /* @__PURE__ */ OM.map((n) => n.replace("rgb(", "rgba(").replace(")", ", 0.5)"));
+  function E5(n) {
     return OM[n % OM.length];
   }
-  function E5(n) {
-    return e$[n % e$.length];
+  function T5(n) {
+    return t$[n % t$.length];
   }
   function qne(n, e) {
-    return n.borderColor = x5(e), n.backgroundColor = E5(e), ++e;
+    return n.borderColor = E5(e), n.backgroundColor = T5(e), ++e;
   }
   function Xne(n, e) {
-    return n.backgroundColor = n.data.map(() => x5(e++)), e;
+    return n.backgroundColor = n.data.map(() => E5(e++)), e;
   }
   function Qne(n, e) {
-    return n.backgroundColor = n.data.map(() => E5(e++)), e;
+    return n.backgroundColor = n.data.map(() => T5(e++)), e;
   }
   function Zne(n) {
     let e = 0;
@@ -18394,7 +18394,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       s instanceof Ld ? e = Xne(t, e) : s instanceof zw ? e = Qne(t, e) : s && (e = qne(t, e));
     };
   }
-  function t$(n) {
+  function n$(n) {
     let e;
     for (e in n)
       if (n[e].borderColor || n[e].backgroundColor)
@@ -18423,7 +18423,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         options: s
       } = n.config, {
         elements: r
-      } = s, o = t$(i) || Jne(s) || r && t$(r) || eie();
+      } = s, o = n$(i) || Jne(s) || r && n$(r) || eie();
       if (!t.forceOverride && o)
         return;
       const a = Zne(n);
@@ -18479,7 +18479,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return m;
   }
-  function T5(n) {
+  function M5(n) {
     if (n._decimated) {
       const e = n._data;
       delete n._decimated, delete n._data, Object.defineProperty(n, "data", {
@@ -18490,9 +18490,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     }
   }
-  function n$(n) {
+  function i$(n) {
     n.data.datasets.forEach((e) => {
-      T5(e);
+      M5(e);
     });
   }
   function sie(n, e) {
@@ -18519,7 +18519,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     },
     beforeElementsUpdate: (n, e, t) => {
       if (!t.enabled) {
-        n$(n);
+        i$(n);
         return;
       }
       const i = n.width;
@@ -18539,7 +18539,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         } = sie(l, c);
         const f = t.threshold || 4 * i;
         if (d <= f) {
-          T5(s);
+          M5(s);
           return;
         }
         Tt(o) && (s._data = c, delete s.data, Object.defineProperty(s, "data", {
@@ -18567,7 +18567,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     },
     destroy(n) {
-      n$(n);
+      i$(n);
     }
   };
   function oie(n, e, t) {
@@ -18577,7 +18577,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         start: l,
         end: c
       } = a;
-      c = EI(l, c, s);
+      c = TI(l, c, s);
       const u = kM(t, s[l], s[c], a.loop);
       if (!e.segments) {
         o.push({
@@ -18588,18 +18588,18 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         });
         continue;
       }
-      const h = l5(e, u);
+      const h = c5(e, u);
       for (const d of h) {
-        const f = kM(t, r[d.start], r[d.end], d.loop), g = a5(a, s, f);
+        const f = kM(t, r[d.start], r[d.end], d.loop), g = l5(a, s, f);
         for (const p of g)
           o.push({
             source: p,
             target: d,
             start: {
-              [t]: i$(u, f, "start", Math.max)
+              [t]: s$(u, f, "start", Math.max)
             },
             end: {
-              [t]: i$(u, f, "end", Math.min)
+              [t]: s$(u, f, "end", Math.min)
             }
           });
       }
@@ -18625,7 +18625,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       start: o,
       end: a
     }) => {
-      a = EI(o, a, s);
+      a = TI(o, a, s);
       const l = s[o], c = s[a];
       i !== null ? (r.push({
         x: l.x,
@@ -18642,7 +18642,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }));
     }), r;
   }
-  function EI(n, e, t) {
+  function TI(n, e, t) {
     for (; e > n; e--) {
       const i = t[e];
       if (!isNaN(i.x) && !isNaN(i.y))
@@ -18650,10 +18650,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return e;
   }
-  function i$(n, e, t, i) {
+  function s$(n, e, t, i) {
     return n && e ? i(n[t], e[t]) : n ? n[t] : e ? e[t] : 0;
   }
-  function M5(n, e) {
+  function A5(n, e) {
     let t = [], i = !1;
     return Sn(n) ? (i = !0, t = n) : t = aie(n, e), t.length ? new Au({
       points: t,
@@ -18664,7 +18664,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       _fullLoop: i
     }) : null;
   }
-  function s$(n) {
+  function r$(n) {
     return n && n.fill !== !1;
   }
   function lie(n, e, t) {
@@ -18713,7 +18713,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       index: t,
       line: i
     } = n, s = [], r = i.segments, o = i.points, a = pie(e, t);
-    a.push(M5({
+    a.push(A5({
       x: null,
       y: e.bottom
     }, i));
@@ -18773,7 +18773,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       point: i
     };
   }
-  class A5 {
+  class P5 {
     constructor(e) {
       this.x = e.x, this.y = e.y, this.radius = e.radius;
     }
@@ -18814,7 +18814,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (t === "shape")
       return !0;
     const s = yie(n);
-    return s instanceof A5 ? s : M5(s, i);
+    return s instanceof P5 ? s : A5(s, i);
   }
   function vie(n, e) {
     const t = n.getDatasetMeta(e);
@@ -18844,7 +18844,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     } = n, i = e.options, s = e.getLabels().length, r = i.reverse ? e.max : e.min, o = die(t, e, r), a = [];
     if (i.grid.circular) {
       const l = e.getPointPositionForValue(0, r);
-      return new A5({
+      return new P5({
         x: l.x,
         y: l.y,
         radius: e.getDistanceFromCenterForValue(o)
@@ -18882,13 +18882,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       area: o,
       scale: a
     } = e, l = t._loop ? "angle" : e.axis;
-    n.save(), l === "x" && r !== s && (r$(n, i, o.top), o$(n, {
+    n.save(), l === "x" && r !== s && (o$(n, i, o.top), a$(n, {
       line: t,
       target: i,
       color: s,
       scale: a,
       property: l
-    }), n.restore(), n.save(), r$(n, i, o.bottom)), o$(n, {
+    }), n.restore(), n.save(), o$(n, i, o.bottom)), a$(n, {
       line: t,
       target: i,
       color: r,
@@ -18896,7 +18896,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       property: l
     }), n.restore();
   }
-  function r$(n, e, t) {
+  function o$(n, e, t) {
     const {
       segments: i,
       points: s
@@ -18907,14 +18907,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const {
         start: l,
         end: c
-      } = a, u = s[l], h = s[EI(l, c, s)];
+      } = a, u = s[l], h = s[TI(l, c, s)];
       r ? (n.moveTo(u.x, u.y), r = !1) : (n.lineTo(u.x, t), n.lineTo(u.x, u.y)), o = !!e.pathSegment(n, a, {
         move: o
       }), o ? n.closePath() : n.lineTo(h.x, t);
     }
     n.lineTo(e.first().x, t), n.closePath(), n.clip();
   }
-  function o$(n, e) {
+  function a$(n, e) {
     const {
       line: t,
       target: i,
@@ -18937,12 +18937,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const g = !!t.pathSegment(n, l);
       let p;
       if (f) {
-        g ? n.closePath() : a$(n, i, h, s);
+        g ? n.closePath() : l$(n, i, h, s);
         const m = !!i.pathSegment(n, c, {
           move: g,
           reverse: !0
         });
-        p = g && m, p || a$(n, i, u, s);
+        p = g && m, p || l$(n, i, u, s);
       }
       n.closePath(), n.fill(p ? "evenodd" : "nonzero"), n.restore();
     }
@@ -18958,7 +18958,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     } = t || {};
     r === "x" && (n.beginPath(), n.rect(o, i, a - o, s - i), n.clip());
   }
-  function a$(n, e, t, i) {
+  function l$(n, e, t, i) {
     const s = e.interpolate(t, i);
     s && n.lineTo(s.x, s.y);
   }
@@ -18993,19 +18993,19 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const i = n.getSortedVisibleDatasetMetas();
       for (let s = i.length - 1; s >= 0; --s) {
         const r = i[s].$filler;
-        s$(r) && ax(n.ctx, r, n.chartArea);
+        r$(r) && ax(n.ctx, r, n.chartArea);
       }
     },
     beforeDatasetDraw(n, e, t) {
       const i = e.meta.$filler;
-      !s$(i) || t.drawTime !== "beforeDatasetDraw" || ax(n.ctx, i, n.chartArea);
+      !r$(i) || t.drawTime !== "beforeDatasetDraw" || ax(n.ctx, i, n.chartArea);
     },
     defaults: {
       propagate: !0,
       drawTime: "beforeDatasetDraw"
     }
   };
-  const l$ = (n, e) => {
+  const c$ = (n, e) => {
     let {
       boxHeight: t = e,
       boxWidth: i = e
@@ -19016,7 +19016,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       itemHeight: Math.max(e, t)
     };
   }, Eie = (n, e) => n !== null && e !== null && n.datasetIndex === e.datasetIndex && n.index === e.index;
-  class c$ extends qr {
+  class u$ extends qr {
     constructor(e) {
       super(), this._added = !1, this.legendHitBoxes = [], this._hoveredItem = null, this.doughnutMode = !1, this.chart = e.chart, this.options = e.options, this.ctx = e.ctx, this.legendItems = void 0, this.columnSizes = void 0, this.lineWidths = void 0, this.maxHeight = void 0, this.maxWidth = void 0, this.top = void 0, this.bottom = void 0, this.left = void 0, this.right = void 0, this.height = void 0, this.width = void 0, this._margins = void 0, this.position = void 0, this.weight = void 0, this.fullSize = void 0;
     }
@@ -19043,7 +19043,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const i = e.labels, s = pi(i.font), r = s.size, o = this._computeTitleHeight(), {
         boxWidth: a,
         itemHeight: l
-      } = l$(i, r);
+      } = c$(i, r);
       let c, u;
       t.font = s.string, this.isHorizontal() ? (c = this.maxWidth, u = this._fitRows(o, r, a, l) + 10) : (u = this.maxHeight, c = this._fitCols(o, s, a, l) + 10), this.width = Math.min(c, e.maxWidth || this.maxWidth), this.height = Math.min(u, e.maxHeight || this.maxHeight);
     }
@@ -19152,7 +19152,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         boxWidth: g,
         boxHeight: p,
         itemHeight: m
-      } = l$(o, h), w = function(x, M, I) {
+      } = c$(o, h), w = function(x, M, I) {
         if (isNaN(g) || g <= 0 || isNaN(p) || p < 0)
           return;
         s.save();
@@ -19164,7 +19164,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
             rotation: I.rotation,
             borderWidth: A
           }, D = l.xPlus(x, g / 2), j = M + d;
-          Xj(s, O, D, j, o.pointStyleWidth && g);
+          Q6(s, O, D, j, o.pointStyleWidth && g);
         } else {
           const O = M + Math.max((h - p) / 2, 0), D = l.leftForLtr(x, g), j = id(I.borderRadius);
           s.beginPath(), Object.values(j).some((Y) => Y !== 0) ? rw(s, {
@@ -19190,7 +19190,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         x: this.left + u,
         y: Yi(r, this.top + R + u, this.bottom - t[0].height),
         line: 0
-      }, s5(this.ctx, e.textDirection);
+      }, r5(this.ctx, e.textDirection);
       const _ = m + u;
       this.legendItems.forEach((x, M) => {
         s.strokeStyle = x.fontColor, s.fillStyle = x.fontColor;
@@ -19202,10 +19202,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           f.x += O + u;
         else if (typeof x.text != "string") {
           const Z = c.lineHeight;
-          f.y += P5(x, Z) + u;
+          f.y += I5(x, Z) + u;
         } else
           f.y += _;
-      }), r5(this.ctx, e.textDirection);
+      }), o5(this.ctx, e.textDirection);
     }
     drawTitle() {
       const e = this.options, t = e.title, i = pi(t.font), s = ns(t.padding);
@@ -19220,7 +19220,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         u = c + Yi(e.align, this.top, this.bottom - g - e.labels.padding - this._computeTitleHeight());
       }
       const f = Yi(a, h, h + d);
-      o.textAlign = r.textAlign(mI(a)), o.textBaseline = "middle", o.strokeStyle = t.color, o.fillStyle = t.color, o.font = i.string, yd(o, t.text, f, u, i);
+      o.textAlign = r.textAlign(bI(a)), o.textBaseline = "middle", o.strokeStyle = t.color, o.fillStyle = t.color, o.font = i.string, yd(o, t.text, f, u, i);
     }
     _computeTitleHeight() {
       const e = this.options.title, t = pi(e.font), i = ns(e.padding);
@@ -19259,9 +19259,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   function Aie(n, e, t) {
     let i = n;
-    return typeof e.text != "string" && (i = P5(e, t)), i;
+    return typeof e.text != "string" && (i = I5(e, t)), i;
   }
-  function P5(n, e) {
+  function I5(n, e) {
     const t = n.text ? n.text.length : 0;
     return e * t;
   }
@@ -19270,9 +19270,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   var Iie = {
     id: "legend",
-    _element: c$,
+    _element: u$,
     start(n, e, t) {
-      const i = n.legend = new c$({
+      const i = n.legend = new u$({
         ctx: n.ctx,
         options: t,
         chart: n
@@ -19357,7 +19357,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
     }
   };
-  class TI extends qr {
+  class MI extends qr {
     constructor(e) {
       super(), this.chart = e.chart, this.options = e.options, this.ctx = e.ctx, this._padding = void 0, this.top = void 0, this.bottom = void 0, this.left = void 0, this.right = void 0, this.width = void 0, this.height = void 0, this.position = void 0, this.weight = void 0, this.fullSize = void 0;
     }
@@ -19407,14 +19407,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         color: t.color,
         maxWidth: l,
         rotation: c,
-        textAlign: mI(t.align),
+        textAlign: bI(t.align),
         textBaseline: "middle",
         translation: [o, a]
       });
     }
   }
   function Oie(n, e) {
-    const t = new TI({
+    const t = new MI({
       ctx: n.ctx,
       options: e,
       chart: n
@@ -19423,7 +19423,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }
   var kie = {
     id: "title",
-    _element: TI,
+    _element: MI,
     start(n, e, t) {
       Oie(n, t);
     },
@@ -19459,7 +19459,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   var Hie = {
     id: "subtitle",
     start(n, e, t) {
-      const i = new TI({
+      const i = new MI({
         ctx: n.ctx,
         options: t,
         chart: n
@@ -19560,7 +19560,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       element: t
     };
   }
-  function u$(n, e) {
+  function h$(n, e) {
     const t = n.chart.ctx, {
       body: i,
       footer: s,
@@ -19615,7 +19615,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     let c = "center";
     return i === "center" ? c = s <= (a + l) / 2 ? "left" : "right" : s <= r / 2 ? c = "left" : s >= o - r / 2 && (c = "right"), Lie(c, n, e, t) && (c = "center"), c;
   }
-  function h$(n, e, t) {
+  function d$(n, e, t) {
     const i = t.yAlign || e.yAlign || Nie(n, t);
     return {
       xAlign: t.xAlign || e.xAlign || $ie(n, e, t, i),
@@ -19636,7 +19636,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     } = n;
     return e === "top" ? i += t : e === "bottom" ? i -= s + t : i -= s / 2, i;
   }
-  function d$(n, e, t, i) {
+  function f$(n, e, t, i) {
     const {
       caretSize: s,
       caretPadding: r,
@@ -19661,7 +19661,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const i = ns(t.padding);
     return e === "center" ? n.x + n.width / 2 : e === "right" ? n.x + n.width - i.right : n.x + i.left;
   }
-  function f$(n) {
+  function g$(n) {
     return oa([], wl(n));
   }
   function Vie(n, e, t) {
@@ -19671,11 +19671,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       type: "tooltip"
     });
   }
-  function g$(n, e) {
+  function p$(n, e) {
     const t = e && e.dataset && e.dataset.tooltip && e.dataset.tooltip.callbacks;
     return t ? n.override(t) : n;
   }
-  const I5 = {
+  const O5 = {
     beforeTitle: tl,
     title(n) {
       if (n.length > 0) {
@@ -19729,7 +19729,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   };
   function _s(n, e, t, i) {
     const s = n[e].call(t, i);
-    return typeof s > "u" ? I5[e].call(t, i) : s;
+    return typeof s > "u" ? O5[e].call(t, i) : s;
   }
   class HM extends qr {
     constructor(e) {
@@ -19742,7 +19742,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const e = this._cachedAnimations;
       if (e)
         return e;
-      const t = this.chart, i = this.options.setContext(this.getContext()), s = i.enabled && t.options.animation && i.animations, r = new c5(this.chart, s);
+      const t = this.chart, i = this.options.setContext(this.getContext()), s = i.enabled && t.options.animation && i.animations, r = new u5(this.chart, s);
       return s._cacheable && (this._cachedAnimations = Object.freeze(r)), r;
     }
     getContext() {
@@ -19756,7 +19756,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return a = oa(a, wl(s)), a = oa(a, wl(r)), a = oa(a, wl(o)), a;
     }
     getBeforeBody(e, t) {
-      return f$(_s(t.callbacks, "beforeBody", this, e));
+      return g$(_s(t.callbacks, "beforeBody", this, e));
     }
     getBody(e, t) {
       const {
@@ -19767,12 +19767,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           before: [],
           lines: [],
           after: []
-        }, a = g$(i, r);
+        }, a = p$(i, r);
         oa(o.before, wl(_s(a, "beforeLabel", this, r))), oa(o.lines, _s(a, "label", this, r)), oa(o.after, wl(_s(a, "afterLabel", this, r))), s.push(o);
       }), s;
     }
     getAfterBody(e, t) {
-      return f$(_s(t.callbacks, "afterBody", this, e));
+      return g$(_s(t.callbacks, "afterBody", this, e));
     }
     getFooter(e, t) {
       const {
@@ -19787,7 +19787,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       for (l = 0, c = t.length; l < c; ++l)
         a.push(Die(this.chart, t[l]));
       return e.filter && (a = a.filter((u, h, d) => e.filter(u, h, d, i))), e.itemSort && (a = a.sort((u, h) => e.itemSort(u, h, i))), Gt(a, (u) => {
-        const h = g$(e.callbacks, u);
+        const h = p$(e.callbacks, u);
         s.push(_s(h, "labelColor", this, u)), r.push(_s(h, "labelPointStyle", this, u)), o.push(_s(h, "labelTextColor", this, u));
       }), this.labelColors = s, this.labelPointStyles = r, this.labelTextColors = o, this.dataPoints = a, a;
     }
@@ -19801,7 +19801,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       else {
         const a = bb[i.position].call(this, s, this._eventPosition);
         o = this._createItems(i), this.title = this.getTitle(o, i), this.beforeBody = this.getBeforeBody(o, i), this.body = this.getBody(o, i), this.afterBody = this.getAfterBody(o, i), this.footer = this.getFooter(o, i);
-        const l = this._size = u$(this, i), c = Object.assign({}, a, l), u = h$(this.chart, i, c), h = d$(i, c, u, this.chart);
+        const l = this._size = h$(this, i), c = Object.assign({}, a, l), u = d$(this.chart, i, c), h = f$(i, c, u, this.chart);
         this.xAlign = u.xAlign, this.yAlign = u.yAlign, r = {
           opacity: 1,
           x: h.x,
@@ -19948,7 +19948,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         const o = bb[e.position].call(this, this._active, this._eventPosition);
         if (!o)
           return;
-        const a = this._size = u$(this, e), l = Object.assign({}, o, this._size), c = h$(t, e, l), u = d$(e, l, c, t);
+        const a = this._size = h$(this, e), l = Object.assign({}, o, this._size), c = d$(t, e, l), u = f$(e, l, c, t);
         (s._to !== u.x || r._to !== u.y) && (this.xAlign = c.xAlign, this.yAlign = c.yAlign, this.width = a.width, this.height = a.height, this.caretX = o.x, this.caretY = o.y, this._resolveAnimations().update(this, u));
       }
     }
@@ -19970,7 +19970,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
       i = Math.abs(i) < 1e-3 ? 0 : i;
       const o = ns(t.padding), a = this.title.length || this.beforeBody.length || this.body.length || this.afterBody.length || this.footer.length;
-      t.enabled && a && (e.save(), e.globalAlpha = i, this.drawBackground(r, e, s, t), s5(e, t.textDirection), r.y += o.top, this.drawTitle(r, e, t), this.drawBody(r, e, t), this.drawFooter(r, e, t), r5(e, t.textDirection), e.restore());
+      t.enabled && a && (e.save(), e.globalAlpha = i, this.drawBackground(r, e, s, t), r5(e, t.textDirection), r.y += o.top, this.drawTitle(r, e, t), this.drawBody(r, e, t), this.drawFooter(r, e, t), o5(e, t.textDirection), e.restore());
     }
     getActiveElements() {
       return this._active || [];
@@ -20104,7 +20104,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           duration: 200
         }
       },
-      callbacks: I5
+      callbacks: O5
     },
     defaultRoutes: {
       bodyFont: "font",
@@ -20148,11 +20148,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return s !== r ? t : s;
   }
   const Yie = (n, e) => n === null ? null : Ti(Math.round(n), 0, e);
-  function O5(n) {
+  function k5(n) {
     const e = this.getLabels();
     return n >= 0 && n < e.length ? e[n] : n;
   }
-  class MI extends Mu {
+  class AI extends Mu {
     constructor(e) {
       super(e), this._startValue = void 0, this._valueRange = 0, this._addedLabels = [];
     }
@@ -20197,7 +20197,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return s;
     }
     getLabelForValue(e) {
-      return O5.call(this, e);
+      return k5.call(this, e);
     }
     configure() {
       super.configure(), this.isHorizontal() || (this._reversePixels = !this._reversePixels);
@@ -20216,10 +20216,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return this.bottom;
     }
   }
-  MI.id = "category";
-  MI.defaults = {
+  AI.id = "category";
+  AI.defaults = {
     ticks: {
-      callback: O5
+      callback: k5
     }
   };
   function Gie(n, e) {
@@ -20237,20 +20237,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       min: p,
       max: m
     } = e, w = !Tt(o), y = !Tt(a), C = !Tt(c), R = (m - p) / (h + 1);
-    let _ = hL((m - p) / g / f) * f, x, M, I, A;
+    let _ = dL((m - p) / g / f) * f, x, M, I, A;
     if (_ < 1e-14 && !w && !y)
       return [{
         value: p
       }, {
         value: m
       }];
-    A = Math.ceil(m / _) - Math.floor(p / _), A > g && (_ = hL(A * _ / g / f) * f), Tt(l) || (x = Math.pow(10, l), _ = Math.ceil(_ * x) / x), s === "ticks" ? (M = Math.floor(p / _) * _, I = Math.ceil(m / _) * _) : (M = p, I = m), w && y && r && BJ((a - o) / r, _ / 1e3) ? (A = Math.round(Math.min((a - o) / _, u)), _ = (a - o) / A, M = o, I = a) : C ? (M = w ? o : M, I = y ? a : I, A = c - 1, _ = (I - M) / A) : (A = (I - M) / _, gb(A, Math.round(A), _ / 1e3) ? A = Math.round(A) : A = Math.ceil(A));
-    const O = Math.max(dL(_), dL(M));
+    A = Math.ceil(m / _) - Math.floor(p / _), A > g && (_ = dL(A * _ / g / f) * f), Tt(l) || (x = Math.pow(10, l), _ = Math.ceil(_ * x) / x), s === "ticks" ? (M = Math.floor(p / _) * _, I = Math.ceil(m / _) * _) : (M = p, I = m), w && y && r && BJ((a - o) / r, _ / 1e3) ? (A = Math.round(Math.min((a - o) / _, u)), _ = (a - o) / A, M = o, I = a) : C ? (M = w ? o : M, I = y ? a : I, A = c - 1, _ = (I - M) / A) : (A = (I - M) / _, gb(A, Math.round(A), _ / 1e3) ? A = Math.round(A) : A = Math.ceil(A));
+    const O = Math.max(fL(_), fL(M));
     x = Math.pow(10, Tt(l) ? O : l), M = Math.round(M * x) / x, I = Math.round(I * x) / x;
     let D = 0;
     for (w && (d && M !== o ? (t.push({
       value: o
-    }), M < o && D++, gb(Math.round((M + D * _) * x) / x, o, p$(o, R, n)) && D++) : M < o && D++); D < A; ++D) {
+    }), M < o && D++, gb(Math.round((M + D * _) * x) / x, o, m$(o, R, n)) && D++) : M < o && D++); D < A; ++D) {
       const j = Math.round((M + D * _) * x) / x;
       if (y && j > a)
         break;
@@ -20258,13 +20258,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         value: j
       });
     }
-    return y && d && I !== a ? t.length && gb(t[t.length - 1].value, a, p$(a, R, n)) ? t[t.length - 1].value = a : t.push({
+    return y && d && I !== a ? t.length && gb(t[t.length - 1].value, a, m$(a, R, n)) ? t[t.length - 1].value = a : t.push({
       value: a
     }) : (!y || I === a) && t.push({
       value: I
     }), t;
   }
-  function p$(n, e, {
+  function m$(n, e, {
     horizontal: t,
     minRotation: i
   }) {
@@ -20328,7 +20328,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         minRotation: t.minRotation || 0,
         includeBounds: t.includeBounds !== !1
       }, r = this._range || this, o = Gie(s, r);
-      return e.bounds === "ticks" && Vj(o, this, "value"), e.reverse ? (o.reverse(), this.start = this.max, this.end = this.min) : (this.start = this.min, this.end = this.max), o;
+      return e.bounds === "ticks" && W6(o, this, "value"), e.reverse ? (o.reverse(), this.start = this.max, this.end = this.min) : (this.start = this.min, this.end = this.max), o;
     }
     configure() {
       const e = this.ticks;
@@ -20369,19 +20369,19 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
   };
   const aw = (n) => Math.floor(Yc(n)), Bu = (n, e) => Math.pow(10, aw(n) + e);
-  function m$(n) {
+  function b$(n) {
     return n / Math.pow(10, aw(n)) === 1;
   }
-  function b$(n, e, t) {
+  function w$(n, e, t) {
     const i = Math.pow(10, t), s = Math.floor(n / i);
     return Math.ceil(e / i) - s;
   }
   function Kie(n, e) {
     const t = e - n;
     let i = aw(t);
-    for (; b$(n, e, i) > 10; )
+    for (; w$(n, e, i) > 10; )
       i++;
-    for (; b$(n, e, i) < 10; )
+    for (; w$(n, e, i) < 10; )
       i--;
     return Math.min(i, aw(n));
   }
@@ -20397,13 +20397,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     for (; d < t; )
       i.push({
         value: d,
-        major: m$(d),
+        major: b$(d),
         significand: h
       }), h >= 10 ? h = h < 15 ? 15 : 20 : h++, h >= 20 && (r++, h = 2, o = r >= 0 ? 1 : o), d = Math.round((l + u + h * Math.pow(10, r)) * o) / o;
     const f = Ys(n.max, d);
     return i.push({
       value: f,
-      major: m$(f),
+      major: b$(f),
       significand: h
     }), i;
   }
@@ -20440,7 +20440,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         min: this._userMin,
         max: this._userMax
       }, i = qie(t, this);
-      return e.bounds === "ticks" && Vj(i, this, "value"), e.reverse ? (i.reverse(), this.start = this.max, this.end = this.min) : (this.start = this.min, this.end = this.max), i;
+      return e.bounds === "ticks" && W6(i, this, "value"), e.reverse ? (i.reverse(), this.start = this.max, this.end = this.min) : (this.start = this.min, this.end = this.max), i;
     }
     getLabelForValue(e) {
       return e === void 0 ? "0" : jw(e, this.chart.options.locale, this.options.ticks.format);
@@ -20480,7 +20480,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       h: t.length * e.lineHeight
     };
   }
-  function w$(n, e, t, i, s) {
+  function v$(n, e, t, i, s) {
     return n === i || n === s ? {
       start: e - t / 2,
       end: e + t / 2
@@ -20504,7 +20504,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       s[l] = c.padding;
       const u = n.getPointPosition(l, n.drawingArea + s[l], a), h = pi(c.font), d = Xie(n.ctx, h, n._pointLabels[l]);
       i[l] = d;
-      const f = Js(n.getIndexAngle(l) + a), g = Math.round(gI(f)), p = w$(g, u.x, d.w, 0, 180), m = w$(g, u.y, d.h, 90, 270);
+      const f = Js(n.getIndexAngle(l) + a), g = Math.round(pI(f)), p = v$(g, u.x, d.w, 0, 180), m = v$(g, u.y, d.h, 90, 270);
       Zie(t, e, f, p, m);
     }
     n.setCenterPoint(e.l - t.l, t.r - e.r, e.t - t.t, t.b - e.b), n._pointLabelItems = tse(n, i, s);
@@ -20520,7 +20520,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       additionalAngle: r,
       padding: o,
       size: a
-    } = t, l = n.getPointPosition(e, i + s + o, r), c = Math.round(gI(Js(l.angle + Xn))), u = sse(l.y, a.h, c), h = nse(c), d = ise(l.x, a.w, h);
+    } = t, l = n.getPointPosition(e, i + s + o, r), c = Math.round(pI(Js(l.angle + Xn))), u = sse(l.y, a.h, c), h = nse(c), d = ise(l.x, a.w, h);
     return {
       visible: !0,
       x: l.x,
@@ -20627,7 +20627,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     }
   }
-  function k5(n, e, t, i) {
+  function H5(n, e, t, i) {
     const {
       ctx: s
     } = n;
@@ -20645,7 +20645,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       color: a,
       lineWidth: l
     } = e;
-    !o && !i || !a || !l || t < 0 || (r.save(), r.strokeStyle = a, r.lineWidth = l, r.setLineDash(s.dash || []), r.lineDashOffset = s.dashOffset, r.beginPath(), k5(n, t, o, i), r.closePath(), r.stroke(), r.restore());
+    !o && !i || !a || !l || t < 0 || (r.save(), r.strokeStyle = a, r.lineWidth = l, r.setLineDash(s.dash || []), r.lineDashOffset = s.dashOffset, r.beginPath(), H5(n, t, o, i), r.closePath(), r.stroke(), r.restore());
   }
   function lse(n, e, t) {
     return Tu(n, {
@@ -20745,7 +20745,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       } = this.options;
       if (e) {
         const i = this.ctx;
-        i.save(), i.beginPath(), k5(this, this.getDistanceFromCenterForValue(this._endValue), t, this._pointLabels.length), i.closePath(), i.fillStyle = e, i.fill(), i.restore();
+        i.save(), i.beginPath(), H5(this, this.getDistanceFromCenterForValue(this._endValue), t, this._pointLabels.length), i.closePath(), i.fillStyle = e, i.fill(), i.restore();
       }
     }
     drawGrid() {
@@ -20888,10 +20888,10 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       size: 3154e7
     }
   }, $s = /* @__PURE__ */ Object.keys(J_);
-  function v$(n, e) {
+  function y$(n, e) {
     return n - e;
   }
-  function y$(n, e) {
+  function C$(n, e) {
     if (Tt(e))
       return null;
     const t = n._adapter, {
@@ -20902,7 +20902,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     let o = e;
     return typeof i == "function" && (o = i(o)), Un(o) || (o = typeof i == "string" ? t.parse(o, i) : t.parse(o)), o === null ? null : (s && (o = s === "week" && (Dg(r) || r === !0) ? t.startOf(o, "isoWeek", r) : t.startOf(o, s)), +o);
   }
-  function C$(n, e, t, i) {
+  function S$(n, e, t, i) {
     const s = $s.length;
     for (let r = $s.indexOf(n); r < s - 1; ++r) {
       const o = J_[$s[r]], a = o.steps ? o.steps : Number.MAX_SAFE_INTEGER;
@@ -20924,14 +20924,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       if (J_[$s[e]].common)
         return $s[e];
   }
-  function S$(n, e, t) {
+  function _$(n, e, t) {
     if (!t)
       n[e] = !0;
     else if (t.length) {
       const {
         lo: i,
         hi: s
-      } = pI(t, e), r = t[i] >= e ? t[i] : t[s];
+      } = mI(t, e), r = t[i] >= e ? t[i] : t[s];
       n[r] = !0;
     }
   }
@@ -20942,7 +20942,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       l = t[a], l >= 0 && (e[l].major = !0);
     return e;
   }
-  function _$(n, e, t) {
+  function R$(n, e, t) {
     const i = [], s = {}, r = e.length;
     let o, a;
     for (o = 0; o < r; ++o)
@@ -20969,7 +20969,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }, super.init(e), this._normalized = t.normalized;
     }
     parse(e, t) {
-      return e === void 0 ? null : y$(this, e);
+      return e === void 0 ? null : C$(this, e);
     }
     beforeLayout() {
       super.beforeLayout(), this._cache = {
@@ -21003,7 +21003,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       const e = this.options, t = e.time, i = e.ticks, s = i.source === "labels" ? this.getLabelTimestamps() : this._generate();
       e.bounds === "ticks" && s.length && (this.min = this._userMin || s[0], this.max = this._userMax || s[s.length - 1]);
       const r = this.min, o = this.max, a = zJ(s, r, o);
-      return this._unit = t.unit || (i.autoSkip ? C$(t.minUnit, this.min, this.max, this._getLabelCapacity(r)) : cse(this, a.length, t.minUnit, this.min, this.max)), this._majorUnit = !i.major.enabled || this._unit === "year" ? void 0 : use(this._unit), this.initOffsets(s), e.reverse && a.reverse(), _$(this, a, this._majorUnit);
+      return this._unit = t.unit || (i.autoSkip ? S$(t.minUnit, this.min, this.max, this._getLabelCapacity(r)) : cse(this, a.length, t.minUnit, this.min, this.max)), this._majorUnit = !i.major.enabled || this._unit === "year" ? void 0 : use(this._unit), this.initOffsets(s), e.reverse && a.reverse(), R$(this, a, this._majorUnit);
     }
     afterAutoSkip() {
       this.options.offsetAfterAutoskip && this.initOffsets(this.ticks.map((e) => +e.value));
@@ -21019,14 +21019,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
     _generate() {
-      const e = this._adapter, t = this.min, i = this.max, s = this.options, r = s.time, o = r.unit || C$(r.minUnit, t, i, this._getLabelCapacity(t)), a = qe(s.ticks.stepSize, 1), l = o === "week" ? r.isoWeekday : !1, c = Dg(l) || l === !0, u = {};
+      const e = this._adapter, t = this.min, i = this.max, s = this.options, r = s.time, o = r.unit || S$(r.minUnit, t, i, this._getLabelCapacity(t)), a = qe(s.ticks.stepSize, 1), l = o === "week" ? r.isoWeekday : !1, c = Dg(l) || l === !0, u = {};
       let h = t, d, f;
       if (c && (h = +e.startOf(h, "isoWeek", l)), h = +e.startOf(h, c ? "day" : o), e.diff(i, t, o) > 1e5 * a)
         throw new Error(t + " and " + i + " are too far apart with stepSize of " + a + " " + o);
       const g = s.ticks.source === "data" && this.getDataTimestamps();
       for (d = h, f = 0; d < i; d = +e.add(d, a, o), f++)
-        S$(u, d, g);
-      return (d === i || s.bounds === "ticks" || f === 1) && S$(u, d, g), Object.keys(u).sort(v$).map((p) => +p);
+        _$(u, d, g);
+      return (d === i || s.bounds === "ticks" || f === 1) && _$(u, d, g), Object.keys(u).sort(y$).map((p) => +p);
     }
     getLabelForValue(e) {
       const t = this._adapter, i = this.options.time;
@@ -21067,7 +21067,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       };
     }
     _getLabelCapacity(e) {
-      const t = this.options.time, i = t.displayFormats, s = i[t.unit] || i.millisecond, r = this._tickFormatFunction(e, 0, _$(this, [e], this._majorUnit), s), o = this._getLabelSize(r), a = Math.floor(this.isHorizontal() ? this.width / o.w : this.height / o.h) - 1;
+      const t = this.options.time, i = t.displayFormats, s = i[t.unit] || i.millisecond, r = this._tickFormatFunction(e, 0, R$(this, [e], this._majorUnit), s), o = this._getLabelSize(r), a = Math.floor(this.isHorizontal() ? this.width / o.w : this.height / o.h) - 1;
       return a > 0 ? a : 1;
     }
     getDataTimestamps() {
@@ -21088,11 +21088,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         return e;
       const s = this.getLabels();
       for (t = 0, i = s.length; t < i; ++t)
-        e.push(y$(this, s[t]));
+        e.push(C$(this, s[t]));
       return this._cache.labels = this._normalized ? e : this.normalize(e);
     }
     normalize(e) {
-      return zj(e.sort(v$));
+      return U6(e.sort(y$));
     }
   }
   qw.id = "time";
@@ -21139,7 +21139,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     const c = o - r;
     return c ? a + (l - a) * (e - r) / c : a;
   }
-  class AI extends qw {
+  class PI extends qw {
     constructor(e) {
       super(e), this._table = [], this._minPos = void 0, this._tableRange = void 0;
     }
@@ -21190,20 +21190,20 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return Jv(this._table, i * this._tableRange + this._minPos, !0);
     }
   }
-  AI.id = "timeseries";
-  AI.defaults = qw.defaults;
+  PI.id = "timeseries";
+  PI.defaults = qw.defaults;
   var dse = /* @__PURE__ */ Object.freeze({
     __proto__: null,
-    CategoryScale: MI,
+    CategoryScale: AI,
     LinearScale: ip,
     LogarithmicScale: sp,
     RadialLinearScale: Kw,
     TimeScale: qw,
-    TimeSeriesScale: AI
+    TimeSeriesScale: PI
   });
-  const H5 = [wte, Kne, jie, dse];
-  cr.register(...H5);
-  function D5(n, e, t, i = {}) {
+  const D5 = [wte, Kne, jie, dse];
+  cr.register(...D5);
+  function N5(n, e, t, i = {}) {
     return new cr(n, {
       type: e,
       data: t,
@@ -21211,8 +21211,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     });
   }
   zc.getOrCreate(globalThis);
-  var N5;
-  let L5;
+  var L5;
+  let $5;
   function fse(n, e, t, i, s, r) {
     var o, a, l, c, u, h, d, f = Symbol.metadata || Symbol.for("Symbol.metadata"), g = Object.defineProperty, p = Object.create, m = [p(null), p(null)], w = e.length;
     function y(x, M, I) {
@@ -21238,11 +21238,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
       if (!pe) {
         var E = {}, N = [], X = v ? "get" : S || b ? "set" : "value";
-        if (Z ? ($ || b ? E = { get: R$(function() {
+        if (Z ? ($ || b ? E = { get: x$(function() {
           return te(this);
         }, A, "get"), set: function(oe) {
           M[4](this, oe);
-        } } : E[X] = te, $ || R$(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
+        } } : E[X] = te, $ || x$(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
           if ((a = m[+Y][A]) && (a ^ O) != 7) throw Error("Decorating two elements with the same name (" + E[X].name + ") is not supported yet");
           m[+Y][A] = O < 3 ? 1 : O;
         }
@@ -21302,7 +21302,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return (e === "string" ? String : Number)(n);
   }
-  function R$(n, e, t) {
+  function x$(n, e, t) {
     typeof e == "symbol" && (e = (e = e.description) ? "[" + e + "]" : "");
     try {
       Object.defineProperty(n, "name", { configurable: !0, value: t ? t + " " + e : e });
@@ -21350,35 +21350,35 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           data: e.map((i) => i.count)
         }]
       };
-      this.chartjs = D5(this.mychart, "bar", t);
+      this.chartjs = N5(this.mychart, "bar", t);
     }
   }
-  N5 = bse;
-  [eR, L5] = fse(N5, [z_({
+  L5 = bse;
+  [eR, $5] = fse(L5, [z_({
     ...aJ,
     name: "sv-chartjs"
   })], []).c;
-  L5();
-  const $5 = "chartjs-scatter", NM = `<div>
+  $5();
+  const F5 = "chartjs-scatter", NM = `<div>
     chart-scatter view - should not be used
     <canvas ref="mychart"></canvas>
 </div>
-`, F5 = [], B5 = {};
+`, B5 = [], V5 = {};
   let lx;
   function wse(n) {
-    lx || (lx = rr.define({ name: $5, template: NM, dependencies: F5, bindables: B5 })), n.register(lx);
+    lx || (lx = rr.define({ name: F5, template: NM, dependencies: B5, bindables: V5 })), n.register(lx);
   }
   const vse = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    bindables: B5,
+    bindables: V5,
     default: NM,
-    dependencies: F5,
-    name: $5,
+    dependencies: B5,
+    name: F5,
     register: wse,
     template: NM
   }, Symbol.toStringTag, { value: "Module" }));
-  var V5;
-  let W5;
+  var W5;
+  let j5;
   function yse(n, e, t, i, s, r) {
     var o, a, l, c, u, h, d, f = Symbol.metadata || Symbol.for("Symbol.metadata"), g = Object.defineProperty, p = Object.create, m = [p(null), p(null)], w = e.length;
     function y(x, M, I) {
@@ -21404,11 +21404,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
       if (!pe) {
         var E = {}, N = [], X = v ? "get" : S || b ? "set" : "value";
-        if (Z ? ($ || b ? E = { get: x$(function() {
+        if (Z ? ($ || b ? E = { get: E$(function() {
           return te(this);
         }, A, "get"), set: function(oe) {
           M[4](this, oe);
-        } } : E[X] = te, $ || x$(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
+        } } : E[X] = te, $ || E$(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
           if ((a = m[+Y][A]) && (a ^ O) != 7) throw Error("Decorating two elements with the same name (" + E[X].name + ") is not supported yet");
           m[+Y][A] = O < 3 ? 1 : O;
         }
@@ -21468,7 +21468,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return (e === "string" ? String : Number)(n);
   }
-  function x$(n, e, t) {
+  function E$(n, e, t) {
     typeof e == "symbol" && (e = (e = e.description) ? "[" + e + "]" : "");
     try {
       Object.defineProperty(n, "name", { configurable: !0, value: t ? t + " " + e : e });
@@ -21480,7 +21480,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     if (Object(n) !== n) throw TypeError("right-hand side of 'in' should be an object, got " + (n !== null ? typeof n : "null"));
     return n;
   }
-  let j5;
+  let z5;
   class Rse extends eR {
     constructor(...e) {
       super(...e), this.mychart = void 0;
@@ -21523,26 +21523,26 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
           //backgroundColor: 'rgb(99, 255, 132)'
         }]
       };
-      this.chartjs = D5(this.mychart, "bubble", e);
+      this.chartjs = N5(this.mychart, "bubble", e);
     }
   }
-  V5 = Rse;
-  [j5, W5] = yse(V5, [z_({
+  W5 = Rse;
+  [z5, j5] = yse(W5, [z_({
     ...vse,
     name: "sv-chartjs-scatter"
   })], [], 0, void 0, eR).c;
-  W5();
-  const z5 = "table", LM = '<div ref="mytable">here is table</div>', U5 = [], Y5 = {};
+  j5();
+  const U5 = "table", LM = '<div ref="mytable">here is table</div>', Y5 = [], G5 = {};
   let cx;
   function xse(n) {
-    cx || (cx = rr.define({ name: z5, template: LM, dependencies: U5, bindables: Y5 })), n.register(cx);
+    cx || (cx = rr.define({ name: U5, template: LM, dependencies: Y5, bindables: G5 })), n.register(cx);
   }
   const Ese = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    bindables: Y5,
+    bindables: G5,
     default: LM,
-    dependencies: U5,
-    name: z5,
+    dependencies: Y5,
+    name: U5,
     register: xse,
     template: LM
   }, Symbol.toStringTag, { value: "Module" }));
@@ -21559,7 +21559,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     /* @__PURE__ */ function() {
       return this;
     }() || Function("return this")()
-  ), PI = {}, Fs = function(n) {
+  ), II = {}, Fs = function(n) {
     try {
       return !!n();
     } catch {
@@ -21577,13 +21577,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return typeof n != "function" || n.hasOwnProperty("prototype");
   }), Pse = tR, ey = Function.prototype.call, $o = Pse ? ey.bind(ey) : function() {
     return ey.apply(ey, arguments);
-  }, G5 = {}, K5 = {}.propertyIsEnumerable, q5 = Object.getOwnPropertyDescriptor, Ise = q5 && !K5.call({
+  }, K5 = {}, q5 = {}.propertyIsEnumerable, X5 = Object.getOwnPropertyDescriptor, Ise = X5 && !q5.call({
     1: 2
   }, 1);
-  G5.f = Ise ? function(e) {
-    var t = q5(this, e);
+  K5.f = Ise ? function(e) {
+    var t = X5(this, e);
     return !!t && t.enumerable;
-  } : K5;
+  } : q5;
   var nR = function(n, e) {
     return {
       enumerable: !(n & 1),
@@ -21591,11 +21591,11 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       writable: !(n & 4),
       value: e
     };
-  }, X5 = tR, Q5 = Function.prototype, $M = Q5.call, Ose = X5 && Q5.bind.bind($M, $M), ai = X5 ? Ose : function(n) {
+  }, Q5 = tR, Z5 = Function.prototype, $M = Z5.call, Ose = Q5 && Z5.bind.bind($M, $M), ai = Q5 ? Ose : function(n) {
     return function() {
       return $M.apply(n, arguments);
     };
-  }, Z5 = ai, kse = Z5({}.toString), Hse = Z5("".slice), $d = function(n) {
+  }, J5 = ai, kse = J5({}.toString), Hse = J5("".slice), $d = function(n) {
     return Hse(kse(n), 8, -1);
   }, Dse = ai, Nse = Fs, Lse = $d, ux = Object, $se = Dse("".split), Fse = Nse(function() {
     return !ux("z").propertyIsEnumerable(0);
@@ -21618,14 +21618,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return Use(n) ? n : void 0;
   }, rp = function(n, e) {
     return arguments.length < 2 ? Yse(dx[n]) : dx[n] && dx[n][e];
-  }, Gse = ai, rR = Gse({}.isPrototypeOf), Kse = Hi, E$ = Kse.navigator, T$ = E$ && E$.userAgent, oR = T$ ? String(T$) : "", J5 = Hi, fx = oR, M$ = J5.process, A$ = J5.Deno, P$ = M$ && M$.versions || A$ && A$.version, I$ = P$ && P$.v8, So, dS;
-  I$ && (So = I$.split("."), dS = So[0] > 0 && So[0] < 4 ? 1 : +(So[0] + So[1]));
+  }, Gse = ai, rR = Gse({}.isPrototypeOf), Kse = Hi, T$ = Kse.navigator, M$ = T$ && T$.userAgent, oR = M$ ? String(M$) : "", e8 = Hi, fx = oR, A$ = e8.process, P$ = e8.Deno, I$ = A$ && A$.versions || P$ && P$.version, O$ = I$ && I$.v8, So, dS;
+  O$ && (So = O$.split("."), dS = So[0] > 0 && So[0] < 4 ? 1 : +(So[0] + So[1]));
   !dS && fx && (So = fx.match(/Edge\/(\d+)/), (!So || So[1] >= 74) && (So = fx.match(/Chrome\/(\d+)/), So && (dS = +So[1])));
-  var qse = dS, O$ = qse, Xse = Fs, Qse = Hi, Zse = Qse.String, II = !!Object.getOwnPropertySymbols && !Xse(function() {
+  var qse = dS, k$ = qse, Xse = Fs, Qse = Hi, Zse = Qse.String, OI = !!Object.getOwnPropertySymbols && !Xse(function() {
     var n = Symbol("symbol detection");
     return !Zse(n) || !(Object(n) instanceof Symbol) || // Chrome 38-40 symbols are not inherited from DOM collections prototypes to instances
-    !Symbol.sham && O$ && O$ < 41;
-  }), Jse = II, e8 = Jse && !Symbol.sham && typeof Symbol.iterator == "symbol", ere = rp, tre = Di, nre = rR, ire = e8, sre = Object, OI = ire ? function(n) {
+    !Symbol.sham && k$ && k$ < 41;
+  }), Jse = OI, t8 = Jse && !Symbol.sham && typeof Symbol.iterator == "symbol", ere = rp, tre = Di, nre = rR, ire = t8, sre = Object, kI = ire ? function(n) {
     return typeof n == "symbol";
   } : function(n) {
     var e = ere("Symbol");
@@ -21646,63 +21646,63 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     var t, i;
     if (e === "string" && px(t = n.toString) && !mx(i = gx(t, n)) || px(t = n.valueOf) && !mx(i = gx(t, n)) || e !== "string" && px(t = n.toString) && !mx(i = gx(t, n))) return i;
     throw new hre("Can't convert object to primitive value");
-  }, t8 = { exports: {} }, k$ = Hi, fre = Object.defineProperty, kI = function(n, e) {
+  }, n8 = { exports: {} }, H$ = Hi, fre = Object.defineProperty, HI = function(n, e) {
     try {
-      fre(k$, n, {
+      fre(H$, n, {
         value: e,
         configurable: !0,
         writable: !0
       });
     } catch {
-      k$[n] = e;
+      H$[n] = e;
     }
     return e;
-  }, gre = Hi, pre = kI, H$ = "__core-js_shared__", D$ = t8.exports = gre[H$] || pre(H$, {});
-  (D$.versions || (D$.versions = [])).push({
+  }, gre = Hi, pre = HI, D$ = "__core-js_shared__", N$ = n8.exports = gre[D$] || pre(D$, {});
+  (N$.versions || (N$.versions = [])).push({
     version: "3.39.0",
     mode: "global",
     copyright: "© 2014-2024 Denis Pushkarev (zloirock.ru)",
     license: "https://github.com/zloirock/core-js/blob/v3.39.0/LICENSE",
     source: "https://github.com/zloirock/core-js"
   });
-  var HI = t8.exports, N$ = HI, n8 = function(n, e) {
-    return N$[n] || (N$[n] = e || {});
+  var DI = n8.exports, L$ = DI, i8 = function(n, e) {
+    return L$[n] || (L$[n] = e || {});
   }, mre = Xw, bre = Object, Zw = function(n) {
     return bre(mre(n));
   }, wre = ai, vre = Zw, yre = wre({}.hasOwnProperty), Ya = Object.hasOwn || function(e, t) {
     return yre(vre(e), t);
-  }, Cre = ai, Sre = 0, _re = Math.random(), Rre = Cre(1 .toString), i8 = function(n) {
+  }, Cre = ai, Sre = 0, _re = Math.random(), Rre = Cre(1 .toString), s8 = function(n) {
     return "Symbol(" + (n === void 0 ? "" : n) + ")_" + Rre(++Sre + _re, 36);
-  }, xre = Hi, Ere = n8, L$ = Ya, Tre = i8, Mre = II, Are = e8, lg = xre.Symbol, bx = Ere("wks"), Pre = Are ? lg.for || lg : lg && lg.withoutSetter || Tre, Pu = function(n) {
-    return L$(bx, n) || (bx[n] = Mre && L$(lg, n) ? lg[n] : Pre("Symbol." + n)), bx[n];
-  }, Ire = $o, $$ = Ua, F$ = OI, Ore = lR, kre = dre, Hre = Pu, Dre = TypeError, Nre = Hre("toPrimitive"), Lre = function(n, e) {
-    if (!$$(n) || F$(n)) return n;
+  }, xre = Hi, Ere = i8, $$ = Ya, Tre = s8, Mre = OI, Are = t8, lg = xre.Symbol, bx = Ere("wks"), Pre = Are ? lg.for || lg : lg && lg.withoutSetter || Tre, Pu = function(n) {
+    return $$(bx, n) || (bx[n] = Mre && $$(lg, n) ? lg[n] : Pre("Symbol." + n)), bx[n];
+  }, Ire = $o, F$ = Ua, B$ = kI, Ore = lR, kre = dre, Hre = Pu, Dre = TypeError, Nre = Hre("toPrimitive"), Lre = function(n, e) {
+    if (!F$(n) || B$(n)) return n;
     var t = Ore(n, Nre), i;
     if (t) {
-      if (e === void 0 && (e = "default"), i = Ire(t, n, e), !$$(i) || F$(i)) return i;
+      if (e === void 0 && (e = "default"), i = Ire(t, n, e), !F$(i) || B$(i)) return i;
       throw new Dre("Can't convert object to primitive value");
     }
     return e === void 0 && (e = "number"), kre(n, e);
-  }, $re = Lre, Fre = OI, s8 = function(n) {
+  }, $re = Lre, Fre = kI, r8 = function(n) {
     var e = $re(n, "string");
     return Fre(e) ? e : e + "";
-  }, Bre = Hi, B$ = Ua, FM = Bre.document, Vre = B$(FM) && B$(FM.createElement), DI = function(n) {
+  }, Bre = Hi, V$ = Ua, FM = Bre.document, Vre = V$(FM) && V$(FM.createElement), NI = function(n) {
     return Vre ? FM.createElement(n) : {};
-  }, Wre = Lo, jre = Fs, zre = DI, r8 = !Wre && !jre(function() {
+  }, Wre = Lo, jre = Fs, zre = NI, o8 = !Wre && !jre(function() {
     return Object.defineProperty(zre("div"), "a", {
       get: function() {
         return 7;
       }
     }).a !== 7;
-  }), Ure = Lo, Yre = $o, Gre = G5, Kre = nR, qre = sR, Xre = s8, Qre = Ya, Zre = r8, V$ = Object.getOwnPropertyDescriptor;
-  PI.f = Ure ? V$ : function(e, t) {
+  }), Ure = Lo, Yre = $o, Gre = K5, Kre = nR, qre = sR, Xre = r8, Qre = Ya, Zre = o8, W$ = Object.getOwnPropertyDescriptor;
+  II.f = Ure ? W$ : function(e, t) {
     if (e = qre(e), t = Xre(t), Zre) try {
-      return V$(e, t);
+      return W$(e, t);
     } catch {
     }
     if (Qre(e, t)) return Kre(!Yre(Gre.f, e, t), e[t]);
   };
-  var Iu = {}, Jre = Lo, eoe = Fs, o8 = Jre && eoe(function() {
+  var Iu = {}, Jre = Lo, eoe = Fs, a8 = Jre && eoe(function() {
     return Object.defineProperty(function() {
     }, "prototype", {
       value: 42,
@@ -21711,9 +21711,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }), toe = Ua, noe = String, ioe = TypeError, ac = function(n) {
     if (toe(n)) return n;
     throw new ioe(noe(n) + " is not an object");
-  }, soe = Lo, roe = r8, ooe = o8, ty = ac, W$ = s8, aoe = TypeError, wx = Object.defineProperty, loe = Object.getOwnPropertyDescriptor, vx = "enumerable", yx = "configurable", Cx = "writable";
+  }, soe = Lo, roe = o8, ooe = a8, ty = ac, j$ = r8, aoe = TypeError, wx = Object.defineProperty, loe = Object.getOwnPropertyDescriptor, vx = "enumerable", yx = "configurable", Cx = "writable";
   Iu.f = soe ? ooe ? function(e, t, i) {
-    if (ty(e), t = W$(t), ty(i), typeof e == "function" && t === "prototype" && "value" in i && Cx in i && !i[Cx]) {
+    if (ty(e), t = j$(t), ty(i), typeof e == "function" && t === "prototype" && "value" in i && Cx in i && !i[Cx]) {
       var s = loe(e, t);
       s && s[Cx] && (e[t] = i.value, i = {
         configurable: yx in i ? i[yx] : s[yx],
@@ -21723,7 +21723,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     return wx(e, t, i);
   } : wx : function(e, t, i) {
-    if (ty(e), t = W$(t), ty(i), roe) try {
+    if (ty(e), t = j$(t), ty(i), roe) try {
       return wx(e, t, i);
     } catch {
     }
@@ -21734,18 +21734,18 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return uoe.f(n, e, hoe(1, t));
   } : function(n, e, t) {
     return n[e] = t, n;
-  }, a8 = { exports: {} }, BM = Lo, doe = Ya, l8 = Function.prototype, foe = BM && Object.getOwnPropertyDescriptor, NI = doe(l8, "name"), goe = NI && (function() {
-  }).name === "something", poe = NI && (!BM || BM && foe(l8, "name").configurable), moe = {
-    EXISTS: NI,
+  }, l8 = { exports: {} }, BM = Lo, doe = Ya, c8 = Function.prototype, foe = BM && Object.getOwnPropertyDescriptor, LI = doe(c8, "name"), goe = LI && (function() {
+  }).name === "something", poe = LI && (!BM || BM && foe(c8, "name").configurable), moe = {
+    EXISTS: LI,
     PROPER: goe,
     CONFIGURABLE: poe
-  }, boe = ai, woe = Di, VM = HI, voe = boe(Function.toString);
+  }, boe = ai, woe = Di, VM = DI, voe = boe(Function.toString);
   woe(VM.inspectSource) || (VM.inspectSource = function(n) {
     return voe(n);
   });
-  var yoe = VM.inspectSource, Coe = Hi, Soe = Di, j$ = Coe.WeakMap, _oe = Soe(j$) && /native code/.test(String(j$)), Roe = n8, xoe = i8, z$ = Roe("keys"), c8 = function(n) {
-    return z$[n] || (z$[n] = xoe(n));
-  }, LI = {}, Eoe = _oe, u8 = Hi, Toe = Ua, Moe = Jw, Sx = Ya, _x = HI, Aoe = c8, Poe = LI, U$ = "Object already initialized", WM = u8.TypeError, Ioe = u8.WeakMap, fS, lw, gS, Ooe = function(n) {
+  var yoe = VM.inspectSource, Coe = Hi, Soe = Di, z$ = Coe.WeakMap, _oe = Soe(z$) && /native code/.test(String(z$)), Roe = i8, xoe = s8, U$ = Roe("keys"), u8 = function(n) {
+    return U$[n] || (U$[n] = xoe(n));
+  }, $I = {}, Eoe = _oe, h8 = Hi, Toe = Ua, Moe = Jw, Sx = Ya, _x = DI, Aoe = u8, Poe = $I, Y$ = "Object already initialized", WM = h8.TypeError, Ioe = h8.WeakMap, fS, lw, gS, Ooe = function(n) {
     return gS(n) ? lw(n) : fS(n, {});
   }, koe = function(n) {
     return function(e) {
@@ -21758,7 +21758,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   if (Eoe || _x.state) {
     var Wo = _x.state || (_x.state = new Ioe());
     Wo.get = Wo.get, Wo.has = Wo.has, Wo.set = Wo.set, fS = function(n, e) {
-      if (Wo.has(n)) throw new WM(U$);
+      if (Wo.has(n)) throw new WM(Y$);
       return e.facade = n, Wo.set(n, e), e;
     }, lw = function(n) {
       return Wo.get(n) || {};
@@ -21768,7 +21768,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   } else {
     var rf = Aoe("state");
     Poe[rf] = !0, fS = function(n, e) {
-      if (Sx(n, rf)) throw new WM(U$);
+      if (Sx(n, rf)) throw new WM(Y$);
       return e.facade = n, Moe(n, rf, e), e;
     }, lw = function(n) {
       return Sx(n, rf) ? n[rf] : {};
@@ -21782,13 +21782,13 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     has: gS,
     enforce: Ooe,
     getterFor: koe
-  }, $I = ai, Doe = Fs, Noe = Di, ny = Ya, jM = Lo, Loe = moe.CONFIGURABLE, $oe = yoe, h8 = Hoe, Foe = h8.enforce, Boe = h8.get, Y$ = String, lC = Object.defineProperty, Voe = $I("".slice), Woe = $I("".replace), joe = $I([].join), zoe = jM && !Doe(function() {
+  }, FI = ai, Doe = Fs, Noe = Di, ny = Ya, jM = Lo, Loe = moe.CONFIGURABLE, $oe = yoe, d8 = Hoe, Foe = d8.enforce, Boe = d8.get, G$ = String, lC = Object.defineProperty, Voe = FI("".slice), Woe = FI("".replace), joe = FI([].join), zoe = jM && !Doe(function() {
     return lC(function() {
     }, "length", {
       value: 8
     }).length !== 8;
-  }), Uoe = String(String).split("String"), Yoe = a8.exports = function(n, e, t) {
-    Voe(Y$(e), 0, 7) === "Symbol(" && (e = "[" + Woe(Y$(e), /^Symbol\(([^)]*)\).*$/, "$1") + "]"), t && t.getter && (e = "get " + e), t && t.setter && (e = "set " + e), (!ny(n, "name") || Loe && n.name !== e) && (jM ? lC(n, "name", {
+  }), Uoe = String(String).split("String"), Yoe = l8.exports = function(n, e, t) {
+    Voe(G$(e), 0, 7) === "Symbol(" && (e = "[" + Woe(G$(e), /^Symbol\(([^)]*)\).*$/, "$1") + "]"), t && t.getter && (e = "get " + e), t && t.setter && (e = "set " + e), (!ny(n, "name") || Loe && n.name !== e) && (jM ? lC(n, "name", {
       value: e,
       configurable: !0
     }) : n.name = e), zoe && t && ny(t, "arity") && n.length !== t.arity && lC(n, "length", {
@@ -21806,7 +21806,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   Function.prototype.toString = Yoe(function() {
     return Noe(this) && Boe(this).source || $oe(this);
   }, "toString");
-  var Goe = a8.exports, Koe = Di, qoe = Iu, Xoe = Goe, Qoe = kI, Zoe = function(n, e, t, i) {
+  var Goe = l8.exports, Koe = Di, qoe = Iu, Xoe = Goe, Qoe = HI, Zoe = function(n, e, t, i) {
     i || (i = {});
     var s = i.enumerable, r = i.name !== void 0 ? i.name : e;
     if (Koe(t) && Xoe(t, r, i), i.global)
@@ -21824,7 +21824,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       });
     }
     return n;
-  }, d8 = {}, Joe = Math.ceil, eae = Math.floor, tae = Math.trunc || function(e) {
+  }, f8 = {}, Joe = Math.ceil, eae = Math.floor, tae = Math.trunc || function(e) {
     var t = +e;
     return (t > 0 ? eae : Joe)(t);
   }, nae = tae, ev = function(n) {
@@ -21838,7 +21838,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     return e > 0 ? lae(e, 9007199254740991) : 0;
   }, uae = cae, tv = function(n) {
     return uae(n.length);
-  }, hae = sR, dae = oae, fae = tv, G$ = function(n) {
+  }, hae = sR, dae = oae, fae = tv, K$ = function(n) {
     return function(e, t, i) {
       var s = hae(e), r = fae(s);
       if (r === 0) return !n && -1;
@@ -21853,35 +21853,35 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, gae = {
     // `Array.prototype.includes` method
     // https://tc39.es/ecma262/#sec-array.prototype.includes
-    includes: G$(!0),
+    includes: K$(!0),
     // `Array.prototype.indexOf` method
     // https://tc39.es/ecma262/#sec-array.prototype.indexof
-    indexOf: G$(!1)
-  }, pae = ai, Rx = Ya, mae = sR, bae = gae.indexOf, wae = LI, K$ = pae([].push), f8 = function(n, e) {
+    indexOf: K$(!1)
+  }, pae = ai, Rx = Ya, mae = sR, bae = gae.indexOf, wae = $I, q$ = pae([].push), g8 = function(n, e) {
     var t = mae(n), i = 0, s = [], r;
-    for (r in t) !Rx(wae, r) && Rx(t, r) && K$(s, r);
-    for (; e.length > i; ) Rx(t, r = e[i++]) && (~bae(s, r) || K$(s, r));
+    for (r in t) !Rx(wae, r) && Rx(t, r) && q$(s, r);
+    for (; e.length > i; ) Rx(t, r = e[i++]) && (~bae(s, r) || q$(s, r));
     return s;
-  }, FI = ["constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", "toString", "valueOf"], vae = f8, yae = FI, Cae = yae.concat("length", "prototype");
-  d8.f = Object.getOwnPropertyNames || function(e) {
+  }, BI = ["constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", "toString", "valueOf"], vae = g8, yae = BI, Cae = yae.concat("length", "prototype");
+  f8.f = Object.getOwnPropertyNames || function(e) {
     return vae(e, Cae);
   };
-  var g8 = {};
-  g8.f = Object.getOwnPropertySymbols;
-  var Sae = rp, _ae = ai, Rae = d8, xae = g8, Eae = ac, Tae = _ae([].concat), Mae = Sae("Reflect", "ownKeys") || function(e) {
+  var p8 = {};
+  p8.f = Object.getOwnPropertySymbols;
+  var Sae = rp, _ae = ai, Rae = f8, xae = p8, Eae = ac, Tae = _ae([].concat), Mae = Sae("Reflect", "ownKeys") || function(e) {
     var t = Rae.f(Eae(e)), i = xae.f;
     return i ? Tae(t, i(e)) : t;
-  }, q$ = Ya, Aae = Mae, Pae = PI, Iae = Iu, p8 = function(n, e, t) {
+  }, X$ = Ya, Aae = Mae, Pae = II, Iae = Iu, m8 = function(n, e, t) {
     for (var i = Aae(e), s = Iae.f, r = Pae.f, o = 0; o < i.length; o++) {
       var a = i[o];
-      !q$(n, a) && !(t && q$(t, a)) && s(n, a, r(e, a));
+      !X$(n, a) && !(t && X$(t, a)) && s(n, a, r(e, a));
     }
   }, Oae = Fs, kae = Di, Hae = /#|\.prototype\./, nv = function(n, e) {
     var t = Nae[Dae(n)];
     return t === $ae ? !0 : t === Lae ? !1 : kae(e) ? Oae(e) : !!e;
   }, Dae = nv.normalize = function(n) {
     return String(n).replace(Hae, ".").toLowerCase();
-  }, Nae = nv.data = {}, Lae = nv.NATIVE = "N", $ae = nv.POLYFILL = "P", Fae = nv, iy = Hi, Bae = PI.f, Vae = Jw, Wae = Zoe, jae = kI, zae = p8, Uae = Fae, Ni = function(n, e) {
+  }, Nae = nv.data = {}, Lae = nv.NATIVE = "N", $ae = nv.POLYFILL = "P", Fae = nv, iy = Hi, Bae = II.f, Vae = Jw, Wae = Zoe, jae = HI, zae = m8, Uae = Fae, Ni = function(n, e) {
     var t = n.target, i = n.global, s = n.stat, r, o, a, l, c, u;
     if (i ? o = iy : s ? o = iy[t] || jae(t, {}) : o = iy[t] && iy[t].prototype, o) for (a in e) {
       if (c = e[a], n.dontCallGetSet ? (u = Bae(o, a), l = u && u.value) : l = o[a], r = Uae(i ? a : t + (s ? "." : "#") + a, n.forced), !r && l !== void 0) {
@@ -21890,9 +21890,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       }
       (n.sham || l && l.sham) && Vae(c, "sham", !0), Wae(o, a, c, n);
     }
-  }, Yae = tR, m8 = Function.prototype, X$ = m8.apply, Q$ = m8.call, cR = typeof Reflect == "object" && Reflect.apply || (Yae ? Q$.bind(X$) : function() {
-    return Q$.apply(X$, arguments);
-  }), Gae = ai, Kae = Qw, b8 = function(n, e, t) {
+  }, Yae = tR, b8 = Function.prototype, Q$ = b8.apply, Z$ = b8.call, cR = typeof Reflect == "object" && Reflect.apply || (Yae ? Z$.bind(Q$) : function() {
+    return Z$.apply(Q$, arguments);
+  }), Gae = ai, Kae = Qw, w8 = function(n, e, t) {
     try {
       return Gae(Kae(Object.getOwnPropertyDescriptor(n, e)[t]));
     } catch {
@@ -21902,7 +21902,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, Qae = Xae, Zae = String, Jae = TypeError, ele = function(n) {
     if (Qae(n)) return n;
     throw new Jae("Can't set " + Zae(n) + " as a prototype");
-  }, tle = b8, nle = Ua, ile = Xw, sle = ele, w8 = Object.setPrototypeOf || ("__proto__" in {} ? function() {
+  }, tle = w8, nle = Ua, ile = Xw, sle = ele, v8 = Object.setPrototypeOf || ("__proto__" in {} ? function() {
     var n = !1, e = {}, t;
     try {
       t = tle(Object.prototype, "__proto__", "set"), t(e, []), n = e instanceof Array;
@@ -21921,75 +21921,75 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
         e[t] = i;
       }
     });
-  }, ale = Di, lle = Ua, Z$ = w8, cle = function(n, e, t) {
+  }, ale = Di, lle = Ua, J$ = v8, cle = function(n, e, t) {
     var i, s;
     return (
       // it can work only with native `setPrototypeOf`
-      Z$ && // we haven't completely correct pre-ES6 way for getting `new.target`, so use this
-      ale(i = e.constructor) && i !== t && lle(s = i.prototype) && s !== t.prototype && Z$(n, s), n
+      J$ && // we haven't completely correct pre-ES6 way for getting `new.target`, so use this
+      ale(i = e.constructor) && i !== t && lle(s = i.prototype) && s !== t.prototype && J$(n, s), n
     );
-  }, ule = Pu, hle = ule("toStringTag"), v8 = {};
-  v8[hle] = "z";
-  var dle = String(v8) === "[object z]", fle = dle, gle = Di, cC = $d, ple = Pu, mle = ple("toStringTag"), ble = Object, wle = cC(/* @__PURE__ */ function() {
+  }, ule = Pu, hle = ule("toStringTag"), y8 = {};
+  y8[hle] = "z";
+  var dle = String(y8) === "[object z]", fle = dle, gle = Di, cC = $d, ple = Pu, mle = ple("toStringTag"), ble = Object, wle = cC(/* @__PURE__ */ function() {
     return arguments;
   }()) === "Arguments", vle = function(n, e) {
     try {
       return n[e];
     } catch {
     }
-  }, y8 = fle ? cC : function(n) {
+  }, C8 = fle ? cC : function(n) {
     var e, t, i;
     return n === void 0 ? "Undefined" : n === null ? "Null" : typeof (t = vle(e = ble(n), mle)) == "string" ? t : wle ? cC(e) : (i = cC(e)) === "Object" && gle(e.callee) ? "Arguments" : i;
-  }, yle = y8, Cle = String, uR = function(n) {
+  }, yle = C8, Cle = String, uR = function(n) {
     if (yle(n) === "Symbol") throw new TypeError("Cannot convert a Symbol value to a string");
     return Cle(n);
   }, Sle = uR, _le = function(n, e) {
     return n === void 0 ? arguments.length < 2 ? "" : e : Sle(n);
   }, Rle = Ua, xle = Jw, Ele = function(n, e) {
     Rle(e) && "cause" in e && xle(n, "cause", e.cause);
-  }, Tle = ai, C8 = Error, Mle = Tle("".replace), Ale = function(n) {
-    return String(new C8(n).stack);
-  }("zxcasd"), S8 = /\n\s*at [^:]*:[^\n]*/, Ple = S8.test(Ale), Ile = function(n, e) {
-    if (Ple && typeof n == "string" && !C8.prepareStackTrace)
-      for (; e--; ) n = Mle(n, S8, "");
+  }, Tle = ai, S8 = Error, Mle = Tle("".replace), Ale = function(n) {
+    return String(new S8(n).stack);
+  }("zxcasd"), _8 = /\n\s*at [^:]*:[^\n]*/, Ple = _8.test(Ale), Ile = function(n, e) {
+    if (Ple && typeof n == "string" && !S8.prepareStackTrace)
+      for (; e--; ) n = Mle(n, _8, "");
     return n;
   }, Ole = Fs, kle = nR, Hle = !Ole(function() {
     var n = new Error("a");
     return "stack" in n ? (Object.defineProperty(n, "stack", kle(1, 7)), n.stack !== 7) : !0;
-  }), Dle = Jw, Nle = Ile, Lle = Hle, J$ = Error.captureStackTrace, $le = function(n, e, t, i) {
-    Lle && (J$ ? J$(n, e) : Dle(n, "stack", Nle(t, i)));
-  }, e2 = rp, Fle = Ya, t2 = Jw, Ble = rR, n2 = w8, i2 = p8, s2 = ole, Vle = cle, Wle = _le, jle = Ele, zle = $le, Ule = Lo, Yle = function(n, e, t, i) {
-    var s = "stackTraceLimit", r = i ? 2 : 1, o = n.split("."), a = o[o.length - 1], l = e2.apply(null, o);
+  }), Dle = Jw, Nle = Ile, Lle = Hle, e2 = Error.captureStackTrace, $le = function(n, e, t, i) {
+    Lle && (e2 ? e2(n, e) : Dle(n, "stack", Nle(t, i)));
+  }, t2 = rp, Fle = Ya, n2 = Jw, Ble = rR, i2 = v8, s2 = m8, r2 = ole, Vle = cle, Wle = _le, jle = Ele, zle = $le, Ule = Lo, Yle = function(n, e, t, i) {
+    var s = "stackTraceLimit", r = i ? 2 : 1, o = n.split("."), a = o[o.length - 1], l = t2.apply(null, o);
     if (l) {
       var c = l.prototype;
       if (Fle(c, "cause") && delete c.cause, !t) return l;
-      var u = e2("Error"), h = e(function(d, f) {
+      var u = t2("Error"), h = e(function(d, f) {
         var g = Wle(i ? f : d, void 0), p = i ? new l(d) : new l();
-        return g !== void 0 && t2(p, "message", g), zle(p, h, p.stack, 2), this && Ble(c, this) && Vle(p, this, h), arguments.length > r && jle(p, arguments[r]), p;
+        return g !== void 0 && n2(p, "message", g), zle(p, h, p.stack, 2), this && Ble(c, this) && Vle(p, this, h), arguments.length > r && jle(p, arguments[r]), p;
       });
-      h.prototype = c, a !== "Error" ? n2 ? n2(h, u) : i2(h, u, {
+      h.prototype = c, a !== "Error" ? i2 ? i2(h, u) : s2(h, u, {
         name: !0
-      }) : Ule && s in l && (s2(h, l, s), s2(h, l, "prepareStackTrace")), i2(h, l);
+      }) : Ule && s in l && (r2(h, l, s), r2(h, l, "prepareStackTrace")), s2(h, l);
       try {
-        c.name !== a && t2(c, "name", a), c.constructor = h;
+        c.name !== a && n2(c, "name", a), c.constructor = h;
       } catch {
       }
       return h;
     }
-  }, _8 = Ni, Gle = Hi, Ga = cR, R8 = Yle, zM = "WebAssembly", r2 = Gle[zM], pS = new Error("e", {
+  }, R8 = Ni, Gle = Hi, Ga = cR, x8 = Yle, zM = "WebAssembly", o2 = Gle[zM], pS = new Error("e", {
     cause: 7
   }).cause !== 7, Fd = function(n, e) {
     var t = {};
-    t[n] = R8(n, e, pS), _8({
+    t[n] = x8(n, e, pS), R8({
       global: !0,
       constructor: !0,
       arity: 1,
       forced: pS
     }, t);
-  }, BI = function(n, e) {
-    if (r2 && r2[n]) {
+  }, VI = function(n, e) {
+    if (o2 && o2[n]) {
       var t = {};
-      t[n] = R8(zM + "." + n, e, pS), _8({
+      t[n] = x8(zM + "." + n, e, pS), R8({
         target: zM,
         stat: !0,
         constructor: !0,
@@ -22033,24 +22033,24 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       return Ga(n, this, arguments);
     };
   });
-  BI("CompileError", function(n) {
+  VI("CompileError", function(n) {
     return function(t) {
       return Ga(n, this, arguments);
     };
   });
-  BI("LinkError", function(n) {
+  VI("LinkError", function(n) {
     return function(t) {
       return Ga(n, this, arguments);
     };
   });
-  BI("RuntimeError", function(n) {
+  VI("RuntimeError", function(n) {
     return function(t) {
       return Ga(n, this, arguments);
     };
   });
-  var Kle = $d, x8 = Array.isArray || function(e) {
+  var Kle = $d, E8 = Array.isArray || function(e) {
     return Kle(e) === "Array";
-  }, qle = Lo, Xle = x8, Qle = TypeError, Zle = Object.getOwnPropertyDescriptor, Jle = qle && !function() {
+  }, qle = Lo, Xle = E8, Qle = TypeError, Zle = Object.getOwnPropertyDescriptor, Jle = qle && !function() {
     if (this !== void 0) return !0;
     try {
       Object.defineProperty([], "length", {
@@ -22059,16 +22059,16 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     } catch (n) {
       return n instanceof TypeError;
     }
-  }(), E8 = Jle ? function(n, e) {
+  }(), T8 = Jle ? function(n, e) {
     if (Xle(n) && !Zle(n, "length").writable)
       throw new Qle("Cannot set read only .length");
     return n.length = e;
   } : function(n, e) {
     return n.length = e;
-  }, ece = TypeError, tce = 9007199254740991, T8 = function(n) {
+  }, ece = TypeError, tce = 9007199254740991, M8 = function(n) {
     if (n > tce) throw ece("Maximum allowed index exceeded");
     return n;
-  }, nce = Ni, ice = Zw, sce = tv, rce = E8, oce = T8, ace = Fs, lce = ace(function() {
+  }, nce = Ni, ice = Zw, sce = tv, rce = T8, oce = M8, ace = Fs, lce = ace(function() {
     return [].push.call({
       length: 4294967296
     }, 1) !== 4294967297;
@@ -22108,17 +22108,17 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, dce = $o, Vd = function(n, e, t) {
     for (var i = t ? n : n.iterator, s = n.next, r, o; !(r = dce(s, i)).done; )
       if (o = e(r.value), o !== void 0) return o;
-  }, M8 = ai, fce = Vd, A8 = Ka, gce = A8.Set, P8 = A8.proto, pce = M8(P8.forEach), I8 = M8(P8.keys), mce = I8(new gce()).next, iv = function(n, e, t) {
+  }, A8 = ai, fce = Vd, P8 = Ka, gce = P8.Set, I8 = P8.proto, pce = A8(I8.forEach), O8 = A8(I8.keys), mce = O8(new gce()).next, iv = function(n, e, t) {
     return t ? fce({
-      iterator: I8(n),
+      iterator: O8(n),
       next: mce
     }, e) : pce(n, e);
-  }, O8 = Ka, bce = iv, wce = O8.Set, vce = O8.add, VI = function(n) {
+  }, k8 = Ka, bce = iv, wce = k8.Set, vce = k8.add, WI = function(n) {
     var e = new wce();
     return bce(n, function(t) {
       vce(e, t);
     }), e;
-  }, yce = b8, Cce = Ka, sv = yce(Cce.proto, "size", "get") || function(n) {
+  }, yce = w8, Cce = Ka, sv = yce(Cce.proto, "size", "get") || function(n) {
     return n.size;
   }, Sce = function(n) {
     return {
@@ -22126,32 +22126,32 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       next: n.next,
       done: !1
     };
-  }, o2 = Qw, k8 = ac, a2 = $o, _ce = ev, Rce = Sce, l2 = "Invalid size", xce = RangeError, Ece = TypeError, Tce = Math.max, H8 = function(n, e) {
-    this.set = n, this.size = Tce(e, 0), this.has = o2(n.has), this.keys = o2(n.keys);
+  }, a2 = Qw, H8 = ac, l2 = $o, _ce = ev, Rce = Sce, c2 = "Invalid size", xce = RangeError, Ece = TypeError, Tce = Math.max, D8 = function(n, e) {
+    this.set = n, this.size = Tce(e, 0), this.has = a2(n.has), this.keys = a2(n.keys);
   };
-  H8.prototype = {
+  D8.prototype = {
     getIterator: function() {
-      return Rce(k8(a2(this.keys, this.set)));
+      return Rce(H8(l2(this.keys, this.set)));
     },
     includes: function(n) {
-      return a2(this.has, this.set, n);
+      return l2(this.has, this.set, n);
     }
   };
   var Wd = function(n) {
-    k8(n);
+    H8(n);
     var e = +n.size;
-    if (e !== e) throw new Ece(l2);
+    if (e !== e) throw new Ece(c2);
     var t = _ce(e);
-    if (t < 0) throw new xce(l2);
-    return new H8(n, t);
-  }, Mce = Bd, D8 = Ka, Ace = VI, Pce = sv, Ice = Wd, Oce = iv, kce = Vd, Hce = D8.has, c2 = D8.remove, Dce = function(e) {
+    if (t < 0) throw new xce(c2);
+    return new D8(n, t);
+  }, Mce = Bd, N8 = Ka, Ace = WI, Pce = sv, Ice = Wd, Oce = iv, kce = Vd, Hce = N8.has, u2 = N8.remove, Dce = function(e) {
     var t = Mce(this), i = Ice(e), s = Ace(t);
     return Pce(t) <= i.size ? Oce(t, function(r) {
-      i.includes(r) && c2(s, r);
+      i.includes(r) && u2(s, r);
     }) : kce(i.getIterator(), function(r) {
-      Hce(t, r) && c2(s, r);
+      Hce(t, r) && u2(s, r);
     }), s;
-  }, Nce = rp, u2 = function(n) {
+  }, Nce = rp, h2 = function(n) {
     return {
       size: n,
       has: function() {
@@ -22170,9 +22170,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, jd = function(n) {
     var e = Nce("Set");
     try {
-      new e()[n](u2(0));
+      new e()[n](h2(0));
       try {
-        return new e()[n](u2(-1)), !1;
+        return new e()[n](h2(-1)), !1;
       } catch {
         return !0;
       }
@@ -22188,12 +22188,12 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, {
     difference: $ce
   });
-  var Bce = Bd, WI = Ka, Vce = sv, Wce = Wd, jce = iv, zce = Vd, Uce = WI.Set, h2 = WI.add, Yce = WI.has, Gce = function(e) {
+  var Bce = Bd, jI = Ka, Vce = sv, Wce = Wd, jce = iv, zce = Vd, Uce = jI.Set, d2 = jI.add, Yce = jI.has, Gce = function(e) {
     var t = Bce(this), i = Wce(e), s = new Uce();
     return Vce(t) > i.size ? zce(i.getIterator(), function(r) {
-      Yce(t, r) && h2(s, r);
+      Yce(t, r) && d2(s, r);
     }) : jce(t, function(r) {
-      i.includes(r) && h2(s, r);
+      i.includes(r) && d2(s, r);
     }), s;
   }, Kce = Ni, qce = Fs, Xce = Gce, Qce = jd, Zce = !Qce("intersection") || qce(function() {
     return String(Array.from((/* @__PURE__ */ new Set([1, 2, 3])).intersection(/* @__PURE__ */ new Set([3, 2])))) !== "3,2";
@@ -22206,9 +22206,9 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, {
     intersection: Xce
   });
-  var Jce = $o, d2 = ac, eue = lR, jI = function(n, e, t) {
+  var Jce = $o, f2 = ac, eue = lR, zI = function(n, e, t) {
     var i, s;
-    d2(n);
+    f2(n);
     try {
       if (i = eue(n, "return"), !i) {
         if (e === "throw") throw t;
@@ -22220,8 +22220,8 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     }
     if (e === "throw") throw t;
     if (s) throw i;
-    return d2(i), t;
-  }, tue = Bd, nue = Ka.has, iue = sv, sue = Wd, rue = iv, oue = Vd, aue = jI, lue = function(e) {
+    return f2(i), t;
+  }, tue = Bd, nue = Ka.has, iue = sv, sue = Wd, rue = iv, oue = Vd, aue = zI, lue = function(e) {
     var t = tue(this), i = sue(e);
     if (iue(t) <= i.size) return rue(t, function(r) {
       if (i.includes(r)) return !1;
@@ -22253,7 +22253,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, {
     isSubsetOf: wue
   });
-  var yue = Bd, Cue = Ka.has, Sue = sv, _ue = Wd, Rue = Vd, xue = jI, Eue = function(e) {
+  var yue = Bd, Cue = Ka.has, Sue = sv, _ue = Wd, Rue = Vd, xue = zI, Eue = function(e) {
     var t = yue(this), i = _ue(e);
     if (Sue(t) < i.size) return !1;
     var s = i.getIterator();
@@ -22269,7 +22269,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, {
     isSupersetOf: Mue
   });
-  var Pue = Bd, zI = Ka, Iue = VI, Oue = Wd, kue = Vd, Hue = zI.add, Due = zI.has, Nue = zI.remove, Lue = function(e) {
+  var Pue = Bd, UI = Ka, Iue = WI, Oue = Wd, kue = Vd, Hue = UI.add, Due = UI.has, Nue = UI.remove, Lue = function(e) {
     var t = Pue(this), i = Oue(e).getIterator(), s = Iue(t);
     return kue(i, function(r) {
       Due(t, r) ? Nue(s, r) : Hue(s, r);
@@ -22283,7 +22283,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   }, {
     symmetricDifference: Fue
   });
-  var Vue = Bd, Wue = Ka.add, jue = VI, zue = Wd, Uue = Vd, Yue = function(e) {
+  var Vue = Bd, Wue = Ka.add, jue = WI, zue = Wd, Uue = Vd, Yue = function(e) {
     var t = Vue(this), i = zue(e).getIterator(), s = jue(t);
     return Uue(i, function(r) {
       Wue(s, r);
@@ -22299,38 +22299,38 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
   });
   var Xue = $d, Que = ai, Zue = function(n) {
     if (Xue(n) === "Function") return Que(n);
-  }, f2 = Zue, Jue = Qw, ehe = tR, the = f2(f2.bind), N8 = function(n, e) {
+  }, g2 = Zue, Jue = Qw, ehe = tR, the = g2(g2.bind), L8 = function(n, e) {
     return Jue(n), e === void 0 ? n : ehe ? the(n, e) : function() {
       return n.apply(e, arguments);
     };
-  }, nhe = rp, L8 = nhe("document", "documentElement"), ihe = ai, UI = ihe([].slice), she = TypeError, $8 = function(n, e) {
+  }, nhe = rp, $8 = nhe("document", "documentElement"), ihe = ai, YI = ihe([].slice), she = TypeError, F8 = function(n, e) {
     if (n < e) throw new she("Not enough arguments");
     return n;
   }, rhe = oR, ohe = /(?:ipad|iphone|ipod).*applewebkit/i.test(rhe), Hp = Hi, ahe = oR, lhe = $d, ry = function(n) {
     return ahe.slice(0, n.length) === n;
-  }, F8 = function() {
+  }, B8 = function() {
     return ry("Bun/") ? "BUN" : ry("Cloudflare-Workers") ? "CLOUDFLARE" : ry("Deno/") ? "DENO" : ry("Node.js/") ? "NODE" : Hp.Bun && typeof Bun.version == "string" ? "BUN" : Hp.Deno && typeof Deno.version == "object" ? "DENO" : lhe(Hp.process) === "process" ? "NODE" : Hp.window && Hp.document ? "BROWSER" : "REST";
-  }(), che = F8, uhe = che === "NODE", or = Hi, hhe = cR, dhe = N8, g2 = Di, fhe = Ya, B8 = Fs, p2 = L8, ghe = UI, m2 = DI, phe = $8, mhe = ohe, bhe = uhe, UM = or.setImmediate, YM = or.clearImmediate, whe = or.process, Ex = or.Dispatch, vhe = or.Function, b2 = or.MessageChannel, yhe = or.String, Tx = 0, wb = {}, w2 = "onreadystatechange", cw, Vu, Mx, Ax;
-  B8(function() {
+  }(), che = B8, uhe = che === "NODE", or = Hi, hhe = cR, dhe = L8, p2 = Di, fhe = Ya, V8 = Fs, m2 = $8, ghe = YI, b2 = NI, phe = F8, mhe = ohe, bhe = uhe, UM = or.setImmediate, YM = or.clearImmediate, whe = or.process, Ex = or.Dispatch, vhe = or.Function, w2 = or.MessageChannel, yhe = or.String, Tx = 0, wb = {}, v2 = "onreadystatechange", cw, Vu, Mx, Ax;
+  V8(function() {
     cw = or.location;
   });
-  var YI = function(n) {
+  var GI = function(n) {
     if (fhe(wb, n)) {
       var e = wb[n];
       delete wb[n], e();
     }
   }, Px = function(n) {
     return function() {
-      YI(n);
+      GI(n);
     };
-  }, v2 = function(n) {
-    YI(n.data);
   }, y2 = function(n) {
+    GI(n.data);
+  }, C2 = function(n) {
     or.postMessage(yhe(n), cw.protocol + "//" + cw.host);
   };
   (!UM || !YM) && (UM = function(e) {
     phe(arguments.length, 1);
-    var t = g2(e) ? e : vhe(e), i = ghe(arguments, 1);
+    var t = p2(e) ? e : vhe(e), i = ghe(arguments, 1);
     return wb[++Tx] = function() {
       hhe(t, void 0, i);
     }, Vu(Tx), Tx;
@@ -22340,27 +22340,27 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     whe.nextTick(Px(n));
   } : Ex && Ex.now ? Vu = function(n) {
     Ex.now(Px(n));
-  } : b2 && !mhe ? (Mx = new b2(), Ax = Mx.port2, Mx.port1.onmessage = v2, Vu = dhe(Ax.postMessage, Ax)) : or.addEventListener && g2(or.postMessage) && !or.importScripts && cw && cw.protocol !== "file:" && !B8(y2) ? (Vu = y2, or.addEventListener("message", v2, !1)) : w2 in m2("script") ? Vu = function(n) {
-    p2.appendChild(m2("script"))[w2] = function() {
-      p2.removeChild(this), YI(n);
+  } : w2 && !mhe ? (Mx = new w2(), Ax = Mx.port2, Mx.port1.onmessage = y2, Vu = dhe(Ax.postMessage, Ax)) : or.addEventListener && p2(or.postMessage) && !or.importScripts && cw && cw.protocol !== "file:" && !V8(C2) ? (Vu = C2, or.addEventListener("message", y2, !1)) : v2 in b2("script") ? Vu = function(n) {
+    m2.appendChild(b2("script"))[v2] = function() {
+      m2.removeChild(this), GI(n);
     };
   } : Vu = function(n) {
     setTimeout(Px(n), 0);
   });
-  var V8 = {
+  var W8 = {
     set: UM,
     clear: YM
-  }, Che = Ni, She = Hi, C2 = V8.clear;
+  }, Che = Ni, She = Hi, S2 = W8.clear;
   Che({
     global: !0,
     bind: !0,
     enumerable: !0,
-    forced: She.clearImmediate !== C2
+    forced: She.clearImmediate !== S2
   }, {
-    clearImmediate: C2
+    clearImmediate: S2
   });
-  var W8 = Hi, _he = cR, Rhe = Di, xhe = F8, Ehe = oR, The = UI, Mhe = $8, Ahe = W8.Function, Phe = /MSIE .\./.test(Ehe) || xhe === "BUN" && function() {
-    var n = W8.Bun.version.split(".");
+  var j8 = Hi, _he = cR, Rhe = Di, xhe = B8, Ehe = oR, The = YI, Mhe = F8, Ahe = j8.Function, Phe = /MSIE .\./.test(Ehe) || xhe === "BUN" && function() {
+    var n = j8.Bun.version.split(".");
     return n.length < 3 || n[0] === "0" && (n[1] < 3 || n[1] === "3" && n[2] === "0");
   }(), Ihe = function(n, e) {
     var t = e ? 2 : 1;
@@ -22370,14 +22370,14 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
       } : o;
       return e ? n(l, s) : n(l);
     } : n;
-  }, Ohe = Ni, j8 = Hi, S2 = V8.set, khe = Ihe, _2 = j8.setImmediate ? khe(S2, !1) : S2;
+  }, Ohe = Ni, z8 = Hi, _2 = W8.set, khe = Ihe, R2 = z8.setImmediate ? khe(_2, !1) : _2;
   Ohe({
     global: !0,
     bind: !0,
     enumerable: !0,
-    forced: j8.setImmediate !== _2
+    forced: z8.setImmediate !== R2
   }, {
-    setImmediate: _2
+    setImmediate: R2
   });
   /*! @license DOMPurify 2.5.7 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.5.7/LICENSE */
   function Fc(n) {
@@ -22437,7 +22437,7 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
   }
-  var Fhe = Object.hasOwnProperty, R2 = Object.setPrototypeOf, Bhe = Object.isFrozen, Vhe = Object.getPrototypeOf, Whe = Object.getOwnPropertyDescriptor, vs = Object.freeze, jr = Object.seal, jhe = Object.create, z8 = typeof Reflect < "u" && Reflect, mS = z8.apply, qM = z8.construct;
+  var Fhe = Object.hasOwnProperty, x2 = Object.setPrototypeOf, Bhe = Object.isFrozen, Vhe = Object.getPrototypeOf, Whe = Object.getOwnPropertyDescriptor, vs = Object.freeze, jr = Object.seal, jhe = Object.create, U8 = typeof Reflect < "u" && Reflect, mS = U8.apply, qM = U8.construct;
   mS || (mS = function(e, t, i) {
     return e.apply(t, i);
   });
@@ -22450,7 +22450,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   qM || (qM = function(e, t) {
     return uC(e, go(t));
   });
-  var zhe = zr(Array.prototype.forEach), x2 = zr(Array.prototype.pop), Dp = zr(Array.prototype.push), hC = zr(String.prototype.toLowerCase), Ix = zr(String.prototype.toString), E2 = zr(String.prototype.match), io = zr(String.prototype.replace), Uhe = zr(String.prototype.indexOf), Yhe = zr(String.prototype.trim), Oi = zr(RegExp.prototype.test), Ox = Ghe(TypeError);
+  var zhe = zr(Array.prototype.forEach), E2 = zr(Array.prototype.pop), Dp = zr(Array.prototype.push), hC = zr(String.prototype.toLowerCase), Ix = zr(String.prototype.toString), T2 = zr(String.prototype.match), io = zr(String.prototype.replace), Uhe = zr(String.prototype.indexOf), Yhe = zr(String.prototype.trim), Oi = zr(RegExp.prototype.test), Ox = Ghe(TypeError);
   function zr(n) {
     return function(e) {
       for (var t = arguments.length, i = new Array(t > 1 ? t - 1 : 0), s = 1; s < t; s++)
@@ -22467,7 +22467,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   function ot(n, e, t) {
     var i;
-    t = (i = t) !== null && i !== void 0 ? i : hC, R2 && R2(n, null);
+    t = (i = t) !== null && i !== void 0 ? i : hC, x2 && x2(n, null);
     for (var s = e.length; s--; ) {
       var r = e[s];
       if (typeof r == "string") {
@@ -22500,7 +22500,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     return i;
   }
-  var T2 = vs(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "shadow", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]), kx = vs(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]), Hx = vs(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]), Khe = vs(["animate", "color-profile", "cursor", "discard", "fedropshadow", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]), Dx = vs(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover"]), qhe = vs(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]), M2 = vs(["#text"]), A2 = vs(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "pattern", "placeholder", "playsinline", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "xmlns", "slot"]), Nx = vs(["accent-height", "accumulate", "additive", "alignment-baseline", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]), P2 = vs(["accent", "accentunder", "align", "bevelled", "close", "columnsalign", "columnlines", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lspace", "lquote", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]), ay = vs(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]), Xhe = jr(/\{\{[\w\W]*|[\w\W]*\}\}/gm), Qhe = jr(/<%[\w\W]*|[\w\W]*%>/gm), Zhe = jr(/\${[\w\W]*}/gm), Jhe = jr(/^data-[\-\w.\u00B7-\uFFFF]/), ede = jr(/^aria-[\-\w]+$/), tde = jr(
+  var M2 = vs(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "shadow", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]), kx = vs(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]), Hx = vs(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]), Khe = vs(["animate", "color-profile", "cursor", "discard", "fedropshadow", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]), Dx = vs(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover"]), qhe = vs(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]), A2 = vs(["#text"]), P2 = vs(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "pattern", "placeholder", "playsinline", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "xmlns", "slot"]), Nx = vs(["accent-height", "accumulate", "additive", "alignment-baseline", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]), I2 = vs(["accent", "accentunder", "align", "bevelled", "close", "columnsalign", "columnlines", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lspace", "lquote", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]), ay = vs(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]), Xhe = jr(/\{\{[\w\W]*|[\w\W]*\}\}/gm), Qhe = jr(/<%[\w\W]*|[\w\W]*%>/gm), Zhe = jr(/\${[\w\W]*}/gm), Jhe = jr(/^data-[\-\w.\u00B7-\uFFFF]/), ede = jr(/^aria-[\-\w]+$/), tde = jr(
     /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i
     // eslint-disable-line no-useless-escape
   ), nde = jr(/^(?:\w+script|data):/i), ide = jr(
@@ -22527,9 +22527,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       return console.warn("TrustedTypes policy " + r + " could not be created."), null;
     }
   };
-  function U8() {
+  function Y8() {
     var n = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : ode(), e = function(z) {
-      return U8(z);
+      return Y8(z);
     };
     if (e.version = "2.5.7", e.removed = [], !n || !n.document || n.document.nodeType !== 9)
       return e.isSupported = !1, e;
@@ -22545,7 +22545,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     var Y = {};
     e.isSupported = typeof y == "function" && M && M.createHTMLDocument !== void 0 && j !== 9;
-    var Z = Xhe, $ = Qhe, B = Zhe, ie = Jhe, se = ede, te = nde, pe = ide, b = rde, v = tde, S = null, T = ot({}, [].concat(go(T2), go(kx), go(Hx), go(Dx), go(M2))), H = null, E = ot({}, [].concat(go(A2), go(Nx), go(P2), go(ay))), N = Object.seal(Object.create(null, {
+    var Z = Xhe, $ = Qhe, B = Zhe, ie = Jhe, se = ede, te = nde, pe = ide, b = rde, v = tde, S = null, T = ot({}, [].concat(go(M2), go(kx), go(Hx), go(Dx), go(A2))), H = null, E = ot({}, [].concat(go(P2), go(Nx), go(I2), go(ay))), N = Object.seal(Object.create(null, {
       tagNameCheck: {
         writable: !0,
         configurable: !1,
@@ -22582,8 +22582,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         // eslint-disable-line indent
         wn
         // eslint-disable-line indent
-      ) : ge, K = "FORBID_CONTENTS" in z ? ot({}, z.FORBID_CONTENTS, wn) : q, X = "FORBID_TAGS" in z ? ot({}, z.FORBID_TAGS, wn) : {}, ne = "FORBID_ATTR" in z ? ot({}, z.FORBID_ATTR, wn) : {}, W = "USE_PROFILES" in z ? z.USE_PROFILES : !1, ue = z.ALLOW_ARIA_ATTR !== !1, re = z.ALLOW_DATA_ATTR !== !1, Ie = z.ALLOW_UNKNOWN_PROTOCOLS || !1, xe = z.ALLOW_SELF_CLOSE_IN_ATTR !== !1, J = z.SAFE_FOR_TEMPLATES || !1, oe = z.SAFE_FOR_XML !== !1, ce = z.WHOLE_DOCUMENT || !1, _e = z.RETURN_DOM || !1, P = z.RETURN_DOM_FRAGMENT || !1, k = z.RETURN_TRUSTED_TYPE || !1, Se = z.FORCE_BODY || !1, L = z.SANITIZE_DOM !== !1, G = z.SANITIZE_NAMED_PROPS || !1, Q = z.KEEP_CONTENT !== !1, U = z.IN_PLACE || !1, v = z.ALLOWED_URI_REGEXP || v, We = z.NAMESPACE || rt, N = z.CUSTOM_ELEMENT_HANDLING || {}, z.CUSTOM_ELEMENT_HANDLING && hn(z.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (N.tagNameCheck = z.CUSTOM_ELEMENT_HANDLING.tagNameCheck), z.CUSTOM_ELEMENT_HANDLING && hn(z.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (N.attributeNameCheck = z.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), z.CUSTOM_ELEMENT_HANDLING && typeof z.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (N.allowCustomizedBuiltInElements = z.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), J && (re = !1), P && (_e = !0), W && (S = ot({}, go(M2)), H = [], W.html === !0 && (ot(S, T2), ot(H, A2)), W.svg === !0 && (ot(S, kx), ot(H, Nx), ot(H, ay)), W.svgFilters === !0 && (ot(S, Hx), ot(H, Nx), ot(H, ay)), W.mathMl === !0 && (ot(S, Dx), ot(H, P2), ot(H, ay))), z.ADD_TAGS && (S === T && (S = Wu(S)), ot(S, z.ADD_TAGS, wn)), z.ADD_ATTR && (H === E && (H = Wu(H)), ot(H, z.ADD_ATTR, wn)), z.ADD_URI_SAFE_ATTR && ot(Re, z.ADD_URI_SAFE_ATTR, wn), z.FORBID_CONTENTS && (K === q && (K = Wu(K)), ot(K, z.FORBID_CONTENTS, wn)), Q && (S["#text"] = !0), ce && ot(S, ["html", "head", "body"]), S.table && (ot(S, ["tbody"]), delete X.tbody), vs && vs(z), li = z);
-    }, OD = ot({}, ["mi", "mo", "mn", "ms", "mtext"]), kD = ot({}, ["annotation-xml"]), tG = ot({}, ["title", "style", "font", "a", "script"]), Av = ot({}, kx);
+      ) : ge, K = "FORBID_CONTENTS" in z ? ot({}, z.FORBID_CONTENTS, wn) : q, X = "FORBID_TAGS" in z ? ot({}, z.FORBID_TAGS, wn) : {}, ne = "FORBID_ATTR" in z ? ot({}, z.FORBID_ATTR, wn) : {}, W = "USE_PROFILES" in z ? z.USE_PROFILES : !1, ue = z.ALLOW_ARIA_ATTR !== !1, re = z.ALLOW_DATA_ATTR !== !1, Ie = z.ALLOW_UNKNOWN_PROTOCOLS || !1, xe = z.ALLOW_SELF_CLOSE_IN_ATTR !== !1, J = z.SAFE_FOR_TEMPLATES || !1, oe = z.SAFE_FOR_XML !== !1, ce = z.WHOLE_DOCUMENT || !1, _e = z.RETURN_DOM || !1, P = z.RETURN_DOM_FRAGMENT || !1, k = z.RETURN_TRUSTED_TYPE || !1, Se = z.FORCE_BODY || !1, L = z.SANITIZE_DOM !== !1, G = z.SANITIZE_NAMED_PROPS || !1, Q = z.KEEP_CONTENT !== !1, U = z.IN_PLACE || !1, v = z.ALLOWED_URI_REGEXP || v, We = z.NAMESPACE || rt, N = z.CUSTOM_ELEMENT_HANDLING || {}, z.CUSTOM_ELEMENT_HANDLING && hn(z.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (N.tagNameCheck = z.CUSTOM_ELEMENT_HANDLING.tagNameCheck), z.CUSTOM_ELEMENT_HANDLING && hn(z.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (N.attributeNameCheck = z.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), z.CUSTOM_ELEMENT_HANDLING && typeof z.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (N.allowCustomizedBuiltInElements = z.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), J && (re = !1), P && (_e = !0), W && (S = ot({}, go(A2)), H = [], W.html === !0 && (ot(S, M2), ot(H, P2)), W.svg === !0 && (ot(S, kx), ot(H, Nx), ot(H, ay)), W.svgFilters === !0 && (ot(S, Hx), ot(H, Nx), ot(H, ay)), W.mathMl === !0 && (ot(S, Dx), ot(H, I2), ot(H, ay))), z.ADD_TAGS && (S === T && (S = Wu(S)), ot(S, z.ADD_TAGS, wn)), z.ADD_ATTR && (H === E && (H = Wu(H)), ot(H, z.ADD_ATTR, wn)), z.ADD_URI_SAFE_ATTR && ot(Re, z.ADD_URI_SAFE_ATTR, wn), z.FORBID_CONTENTS && (K === q && (K = Wu(K)), ot(K, z.FORBID_CONTENTS, wn)), Q && (S["#text"] = !0), ce && ot(S, ["html", "head", "body"]), S.table && (ot(S, ["tbody"]), delete X.tbody), vs && vs(z), li = z);
+    }, kD = ot({}, ["mi", "mo", "mn", "ms", "mtext"]), HD = ot({}, ["annotation-xml"]), tG = ot({}, ["title", "style", "font", "a", "script"]), Av = ot({}, kx);
     ot(Av, Hx), ot(Av, Khe);
     var p1 = ot({}, Dx);
     ot(p1, qhe);
@@ -22594,7 +22594,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         tagName: "template"
       });
       var ve = hC(z.tagName), Ht = hC(de.tagName);
-      return En[z.namespaceURI] ? z.namespaceURI === pt ? de.namespaceURI === rt ? ve === "svg" : de.namespaceURI === Je ? ve === "svg" && (Ht === "annotation-xml" || OD[Ht]) : !!Av[ve] : z.namespaceURI === Je ? de.namespaceURI === rt ? ve === "math" : de.namespaceURI === pt ? ve === "math" && kD[Ht] : !!p1[ve] : z.namespaceURI === rt ? de.namespaceURI === pt && !kD[Ht] || de.namespaceURI === Je && !OD[Ht] ? !1 : !p1[ve] && (tG[ve] || !Av[ve]) : !!(Jr === "application/xhtml+xml" && En[z.namespaceURI]) : !1;
+      return En[z.namespaceURI] ? z.namespaceURI === pt ? de.namespaceURI === rt ? ve === "svg" : de.namespaceURI === Je ? ve === "svg" && (Ht === "annotation-xml" || kD[Ht]) : !!Av[ve] : z.namespaceURI === Je ? de.namespaceURI === rt ? ve === "math" : de.namespaceURI === pt ? ve === "math" && HD[Ht] : !!p1[ve] : z.namespaceURI === rt ? de.namespaceURI === pt && !HD[Ht] || de.namespaceURI === Je && !kD[Ht] ? !1 : !p1[ve] && (tG[ve] || !Av[ve]) : !!(Jr === "application/xhtml+xml" && En[z.namespaceURI]) : !1;
     }, gr = function(z) {
       Dp(e.removed, {
         element: z
@@ -22631,12 +22631,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             de.setAttribute(z, "");
           } catch {
           }
-    }, HD = function(z) {
+    }, DD = function(z) {
       var de, ve;
       if (Se)
         z = "<remove></remove>" + z;
       else {
-        var Ht = E2(z, /^[\r\n\t ]+/);
+        var Ht = T2(z, /^[\r\n\t ]+/);
         ve = Ht && Ht[0];
       }
       Jr === "application/xhtml+xml" && We === rt && (z = '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>' + z + "</body></html>");
@@ -22655,7 +22655,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }
       var $i = de.body || de.documentElement;
       return z && ve && $i.insertBefore(i.createTextNode(ve), $i.childNodes[0] || null), We === rt ? O.call(de, ce ? "html" : "body")[0] : ce ? de.documentElement : $i;
-    }, DD = function(z) {
+    }, ND = function(z) {
       return I.call(
         z.ownerDocument || z,
         z,
@@ -22664,7 +22664,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         null,
         !1
       );
-    }, ND = function(z) {
+    }, LD = function(z) {
       return z instanceof h && (typeof z.nodeName != "string" || typeof z.textContent != "string" || typeof z.removeChild != "function" || !(z.attributes instanceof u) || typeof z.removeAttribute != "function" || typeof z.setAttribute != "function" || typeof z.namespaceURI != "string" || typeof z.insertBefore != "function" || typeof z.hasChildNodes != "function");
     }, Cp = function(z) {
       return Fc(o) === "object" ? z instanceof o : z && Fc(z) === "object" && typeof z.nodeType == "number" && typeof z.nodeName == "string";
@@ -22672,9 +22672,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       Y[z] && zhe(Y[z], function(Ht) {
         Ht.call(e, de, ve, li);
       });
-    }, LD = function(z) {
+    }, $D = function(z) {
       var de;
-      if (Za("beforeSanitizeElements", z, null), ND(z) || Oi(/[\u0080-\uFFFF]/, z.nodeName))
+      if (Za("beforeSanitizeElements", z, null), LD(z) || Oi(/[\u0080-\uFFFF]/, z.nodeName))
         return gr(z), !0;
       var ve = wn(z.nodeName);
       if (Za("uponSanitizeElement", z, {
@@ -22683,7 +22683,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }), z.hasChildNodes() && !Cp(z.firstElementChild) && (!Cp(z.content) || !Cp(z.content.firstElementChild)) && Oi(/<[/\w]/g, z.innerHTML) && Oi(/<[/\w]/g, z.textContent) || ve === "select" && Oi(/<template/i, z.innerHTML) || z.nodeType === 7 || oe && z.nodeType === 8 && Oi(/<[/\w]/g, z.data))
         return gr(z), !0;
       if (!S[ve] || X[ve]) {
-        if (!X[ve] && FD(ve) && (N.tagNameCheck instanceof RegExp && Oi(N.tagNameCheck, ve) || N.tagNameCheck instanceof Function && N.tagNameCheck(ve)))
+        if (!X[ve] && BD(ve) && (N.tagNameCheck instanceof RegExp && Oi(N.tagNameCheck, ve) || N.tagNameCheck instanceof Function && N.tagNameCheck(ve)))
           return !1;
         if (Q && !K[ve]) {
           var Ht = y(z) || z.parentNode, Ss = w(z) || z.childNodes;
@@ -22698,7 +22698,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       return z instanceof a && !nG(z) || (ve === "noscript" || ve === "noembed" || ve === "noframes") && Oi(/<\/no(script|embed|frames)/i, z.innerHTML) ? (gr(z), !0) : (J && z.nodeType === 3 && (de = z.textContent, de = io(de, Z, " "), de = io(de, $, " "), de = io(de, B, " "), z.textContent !== de && (Dp(e.removed, {
         element: z.cloneNode()
       }), z.textContent = de)), Za("afterSanitizeElements", z, null), !1);
-    }, $D = function(z, de, ve) {
+    }, FD = function(z, de, ve) {
       if (L && (de === "id" || de === "name") && (ve in i || ve in Pi))
         return !1;
       if (!(re && !ne[de] && Oi(ie, de))) {
@@ -22708,7 +22708,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               // First condition does a very basic check if a) it's basically a valid custom element tagname AND
               // b) if the tagName passes whatever the user has configured for CUSTOM_ELEMENT_HANDLING.tagNameCheck
               // and c) if the attribute name passes whatever the user has configured for CUSTOM_ELEMENT_HANDLING.attributeNameCheck
-              !(FD(z) && (N.tagNameCheck instanceof RegExp && Oi(N.tagNameCheck, z) || N.tagNameCheck instanceof Function && N.tagNameCheck(z)) && (N.attributeNameCheck instanceof RegExp && Oi(N.attributeNameCheck, de) || N.attributeNameCheck instanceof Function && N.attributeNameCheck(de)) || // Alternative, second condition checks if it's an `is`-attribute, AND
+              !(BD(z) && (N.tagNameCheck instanceof RegExp && Oi(N.tagNameCheck, z) || N.tagNameCheck instanceof Function && N.tagNameCheck(z)) && (N.attributeNameCheck instanceof RegExp && Oi(N.attributeNameCheck, de) || N.attributeNameCheck instanceof Function && N.attributeNameCheck(de)) || // Alternative, second condition checks if it's an `is`-attribute, AND
               // the value passes whatever the user has configured for CUSTOM_ELEMENT_HANDLING.tagNameCheck
               de === "is" && N.allowCustomizedBuiltInElements && (N.tagNameCheck instanceof RegExp && Oi(N.tagNameCheck, ve) || N.tagNameCheck instanceof Function && N.tagNameCheck(ve)))
             ) return !1;
@@ -22725,9 +22725,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
       }
       return !0;
-    }, FD = function(z) {
-      return z !== "annotation-xml" && E2(z, b);
     }, BD = function(z) {
+      return z !== "annotation-xml" && T2(z, b);
+    }, VD = function(z) {
       var de, ve, Ht, Ss;
       Za("beforeSanitizeAttributes", z, null);
       var $i = z.attributes;
@@ -22747,14 +22747,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               continue;
             }
             J && (ve = io(ve, Z, " "), ve = io(ve, $, " "), ve = io(ve, B, " "));
-            var VD = wn(z.nodeName);
-            if ($D(VD, Ht, ve)) {
+            var WD = wn(z.nodeName);
+            if (FD(WD, Ht, ve)) {
               if (G && (Ht === "id" || Ht === "name") && (Pv(ci, z), ve = V + ve), oe && Oi(/((--!?|])>)|<\/(style|title)/i, ve)) {
                 Pv(ci, z);
                 continue;
               }
               if (R && Fc(f) === "object" && typeof f.getAttributeType == "function" && !m1)
-                switch (f.getAttributeType(VD, Ht)) {
+                switch (f.getAttributeType(WD, Ht)) {
                   case "TrustedHTML": {
                     ve = R.createHTML(ve);
                     break;
@@ -22765,7 +22765,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   }
                 }
               try {
-                m1 ? z.setAttributeNS(m1, ci, ve) : z.setAttribute(ci, ve), ND(z) ? gr(z) : x2(e.removed);
+                m1 ? z.setAttributeNS(m1, ci, ve) : z.setAttribute(ci, ve), LD(z) ? gr(z) : E2(e.removed);
               } catch {
               }
             }
@@ -22774,9 +22774,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         Za("afterSanitizeAttributes", z, null);
       }
     }, iG = function Ne(z) {
-      var de, ve = DD(z);
+      var de, ve = ND(z);
       for (Za("beforeSanitizeShadowDOM", z, null); de = ve.nextNode(); )
-        Za("uponSanitizeShadowNode", de, null), !LD(de) && (de.content instanceof s && Ne(de.content), BD(de));
+        Za("uponSanitizeShadowNode", de, null), !$D(de) && (de.content instanceof s && Ne(de.content), VD(de));
       Za("afterSanitizeShadowDOM", z, null);
     };
     return e.sanitize = function(Ne) {
@@ -22803,17 +22803,17 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             throw Ox("root node is forbidden and cannot be sanitized in-place");
         }
       } else if (Ne instanceof o)
-        de = HD("<!---->"), ve = de.ownerDocument.importNode(Ne, !0), ve.nodeType === 1 && ve.nodeName === "BODY" || ve.nodeName === "HTML" ? de = ve : de.appendChild(ve);
+        de = DD("<!---->"), ve = de.ownerDocument.importNode(Ne, !0), ve.nodeType === 1 && ve.nodeName === "BODY" || ve.nodeName === "HTML" ? de = ve : de.appendChild(ve);
       else {
         if (!_e && !J && !ce && // eslint-disable-next-line unicorn/prefer-includes
         Ne.indexOf("<") === -1)
           return R && k ? R.createHTML(Ne) : Ne;
-        if (de = HD(Ne), !de)
+        if (de = DD(Ne), !de)
           return _e ? null : k ? _ : "";
       }
       de && Se && gr(de.firstChild);
-      for (var Hu = DD(U ? Ne : de); Ht = Hu.nextNode(); )
-        Ht.nodeType === 3 && Ht === Ss || LD(Ht) || (Ht.content instanceof s && iG(Ht.content), BD(Ht), Ss = Ht);
+      for (var Hu = ND(U ? Ne : de); Ht = Hu.nextNode(); )
+        Ht.nodeType === 3 && Ht === Ss || $D(Ht) || (Ht.content instanceof s && iG(Ht.content), VD(Ht), Ss = Ht);
       if (Ss = null, U)
         return Ne;
       if (_e) {
@@ -22834,30 +22834,30 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }, e.isValidAttribute = function(Ne, z, de) {
       li || g1({});
       var ve = wn(Ne), Ht = wn(z);
-      return $D(ve, Ht, de);
+      return FD(ve, Ht, de);
     }, e.addHook = function(Ne, z) {
       typeof z == "function" && (Y[Ne] = Y[Ne] || [], Dp(Y[Ne], z));
     }, e.removeHook = function(Ne) {
       if (Y[Ne])
-        return x2(Y[Ne]);
+        return E2(Y[Ne]);
     }, e.removeHooks = function(Ne) {
       Y[Ne] && (Y[Ne] = []);
     }, e.removeAllHooks = function() {
       Y = {};
     }, e;
   }
-  var lde = U8();
+  var lde = Y8();
   //! moment.js
   //! version : 2.30.1
   //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
   //! license : MIT
   //! momentjs.com
-  var Y8;
+  var G8;
   function le() {
-    return Y8.apply(null, arguments);
+    return G8.apply(null, arguments);
   }
   function cde(n) {
-    Y8 = n;
+    G8 = n;
   }
   function Oo(n) {
     return n instanceof Array || Object.prototype.toString.call(n) === "[object Array]";
@@ -22868,7 +22868,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function Ot(n, e) {
     return Object.prototype.hasOwnProperty.call(n, e);
   }
-  function GI(n) {
+  function KI(n) {
     if (Object.getOwnPropertyNames)
       return Object.getOwnPropertyNames(n).length === 0;
     var e;
@@ -22886,7 +22886,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function rv(n) {
     return n instanceof Date || Object.prototype.toString.call(n) === "[object Date]";
   }
-  function G8(n, e) {
+  function K8(n, e) {
     var t = [], i, s = n.length;
     for (i = 0; i < s; ++i)
       t.push(e(n[i], i));
@@ -22898,7 +22898,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     return Ot(e, "toString") && (n.toString = e.toString), Ot(e, "valueOf") && (n.valueOf = e.valueOf), n;
   }
   function qa(n, e, t, i) {
-    return m4(n, e, t, i, !0).utc();
+    return b4(n, e, t, i, !0).utc();
   }
   function ude() {
     return {
@@ -22931,7 +22931,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         return !0;
     return !1;
   };
-  function KI(n) {
+  function qI(n) {
     var e = null, t = !1, i = n._d && !isNaN(n._d.getTime());
     if (i && (e = it(n), t = XM.call(e.parsedDateParts, function(s) {
       return s != null;
@@ -22945,21 +22945,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     var e = qa(NaN);
     return n != null ? Kc(it(e), n) : it(e).userInvalidated = !0, e;
   }
-  var I2 = le.momentProperties = [], Lx = !1;
-  function qI(n, e) {
-    var t, i, s, r = I2.length;
+  var O2 = le.momentProperties = [], Lx = !1;
+  function XI(n, e) {
+    var t, i, s, r = O2.length;
     if (Is(e._isAMomentObject) || (n._isAMomentObject = e._isAMomentObject), Is(e._i) || (n._i = e._i), Is(e._f) || (n._f = e._f), Is(e._l) || (n._l = e._l), Is(e._strict) || (n._strict = e._strict), Is(e._tzm) || (n._tzm = e._tzm), Is(e._isUTC) || (n._isUTC = e._isUTC), Is(e._offset) || (n._offset = e._offset), Is(e._pf) || (n._pf = it(e)), Is(e._locale) || (n._locale = e._locale), r > 0)
       for (t = 0; t < r; t++)
-        i = I2[t], s = e[i], Is(s) || (n[i] = s);
+        i = O2[t], s = e[i], Is(s) || (n[i] = s);
     return n;
   }
   function ov(n) {
-    qI(this, n), this._d = new Date(n._d != null ? n._d.getTime() : NaN), this.isValid() || (this._d = /* @__PURE__ */ new Date(NaN)), Lx === !1 && (Lx = !0, le.updateOffset(this), Lx = !1);
+    XI(this, n), this._d = new Date(n._d != null ? n._d.getTime() : NaN), this.isValid() || (this._d = /* @__PURE__ */ new Date(NaN)), Lx === !1 && (Lx = !0, le.updateOffset(this), Lx = !1);
   }
   function ko(n) {
     return n instanceof ov || n != null && n._isAMomentObject != null;
   }
-  function K8(n) {
+  function q8(n) {
     le.suppressDeprecationWarnings === !1 && typeof console < "u" && console.warn && console.warn("Deprecation warning: " + n);
   }
   function Xr(n, e) {
@@ -22978,16 +22978,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             s = arguments[r];
           i.push(s);
         }
-        K8(n + `
+        q8(n + `
 Arguments: ` + Array.prototype.slice.call(i).join("") + `
 ` + new Error().stack), t = !1;
       }
       return e.apply(this, arguments);
     }, e);
   }
-  var O2 = {};
-  function q8(n, e) {
-    le.deprecationHandler != null && le.deprecationHandler(n, e), O2[n] || (K8(e), O2[n] = !0);
+  var k2 = {};
+  function X8(n, e) {
+    le.deprecationHandler != null && le.deprecationHandler(n, e), k2[n] || (q8(e), k2[n] = !0);
   }
   le.suppressDeprecationWarnings = !1;
   le.deprecationHandler = null;
@@ -23008,7 +23008,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       Ot(n, i) && !Ot(e, i) && rd(n[i]) && (t[i] = Kc({}, t[i]));
     return t;
   }
-  function XI(n) {
+  function QI(n) {
     n != null && this.set(n);
   }
   var ZM;
@@ -23034,7 +23034,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var i = "" + Math.abs(n), s = e - i.length, r = n >= 0;
     return (r ? t ? "+" : "" : "-") + Math.pow(10, Math.max(0, s)).toString().substr(1) + i;
   }
-  var QI = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g, ly = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g, $x = {}, Cg = {};
+  var ZI = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g, ly = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g, $x = {}, Cg = {};
   function Le(n, e, t, i) {
     var s = i;
     typeof i == "string" && (s = function() {
@@ -23049,7 +23049,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return n.match(/\[[\s\S]/) ? n.replace(/^\[|\]$/g, "") : n.replace(/\\/g, "");
   }
   function pde(n) {
-    var e = n.match(QI), t, i;
+    var e = n.match(ZI), t, i;
     for (t = 0, i = e.length; t < i; t++)
       Cg[e[t]] ? e[t] = Cg[e[t]] : e[t] = gde(e[t]);
     return function(s) {
@@ -23060,9 +23060,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function dC(n, e) {
-    return n.isValid() ? (e = X8(e, n.localeData()), $x[e] = $x[e] || pde(e), $x[e](n)) : n.localeData().invalidDate();
+    return n.isValid() ? (e = Q8(e, n.localeData()), $x[e] = $x[e] || pde(e), $x[e](n)) : n.localeData().invalidDate();
   }
-  function X8(n, e) {
+  function Q8(n, e) {
     var t = 5;
     function i(s) {
       return e.longDateFormat(s) || s;
@@ -23081,7 +23081,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   };
   function bde(n) {
     var e = this._longDateFormat[n], t = this._longDateFormat[n.toUpperCase()];
-    return e || !t ? e : (this._longDateFormat[n] = t.match(QI).map(function(i) {
+    return e || !t ? e : (this._longDateFormat[n] = t.match(ZI).map(function(i) {
       return i === "MMMM" || i === "MM" || i === "DD" || i === "dddd" ? i.slice(1) : i;
     }).join(""), this._longDateFormat[n]);
   }
@@ -23119,7 +23119,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var t = this._relativeTime[n > 0 ? "future" : "past"];
     return Xa(t) ? t(e) : t.replace(/%s/i, e);
   }
-  var k2 = {
+  var H2 = {
     D: "date",
     dates: "date",
     date: "date",
@@ -23170,9 +23170,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     year: "year"
   };
   function Qr(n) {
-    return typeof n == "string" ? k2[n] || k2[n.toLowerCase()] : void 0;
+    return typeof n == "string" ? H2[n] || H2[n.toLowerCase()] : void 0;
   }
-  function ZI(n) {
+  function JI(n) {
     var e = {}, t, i;
     for (i in n)
       Ot(n, i) && (t = Qr(i), t && (e[t] = n[i]));
@@ -23207,7 +23207,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return i.priority - s.priority;
     }), e;
   }
-  var Q8 = /\d/, dr = /\d\d/, Z8 = /\d{3}/, JI = /\d{4}/, dR = /[+-]?\d{6}/, bn = /\d\d?/, J8 = /\d\d\d\d?/, e4 = /\d\d\d\d\d\d?/, fR = /\d{1,3}/, eO = /\d{1,4}/, gR = /[+-]?\d{1,6}/, op = /\d+/, pR = /[+-]?\d+/, Mde = /Z|[+-]\d\d:?\d\d/gi, mR = /Z|[+-]\d\d(?::?\d\d)?/gi, Ade = /[+-]?\d+(\.\d{1,3})?/, av = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i, ap = /^[1-9]\d?/, tO = /^([1-9]\d|\d)/, bS;
+  var Z8 = /\d/, dr = /\d\d/, J8 = /\d{3}/, eO = /\d{4}/, dR = /[+-]?\d{6}/, bn = /\d\d?/, e4 = /\d\d\d\d?/, t4 = /\d\d\d\d\d\d?/, fR = /\d{1,3}/, tO = /\d{1,4}/, gR = /[+-]?\d{1,6}/, op = /\d+/, pR = /[+-]?\d+/, Mde = /Z|[+-]\d\d:?\d\d/gi, mR = /Z|[+-]\d\d(?::?\d\d)?/gi, Ade = /[+-]?\d+(\.\d{1,3})?/, av = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i, ap = /^[1-9]\d?/, nO = /^([1-9]\d|\d)/, bS;
   bS = {};
   function Ae(n, e, t) {
     bS[n] = Xa(e) ? e : function(i, s) {
@@ -23264,7 +23264,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Le(0, ["YYYYYY", 6, !0], 0, "year");
   Ae("Y", pR);
   Ae("YY", bn, dr);
-  Ae("YYYY", eO, JI);
+  Ae("YYYY", tO, eO);
   Ae("YYYYY", gR, dR);
   Ae("YYYYYY", gR, dR);
   Jt(["YYYYY", "YYYYYY"], Zi);
@@ -23283,13 +23283,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   le.parseTwoDigitYear = function(n) {
     return wt(n) + (wt(n) > 68 ? 1900 : 2e3);
   };
-  var t4 = lp("FullYear", !0);
+  var n4 = lp("FullYear", !0);
   function Dde() {
     return bR(this.year());
   }
   function lp(n, e) {
     return function(t) {
-      return t != null ? (n4(this, n, t), le.updateOffset(this, e), this) : uw(this, n);
+      return t != null ? (i4(this, n, t), le.updateOffset(this, e), this) : uw(this, n);
     };
   }
   function uw(n, e) {
@@ -23317,7 +23317,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return NaN;
     }
   }
-  function n4(n, e, t) {
+  function i4(n, e, t) {
     var i, s, r, o, a;
     if (!(!n.isValid() || isNaN(t))) {
       switch (i = n._d, s = n._isUTC, e) {
@@ -23344,7 +23344,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function Lde(n, e) {
     if (typeof n == "object") {
-      n = ZI(n);
+      n = JI(n);
       var t = Tde(n), i, s = t.length;
       for (i = 0; i < s; i++)
         this[t[i].unit](n[t[i].unit]);
@@ -23363,7 +23363,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return e;
     return -1;
   };
-  function nO(n, e) {
+  function iO(n, e) {
     if (isNaN(n) || isNaN(e))
       return NaN;
     var t = $de(e, 12);
@@ -23393,12 +23393,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var s = t._locale.monthsParse(n, i, t._strict);
     s != null ? e[$l] = s : it(t).invalidMonth = n;
   });
-  var Fde = "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), i4 = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"), s4 = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/, Bde = av, Vde = av;
+  var Fde = "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), s4 = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"), r4 = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/, Bde = av, Vde = av;
   function Wde(n, e) {
-    return n ? Oo(this._months) ? this._months[n.month()] : this._months[(this._months.isFormat || s4).test(e) ? "format" : "standalone"][n.month()] : Oo(this._months) ? this._months : this._months.standalone;
+    return n ? Oo(this._months) ? this._months[n.month()] : this._months[(this._months.isFormat || r4).test(e) ? "format" : "standalone"][n.month()] : Oo(this._months) ? this._months : this._months.standalone;
   }
   function jde(n, e) {
-    return n ? Oo(this._monthsShort) ? this._monthsShort[n.month()] : this._monthsShort[s4.test(e) ? "format" : "standalone"][n.month()] : Oo(this._monthsShort) ? this._monthsShort : this._monthsShort.standalone;
+    return n ? Oo(this._monthsShort) ? this._monthsShort[n.month()] : this._monthsShort[r4.test(e) ? "format" : "standalone"][n.month()] : Oo(this._monthsShort) ? this._monthsShort : this._monthsShort.standalone;
   }
   function zde(n, e, t) {
     var i, s, r, o = n.toLocaleLowerCase();
@@ -23420,7 +23420,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return i;
     }
   }
-  function r4(n, e) {
+  function o4(n, e) {
     if (!n.isValid())
       return n;
     if (typeof e == "string") {
@@ -23430,21 +23430,21 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return n;
     }
     var t = e, i = n.date();
-    return i = i < 29 ? i : Math.min(i, nO(n.year(), t)), n._isUTC ? n._d.setUTCMonth(t, i) : n._d.setMonth(t, i), n;
+    return i = i < 29 ? i : Math.min(i, iO(n.year(), t)), n._isUTC ? n._d.setUTCMonth(t, i) : n._d.setMonth(t, i), n;
   }
-  function o4(n) {
-    return n != null ? (r4(this, n), le.updateOffset(this, !0), this) : uw(this, "Month");
+  function a4(n) {
+    return n != null ? (o4(this, n), le.updateOffset(this, !0), this) : uw(this, "Month");
   }
   function Yde() {
-    return nO(this.year(), this.month());
+    return iO(this.year(), this.month());
   }
   function Gde(n) {
-    return this._monthsParseExact ? (Ot(this, "_monthsRegex") || a4.call(this), n ? this._monthsShortStrictRegex : this._monthsShortRegex) : (Ot(this, "_monthsShortRegex") || (this._monthsShortRegex = Bde), this._monthsShortStrictRegex && n ? this._monthsShortStrictRegex : this._monthsShortRegex);
+    return this._monthsParseExact ? (Ot(this, "_monthsRegex") || l4.call(this), n ? this._monthsShortStrictRegex : this._monthsShortRegex) : (Ot(this, "_monthsShortRegex") || (this._monthsShortRegex = Bde), this._monthsShortStrictRegex && n ? this._monthsShortStrictRegex : this._monthsShortRegex);
   }
   function Kde(n) {
-    return this._monthsParseExact ? (Ot(this, "_monthsRegex") || a4.call(this), n ? this._monthsStrictRegex : this._monthsRegex) : (Ot(this, "_monthsRegex") || (this._monthsRegex = Vde), this._monthsStrictRegex && n ? this._monthsStrictRegex : this._monthsRegex);
+    return this._monthsParseExact ? (Ot(this, "_monthsRegex") || l4.call(this), n ? this._monthsStrictRegex : this._monthsRegex) : (Ot(this, "_monthsRegex") || (this._monthsRegex = Vde), this._monthsStrictRegex && n ? this._monthsStrictRegex : this._monthsRegex);
   }
-  function a4() {
+  function l4() {
     function n(l, c) {
       return c.length - l.length;
     }
@@ -23465,7 +23465,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var i = 7 + e - t, s = (7 + hw(n, 0, i).getUTCDay() - e) % 7;
     return -s + i - 1;
   }
-  function l4(n, e, t, i, s) {
+  function c4(n, e, t, i, s) {
     var r = (7 + t - i) % 7, o = wS(n, i, s), a = 1 + 7 * (e - 1) + r + o, l, c;
     return a <= 0 ? (l = n - 1, c = vb(l) + a) : a > vb(n) ? (l = n + 1, c = a - vb(n)) : (l = n, c = a), {
       year: l,
@@ -23552,19 +23552,19 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function ife(n, e) {
     return typeof n == "string" ? e.weekdaysParse(n) % 7 || 7 : isNaN(n) ? null : n;
   }
-  function iO(n, e) {
+  function sO(n, e) {
     return n.slice(e, 7).concat(n.slice(0, e));
   }
-  var sfe = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), c4 = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), rfe = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), ofe = av, afe = av, lfe = av;
+  var sfe = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), u4 = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), rfe = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), ofe = av, afe = av, lfe = av;
   function cfe(n, e) {
     var t = Oo(this._weekdays) ? this._weekdays : this._weekdays[n && n !== !0 && this._weekdays.isFormat.test(e) ? "format" : "standalone"];
-    return n === !0 ? iO(t, this._week.dow) : n ? t[n.day()] : t;
+    return n === !0 ? sO(t, this._week.dow) : n ? t[n.day()] : t;
   }
   function ufe(n) {
-    return n === !0 ? iO(this._weekdaysShort, this._week.dow) : n ? this._weekdaysShort[n.day()] : this._weekdaysShort;
+    return n === !0 ? sO(this._weekdaysShort, this._week.dow) : n ? this._weekdaysShort[n.day()] : this._weekdaysShort;
   }
   function hfe(n) {
-    return n === !0 ? iO(this._weekdaysMin, this._week.dow) : n ? this._weekdaysMin[n.day()] : this._weekdaysMin;
+    return n === !0 ? sO(this._weekdaysMin, this._week.dow) : n ? this._weekdaysMin[n.day()] : this._weekdaysMin;
   }
   function dfe(n, e, t) {
     var i, s, r, o = n.toLocaleLowerCase();
@@ -23610,15 +23610,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.day() || 7;
   }
   function bfe(n) {
-    return this._weekdaysParseExact ? (Ot(this, "_weekdaysRegex") || sO.call(this), n ? this._weekdaysStrictRegex : this._weekdaysRegex) : (Ot(this, "_weekdaysRegex") || (this._weekdaysRegex = ofe), this._weekdaysStrictRegex && n ? this._weekdaysStrictRegex : this._weekdaysRegex);
+    return this._weekdaysParseExact ? (Ot(this, "_weekdaysRegex") || rO.call(this), n ? this._weekdaysStrictRegex : this._weekdaysRegex) : (Ot(this, "_weekdaysRegex") || (this._weekdaysRegex = ofe), this._weekdaysStrictRegex && n ? this._weekdaysStrictRegex : this._weekdaysRegex);
   }
   function wfe(n) {
-    return this._weekdaysParseExact ? (Ot(this, "_weekdaysRegex") || sO.call(this), n ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex) : (Ot(this, "_weekdaysShortRegex") || (this._weekdaysShortRegex = afe), this._weekdaysShortStrictRegex && n ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex);
+    return this._weekdaysParseExact ? (Ot(this, "_weekdaysRegex") || rO.call(this), n ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex) : (Ot(this, "_weekdaysShortRegex") || (this._weekdaysShortRegex = afe), this._weekdaysShortStrictRegex && n ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex);
   }
   function vfe(n) {
-    return this._weekdaysParseExact ? (Ot(this, "_weekdaysRegex") || sO.call(this), n ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex) : (Ot(this, "_weekdaysMinRegex") || (this._weekdaysMinRegex = lfe), this._weekdaysMinStrictRegex && n ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex);
+    return this._weekdaysParseExact ? (Ot(this, "_weekdaysRegex") || rO.call(this), n ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex) : (Ot(this, "_weekdaysMinRegex") || (this._weekdaysMinRegex = lfe), this._weekdaysMinStrictRegex && n ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex);
   }
-  function sO() {
+  function rO() {
     function n(u, h) {
       return h.length - u.length;
     }
@@ -23627,20 +23627,20 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       o = qa([2e3, 1]).day(r), a = Gl(this.weekdaysMin(o, "")), l = Gl(this.weekdaysShort(o, "")), c = Gl(this.weekdays(o, "")), e.push(a), t.push(l), i.push(c), s.push(a), s.push(l), s.push(c);
     e.sort(n), t.sort(n), i.sort(n), s.sort(n), this._weekdaysRegex = new RegExp("^(" + s.join("|") + ")", "i"), this._weekdaysShortRegex = this._weekdaysRegex, this._weekdaysMinRegex = this._weekdaysRegex, this._weekdaysStrictRegex = new RegExp("^(" + i.join("|") + ")", "i"), this._weekdaysShortStrictRegex = new RegExp("^(" + t.join("|") + ")", "i"), this._weekdaysMinStrictRegex = new RegExp("^(" + e.join("|") + ")", "i");
   }
-  function rO() {
+  function oO() {
     return this.hours() % 12 || 12;
   }
   function yfe() {
     return this.hours() || 24;
   }
   Le("H", ["HH", 2], 0, "hour");
-  Le("h", ["hh", 2], 0, rO);
+  Le("h", ["hh", 2], 0, oO);
   Le("k", ["kk", 2], 0, yfe);
   Le("hmm", 0, 0, function() {
-    return "" + rO.apply(this) + Na(this.minutes(), 2);
+    return "" + oO.apply(this) + Na(this.minutes(), 2);
   });
   Le("hmmss", 0, 0, function() {
-    return "" + rO.apply(this) + Na(this.minutes(), 2) + Na(this.seconds(), 2);
+    return "" + oO.apply(this) + Na(this.minutes(), 2) + Na(this.seconds(), 2);
   });
   Le("Hmm", 0, 0, function() {
     return "" + this.hours() + Na(this.minutes(), 2);
@@ -23648,28 +23648,28 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Le("Hmmss", 0, 0, function() {
     return "" + this.hours() + Na(this.minutes(), 2) + Na(this.seconds(), 2);
   });
-  function u4(n, e) {
+  function h4(n, e) {
     Le(n, 0, 0, function() {
       return this.localeData().meridiem(this.hours(), this.minutes(), e);
     });
   }
-  u4("a", !0);
-  u4("A", !1);
-  function h4(n, e) {
+  h4("a", !0);
+  h4("A", !1);
+  function d4(n, e) {
     return e._meridiemParse;
   }
-  Ae("a", h4);
-  Ae("A", h4);
-  Ae("H", bn, tO);
+  Ae("a", d4);
+  Ae("A", d4);
+  Ae("H", bn, nO);
   Ae("h", bn, ap);
   Ae("k", bn, ap);
   Ae("HH", bn, dr);
   Ae("hh", bn, dr);
   Ae("kk", bn, dr);
-  Ae("hmm", J8);
-  Ae("hmmss", e4);
-  Ae("Hmm", J8);
-  Ae("Hmmss", e4);
+  Ae("hmm", e4);
+  Ae("hmmss", t4);
+  Ae("Hmm", e4);
+  Ae("Hmmss", t4);
   Jt(["H", "HH"], mi);
   Jt(["k", "kk"], function(n, e, t) {
     var i = wt(n);
@@ -23704,7 +23704,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Rfe(n, e, t) {
     return n > 11 ? t ? "pm" : "PM" : t ? "am" : "AM";
   }
-  var d4 = {
+  var f4 = {
     calendar: dde,
     longDateFormat: mde,
     invalidDate: wde,
@@ -23712,11 +23712,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     dayOfMonthOrdinalParse: Cde,
     relativeTime: _de,
     months: Fde,
-    monthsShort: i4,
+    monthsShort: s4,
     week: Qde,
     weekdays: sfe,
     weekdaysMin: rfe,
-    weekdaysShort: c4,
+    weekdaysShort: u4,
     meridiemParse: Sfe
   }, Cn = {}, Np = {}, fw;
   function xfe(n, e) {
@@ -23726,12 +23726,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return t;
     return i;
   }
-  function H2(n) {
+  function D2(n) {
     return n && n.toLowerCase().replace("_", "-");
   }
   function Efe(n) {
     for (var e = 0, t, i, s, r; e < n.length; ) {
-      for (r = H2(n[e]).split("-"), t = r.length, i = H2(n[e + 1]), i = i ? i.split("-") : null; t > 0; ) {
+      for (r = D2(n[e]).split("-"), t = r.length, i = D2(n[e + 1]), i = i ? i.split("-") : null; t > 0; ) {
         if (s = wR(r.slice(0, t).join("-")), s)
           return s;
         if (i && i.length >= t && xfe(r, i) >= t - 1)
@@ -23757,13 +23757,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function iu(n, e) {
     var t;
-    return n && (Is(e) ? t = lc(n) : t = oO(n, e), t ? fw = t : typeof console < "u" && console.warn && console.warn("Locale " + n + " not found. Did you forget to load it?")), fw._abbr;
+    return n && (Is(e) ? t = lc(n) : t = aO(n, e), t ? fw = t : typeof console < "u" && console.warn && console.warn("Locale " + n + " not found. Did you forget to load it?")), fw._abbr;
   }
-  function oO(n, e) {
+  function aO(n, e) {
     if (e !== null) {
-      var t, i = d4;
+      var t, i = f4;
       if (e.abbr = n, Cn[n] != null)
-        q8("defineLocaleOverride", "use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."), i = Cn[n]._config;
+        X8("defineLocaleOverride", "use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."), i = Cn[n]._config;
       else if (e.parentLocale != null)
         if (Cn[e.parentLocale] != null)
           i = Cn[e.parentLocale]._config;
@@ -23774,16 +23774,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             name: n,
             config: e
           }), null;
-      return Cn[n] = new XI(QM(i, e)), Np[n] && Np[n].forEach(function(s) {
-        oO(s.name, s.config);
+      return Cn[n] = new QI(QM(i, e)), Np[n] && Np[n].forEach(function(s) {
+        aO(s.name, s.config);
       }), iu(n), Cn[n];
     } else
       return delete Cn[n], null;
   }
   function Mfe(n, e) {
     if (e != null) {
-      var t, i, s = d4;
-      Cn[n] != null && Cn[n].parentLocale != null ? Cn[n].set(QM(Cn[n]._config, e)) : (i = wR(n), i != null && (s = i._config), e = QM(s, e), i == null && (e.abbr = n), t = new XI(e), t.parentLocale = Cn[n], Cn[n] = t), iu(n);
+      var t, i, s = f4;
+      Cn[n] != null && Cn[n].parentLocale != null ? Cn[n].set(QM(Cn[n]._config, e)) : (i = wR(n), i != null && (s = i._config), e = QM(s, e), i == null && (e.abbr = n), t = new QI(e), t.parentLocale = Cn[n], Cn[n] = t), iu(n);
     } else
       Cn[n] != null && (Cn[n].parentLocale != null ? (Cn[n] = Cn[n].parentLocale, n === iu() && iu(n)) : Cn[n] != null && delete Cn[n]);
     return Cn[n];
@@ -23802,9 +23802,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Afe() {
     return ZM(Cn);
   }
-  function aO(n) {
+  function lO(n) {
     var e, t = n._a;
-    return t && it(n).overflow === -2 && (e = t[$l] < 0 || t[$l] > 11 ? $l : t[ba] < 1 || t[ba] > nO(t[Zi], t[$l]) ? ba : t[mi] < 0 || t[mi] > 24 || t[mi] === 24 && (t[xo] !== 0 || t[Fl] !== 0 || t[Wh] !== 0) ? mi : t[xo] < 0 || t[xo] > 59 ? xo : t[Fl] < 0 || t[Fl] > 59 ? Fl : t[Wh] < 0 || t[Wh] > 999 ? Wh : -1, it(n)._overflowDayOfYear && (e < Zi || e > ba) && (e = ba), it(n)._overflowWeeks && e === -1 && (e = kde), it(n)._overflowWeekday && e === -1 && (e = Hde), it(n).overflow = e), n;
+    return t && it(n).overflow === -2 && (e = t[$l] < 0 || t[$l] > 11 ? $l : t[ba] < 1 || t[ba] > iO(t[Zi], t[$l]) ? ba : t[mi] < 0 || t[mi] > 24 || t[mi] === 24 && (t[xo] !== 0 || t[Fl] !== 0 || t[Wh] !== 0) ? mi : t[xo] < 0 || t[xo] > 59 ? xo : t[Fl] < 0 || t[Fl] > 59 ? Fl : t[Wh] < 0 || t[Wh] > 999 ? Wh : -1, it(n)._overflowDayOfYear && (e < Zi || e > ba) && (e = ba), it(n)._overflowWeeks && e === -1 && (e = kde), it(n)._overflowWeekday && e === -1 && (e = Hde), it(n).overflow = e), n;
   }
   var Pfe = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Ife = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Ofe = /Z|[+-]\d\d(?::?\d\d)?/, cy = [["YYYYYY-MM-DD", /[+-]\d{6}-\d\d-\d\d/], ["YYYY-MM-DD", /\d{4}-\d\d-\d\d/], ["GGGG-[W]WW-E", /\d{4}-W\d\d-\d/], ["GGGG-[W]WW", /\d{4}-W\d\d/, !1], ["YYYY-DDD", /\d{4}-\d{3}/], ["YYYY-MM", /\d{4}-\d\d/, !1], ["YYYYYYMMDD", /[+-]\d{10}/], ["YYYYMMDD", /\d{8}/], ["GGGG[W]WWE", /\d{4}W\d{3}/], ["GGGG[W]WW", /\d{4}W\d{2}/, !1], ["YYYYDDD", /\d{7}/], ["YYYYMM", /\d{6}/, !1], ["YYYY", /\d{4}/, !1]], Fx = [["HH:mm:ss.SSSS", /\d\d:\d\d:\d\d\.\d+/], ["HH:mm:ss,SSSS", /\d\d:\d\d:\d\d,\d+/], ["HH:mm:ss", /\d\d:\d\d:\d\d/], ["HH:mm", /\d\d:\d\d/], ["HHmmss.SSSS", /\d\d\d\d\d\d\.\d+/], ["HHmmss,SSSS", /\d\d\d\d\d\d,\d+/], ["HHmmss", /\d\d\d\d\d\d/], ["HHmm", /\d\d\d\d/], ["HH", /\d\d/]], kfe = /^\/?Date\((-?\d+)/i, Hfe = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/, Dfe = {
     UT: 0,
@@ -23818,7 +23818,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     PDT: -7 * 60,
     PST: -8 * 60
   };
-  function f4(n) {
+  function g4(n) {
     var e, t, i = n._i, s = Pfe.exec(i) || Ife.exec(i), r, o, a, l, c = cy.length, u = Fx.length;
     if (s) {
       for (it(n).iso = !0, e = 0, t = c; e < t; e++)
@@ -23852,12 +23852,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           n._isValid = !1;
           return;
         }
-      n._f = o + (a || "") + (l || ""), cO(n);
+      n._f = o + (a || "") + (l || ""), uO(n);
     } else
       n._isValid = !1;
   }
   function Nfe(n, e, t, i, s, r) {
-    var o = [Lfe(n), i4.indexOf(e), parseInt(t, 10), parseInt(i, 10), parseInt(s, 10)];
+    var o = [Lfe(n), s4.indexOf(e), parseInt(t, 10), parseInt(i, 10), parseInt(s, 10)];
     return r && o.push(parseInt(r, 10)), o;
   }
   function Lfe(n) {
@@ -23869,7 +23869,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function Ffe(n, e, t) {
     if (n) {
-      var i = c4.indexOf(n), s = new Date(e[0], e[1], e[2]).getDay();
+      var i = u4.indexOf(n), s = new Date(e[0], e[1], e[2]).getDay();
       if (i !== s)
         return it(t).weekdayMismatch = !0, t._isValid = !1, !1;
     }
@@ -23883,7 +23883,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var i = parseInt(t, 10), s = i % 100, r = (i - s) / 100;
     return r * 60 + s;
   }
-  function g4(n) {
+  function p4(n) {
     var e = Hfe.exec($fe(n._i)), t;
     if (e) {
       if (t = Nfe(e[4], e[3], e[2], e[5], e[6], e[7]), !Ffe(e[1], t, n))
@@ -23898,11 +23898,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       n._d = /* @__PURE__ */ new Date(+e[1]);
       return;
     }
-    if (f4(n), n._isValid === !1)
+    if (g4(n), n._isValid === !1)
       delete n._isValid;
     else
       return;
-    if (g4(n), n._isValid === !1)
+    if (p4(n), n._isValid === !1)
       delete n._isValid;
     else
       return;
@@ -23918,7 +23918,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var e = new Date(le.now());
     return n._useUTC ? [e.getUTCFullYear(), e.getUTCMonth(), e.getUTCDate()] : [e.getFullYear(), e.getMonth(), e.getDate()];
   }
-  function lO(n) {
+  function cO(n) {
     var e, t, i = [], s, r, o;
     if (!n._d) {
       for (s = Wfe(n), n._w && n._a[ba] == null && n._a[$l] == null && jfe(n), n._dayOfYear != null && (o = Kf(n._a[Zi], s[Zi]), (n._dayOfYear > vb(o) || n._dayOfYear === 0) && (it(n)._overflowDayOfYear = !0), t = hw(o, 0, n._dayOfYear), n._a[$l] = t.getUTCMonth(), n._a[ba] = t.getUTCDate()), e = 0; e < 3 && n._a[e] == null; ++e)
@@ -23930,26 +23930,26 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function jfe(n) {
     var e, t, i, s, r, o, a, l, c;
-    e = n._w, e.GG != null || e.W != null || e.E != null ? (r = 1, o = 4, t = Kf(e.GG, n._a[Zi], dw(mn(), 1, 4).year), i = Kf(e.W, 1), s = Kf(e.E, 1), (s < 1 || s > 7) && (l = !0)) : (r = n._locale._week.dow, o = n._locale._week.doy, c = dw(mn(), r, o), t = Kf(e.gg, n._a[Zi], c.year), i = Kf(e.w, c.week), e.d != null ? (s = e.d, (s < 0 || s > 6) && (l = !0)) : e.e != null ? (s = e.e + r, (e.e < 0 || e.e > 6) && (l = !0)) : s = r), i < 1 || i > Kl(t, r, o) ? it(n)._overflowWeeks = !0 : l != null ? it(n)._overflowWeekday = !0 : (a = l4(t, i, s, r, o), n._a[Zi] = a.year, n._dayOfYear = a.dayOfYear);
+    e = n._w, e.GG != null || e.W != null || e.E != null ? (r = 1, o = 4, t = Kf(e.GG, n._a[Zi], dw(mn(), 1, 4).year), i = Kf(e.W, 1), s = Kf(e.E, 1), (s < 1 || s > 7) && (l = !0)) : (r = n._locale._week.dow, o = n._locale._week.doy, c = dw(mn(), r, o), t = Kf(e.gg, n._a[Zi], c.year), i = Kf(e.w, c.week), e.d != null ? (s = e.d, (s < 0 || s > 6) && (l = !0)) : e.e != null ? (s = e.e + r, (e.e < 0 || e.e > 6) && (l = !0)) : s = r), i < 1 || i > Kl(t, r, o) ? it(n)._overflowWeeks = !0 : l != null ? it(n)._overflowWeekday = !0 : (a = c4(t, i, s, r, o), n._a[Zi] = a.year, n._dayOfYear = a.dayOfYear);
   }
   le.ISO_8601 = function() {
   };
   le.RFC_2822 = function() {
   };
-  function cO(n) {
+  function uO(n) {
     if (n._f === le.ISO_8601) {
-      f4(n);
+      g4(n);
       return;
     }
     if (n._f === le.RFC_2822) {
-      g4(n);
+      p4(n);
       return;
     }
     n._a = [], it(n).empty = !0;
     var e = "" + n._i, t, i, s, r, o, a = e.length, l = 0, c, u;
-    for (s = X8(n._f, n._locale).match(QI) || [], u = s.length, t = 0; t < u; t++)
+    for (s = Q8(n._f, n._locale).match(ZI) || [], u = s.length, t = 0; t < u; t++)
       r = s[t], i = (e.match(Pde(r, n)) || [])[0], i && (o = e.substr(0, e.indexOf(i)), o.length > 0 && it(n).unusedInput.push(o), e = e.slice(e.indexOf(i) + i.length), l += i.length), Cg[r] ? (i ? it(n).empty = !1 : it(n).unusedTokens.push(r), Ode(r, i, n)) : n._strict && !i && it(n).unusedTokens.push(r);
-    it(n).charsLeftOver = a - l, e.length > 0 && it(n).unusedInput.push(e), n._a[mi] <= 12 && it(n).bigHour === !0 && n._a[mi] > 0 && (it(n).bigHour = void 0), it(n).parsedDateParts = n._a.slice(0), it(n).meridiem = n._meridiem, n._a[mi] = zfe(n._locale, n._a[mi], n._meridiem), c = it(n).era, c !== null && (n._a[Zi] = n._locale.erasConvertYear(c, n._a[Zi])), lO(n), aO(n);
+    it(n).charsLeftOver = a - l, e.length > 0 && it(n).unusedInput.push(e), n._a[mi] <= 12 && it(n).bigHour === !0 && n._a[mi] > 0 && (it(n).bigHour = void 0), it(n).parsedDateParts = n._a.slice(0), it(n).meridiem = n._meridiem, n._a[mi] = zfe(n._locale, n._a[mi], n._meridiem), c = it(n).era, c !== null && (n._a[Zi] = n._locale.erasConvertYear(c, n._a[Zi])), cO(n), lO(n);
   }
   function zfe(n, e, t) {
     var i;
@@ -23962,39 +23962,39 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return;
     }
     for (s = 0; s < l; s++)
-      r = 0, o = !1, e = qI({}, n), n._useUTC != null && (e._useUTC = n._useUTC), e._f = n._f[s], cO(e), KI(e) && (o = !0), r += it(e).charsLeftOver, r += it(e).unusedTokens.length * 10, it(e).score = r, a ? r < i && (i = r, t = e) : (i == null || r < i || o) && (i = r, t = e, o && (a = !0));
+      r = 0, o = !1, e = XI({}, n), n._useUTC != null && (e._useUTC = n._useUTC), e._f = n._f[s], uO(e), qI(e) && (o = !0), r += it(e).charsLeftOver, r += it(e).unusedTokens.length * 10, it(e).score = r, a ? r < i && (i = r, t = e) : (i == null || r < i || o) && (i = r, t = e, o && (a = !0));
     Kc(n, t || e);
   }
   function Yfe(n) {
     if (!n._d) {
-      var e = ZI(n._i), t = e.day === void 0 ? e.date : e.day;
-      n._a = G8([e.year, e.month, t, e.hour, e.minute, e.second, e.millisecond], function(i) {
+      var e = JI(n._i), t = e.day === void 0 ? e.date : e.day;
+      n._a = K8([e.year, e.month, t, e.hour, e.minute, e.second, e.millisecond], function(i) {
         return i && parseInt(i, 10);
-      }), lO(n);
+      }), cO(n);
     }
   }
   function Gfe(n) {
-    var e = new ov(aO(p4(n)));
+    var e = new ov(lO(m4(n)));
     return e._nextDay && (e.add(1, "d"), e._nextDay = void 0), e;
   }
-  function p4(n) {
+  function m4(n) {
     var e = n._i, t = n._f;
     return n._locale = n._locale || lc(n._l), e === null || t === void 0 && e === "" ? hR({
       nullInput: !0
-    }) : (typeof e == "string" && (n._i = e = n._locale.preparse(e)), ko(e) ? new ov(aO(e)) : (rv(e) ? n._d = e : Oo(t) ? Ufe(n) : t ? cO(n) : Kfe(n), KI(n) || (n._d = null), n));
+    }) : (typeof e == "string" && (n._i = e = n._locale.preparse(e)), ko(e) ? new ov(lO(e)) : (rv(e) ? n._d = e : Oo(t) ? Ufe(n) : t ? uO(n) : Kfe(n), qI(n) || (n._d = null), n));
   }
   function Kfe(n) {
     var e = n._i;
-    Is(e) ? n._d = new Date(le.now()) : rv(e) ? n._d = new Date(e.valueOf()) : typeof e == "string" ? Vfe(n) : Oo(e) ? (n._a = G8(e.slice(0), function(t) {
+    Is(e) ? n._d = new Date(le.now()) : rv(e) ? n._d = new Date(e.valueOf()) : typeof e == "string" ? Vfe(n) : Oo(e) ? (n._a = K8(e.slice(0), function(t) {
       return parseInt(t, 10);
-    }), lO(n)) : rd(e) ? Yfe(n) : Ql(e) ? n._d = new Date(e) : le.createFromInputFallback(n);
+    }), cO(n)) : rd(e) ? Yfe(n) : Ql(e) ? n._d = new Date(e) : le.createFromInputFallback(n);
   }
-  function m4(n, e, t, i, s) {
+  function b4(n, e, t, i, s) {
     var r = {};
-    return (e === !0 || e === !1) && (i = e, e = void 0), (t === !0 || t === !1) && (i = t, t = void 0), (rd(n) && GI(n) || Oo(n) && n.length === 0) && (n = void 0), r._isAMomentObject = !0, r._useUTC = r._isUTC = s, r._l = t, r._i = n, r._f = e, r._strict = i, Gfe(r);
+    return (e === !0 || e === !1) && (i = e, e = void 0), (t === !0 || t === !1) && (i = t, t = void 0), (rd(n) && KI(n) || Oo(n) && n.length === 0) && (n = void 0), r._isAMomentObject = !0, r._useUTC = r._isUTC = s, r._l = t, r._i = n, r._f = e, r._strict = i, Gfe(r);
   }
   function mn(n, e, t, i) {
-    return m4(n, e, t, i, !1);
+    return b4(n, e, t, i, !1);
   }
   var qfe = Xr("moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/", function() {
     var n = mn.apply(null, arguments);
@@ -24003,7 +24003,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var n = mn.apply(null, arguments);
     return this.isValid() && n.isValid() ? n > this ? this : n : hR();
   });
-  function b4(n, e) {
+  function w4(n, e) {
     var t, i;
     if (e.length === 1 && Oo(e[0]) && (e = e[0]), !e.length)
       return mn();
@@ -24013,11 +24013,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function Qfe() {
     var n = [].slice.call(arguments, 0);
-    return b4("isBefore", n);
+    return w4("isBefore", n);
   }
   function Zfe() {
     var n = [].slice.call(arguments, 0);
-    return b4("isAfter", n);
+    return w4("isAfter", n);
   }
   var Jfe = function() {
     return Date.now ? Date.now() : +/* @__PURE__ */ new Date();
@@ -24042,7 +24042,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return Fo(NaN);
   }
   function vR(n) {
-    var e = ZI(n), t = e.year || 0, i = e.quarter || 0, s = e.month || 0, r = e.week || e.isoWeek || 0, o = e.day || 0, a = e.hour || 0, l = e.minute || 0, c = e.second || 0, u = e.millisecond || 0;
+    var e = JI(n), t = e.year || 0, i = e.quarter || 0, s = e.month || 0, r = e.week || e.isoWeek || 0, o = e.day || 0, a = e.hour || 0, l = e.minute || 0, c = e.second || 0, u = e.millisecond || 0;
     this._isValid = ege(e), this._milliseconds = +u + c * 1e3 + // 1000
     l * 6e4 + // 1000 * 60
     a * 1e3 * 60 * 60, this._days = +o + r * 7, this._months = +s + i * 3 + t * 12, this._data = {}, this._locale = lc(), this._bubble();
@@ -24059,25 +24059,25 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       wt(n[o]) !== wt(e[o]) && r++;
     return r + s;
   }
-  function w4(n, e) {
+  function v4(n, e) {
     Le(n, 0, 0, function() {
       var t = this.utcOffset(), i = "+";
       return t < 0 && (t = -t, i = "-"), i + Na(~~(t / 60), 2) + e + Na(~~t % 60, 2);
     });
   }
-  w4("Z", ":");
-  w4("ZZ", "");
+  v4("Z", ":");
+  v4("ZZ", "");
   Ae("Z", mR);
   Ae("ZZ", mR);
   Jt(["Z", "ZZ"], function(n, e, t) {
-    t._useUTC = !0, t._tzm = uO(mR, n);
+    t._useUTC = !0, t._tzm = hO(mR, n);
   });
   var sge = /([\+\-]|\d\d)/gi;
-  function uO(n, e) {
+  function hO(n, e) {
     var t = (e || "").match(n), i, s, r;
     return t === null ? null : (i = t[t.length - 1] || [], s = (i + "").match(sge) || ["-", 0, 0], r = +(s[1] * 60) + wt(s[2]), r === 0 ? 0 : s[0] === "+" ? r : -r);
   }
-  function hO(n, e) {
+  function dO(n, e) {
     var t, i;
     return e._isUTC ? (t = e.clone(), i = (ko(n) || rv(n) ? n.valueOf() : mn(n).valueOf()) - t.valueOf(), t._d.setTime(t._d.valueOf() + i), le.updateOffset(t, !1), t) : mn(n).local();
   }
@@ -24092,10 +24092,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return n != null ? this : NaN;
     if (n != null) {
       if (typeof n == "string") {
-        if (n = uO(mR, n), n === null)
+        if (n = hO(mR, n), n === null)
           return this;
       } else Math.abs(n) < 16 && !t && (n = n * 60);
-      return !this._isUTC && e && (s = tA(this)), this._offset = n, this._isUTC = !0, s != null && this.add(s, "m"), i !== n && (!e || this._changeInProgress ? C4(this, Fo(n - i, "m"), 1, !1) : this._changeInProgress || (this._changeInProgress = !0, le.updateOffset(this, !0), this._changeInProgress = null)), this;
+      return !this._isUTC && e && (s = tA(this)), this._offset = n, this._isUTC = !0, s != null && this.add(s, "m"), i !== n && (!e || this._changeInProgress ? S4(this, Fo(n - i, "m"), 1, !1) : this._changeInProgress || (this._changeInProgress = !0, le.updateOffset(this, !0), this._changeInProgress = null)), this;
     } else
       return this._isUTC ? i : tA(this);
   }
@@ -24112,7 +24112,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (this._tzm != null)
       this.utcOffset(this._tzm, !1, !0);
     else if (typeof this._i == "string") {
-      var n = uO(Mde, this._i);
+      var n = hO(Mde, this._i);
       n != null ? this.utcOffset(n) : this.utcOffset(0, !0);
     }
     return this;
@@ -24127,7 +24127,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (!Is(this._isDSTShifted))
       return this._isDSTShifted;
     var n = {}, e;
-    return qI(n, this), n = p4(n), n._a ? (e = n._isUTC ? qa(n._a) : mn(n._a), this._isDSTShifted = this.isValid() && ige(n._a, e.toArray()) > 0) : this._isDSTShifted = !1, this._isDSTShifted;
+    return XI(n, this), n = m4(n), n._a ? (e = n._isUTC ? qa(n._a) : mn(n._a), this._isDSTShifted = this.isValid() && ige(n._a, e.toArray()) > 0) : this._isDSTShifted = !1, this._isDSTShifted;
   }
   function fge() {
     return this.isValid() ? !this._isUTC : !1;
@@ -24135,7 +24135,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function gge() {
     return this.isValid() ? this._isUTC : !1;
   }
-  function v4() {
+  function y4() {
     return this.isValid() ? this._isUTC && this._offset === 0 : !1;
   }
   var pge = /^(-|\+)?(?:(\d*)[. ])?(\d+):(\d+)(?::(\d+)(\.\d*)?)?$/, mge = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
@@ -24169,36 +24169,36 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var t = n && parseFloat(n.replace(",", "."));
     return (isNaN(t) ? 0 : t) * e;
   }
-  function D2(n, e) {
+  function N2(n, e) {
     var t = {};
     return t.months = e.month() - n.month() + (e.year() - n.year()) * 12, n.clone().add(t.months, "M").isAfter(e) && --t.months, t.milliseconds = +e - +n.clone().add(t.months, "M"), t;
   }
   function bge(n, e) {
     var t;
-    return n.isValid() && e.isValid() ? (e = hO(e, n), n.isBefore(e) ? t = D2(n, e) : (t = D2(e, n), t.milliseconds = -t.milliseconds, t.months = -t.months), t) : {
+    return n.isValid() && e.isValid() ? (e = dO(e, n), n.isBefore(e) ? t = N2(n, e) : (t = N2(e, n), t.milliseconds = -t.milliseconds, t.months = -t.months), t) : {
       milliseconds: 0,
       months: 0
     };
   }
-  function y4(n, e) {
+  function C4(n, e) {
     return function(t, i) {
       var s, r;
-      return i !== null && !isNaN(+i) && (q8(e, "moment()." + e + "(period, number) is deprecated. Please use moment()." + e + "(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."), r = t, t = i, i = r), s = Fo(t, i), C4(this, s, n), this;
+      return i !== null && !isNaN(+i) && (X8(e, "moment()." + e + "(period, number) is deprecated. Please use moment()." + e + "(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."), r = t, t = i, i = r), s = Fo(t, i), S4(this, s, n), this;
     };
   }
-  function C4(n, e, t, i) {
+  function S4(n, e, t, i) {
     var s = e._milliseconds, r = eA(e._days), o = eA(e._months);
-    n.isValid() && (i = i ?? !0, o && r4(n, uw(n, "Month") + o * t), r && n4(n, "Date", uw(n, "Date") + r * t), s && n._d.setTime(n._d.valueOf() + s * t), i && le.updateOffset(n, r || o));
+    n.isValid() && (i = i ?? !0, o && o4(n, uw(n, "Month") + o * t), r && i4(n, "Date", uw(n, "Date") + r * t), s && n._d.setTime(n._d.valueOf() + s * t), i && le.updateOffset(n, r || o));
   }
-  var wge = y4(1, "add"), vge = y4(-1, "subtract");
-  function S4(n) {
+  var wge = C4(1, "add"), vge = C4(-1, "subtract");
+  function _4(n) {
     return typeof n == "string" || n instanceof String;
   }
   function yge(n) {
-    return ko(n) || rv(n) || S4(n) || Ql(n) || Sge(n) || Cge(n) || n === null || n === void 0;
+    return ko(n) || rv(n) || _4(n) || Ql(n) || Sge(n) || Cge(n) || n === null || n === void 0;
   }
   function Cge(n) {
-    var e = rd(n) && !GI(n), t = !1, i = ["years", "year", "y", "months", "month", "M", "days", "day", "d", "dates", "date", "D", "hours", "hour", "h", "minutes", "minute", "m", "seconds", "second", "s", "milliseconds", "millisecond", "ms"], s, r, o = i.length;
+    var e = rd(n) && !KI(n), t = !1, i = ["years", "year", "y", "months", "month", "M", "days", "day", "d", "dates", "date", "D", "hours", "hour", "h", "minutes", "minute", "m", "seconds", "second", "s", "milliseconds", "millisecond", "ms"], s, r, o = i.length;
     for (s = 0; s < o; s += 1)
       r = i[s], t = t || Ot(n, r);
     return e && t;
@@ -24206,11 +24206,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Sge(n) {
     var e = Oo(n), t = !1;
     return e && (t = n.filter(function(i) {
-      return !Ql(i) && S4(n);
+      return !Ql(i) && _4(n);
     }).length === 0), e && t;
   }
   function _ge(n) {
-    var e = rd(n) && !GI(n), t = !1, i = ["sameDay", "nextDay", "lastDay", "nextWeek", "lastWeek", "sameElse"], s, r;
+    var e = rd(n) && !KI(n), t = !1, i = ["sameDay", "nextDay", "lastDay", "nextWeek", "lastWeek", "sameElse"], s, r;
     for (s = 0; s < i.length; s += 1)
       r = i[s], t = t || Ot(n, r);
     return e && t;
@@ -24221,7 +24221,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function xge(n, e) {
     arguments.length === 1 && (arguments[0] ? yge(arguments[0]) ? (n = arguments[0], e = void 0) : _ge(arguments[0]) && (e = arguments[0], n = void 0) : (n = void 0, e = void 0));
-    var t = n || mn(), i = hO(t, this).startOf("day"), s = le.calendarFormat(this, i) || "sameElse", r = e && (Xa(e[s]) ? e[s].call(this, t) : e[s]);
+    var t = n || mn(), i = dO(t, this).startOf("day"), s = le.calendarFormat(this, i) || "sameElse", r = e && (Xa(e[s]) ? e[s].call(this, t) : e[s]);
     return this.format(r || this.localeData().calendar(s, this, mn(t)));
   }
   function Ege() {
@@ -24253,7 +24253,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var i, s, r;
     if (!this.isValid())
       return NaN;
-    if (i = hO(n, this), !i.isValid())
+    if (i = dO(n, this), !i.isValid())
       return NaN;
     switch (s = (i.utcOffset() - this.utcOffset()) * 6e4, e = Qr(e), e) {
       case "year":
@@ -24331,31 +24331,31 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Vge(n) {
     return this.to(mn(), n);
   }
-  function _4(n) {
+  function R4(n) {
     var e;
     return n === void 0 ? this._locale._abbr : (e = lc(n), e != null && (this._locale = e), this);
   }
-  var R4 = Xr("moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.", function(n) {
+  var x4 = Xr("moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.", function(n) {
     return n === void 0 ? this.localeData() : this.locale(n);
   });
-  function x4() {
+  function E4() {
     return this._locale;
   }
-  var vS = 1e3, Sg = 60 * vS, yS = 60 * Sg, E4 = (365 * 400 + 97) * 24 * yS;
+  var vS = 1e3, Sg = 60 * vS, yS = 60 * Sg, T4 = (365 * 400 + 97) * 24 * yS;
   function _g(n, e) {
     return (n % e + e) % e;
   }
-  function T4(n, e, t) {
-    return n < 100 && n >= 0 ? new Date(n + 400, e, t) - E4 : new Date(n, e, t).valueOf();
-  }
   function M4(n, e, t) {
-    return n < 100 && n >= 0 ? Date.UTC(n + 400, e, t) - E4 : Date.UTC(n, e, t);
+    return n < 100 && n >= 0 ? new Date(n + 400, e, t) - T4 : new Date(n, e, t).valueOf();
+  }
+  function A4(n, e, t) {
+    return n < 100 && n >= 0 ? Date.UTC(n + 400, e, t) - T4 : Date.UTC(n, e, t);
   }
   function Wge(n) {
     var e, t;
     if (n = Qr(n), n === void 0 || n === "millisecond" || !this.isValid())
       return this;
-    switch (t = this._isUTC ? M4 : T4, n) {
+    switch (t = this._isUTC ? A4 : M4, n) {
       case "year":
         e = t(this.year(), 0, 1);
         break;
@@ -24391,7 +24391,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var e, t;
     if (n = Qr(n), n === void 0 || n === "millisecond" || !this.isValid())
       return this;
-    switch (t = this._isUTC ? M4 : T4, n) {
+    switch (t = this._isUTC ? A4 : M4, n) {
       case "year":
         e = t(this.year() + 1, 0, 1) - 1;
         break;
@@ -24452,7 +24452,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return this.isValid() ? this.toISOString() : null;
   }
   function Xge() {
-    return KI(this);
+    return qI(this);
   }
   function Qge() {
     return Kc({}, it(this));
@@ -24478,9 +24478,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Le("y", ["yy", 2], 0, "eraYear");
   Le("y", ["yyy", 3], 0, "eraYear");
   Le("y", ["yyyy", 4], 0, "eraYear");
-  Ae("N", dO);
-  Ae("NN", dO);
-  Ae("NNN", dO);
+  Ae("N", fO);
+  Ae("NN", fO);
+  Ae("NNN", fO);
   Ae("NNNN", upe);
   Ae("NNNNN", hpe);
   Jt(["N", "NN", "NNN", "NNNN", "NNNNN"], function(n, e, t, i) {
@@ -24572,15 +24572,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return this.year();
   }
   function ape(n) {
-    return Ot(this, "_erasNameRegex") || fO.call(this), n ? this._erasNameRegex : this._erasRegex;
+    return Ot(this, "_erasNameRegex") || gO.call(this), n ? this._erasNameRegex : this._erasRegex;
   }
   function lpe(n) {
-    return Ot(this, "_erasAbbrRegex") || fO.call(this), n ? this._erasAbbrRegex : this._erasRegex;
+    return Ot(this, "_erasAbbrRegex") || gO.call(this), n ? this._erasAbbrRegex : this._erasRegex;
   }
   function cpe(n) {
-    return Ot(this, "_erasNarrowRegex") || fO.call(this), n ? this._erasNarrowRegex : this._erasRegex;
+    return Ot(this, "_erasNarrowRegex") || gO.call(this), n ? this._erasNarrowRegex : this._erasRegex;
   }
-  function dO(n, e) {
+  function fO(n, e) {
     return e.erasAbbrRegex(n);
   }
   function upe(n, e) {
@@ -24592,7 +24592,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function dpe(n, e) {
     return e._eraYearOrdinalRegex || op;
   }
-  function fO() {
+  function gO() {
     var n = [], e = [], t = [], i = [], s, r, o, a, l, c = this.eras();
     for (s = 0, r = c.length; s < r; ++s)
       o = Gl(c[s].name), a = Gl(c[s].abbr), l = Gl(c[s].narrow), e.push(o), n.push(a), t.push(l), i.push(o), i.push(a), i.push(l);
@@ -24615,8 +24615,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ae("g", pR);
   Ae("GG", bn, dr);
   Ae("gg", bn, dr);
-  Ae("GGGG", eO, JI);
-  Ae("gggg", eO, JI);
+  Ae("GGGG", tO, eO);
+  Ae("gggg", tO, eO);
   Ae("GGGGG", gR, dR);
   Ae("ggggg", gR, dR);
   lv(["gggg", "ggggg", "GGGG", "GGGGG"], function(n, e, t, i) {
@@ -24626,10 +24626,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     e[i] = le.parseTwoDigitYear(n);
   });
   function fpe(n) {
-    return A4.call(this, n, this.week(), this.weekday() + this.localeData()._week.dow, this.localeData()._week.dow, this.localeData()._week.doy);
+    return P4.call(this, n, this.week(), this.weekday() + this.localeData()._week.dow, this.localeData()._week.dow, this.localeData()._week.doy);
   }
   function gpe(n) {
-    return A4.call(this, n, this.isoWeek(), this.isoWeekday(), 1, 4);
+    return P4.call(this, n, this.isoWeek(), this.isoWeekday(), 1, 4);
   }
   function ppe() {
     return Kl(this.year(), 1, 4);
@@ -24645,16 +24645,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var n = this.localeData()._week;
     return Kl(this.weekYear(), n.dow, n.doy);
   }
-  function A4(n, e, t, i, s) {
+  function P4(n, e, t, i, s) {
     var r;
     return n == null ? dw(this, i, s).year : (r = Kl(n, i, s), e > r && (e = r), vpe.call(this, n, e, t, i, s));
   }
   function vpe(n, e, t, i, s) {
-    var r = l4(n, e, t, i, s), o = hw(r.year, 0, r.dayOfYear);
+    var r = c4(n, e, t, i, s), o = hw(r.year, 0, r.dayOfYear);
     return this.year(o.getUTCFullYear()), this.month(o.getUTCMonth()), this.date(o.getUTCDate()), this;
   }
   Le("Q", 0, "Qo", "quarter");
-  Ae("Q", Q8);
+  Ae("Q", Z8);
   Jt("Q", function(n, e) {
     e[$l] = (wt(n) - 1) * 3;
   });
@@ -24671,10 +24671,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Jt("Do", function(n, e) {
     e[ba] = wt(n.match(bn)[0]);
   });
-  var P4 = lp("Date", !0);
+  var I4 = lp("Date", !0);
   Le("DDD", ["DDDD", 3], "DDDo", "dayOfYear");
   Ae("DDD", fR);
-  Ae("DDDD", Z8);
+  Ae("DDDD", J8);
   Jt(["DDD", "DDDD"], function(n, e, t) {
     t._dayOfYear = wt(n);
   });
@@ -24683,12 +24683,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return n == null ? e : this.add(n - e, "d");
   }
   Le("m", ["mm", 2], 0, "minute");
-  Ae("m", bn, tO);
+  Ae("m", bn, nO);
   Ae("mm", bn, dr);
   Jt(["m", "mm"], xo);
   var Spe = lp("Minutes", !1);
   Le("s", ["ss", 2], 0, "second");
-  Ae("s", bn, tO);
+  Ae("s", bn, nO);
   Ae("ss", bn, dr);
   Jt(["s", "ss"], Fl);
   var _pe = lp("Seconds", !1);
@@ -24717,10 +24717,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Le(0, ["SSSSSSSSS", 9], 0, function() {
     return this.millisecond() * 1e6;
   });
-  Ae("S", fR, Q8);
+  Ae("S", fR, Z8);
   Ae("SS", fR, dr);
-  Ae("SSS", fR, Z8);
-  var qc, I4;
+  Ae("SSS", fR, J8);
+  var qc, O4;
   for (qc = "SSSS"; qc.length <= 9; qc += "S")
     Ae(qc, op);
   function Rpe(n, e) {
@@ -24728,7 +24728,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   for (qc = "S"; qc.length <= 9; qc += "S")
     Jt(qc, Rpe);
-  I4 = lp("Milliseconds", !1);
+  O4 = lp("Milliseconds", !1);
   Le("z", 0, 0, "zoneAbbr");
   Le("zz", 0, 0, "zoneName");
   function xpe() {
@@ -24757,9 +24757,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   he.isSameOrAfter = Ige;
   he.isSameOrBefore = Oge;
   he.isValid = Xge;
-  he.lang = R4;
-  he.locale = _4;
-  he.localeData = x4;
+  he.lang = x4;
+  he.locale = R4;
+  he.localeData = E4;
   he.max = Xfe;
   he.min = qfe;
   he.parsingFlags = Qge;
@@ -24783,12 +24783,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   he.eraNarrow = spe;
   he.eraAbbr = rpe;
   he.eraYear = ope;
-  he.year = t4;
+  he.year = n4;
   he.isLeapYear = Dde;
   he.weekYear = fpe;
   he.isoWeekYear = gpe;
   he.quarter = he.quarters = ype;
-  he.month = o4;
+  he.month = a4;
   he.daysInMonth = Yde;
   he.week = he.weeks = efe;
   he.isoWeek = he.isoWeeks = tfe;
@@ -24796,7 +24796,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   he.weeksInWeekYear = wpe;
   he.isoWeeksInYear = ppe;
   he.isoWeeksInISOWeekYear = mpe;
-  he.date = P4;
+  he.date = I4;
   he.day = he.days = gfe;
   he.weekday = pfe;
   he.isoWeekday = mfe;
@@ -24804,7 +24804,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   he.hour = he.hours = _fe;
   he.minute = he.minutes = Spe;
   he.second = he.seconds = _pe;
-  he.millisecond = he.milliseconds = I4;
+  he.millisecond = he.milliseconds = O4;
   he.utcOffset = rge;
   he.utc = age;
   he.local = lge;
@@ -24813,13 +24813,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   he.isDST = hge;
   he.isLocal = fge;
   he.isUtcOffset = gge;
-  he.isUtc = v4;
-  he.isUTC = v4;
+  he.isUtc = y4;
+  he.isUTC = y4;
   he.zoneAbbr = xpe;
   he.zoneName = Epe;
-  he.dates = Xr("dates accessor is deprecated. Use date instead.", P4);
-  he.months = Xr("months accessor is deprecated. Use month instead", o4);
-  he.years = Xr("years accessor is deprecated. Use year instead", t4);
+  he.dates = Xr("dates accessor is deprecated. Use date instead.", I4);
+  he.months = Xr("months accessor is deprecated. Use month instead", a4);
+  he.years = Xr("years accessor is deprecated. Use year instead", n4);
   he.zone = Xr("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/", oge);
   he.isDSTShifted = Xr("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information", dge);
   function Tpe(n) {
@@ -24828,16 +24828,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Mpe() {
     return mn.apply(null, arguments).parseZone();
   }
-  function O4(n) {
+  function k4(n) {
     return n;
   }
-  var kt = XI.prototype;
+  var kt = QI.prototype;
   kt.calendar = fde;
   kt.longDateFormat = bde;
   kt.invalidDate = vde;
   kt.ordinal = Sde;
-  kt.preparse = O4;
-  kt.postformat = O4;
+  kt.preparse = k4;
+  kt.postformat = k4;
   kt.relativeTime = Rde;
   kt.pastFuture = xde;
   kt.set = hde;
@@ -24868,7 +24868,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var s = lc(), r = qa().set(i, e);
     return s[t](r, n);
   }
-  function k4(n, e, t) {
+  function H4(n, e, t) {
     if (Ql(n) && (e = n, n = void 0), n = n || "", e != null)
       return CS(n, e, t, "month");
     var i, s = [];
@@ -24876,7 +24876,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       s[i] = CS(n, i, t, "month");
     return s;
   }
-  function gO(n, e, t, i) {
+  function pO(n, e, t, i) {
     typeof n == "boolean" ? (Ql(e) && (t = e, e = void 0), e = e || "") : (e = n, t = e, n = !1, Ql(e) && (t = e, e = void 0), e = e || "");
     var s = lc(), r = n ? s._week.dow : 0, o, a = [];
     if (t != null)
@@ -24886,19 +24886,19 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return a;
   }
   function Ape(n, e) {
-    return k4(n, e, "months");
+    return H4(n, e, "months");
   }
   function Ppe(n, e) {
-    return k4(n, e, "monthsShort");
+    return H4(n, e, "monthsShort");
   }
   function Ipe(n, e, t) {
-    return gO(n, e, t, "weekdays");
+    return pO(n, e, t, "weekdays");
   }
   function Ope(n, e, t) {
-    return gO(n, e, t, "weekdaysShort");
+    return pO(n, e, t, "weekdaysShort");
   }
   function kpe(n, e, t) {
-    return gO(n, e, t, "weekdaysMin");
+    return pO(n, e, t, "weekdaysMin");
   }
   iu("en", {
     eras: [{
@@ -24929,24 +24929,24 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     var n = this._data;
     return this._milliseconds = nl(this._milliseconds), this._days = nl(this._days), this._months = nl(this._months), n.milliseconds = nl(n.milliseconds), n.seconds = nl(n.seconds), n.minutes = nl(n.minutes), n.hours = nl(n.hours), n.months = nl(n.months), n.years = nl(n.years), this;
   }
-  function H4(n, e, t, i) {
+  function D4(n, e, t, i) {
     var s = Fo(e, t);
     return n._milliseconds += i * s._milliseconds, n._days += i * s._days, n._months += i * s._months, n._bubble();
   }
   function Dpe(n, e) {
-    return H4(this, n, e, 1);
+    return D4(this, n, e, 1);
   }
   function Npe(n, e) {
-    return H4(this, n, e, -1);
+    return D4(this, n, e, -1);
   }
-  function N2(n) {
+  function L2(n) {
     return n < 0 ? Math.floor(n) : Math.ceil(n);
   }
   function Lpe() {
     var n = this._milliseconds, e = this._days, t = this._months, i = this._data, s, r, o, a, l;
-    return n >= 0 && e >= 0 && t >= 0 || n <= 0 && e <= 0 && t <= 0 || (n += N2(nA(t) + e) * 864e5, e = 0, t = 0), i.milliseconds = n % 1e3, s = kr(n / 1e3), i.seconds = s % 60, r = kr(s / 60), i.minutes = r % 60, o = kr(r / 60), i.hours = o % 24, e += kr(o / 24), l = kr(D4(e)), t += l, e -= N2(nA(l)), a = kr(t / 12), t %= 12, i.days = e, i.months = t, i.years = a, this;
+    return n >= 0 && e >= 0 && t >= 0 || n <= 0 && e <= 0 && t <= 0 || (n += L2(nA(t) + e) * 864e5, e = 0, t = 0), i.milliseconds = n % 1e3, s = kr(n / 1e3), i.seconds = s % 60, r = kr(s / 60), i.minutes = r % 60, o = kr(r / 60), i.hours = o % 24, e += kr(o / 24), l = kr(N4(e)), t += l, e -= L2(nA(l)), a = kr(t / 12), t %= 12, i.days = e, i.months = t, i.years = a, this;
   }
-  function D4(n) {
+  function N4(n) {
     return n * 4800 / 146097;
   }
   function nA(n) {
@@ -24957,7 +24957,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return NaN;
     var e, t, i = this._milliseconds;
     if (n = Qr(n), n === "month" || n === "quarter" || n === "year")
-      switch (e = this._days + i / 864e5, t = this._months + D4(e), n) {
+      switch (e = this._days + i / 864e5, t = this._months + N4(e), n) {
         case "month":
           return t;
         case "quarter":
@@ -24988,7 +24988,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.as(n);
     };
   }
-  var N4 = cc("ms"), Fpe = cc("s"), Bpe = cc("m"), Vpe = cc("h"), Wpe = cc("d"), jpe = cc("w"), zpe = cc("M"), Upe = cc("Q"), Ype = cc("y"), Gpe = N4;
+  var L4 = cc("ms"), Fpe = cc("s"), Bpe = cc("m"), Vpe = cc("h"), Wpe = cc("d"), jpe = cc("w"), zpe = cc("M"), Upe = cc("Q"), Ype = cc("y"), Gpe = L4;
   function Kpe() {
     return Fo(this);
   }
@@ -25055,7 +25055,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Rt.add = Dpe;
   Rt.subtract = Npe;
   Rt.as = $pe;
-  Rt.asMilliseconds = N4;
+  Rt.asMilliseconds = L4;
   Rt.asSeconds = Fpe;
   Rt.asMinutes = Bpe;
   Rt.asHours = Vpe;
@@ -25080,10 +25080,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Rt.toISOString = CR;
   Rt.toString = CR;
   Rt.toJSON = CR;
-  Rt.locale = _4;
-  Rt.localeData = x4;
+  Rt.locale = R4;
+  Rt.localeData = E4;
   Rt.toIsoString = Xr("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)", CR);
-  Rt.lang = R4;
+  Rt.lang = x4;
   Le("X", 0, 0, "unix");
   Le("x", 0, 0, "valueOf");
   Ae("x", pR);
@@ -25115,7 +25115,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   le.isDuration = fC;
   le.monthsShort = Ppe;
   le.weekdaysMin = kpe;
-  le.defineLocale = oO;
+  le.defineLocale = aO;
   le.updateLocale = Mfe;
   le.locales = Afe;
   le.weekdaysShort = Ope;
@@ -25144,7 +25144,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     MONTH: "YYYY-MM"
     // <input type="month" />
   };
-  function L4(n) {
+  function $4(n) {
     const e = n.length;
     let t = 0;
     for (; t < e; )
@@ -25204,7 +25204,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       t += 1;
     return n;
   }
-  function $4(n) {
+  function F4(n) {
     return Jn(n, (e, t) => e + t, 0);
   }
   function cme(n) {
@@ -25214,12 +25214,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return Jn(n, (e, t) => e < t ? e : t, Array.isArray(n) ? n[0] : void 0);
   }
   function hme(n) {
-    return n.length ? $4(n) / n.length : 0;
+    return n.length ? F4(n) / n.length : 0;
   }
-  function F4(n) {
-    return Jn(n, (e, t) => e.concat(Array.isArray(t) ? F4(t) : t), []);
+  function B4(n) {
+    return Jn(n, (e, t) => e.concat(Array.isArray(t) ? B4(t) : t), []);
   }
-  function pO(n) {
+  function mO(n) {
     const e = [];
     return F(n, (t) => {
       e.indexOf(t) === -1 && e.push(t);
@@ -25262,20 +25262,20 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     arrayAvg: hme,
     arrayEach: F,
     arrayFilter: Zl,
-    arrayFlatten: F4,
+    arrayFlatten: B4,
     arrayMap: ut,
     arrayMax: cme,
     arrayMin: ume,
     arrayReduce: Jn,
-    arraySum: $4,
-    arrayUnique: pO,
+    arraySum: F4,
+    arrayUnique: mO,
     extendArray: iA,
     getDifferenceOfArrays: sA,
     getIntersectionOfArrays: dme,
     getUnionOfArrays: fme,
     pivot: yb,
     stringToArray: rA,
-    to2dArray: L4
+    to2dArray: $4
   }, Symbol.toStringTag, { value: "Module" }));
   function Wt(n) {
     for (var e = arguments.length, t = new Array(e > 1 ? e - 1 : 0), i = 1; i < e; i++)
@@ -25313,12 +25313,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Hn(n) {
     return n === null || n === "" || sn(n);
   }
-  function B4(n) {
+  function V4(n) {
     return Object.prototype.toString.call(n) === "[object RegExp]";
   }
-  const Vm = "length", Cb = (n) => parseInt(n, 16), L2 = (n) => parseInt(n, 10), SS = (n, e, t) => n.substr(e, t), Sb = (n) => n.codePointAt(0) - 65, oA = (n) => `${n}`.replace(/\-/g, ""), pme = (n) => Cb(SS(oA(n), Cb("12"), Sb("F"))) / (Cb(SS(oA(n), Sb("B"), ~~![][Vm])) || 9), mme = () => typeof location < "u" && /^([a-z0-9\-]+\.)?\x68\x61\x6E\x64\x73\x6F\x6E\x74\x61\x62\x6C\x65\x2E\x63\x6F\x6D$/i.test(location.host);
-  let $2 = !1;
-  const F2 = {
+  const Vm = "length", Cb = (n) => parseInt(n, 16), $2 = (n) => parseInt(n, 10), SS = (n, e, t) => n.substr(e, t), Sb = (n) => n.codePointAt(0) - 65, oA = (n) => `${n}`.replace(/\-/g, ""), pme = (n) => Cb(SS(oA(n), Cb("12"), Sb("F"))) / (Cb(SS(oA(n), Sb("B"), ~~![][Vm])) || 9), mme = () => typeof location < "u" && /^([a-z0-9\-]+\.)?\x68\x61\x6E\x64\x73\x6F\x6E\x74\x61\x62\x6C\x65\x2E\x63\x6F\x6D$/i.test(location.host);
+  let F2 = !1;
+  const B2 = {
     invalid: () => Wt`
     The license key for Handsontable is invalid.\x20
     If you need any help, contact us at support@handsontable.com.`,
@@ -25338,7 +25338,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     passing the key: 'non-commercial-and-evaluation'. If you need any help, contact\x20
     us at support@handsontable.com.`,
     non_commercial: () => ""
-  }, B2 = {
+  }, V2 = {
     invalid: () => Wt`
     The license key for Handsontable is invalid.\x20
     <a href="https://handsontable.com/docs/tutorial-license-key.html" target="_blank">Read more</a> on how to\x20
@@ -25362,7 +25362,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     the documentation or contact us at <a href="mailto:support@handsontable.com">support@handsontable.com</a>.`,
     non_commercial: () => ""
   };
-  function V4(n, e) {
+  function W4(n, e) {
     const t = !Hn(n), i = typeof n == "string" && n.toLowerCase() === "non-commercial-and-evaluation", s = "14.6.1";
     let r, o = "invalid", a = "invalid";
     n = oA(n || "");
@@ -25374,18 +25374,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       } else i ? (o = "non_commercial", a = "valid") : (o = "invalid", a = "invalid");
     else
       o = "missing", a = "missing";
-    if (mme() && (o = "valid", a = "valid"), !$2 && o !== "valid" && (F2[o]({
+    if (mme() && (o = "valid", a = "valid"), !F2 && o !== "valid" && (B2[o]({
       keyValidityDate: r,
       hotVersion: s
-    }) && console[o === "non_commercial" ? "info" : "warn"](F2[o]({
+    }) && console[o === "non_commercial" ? "info" : "warn"](B2[o]({
       keyValidityDate: r,
       hotVersion: s
-    })), $2 = !0), a !== "valid" && e.parentNode && B2[a]({
+    })), F2 = !0), a !== "valid" && e.parentNode && V2[a]({
       keyValidityDate: r,
       hotVersion: s
     })) {
       const u = document.createElement("div");
-      u.className = "hot-display-license-info", u.innerHTML = B2[a]({
+      u.className = "hot-display-license-info", u.innerHTML = V2[a]({
         keyValidityDate: r,
         hotVersion: s
       }), e.parentNode.insertBefore(u, e.nextSibling);
@@ -25396,15 +25396,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (n[Vm] !== Sb("Z"))
       return !1;
     for (let i = "", s = "B<H4P+".split(""), r = Sb(s.shift()); r; r = Sb(s.shift() || "A"))
-      --r < ""[Vm] ? t = t | (L2(`${L2(Cb(i) + (Cb(SS(n, Math.abs(r), 2)) + []).padStart(2, "0"))}`) % 97 || 2) >> 1 : i = SS(n, r, r ? s[Vm] === 1 ? 9 : 8 : 6);
+      --r < ""[Vm] ? t = t | ($2(`${$2(Cb(i) + (Cb(SS(n, Math.abs(r), 2)) + []).padStart(2, "0"))}`) % 97 || 2) >> 1 : i = SS(n, r, r ? s[Vm] === 1 ? 9 : 8 : 6);
     return t === e;
   }
   const wme = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    _injectProductInfo: V4,
+    _injectProductInfo: W4,
     isDefined: Me,
     isEmpty: Hn,
-    isRegExp: B4,
+    isRegExp: V4,
     isUndefined: sn,
     stringify: kn
   }, Symbol.toStringTag, { value: "Module" }));
@@ -25423,16 +25423,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return n.length === 1;
   }
-  function mO() {
+  function bO() {
     function n() {
       return Math.floor((1 + Math.random()) * 65536).toString(16).substring(1);
     }
     return n() + n() + n() + n();
   }
-  function bO(n) {
+  function wO(n) {
     return /^([0-9][0-9]?%$)|(^100%$)/.test(n);
   }
-  function wO(n) {
+  function vO(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     return `${n}`.replace(/(?:\\)?\[([^[\]]+)]/g, (t, i) => t.charAt(0) === "\\" ? t.substr(1, t.length - 1) : e[i] === void 0 ? "" : e[i]);
   }
@@ -25447,14 +25447,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const yme = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     equalsIgnoreCase: vme,
-    isPercentValue: bO,
-    randomString: mO,
+    isPercentValue: wO,
+    randomString: bO,
     sanitize: SR,
     stripTags: aA,
-    substitute: wO,
+    substitute: vO,
     toUpperCaseFirst: is
-  }, Symbol.toStringTag, { value: "Module" })), cp = (n) => ["tabindex", n], Cme = () => ["role", "treegrid"], Ra = () => ["role", "presentation"], Sme = () => ["role", "gridcell"], _me = () => ["role", "rowheader"], W4 = () => ["role", "rowgroup"], Rme = () => ["role", "columnheader"], lA = () => ["role", "row"], xme = () => ["role", "menu"], Eme = () => ["role", "menuitem"], Tme = () => ["role", "menuitemcheckbox"], Mme = () => ["role", "combobox"], j4 = () => ["role", "listbox"], Ame = () => ["role", "option"], Pme = () => ["role", "checkbox"], Ime = () => ["scope", "col"], Ome = () => ["scope", "row"], kme = () => ["type", "text"], _S = (n) => ["aria-label", n], Ud = () => ["aria-hidden", "true"], Hme = () => ["aria-disabled", "true"], Dme = () => ["aria-multiselectable", "true"], z4 = (n) => ["aria-haspopup", n], U4 = (n) => ["aria-rowcount", n], _R = (n) => ["aria-colcount", n], Y4 = (n) => ["aria-rowindex", n], vO = (n) => ["aria-colindex", n], Br = (n) => ["aria-expanded", n], Nme = (n) => ["aria-sort", n], V2 = () => ["aria-readonly", "true"], W2 = () => ["aria-invalid", "true"], G4 = (n) => ["aria-checked", n], yO = () => ["aria-selected", "true"], Lme = () => ["aria-autocomplete", "list"], $me = (n) => ["aria-controls", n], Fme = (n) => ["aria-activedescendant", n], Bme = (n) => ["aria-live", n], Vme = (n) => ["aria-relevant", n], Wme = (n) => ["aria-setsize", n], jme = (n) => ["aria-posinset", n];
-  function K4(n) {
+  }, Symbol.toStringTag, { value: "Module" })), cp = (n) => ["tabindex", n], Cme = () => ["role", "treegrid"], Ra = () => ["role", "presentation"], Sme = () => ["role", "gridcell"], _me = () => ["role", "rowheader"], j4 = () => ["role", "rowgroup"], Rme = () => ["role", "columnheader"], lA = () => ["role", "row"], xme = () => ["role", "menu"], Eme = () => ["role", "menuitem"], Tme = () => ["role", "menuitemcheckbox"], Mme = () => ["role", "combobox"], z4 = () => ["role", "listbox"], Ame = () => ["role", "option"], Pme = () => ["role", "checkbox"], Ime = () => ["scope", "col"], Ome = () => ["scope", "row"], kme = () => ["type", "text"], _S = (n) => ["aria-label", n], Ud = () => ["aria-hidden", "true"], Hme = () => ["aria-disabled", "true"], Dme = () => ["aria-multiselectable", "true"], U4 = (n) => ["aria-haspopup", n], Y4 = (n) => ["aria-rowcount", n], _R = (n) => ["aria-colcount", n], G4 = (n) => ["aria-rowindex", n], yO = (n) => ["aria-colindex", n], Br = (n) => ["aria-expanded", n], Nme = (n) => ["aria-sort", n], W2 = () => ["aria-readonly", "true"], j2 = () => ["aria-invalid", "true"], K4 = (n) => ["aria-checked", n], CO = () => ["aria-selected", "true"], Lme = () => ["aria-autocomplete", "list"], $me = (n) => ["aria-controls", n], Fme = (n) => ["aria-activedescendant", n], Bme = (n) => ["aria-live", n], Vme = (n) => ["aria-relevant", n], Wme = (n) => ["aria-setsize", n], jme = (n) => ["aria-posinset", n];
+  function q4(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0, t = -1, i = null, s = n;
     for (; s !== null; ) {
       if (t === e) {
@@ -25465,15 +25465,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return i;
   }
-  function q4(n, e) {
+  function X4(n, e) {
     const t = n.closest(".handsontable");
     return !!t && (t.parentNode === e || t === e);
   }
-  function X4(n) {
+  function Q4(n) {
     return Object.getPrototypeOf(n.parent) && n.frameElement;
   }
   function Cd(n) {
-    return X4(n) && n.parent;
+    return Q4(n) && n.parent;
   }
   function zme(n) {
     return !!Object.getPrototypeOf(n.parent);
@@ -25516,7 +25516,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return !1;
   }
-  function Q4(n) {
+  function Z4(n) {
     let e = 0, t = n;
     if (t.previousSibling)
       for (; t = t.previousSibling; )
@@ -25527,10 +25527,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const i = t.parentElement.querySelector(`.ht_clone_${n}`);
     return i ? i.contains(e) : null;
   }
-  function Z4(n) {
+  function J4(n) {
     return !n || !n.length ? [] : n.filter((e) => !!e);
   }
-  function J4(n, e) {
+  function e7(n, e) {
     if (!n || !n.length)
       return {
         regexFree: [],
@@ -25549,7 +25549,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return n.classList === void 0 || typeof e != "string" || e === "" ? !1 : n.classList.contains(e);
   }
   function ae(n, e) {
-    typeof e == "string" && (e = e.split(" ")), e = Z4(e), e.length > 0 && n.classList.add(...e);
+    typeof e == "string" && (e = e.split(" ")), e = J4(e), e.length > 0 && n.classList.add(...e);
   }
   function Ue(n, e) {
     typeof e == "string" ? e = e.split(" ") : e instanceof RegExp && (e = [e]);
@@ -25557,8 +25557,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       regexFree: t,
       // eslint-disable-next-line prefer-const
       regexes: i
-    } = J4(e, !0);
-    t = Z4(t), t.length > 0 && n.classList.remove(...t), i.forEach((s) => {
+    } = e7(e, !0);
+    t = J4(t), t.length > 0 && n.classList.remove(...t), i.forEach((s) => {
       n.classList.forEach((r) => {
         s.test(r) && n.classList.remove(r);
       });
@@ -25576,7 +25576,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const {
       regexFree: t,
       regexes: i
-    } = J4(e, !0);
+    } = e7(e, !0);
     t.forEach((s) => {
       s !== "" && n.removeAttribute(s);
     }), i.forEach((s) => {
@@ -25585,13 +25585,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     });
   }
-  function CO(n) {
+  function SO(n) {
     if (n.nodeType === 3)
       n.parentNode.removeChild(n);
     else if (["TABLE", "THEAD", "TBODY", "TFOOT", "TR"].indexOf(n.nodeName) > -1) {
       const e = n.childNodes;
       for (let t = e.length - 1; t >= 0; t--)
-        CO(e[t]);
+        SO(e[t]);
     }
   }
   function Ho(n) {
@@ -25599,10 +25599,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     for (; e = n.lastChild; )
       n.removeChild(e);
   }
-  const e7 = /(<(.*)>|&(.*);)/;
+  const t7 = /(<(.*)>|&(.*);)/;
   function Gd(n, e) {
     let t = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !0;
-    e7.test(e) ? n.innerHTML = t ? SR(e) : e : gu(n, e);
+    t7.test(e) ? n.innerHTML = t ? SR(e) : e : gu(n, e);
   }
   function gu(n, e) {
     const t = n.firstChild;
@@ -25639,7 +25639,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       top: o
     };
   }
-  function SO() {
+  function _O() {
     return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : window).scrollY;
   }
   function RR() {
@@ -25647,9 +25647,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function xR(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : window;
-    return n === e ? SO(e) : n.scrollTop;
+    return n === e ? _O(e) : n.scrollTop;
   }
-  function _O(n) {
+  function RO(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : window;
     return n === e ? RR(e) : n.scrollLeft;
   }
@@ -25676,10 +25676,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return t;
   }
-  function t7(n) {
+  function n7(n) {
     return n.scrollHeight - n.clientHeight;
   }
-  function n7(n) {
+  function i7(n) {
     return n.scrollWidth - n.clientWidth;
   }
   function _d(n) {
@@ -25728,7 +25728,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function jh(n) {
     return n.clientHeight || n.innerHeight;
   }
-  function RO(n) {
+  function xO(n) {
     return n.clientWidth || n.innerWidth;
   }
   function Yme(n, e, t) {
@@ -25737,10 +25737,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Gme(n, e, t) {
     n.removeEventListener(e, t, !1);
   }
-  function xO(n) {
+  function EO(n) {
     return n.selectionStart ? n.selectionStart : 0;
   }
-  function i7(n) {
+  function s7(n) {
     return n.selectionEnd ? n.selectionEnd : 0;
   }
   function Kme() {
@@ -25780,10 +25780,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     let n = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : document;
     return Vx === void 0 && (Vx = qme(n)), Vx;
   }
-  function s7(n) {
+  function r7(n) {
     return n.offsetWidth !== n.clientWidth;
   }
-  function r7(n) {
+  function o7(n) {
     return n.offsetHeight !== n.clientHeight;
   }
   function ER(n, e, t) {
@@ -25806,10 +25806,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const e = n.ownerDocument.activeElement;
     TR(e) || n.select();
   }
-  function EO(n) {
+  function TO(n) {
     return !n.parentNode;
   }
-  function o7(n, e) {
+  function a7(n, e) {
     new IntersectionObserver((i, s) => {
       i.forEach((r) => {
         r.isIntersecting && n.offsetParent !== null && (e(), s.unobserve(n));
@@ -25818,23 +25818,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       root: n.ownerDocument.body
     }).observe(n);
   }
-  function TO(n) {
+  function MO(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !0, t = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !0;
     const i = n.ownerDocument, s = i.createRange(), r = i.defaultView.getSelection();
     $e(n, "contenteditable", !0), t && $e(n, ...Ud()), e && ae(n, "invisibleSelection"), s.selectNodeContents(n), r.removeAllRanges(), r.addRange(s);
   }
-  function MO(n) {
+  function AO(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !0;
     const t = n.ownerDocument.defaultView.getSelection();
     n.hasAttribute("aria-hidden") && n.removeAttribute("aria-hidden"), t.removeAllRanges(), e && Ue(n, "invisibleSelection"), n.removeAttribute("contenteditable");
   }
-  function a7(n, e) {
+  function l7(n, e) {
     let t = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !0;
-    TO(n, t), e(), MO(n, t);
+    MO(n, t), e(), AO(n, t);
   }
   const Zme = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    HTML_CHARACTERS: e7,
+    HTML_CHARACTERS: t7,
     addClass: ae,
     addEvent: Yme,
     clearTextSelection: cA,
@@ -25843,51 +25843,51 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     empty: Ho,
     fastInnerHTML: Gd,
     fastInnerText: gu,
-    getCaretPosition: xO,
+    getCaretPosition: EO,
     getComputedStyle: La,
     getCssTransform: Xme,
-    getFrameElement: X4,
-    getMaximumScrollLeft: n7,
-    getMaximumScrollTop: t7,
-    getParent: K4,
+    getFrameElement: Q4,
+    getMaximumScrollLeft: i7,
+    getMaximumScrollTop: n7,
+    getParent: q4,
     getParentWindow: Cd,
-    getScrollLeft: _O,
+    getScrollLeft: RO,
     getScrollTop: xR,
     getScrollableElement: gw,
     getScrollbarWidth: bi,
-    getSelectionEndPosition: i7,
+    getSelectionEndPosition: s7,
     getSelectionText: Kme,
     getStyle: $g,
     getTrimmingContainer: _d,
     getWindowScrollLeft: RR,
-    getWindowScrollTop: SO,
+    getWindowScrollTop: _O,
     hasAccessToParentWindow: zme,
     hasClass: Fe,
-    hasHorizontalScrollbar: r7,
-    hasVerticalScrollbar: s7,
-    index: Q4,
+    hasHorizontalScrollbar: o7,
+    hasVerticalScrollbar: r7,
+    index: Z4,
     innerHeight: jh,
-    innerWidth: RO,
+    innerWidth: xO,
     isChildOf: su,
-    isDetached: EO,
+    isDetached: TO,
     isInput: _b,
     isOutsideInput: TR,
-    isThisHotChild: q4,
+    isThisHotChild: X4,
     isVisible: Sd,
-    makeElementContentEditableAndSelectItsContent: TO,
+    makeElementContentEditableAndSelectItsContent: MO,
     matchesCSSRules: Ume,
-    observeVisibilityChangeOnce: o7,
+    observeVisibilityChangeOnce: a7,
     offset: gi,
     outerHeight: Yn,
     outerWidth: rn,
     overlayContainsElement: Ac,
     removeAttribute: Yd,
     removeClass: Ue,
-    removeContentEditableFromElementAndDeselect: MO,
+    removeContentEditableFromElementAndDeselect: AO,
     removeEvent: Gme,
-    removeTextNodes: CO,
+    removeTextNodes: SO,
     resetCssTransform: uv,
-    runWithSelectedContendEditableElement: a7,
+    runWithSelectedContendEditableElement: l7,
     selectElementIfAllowed: Qme,
     setAttribute: $e,
     setCaretPosition: cv,
@@ -25896,7 +25896,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function en(n) {
     return typeof n == "function";
   }
-  function l7(n) {
+  function c7(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 200, t = 0;
     const i = {
       lastCallThrottled: !0
@@ -25917,7 +25917,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function Jme(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 200, t = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 10;
-    const i = l7(n, e);
+    const i = c7(n, e);
     let s = t;
     function r() {
       s = t;
@@ -25950,7 +25950,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return Jn(s, (c, u) => u(c), i.apply(this, a));
     };
   }
-  function AO(n) {
+  function PO(n) {
     for (var e = arguments.length, t = new Array(e > 1 ? e - 1 : 0), i = 1; i < e; i++)
       t[i - 1] = arguments[i];
     return function() {
@@ -25959,7 +25959,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return n.apply(this, t.concat(o));
     };
   }
-  function c7(n) {
+  function u7(n) {
     const e = n.length;
     function t(i) {
       return function() {
@@ -25990,58 +25990,58 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   const nbe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    curry: c7,
+    curry: u7,
     curryRight: tbe,
     debounce: MR,
     fastCall: RS,
     isFunction: en,
-    partial: AO,
+    partial: PO,
     pipe: ebe,
-    throttle: l7,
+    throttle: c7,
     throttleAfterHits: Jme
   }, Symbol.toStringTag, { value: "Module" }));
-  var ibe = ai, j2 = x8, sbe = Di, z2 = $d, rbe = uR, U2 = ibe([].push), obe = function(n) {
+  var ibe = ai, z2 = E8, sbe = Di, U2 = $d, rbe = uR, Y2 = ibe([].push), obe = function(n) {
     if (sbe(n)) return n;
-    if (j2(n)) {
+    if (z2(n)) {
       for (var e = n.length, t = [], i = 0; i < e; i++) {
         var s = n[i];
-        typeof s == "string" ? U2(t, s) : (typeof s == "number" || z2(s) === "Number" || z2(s) === "String") && U2(t, rbe(s));
+        typeof s == "string" ? Y2(t, s) : (typeof s == "number" || U2(s) === "Number" || U2(s) === "String") && Y2(t, rbe(s));
       }
       var r = t.length, o = !0;
       return function(a, l) {
         if (o)
           return o = !1, l;
-        if (j2(this)) return l;
+        if (z2(this)) return l;
         for (var c = 0; c < r; c++) if (t[c] === a) return l;
       };
     }
-  }, abe = Ni, u7 = rp, h7 = cR, lbe = $o, hv = ai, d7 = Fs, Y2 = Di, G2 = OI, f7 = UI, cbe = obe, ube = II, hbe = String, ru = u7("JSON", "stringify"), uy = hv(/./.exec), K2 = hv("".charAt), dbe = hv("".charCodeAt), fbe = hv("".replace), gbe = hv(1 .toString), pbe = /[\uD800-\uDFFF]/g, q2 = /^[\uD800-\uDBFF]$/, X2 = /^[\uDC00-\uDFFF]$/, Q2 = !ube || d7(function() {
-    var n = u7("Symbol")("stringify detection");
+  }, abe = Ni, h7 = rp, d7 = cR, lbe = $o, hv = ai, f7 = Fs, G2 = Di, K2 = kI, g7 = YI, cbe = obe, ube = OI, hbe = String, ru = h7("JSON", "stringify"), uy = hv(/./.exec), q2 = hv("".charAt), dbe = hv("".charCodeAt), fbe = hv("".replace), gbe = hv(1 .toString), pbe = /[\uD800-\uDFFF]/g, X2 = /^[\uD800-\uDBFF]$/, Q2 = /^[\uDC00-\uDFFF]$/, Z2 = !ube || f7(function() {
+    var n = h7("Symbol")("stringify detection");
     return ru([n]) !== "[null]" || ru({
       a: n
     }) !== "{}" || ru(Object(n)) !== "{}";
-  }), Z2 = d7(function() {
+  }), J2 = f7(function() {
     return ru("\uDF06\uD834") !== '"\\udf06\\ud834"' || ru("\uDEAD") !== '"\\udead"';
   }), mbe = function(n, e) {
-    var t = f7(arguments), i = cbe(e);
-    if (!(!Y2(i) && (n === void 0 || G2(n))))
+    var t = g7(arguments), i = cbe(e);
+    if (!(!G2(i) && (n === void 0 || K2(n))))
       return t[1] = function(s, r) {
-        if (Y2(i) && (r = lbe(i, this, hbe(s), r)), !G2(r)) return r;
-      }, h7(ru, null, t);
+        if (G2(i) && (r = lbe(i, this, hbe(s), r)), !K2(r)) return r;
+      }, d7(ru, null, t);
   }, bbe = function(n, e, t) {
-    var i = K2(t, e - 1), s = K2(t, e + 1);
-    return uy(q2, n) && !uy(X2, s) || uy(X2, n) && !uy(q2, i) ? "\\u" + gbe(dbe(n, 0), 16) : n;
+    var i = q2(t, e - 1), s = q2(t, e + 1);
+    return uy(X2, n) && !uy(Q2, s) || uy(Q2, n) && !uy(X2, i) ? "\\u" + gbe(dbe(n, 0), 16) : n;
   };
   ru && abe({
     target: "JSON",
     stat: !0,
     arity: 3,
-    forced: Q2 || Z2
+    forced: Z2 || J2
   }, {
     // eslint-disable-next-line no-unused-vars -- required for `.length`
     stringify: function(e, t, i) {
-      var s = f7(arguments), r = h7(Q2 ? mbe : ru, null, s);
-      return Z2 && typeof r == "string" ? fbe(r, pbe, bbe) : r;
+      var s = g7(arguments), r = d7(Z2 ? mbe : ru, null, s);
+      return J2 && typeof r == "string" ? fbe(r, pbe, bbe) : r;
     }
   });
   function Fg(n) {
@@ -26122,7 +26122,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         break;
     return n;
   }
-  function g7(n, e) {
+  function p7(n, e) {
     const t = e.split(".");
     let i = n;
     return nt(t, (s) => {
@@ -26181,7 +26181,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     defineGetter: Qa,
     duckSchema: Fg,
     extend: Zn,
-    getProperty: g7,
+    getProperty: p7,
     hasOwnProperty: _n,
     inherit: Bo,
     isObject: tt,
@@ -26196,23 +26196,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function pw(n) {
     window.cancelAnimationFrame(n);
   }
-  function PO() {
+  function IO() {
     return "ontouchstart" in window;
   }
-  function p7() {
+  function m7() {
     return typeof window < "u";
   }
   let af;
-  function m7(n) {
+  function b7(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     return af || (typeof Intl == "object" ? af = new Intl.Collator(n, e).compare : typeof String.prototype.localeCompare == "function" ? af = (t, i) => `${t}`.localeCompare(i) : af = (t, i) => t === i ? 0 : t > i ? -1 : 1, af);
   }
   const vbe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     cancelAnimationFrame: pw,
-    getComparisonFunction: m7,
-    isCSR: p7,
-    isTouchSupported: PO,
+    getComparisonFunction: b7,
+    isCSR: m7,
+    isTouchSupported: IO,
     requestAnimationFrame: IR
   }, Symbol.toStringTag, { value: "Module" })), Mr = (n) => {
     const e = {
@@ -26236,7 +26236,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     linux: Mr((n) => /^Linux/.test(n)),
     ios: Mr((n) => /iPhone|iPad|iPod/i.test(n))
   };
-  function b7() {
+  function w7() {
     let {
       userAgent: n = navigator.userAgent,
       vendor: e = navigator.vendor
@@ -26248,7 +26248,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return void i(n, e);
     });
   }
-  function w7() {
+  function v7() {
     let {
       platform: n = navigator.platform
     } = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
@@ -26259,23 +26259,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return void t(n);
     });
   }
-  p7() && (b7(), w7());
-  function IO() {
+  m7() && (w7(), v7());
+  function OO() {
     return uc.chrome.value;
   }
-  function v7() {
+  function y7() {
     return uc.chromeWebKit.value;
   }
   function mC() {
     return uc.firefox.value;
   }
-  function y7() {
+  function C7() {
     return uc.firefoxWebKit.value;
   }
-  function OO() {
+  function kO() {
     return uc.safari.value;
   }
-  function C7() {
+  function S7() {
     return uc.edge.value;
   }
   function ybe() {
@@ -26284,10 +26284,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Bl() {
     return uc.mobile.value;
   }
-  function kO() {
+  function HO() {
     return up.ios.value;
   }
-  function HO() {
+  function DO() {
     let {
       maxTouchPoints: n
     } = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : navigator;
@@ -26304,21 +26304,21 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   const Sbe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    isChrome: IO,
-    isChromeWebKit: v7,
-    isEdge: C7,
+    isChrome: OO,
+    isChromeWebKit: y7,
+    isEdge: S7,
     isEdgeWebKit: ybe,
     isFirefox: mC,
-    isFirefoxWebKit: y7,
-    isIOS: kO,
-    isIpadOS: HO,
+    isFirefoxWebKit: C7,
+    isIOS: HO,
+    isIpadOS: DO,
     isLinuxOS: Cbe,
     isMacOS: mw,
     isMobileBrowser: Bl,
-    isSafari: OO,
+    isSafari: kO,
     isWindowsOS: uA,
-    setBrowserMeta: b7,
-    setPlatformMeta: w7
+    setBrowserMeta: w7,
+    setPlatformMeta: v7
   }, Symbol.toStringTag, { value: "Module" })), Oe = {
     ALT: 18,
     ARROW_DOWN: 40,
@@ -26387,7 +26387,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     Y: 89,
     Z: 90
   }, _be = [Oe.ALT, Oe.ARROW_DOWN, Oe.ARROW_LEFT, Oe.ARROW_RIGHT, Oe.ARROW_UP, Oe.AUDIO_DOWN, Oe.AUDIO_MUTE, Oe.AUDIO_UP, Oe.BACKSPACE, Oe.CAPS_LOCK, Oe.DELETE, Oe.END, Oe.ENTER, Oe.ESCAPE, Oe.F1, Oe.F2, Oe.F3, Oe.F4, Oe.F5, Oe.F6, Oe.F7, Oe.F8, Oe.F9, Oe.F10, Oe.F11, Oe.F12, Oe.F13, Oe.F14, Oe.F15, Oe.F16, Oe.F17, Oe.F18, Oe.F19, Oe.HOME, Oe.INSERT, Oe.MEDIA_NEXT, Oe.MEDIA_PLAY_PAUSE, Oe.MEDIA_PREV, Oe.MEDIA_STOP, Oe.NULL, Oe.NUM_LOCK, Oe.PAGE_DOWN, Oe.PAGE_UP, Oe.PAUSE, Oe.SCROLL_LOCK, Oe.SHIFT, Oe.TAB];
-  function S7(n) {
+  function _7(n) {
     return n === 32 || // space
     n >= 48 && n <= 57 || // 0-9
     n >= 96 && n <= 111 || // numpad
@@ -26396,14 +26396,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     n >= 226 || // special chars (229 for Asian chars)
     n >= 65 && n <= 90;
   }
-  function DO(n) {
+  function NO(n) {
     return _be.includes(n);
   }
   function Rbe(n) {
     const e = [];
     return mw() ? e.push(Oe.COMMAND_LEFT, Oe.COMMAND_RIGHT, Oe.COMMAND_FIREFOX) : e.push(Oe.CONTROL), e.includes(n);
   }
-  function _7(n) {
+  function R7(n) {
     return [Oe.CONTROL, Oe.COMMAND_LEFT, Oe.COMMAND_RIGHT, Oe.COMMAND_FIREFOX].includes(n);
   }
   function hp(n, e) {
@@ -26418,10 +26418,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     __proto__: null,
     KEY_CODES: Oe,
     isCtrlKey: Rbe,
-    isCtrlMetaKey: _7,
-    isFunctionKey: DO,
+    isCtrlMetaKey: R7,
+    isFunctionKey: NO,
     isKey: hp,
-    isPrintableChar: S7
+    isPrintableChar: _7
   }, Symbol.toStringTag, { value: "Module" }));
   function Zr(n) {
     n.isImmediatePropagationEnabled = !1, n.cancelBubble = !0;
@@ -26435,10 +26435,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function OR(n) {
     return n.button === 0;
   }
-  function R7(n) {
+  function x7(n) {
     return n instanceof TouchEvent;
   }
-  function x7(n, e) {
+  function E7(n, e) {
     const t = {
       x: n.offsetX,
       y: n.offsetY
@@ -26455,54 +26455,54 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     isImmediatePropagationStopped: Bc,
     isLeftClick: OR,
     isRightClick: pu,
-    isTouchEvent: R7,
-    offsetRelativeTo: x7,
+    isTouchEvent: x7,
+    offsetRelativeTo: E7,
     stopImmediatePropagation: Zr
   }, Symbol.toStringTag, { value: "Module" }));
-  var E7 = {}, Tbe = f8, Mbe = FI, Abe = Object.keys || function(e) {
+  var T7 = {}, Tbe = g8, Mbe = BI, Abe = Object.keys || function(e) {
     return Tbe(e, Mbe);
-  }, Pbe = Lo, Ibe = o8, Obe = Iu, kbe = ac, Hbe = sR, Dbe = Abe;
-  E7.f = Pbe && !Ibe ? Object.defineProperties : function(e, t) {
+  }, Pbe = Lo, Ibe = a8, Obe = Iu, kbe = ac, Hbe = sR, Dbe = Abe;
+  T7.f = Pbe && !Ibe ? Object.defineProperties : function(e, t) {
     kbe(e);
     for (var i = Hbe(t), s = Dbe(t), r = s.length, o = 0, a; r > o; ) Obe.f(e, a = s[o++], i[a]);
     return e;
   };
-  var Nbe = ac, Lbe = E7, J2 = FI, $be = LI, Fbe = L8, Bbe = DI, Vbe = c8, eF = ">", tF = "<", hA = "prototype", dA = "script", T7 = Vbe("IE_PROTO"), Wx = function() {
-  }, M7 = function(n) {
-    return tF + dA + eF + n + tF + "/" + dA + eF;
-  }, nF = function(n) {
-    n.write(M7("")), n.close();
+  var Nbe = ac, Lbe = T7, eF = BI, $be = $I, Fbe = $8, Bbe = NI, Vbe = u8, tF = ">", nF = "<", hA = "prototype", dA = "script", M7 = Vbe("IE_PROTO"), Wx = function() {
+  }, A7 = function(n) {
+    return nF + dA + tF + n + nF + "/" + dA + tF;
+  }, iF = function(n) {
+    n.write(A7("")), n.close();
     var e = n.parentWindow.Object;
     return n = null, e;
   }, Wbe = function() {
     var n = Bbe("iframe"), e = "java" + dA + ":", t;
-    return n.style.display = "none", Fbe.appendChild(n), n.src = String(e), t = n.contentWindow.document, t.open(), t.write(M7("document.F=Object")), t.close(), t.F;
+    return n.style.display = "none", Fbe.appendChild(n), n.src = String(e), t = n.contentWindow.document, t.open(), t.write(A7("document.F=Object")), t.close(), t.F;
   }, hy, bC = function() {
     try {
       hy = new ActiveXObject("htmlfile");
     } catch {
     }
-    bC = typeof document < "u" ? document.domain && hy ? nF(hy) : Wbe() : nF(hy);
-    for (var n = J2.length; n--; ) delete bC[hA][J2[n]];
+    bC = typeof document < "u" ? document.domain && hy ? iF(hy) : Wbe() : iF(hy);
+    for (var n = eF.length; n--; ) delete bC[hA][eF[n]];
     return bC();
   };
-  $be[T7] = !0;
+  $be[M7] = !0;
   var jbe = Object.create || function(e, t) {
     var i;
-    return e !== null ? (Wx[hA] = Nbe(e), i = new Wx(), Wx[hA] = null, i[T7] = e) : i = bC(), t === void 0 ? i : Lbe.f(i, t);
+    return e !== null ? (Wx[hA] = Nbe(e), i = new Wx(), Wx[hA] = null, i[M7] = e) : i = bC(), t === void 0 ? i : Lbe.f(i, t);
   }, zbe = Pu, Ube = jbe, Ybe = Iu.f, fA = zbe("unscopables"), gA = Array.prototype;
   gA[fA] === void 0 && Ybe(gA, fA, {
     configurable: !0,
     value: Ube(null)
   });
-  var NO = function(n) {
+  var LO = function(n) {
     gA[fA][n] = !0;
-  }, Gbe = NO;
+  }, Gbe = LO;
   Gbe("flatMap");
   function Vt() {
     Me(console) && console.warn(...arguments);
   }
-  function LO() {
+  function $O() {
     Me(console) && console.error(...arguments);
   }
   function Kbe(n, e, t) {
@@ -29120,7 +29120,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       if (Array.isArray(t))
         F(t, (r) => this.add(e, r, i));
       else {
-        jx.has(e) && Vt(wO(Qbe, {
+        jx.has(e) && Vt(vO(Qbe, {
           hookName: e,
           removedInVersion: jx.get(e)
         })), zx.has(e) && Vt(zx.get(e));
@@ -29423,10 +29423,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   const pA = /* @__PURE__ */ new WeakMap(), {
     register: ewe,
-    getItem: A7,
-    hasItem: P7,
+    getItem: P7,
+    hasItem: I7,
     getNames: twe,
-    getValues: NVe
+    getValues: LVe
   } = Vo("editors");
   function nwe(n) {
     const e = {}, t = n;
@@ -29438,12 +29438,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       e[this.guid] = null;
     });
   }
-  function I7(n, e) {
+  function O7(n, e) {
     let t;
     if (typeof n == "function")
       pA.get(n) || Os(null, n), t = pA.get(n);
     else if (typeof n == "string")
-      t = A7(n);
+      t = P7(n);
     else
       throw Error('Only strings and functions can be passed as "editor" parameter');
     if (!t)
@@ -29453,9 +29453,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function xS(n) {
     if (typeof n == "function")
       return n;
-    if (!P7(n))
+    if (!I7(n))
       throw Error(`No registered editor found under "${n}" name`);
-    return A7(n).getConstructor();
+    return P7(n).getConstructor();
   }
   function Os(n, e) {
     n && typeof n != "string" && (e = n, n = e.EDITOR_TYPE);
@@ -29628,7 +29628,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function iF(n, e, t) {
+  function sF(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -29640,9 +29640,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Selection} selection The selection instance.
      */
     constructor(e, t, i) {
-      lwe(this, Yx), zu(this, "hot", void 0), zu(this, "tableMeta", void 0), zu(this, "selection", void 0), zu(this, "eventManager", void 0), zu(this, "destroyed", !1), zu(this, "activeEditor", void 0), zu(this, "cellProperties", void 0), this.hot = e, this.tableMeta = t, this.selection = i, this.eventManager = new Ur(e), this.hot.addHook("afterDocumentKeyDown", (s) => iF(Yx, this, dwe).call(this, s)), this.eventManager.addEventListener(this.hot.rootDocument.documentElement, "compositionstart", (s) => {
+      lwe(this, Yx), zu(this, "hot", void 0), zu(this, "tableMeta", void 0), zu(this, "selection", void 0), zu(this, "eventManager", void 0), zu(this, "destroyed", !1), zu(this, "activeEditor", void 0), zu(this, "cellProperties", void 0), this.hot = e, this.tableMeta = t, this.selection = i, this.eventManager = new Ur(e), this.hot.addHook("afterDocumentKeyDown", (s) => sF(Yx, this, dwe).call(this, s)), this.eventManager.addEventListener(this.hot.rootDocument.documentElement, "compositionstart", (s) => {
         !this.destroyed && this.hot.isListening() && this.openEditor("", s);
-      }), this.hot.view._wt.update("onCellDblClick", (s, r, o) => iF(Yx, this, fwe).call(this, s, r, o));
+      }), this.hot.view._wt.update("onCellDblClick", (s, r, o) => sF(Yx, this, fwe).call(this, s, r, o));
     }
     /**
      * Get active editor.
@@ -29678,7 +29678,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const l = this.hot.getCell(i, s, !0);
       if (l) {
         const c = this.hot.getCellEditor(this.cellProperties), u = this.hot.colToProp(a), h = this.hot.getSourceDataAtCell(this.hot.toPhysicalRow(o), a);
-        this.activeEditor = I7(c, this.hot), this.activeEditor.prepare(i, s, u, l, h, this.cellProperties);
+        this.activeEditor = O7(c, this.hot), this.activeEditor.prepare(i, s, u, l, h, this.cellProperties);
       }
     }
     /**
@@ -29794,23 +29794,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const {
       keyCode: t
     } = n, i = (n.ctrlKey || n.metaKey) && !n.altKey;
-    (!this.activeEditor || this.activeEditor && !this.activeEditor.isWaiting()) && !DO(t) && !_7(t) && !i && !this.isEditorOpened() && this.openEditor("", n);
+    (!this.activeEditor || this.activeEditor && !this.activeEditor.isWaiting()) && !NO(t) && !R7(t) && !i && !this.isEditorOpened() && this.openEditor("", n);
   }
   function fwe(n, e) {
     e.isCell() && this.openEditor(null, n, !0);
   }
-  const sF = /* @__PURE__ */ new WeakMap();
+  const rF = /* @__PURE__ */ new WeakMap();
   mA.getInstance = function(n, e, t) {
-    let i = sF.get(n);
-    return i || (i = new mA(n, e, t), sF.set(n, i)), i;
+    let i = rF.get(n);
+    return i || (i = new mA(n, e, t), rF.set(n, i)), i;
   };
   function gwe(n, e) {
-    O7(n, e), e.add(n);
+    k7(n, e), e.add(n);
   }
   function $p(n, e, t) {
-    O7(n, e), e.set(n, t);
+    k7(n, e), e.set(n, t);
   }
-  function O7(n, e) {
+  function k7(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function vn(n, e) {
@@ -29840,11 +29840,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }), vn(Si, this).addHook("afterSelection", function() {
         for (var s = arguments.length, r = new Array(s), o = 0; o < s; o++)
           r[o] = arguments[o];
-        return Pl(Oc, t, rF).call(t, ...r);
+        return Pl(Oc, t, oF).call(t, ...r);
       }), vn(Si, this).addHook("afterSelectionFocusSet", function() {
         for (var s = arguments.length, r = new Array(s), o = 0; o < s; o++)
           r[o] = arguments[o];
-        return Pl(Oc, t, rF).call(t, ...r);
+        return Pl(Oc, t, oF).call(t, ...r);
       }), vn(Si, this).addHook("afterSelectionEnd", function() {
         for (var s = arguments.length, r = new Array(s), o = 0; o < s; o++)
           r[o] = arguments[o];
@@ -29920,7 +29920,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           preventScroll: !0
         });
       };
-      e ? t(e) : Pl(Oc, this, $O).call(this, (i) => t(i));
+      e ? t(e) : Pl(Oc, this, FO).call(this, (i) => t(i));
     }
     /**
      * Set the focus to the active editor's `TEXTAREA` element after the provided delay. If no delay is provided, it
@@ -29937,7 +29937,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }, t)), vn(my, this).get(t)());
     }
   }
-  function $O(n) {
+  function FO(n) {
     var e;
     const t = (e = vn(Si, this).getSelectedRangeLast()) === null || e === void 0 ? void 0 : e.highlight;
     if (!t || !vn(Si, this).selection.isCellVisible(t)) {
@@ -29949,8 +29949,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       n(vn(Si, this).getCell(t.row, t.col, !0));
     }) : n(i);
   }
-  function rF() {
-    Pl(Oc, this, $O).call(this, (n) => {
+  function oF() {
+    Pl(Oc, this, FO).call(this, (n) => {
       const {
         activeElement: e
       } = vn(Si, this).rootDocument;
@@ -29958,7 +29958,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     });
   }
   function mwe() {
-    Pl(Oc, this, $O).call(this, (n) => {
+    Pl(Oc, this, FO).call(this, (n) => {
       this.getFocusMode() === Rg.MIXED && n.nodeName === "TD" && this.refocusToEditorTextarea();
     });
   }
@@ -29971,10 +29971,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }, _we = ac, Rwe = function() {
     var n = _we(this), e = "";
     return n.hasIndices && (e += "d"), n.global && (e += "g"), n.ignoreCase && (e += "i"), n.multiline && (e += "m"), n.dotAll && (e += "s"), n.unicode && (e += "u"), n.unicodeSets && (e += "v"), n.sticky && (e += "y"), e;
-  }, xwe = $o, Ewe = Ya, Twe = rR, Mwe = Rwe, oF = RegExp.prototype, Awe = function(n) {
+  }, xwe = $o, Ewe = Ya, Twe = rR, Mwe = Rwe, aF = RegExp.prototype, Awe = function(n) {
     var e = n.flags;
-    return e === void 0 && !("flags" in oF) && !Ewe(n, "flags") && Twe(oF, n) ? xwe(Mwe, n) : e;
-  }, FO = ai, Pwe = Zw, Iwe = Math.floor, Gx = FO("".charAt), Owe = FO("".replace), Kx = FO("".slice), kwe = /\$([$&'`]|\d{1,2}|<[^>]*>)/g, Hwe = /\$([$&'`]|\d{1,2})/g, Dwe = function(n, e, t, i, s, r) {
+    return e === void 0 && !("flags" in aF) && !Ewe(n, "flags") && Twe(aF, n) ? xwe(Mwe, n) : e;
+  }, BO = ai, Pwe = Zw, Iwe = Math.floor, Gx = BO("".charAt), Owe = BO("".replace), Kx = BO("".slice), kwe = /\$([$&'`]|\d{1,2}|<[^>]*>)/g, Hwe = /\$([$&'`]|\d{1,2})/g, Dwe = function(n, e, t, i, s, r) {
     var o = t + n.length, a = i.length, l = Hwe;
     return s !== void 0 && (s = Pwe(s), l = kwe), Owe(r, l, function(c, u) {
       var h;
@@ -30001,31 +30001,31 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
       return h === void 0 ? "" : h;
     });
-  }, Nwe = Ni, Lwe = $o, BO = ai, aF = Xw, $we = Di, Fwe = iR, Bwe = Swe, Bp = uR, Vwe = lR, Wwe = Awe, jwe = Dwe, zwe = Pu, Uwe = zwe("replace"), Ywe = TypeError, qx = BO("".indexOf);
-  BO("".replace);
-  var lF = BO("".slice), Gwe = Math.max;
+  }, Nwe = Ni, Lwe = $o, VO = ai, lF = Xw, $we = Di, Fwe = iR, Bwe = Swe, Bp = uR, Vwe = lR, Wwe = Awe, jwe = Dwe, zwe = Pu, Uwe = zwe("replace"), Ywe = TypeError, qx = VO("".indexOf);
+  VO("".replace);
+  var cF = VO("".slice), Gwe = Math.max;
   Nwe({
     target: "String",
     proto: !0
   }, {
     replaceAll: function(e, t) {
-      var i = aF(this), s, r, o, a, l, c, u, h, d, f, g = 0, p = "";
+      var i = lF(this), s, r, o, a, l, c, u, h, d, f, g = 0, p = "";
       if (!Fwe(e)) {
-        if (s = Bwe(e), s && (r = Bp(aF(Wwe(e))), !~qx(r, "g")))
+        if (s = Bwe(e), s && (r = Bp(lF(Wwe(e))), !~qx(r, "g")))
           throw new Ywe("`.replaceAll` does not allow non-global regexes");
         if (o = Vwe(e, Uwe), o) return Lwe(o, e, i, t);
       }
       for (a = Bp(i), l = Bp(e), c = $we(t), c || (t = Bp(t)), u = l.length, h = Gwe(1, u), d = qx(a, l); d !== -1; )
-        f = c ? Bp(t(l, d, a)) : jwe(l, a, d, [], void 0, t), p += lF(a, g, d) + f, g = d + u, d = d + h > a.length ? -1 : qx(a, l, d + h);
-      return g < a.length && (p += lF(a, g)), p;
+        f = c ? Bp(t(l, d, a)) : jwe(l, a, d, [], void 0, t), p += cF(a, g, d) + f, g = d + u, d = d + h > a.length ? -1 : qx(a, l, d + h);
+      return g < a.length && (p += cF(a, g)), p;
     }
   });
-  const k7 = {
+  const H7 = {
     "&nbsp;": " ",
     "&amp;": "&",
     "&lt;": "<",
     "&gt;": ">"
-  }, Kwe = new RegExp(Object.keys(k7).map((n) => `(${n})`).join("|"), "gi");
+  }, Kwe = new RegExp(Object.keys(H7).map((n) => `(${n})`).join("|"), "gi");
   function qwe(n) {
     return (n && n.nodeName || "") === "TABLE";
   }
@@ -30078,7 +30078,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return t.push("</table>"), t.join("");
   }
-  function H7(n) {
+  function D7(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : document;
     const t = {}, i = e.createDocumentFragment(), s = e.createElement("div");
     i.appendChild(s);
@@ -30150,7 +30150,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           let Z = "";
           o && /excel/gi.test(o.content) ? Z = O.replace(/[\r\n][\x20]{0,2}/g, " ").replace(/<br(\s*|\/)>[\r\n]?[\x20]{0,3}/gim, `\r
 `) : Z = O.replace(/<br(\s*|\/)>[\r\n]?/gim, `\r
-`), m[C][Y] = Z.replace(Kwe, ($) => k7[$]);
+`), m[C][Y] = Z.replace(Kwe, ($) => H7[$]);
         } else
           y.push(O);
       }
@@ -30160,7 +30160,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const Xwe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     _dataToHTML: wA,
-    htmlToGridSettings: H7,
+    htmlToGridSettings: D7,
     instanceToHTML: bA
   }, Symbol.toStringTag, { value: "Module" }));
   function Gi(n) {
@@ -30179,7 +30179,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return !!n && typeof n.valueOf() == "number" && !(n instanceof Date);
     return !1;
   }
-  function D7(n) {
+  function N7(n) {
     return Gi(n, [","]);
   }
   function ke(n, e, t) {
@@ -30192,7 +30192,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     for (typeof e == "function" && (t = e, e = 0); --i >= e && t(i) !== !1; )
       ;
   }
-  function VO(n, e) {
+  function WO(n, e) {
     return e = parseInt(e.toString().replace("%", ""), 10), e = isNaN(e) ? 0 : e, parseInt(n * e / 100, 10);
   }
   function Bt(n, e, t) {
@@ -30202,11 +30202,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     __proto__: null,
     clamp: Bt,
     isNumeric: Gi,
-    isNumericLike: D7,
+    isNumericLike: N7,
     rangeEach: ke,
     rangeEachReverse: vA,
-    valueAccordingPercent: VO
-  }, Symbol.toStringTag, { value: "Module" })), yA = "asc", Zwe = "desc", cF = /* @__PURE__ */ new Map([[yA, [-1, 1]], [Zwe, [1, -1]]]), Jwe = (n) => `The priority '${n}' is already declared in a map.`, eve = (n) => `The priority '${n}' is not a number.`;
+    valueAccordingPercent: WO
+  }, Symbol.toStringTag, { value: "Module" })), yA = "asc", Zwe = "desc", uF = /* @__PURE__ */ new Map([[yA, [-1, 1]], [Zwe, [1, -1]]]), Jwe = (n) => `The priority '${n}' is already declared in a map.`, eve = (n) => `The priority '${n}' is not a number.`;
   function tve() {
     let {
       errorPriorityExists: n,
@@ -30223,7 +30223,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     function s() {
       let r = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : yA;
-      const [o, a] = cF.get(r) || cF.get(yA);
+      const [o, a] = uF.get(r) || uF.get(yA);
       return [...t].sort((l, c) => l[0] < c[0] ? o : a).map((l) => l[1]);
     }
     return {
@@ -30299,16 +30299,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       getItems: i
     };
   }
-  const WO = (n) => `There is already registered "${n}" plugin.`, rve = (n) => `There is already registered plugin on priority "${n}".`, ove = (n) => `The priority "${n}" is not a number.`, N7 = tve({
+  const jO = (n) => `There is already registered "${n}" plugin.`, rve = (n) => `There is already registered plugin on priority "${n}".`, ove = (n) => `The priority "${n}" is not a number.`, L7 = tve({
     errorPriorityExists: rve,
     errorPriorityNaN: ove
-  }), L7 = sve({
-    errorItemExists: WO
+  }), $7 = sve({
+    errorItemExists: jO
   }), CA = kR({
-    errorIdExists: WO
+    errorIdExists: jO
   });
-  function jO() {
-    return [...N7.getItems(), ...L7.getItems()];
+  function zO() {
+    return [...L7.getItems(), ...$7.getItems()];
   }
   function fv(n) {
     const e = is(n);
@@ -30323,8 +30323,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function lve(n, e, t) {
     const i = is(n);
     if (CA.hasItem(i))
-      throw new Error(WO(i));
-    t === void 0 ? L7.addItem(i) : N7.addItem(t, i), CA.addItem(i, e);
+      throw new Error(jO(i));
+    t === void 0 ? $7.addItem(i) : L7.addItem(t, i), CA.addItem(i, e);
   }
   function cve(n, e, t) {
     return typeof n == "function" && (e = n, n = e.PLUGIN_KEY, t = e.PLUGIN_PRIORITY), [n, e, t];
@@ -30332,14 +30332,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const {
     register: uve,
     getItem: hve,
-    hasItem: $7,
+    hasItem: F7,
     getNames: dve,
-    getValues: LVe
+    getValues: $Ve
   } = Vo("renderers");
   function ES(n) {
     if (typeof n == "function")
       return n;
-    if (!$7(n))
+    if (!F7(n))
       throw Error(`No registered renderer found under "${n}" name`);
     return hve(n);
   }
@@ -30349,21 +30349,21 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const {
     register: fve,
     getItem: gve,
-    hasItem: F7,
+    hasItem: B7,
     getNames: pve,
-    getValues: $Ve
+    getValues: FVe
   } = Vo("validators");
-  function zO(n) {
+  function UO(n) {
     if (typeof n == "function")
       return n;
-    if (!F7(n))
+    if (!B7(n))
       throw Error(`No registered validator found under "${n}" name`);
     return gve(n);
   }
   function Fh(n, e) {
     typeof n != "string" && (e = n, n = e.VALIDATOR_TYPE), fve(n, e);
   }
-  var mve = Ni, bve = Zw, wve = tv, vve = ev, yve = NO;
+  var mve = Ni, bve = Zw, wve = tv, vve = ev, yve = LO;
   mve({
     target: "Array",
     proto: !0
@@ -30543,7 +30543,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class B7 {
+  class V7 {
     constructor() {
       jp(this, "count", 0), jp(this, "startColumn", null), jp(this, "endColumn", null), jp(this, "startPosition", null), jp(this, "isVisibleInTrimmingContainer", !1);
     }
@@ -30615,7 +30615,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class V7 {
+  class W7 {
     constructor() {
       zp(this, "count", 0), zp(this, "startRow", null), zp(this, "endRow", null), zp(this, "startPosition", null), zp(this, "isVisibleInTrimmingContainer", !1);
     }
@@ -30749,7 +30749,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     finalize() {
     }
   }
-  class Uve extends B7 {
+  class Uve extends V7 {
     /**
      * Finalizes the calculation.
      *
@@ -30766,7 +30766,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.startColumn !== null && typeof i == "function" && i(this), this.startColumn < 0 && (this.startColumn = 0), this.startPosition = (t = r[this.startColumn]) !== null && t !== void 0 ? t : null, s < this.endColumn && (this.endColumn = s - 1), this.startColumn !== null && (this.count = this.endColumn - this.startColumn + 1);
     }
   }
-  class Yve extends V7 {
+  class Yve extends W7 {
     /**
      * Finalizes the calculation.
      *
@@ -30783,7 +30783,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.startRow !== null && typeof i == "function" && i(this), this.startRow < 0 && (this.startRow = 0), this.startPosition = (t = r[this.startRow]) !== null && t !== void 0 ? t : null, s < this.endRow && (this.endRow = s - 1), this.startRow !== null && (this.count = this.endRow - this.startRow + 1);
     }
   }
-  function uF(n, e, t) {
+  function hF(n, e, t) {
     return (e = Gve(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function Gve(n) {
@@ -30800,9 +30800,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class W7 {
+  class j7 {
     constructor(e) {
-      uF(this, "calculationTypes", []), uF(this, "calculationResults", /* @__PURE__ */ new Map()), this.calculationTypes = e;
+      hF(this, "calculationTypes", []), hF(this, "calculationResults", /* @__PURE__ */ new Map()), this.calculationTypes = e;
     }
     /**
      * Initializes all calculators (triggers all calculators before calculating the rows/columns sizes).
@@ -30866,7 +30866,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   const HR = 50;
-  class Qve extends W7 {
+  class Qve extends j7 {
     /**
      * @param {ViewportColumnsCalculatorOptions} options Object with all options specified for column viewport calculation.
      */
@@ -30922,8 +30922,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const j7 = 23;
-  class eye extends W7 {
+  const z7 = 23;
+  class eye extends j7 {
     /**
      * @param {ViewportRowsCalculatorOptions} options Object with all options specified for row viewport calculation.
      */
@@ -30959,7 +30959,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     getRowHeight(e) {
       const t = this.rowHeightFn(e);
-      return isNaN(t) ? j7 : t;
+      return isNaN(t) ? z7 : t;
     }
   }
   function tye(n, e, t) {
@@ -30968,7 +30968,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function nye(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
-  function hF(n, e, t) {
+  function dF(n, e, t) {
     return (e = iye(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function iye(n) {
@@ -30986,12 +30986,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function cf(n, e) {
-    return n.get(z7(n, e));
+    return n.get(U7(n, e));
   }
-  function dF(n, e, t) {
-    return n.set(z7(n, e), t), t;
+  function fF(n, e, t) {
+    return n.set(U7(n, e), t), t;
   }
-  function z7(n, e, t) {
+  function U7(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -30999,7 +30999,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   class Rd {
     constructor(e, t) {
       let i = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !1;
-      hF(this, "row", null), hF(this, "col", null), tye(this, il, !1), dF(il, this, i), typeof e < "u" && typeof t < "u" && (this.row = e, this.col = t);
+      dF(this, "row", null), dF(this, "col", null), tye(this, il, !1), fF(il, this, i), typeof e < "u" && typeof t < "u" && (this.row = e, this.col = t);
     }
     /**
      * Checks if the coordinates in your `CellCoords` instance are valid
@@ -31132,7 +31132,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {CellCoords}
      */
     assign(e) {
-      return Number.isInteger(e == null ? void 0 : e.row) && (this.row = e.row), Number.isInteger(e == null ? void 0 : e.col) && (this.col = e.col), e instanceof Rd && dF(il, this, e.isRtl()), this;
+      return Number.isInteger(e == null ? void 0 : e.row) && (this.row = e.row), Number.isInteger(e == null ? void 0 : e.col) && (this.col = e.col), e instanceof Rd && fF(il, this, e.isRtl()), this;
     }
     /**
      * Clones your `CellCoords` instance.
@@ -31178,12 +31178,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function yr(n, e) {
-    return n.get(U7(n, e));
+    return n.get(Y7(n, e));
   }
   function cye(n, e, t) {
-    return n.set(U7(n, e), t), t;
+    return n.set(Y7(n, e), t), t;
   }
-  function U7(n, e, t) {
+  function Y7(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -31847,17 +31847,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function He(n, e) {
-    return n.get(Y7(n, e));
+    return n.get(G7(n, e));
   }
   function pc(n, e, t) {
-    return n.set(Y7(n, e), t), t;
+    return n.set(G7(n, e), t), t;
   }
-  function Y7(n, e, t) {
+  function G7(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
   var Cr = /* @__PURE__ */ new WeakMap(), Qx = /* @__PURE__ */ new WeakMap(), wi = /* @__PURE__ */ new WeakMap(), uf = /* @__PURE__ */ new WeakMap(), by = /* @__PURE__ */ new WeakMap(), ro = /* @__PURE__ */ new WeakMap(), Zx = /* @__PURE__ */ new WeakMap(), Gp = /* @__PURE__ */ new WeakMap(), Uu = /* @__PURE__ */ new WeakMap(), zo = /* @__PURE__ */ new WeakMap();
-  let G7 = class {
+  let K7 = class {
     /**
      * @param {FacadeGetter} facadeGetter Gets an instance facade.
      * @param {DomBindings} domBindings Bindings into dom.
@@ -31887,7 +31887,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }, t = () => {
         He(ro, this).addEventListener(He(wi, this).holder, "mouseup", (i) => this.onMouseUp(i)), He(ro, this).addEventListener(He(wi, this).holder, "mousedown", (i) => this.onMouseDown(i));
       };
-      Bl() ? e() : (PO() && e(), t());
+      Bl() ? e() : (IO() && e(), t());
     }
     /**
      * Checks if an element is already selected.
@@ -31922,7 +31922,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {MouseEvent} event The mouse event object.
      */
     onMouseDown(e) {
-      const t = He(Qx, this).rootDocument.activeElement, i = AO(K4, e.target), s = e.target;
+      const t = He(Qx, this).rootDocument.activeElement, i = PO(q4, e.target), s = e.target;
       if (!["TD", "TH"].includes(t.nodeName) && (s === t || i(0) === t || i(1) === t))
         return;
       const r = this.parentCell(s);
@@ -31998,7 +31998,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const i = e.target, s = (t = this.parentCell(i)) === null || t === void 0 ? void 0 : t.coords, r = Me(s) && s.row >= 0 && s.col >= 0;
       if (e.cancelable && r && He(Cr, this).getSetting("isDataViewInstance")) {
         const a = ["A", "BUTTON", "INPUT"];
-        kO() && (v7() || y7()) && this.selectedCellWasTouched(i) && !a.includes(i.tagName) ? e.preventDefault() : this.selectedCellWasTouched(i) || e.preventDefault();
+        HO() && (y7() || C7()) && this.selectedCellWasTouched(i) && !a.includes(i.tagName) ? e.preventDefault() : this.selectedCellWasTouched(i) || e.preventDefault();
       }
       this.onMouseUp(e), this.touchApplied = !1;
     }
@@ -32206,7 +32206,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class fF {
+  class gF {
     constructor() {
       wy(this, "currentSize", 0), wy(this, "nextSize", 0), wy(this, "currentOffset", 0), wy(this, "nextOffset", 0);
     }
@@ -32246,7 +32246,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class Sye {
     constructor() {
-      tE(this, "size", new fF()), tE(this, "workingSpace", bye), tE(this, "sharedSize", null);
+      tE(this, "size", new gF()), tE(this, "workingSpace", bye), tE(this, "sharedSize", null);
     }
     /**
      * Sets the size for rendered elements. It can be a size for rows, cells or size for row
@@ -32280,7 +32280,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isShared() {
-      return this.sharedSize instanceof fF;
+      return this.sharedSize instanceof gF;
     }
     /**
      * Checks what working space describes this size instance.
@@ -32325,7 +32325,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class K7 {
+  class q7 {
     constructor(e, t, i) {
       hf(this, "rootNode", void 0), hf(this, "nodesPool", void 0), hf(this, "sizeSet", new Sye()), hf(this, "childNodeType", void 0), hf(this, "visualIndex", 0), hf(this, "collectedNodes", []), this.rootNode = e, this.nodesPool = t, this.childNodeType = i.toUpperCase();
     }
@@ -32447,7 +32447,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     end() {
     }
   }
-  class q7 extends K7 {
+  class X7 extends q7 {
     /**
      * The method results in merging external order view into the current order. This happens only for order views which
      * operate on the same root node.
@@ -32555,7 +32555,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     render() {
     }
   }
-  function gF(n, e, t) {
+  function pF(n, e, t) {
     return (e = Iye(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function Iye(n) {
@@ -32574,7 +32574,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class kye extends pv {
     constructor() {
-      super("TH"), gF(this, "orderViews", /* @__PURE__ */ new WeakMap()), gF(this, "sourceRowIndex", 0);
+      super("TH"), pF(this, "orderViews", /* @__PURE__ */ new WeakMap()), pF(this, "sourceRowIndex", 0);
     }
     /**
      * Obtains the instance of the SharedOrderView class which is responsible for rendering the nodes to the root node.
@@ -32584,7 +32584,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     obtainOrderView(e) {
       let t;
-      return this.orderViews.has(e) ? t = this.orderViews.get(e) : (t = new q7(e, (i) => this.nodesPool.obtain(this.sourceRowIndex, i), this.nodeType), this.orderViews.set(e, t)), t;
+      return this.orderViews.has(e) ? t = this.orderViews.get(e) : (t = new X7(e, (i) => this.nodesPool.obtain(this.sourceRowIndex, i), this.nodeType), this.orderViews.set(e, t)), t;
     }
     /**
      * Renders the cells.
@@ -32605,7 +32605,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         for (let h = 0; h < i; h++) {
           c.render();
           const d = c.getCurrentNode();
-          d.className = "", d.removeAttribute("style"), Yd(d, [new RegExp("aria-(.*)"), new RegExp("role")]), this.table.isAriaEnabled() && $e(d, [_me(), Ome(), vO(h + 1), cp(-1)]), t[h](a, d, h);
+          d.className = "", d.removeAttribute("style"), Yd(d, [new RegExp("aria-(.*)"), new RegExp("role")]), this.table.isAriaEnabled() && $e(d, [_me(), Ome(), yO(h + 1), cp(-1)]), t[h](a, d, h);
         }
         c.end();
       }
@@ -32647,17 +32647,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const {
         columnHeadersCount: e
       } = this.table;
-      this.table.isAriaEnabled() && $e(this.rootNode, [W4()]);
+      this.table.isAriaEnabled() && $e(this.rootNode, [j4()]);
       for (let t = 0; t < e; t += 1) {
         const {
           columnHeaderFunctions: i,
           columnsToRender: s,
           rowHeadersCount: r
         } = this.table, o = this.rootNode.childNodes[t];
-        this.table.isAriaEnabled() && $e(o, [lA(), Y4(t + 1)]);
+        this.table.isAriaEnabled() && $e(o, [lA(), G4(t + 1)]);
         for (let a = -1 * r; a < s; a += 1) {
           const l = this.table.renderedColumnToSource(a), c = o.childNodes[a + r];
-          c.className = "", c.removeAttribute("style"), Yd(c, [new RegExp("aria-(.*)"), new RegExp("role")]), this.table.isAriaEnabled() && $e(c, [vO(a + 1 + this.table.rowHeadersCount), cp(-1), Rme(), ...a >= 0 ? [Ime()] : [
+          c.className = "", c.removeAttribute("style"), Yd(c, [new RegExp("aria-(.*)"), new RegExp("role")]), this.table.isAriaEnabled() && $e(c, [yO(a + 1 + this.table.rowHeadersCount), cp(-1), Rme(), ...a >= 0 ? [Ime()] : [
             // Adding `role=row` to the corner headers to prevent
             // https://github.com/handsontable/dev-handsontable/issues/1574
             lA()
@@ -32666,7 +32666,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     }
   }
-  let pF = !1;
+  let mF = !1;
   class Dye extends pv {
     constructor(e) {
       super(null, e);
@@ -32693,7 +32693,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         columnsToRender: e,
         rowHeadersCount: t
       } = this.table;
-      !pF && e > 1e3 && (pF = !0, Vt(Wt`Performance tip: Handsontable rendered more than 1000 visible columns.\x20
+      !mF && e > 1e3 && (mF = !0, Vt(Wt`Performance tip: Handsontable rendered more than 1000 visible columns.\x20
         Consider limiting the number of rendered columns by specifying the table width and/or\x20
         turning off the "renderAllColumns" option.`));
       for (let s = 0; s < t; s++) {
@@ -32729,10 +32729,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     rowEven: "ht__row_even",
     rowOdd: "ht__row_odd"
   };
-  let mF = !1;
+  let bF = !1;
   class Fye extends pv {
     constructor(e) {
-      super("TR", e), Nye(this, "orderView", void 0), this.orderView = new K7(e, (t) => this.nodesPool.obtain(t), this.nodeType);
+      super("TR", e), Nye(this, "orderView", void 0), this.orderView = new q7(e, (t) => this.nodesPool.obtain(t), this.nodeType);
     }
     /**
      * Returns currently rendered node.
@@ -32750,9 +32750,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const {
         rowsToRender: e
       } = this.table;
-      !mF && e > 1e3 && (mF = !0, Vt(Wt`Performance tip: Handsontable rendered more than 1000 visible rows.\x20
+      !bF && e > 1e3 && (bF = !0, Vt(Wt`Performance tip: Handsontable rendered more than 1000 visible rows.\x20
         Consider limiting the number of rendered rows by specifying the table height and/or\x20
-        turning off the "renderAllRows" option.`)), this.table.isAriaEnabled() && $e(this.rootNode, [W4()]), this.orderView.setSize(e).setOffset(this.table.renderedRowToSource(0)).start();
+        turning off the "renderAllRows" option.`)), this.table.isAriaEnabled() && $e(this.rootNode, [j4()]), this.orderView.setSize(e).setOffset(this.table.renderedRowToSource(0)).start();
       for (let s = 0; s < e; s++) {
         this.orderView.render();
         const r = this.orderView.getCurrentNode(), o = this.table.renderedRowToSource(s);
@@ -32761,7 +32761,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           $e(r, [
             lA(),
             // `aria-rowindex` is incremented by both tbody and thead rows.
-            Y4(o + ((t = (i = this.table.rowUtils) === null || i === void 0 || (i = i.dataAccessObject) === null || i === void 0 ? void 0 : i.columnHeaders.length) !== null && t !== void 0 ? t : 0) + 1)
+            G4(o + ((t = (i = this.table.rowUtils) === null || i === void 0 || (i = i.dataAccessObject) === null || i === void 0 ? void 0 : i.columnHeaders.length) !== null && t !== void 0 ? t : 0) + 1)
           ]);
         }
         Ue(r, [vy.rowEven, vy.rowOdd]), (o + 1) % 2 === 0 ? ae(r, vy.rowEven) : ae(r, vy.rowOdd);
@@ -32769,7 +32769,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.orderView.end();
     }
   }
-  function bF(n, e, t) {
+  function wF(n, e, t) {
     return (e = Bye(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function Bye(n) {
@@ -32788,7 +32788,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class Wye extends pv {
     constructor() {
-      super("TD"), bF(this, "orderViews", /* @__PURE__ */ new WeakMap()), bF(this, "sourceRowIndex", 0);
+      super("TD"), wF(this, "orderViews", /* @__PURE__ */ new WeakMap()), wF(this, "sourceRowIndex", 0);
     }
     /**
      * Obtains the instance of the SharedOrderView class which is responsible for rendering the nodes to the root node.
@@ -32798,7 +32798,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     obtainOrderView(e) {
       let t;
-      return this.orderViews.has(e) ? t = this.orderViews.get(e) : (t = new q7(e, (i) => this.nodesPool.obtain(this.sourceRowIndex, i), this.nodeType), this.orderViews.set(e, t)), t;
+      return this.orderViews.has(e) ? t = this.orderViews.get(e) : (t = new X7(e, (i) => this.nodesPool.obtain(this.sourceRowIndex, i), this.nodeType), this.orderViews.set(e, t)), t;
     }
     /**
      * Renders the cells.
@@ -32824,7 +32824,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
               ...f.hasAttribute("role") ? [] : [Sme()],
               cp(-1),
               // `aria-colindex` is incremented by both tbody and thead rows.
-              vO(g + ((r = (o = this.table.rowUtils) === null || o === void 0 || (o = o.dataAccessObject) === null || o === void 0 ? void 0 : o.rowHeaders.length) !== null && r !== void 0 ? r : 0) + 1)
+              yO(g + ((r = (o = this.table.rowUtils) === null || o === void 0 || (o = o.dataAccessObject) === null || o === void 0 ? void 0 : o.rowHeaders.length) !== null && r !== void 0 ? r : 0) + 1)
             ]);
           }
         }
@@ -33063,12 +33063,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function Bi(n, e) {
-    return n.get(X7(n, e));
+    return n.get(Q7(n, e));
   }
   function Xp(n, e, t) {
-    return n.set(X7(n, e), t), t;
+    return n.set(Q7(n, e), t), t;
   }
-  function X7(n, e, t) {
+  function Q7(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -33255,7 +33255,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     }
   }
-  function wF(n, e, t) {
+  function vF(n, e, t) {
     return (e = e0e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function e0e(n) {
@@ -33278,7 +33278,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Settings} wtSettings The walkontable settings.
      */
     constructor(e, t) {
-      wF(this, "dataAccessObject", void 0), wF(this, "wtSettings", void 0), this.dataAccessObject = e, this.wtSettings = t;
+      vF(this, "dataAccessObject", void 0), vF(this, "wtSettings", void 0), this.dataAccessObject = e, this.wtSettings = t;
     }
     /**
      * Returns row height based on passed source index.
@@ -33332,7 +33332,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {'master'|CLONE_TYPES_ENUM} name Overlay name.
      */
     constructor(e, t, i, s, r) {
-      Uo(this, "wtSettings", null), Uo(this, "domBindings", void 0), Uo(this, "TBODY", null), Uo(this, "THEAD", null), Uo(this, "COLGROUP", null), Uo(this, "hasTableHeight", !0), Uo(this, "hasTableWidth", !0), Uo(this, "isTableVisible", !1), Uo(this, "tableOffset", 0), Uo(this, "holderOffset", 0), this.domBindings = i, this.isMaster = r === "master", this.name = r, this.dataAccessObject = e, this.facadeGetter = t, this.wtSettings = s, this.instance = this.dataAccessObject.wot, this.wot = this.dataAccessObject.wot, this.TABLE = i.rootTable, CO(this.TABLE), this.spreader = this.createSpreader(this.TABLE), this.hider = this.createHider(this.spreader), this.holder = this.createHolder(this.hider), this.wtRootElement = this.holder.parentNode, this.isMaster && this.alignOverlaysWithTrimmingContainer(), this.fixTableDomTree(), this.rowFilter = null, this.columnFilter = null, this.correctHeaderWidth = !1;
+      Uo(this, "wtSettings", null), Uo(this, "domBindings", void 0), Uo(this, "TBODY", null), Uo(this, "THEAD", null), Uo(this, "COLGROUP", null), Uo(this, "hasTableHeight", !0), Uo(this, "hasTableWidth", !0), Uo(this, "isTableVisible", !1), Uo(this, "tableOffset", 0), Uo(this, "holderOffset", 0), this.domBindings = i, this.isMaster = r === "master", this.name = r, this.dataAccessObject = e, this.facadeGetter = t, this.wtSettings = s, this.instance = this.dataAccessObject.wot, this.wot = this.dataAccessObject.wot, this.TABLE = i.rootTable, SO(this.TABLE), this.spreader = this.createSpreader(this.TABLE), this.hider = this.createHider(this.spreader), this.holder = this.createHolder(this.hider), this.wtRootElement = this.holder.parentNode, this.isMaster && this.alignOverlaysWithTrimmingContainer(), this.fixTableDomTree(), this.rowFilter = null, this.columnFilter = null, this.correctHeaderWidth = !1;
       const o = this.wtSettings.getSettingPure("rowHeaderWidth");
       this.wtSettings.update("rowHeaderWidth", () => this._modifyRowHeaderWidth(o)), this.rowUtils = new n0e(this.dataAccessObject, this.wtSettings), this.columnUtils = new Jye(this.dataAccessObject, this.wtSettings), this.tableRenderer = new Yye({
         // TODO refactoring, It can be passed through IOC.
@@ -33602,7 +33602,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       if (t.nodeName !== "TD" && t.nodeName !== "TH" && (t = fu(t, ["TD", "TH"])), t === null)
         return null;
       const i = t.parentNode, s = i.parentNode;
-      let r = Q4(i), o = t.cellIndex;
+      let r = Z4(i), o = t.cellIndex;
       return Ac(Td, t, this.wtRootElement) || Ac(xd, t, this.wtRootElement) ? s.nodeName === "THEAD" && (r -= s.childNodes.length) : Ac(ou, t, this.wtRootElement) || Ac(wa, t, this.wtRootElement) ? r = this.wtSettings.getSetting("totalRows") - s.childNodes.length + r : s === this.THEAD ? r = this.rowFilter.visibleColHeadedRowToSourceRow(r) : r = this.rowFilter.renderedToSource(r), Ac(Td, t, this.wtRootElement) || Ac(Ed, t, this.wtRootElement) || Ac(ou, t, this.wtRootElement) ? o = this.columnFilter.offsettedTH(o) : o = this.columnFilter.visibleRowHeadedColumnToSourceColumn(o), this.wot.createCellCoords(r, o);
     }
     /**
@@ -33917,7 +33917,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return typeof e != "number" && (t = this.wtSettings.getSetting("defaultColumnWidth")), this.correctHeaderWidth && (t += 1), t;
     }
   };
-  const r0e = "stickyRowsBottom", UO = {
+  const r0e = "stickyRowsBottom", YO = {
     /**
      * Get the source index of the first rendered row. If no rows are rendered, returns an error code: -1.
      *
@@ -34007,7 +34007,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return 0;
     }
   };
-  Qa(UO, "MIXIN_NAME", r0e, {
+  Qa(YO, "MIXIN_NAME", r0e, {
     writable: !1,
     enumerable: !1
   });
@@ -34104,7 +34104,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     writable: !1,
     enumerable: !1
   });
-  class YO extends dp {
+  class GO extends dp {
     /**
      * @param {TableDao} dataAccessObject The data access object.
      * @param {FacadeGetter} facadeGetter Function which return proper facade.
@@ -34115,9 +34115,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, t, i, s, ou);
     }
   }
-  jt(YO, UO);
-  jt(YO, DR);
-  const xd = "top", wa = "bottom", Ed = "inline_start", Td = "top_inline_start_corner", ou = "bottom_inline_start_corner", Q7 = [xd, wa, Ed, Td, ou], a0e = /* @__PURE__ */ new Map([[xd, `ht_clone_${xd}`], [wa, `ht_clone_${wa}`], [Ed, `ht_clone_${Ed} ht_clone_left`], [Td, `ht_clone_${Td} ht_clone_top_left_corner`], [ou, `ht_clone_${ou} ht_clone_bottom_left_corner`]]);
+  jt(GO, YO);
+  jt(GO, DR);
+  const xd = "top", wa = "bottom", Ed = "inline_start", Td = "top_inline_start_corner", ou = "bottom_inline_start_corner", Z7 = [xd, wa, Ed, Td, ou], a0e = /* @__PURE__ */ new Map([[xd, `ht_clone_${xd}`], [wa, `ht_clone_${wa}`], [Ed, `ht_clone_${Ed} ht_clone_left`], [Td, `ht_clone_${Td} ht_clone_top_left_corner`], [ou, `ht_clone_${ou} ht_clone_bottom_left_corner`]]);
   function l0e(n, e) {
     c0e(n, e), e.add(n);
   }
@@ -34232,7 +34232,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number}
      */
     getLastVisibleRow() {
-      return Ry(Zp, this, yF).call(this, this.dataAccessObject.wtTable.getLastVisibleRow());
+      return Ry(Zp, this, CF).call(this, this.dataAccessObject.wtTable.getLastVisibleRow());
     }
     /**
      * Get first partially visible row based on virtual dom and how table is visible in browser window viewport.
@@ -34248,7 +34248,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number}
      */
     getLastPartiallyVisibleRow() {
-      return Ry(Zp, this, yF).call(this, this.dataAccessObject.wtTable.getLastPartiallyVisibleRow());
+      return Ry(Zp, this, CF).call(this, this.dataAccessObject.wtTable.getLastPartiallyVisibleRow());
     }
     /**
      * Get first visible column based on virtual dom and how table is visible in browser window viewport.
@@ -34264,7 +34264,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number}
      */
     getLastVisibleColumn() {
-      return Ry(Zp, this, vF).call(this, this.dataAccessObject.wtTable.getLastVisibleColumn());
+      return Ry(Zp, this, yF).call(this, this.dataAccessObject.wtTable.getLastVisibleColumn());
     }
     /**
      * Get first partially visible column based on virtual dom and how table is visible in browser window viewport.
@@ -34280,10 +34280,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number}
      */
     getLastPartiallyVisibleColumn() {
-      return Ry(Zp, this, vF).call(this, this.dataAccessObject.wtTable.getLastPartiallyVisibleColumn());
+      return Ry(Zp, this, yF).call(this, this.dataAccessObject.wtTable.getLastPartiallyVisibleColumn());
     }
   }
-  function vF(n) {
+  function yF(n) {
     const {
       wtSettings: e,
       inlineStartOverlay: t,
@@ -34300,9 +34300,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         l = Math.abs(u.right - d);
       } else
         l = gi(i.wtRootElement).left;
-      const c = Math.abs(_O(o, o));
+      const c = Math.abs(RO(o, o));
       if (l > c) {
-        const u = RO(o);
+        const u = xO(o);
         let h = s.getRowHeaderWidth();
         for (let d = 1; d <= r; d++)
           if (h += t.sumCellSizes(d - 1, d), l + h - c >= u) {
@@ -34313,7 +34313,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return n;
   }
-  function yF(n) {
+  function CF(n) {
     const {
       topOverlay: e,
       wtTable: t,
@@ -34352,7 +34352,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class GO {
+  class KO {
     get eventManager() {
       return new Ur(this);
     }
@@ -34361,7 +34361,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Settings} settings The Walkontable settings.
      */
     constructor(e, t) {
-      oo(this, "wtTable", void 0), oo(this, "wtScroll", void 0), oo(this, "wtViewport", void 0), oo(this, "wtOverlays", void 0), oo(this, "selectionManager", void 0), oo(this, "wtEvent", void 0), oo(this, "guid", `wt_${mO()}`), oo(this, "drawInterrupted", !1), oo(this, "drawn", !1), oo(this, "domBindings", void 0), oo(this, "wtSettings", void 0), this.domBindings = {
+      oo(this, "wtTable", void 0), oo(this, "wtScroll", void 0), oo(this, "wtViewport", void 0), oo(this, "wtOverlays", void 0), oo(this, "selectionManager", void 0), oo(this, "wtEvent", void 0), oo(this, "guid", `wt_${bO()}`), oo(this, "drawInterrupted", !1), oo(this, "drawn", !1), oo(this, "domBindings", void 0), oo(this, "wtSettings", void 0), this.domBindings = {
         rootTable: e,
         rootDocument: e.ownerDocument,
         rootWindow: e.ownerDocument.defaultView
@@ -34632,7 +34632,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       };
     }
   }
-  function CF(n, e, t) {
+  function SF(n, e, t) {
     return (e = m0e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function m0e(n) {
@@ -34649,16 +34649,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class w0e extends GO {
+  class w0e extends KO {
     /**
      * @param {HTMLTableElement} table Main table.
      * @param {SettingsPure|Settings} settings The Walkontable settings.
      * @param {WalkontableCloneOptions} clone Clone data.
      */
     constructor(e, t, i) {
-      super(e, t), CF(this, "cloneSource", void 0), CF(this, "cloneOverlay", void 0);
+      super(e, t), SF(this, "cloneSource", void 0), SF(this, "cloneOverlay", void 0);
       const s = this.wtSettings.getSetting("facade", this);
-      this.cloneSource = i.source, this.cloneOverlay = i.overlay, this.wtTable = this.cloneOverlay.createTable(this.getTableDao(), s, this.domBindings, this.wtSettings), this.wtViewport = i.viewport, this.selectionManager = i.selectionManager, this.wtEvent = new G7(s, this.domBindings, this.wtSettings, this.eventManager, this.wtTable, this.selectionManager, i.event), this.findOriginalHeaders();
+      this.cloneSource = i.source, this.cloneOverlay = i.overlay, this.wtTable = this.cloneOverlay.createTable(this.getTableDao(), s, this.domBindings, this.wtSettings), this.wtViewport = i.viewport, this.selectionManager = i.selectionManager, this.wtEvent = new K7(s, this.domBindings, this.wtSettings, this.eventManager, this.wtTable, this.selectionManager, i.event), this.findOriginalHeaders();
     }
   }
   function v0e(n, e, t) {
@@ -34836,7 +34836,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {Clone}
      */
     makeClone() {
-      if (Q7.indexOf(this.type) === -1)
+      if (Z7.indexOf(this.type) === -1)
         throw new Error(`Clone type "${this.type}" is not supported.`);
       const {
         wtTable: e,
@@ -34916,7 +34916,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     createTable() {
       for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++)
         t[i] = arguments[i];
-      return new YO(...t);
+      return new GO(...t);
     }
     /**
      * Checks if overlay should be fully rendered.
@@ -35054,7 +35054,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     writable: !1,
     enumerable: !1
   });
-  class KO extends dp {
+  class qO extends dp {
     /**
      * @param {TableDao} dataAccessObject The data access object.
      * @param {FacadeGetter} facadeGetter Function which return proper facade.
@@ -35065,8 +35065,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, t, i, s, wa);
     }
   }
-  jt(KO, UO);
-  jt(KO, NR);
+  jt(qO, YO);
+  jt(qO, NR);
   function R0e(n, e, t) {
     return (e = x0e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
@@ -35104,7 +35104,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     createTable() {
       for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++)
         t[i] = arguments[i];
-      return new KO(...t);
+      return new qO(...t);
     }
     /**
      * Checks if overlay should be fully rendered.
@@ -35300,7 +35300,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return r;
     }
   }
-  const M0e = "calculatedRows", qO = {
+  const M0e = "calculatedRows", XO = {
     /**
      * Get the source index of the first rendered row. If no rows are rendered, returns an error code: -1.
      *
@@ -35389,11 +35389,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.dataAccessObject.columnHeaders.length;
     }
   };
-  Qa(qO, "MIXIN_NAME", M0e, {
+  Qa(XO, "MIXIN_NAME", M0e, {
     writable: !1,
     enumerable: !1
   });
-  class XO extends dp {
+  class QO extends dp {
     /**
      * @param {TableDao} dataAccessObject The data access object.
      * @param {FacadeGetter} facadeGetter Function which return proper facade.
@@ -35404,8 +35404,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, t, i, s, Ed);
     }
   }
-  jt(XO, qO);
-  jt(XO, DR);
+  jt(QO, XO);
+  jt(QO, DR);
   const A0e = "localHooks", Li = {
     /**
      * Internal hooks storage.
@@ -35452,7 +35452,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     writable: !1,
     enumerable: !1
   });
-  let Z7 = class {
+  let J7 = class {
     /**
      * @param {object} settings The selection settings object. @todo type.
      * @param {CellRange} cellRange The cell range instance.
@@ -35518,29 +35518,29 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.runLocalHooks("destroy");
     }
   };
-  jt(Z7, Li);
-  const J7 = "active-header", QO = "header", ZO = "area", JO = "focus", P0e = "fill", I0e = "row", O0e = "column", k0e = "custom-selection", ek = Object.freeze({
+  jt(J7, Li);
+  const ez = "active-header", ZO = "header", JO = "area", ek = "focus", P0e = "fill", I0e = "row", O0e = "column", k0e = "custom-selection", tk = Object.freeze({
     width: "6px",
     height: "6px",
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: "#FFF"
   });
-  var H0e = NO;
+  var H0e = LO;
   H0e("flat");
   function D0e(n, e) {
-    ez(n, e), e.add(n);
+    tz(n, e), e.add(n);
   }
-  function SF(n, e, t) {
-    ez(n, e), e.set(n, t);
+  function _F(n, e, t) {
+    tz(n, e), e.set(n, t);
   }
-  function ez(n, e) {
+  function tz(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Gn(n, e) {
     return n.get(Rb(n, e));
   }
-  function _F(n, e, t) {
+  function RF(n, e, t) {
     return n.set(Rb(n, e), t), t;
   }
   function Rb(n, e, t) {
@@ -35550,7 +35550,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   var ao = /* @__PURE__ */ new WeakMap(), As = /* @__PURE__ */ new WeakMap(), xy = /* @__PURE__ */ new WeakSet();
   class N0e {
     constructor() {
-      D0e(this, xy), SF(this, ao, void 0), SF(this, As, void 0);
+      D0e(this, xy), _F(this, ao, void 0), _F(this, As, void 0);
     }
     /**
      * Sets the Walkontable instance that will be taking into account while scanning the table.
@@ -35559,7 +35559,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {SelectionScanner}
      */
     setActiveOverlay(e) {
-      return _F(As, this, e), this;
+      return RF(As, this, e), this;
     }
     /**
      * Sets the Selection instance to process.
@@ -35568,7 +35568,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {SelectionScanner}
      */
     setActiveSelection(e) {
-      return _F(ao, this, e), this;
+      return RF(ao, this, e), this;
     }
     /**
      * Scans the rendered table with selection and returns elements that intersects
@@ -35702,7 +35702,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         n(r, e.columnFilter.renderedToSource(o));
     }
   }
-  class RF {
+  class xF {
     // TODO As this is an internal class, should be designed for using {Walkontable}. It uses the facade,
     // TODO Con. Because the class is created on place where the instance reference comes from external origin.
     // TODO Imho, the discrimination for handling both, facade and non-facade should be handled.
@@ -35711,7 +35711,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {object} settings The border settings.
      */
     constructor(e, t) {
-      t && (this.eventManager = e.eventManager, this.instance = e, this.wot = e, this.settings = t, this.mouseDown = !1, this.main = null, this.top = null, this.bottom = null, this.start = null, this.end = null, this.topStyle = null, this.bottomStyle = null, this.startStyle = null, this.endStyle = null, this.cornerDefaultStyle = ek, this.cornerCenterPointOffset = -(parseInt(this.cornerDefaultStyle.width, 10) / 2), this.corner = null, this.cornerStyle = null, this.createBorders(t), this.registerListeners());
+      t && (this.eventManager = e.eventManager, this.instance = e, this.wot = e, this.settings = t, this.mouseDown = !1, this.main = null, this.top = null, this.bottom = null, this.start = null, this.end = null, this.topStyle = null, this.bottomStyle = null, this.startStyle = null, this.endStyle = null, this.cornerDefaultStyle = tk, this.cornerCenterPointOffset = -(parseInt(this.cornerDefaultStyle.width, 10) / 2), this.corner = null, this.cornerStyle = null, this.createBorders(t), this.registerListeners());
     }
     /**
      * Register all necessary events.
@@ -35945,7 +35945,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         if (l === this.wot.getSetting("totalColumns") - 1) {
           const v = te ? p.getBoundingClientRect().left : p.offsetLeft;
           let S = !1, T = 0;
-          x ? (T = v - parseInt(this.cornerDefaultStyle.width, 10) / 2, S = T < 0) : (T = v + rn(p) + parseInt(this.cornerDefaultStyle.width, 10) / 2, S = T >= RO(se)), S && (this.cornerStyle[j] = `${Math.floor(M + I + this.cornerCenterPointOffset - pe)}px`, this.cornerStyle[x ? "borderLeftWidth" : "borderRightWidth"] = 0);
+          x ? (T = v - parseInt(this.cornerDefaultStyle.width, 10) / 2, S = T < 0) : (T = v + rn(p) + parseInt(this.cornerDefaultStyle.width, 10) / 2, S = T >= xO(se)), S && (this.cornerStyle[j] = `${Math.floor(M + I + this.cornerCenterPointOffset - pe)}px`, this.cornerStyle[x ? "borderLeftWidth" : "borderRightWidth"] = 0);
         }
         o === this.wot.getSetting("totalRows") - 1 && (te ? p.getBoundingClientRect().top : p.offsetTop) + Yn(p) + parseInt(this.cornerDefaultStyle.height, 10) / 2 >= jh(se) && (this.cornerStyle.top = `${Math.floor(A + O + this.cornerCenterPointOffset - b)}px`, this.cornerStyle.borderBottomWidth = 0), this.cornerStyle.display = "block";
       }
@@ -36062,28 +36062,28 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function L0e(n, e) {
-    tz(n, e), e.add(n);
+    nz(n, e), e.add(n);
   }
   function ff(n, e, t) {
-    tz(n, e), e.set(n, t);
+    nz(n, e), e.set(n, t);
   }
-  function tz(n, e) {
+  function nz(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function at(n, e) {
-    return n.get(tk(n, e));
+    return n.get(nk(n, e));
   }
-  function xF(n, e, t) {
-    return n.set(tk(n, e), t), t;
+  function EF(n, e, t) {
+    return n.set(nk(n, e), t), t;
   }
-  function tk(n, e, t) {
+  function nk(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  var zi = /* @__PURE__ */ new WeakMap(), ks = /* @__PURE__ */ new WeakMap(), iE = /* @__PURE__ */ new WeakMap(), jm = /* @__PURE__ */ new WeakMap(), sE = /* @__PURE__ */ new WeakMap(), Gu = /* @__PURE__ */ new WeakMap(), EF = /* @__PURE__ */ new WeakSet();
+  var zi = /* @__PURE__ */ new WeakMap(), ks = /* @__PURE__ */ new WeakMap(), iE = /* @__PURE__ */ new WeakMap(), jm = /* @__PURE__ */ new WeakMap(), sE = /* @__PURE__ */ new WeakMap(), Gu = /* @__PURE__ */ new WeakMap(), TF = /* @__PURE__ */ new WeakSet();
   class $0e {
     constructor(e) {
-      L0e(this, EF), ff(this, zi, void 0), ff(this, ks, void 0), ff(this, iE, new N0e()), ff(this, jm, /* @__PURE__ */ new WeakMap()), ff(this, sE, /* @__PURE__ */ new WeakSet()), ff(this, Gu, /* @__PURE__ */ new Map()), xF(ks, this, e);
+      L0e(this, TF), ff(this, zi, void 0), ff(this, ks, void 0), ff(this, iE, new N0e()), ff(this, jm, /* @__PURE__ */ new WeakMap()), ff(this, sE, /* @__PURE__ */ new WeakSet()), ff(this, Gu, /* @__PURE__ */ new Map()), EF(ks, this, e);
     }
     /**
      * Sets the active Walkontable instance.
@@ -36092,7 +36092,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {SelectionManager}
      */
     setActiveOverlay(e) {
-      return xF(zi, this, e), at(iE, this).setActiveOverlay(at(zi, this)), at(jm, this).has(at(zi, this)) || at(jm, this).set(at(zi, this), /* @__PURE__ */ new Set()), this;
+      return EF(zi, this, e), at(iE, this).setActiveOverlay(at(zi, this)), at(jm, this).has(at(zi, this)) || at(jm, this).set(at(zi, this), /* @__PURE__ */ new Set()), this;
     }
     /**
      * Gets the Selection instance of the "focus" type.
@@ -36123,10 +36123,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const i = at(Gu, this).get(e);
         if (i.has(at(zi, this)))
           return i.get(at(zi, this));
-        const s = new RF(at(zi, this), e.settings);
+        const s = new xF(at(zi, this), e.settings);
         return i.set(at(zi, this), s), s;
       }
-      const t = new RF(at(zi, this), e.settings);
+      const t = new xF(at(zi, this), e.settings);
       return at(Gu, this).set(e, /* @__PURE__ */ new Map([[at(zi, this), t]])), t;
     }
     /**
@@ -36155,7 +36155,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     render(e) {
       if (at(ks, this) === null)
         return;
-      e && tk(EF, this, F0e).call(this);
+      e && nk(TF, this, F0e).call(this);
       const t = Array.from(at(ks, this)), i = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map();
       for (let r = 0; r < t.length; r++) {
         const o = t[r], {
@@ -36229,7 +36229,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     createTable() {
       for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++)
         t[i] = arguments[i];
-      return new XO(...t);
+      return new QO(...t);
     }
     /**
      * Checks if overlay should be fully rendered.
@@ -36269,7 +36269,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         rootWindow: t
       } = this.domBindings;
       let i = !1;
-      return this.isRtl() && (e = -e), this.mainTableScrollableElement === t && t.scrollX !== e ? (t.scrollTo(e, SO(t)), i = !0) : this.mainTableScrollableElement.scrollLeft !== e && (this.mainTableScrollableElement.scrollLeft = e, i = !0), i;
+      return this.isRtl() && (e = -e), this.mainTableScrollableElement === t && t.scrollX !== e ? (t.scrollTo(e, _O(t)), i = !0) : this.mainTableScrollableElement.scrollLeft !== e && (this.mainTableScrollableElement.scrollLeft = e, i = !0), i;
     }
     /**
      * Triggers onScroll hook callback.
@@ -36322,7 +36322,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     adjustRootChildrenSize() {
       const {
         holder: e
-      } = this.clone.wtTable, t = this.wot.selectionManager.getFocusSelection() ? parseInt(ek.width, 10) / 2 : 0;
+      } = this.clone.wtTable, t = this.wot.selectionManager.getFocusSelection() ? parseInt(tk.width, 10) / 2 : 0;
       this.clone.wtTable.hider.style.height = this.hider.style.height, e.style.height = e.parentNode.style.height, e.style.width = `${parseInt(e.parentNode.style.width, 10) + t}px`;
     }
     /**
@@ -36361,7 +36361,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const h = this.wot.wtTable.getColumnWidth(e), d = this.wot.wtViewport.getViewportWidth();
         h > d && (t = !1);
       }
-      return t && a.offsetWidth !== a.clientWidth && (u = bi(this.domBindings.rootDocument)), t ? (c += this.sumCellSizes(0, e + 1), c -= this.wot.wtViewport.getViewportWidth(), c += l) : c += this.sumCellSizes(this.wtSettings.getSetting("fixedColumnsStart"), e), c += u, n7(this.mainTableScrollableElement) === c - l && l > 0 && this.wot.wtOverlays.expandHiderHorizontallyBy(l), this.setScrollPosition(c);
+      return t && a.offsetWidth !== a.clientWidth && (u = bi(this.domBindings.rootDocument)), t ? (c += this.sumCellSizes(0, e + 1), c -= this.wot.wtViewport.getViewportWidth(), c += l) : c += this.sumCellSizes(this.wtSettings.getSetting("fixedColumnsStart"), e), c += u, i7(this.mainTableScrollableElement) === c - l && l > 0 && this.wot.wtOverlays.expandHiderHorizontallyBy(l), this.setScrollPosition(c);
     }
     /**
      * Gets table parent left position.
@@ -36379,7 +36379,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number} Main table's horizontal scroll position.
      */
     getScrollPosition() {
-      return Math.abs(_O(this.mainTableScrollableElement, this.domBindings.rootWindow));
+      return Math.abs(RO(this.mainTableScrollableElement, this.domBindings.rootWindow));
     }
     /**
      * Gets the main overlay's horizontal overlay offset.
@@ -36421,7 +36421,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return l;
     }
   }
-  const V0e = "stickyRowsTop", nk = {
+  const V0e = "stickyRowsTop", ik = {
     /**
      * Get the source index of the first rendered row. If no rows are rendered, returns an error code: -1.
      *
@@ -36510,11 +36510,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.dataAccessObject.columnHeaders.length;
     }
   };
-  Qa(nk, "MIXIN_NAME", V0e, {
+  Qa(ik, "MIXIN_NAME", V0e, {
     writable: !1,
     enumerable: !1
   });
-  class ik extends dp {
+  class sk extends dp {
     /**
      * @param {TableDao} dataAccessObject The data access object.
      * @param {FacadeGetter} facadeGetter Function which return proper facade.
@@ -36525,9 +36525,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, t, i, s, Td);
     }
   }
-  jt(ik, nk);
-  jt(ik, DR);
-  function TF(n, e, t) {
+  jt(sk, ik);
+  jt(sk, DR);
+  function MF(n, e, t) {
     return (e = W0e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function W0e(n) {
@@ -36554,7 +36554,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {InlineStartOverlay} inlineStartOverlay The instance of the InlineStart overlay.
      */
     constructor(e, t, i, s, r, o) {
-      super(e, t, Td, i, s), TF(this, "topOverlay", void 0), TF(this, "inlineStartOverlay", void 0), this.topOverlay = r, this.inlineStartOverlay = o;
+      super(e, t, Td, i, s), MF(this, "topOverlay", void 0), MF(this, "inlineStartOverlay", void 0), this.topOverlay = r, this.inlineStartOverlay = o;
     }
     /**
      * Factory method to create a subclass of `Table` that is relevant to this overlay.
@@ -36566,7 +36566,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     createTable() {
       for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++)
         t[i] = arguments[i];
-      return new ik(...t);
+      return new sk(...t);
     }
     /**
      * Checks if overlay should be fully rendered.
@@ -36595,7 +36595,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.wot.wtTable.hasDefinedSize() || (t = 0), e.style.height = `${t}px`, e.style.width = `${i}px`, !1;
     }
   }
-  class sk extends dp {
+  class rk extends dp {
     /**
      * @param {TableDao} dataAccessObject The data access object.
      * @param {FacadeGetter} facadeGetter Function which return proper facade.
@@ -36606,8 +36606,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, t, i, s, xd);
     }
   }
-  jt(sk, nk);
-  jt(sk, NR);
+  jt(rk, ik);
+  jt(rk, NR);
   function U0e(n, e, t) {
     return (e = Y0e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
@@ -36645,7 +36645,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     createTable() {
       for (var e = arguments.length, t = new Array(e), i = 0; i < e; i++)
         t[i] = arguments[i];
-      return new sk(...t);
+      return new rk(...t);
     }
     /**
      * Checks if overlay should be fully rendered.
@@ -36741,7 +36741,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     adjustRootChildrenSize() {
       const {
         holder: e
-      } = this.clone.wtTable, t = this.wot.selectionManager.getFocusSelection() ? parseInt(ek.height, 10) / 2 : 0;
+      } = this.clone.wtTable, t = this.wot.selectionManager.getFocusSelection() ? parseInt(tk.height, 10) / 2 : 0;
       this.clone.wtTable.hider.style.width = this.hider.style.width, e.style.width = e.parentNode.style.width, e.style.height = `${parseInt(e.parentNode.style.height, 10) + t}px`;
     }
     /**
@@ -36788,7 +36788,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         u += this.sumCellSizes(0, e + 1), u -= i.wtViewport.getViewportHeight() - this.sumCellSizes(f - d, f), u += 1, u += c;
       } else
         u += this.sumCellSizes(s.getSetting("fixedRowsTop"), e);
-      return u += h, t7(this.mainTableScrollableElement) === u - c && c > 0 && this.wot.wtOverlays.expandHiderVerticallyBy(c), this.setScrollPosition(u);
+      return u += h, n7(this.mainTableScrollableElement) === u - c && c > 0 && this.wot.wtOverlays.expandHiderVerticallyBy(c), this.setScrollPosition(u);
     }
     /**
      * Gets table parent top position.
@@ -36870,12 +36870,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function Ku(n, e, t) {
-    return n.set(nz(n, e), t), t;
+    return n.set(iz(n, e), t), t;
   }
   function rl(n, e) {
-    return n.get(nz(n, e));
+    return n.get(iz(n, e));
   }
-  function nz(n, e, t) {
+  function iz(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -36988,7 +36988,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const r = t.devicePixelRatio && t.devicePixelRatio > 1, o = this.scrollableElement === t, a = this.wtSettings.getSetting("preventWheel"), l = {
         passive: o
       };
-      (a || r || !IO()) && this.eventManager.addEventListener(this.wtTable.wtRootElement, "wheel", (h) => this.onCloneWheel(h, a), l), [this.topOverlay, this.bottomOverlay, this.inlineStartOverlay, this.topInlineStartCornerOverlay, this.bottomInlineStartCornerOverlay].forEach((h) => {
+      (a || r || !OO()) && this.eventManager.addEventListener(this.wtTable.wtRootElement, "wheel", (h) => this.onCloneWheel(h, a), l), [this.topOverlay, this.bottomOverlay, this.inlineStartOverlay, this.topInlineStartCornerOverlay, this.bottomInlineStartCornerOverlay].forEach((h) => {
         if (h && h.needFullRender) {
           const {
             holder: d
@@ -37223,7 +37223,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }
   }
-  function MF(n, e, t) {
+  function AF(n, e, t) {
     return (e = J0e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function J0e(n) {
@@ -37245,7 +37245,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {SettingsPure} settings The user defined settings.
      */
     constructor(e) {
-      MF(this, "settings", {}), MF(this, "defaults", Object.freeze(this.getDefaults())), nt(this.defaults, (t, i) => {
+      AF(this, "settings", {}), AF(this, "defaults", Object.freeze(this.getDefaults())), nt(this.defaults, (t, i) => {
         if (e[i] !== void 0)
           this.settings[i] = e[i];
         else {
@@ -37407,7 +37407,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return !!this.settings[e];
     }
   }
-  class rk extends dp {
+  class ok extends dp {
     /**
      * @param {TableDao} dataAccessObject The data access object.
      * @param {FacadeGetter} facadeGetter Function which return proper facade.
@@ -37454,8 +37454,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     }
   }
-  jt(rk, qO);
-  jt(rk, NR);
+  jt(ok, XO);
+  jt(ok, NR);
   class nCe {
     /**
      * @param {ViewportDao} dataAccessObject The Walkontable instance.
@@ -37465,7 +37465,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Table} wtTable The table.
      */
     constructor(e, t, i, s, r) {
-      this.dataAccessObject = e, this.wot = e.wot, this.instance = this.wot, this.domBindings = t, this.wtSettings = i, this.wtTable = r, this.oversizedRows = [], this.oversizedColumnHeaders = [], this.hasOversizedColumnHeadersMarked = {}, this.clientHeight = 0, this.containerWidth = NaN, this.rowHeaderWidth = NaN, this.rowsVisibleCalculator = null, this.columnsVisibleCalculator = null, this.rowsCalculatorTypes = /* @__PURE__ */ new Map([["rendered", () => this.wtSettings.getSetting("renderAllRows") ? new zve() : new Yve()], ["fullyVisible", () => new Hve()], ["partiallyVisible", () => new V7()]]), this.columnsCalculatorTypes = /* @__PURE__ */ new Map([["rendered", () => this.wtSettings.getSetting("renderAllColumns") ? new Vve() : new Uve()], ["fullyVisible", () => new Ive()], ["partiallyVisible", () => new B7()]]), this.eventManager = s, this.eventManager.addEventListener(this.domBindings.rootWindow, "resize", () => {
+      this.dataAccessObject = e, this.wot = e.wot, this.instance = this.wot, this.domBindings = t, this.wtSettings = i, this.wtTable = r, this.oversizedRows = [], this.oversizedColumnHeaders = [], this.hasOversizedColumnHeadersMarked = {}, this.clientHeight = 0, this.containerWidth = NaN, this.rowHeaderWidth = NaN, this.rowsVisibleCalculator = null, this.columnsVisibleCalculator = null, this.rowsCalculatorTypes = /* @__PURE__ */ new Map([["rendered", () => this.wtSettings.getSetting("renderAllRows") ? new zve() : new Yve()], ["fullyVisible", () => new Hve()], ["partiallyVisible", () => new W7()]]), this.columnsCalculatorTypes = /* @__PURE__ */ new Map([["rendered", () => this.wtSettings.getSetting("renderAllColumns") ? new Vve() : new Uve()], ["fullyVisible", () => new Ive()], ["partiallyVisible", () => new V7()]]), this.eventManager = s, this.eventManager.addEventListener(this.domBindings.rootWindow, "resize", () => {
         this.clientHeight = this.getWorkspaceHeight();
       });
     }
@@ -37737,7 +37737,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }
   }
-  class iCe extends GO {
+  class iCe extends KO {
     /**
      * @param {HTMLTableElement} table Main table.
      * @param {SettingsPure} settings The Walkontable settings.
@@ -37745,7 +37745,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     constructor(e, t) {
       super(e, new tCe(t));
       const i = this.wtSettings.getSetting("facade", this);
-      this.wtTable = new rk(this.getTableDao(), i, this.domBindings, this.wtSettings), this.wtViewport = new nCe(this.getViewportDao(), this.domBindings, this.wtSettings, this.eventManager, this.wtTable), this.selectionManager = new $0e(this.wtSettings.getSetting("selections")), this.wtEvent = new G7(i, this.domBindings, this.wtSettings, this.eventManager, this.wtTable, this.selectionManager), this.wtOverlays = new Z0e(
+      this.wtTable = new ok(this.getTableDao(), i, this.domBindings, this.wtSettings), this.wtViewport = new nCe(this.getViewportDao(), this.domBindings, this.wtSettings, this.eventManager, this.wtTable), this.selectionManager = new $0e(this.wtSettings.getSetting("selections")), this.wtEvent = new K7(i, this.domBindings, this.wtSettings, this.eventManager, this.wtTable, this.selectionManager), this.wtOverlays = new Z0e(
         // TODO create DAO and remove reference to the Walkontable instance.
         this,
         i,
@@ -37775,7 +37775,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     getOverlayByName(e) {
       var t;
-      if (!Q7.includes(e))
+      if (!Z7.includes(e))
         return null;
       const i = e.replace(/_([a-z])/g, (s) => s[1].toUpperCase());
       return (t = this.wtOverlays[`${i}Overlay`]) !== null && t !== void 0 ? t : null;
@@ -37819,16 +37819,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       };
     }
   }
-  class ok {
+  class ak {
     /**
      * @param {SettingsPure|Walkontable} settingsOrInstance The Walkontable settings.
      */
     constructor(e) {
-      e instanceof GO ? this._wot = e : this._initFromSettings(e);
+      e instanceof KO ? this._wot = e : this._initFromSettings(e);
     }
     _initFromSettings(e) {
       e.facade = (t) => {
-        const i = new ok(t);
+        const i = new ak(t);
         return () => i;
       }, this._wot = new iCe(e.table, e);
     }
@@ -37958,7 +37958,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this._wot.destroy();
     }
   }
-  function AF(n) {
+  function PF(n) {
     let {
       isShiftKey: e,
       isLeftClick: t,
@@ -37996,8 +37996,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const o = i.isSelectedByRowHeader(), a = i.isSelectedByColumnHeader(), l = i.tableProps.countCols(), c = i.tableProps.countRows();
     i.markSource("mouse"), a && !s.column ? i.setRangeEnd(r(c - 1, t.col)) : o && !s.row ? i.setRangeEnd(r(t.row, l - 1)) : s.cell || i.setRangeEnd(t), i.markEndSource();
   }
-  const rCe = /* @__PURE__ */ new Map([["mousedown", AF], ["mouseover", sCe], ["touchstart", AF]]);
-  function PF(n, e) {
+  const rCe = /* @__PURE__ */ new Map([["mousedown", PF], ["mouseover", sCe], ["touchstart", PF]]);
+  function IF(n, e) {
     let {
       coords: t,
       selection: i,
@@ -38014,23 +38014,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       isRightClick: pu(n)
     });
   }
-  const iz = /* @__PURE__ */ new WeakMap(), ak = Symbol("rootInstance");
+  const sz = /* @__PURE__ */ new WeakMap(), lk = Symbol("rootInstance");
   function oCe(n) {
-    iz.set(n, !0);
+    sz.set(n, !0);
   }
   function aCe(n) {
-    return n === ak;
+    return n === lk;
   }
   function vC(n) {
-    return iz.has(n);
+    return sz.has(n);
   }
   function lCe(n, e) {
-    sz(n, e), e.add(n);
+    rz(n, e), e.add(n);
   }
   function qu(n, e, t) {
-    sz(n, e), e.set(n, t);
+    rz(n, e), e.set(n, t);
   }
-  function sz(n, e) {
+  function rz(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function mc(n, e, t) {
@@ -38136,7 +38136,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         rootElement: e,
         rootDocument: t
       } = this.hot, i = e.getAttribute("style");
-      i && e.setAttribute("data-originalstyle", i), ae(e, "handsontable"), Sr(lo, this, t.createElement("TABLE")), ae(vi(lo, this), "htCore"), this.hot.getSettings().tableClassName && ae(vi(lo, this), this.hot.getSettings().tableClassName), this.settings.ariaTags && ($e(vi(lo, this), [Ra()]), $e(e, [Cme(), U4(-1), _R(this.hot.countCols()), Dme()])), this.THEAD = t.createElement("THEAD"), vi(lo, this).appendChild(this.THEAD), this.TBODY = t.createElement("TBODY"), vi(lo, this).appendChild(this.TBODY), this.hot.table = vi(lo, this), this.hot.container.insertBefore(vi(lo, this), this.hot.container.firstChild);
+      i && e.setAttribute("data-originalstyle", i), ae(e, "handsontable"), Sr(lo, this, t.createElement("TABLE")), ae(vi(lo, this), "htCore"), this.hot.getSettings().tableClassName && ae(vi(lo, this), this.hot.getSettings().tableClassName), this.settings.ariaTags && ($e(vi(lo, this), [Ra()]), $e(e, [Cme(), Y4(-1), _R(this.hot.countCols()), Dme()])), this.THEAD = t.createElement("THEAD"), vi(lo, this).appendChild(this.THEAD), this.TBODY = t.createElement("TBODY"), vi(lo, this).appendChild(this.TBODY), this.hot.table = vi(lo, this), this.hot.container.insertBefore(vi(lo, this), this.hot.container.firstChild);
     }
     /**
      * Attaches necessary listeners.
@@ -38398,7 +38398,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           return this.hot.hasRowHeaders() && r.push((o, a) => {
             const l = o >= 0 ? this.hot.rowIndexMapper.getVisualFromRenderableIndex(o) : o;
             this.appendRowHeader(l, a);
-          }), this.hot.runHooks("afterGetRowHeaderRenderers", r), Sr(Ay, this, r.length), this.hot.getSettings().ariaTags && bw(yC, this, rz).call(this) === this.hot.countCols() && bw(yC, this, dCe).call(this, vi(Ay, this)), r;
+          }), this.hot.runHooks("afterGetRowHeaderRenderers", r), Sr(Ay, this, r.length), this.hot.getSettings().ariaTags && bw(yC, this, oz).call(this) === this.hot.countCols() && bw(yC, this, dCe).call(this, vi(Ay, this)), r;
         },
         columnHeaders: () => {
           const r = [];
@@ -38441,7 +38441,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             column: !1,
             cell: !1
           };
-          this.hot.listen(), this.activeWt = l, Sr(ol, this, !0), this.hot.runHooks("beforeOnCellMouseDown", r, c, a, u), !Bc(r) && (PF(r, {
+          this.hot.listen(), this.activeWt = l, Sr(ol, this, !0), this.hot.runHooks("beforeOnCellMouseDown", r, c, a, u), !Bc(r) && (IF(r, {
             coords: c,
             selection: this.hot.selection,
             controller: u,
@@ -38462,7 +38462,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             column: !1,
             cell: !1
           };
-          this.activeWt = l, this.hot.runHooks("beforeOnCellMouseOver", r, c, a, u), !Bc(r) && (vi(ol, this) && PF(r, {
+          this.activeWt = l, this.hot.runHooks("beforeOnCellMouseOver", r, c, a, u), !Bc(r) && (vi(ol, this) && IF(r, {
             coords: c,
             selection: this.hot.selection,
             controller: u,
@@ -38569,7 +38569,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           return this.settings.columnHeaderHeight || r;
         }
       };
-      this.hot.runHooks("beforeInitWalkontable", e), this._wt = new ok(e), this.activeWt = this._wt;
+      this.hot.runHooks("beforeInitWalkontable", e), this._wt = new ak(e), this.activeWt = this._wt;
       const t = this._wt.wtTable.spreader, {
         width: i,
         height: s
@@ -38948,14 +38948,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this._wt.destroy(), this.eventManager.destroy();
     }
   }
-  function rz() {
+  function oz() {
     return parseInt(this.hot.rootElement.getAttribute(_R()[0]), 10);
   }
   function dCe(n) {
-    const e = bw(yC, this, rz).call(this) + n;
+    const e = bw(yC, this, oz).call(this) + n;
     $e(this.hot.rootElement, ..._R(e));
   }
-  const oz = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", SA = oz.length;
+  const az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", SA = az.length;
   function LR(n) {
     let e = n + 1, t = "", i;
     for (; e > 0; )
@@ -38966,7 +38966,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     let e = 0;
     if (n)
       for (let t = 0, i = n.length - 1; t < n.length; t += 1, i -= 1)
-        e += SA ** i * (oz.indexOf(n[t]) + 1);
+        e += SA ** i * (az.indexOf(n[t]) + 1);
     return e -= 1, e;
   }
   function gCe() {
@@ -39004,7 +39004,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return t;
   }
-  function lk(n) {
+  function ck(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0, t = n;
     const i = [];
     return (!Array.isArray(n) || !Array.isArray(n[0])) && (t = [n]), t.forEach((s, r) => {
@@ -39015,25 +39015,25 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }), i;
   }
-  function ck(n) {
+  function uk(n) {
     let e = 0;
     return Array.isArray(n) && (n[0] && Array.isArray(n[0]) ? e = n[0].length : n[0] && tt(n[0]) && (e = PR(n[0]))), e;
   }
-  function az(n) {
+  function lz(n) {
     return !!(Array.isArray(n) && n.length && n.every((e) => Array.isArray(e)));
   }
-  function lz(n) {
+  function cz(n) {
     return !!(Array.isArray(n) && n.length && n.every((e) => typeof e == "object" && !Array.isArray(e) && e !== null));
   }
   const bCe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    countFirstRowKeys: ck,
+    countFirstRowKeys: uk,
     createEmptySpreadsheetData: mCe,
     createSpreadsheetData: gCe,
     createSpreadsheetObjectData: pCe,
-    dataRowToChangesArray: lk,
-    isArrayOfArrays: az,
-    isArrayOfObjects: lz,
+    dataRowToChangesArray: ck,
+    isArrayOfArrays: lz,
+    isArrayOfObjects: cz,
     spreadsheetColumnIndex: fCe,
     spreadsheetColumnLabel: LR
   }, Symbol.toStringTag, { value: "Module" }));
@@ -39175,7 +39175,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           const {
             dataDotNotation: r
           } = this.hot.getSettings();
-          s = r ? g7(i, t) : i[t];
+          s = r ? p7(i, t) : i[t];
         } else typeof t == "function" ? s = t(i) : s = i[t];
       if (this.hot.hasHook("modifySourceData")) {
         const r = $r(s);
@@ -39230,7 +39230,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number}
      */
     countFirstRowKeys() {
-      return ck(this.data);
+      return uk(this.data);
     }
     /**
      * Destroy instance.
@@ -39239,7 +39239,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.data = null, this.hot = null;
     }
   }
-  function IF(n, e, t) {
+  function OF(n, e, t) {
     return (e = CCe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function CCe(n) {
@@ -39259,7 +39259,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   class Kd {
     constructor() {
       let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
-      IF(this, "indexedValues", []), IF(this, "initValueOrFn", void 0), this.initValueOrFn = e;
+      OF(this, "indexedValues", []), OF(this, "initValueOrFn", void 0), this.initValueOrFn = e;
     }
     /**
      * Get full list of values for particular indexes.
@@ -39369,11 +39369,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   jt(Kd, Li);
-  function uk(n, e, t, i) {
+  function hk(n, e, t, i) {
     const s = t.length ? t[0] : void 0;
     return [...n.slice(0, s), ...t.map((r, o) => en(i) ? i(r, o) : i), ...s === void 0 ? [] : n.slice(s)];
   }
-  function hk(n, e) {
+  function dk(n, e) {
     return Zl(n, (t, i) => e.includes(i) === !1);
   }
   class Ou extends Kd {
@@ -39385,7 +39385,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} insertedIndexes List of inserted indexes.
      */
     insert(e, t) {
-      this.indexedValues = uk(this.indexedValues, e, t, this.initValueOrFn), super.insert(e, t);
+      this.indexedValues = hk(this.indexedValues, e, t, this.initValueOrFn), super.insert(e, t);
     }
     /**
      * Remove values from the list and reorganize.
@@ -39394,7 +39394,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} removedIndexes List of removed indexes.
      */
     remove(e) {
-      this.indexedValues = hk(this.indexedValues, e), super.remove(e);
+      this.indexedValues = dk(this.indexedValues, e), super.remove(e);
     }
   }
   class $R extends Ou {
@@ -39413,16 +39413,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return Jn(this.getValues(), (e, t, i) => (t && e.push(i), e), []);
     }
   }
-  function dk(n, e, t) {
+  function fk(n, e, t) {
     return [...n.slice(0, e), ...t, ...n.slice(e)];
   }
   function ww(n, e) {
     return Zl(n, (t) => e.includes(t) === !1);
   }
-  function fk(n, e) {
+  function gk(n, e) {
     return ut(n, (t) => t - e.filter((i) => i < t).length);
   }
-  function gk(n, e) {
+  function pk(n, e) {
     const t = e[0], i = e.length;
     return ut(n, (s) => s >= t ? s + i : s);
   }
@@ -39516,7 +39516,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} insertedIndexes List of inserted indexes.
      */
     insert(e, t) {
-      this.indexedValues = uk(this.indexedValues, e, t, this.initValueOrFn), this.orderOfIndexes = gk(this.orderOfIndexes, t), super.insert(e, t);
+      this.indexedValues = hk(this.indexedValues, e, t, this.initValueOrFn), this.orderOfIndexes = pk(this.orderOfIndexes, t), super.insert(e, t);
     }
     /**
      * Remove values from the list and reorganize. It updates list of indexes related to ordered values.
@@ -39525,7 +39525,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} removedIndexes List of removed indexes.
      */
     remove(e) {
-      this.indexedValues = hk(this.indexedValues, e), this.orderOfIndexes = ww(this.orderOfIndexes, e), this.orderOfIndexes = fk(this.orderOfIndexes, e), super.remove(e);
+      this.indexedValues = dk(this.indexedValues, e), this.orderOfIndexes = ww(this.orderOfIndexes, e), this.orderOfIndexes = gk(this.orderOfIndexes, e), super.remove(e);
     }
     /**
      * Get every entry containing index and value, respecting order of indexes.
@@ -39552,18 +39552,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return Jn(this.getValues(), (e, t, i) => (t && e.push(i), e), []);
     }
   }
-  const OF = /* @__PURE__ */ new Map([["indexesSequence", {
-    getListWithInsertedItems: dk,
+  const kF = /* @__PURE__ */ new Map([["indexesSequence", {
+    getListWithInsertedItems: fk,
     getListWithRemovedItems: ww
   }], ["physicallyIndexed", {
-    getListWithInsertedItems: uk,
-    getListWithRemovedItems: hk
-  }]]), cz = (n) => {
-    if (OF.has(n) === !1)
+    getListWithInsertedItems: hk,
+    getListWithRemovedItems: dk
+  }]]), uz = (n) => {
+    if (kF.has(n) === !1)
       throw new Error(`Alter strategy with ID '${n}' does not exist.`);
-    return OF.get(n);
+    return kF.get(n);
   };
-  class uz extends Kd {
+  class hz extends Kd {
     constructor() {
       super((e) => e);
     }
@@ -39575,8 +39575,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} insertedIndexes List of inserted indexes.
      */
     insert(e, t) {
-      const i = gk(this.indexedValues, t);
-      this.indexedValues = dk(i, e, t), super.insert(e, t);
+      const i = pk(this.indexedValues, t);
+      this.indexedValues = fk(i, e, t), super.insert(e, t);
     }
     /**
      * Remove values from the list and reorganize.
@@ -39586,15 +39586,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     remove(e) {
       const t = ww(this.indexedValues, e);
-      this.indexedValues = fk(t, e), super.remove(e);
+      this.indexedValues = gk(t, e), super.remove(e);
     }
   }
-  const kF = /* @__PURE__ */ new Map([["hiding", $R], ["index", Kd], ["linkedPhysicalIndexToValue", FR], ["physicalIndexToValue", Ou], ["trimming", bv]]);
+  const HF = /* @__PURE__ */ new Map([["hiding", $R], ["index", Kd], ["linkedPhysicalIndexToValue", FR], ["physicalIndexToValue", Ou], ["trimming", bv]]);
   function ECe(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
-    if (!kF.has(n))
+    if (!HF.has(n))
       throw new Error(`The provided map type ("${n}") does not exist.`);
-    return new (kF.get(n))(e);
+    return new (HF.get(n))(e);
   }
   function TCe(n, e, t) {
     return (e = MCe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
@@ -39614,7 +39614,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   let _A = 0;
-  class pk {
+  class mk {
     constructor() {
       TCe(this, "collection", /* @__PURE__ */ new Map());
     }
@@ -39693,7 +39693,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }
   }
-  jt(pk, Li);
+  jt(mk, Li);
   function PCe() {
     return _A;
   }
@@ -39714,7 +39714,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class HF extends pk {
+  class DF extends mk {
     constructor(e, t) {
       super(), lE(this, "mergedValuesCache", []), lE(this, "aggregationFunction", void 0), lE(this, "fallbackValue", void 0), this.aggregationFunction = e, this.fallbackValue = t;
     }
@@ -39763,17 +39763,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function DCe(n, e, t) {
-    return n.set(hz(n, e), t), t;
+    return n.set(dz(n, e), t), t;
   }
   function NCe(n, e) {
-    return n.get(hz(n, e));
+    return n.get(dz(n, e));
   }
-  function hz(n, e, t) {
+  function dz(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
   var cE = /* @__PURE__ */ new WeakMap();
-  class dz {
+  class fz {
     constructor() {
       kCe(this, cE, []);
     }
@@ -39817,8 +39817,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       DCe(cE, this, e);
     }
   }
-  jt(dz, Li);
-  function DF(n, e) {
+  jt(fz, Li);
+  function NF(n, e) {
     const t = [];
     let i = 0, s = 0;
     for (; i < n.length && s < e.length; i++, s++)
@@ -39851,12 +39851,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function _r(n, e) {
-    return n.get(fz(n, e));
+    return n.get(gz(n, e));
   }
   function Iy(n, e, t) {
-    return n.set(fz(n, e), t), t;
+    return n.set(gz(n, e), t), t;
   }
-  function fz(n, e, t) {
+  function gz(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -39893,10 +39893,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     /* eslint-enable jsdoc/require-description-complete-sentence */
     createObserver() {
-      const e = new dz();
+      const e = new fz();
       return _r(Oy, this).add(e), e.addLocalHook("unsubscribe", () => {
         _r(Oy, this).delete(e);
-      }), e._writeInitialChanges(DF(_r(tm, this), _r(ky, this))), e;
+      }), e._writeInitialChanges(NF(_r(tm, this), _r(ky, this))), e;
     }
     /**
      * The method is an entry point for triggering new index map changes. Emitting the
@@ -39908,7 +39908,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     emit(e) {
       let t = _r(ky, this);
       (!_r(Hy, this) || _r(tm, this).length !== e.length) && (e.length === 0 ? e = new Array(t.length).fill(_r(Dy, this)) : Iy(tm, this, new Array(e.length).fill(_r(Dy, this))), _r(Hy, this) || (Iy(Hy, this, !0), t = _r(tm, this)));
-      const i = DF(t, e);
+      const i = NF(t, e);
       _r(Oy, this).forEach((s) => s._write(i)), Iy(ky, this, e);
     }
   }
@@ -39931,7 +39931,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class RA {
     constructor() {
-      rs(this, "indexesSequence", new uz()), rs(this, "trimmingMapsCollection", new HF((e) => e.some((t) => t === !0), !1)), rs(this, "hidingMapsCollection", new HF((e) => e.some((t) => t === !0), !1)), rs(this, "variousMapsCollection", new pk()), rs(this, "hidingChangesObservable", new $Ce({
+      rs(this, "indexesSequence", new hz()), rs(this, "trimmingMapsCollection", new DF((e) => e.some((t) => t === !0), !1)), rs(this, "hidingMapsCollection", new DF((e) => e.some((t) => t === !0), !1)), rs(this, "variousMapsCollection", new mk()), rs(this, "hidingChangesObservable", new $Ce({
         initialIndexValue: !1
       })), rs(this, "notTrimmedIndexesCache", []), rs(this, "notHiddenIndexesCache", []), rs(this, "isBatched", !1), rs(this, "indexesSequenceChanged", !1), rs(this, "indexesChangeSource", void 0), rs(this, "trimmedIndexesChanged", !1), rs(this, "hiddenIndexesChanged", !1), rs(this, "renderablePhysicalIndexesCache", []), rs(this, "fromPhysicalToVisualIndexesCache", /* @__PURE__ */ new Map()), rs(this, "fromVisualToRenderableIndexesCache", /* @__PURE__ */ new Map()), this.indexesSequence.addLocalHook("change", () => {
         this.indexesSequenceChanged = !0, this.updateCache(), this.runLocalHooks("indexesSequenceChange", this.indexesChangeSource), this.runLocalHooks("change", this.indexesSequence, null);
@@ -40202,7 +40202,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const c = a[t];
         l = o.indexOf(c);
       }
-      this.indexesChangeSource = "move", this.setIndexesSequence(dk(o, l, i)), this.indexesChangeSource = void 0;
+      this.indexesChangeSource = "move", this.setIndexesSequence(fk(o, l, i)), this.indexesChangeSource = void 0;
     }
     /**
      * Get whether index is trimmed. Index marked as trimmed isn't included in a {@link DataMap} and isn't rendered.
@@ -40291,12 +40291,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       sn(n[i]) && (n[i] = t);
     }), n;
   }
-  function gz(n) {
+  function pz(n) {
     const t = /^([a-zA-Z]{2})-([a-zA-Z]{2})$/.exec(n);
     return t ? `${t[1].toLowerCase()}-${t[2].toUpperCase()}` : n;
   }
-  function pz(n) {
-    Me(n) && LO(Wt`Language with code "${n}" was not found. You should register particular language\x20
+  function mz(n) {
+    Me(n) && $O(Wt`Language with code "${n}" was not found. You should register particular language\x20
     before using it. Read more about this issue at: https://docs.handsontable.com/i18n/missing-language-code.`);
   }
   function WCe(n, e) {
@@ -40313,13 +40313,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return zCe();
   }
   UCe("pluralize", WCe);
-  const mz = "ContextMenu:items", Qe = mz, mk = `${Qe}.noItems`, bk = `${Qe}.insertRowAbove`, wk = `${Qe}.insertRowBelow`, vk = `${Qe}.insertColumnOnTheLeft`, yk = `${Qe}.insertColumnOnTheRight`, Ck = `${Qe}.removeRow`, Sk = `${Qe}.removeColumn`, _k = `${Qe}.undo`, Rk = `${Qe}.redo`, AS = `${Qe}.readOnly`, xk = `${Qe}.clearColumn`, Ek = `${Qe}.copy`, Tk = `${Qe}.copyWithHeaders`, Mk = `${Qe}.copyWithGroupHeaders`, Ak = `${Qe}.copyHeadersOnly`, Pk = `${Qe}.cut`, Ik = `${Qe}.freezeColumn`, Ok = `${Qe}.unfreezeColumn`, kk = `${Qe}.mergeCells`, Hk = `${Qe}.unmergeCells`, Dk = `${Qe}.addComment`, Nk = `${Qe}.editComment`, Lk = `${Qe}.removeComment`, $k = `${Qe}.readOnlyComment`, Fk = `${Qe}.align`, PS = `${Qe}.align.left`, IS = `${Qe}.align.center`, OS = `${Qe}.align.right`, kS = `${Qe}.align.justify`, HS = `${Qe}.align.top`, DS = `${Qe}.align.middle`, NS = `${Qe}.align.bottom`, Bk = `${Qe}.borders`, Vk = `${Qe}.borders.top`, Wk = `${Qe}.borders.right`, jk = `${Qe}.borders.bottom`, zk = `${Qe}.borders.left`, Uk = `${Qe}.borders.remove`, Yk = `${Qe}.nestedHeaders.insertChildRow`, Gk = `${Qe}.nestedHeaders.detachFromParent`, Kk = `${Qe}.hideColumn`, qk = `${Qe}.showColumn`, Xk = `${Qe}.hideRow`, Qk = `${Qe}.showRow`, Cs = "Filters:", Ln = `${Cs}conditions`, BR = `${Ln}.none`, Zk = `${Ln}.isEmpty`, Jk = `${Ln}.isNotEmpty`, eH = `${Ln}.isEqualTo`, tH = `${Ln}.isNotEqualTo`, nH = `${Ln}.beginsWith`, iH = `${Ln}.endsWith`, sH = `${Ln}.contains`, rH = `${Ln}.doesNotContain`, GCe = `${Ln}.byValue`, oH = `${Ln}.greaterThan`, aH = `${Ln}.greaterThanOrEqualTo`, lH = `${Ln}.lessThan`, cH = `${Ln}.lessThanOrEqualTo`, uH = `${Ln}.isBetween`, hH = `${Ln}.isNotBetween`, dH = `${Ln}.after`, fH = `${Ln}.before`, gH = `${Ln}.today`, pH = `${Ln}.tomorrow`, mH = `${Ln}.yesterday`, bH = `${Cs}labels.filterByCondition`, wH = `${Cs}labels.filterByValue`, vH = `${Cs}labels.conjunction`, VR = `${Cs}labels.disjunction`, LS = `${Cs}values.blankCells`, yH = `${Cs}buttons.selectAll`, CH = `${Cs}buttons.clear`, SH = `${Cs}buttons.ok`, _H = `${Cs}buttons.cancel`, RH = `${Cs}buttons.placeholder.search`, xH = `${Cs}buttons.placeholder.value`, EH = `${Cs}buttons.placeholder.secondValue`, TH = "CheckboxRenderer:", MH = `${TH}checked`, AH = `${TH}unchecked`, KCe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const bz = "ContextMenu:items", Qe = bz, bk = `${Qe}.noItems`, wk = `${Qe}.insertRowAbove`, vk = `${Qe}.insertRowBelow`, yk = `${Qe}.insertColumnOnTheLeft`, Ck = `${Qe}.insertColumnOnTheRight`, Sk = `${Qe}.removeRow`, _k = `${Qe}.removeColumn`, Rk = `${Qe}.undo`, xk = `${Qe}.redo`, AS = `${Qe}.readOnly`, Ek = `${Qe}.clearColumn`, Tk = `${Qe}.copy`, Mk = `${Qe}.copyWithHeaders`, Ak = `${Qe}.copyWithGroupHeaders`, Pk = `${Qe}.copyHeadersOnly`, Ik = `${Qe}.cut`, Ok = `${Qe}.freezeColumn`, kk = `${Qe}.unfreezeColumn`, Hk = `${Qe}.mergeCells`, Dk = `${Qe}.unmergeCells`, Nk = `${Qe}.addComment`, Lk = `${Qe}.editComment`, $k = `${Qe}.removeComment`, Fk = `${Qe}.readOnlyComment`, Bk = `${Qe}.align`, PS = `${Qe}.align.left`, IS = `${Qe}.align.center`, OS = `${Qe}.align.right`, kS = `${Qe}.align.justify`, HS = `${Qe}.align.top`, DS = `${Qe}.align.middle`, NS = `${Qe}.align.bottom`, Vk = `${Qe}.borders`, Wk = `${Qe}.borders.top`, jk = `${Qe}.borders.right`, zk = `${Qe}.borders.bottom`, Uk = `${Qe}.borders.left`, Yk = `${Qe}.borders.remove`, Gk = `${Qe}.nestedHeaders.insertChildRow`, Kk = `${Qe}.nestedHeaders.detachFromParent`, qk = `${Qe}.hideColumn`, Xk = `${Qe}.showColumn`, Qk = `${Qe}.hideRow`, Zk = `${Qe}.showRow`, Cs = "Filters:", Ln = `${Cs}conditions`, BR = `${Ln}.none`, Jk = `${Ln}.isEmpty`, eH = `${Ln}.isNotEmpty`, tH = `${Ln}.isEqualTo`, nH = `${Ln}.isNotEqualTo`, iH = `${Ln}.beginsWith`, sH = `${Ln}.endsWith`, rH = `${Ln}.contains`, oH = `${Ln}.doesNotContain`, GCe = `${Ln}.byValue`, aH = `${Ln}.greaterThan`, lH = `${Ln}.greaterThanOrEqualTo`, cH = `${Ln}.lessThan`, uH = `${Ln}.lessThanOrEqualTo`, hH = `${Ln}.isBetween`, dH = `${Ln}.isNotBetween`, fH = `${Ln}.after`, gH = `${Ln}.before`, pH = `${Ln}.today`, mH = `${Ln}.tomorrow`, bH = `${Ln}.yesterday`, wH = `${Cs}labels.filterByCondition`, vH = `${Cs}labels.filterByValue`, yH = `${Cs}labels.conjunction`, VR = `${Cs}labels.disjunction`, LS = `${Cs}values.blankCells`, CH = `${Cs}buttons.selectAll`, SH = `${Cs}buttons.clear`, _H = `${Cs}buttons.ok`, RH = `${Cs}buttons.cancel`, xH = `${Cs}buttons.placeholder.search`, EH = `${Cs}buttons.placeholder.value`, TH = `${Cs}buttons.placeholder.secondValue`, MH = "CheckboxRenderer:", AH = `${MH}checked`, PH = `${MH}unchecked`, KCe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    CHECKBOX_CHECKED: MH,
-    CHECKBOX_RENDERER_NAMESPACE: TH,
-    CHECKBOX_UNCHECKED: AH,
-    CONTEXTMENU_ITEMS_ADD_COMMENT: Dk,
-    CONTEXTMENU_ITEMS_ALIGNMENT: Fk,
+    CHECKBOX_CHECKED: AH,
+    CHECKBOX_RENDERER_NAMESPACE: MH,
+    CHECKBOX_UNCHECKED: PH,
+    CONTEXTMENU_ITEMS_ADD_COMMENT: Nk,
+    CONTEXTMENU_ITEMS_ALIGNMENT: Bk,
     CONTEXTMENU_ITEMS_ALIGNMENT_BOTTOM: NS,
     CONTEXTMENU_ITEMS_ALIGNMENT_CENTER: IS,
     CONTEXTMENU_ITEMS_ALIGNMENT_JUSTIFY: kS,
@@ -40327,74 +40327,74 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     CONTEXTMENU_ITEMS_ALIGNMENT_MIDDLE: DS,
     CONTEXTMENU_ITEMS_ALIGNMENT_RIGHT: OS,
     CONTEXTMENU_ITEMS_ALIGNMENT_TOP: HS,
-    CONTEXTMENU_ITEMS_BORDERS: Bk,
-    CONTEXTMENU_ITEMS_BORDERS_BOTTOM: jk,
-    CONTEXTMENU_ITEMS_BORDERS_LEFT: zk,
-    CONTEXTMENU_ITEMS_BORDERS_RIGHT: Wk,
-    CONTEXTMENU_ITEMS_BORDERS_TOP: Vk,
-    CONTEXTMENU_ITEMS_CLEAR_COLUMN: xk,
-    CONTEXTMENU_ITEMS_COPY: Ek,
-    CONTEXTMENU_ITEMS_COPY_COLUMN_HEADERS_ONLY: Ak,
-    CONTEXTMENU_ITEMS_COPY_WITH_COLUMN_GROUP_HEADERS: Mk,
-    CONTEXTMENU_ITEMS_COPY_WITH_COLUMN_HEADERS: Tk,
-    CONTEXTMENU_ITEMS_CUT: Pk,
-    CONTEXTMENU_ITEMS_EDIT_COMMENT: Nk,
-    CONTEXTMENU_ITEMS_FREEZE_COLUMN: Ik,
-    CONTEXTMENU_ITEMS_HIDE_COLUMN: Kk,
-    CONTEXTMENU_ITEMS_HIDE_ROW: Xk,
-    CONTEXTMENU_ITEMS_INSERT_LEFT: vk,
-    CONTEXTMENU_ITEMS_INSERT_RIGHT: yk,
-    CONTEXTMENU_ITEMS_MERGE_CELLS: kk,
-    CONTEXTMENU_ITEMS_NESTED_ROWS_DETACH_CHILD: Gk,
-    CONTEXTMENU_ITEMS_NESTED_ROWS_INSERT_CHILD: Yk,
-    CONTEXTMENU_ITEMS_NO_ITEMS: mk,
+    CONTEXTMENU_ITEMS_BORDERS: Vk,
+    CONTEXTMENU_ITEMS_BORDERS_BOTTOM: zk,
+    CONTEXTMENU_ITEMS_BORDERS_LEFT: Uk,
+    CONTEXTMENU_ITEMS_BORDERS_RIGHT: jk,
+    CONTEXTMENU_ITEMS_BORDERS_TOP: Wk,
+    CONTEXTMENU_ITEMS_CLEAR_COLUMN: Ek,
+    CONTEXTMENU_ITEMS_COPY: Tk,
+    CONTEXTMENU_ITEMS_COPY_COLUMN_HEADERS_ONLY: Pk,
+    CONTEXTMENU_ITEMS_COPY_WITH_COLUMN_GROUP_HEADERS: Ak,
+    CONTEXTMENU_ITEMS_COPY_WITH_COLUMN_HEADERS: Mk,
+    CONTEXTMENU_ITEMS_CUT: Ik,
+    CONTEXTMENU_ITEMS_EDIT_COMMENT: Lk,
+    CONTEXTMENU_ITEMS_FREEZE_COLUMN: Ok,
+    CONTEXTMENU_ITEMS_HIDE_COLUMN: qk,
+    CONTEXTMENU_ITEMS_HIDE_ROW: Qk,
+    CONTEXTMENU_ITEMS_INSERT_LEFT: yk,
+    CONTEXTMENU_ITEMS_INSERT_RIGHT: Ck,
+    CONTEXTMENU_ITEMS_MERGE_CELLS: Hk,
+    CONTEXTMENU_ITEMS_NESTED_ROWS_DETACH_CHILD: Kk,
+    CONTEXTMENU_ITEMS_NESTED_ROWS_INSERT_CHILD: Gk,
+    CONTEXTMENU_ITEMS_NO_ITEMS: bk,
     CONTEXTMENU_ITEMS_READ_ONLY: AS,
-    CONTEXTMENU_ITEMS_READ_ONLY_COMMENT: $k,
-    CONTEXTMENU_ITEMS_REDO: Rk,
-    CONTEXTMENU_ITEMS_REMOVE_BORDERS: Uk,
-    CONTEXTMENU_ITEMS_REMOVE_COLUMN: Sk,
-    CONTEXTMENU_ITEMS_REMOVE_COMMENT: Lk,
-    CONTEXTMENU_ITEMS_REMOVE_ROW: Ck,
-    CONTEXTMENU_ITEMS_ROW_ABOVE: bk,
-    CONTEXTMENU_ITEMS_ROW_BELOW: wk,
-    CONTEXTMENU_ITEMS_SHOW_COLUMN: qk,
-    CONTEXTMENU_ITEMS_SHOW_ROW: Qk,
-    CONTEXTMENU_ITEMS_UNDO: _k,
-    CONTEXTMENU_ITEMS_UNFREEZE_COLUMN: Ok,
-    CONTEXTMENU_ITEMS_UNMERGE_CELLS: Hk,
-    CONTEXT_MENU_ITEMS_NAMESPACE: mz,
-    FILTERS_BUTTONS_CANCEL: _H,
-    FILTERS_BUTTONS_CLEAR: CH,
-    FILTERS_BUTTONS_OK: SH,
-    FILTERS_BUTTONS_PLACEHOLDER_SEARCH: RH,
-    FILTERS_BUTTONS_PLACEHOLDER_SECOND_VALUE: EH,
-    FILTERS_BUTTONS_PLACEHOLDER_VALUE: xH,
-    FILTERS_BUTTONS_SELECT_ALL: yH,
-    FILTERS_CONDITIONS_AFTER: dH,
-    FILTERS_CONDITIONS_BEFORE: fH,
-    FILTERS_CONDITIONS_BEGINS_WITH: nH,
-    FILTERS_CONDITIONS_BETWEEN: uH,
+    CONTEXTMENU_ITEMS_READ_ONLY_COMMENT: Fk,
+    CONTEXTMENU_ITEMS_REDO: xk,
+    CONTEXTMENU_ITEMS_REMOVE_BORDERS: Yk,
+    CONTEXTMENU_ITEMS_REMOVE_COLUMN: _k,
+    CONTEXTMENU_ITEMS_REMOVE_COMMENT: $k,
+    CONTEXTMENU_ITEMS_REMOVE_ROW: Sk,
+    CONTEXTMENU_ITEMS_ROW_ABOVE: wk,
+    CONTEXTMENU_ITEMS_ROW_BELOW: vk,
+    CONTEXTMENU_ITEMS_SHOW_COLUMN: Xk,
+    CONTEXTMENU_ITEMS_SHOW_ROW: Zk,
+    CONTEXTMENU_ITEMS_UNDO: Rk,
+    CONTEXTMENU_ITEMS_UNFREEZE_COLUMN: kk,
+    CONTEXTMENU_ITEMS_UNMERGE_CELLS: Dk,
+    CONTEXT_MENU_ITEMS_NAMESPACE: bz,
+    FILTERS_BUTTONS_CANCEL: RH,
+    FILTERS_BUTTONS_CLEAR: SH,
+    FILTERS_BUTTONS_OK: _H,
+    FILTERS_BUTTONS_PLACEHOLDER_SEARCH: xH,
+    FILTERS_BUTTONS_PLACEHOLDER_SECOND_VALUE: TH,
+    FILTERS_BUTTONS_PLACEHOLDER_VALUE: EH,
+    FILTERS_BUTTONS_SELECT_ALL: CH,
+    FILTERS_CONDITIONS_AFTER: fH,
+    FILTERS_CONDITIONS_BEFORE: gH,
+    FILTERS_CONDITIONS_BEGINS_WITH: iH,
+    FILTERS_CONDITIONS_BETWEEN: hH,
     FILTERS_CONDITIONS_BY_VALUE: GCe,
-    FILTERS_CONDITIONS_CONTAINS: sH,
-    FILTERS_CONDITIONS_EMPTY: Zk,
-    FILTERS_CONDITIONS_ENDS_WITH: iH,
-    FILTERS_CONDITIONS_EQUAL: eH,
-    FILTERS_CONDITIONS_GREATER_THAN: oH,
-    FILTERS_CONDITIONS_GREATER_THAN_OR_EQUAL: aH,
-    FILTERS_CONDITIONS_LESS_THAN: lH,
-    FILTERS_CONDITIONS_LESS_THAN_OR_EQUAL: cH,
+    FILTERS_CONDITIONS_CONTAINS: rH,
+    FILTERS_CONDITIONS_EMPTY: Jk,
+    FILTERS_CONDITIONS_ENDS_WITH: sH,
+    FILTERS_CONDITIONS_EQUAL: tH,
+    FILTERS_CONDITIONS_GREATER_THAN: aH,
+    FILTERS_CONDITIONS_GREATER_THAN_OR_EQUAL: lH,
+    FILTERS_CONDITIONS_LESS_THAN: cH,
+    FILTERS_CONDITIONS_LESS_THAN_OR_EQUAL: uH,
     FILTERS_CONDITIONS_NAMESPACE: Ln,
     FILTERS_CONDITIONS_NONE: BR,
-    FILTERS_CONDITIONS_NOT_BETWEEN: hH,
-    FILTERS_CONDITIONS_NOT_CONTAIN: rH,
-    FILTERS_CONDITIONS_NOT_EMPTY: Jk,
-    FILTERS_CONDITIONS_NOT_EQUAL: tH,
-    FILTERS_CONDITIONS_TODAY: gH,
-    FILTERS_CONDITIONS_TOMORROW: pH,
-    FILTERS_CONDITIONS_YESTERDAY: mH,
-    FILTERS_DIVS_FILTER_BY_CONDITION: bH,
-    FILTERS_DIVS_FILTER_BY_VALUE: wH,
-    FILTERS_LABELS_CONJUNCTION: vH,
+    FILTERS_CONDITIONS_NOT_BETWEEN: dH,
+    FILTERS_CONDITIONS_NOT_CONTAIN: oH,
+    FILTERS_CONDITIONS_NOT_EMPTY: eH,
+    FILTERS_CONDITIONS_NOT_EQUAL: nH,
+    FILTERS_CONDITIONS_TODAY: pH,
+    FILTERS_CONDITIONS_TOMORROW: mH,
+    FILTERS_CONDITIONS_YESTERDAY: bH,
+    FILTERS_DIVS_FILTER_BY_CONDITION: wH,
+    FILTERS_DIVS_FILTER_BY_VALUE: vH,
+    FILTERS_LABELS_CONJUNCTION: yH,
     FILTERS_LABELS_DISJUNCTION: VR,
     FILTERS_NAMESPACE: Cs,
     FILTERS_VALUES_BLANK_CELLS: LS
@@ -40406,20 +40406,20 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
    *
    * Description: Definition file for English - United States language-country.
    */
-  const bz = {
+  const wz = {
     languageCode: "en-US",
-    [mk]: "No available options",
-    [bk]: "Insert row above",
-    [wk]: "Insert row below",
-    [vk]: "Insert column left",
-    [yk]: "Insert column right",
-    [Ck]: ["Remove row", "Remove rows"],
-    [Sk]: ["Remove column", "Remove columns"],
-    [_k]: "Undo",
-    [Rk]: "Redo",
+    [bk]: "No available options",
+    [wk]: "Insert row above",
+    [vk]: "Insert row below",
+    [yk]: "Insert column left",
+    [Ck]: "Insert column right",
+    [Sk]: ["Remove row", "Remove rows"],
+    [_k]: ["Remove column", "Remove columns"],
+    [Rk]: "Undo",
+    [xk]: "Redo",
     [AS]: "Read only",
-    [xk]: "Clear column",
-    [Fk]: "Alignment",
+    [Ek]: "Clear column",
+    [Bk]: "Alignment",
     [PS]: "Left",
     [IS]: "Center",
     [OS]: "Right",
@@ -40427,90 +40427,90 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     [HS]: "Top",
     [DS]: "Middle",
     [NS]: "Bottom",
-    [Ik]: "Freeze column",
-    [Ok]: "Unfreeze column",
-    [Bk]: "Borders",
-    [Vk]: "Top",
-    [Wk]: "Right",
-    [jk]: "Bottom",
-    [zk]: "Left",
-    [Uk]: "Remove border(s)",
-    [Dk]: "Add comment",
-    [Nk]: "Edit comment",
-    [Lk]: "Delete comment",
-    [$k]: "Read-only comment",
-    [kk]: "Merge cells",
-    [Hk]: "Unmerge cells",
-    [Ek]: "Copy",
-    [Tk]: ["Copy with header", "Copy with headers"],
-    [Mk]: ["Copy with group header", "Copy with group headers"],
-    [Ak]: ["Copy header only", "Copy headers only"],
-    [Pk]: "Cut",
-    [Yk]: "Insert child row",
-    [Gk]: "Detach from parent",
-    [Kk]: ["Hide column", "Hide columns"],
-    [qk]: ["Show column", "Show columns"],
-    [Xk]: ["Hide row", "Hide rows"],
-    [Qk]: ["Show row", "Show rows"],
+    [Ok]: "Freeze column",
+    [kk]: "Unfreeze column",
+    [Vk]: "Borders",
+    [Wk]: "Top",
+    [jk]: "Right",
+    [zk]: "Bottom",
+    [Uk]: "Left",
+    [Yk]: "Remove border(s)",
+    [Nk]: "Add comment",
+    [Lk]: "Edit comment",
+    [$k]: "Delete comment",
+    [Fk]: "Read-only comment",
+    [Hk]: "Merge cells",
+    [Dk]: "Unmerge cells",
+    [Tk]: "Copy",
+    [Mk]: ["Copy with header", "Copy with headers"],
+    [Ak]: ["Copy with group header", "Copy with group headers"],
+    [Pk]: ["Copy header only", "Copy headers only"],
+    [Ik]: "Cut",
+    [Gk]: "Insert child row",
+    [Kk]: "Detach from parent",
+    [qk]: ["Hide column", "Hide columns"],
+    [Xk]: ["Show column", "Show columns"],
+    [Qk]: ["Hide row", "Hide rows"],
+    [Zk]: ["Show row", "Show rows"],
     [BR]: "None",
-    [Zk]: "Is empty",
-    [Jk]: "Is not empty",
-    [eH]: "Is equal to",
-    [tH]: "Is not equal to",
-    [nH]: "Begins with",
-    [iH]: "Ends with",
-    [sH]: "Contains",
-    [rH]: "Does not contain",
-    [oH]: "Greater than",
-    [aH]: "Greater than or equal to",
-    [lH]: "Less than",
-    [cH]: "Less than or equal to",
-    [uH]: "Is between",
-    [hH]: "Is not between",
-    [dH]: "After",
-    [fH]: "Before",
-    [gH]: "Today",
-    [pH]: "Tomorrow",
-    [mH]: "Yesterday",
+    [Jk]: "Is empty",
+    [eH]: "Is not empty",
+    [tH]: "Is equal to",
+    [nH]: "Is not equal to",
+    [iH]: "Begins with",
+    [sH]: "Ends with",
+    [rH]: "Contains",
+    [oH]: "Does not contain",
+    [aH]: "Greater than",
+    [lH]: "Greater than or equal to",
+    [cH]: "Less than",
+    [uH]: "Less than or equal to",
+    [hH]: "Is between",
+    [dH]: "Is not between",
+    [fH]: "After",
+    [gH]: "Before",
+    [pH]: "Today",
+    [mH]: "Tomorrow",
+    [bH]: "Yesterday",
     [LS]: "Blank cells",
-    [bH]: "Filter by condition",
-    [wH]: "Filter by value",
-    [vH]: "And",
+    [wH]: "Filter by condition",
+    [vH]: "Filter by value",
+    [yH]: "And",
     [VR]: "Or",
-    [yH]: "Select all",
-    [CH]: "Clear",
-    [SH]: "OK",
-    [_H]: "Cancel",
-    [RH]: "Search",
-    [xH]: "Value",
-    [EH]: "Second value",
-    [MH]: "Checked",
-    [AH]: "Unchecked"
-  }, qCe = KCe, xA = bz.languageCode, {
+    [CH]: "Select all",
+    [SH]: "Clear",
+    [_H]: "OK",
+    [RH]: "Cancel",
+    [xH]: "Search",
+    [EH]: "Value",
+    [TH]: "Second value",
+    [AH]: "Checked",
+    [PH]: "Unchecked"
+  }, qCe = KCe, xA = wz.languageCode, {
     register: XCe,
-    getItem: wz,
+    getItem: vz,
     hasItem: QCe,
     getValues: ZCe
   } = Vo("languagesDictionaries");
-  vz(bz);
-  function vz(n, e) {
+  yz(wz);
+  function yz(n, e) {
     let t = n, i = e;
     return tt(n) && (i = n, t = i.languageCode), JCe(t, i), XCe(t, ss(i)), ss(i);
   }
   function JCe(n, e) {
-    n !== xA && VCe(e, wz(xA));
+    n !== xA && VCe(e, vz(xA));
   }
-  function yz(n) {
-    return PH(n) ? ss(wz(n)) : null;
+  function Cz(n) {
+    return IH(n) ? ss(vz(n)) : null;
   }
-  function PH(n) {
+  function IH(n) {
     return QCe(n);
   }
   function eSe() {
     return ZCe();
   }
-  function Cz(n, e, t) {
-    const i = yz(n);
+  function Sz(n, e, t) {
+    const i = Cz(n);
     if (i === null)
       return null;
     const s = i[e];
@@ -40526,8 +40526,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }), t;
   }
   function nSe(n) {
-    let e = gz(n);
-    return PH(e) || (e = xA, pz(n)), e;
+    let e = pz(n);
+    return IH(e) || (e = xA, mz(n)), e;
   }
   function iSe(n, e, t) {
     return (e = sSe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
@@ -40546,7 +40546,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class hc extends Z7 {
+  class hc extends J7 {
     constructor(e, t) {
       super(e, null), iSe(this, "visualCellRange", null), this.visualCellRange = t || null, this.commit();
     }
@@ -40698,7 +40698,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return new hc({
       className: e,
       ...t,
-      selectionType: J7
+      selectionType: ez
     });
   }
   function oSe(n) {
@@ -40715,7 +40715,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         cornerVisible: e
       },
       ...t,
-      selectionType: ZO
+      selectionType: JO
     });
   }
   function aSe(n) {
@@ -40725,7 +40725,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return new hc({
       className: "highlight",
       ...e,
-      selectionType: ZO
+      selectionType: JO
     });
   }
   function lSe(n) {
@@ -40746,14 +40746,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     } = n;
     return new hc({
       className: "current",
-      headerAttributes: [yO()],
+      headerAttributes: [CO()],
       border: {
         width: 2,
         color: "#4b89ff",
         cornerVisible: e
       },
       ...t,
-      selectionType: JO
+      selectionType: ek
     });
   }
   function uSe(n) {
@@ -40782,7 +40782,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       selectionType: P0e
     });
   }
-  function NF(n) {
+  function LF(n) {
     let {
       headerClassName: e,
       ...t
@@ -40790,7 +40790,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return new hc({
       className: e,
       ...t,
-      selectionType: QO
+      selectionType: ZO
     });
   }
   function dSe(n) {
@@ -40845,7 +40845,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     isEnabledFor(e, t) {
       let i = e;
-      e === JO && (i = "current");
+      e === ek && (i = "current");
       let s = this.options.disabledCellSelection(t.row, t.col);
       return typeof s == "string" && (s = [s]), s === !1 || Array.isArray(s) && !s.includes(i);
     }
@@ -40917,7 +40917,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {Selection}
      */
     createRowHeader() {
-      return al(Yo, this, ll).call(this, this.rowHeaders, NF);
+      return al(Yo, this, ll).call(this, this.rowHeaders, LF);
     }
     /**
      * Get all Walkontable Selection instances which describes the state of the visual highlight of the headers.
@@ -40934,7 +40934,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {Selection}
      */
     createColumnHeader() {
-      return al(Yo, this, ll).call(this, this.columnHeaders, NF);
+      return al(Yo, this, ll).call(this, this.columnHeaders, LF);
     }
     /**
      * Get all Walkontable Selection instances which describes the state of the visual highlight of the headers.
@@ -41073,7 +41073,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     });
     return n.set(t, i), i;
   }
-  function LF(n, e, t) {
+  function $F(n, e, t) {
     return (e = wSe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function wSe(n) {
@@ -41092,7 +41092,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class ySe {
     constructor(e) {
-      LF(this, "ranges", []), LF(this, "createCellRange", void 0), this.createCellRange = e;
+      $F(this, "ranges", []), $F(this, "createCellRange", void 0), this.createCellRange = e;
     }
     /**
      * Check if selected range is empty.
@@ -41187,12 +41187,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function CSe(n, e) {
-    Sz(n, e), e.add(n);
+    _z(n, e), e.add(n);
   }
   function hE(n, e, t) {
-    Sz(n, e), e.set(n, t);
+    _z(n, e), e.set(n, t);
   }
-  function Sz(n, e) {
+  function _z(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function _t(n, e) {
@@ -41232,10 +41232,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const {
           width: c,
           height: u
-        } = ti(di, this, _z).call(this), {
+        } = ti(di, this, Rz).call(this), {
           row: h,
           col: d
-        } = ti(di, this, FF).call(this, r), f = _t(ln, this).fixedRowsBottom(), g = _t(ln, this).minSpareRows(), p = _t(ln, this).minSpareCols(), m = _t(ln, this).autoWrapRow(), w = _t(ln, this).autoWrapCol(), y = _t(ln, this).createCellCoords(h + s.row, d + s.col);
+        } = ti(di, this, BF).call(this, r), f = _t(ln, this).fixedRowsBottom(), g = _t(ln, this).minSpareRows(), p = _t(ln, this).minSpareCols(), m = _t(ln, this).autoWrapRow(), w = _t(ln, this).autoWrapCol(), y = _t(ln, this).createCellCoords(h + s.row, d + s.col);
         if (y.row >= u) {
           const _ = $r(i && g > 0 && f === 0), x = y.col + 1, M = _t(ln, this).createCellCoords(y.row - u, x >= c ? x - c : x);
           this.runLocalHooks("beforeColumnWrap", _, ti(di, this, mf).call(this, M), x >= c), _.value ? this.runLocalHooks("insertRowRequire", _t(ln, this).countRenderableRows()) : w && y.assign(M);
@@ -41253,7 +41253,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const {
           rowDir: C,
           colDir: R
-        } = ti(di, this, $F).call(this, y);
+        } = ti(di, this, FF).call(this, y);
         a = C, l = R, r = ti(di, this, mf).call(this, y);
       }
       return this.runLocalHooks("afterTransformStart", r, a, l), r;
@@ -41272,7 +41272,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const {
           row: h,
           col: d
-        } = ti(di, this, FF).call(this, s.highlight), f = _t(ln, this).createCellCoords(o + i.row, a + i.col), g = s.getTopStartCorner(), p = s.getTopEndCorner(), m = s.getBottomEndCorner();
+        } = ti(di, this, BF).call(this, s.highlight), f = _t(ln, this).createCellCoords(o + i.row, a + i.col), g = s.getTopStartCorner(), p = s.getTopEndCorner(), m = s.getBottomEndCorner();
         if (i.col < 0 && a >= d && f.col < d) {
           const R = f.col - d;
           f.col = ti(di, this, fE).call(this, g.col, p.col) + R;
@@ -41290,7 +41290,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const {
           rowDir: w,
           colDir: y
-        } = ti(di, this, $F).call(this, f);
+        } = ti(di, this, FF).call(this, f);
         c = w, u = y;
         const C = ti(di, this, mf).call(this, f);
         i.row === 0 && i.col !== 0 ? l.col = C.col : i.row !== 0 && i.col === 0 ? l.row = C.row : (l.row = C.row, l.col = C.col);
@@ -41323,18 +41323,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }
   }
-  function $F(n) {
+  function FF(n) {
     const {
       width: e,
       height: t
-    } = ti(di, this, _z).call(this);
+    } = ti(di, this, Rz).call(this);
     let i = 0, s = 0;
     return n.row < 0 ? (i = -1, n.row = 0) : n.row > 0 && n.row >= t && (i = 1, n.row = t - 1), n.col < 0 ? (s = -1, n.col = 0) : n.col > 0 && n.col >= e && (s = 1, n.col = e - 1), {
       rowDir: i,
       colDir: s
     };
   }
-  function _z() {
+  function Rz() {
     return {
       width: _t(Mo, this).x + _t(ln, this).countRenderableColumns(),
       height: _t(Mo, this).y + _t(ln, this).countRenderableRows()
@@ -41348,7 +41348,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const t = _t(ln, this).findFirstNonHiddenRenderableColumn(n, e);
     return t === null ? null : _t(Mo, this).x + t;
   }
-  function FF(n) {
+  function BF(n) {
     const {
       row: e,
       col: t
@@ -41362,16 +41362,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return e.col = n.col - _t(Mo, this).x, e.row = n.row - _t(Mo, this).y, _t(ln, this).renderableToVisualCoords(e);
   }
   jt(EA, Li);
-  const WR = 0, jR = 1, Rz = 2, IH = 3, SSe = [IH, Rz], _Se = [["number"], ["number", "string"], ["number", "undefined"], ["number", "string", "undefined"]], gE = Symbol("root"), BF = Symbol("child");
+  const WR = 0, jR = 1, xz = 2, OH = 3, SSe = [OH, xz], _Se = [["number"], ["number", "string"], ["number", "undefined"], ["number", "string", "undefined"]], gE = Symbol("root"), VF = Symbol("child");
   function Bg(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : gE;
-    if (e !== gE && e !== BF)
+    if (e !== gE && e !== VF)
       throw new Error("The second argument is used internally only and cannot be overwritten.");
     const t = Array.isArray(n), i = e === gE;
     let s = WR;
     if (t) {
       const r = n[0];
-      n.length === 0 ? s = jR : i && r instanceof gv ? s = IH : i && Array.isArray(r) ? s = Bg(r, BF) : n.length >= 2 && n.length <= 4 && !n.some((a, l) => !_Se[l].includes(typeof a)) && (s = Rz);
+      n.length === 0 ? s = jR : i && r instanceof gv ? s = OH : i && Array.isArray(r) ? s = Bg(r, VF) : n.length >= 2 && n.length <= 4 && !n.some((a, l) => !_Se[l].includes(typeof a)) && (s = xz);
     }
     return s;
   }
@@ -41385,7 +41385,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (!SSe.includes(n))
       throw new Error("Unsupported selection ranges schema type was provided.");
     return function(r) {
-      const o = n === IH;
+      const o = n === OH;
       let a = o ? r.from.row : r[0], l = o ? r.from.col : r[1], c = o ? r.to.row : r[2], u = o ? r.to.col : r[3];
       if (typeof s == "function" && (typeof l == "string" && (l = s(l)), typeof u == "string" && (u = s(u))), sn(c) && (c = a), sn(u) && (u = l), !i) {
         const f = a, g = l, p = c, m = u;
@@ -41459,17 +41459,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function dn(n, e) {
-    return n.get(xz(n, e));
+    return n.get(Ez(n, e));
   }
   function Go(n, e, t) {
-    return n.set(xz(n, e), t), t;
+    return n.set(Ez(n, e), t), t;
   }
-  function xz(n, e, t) {
+  function Ez(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
   var Vi = /* @__PURE__ */ new WeakMap(), Qu = /* @__PURE__ */ new WeakMap(), $y = /* @__PURE__ */ new WeakMap(), nm = /* @__PURE__ */ new WeakMap(), Fy = /* @__PURE__ */ new WeakMap(), im = /* @__PURE__ */ new WeakMap();
-  class Ez {
+  class Tz {
     constructor(e, t) {
       var i = this;
       Xu(this, "settings", void 0), Xu(this, "tableProps", void 0), Xu(this, "inProgress", !1), Xu(this, "selectedRange", new ySe((s, r, o) => this.tableProps.createCellRange(s, r, o))), Xu(this, "highlight", void 0), bf(this, Vi, void 0), bf(this, Qu, void 0), Xu(this, "selectedByRowHeader", /* @__PURE__ */ new Set()), Xu(this, "selectedByColumnHeader", /* @__PURE__ */ new Set()), bf(this, $y, !1), bf(this, nm, !1), bf(this, Fy, "unknown"), bf(this, im, -1), this.settings = e, this.tableProps = t, this.highlight = new bSe({
@@ -41477,7 +41477,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         activeHeaderClassName: e.activeHeaderClassName,
         rowClassName: e.currentRowClassName,
         columnClassName: e.currentColClassName,
-        cellAttributes: [yO()],
+        cellAttributes: [CO()],
         rowIndexMapper: this.tableProps.rowIndexMapper,
         columnIndexMapper: this.tableProps.columnIndexMapper,
         disabledCellSelection: (s, r) => this.tableProps.isDisabledCellSelection(s, r),
@@ -41704,11 +41704,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const i = this.tableProps.countRows(), s = this.tableProps.countCols();
       t < this.highlight.layerLevel && (F(this.highlight.getAreas(), (g) => void g.clear()), F(this.highlight.getLayeredAreas(), (g) => void g.clear()), F(this.highlight.getRowHeaders(), (g) => void g.clear()), F(this.highlight.getColumnHeaders(), (g) => void g.clear()), F(this.highlight.getActiveRowHeaders(), (g) => void g.clear()), F(this.highlight.getActiveColumnHeaders(), (g) => void g.clear()), F(this.highlight.getActiveCornerHeaders(), (g) => void g.clear()), F(this.highlight.getRowHighlights(), (g) => void g.clear()), F(this.highlight.getColumnHighlights(), (g) => void g.clear())), this.highlight.useLayerLevel(t);
       const r = this.highlight.createArea(), o = this.highlight.createLayeredArea(), a = this.highlight.createRowHeader(), l = this.highlight.createColumnHeader(), c = this.highlight.createActiveRowHeader(), u = this.highlight.createActiveColumnHeader(), h = this.highlight.createActiveCornerHeader(), d = this.highlight.createRowHighlight(), f = this.highlight.createColumnHighlight();
-      if (r.clear(), o.clear(), a.clear(), l.clear(), c.clear(), u.clear(), h.clear(), d.clear(), f.clear(), this.highlight.isEnabledFor(ZO, e.highlight) && (this.isMultiple() || t >= 1) && (r.add(e.from).add(e.to).commit(), o.add(e.from).add(e.to).commit(), t === 1)) {
+      if (r.clear(), o.clear(), a.clear(), l.clear(), c.clear(), u.clear(), h.clear(), d.clear(), f.clear(), this.highlight.isEnabledFor(JO, e.highlight) && (this.isMultiple() || t >= 1) && (r.add(e.from).add(e.to).commit(), o.add(e.from).add(e.to).commit(), t === 1)) {
         const g = this.selectedRange.previous();
         this.highlight.useLayerLevel(t - 1), this.highlight.createArea().add(g.from).commit().syncWith(g), this.highlight.createLayeredArea().add(g.from).commit().syncWith(g), this.highlight.useLayerLevel(t);
       }
-      if (this.highlight.isEnabledFor(QO, e.highlight)) {
+      if (this.highlight.isEnabledFor(ZO, e.highlight)) {
         if (!e.isSingleHeader()) {
           const m = this.tableProps.createCellCoords(Math.max(e.from.row, 0), -1), w = this.tableProps.createCellCoords(e.to.row, -1), y = this.tableProps.createCellCoords(-1, Math.max(e.from.col, 0)), C = this.tableProps.createCellCoords(-1, e.to.col);
           this.settings.selectionMode === "single" ? (a.add(m).commit(), l.add(y).commit(), d.add(m).commit(), f.add(y).commit()) : (a.add(m).add(w).commit(), l.add(y).add(C).commit(), d.add(m).add(w).commit(), f.add(y).add(C).commit());
@@ -41728,7 +41728,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const t = this.selectedRange.current();
       this.inProgress || this.runLocalHooks("beforeSetFocus", e);
       const i = this.highlight.getFocus();
-      i.clear(), t.setHighlight(e), this.inProgress || this.runLocalHooks("beforeHighlightSet"), this.highlight.isEnabledFor(JO, t.highlight) && i.add(t.highlight).commit().syncWith(t), this.inProgress || (Go($y, this, !0), this.runLocalHooks("afterSetFocus", t.highlight));
+      i.clear(), t.setHighlight(e), this.inProgress || this.runLocalHooks("beforeHighlightSet"), this.highlight.isEnabledFor(ek, t.highlight) && i.add(t.highlight).commit().syncWith(t), this.inProgress || (Go($y, this, !0), this.runLocalHooks("afterSetFocus", t.highlight));
     }
     /**
      * Selects cell relative to the current cell (if possible).
@@ -42174,18 +42174,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.highlight.useLayerLevel(i);
     }
   }
-  jt(Ez, Li);
-  const VF = /^(\r\n|\n\r|\r|\n)/, ASe = /^[^\t\r\n]+/, WF = /^\t/;
+  jt(Tz, Li);
+  const WF = /^(\r\n|\n\r|\r|\n)/, ASe = /^[^\t\r\n]+/, jF = /^\t/;
   function PSe(n) {
     const e = [[""]];
     if (n.length === 0)
       return e;
     let t = 0, i = 0, s;
     for (; n.length > 0 && s !== n.length; )
-      if (s = n.length, n.match(WF))
-        n = n.replace(WF, ""), t += 1, e[i][t] = "";
-      else if (n.match(VF))
-        n = n.replace(VF, ""), t = 0, i += 1, e[i] = [""];
+      if (s = n.length, n.match(jF))
+        n = n.replace(jF, ""), t += 1, e[i][t] = "";
+      else if (n.match(WF))
+        n = n.replace(WF, ""), t = 0, i += 1, e[i] = [""];
       else {
         let r = "";
         if (n.startsWith('"')) {
@@ -42295,7 +42295,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number} Amount of physical columns in the first data row.
      */
     countFirstRowKeys() {
-      return ck(this.dataSource);
+      return uk(this.dataSource);
     }
     /**
      * Generates columns' translation cache.
@@ -42517,7 +42517,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       let u = 0;
       for (; u < i; )
         l.push(null), u += 1;
-      return L4(l), this.hot.populateFromArray(t, e, l, null, null, "spliceCol"), r;
+      return $4(l), this.hot.populateFromArray(t, e, l, null, null, "spliceCol"), r;
     }
     /**
      * Add/Removes data from the row.
@@ -42762,12 +42762,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const {
     register: kSe,
     getItem: HSe,
-    hasItem: Tz,
+    hasItem: Mz,
     getNames: DSe,
-    getValues: WVe
+    getValues: jVe
   } = Vo("cellTypes");
-  function OH(n) {
-    if (!Tz(n))
+  function kH(n) {
+    if (!Mz(n))
       throw Error(`You declared cell type "${n}" as a string that is not mapped to a known object.
                  Cell type must be an object or a string mapped to an object registered by
                  "Handsontable.cellTypes.registerCellType" method`);
@@ -42788,7 +42788,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function zR(n, e) {
     let t = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : n;
-    const i = typeof e.type == "string" ? OH(e.type) : e.type;
+    const i = typeof e.type == "string" ? kH(e.type) : e.type;
     if (n._automaticallyAssignedMetaProps && nt(e, (r, o) => void n._automaticallyAssignedMetaProps.delete(o)), !tt(i))
       return;
     t === n && !n._automaticallyAssignedMetaProps && (n._automaticallyAssignedMetaProps = /* @__PURE__ */ new Set());
@@ -42819,7 +42819,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function By(n) {
     return n == null;
   }
-  const Mz = () => ({
+  const Az = () => ({
     /* eslint-disable jsdoc/require-description-complete-sentence */
     /**
      * Information on which of the meta properties were added automatically.
@@ -47539,7 +47539,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     wordWrap: !0
     /* eslint-enable jsdoc/require-description-complete-sentence */
   });
-  function jF(n, e, t) {
+  function zF(n, e, t) {
     return (e = $Se(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function $Se(n) {
@@ -47562,7 +47562,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class VSe {
     constructor(e) {
-      jF(this, "metaCtor", BSe()), jF(this, "meta", void 0), this.meta = this.metaCtor.prototype, Zn(this.meta, Mz()), this.meta.instance = e;
+      zF(this, "metaCtor", BSe()), zF(this, "meta", void 0), this.meta = this.metaCtor.prototype, Zn(this.meta, Az()), this.meta.instance = e;
     }
     /**
      * Gets constructor of the global meta object. Necessary for inheritance for creating the next meta layers.
@@ -47780,7 +47780,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.entries();
     }
   }
-  function zF(n, e, t) {
+  function UF(n, e, t) {
     return (e = KSe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function KSe(n) {
@@ -47800,7 +47800,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const XSe = ["data", "width"];
   class QSe {
     constructor(e) {
-      zF(this, "globalMeta", void 0), zF(this, "metas", new $S(() => this._createMeta())), this.globalMeta = e, this.metas = new $S(() => this._createMeta());
+      UF(this, "globalMeta", void 0), UF(this, "metas", new $S(() => this._createMeta())), this.globalMeta = e, this.metas = new $S(() => this._createMeta());
     }
     /**
      * Updates column meta object by merging settings with the current state.
@@ -47864,7 +47864,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return LSe(this.globalMeta.getMetaConstructor(), XSe).prototype;
     }
   }
-  function UF(n, e, t) {
+  function YF(n, e, t) {
     return (e = ZSe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function ZSe(n) {
@@ -47883,7 +47883,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class e_e {
     constructor(e) {
-      UF(this, "columnMeta", void 0), UF(this, "metas", new $S(() => this._createRow())), this.columnMeta = e;
+      YF(this, "columnMeta", void 0), YF(this, "metas", new $S(() => this._createRow())), this.columnMeta = e;
     }
     /**
      * Updates cell meta object by merging settings with the current state.
@@ -48022,7 +48022,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return new t();
     }
   }
-  class Az {
+  class Pz {
     constructor(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, i = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : [];
       this.hot = e, this.globalMeta = new VSe(e), this.tableMeta = new USe(this.globalMeta), this.columnMeta = new QSe(this.globalMeta), this.cellMeta = new e_e(this.columnMeta), i.forEach((s) => new s(this)), this.globalMeta.updateMeta(t);
@@ -48224,8 +48224,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.cellMeta.clearCache(), this.columnMeta.clearCache();
     }
   }
-  jt(Az, Li);
-  function YF(n, e, t, i) {
+  jt(Pz, Li);
+  function GF(n, e, t, i) {
     const {
       hotInstance: s,
       dataMap: r,
@@ -48257,12 +48257,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     } else
       throw new Error(`${a} only accepts array of objects or array of arrays (${typeof n} given)`);
     Array.isArray(n[0]) && (s.dataType = "array"), d.data = n, f.dataSource = n, o.data = n, o.dataType = s.dataType, o.colToProp = f.colToProp.bind(f), o.propToCol = f.propToCol.bind(f), o.countCachedColumns = f.countCachedColumns.bind(f), t(f), s.runHooks(`after${h}`, n, u, l), u || (s.runHooks("afterChange", null, a), s.render()), s.getSettings().ariaTags && $e(s.rootElement, [
-      U4(-1),
+      Y4(-1),
       // If run after initialization, add the number of row headers.
       _R(s.countCols() + (s.view ? s.countRowHeaders() : 0))
     ]);
   }
-  function GF(n, e, t) {
+  function KF(n, e, t) {
     return (e = t_e(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function t_e(n) {
@@ -48281,7 +48281,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class i_e {
     constructor(e) {
-      GF(this, "metaManager", void 0), GF(this, "metaSyncMemo", /* @__PURE__ */ new Map()), this.metaManager = e, e.addLocalHook("afterGetCellMeta", (t) => this.extendCellMeta(t)), Ee.getSingleton().add("beforeRender", (t) => {
+      KF(this, "metaManager", void 0), KF(this, "metaSyncMemo", /* @__PURE__ */ new Map()), this.metaManager = e, e.addLocalHook("afterGetCellMeta", (t) => this.extendCellMeta(t)), Ee.getSingleton().add("beforeRender", (t) => {
         t && this.metaSyncMemo.clear();
       }, this.metaManager.hot);
     }
@@ -48352,7 +48352,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  var KF = /* @__PURE__ */ new WeakMap();
+  var qF = /* @__PURE__ */ new WeakMap();
   class u_e {
     constructor(e) {
       pE(this, "metaManager", void 0), pE(this, "usageTracker", /* @__PURE__ */ new Set()), pE(this, "propDescriptors", /* @__PURE__ */ new Map([["ariaTags", {
@@ -48371,7 +48371,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         initOnly: !0
       }], ["renderAllRows", {
         initOnly: !0
-      }]])), s_e(this, KF, (t, i, s) => {
+      }]])), s_e(this, qF, (t, i, s) => {
         if (!s)
           throw new Error(`The \`${t}\` option can not be updated after the Handsontable is initialized.`);
       }), this.metaManager = e, this.extendMetaProps();
@@ -48386,7 +48386,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           target: s,
           onChange: r
         } = e, o = typeof s == "string", a = o ? s : t, l = `_${a}`;
-        this.metaManager.globalMeta.meta[l] = this.metaManager.globalMeta.meta[a], r ? (this.installPropWatcher(t, l, r), o && this.installPropWatcher(s, l, r)) : i && (this.installPropWatcher(t, l, l_e(KF, this)), this.metaManager.globalMeta.meta._initOnlySettings || (this.metaManager.globalMeta.meta._initOnlySettings = []), this.metaManager.globalMeta.meta._initOnlySettings.push(t));
+        this.metaManager.globalMeta.meta[l] = this.metaManager.globalMeta.meta[a], r ? (this.installPropWatcher(t, l, r), o && this.installPropWatcher(s, l, r)) : i && (this.installPropWatcher(t, l, l_e(qF, this)), this.metaManager.globalMeta.meta._initOnlySettings || (this.metaManager.globalMeta.meta._initOnlySettings = []), this.metaManager.globalMeta.meta._initOnlySettings.push(t));
       });
     }
     /**
@@ -48412,12 +48412,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }
   }
-  const Pz = "gridDefault", ku = "editorManager.handlingEditor", h_e = {
+  const Iz = "gridDefault", ku = "editorManager.handlingEditor", h_e = {
     name: "editorCloseAndSave",
     callback(n) {
       n._getEditorManager().closeEditorAndSaveChanges();
     }
-  }, d_e = "hooksRefRegisterer", Iz = {
+  }, d_e = "hooksRefRegisterer", Oz = {
     /**
      * Internal hooks storage.
      */
@@ -48449,7 +48449,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       nt(this._hooksStorage, (n, e) => this.removeHooksByKey(e)), this._hooksStorage = {};
     }
   };
-  Qa(Iz, "MIXIN_NAME", d_e, {
+  Qa(Oz, "MIXIN_NAME", d_e, {
     writable: !1,
     enumerable: !1
   });
@@ -48706,7 +48706,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
       let ie = t.offsetLeft;
       this.hot.isRtl() ? (ie >= 0 ? ie = p.getWidth() - t.offsetLeft : ie = Math.abs(ie), ie += j - Y - a) : ["top", "master", "bottom"].includes(m) && (ie += j - Y);
-      const se = La(this.TD, this.hot.rootWindow), te = this.hot.isRtl() ? "borderRightWidth" : "borderLeftWidth", pe = parseInt(se[te], 10) > 0 ? 0 : 1, b = parseInt(se.borderTopWidth, 10) > 0 ? 0 : 1, v = rn(t) + pe, S = Yn(t) + b, T = s7(u) ? $ : 0, H = r7(h) ? $ : 0, E = this.hot.view.maximumVisibleElementWidth(ie) - T + pe, N = Math.max(this.hot.view.maximumVisibleElementHeight(B) - H + b, 23);
+      const se = La(this.TD, this.hot.rootWindow), te = this.hot.isRtl() ? "borderRightWidth" : "borderLeftWidth", pe = parseInt(se[te], 10) > 0 ? 0 : 1, b = parseInt(se.borderTopWidth, 10) > 0 ? 0 : 1, v = rn(t) + pe, S = Yn(t) + b, T = r7(u) ? $ : 0, H = o7(h) ? $ : 0, E = this.hot.view.maximumVisibleElementWidth(ie) - T + pe, N = Math.max(this.hot.view.maximumVisibleElementHeight(B) - H + b, 23);
       return {
         top: R,
         start: _,
@@ -48758,7 +48758,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.row < this.hot.getSettings().fixedRowsTop ? this.col < this.hot.getSettings().fixedColumnsStart ? t = "top-inline-start-corner" : t = "top" : this.hot.getSettings().fixedRowsBottom && this.row >= e - this.hot.getSettings().fixedRowsBottom ? this.col < this.hot.getSettings().fixedColumnsStart ? t = "bottom-inline-start-corner" : t = "bottom" : this.col < this.hot.getSettings().fixedColumnsStart && (t = "inline-start"), t;
     }
   }
-  jt(fp, Iz);
+  jt(fp, Oz);
   const m_e = {
     name: "editorCloseAndSaveByArrowKeys",
     callback(n, e, t) {
@@ -49191,7 +49191,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       n.setDataAtCell(Array.from(r.values()));
     }
   }, rRe = [...C_e(), ...N_e(), ...J_e(), eRe, tRe, nRe, iRe, sRe];
-  function Oz(n) {
+  function kz(n) {
     const e = {};
     return rRe.forEach((t) => {
       let {
@@ -49206,7 +49206,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }), e;
   }
   function oRe(n) {
-    const e = n.getShortcutManager().addContext("editor"), t = Oz(n), i = {
+    const e = n.getShortcutManager().addContext("editor"), t = kz(n), i = {
       group: ku
     };
     e.addShortcuts([{
@@ -49230,14 +49230,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }], i);
   }
   function aRe(n) {
-    const e = n.getShortcutManager().addContext("grid"), t = Oz(n), i = {
+    const e = n.getShortcutManager().addContext("grid"), t = kz(n), i = {
       runOnlyIf: () => {
         const {
           navigableHeaders: s
         } = n.getSettings();
         return Me(n.getSelected()) && (s || !s && n.countRenderedRows() > 0 && n.countRenderedCols() > 0);
       },
-      group: Pz
+      group: Iz
     };
     e.addShortcuts([{
       keys: [["F2"]],
@@ -49403,7 +49403,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function cRe(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    const t = n.rootElement, i = qF(n), s = qF(n);
+    const t = n.rootElement, i = XF(n), s = XF(n);
     return i.addEventListener("focus", () => e == null ? void 0 : e.onFocusFromTop()), s.addEventListener("focus", () => e == null ? void 0 : e.onFocusFromBottom()), t.firstChild.before(i), t.lastChild.after(s), {
       /**
        * Activates the detector by resetting the tabIndex of the input elements.
@@ -49423,7 +49423,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     };
   }
-  function qF(n) {
+  function XF(n) {
     const t = n.rootDocument.createElement("input");
     return t.type = "text", t.classList.add("htFocusCatcher"), n.getSettings().ariaTags && $e(t, [Ra(), Ud()]), t;
   }
@@ -49464,7 +49464,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       keys: [["Tab"], ["Shift", "Tab"]],
       preventDefault: !1,
       stopPropagation: !1,
-      relativeToGroup: Pz,
+      relativeToGroup: Iz,
       group: "focusCatcher"
     };
     n.getShortcutManager().getContext("grid").addShortcuts([{
@@ -49618,7 +49618,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     };
   }
-  const XF = /* @__PURE__ */ new Map([
+  const QF = /* @__PURE__ */ new Map([
     [" ", "space"],
     // custom mapping
     ["spacebar", "space"],
@@ -49640,8 +49640,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     ["down", "arrowdown"]
   ]), Wy = (n) => n.map((e) => {
     const t = e.toLowerCase();
-    return XF.has(t) ? XF.get(t) : t;
-  }).sort().join("+"), yRe = (n) => n.split("+"), QF = /* @__PURE__ */ new Map([
+    return QF.has(t) ? QF.get(t) : t;
+  }).sort().join("+"), yRe = (n) => n.split("+"), ZF = /* @__PURE__ */ new Map([
     [96, "numpad0"],
     [97, "numpad1"],
     [98, "numpad2"],
@@ -49687,13 +49687,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       which: e,
       key: t
     } = n;
-    if (QF.has(e))
-      return QF.get(e);
+    if (ZF.has(e))
+      return ZF.get(e);
     const i = String.fromCharCode(e).toLowerCase();
     return /^[a-z0-9]$/.test(i) ? i : t.toLowerCase();
-  }, kz = Symbol("shortcut-context");
-  function Hz(n) {
-    return tt(n) && n.__kindOf === kz;
+  }, Hz = Symbol("shortcut-context");
+  function Dz(n) {
+    return tt(n) && n.__kindOf === Hz;
   }
   const CRe = (n) => {
     const e = kR({
@@ -49727,7 +49727,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         preventDefault: f,
         stopPropagation: g
       };
-      Me(p) && (y.relativeToGroup = p, y.position = m), Hz(w) && (y.forwardToContext = w), l.forEach((C) => {
+      Me(p) && (y.relativeToGroup = p, y.position = m), Dz(w) && (y.forwardToContext = w), l.forEach((C) => {
         const R = Wy(C);
         if (e.hasItem(R)) {
           const x = e.getItem(R);
@@ -49748,7 +49748,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       e.removeItem(c);
     };
     return {
-      __kindOf: kz,
+      __kindOf: Hz,
       addShortcut: t,
       addShortcuts: i,
       getShortcuts: (l) => {
@@ -49897,7 +49897,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     let h = !1;
     const d = function(g, p) {
       let m = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : l();
-      const w = Hz(m) ? m : c(m);
+      const w = Dz(m) ? m : c(m);
       let y = !1;
       if (!w.hasShortcut(p))
         return y;
@@ -49950,7 +49950,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   };
   let bE = null;
   const wE = /* @__PURE__ */ new Map();
-  function Dz(n, e) {
+  function Nz(n, e) {
     var t, i = this;
     let s = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !1, r = this;
     const o = new Ur(r);
@@ -49964,8 +49964,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, this.getDirectionFactor = function() {
       return r.isLtr() ? 1 : -1;
     }, e.language = nSe(e.language);
-    const m = new Az(r, e, [i_e, u_e]), w = m.getTableMeta(), y = m.getGlobalMeta(), C = kR();
-    this.container = this.rootDocument.createElement("div"), this.renderCall = !1, n.insertBefore(this.container, n.firstChild), vC(this) && V4(e.licenseKey, n), this.guid = `ht_${mO()}`, wE.set(this.guid, this), this.columnIndexMapper = new RA(), this.rowIndexMapper = new RA(), this.columnIndexMapper.addLocalHook("indexesSequenceChange", (b) => {
+    const m = new Pz(r, e, [i_e, u_e]), w = m.getTableMeta(), y = m.getGlobalMeta(), C = kR();
+    this.container = this.rootDocument.createElement("div"), this.renderCall = !1, n.insertBefore(this.container, n.firstChild), vC(this) && W4(e.licenseKey, n), this.guid = `ht_${bO()}`, wE.set(this.guid, this), this.columnIndexMapper = new RA(), this.rowIndexMapper = new RA(), this.columnIndexMapper.addLocalHook("indexesSequenceChange", (b) => {
       r.runHooks("afterColumnSequenceChange", b);
     }), this.rowIndexMapper.addLocalHook("indexesSequenceChange", (b) => {
       r.runHooks("afterRowSequenceChange", b);
@@ -49998,7 +49998,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const S = v > b ? 1 : -1, T = Math.min(b, v), H = Math.max(b, v), E = r.columnIndexMapper.getNearestNotHiddenIndex(b, S);
       return E === null || S === 1 && E > H || S === -1 && E < T ? null : E >= 0 ? r.columnIndexMapper.getRenderableFromVisualIndex(E) : E;
     };
-    let I = new Ez(w, {
+    let I = new Tz(w, {
       rowIndexMapper: r.rowIndexMapper,
       columnIndexMapper: r.columnIndexMapper,
       countCols: () => r.countCols(),
@@ -50368,8 +50368,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     };
     function O(b) {
-      const v = gz(b);
-      PH(v) ? (r.runHooks("beforeLanguageChange", v), y.language = v, r.runHooks("afterLanguageChange", v)) : pz(b);
+      const v = pz(b);
+      IH(v) ? (r.runHooks("beforeLanguageChange", v), y.language = v, r.runHooks("afterLanguageChange", v)) : mz(b);
     }
     function D(b, v) {
       const S = b === "className" ? r.rootElement : r.table;
@@ -50384,7 +50384,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       y[b] = v;
     }
     this.init = function() {
-      l.setData(w.data), r.runHooks("beforeInit"), (Bl() || HO()) && ae(r.rootElement, "mobile"), this.updateSettings(w, !0), this.view = new hCe(this), u = mA.getInstance(r, w, I), d = vRe(r), h = new pwe(r), vC(this) && uRe(r), r.runHooks("init"), this.forceFullRender = !0, this.view.render(), f && r.rootElement.offsetParent === null && o7(r.rootElement, () => {
+      l.setData(w.data), r.runHooks("beforeInit"), (Bl() || DO()) && ae(r.rootElement, "mobile"), this.updateSettings(w, !0), this.view = new hCe(this), u = mA.getInstance(r, w, I), d = vRe(r), h = new pwe(r), vC(this) && uRe(r), r.runHooks("init"), this.forceFullRender = !0, this.view.render(), f && r.rootElement.offsetParent === null && a7(r.rootElement, () => {
         r.view._wt.wtOverlays.updateLastSpreaderSize(), r.render(), r.view.adjustElementsSize();
       }), typeof f == "object" && (r.runHooks("afterChange", f[0], f[1]), f = !1), r.runHooks("afterInit");
     };
@@ -50426,7 +50426,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         Number.isInteger(re) ? Ie = r.getCellMeta(X, re) : Ie = {
           ...Object.getPrototypeOf(w),
           ...w
-        }, Ie.type === "numeric" && typeof ue == "string" && D7(ue) && (b[N][3] = Y(ue)), r.getCellValidator(Ie) && (H.addValidatorToQueue(), r.validateCell(b[N][3], Ie, /* @__PURE__ */ function(xe, J) {
+        }, Ie.type === "numeric" && typeof ue == "string" && N7(ue) && (b[N][3] = Y(ue)), r.getCellValidator(Ie) && (H.addValidatorToQueue(), r.validateCell(b[N][3], Ie, /* @__PURE__ */ function(xe, J) {
           return function(oe) {
             if (typeof oe != "boolean")
               throw new Error("Validation error: result is not boolean");
@@ -50497,7 +50497,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         }
         S(N);
       }
-      B4(H) && (H = /* @__PURE__ */ function(N) {
+      V4(H) && (H = /* @__PURE__ */ function(N) {
         return function(X, ne) {
           ne(N.test(X));
         };
@@ -50653,7 +50653,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         height: T
       }, H));
     }, this.updateData = function(b, v) {
-      YF(b, (S) => {
+      GF(b, (S) => {
         a = S;
       }, (S) => {
         a = S, r.columnIndexMapper.fitToLength(this.getInitialColumnCount()), r.rowIndexMapper.fitToLength(this.countSourceRows()), c.adjustRowsAndCols(), I.refresh();
@@ -50667,7 +50667,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         firstRun: f
       });
     }, this.loadData = function(b, v) {
-      YF(b, (S) => {
+      GF(b, (S) => {
         a = S;
       }, () => {
         m.clearCellsCache(), r.initIndexMappers(), c.adjustRowsAndCols(), I.refresh(), f && (f = [null, "loadData"]);
@@ -50886,7 +50886,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return typeof S == "string" ? xS(S) : sn(S) ? xS("text") : S;
     }, this.getCellValidator = function(b, v) {
       const S = typeof b == "number" ? r.getCellMeta(b, v).validator : b.validator;
-      return typeof S == "string" ? zO(S) : S;
+      return typeof S == "string" ? UO(S) : S;
     }, this.validateCells = function(b) {
       this._validateCells(b);
     }, this.validateRows = function(b, v) {
@@ -51152,7 +51152,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, this.runHooks = function(b, v, S, T, H, E, N) {
       return Ee.getSingleton().run(r, b, v, S, T, H, E, N);
     }, this.getTranslatedPhrase = function(b, v) {
-      return Cz(w.language, b, v);
+      return Sz(w.language, b, v);
     }, this.toHTML = () => bA(this), this.toTableElement = () => {
       const b = this.rootDocument.createElement("div");
       return b.insertAdjacentHTML("afterbegin", bA(this)), b.firstElementChild;
@@ -51194,18 +51194,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return pe;
     }, this.getFocusManager = function() {
       return h;
-    }, jO().forEach((b) => {
+    }, zO().forEach((b) => {
       const v = fv(b);
       C.addItem(b, new v(this));
     }), lRe(r), pe.setActiveContextName("grid"), Ee.getSingleton().run(r, "construct");
   }
-  function ZF(n, e, t) {
+  function JF(n, e, t) {
     n.addEventListener(e, t, !1);
   }
-  function JF(n, e, t) {
+  function eB(n, e, t) {
     n.removeEventListener(e, t, !1);
   }
-  function eB(n) {
+  function tB(n) {
     return n.ownerDocument.defaultView.getComputedStyle(n);
   }
   function ERe(n) {
@@ -51217,7 +51217,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, t = n.body, i = n.createTextNode(""), s = n.createElement("span");
     let r;
     function o() {
-      i.textContent = r.value, s.style.position = "absolute", s.style.fontSize = eB(r).fontSize, s.style.fontFamily = eB(r).fontFamily, s.style.whiteSpace = "pre", t.appendChild(s);
+      i.textContent = r.value, s.style.position = "absolute", s.style.fontSize = tB(r).fontSize, s.style.fontFamily = tB(r).fontFamily, s.style.whiteSpace = "pre", t.appendChild(s);
       const u = s.clientWidth + 2;
       t.removeChild(s);
       const h = r.style;
@@ -51261,18 +51261,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     function c(u, h) {
       let d = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !1;
-      r = u, l(h), r.nodeName === "TEXTAREA" && (r.style.resize = "none", r.style.height = `${e.minHeight}px`, r.style.minWidth = `${e.minWidth}px`, r.style.maxWidth = `${e.maxWidth}px`, r.style.overflowY = "hidden"), d && (ZF(r, "input", o), ZF(r, "keydown", a)), o();
+      r = u, l(h), r.nodeName === "TEXTAREA" && (r.style.resize = "none", r.style.height = `${e.minHeight}px`, r.style.minWidth = `${e.minWidth}px`, r.style.maxWidth = `${e.maxWidth}px`, r.style.overflowY = "hidden"), d && (JF(r, "input", o), JF(r, "keydown", a)), o();
     }
     return {
       init: c,
       resize: o,
       unObserve() {
-        JF(r, "input", o), JF(r, "keydown", a);
+        eB(r, "input", o), eB(r, "keydown", a);
       }
     };
   }
-  function tB(n, e) {
-    const t = xO(e), i = e.value.split(`
+  function nB(n, e) {
+    const t = EO(e), i = e.value.split(`
 `);
     let s = t, r = 0;
     for (let o = 0; o < i.length; o++) {
@@ -51301,7 +51301,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const ARe = "ht_editor_visible", zy = "ht_editor_hidden", nB = "textEditor", PRe = "text";
+  const ARe = "ht_editor_visible", zy = "ht_editor_hidden", iB = "textEditor", PRe = "text";
   class qd extends fp {
     static get EDITOR_TYPE() {
       return PRe;
@@ -51344,7 +51344,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Closes the editor.
      */
     close() {
-      this.autoResize.unObserve(), q4(this.hot.rootDocument.activeElement, this.hot.rootElement) && this.hot.listen(), this.hideEditableElement(), this.unregisterShortcuts();
+      this.autoResize.unObserve(), X4(this.hot.rootDocument.activeElement, this.hot.rootElement) && this.hot.listen(), this.hideEditableElement(), this.unregisterShortcuts();
     }
     /**
      * Prepares editor's meta data.
@@ -51396,7 +51396,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     hideEditableElement() {
-      C7() && (this.textareaStyle.textIndent = "-99999px"), this.textareaStyle.overflowY = "visible", this.textareaParentStyle.opacity = "0", this.textareaParentStyle.height = "1px", Ue(this.TEXTAREA_PARENT, this.layerClass), ae(this.TEXTAREA_PARENT, zy);
+      S7() && (this.textareaStyle.textIndent = "-99999px"), this.textareaStyle.overflowY = "visible", this.textareaParentStyle.opacity = "0", this.textareaParentStyle.height = "1px", Ue(this.TEXTAREA_PARENT, this.layerClass), ae(this.TEXTAREA_PARENT, zy);
     }
     /**
      * Resets an editable element position.
@@ -51462,7 +51462,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     bindEvents() {
-      kO() && this.eventManager.addEventListener(this.TEXTAREA, "focusout", () => this.finishEditing(!1)), this.addHook("afterScrollHorizontally", () => this.refreshDimensions()), this.addHook("afterScrollVertically", () => this.refreshDimensions()), this.addHook("afterColumnResize", () => {
+      HO() && this.eventManager.addEventListener(this.TEXTAREA, "focusout", () => this.finishEditing(!1)), this.addHook("afterScrollHorizontally", () => this.refreshDimensions()), this.addHook("afterScrollVertically", () => this.refreshDimensions()), this.addHook("afterColumnResize", () => {
         this.refreshDimensions(), this.state === Bn.EDITING && this.focus();
       }), this.addHook("afterRowResize", () => {
         this.refreshDimensions(), this.state === Bn.EDITING && this.focus();
@@ -51491,7 +51491,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     registerShortcuts() {
       const t = this.hot.getShortcutManager().getContext("editor"), i = {
         runOnlyIf: () => Me(this.hot.getSelected()),
-        group: nB
+        group: iB
       }, s = () => {
         this.hot.rootDocument.execCommand("insertText", !1, `
 `);
@@ -51514,13 +51514,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         keys: [["Home"]],
         callback: (r, o) => {
           let [a] = o;
-          tB(a, this.TEXTAREA);
+          nB(a, this.TEXTAREA);
         }
       }, {
         keys: [["End"]],
         callback: (r, o) => {
           let [a] = o;
-          tB(a, this.TEXTAREA);
+          nB(a, this.TEXTAREA);
         }
       }], i);
     }
@@ -51530,13 +51530,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(nB);
+      this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(iB);
     }
   }
   const IRe = "base";
   function wv(n, e, t, i, s, r, o) {
     const a = o.ariaTags, l = [], c = [], u = [], h = [];
-    o.className && ae(e, o.className), o.readOnly ? (l.push(o.readOnlyCellClassName), a && h.push(V2())) : a && u.push(V2()[0]), o.valid === !1 && o.invalidCellClassName ? (l.push(o.invalidCellClassName), a && h.push(W2())) : (c.push(o.invalidCellClassName), a && u.push(W2()[0])), o.wordWrap === !1 && o.noWordWrapClassName && l.push(o.noWordWrapClassName), !r && o.placeholder && l.push(o.placeholderCellClassName), Ue(e, c), ae(e, l), Yd(e, u), $e(e, h);
+    o.className && ae(e, o.className), o.readOnly ? (l.push(o.readOnlyCellClassName), a && h.push(W2())) : a && u.push(W2()[0]), o.valid === !1 && o.invalidCellClassName ? (l.push(o.invalidCellClassName), a && h.push(j2())) : (c.push(o.invalidCellClassName), a && u.push(j2()[0])), o.wordWrap === !1 && o.noWordWrapClassName && l.push(o.noWordWrapClassName), !r && o.placeholder && l.push(o.placeholderCellClassName), Ue(e, c), ae(e, l), Yd(e, u), $e(e, h);
   }
   wv.RENDERER_TYPE = IRe;
   const ORe = "text";
@@ -51551,24 +51551,24 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       gu(e, a);
   }
   dc.RENDERER_TYPE = ORe;
-  const kRe = "text", Nz = {
+  const kRe = "text", Lz = {
     CELL_TYPE: kRe,
     editor: qd,
     renderer: dc
   };
-  Er(Nz);
+  Er(Lz);
   Ye.editors = {
     BaseEditor: fp
   };
   function Ye(n, e) {
-    const t = new Dz(n, e || {}, ak);
+    const t = new Nz(n, e || {}, lk);
     return t.init(), t;
   }
   Ye.Core = function(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    return new Dz(n, e, ak);
+    return new Nz(n, e, lk);
   };
-  Ye.DefaultSettings = Mz();
+  Ye.DefaultSettings = Az();
   Ye.hooks = Ee.getSingleton();
   Ye.CellCoords = Rd;
   Ye.CellRange = gv;
@@ -51577,13 +51577,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ye.version = "14.6.1";
   Ye.languages = {
     dictionaryKeys: qCe,
-    getLanguageDictionary: yz,
+    getLanguageDictionary: Cz,
     getLanguagesDictionaries: eSe,
-    registerLanguageDictionary: vz,
-    getTranslatedPhrase: Cz
+    registerLanguageDictionary: yz,
+    getTranslatedPhrase: Sz
   };
-  const iB = "handsontableEditor", HRe = "handsontable";
-  class kH extends qd {
+  const sB = "handsontableEditor", HRe = "handsontable";
+  class HH extends qd {
     static get EDITOR_TYPE() {
       return HRe;
     }
@@ -51685,7 +51685,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const t = this.hot.getShortcutManager().getContext("editor");
       super.registerShortcuts();
       const i = {
-        group: iB,
+        group: sB,
         relativeToGroup: ku,
         position: "before"
       }, s = (r, o) => {
@@ -51729,7 +51729,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      super.unregisterShortcuts(), this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(iB);
+      super.unregisterShortcuts(), this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(sB);
     }
   }
   function DRe(n, e, t) {
@@ -51755,7 +51755,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function sB(n, e) {
+  function rB(n, e) {
     return n.get(FRe(n, e));
   }
   function FRe(n, e, t) {
@@ -51764,7 +51764,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   const BRe = "autocomplete";
   var vE = /* @__PURE__ */ new WeakMap();
-  class HH extends kH {
+  class DH extends HH {
     constructor() {
       super(...arguments), Uy(this, "query", null), Uy(this, "strippedChoices", []), Uy(this, "rawChoices", []), DRe(this, vE, this.hot.guid.slice(0, 9)), Uy(this, "sortByRelevance", function(e, t, i) {
         const s = [], r = [], o = e.length;
@@ -51825,7 +51825,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Creates an editor's elements and adds necessary CSS classnames.
      */
     createElements() {
-      super.createElements(), ae(this.htContainer, "autocompleteEditor"), ae(this.htContainer, this.hot.rootWindow.navigator.platform.indexOf("Mac") === -1 ? "" : "htMacScroll"), this.hot.getSettings().ariaTags && $e(this.TEXTAREA, [kme(), Mme(), z4("listbox"), Lme()]);
+      super.createElements(), ae(this.htContainer, "autocompleteEditor"), ae(this.htContainer, this.hot.rootWindow.navigator.platform.indexOf("Mac") === -1 ? "" : "htMacScroll"), this.hot.getSettings().ariaTags && $e(this.TEXTAREA, [kme(), Mme(), U4("listbox"), Lme()]);
     }
     /**
      * Prepares editor's metadata and configuration of the internal Handsontable's instance.
@@ -51838,7 +51838,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {object} cellProperties The cell meta object (see {@link Core#getCellMeta}).
      */
     prepare(e, t, i, s, r, o) {
-      super.prepare(e, t, i, s, r, o), this.hot.getSettings().ariaTags && $e(this.TEXTAREA, [Br("false"), $me(`${sB(vE, this)}-listbox-${e}-${t}`)]);
+      super.prepare(e, t, i, s, r, o), this.hot.getSettings().ariaTags && $e(this.TEXTAREA, [Br("false"), $me(`${rB(vE, this)}-listbox-${e}-${t}`)]);
     }
     /**
      * Opens the editor and adjust its size and internal Handsontable's instance.
@@ -51874,10 +51874,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         afterSelectionEnd: (l, c) => {
           if (t) {
             const u = this.htEditor.getCell(l, c, !0);
-            $e(u, [yO()]), $e(this.TEXTAREA, ...Fme(u.id));
+            $e(u, [CO()]), $e(this.TEXTAREA, ...Fme(u.id));
           }
         }
-      }), t && ($e(this.htEditor.view._wt.wtOverlays.wtTable.TABLE, ...Ra()), $e(this.htEditor.rootElement, [j4(), Bme("polite"), Vme("text"), ["id", `${sB(vE, this)}-listbox-${r}-${o}`]]), $e(this.TEXTAREA, ...Br("true"))), this.hot._registerTimeout(() => {
+      }), t && ($e(this.htEditor.view._wt.wtOverlays.wtTable.TABLE, ...Ra()), $e(this.htEditor.rootElement, [z4(), Bme("polite"), Vme("text"), ["id", `${rB(vE, this)}-listbox-${r}-${o}`]]), $e(this.TEXTAREA, ...Br("true"))), this.hot._registerTimeout(() => {
         this.queryChoices(this.TEXTAREA.value);
       });
     }
@@ -51915,7 +51915,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} choicesList The choices list to process.
      */
     updateChoicesList(e) {
-      const t = xO(this.TEXTAREA), i = i7(this.TEXTAREA), s = this.cellProperties.sortByRelevance, r = this.cellProperties.filter;
+      const t = EO(this.TEXTAREA), i = s7(this.TEXTAREA), s = this.cellProperties.sortByRelevance, r = this.cellProperties.filter;
       let o = null, a = null, l = e;
       s && (o = this.sortByRelevance(this.stripValueIfNeeded(this.getValue()), l, this.cellProperties.filteringCaseSensitive));
       const c = Array.isArray(o) ? o.length : 0;
@@ -52063,7 +52063,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {KeyboardEvent} event The keyboard event object.
      */
     onBeforeKeyDown(e) {
-      if (S7(e.keyCode) || e.keyCode === Oe.BACKSPACE || e.keyCode === Oe.DELETE || e.keyCode === Oe.INSERT) {
+      if (_7(e.keyCode) || e.keyCode === Oe.BACKSPACE || e.keyCode === Oe.DELETE || e.keyCode === Oe.INSERT) {
         let t = 10;
         if (e.keyCode === Oe.C && (e.ctrlKey || e.metaKey))
           return;
@@ -52074,7 +52074,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   const VRe = "checkbox";
-  class Lz extends fp {
+  class $z extends fp {
     static get EDITOR_TYPE() {
       return VRe;
     }
@@ -52116,7 +52116,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     js(n, e) || (n.className = n.className === "" ? e : n.className + " " + e);
   }, CE = function(n, e) {
     n.className = WRe((" " + n.className + " ").replace(" " + e + " ", " "));
-  }, DH = function(n) {
+  }, NH = function(n) {
     return /Array/.test(Object.prototype.toString.call(n));
   }, qs = function(n) {
     return /Date/.test(Object.prototype.toString.call(n)) && !isNaN(n.getTime());
@@ -52125,7 +52125,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return e === 0 || e === 6;
   }, zRe = function(n) {
     return n % 4 === 0 && n % 100 !== 0 || n % 400 === 0;
-  }, rB = function(n, e) {
+  }, oB = function(n, e) {
     return [31, zRe(n) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][e];
   }, Yy = function(n) {
     qs(n) && n.setHours(0, 0, 0, 0);
@@ -52134,12 +52134,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }, FS = function(n, e, t) {
     let i, s;
     for (i in e)
-      s = n[i] !== void 0, s && typeof e[i] == "object" && e[i] !== null && e[i].nodeName === void 0 ? qs(e[i]) ? t && (n[i] = new Date(e[i].getTime())) : DH(e[i]) ? t && (n[i] = e[i].slice(0)) : n[i] = FS({}, e[i], t) : (t || !s) && (n[i] = e[i]);
+      s = n[i] !== void 0, s && typeof e[i] == "object" && e[i] !== null && e[i].nodeName === void 0 ? qs(e[i]) ? t && (n[i] = new Date(e[i].getTime())) : NH(e[i]) ? t && (n[i] = e[i].slice(0)) : n[i] = FS({}, e[i], t) : (t || !s) && (n[i] = e[i]);
     return n;
-  }, oB = function(n, e, t) {
+  }, aB = function(n, e, t) {
     let i = Ir().createEvent("HTMLEvents");
     i.initEvent(e, !0, !1), i = FS(i, t), n.dispatchEvent(i);
-  }, aB = function(n) {
+  }, lB = function(n) {
     return n.month < 0 && (n.year -= Math.ceil(Math.abs(n.month) / 12), n.month += 12), n.month > 11 && (n.year += Math.floor(Math.abs(n.month) / 12), n.month -= 12), n;
   }, Ko = {
     // bind the picker to a form field
@@ -52225,7 +52225,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     onDraw: null,
     // Enable keyboard input
     keyboardInput: !0
-  }, lB = function(n, e, t) {
+  }, cB = function(n, e, t) {
     for (e += n.firstDay; e >= 7; )
       e -= 7;
     return t ? n.i18n.weekdaysShort[e] : n.i18n.weekdays[e];
@@ -52255,13 +52255,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }, XRe = function(n) {
     let e, t = [];
     for (n.showWeekNumber && t.push("<th></th>"), e = 0; e < 7; e++)
-      t.push('<th scope="col"><abbr title="' + lB(n, e) + '">' + lB(n, e, !0) + "</abbr></th>");
+      t.push('<th scope="col"><abbr title="' + cB(n, e) + '">' + cB(n, e, !0) + "</abbr></th>");
     return "<thead><tr>" + (n.isRTL ? t.reverse() : t).join("") + "</tr></thead>";
   }, QRe = function(n, e, t, i, s, r) {
     let o, a, l, c = n._o, u = t === c.minYear, h = t === c.maxYear, d = '<div id="' + r + '" class="pika-title" role="heading" aria-live="polite">', f, g, p = !0, m = !0;
     for (l = [], o = 0; o < 12; o++)
       l.push('<option value="' + (t === s ? o - e : 12 + o - e) + '"' + (o === i ? ' selected="selected"' : "") + (u && o < c.minMonth || h && o > c.maxMonth ? ' disabled="disabled"' : "") + ">" + c.i18n.months[o] + "</option>");
-    for (f = '<div class="pika-label">' + c.i18n.months[i] + '<select class="pika-select pika-select-month" tabindex="-1">' + l.join("") + "</select></div>", DH(c.yearRange) ? (o = c.yearRange[0], a = c.yearRange[1] + 1) : (o = t - c.yearRange, a = 1 + t + c.yearRange), l = []; o < a && o <= c.maxYear; o++)
+    for (f = '<div class="pika-label">' + c.i18n.months[i] + '<select class="pika-select pika-select-month" tabindex="-1">' + l.join("") + "</select></div>", NH(c.yearRange) ? (o = c.yearRange[0], a = c.yearRange[1] + 1) : (o = t - c.yearRange, a = 1 + t + c.yearRange), l = []; o < a && o <= c.maxYear; o++)
       o >= c.minYear && l.push('<option value="' + o + '"' + (o === t ? ' selected="selected"' : "") + ">" + o + "</option>");
     return g = '<div class="pika-label">' + t + c.yearSuffix + '<select class="pika-select pika-select-year" tabindex="-1">' + l.join("") + "</select></div>", c.showMonthAfterYear ? d += g + f : d += f + g, u && (i === 0 || c.minMonth >= i) && (p = !1), h && (i === 11 || c.maxMonth <= i) && (m = !1), e === 0 && (d += '<button class="pika-prev' + (p ? "" : " is-disabled") + '" type="button">' + c.i18n.previousMonth + "</button>"), e === n._o.numberOfMonths - 1 && (d += '<button class="pika-next' + (m ? "" : " is-disabled") + '" type="button">' + c.i18n.nextMonth + "</button>"), d += "</div>";
   }, ZRe = function(n, e, t) {
@@ -52372,7 +52372,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       let e = FS(this._o, n, !0);
       e.isRTL = !!e.isRTL, e.field = e.field && e.field.nodeName ? e.field : null, e.theme = typeof e.theme == "string" && e.theme ? e.theme : null, e.bound = !!(e.bound !== void 0 ? e.field && e.bound : e.field), e.trigger = e.trigger && e.trigger.nodeName ? e.trigger : e.field, e.disableWeekends = !!e.disableWeekends, e.disableDayFn = typeof e.disableDayFn == "function" ? e.disableDayFn : null;
       let t = parseInt(e.numberOfMonths, 10) || 1;
-      if (e.numberOfMonths = t > 4 ? 4 : t, qs(e.minDate) || (e.minDate = !1), qs(e.maxDate) || (e.maxDate = !1), e.minDate && e.maxDate && e.maxDate < e.minDate && (e.maxDate = e.minDate = !1), e.minDate && this.setMinDate(e.minDate), e.maxDate && this.setMaxDate(e.maxDate), DH(e.yearRange)) {
+      if (e.numberOfMonths = t > 4 ? 4 : t, qs(e.minDate) || (e.minDate = !1), qs(e.maxDate) || (e.maxDate = !1), e.minDate && e.maxDate && e.maxDate < e.minDate && (e.maxDate = e.minDate = !1), e.minDate && this.setMinDate(e.minDate), e.maxDate && this.setMaxDate(e.maxDate), NH(e.yearRange)) {
         let i = (/* @__PURE__ */ new Date()).getFullYear() - 10;
         e.yearRange[0] = parseInt(e.yearRange[0], 10) || i, e.yearRange[1] = parseInt(e.yearRange[1], 10) || i;
       } else
@@ -52414,11 +52414,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     setDate: function(n, e) {
       if (!n)
-        return this._d = null, this._o.field && (this._o.field.value = "", oB(this._o.field, "change", { firedBy: this })), this.draw();
+        return this._d = null, this._o.field && (this._o.field.value = "", aB(this._o.field, "change", { firedBy: this })), this.draw();
       if (typeof n == "string" && (n = new Date(Date.parse(n))), !qs(n))
         return;
       let t = this._o.minDate, i = this._o.maxDate;
-      qs(t) && n < t ? n = t : qs(i) && n > i && (n = i), this._d = new Date(n.getTime()), Yy(this._d), this.gotoDate(this._d), this._o.field && (this._o.field.value = this.toString(), oB(this._o.field, "change", { firedBy: this })), !e && typeof this._o.onSelect == "function" && this._o.onSelect.call(this, this.getDate());
+      qs(t) && n < t ? n = t : qs(i) && n > i && (n = i), this._d = new Date(n.getTime()), Yy(this._d), this.gotoDate(this._d), this._o.field && (this._o.field.value = this.toString(), aB(this._o.field, "change", { firedBy: this })), !e && typeof this._o.onSelect == "function" && this._o.onSelect.call(this, this.getDate());
     },
     /**
      * clear and reset the date
@@ -52447,9 +52447,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       n === "add" ? s = new Date(t.valueOf() + i) : n === "subtract" && (s = new Date(t.valueOf() - i)), this.setDate(s);
     },
     adjustCalendars: function() {
-      this.calendars[0] = aB(this.calendars[0]);
+      this.calendars[0] = lB(this.calendars[0]);
       for (let n = 1; n < this._o.numberOfMonths; n++)
-        this.calendars[n] = aB({
+        this.calendars[n] = lB({
           month: this.calendars[0].month + n,
           year: this.calendars[0].year
         });
@@ -52516,9 +52516,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * render HTML for a particular month
      */
     render: function(n, e, t) {
-      let i = this._o, s = /* @__PURE__ */ new Date(), r = rB(n, e), o = new Date(n, e, 1).getDay(), a = [], l = [];
+      let i = this._o, s = /* @__PURE__ */ new Date(), r = oB(n, e), o = new Date(n, e, 1).getDay(), a = [], l = [];
       Yy(s), i.firstDay > 0 && (o -= i.firstDay, o < 0 && (o += 7));
-      let c = e === 0 ? 11 : e - 1, u = e === 11 ? 0 : e + 1, h = e === 0 ? n - 1 : n, d = e === 11 ? n + 1 : n, f = rB(h, c), g = r + o, p = g;
+      let c = e === 0 ? 11 : e - 1, u = e === 11 ? 0 : e + 1, h = e === 0 ? n - 1 : n, d = e === 11 ? n + 1 : n, f = oB(h, c), g = r + o, p = g;
       for (; p > 7; )
         p -= 7;
       g += 7 - p;
@@ -52580,13 +52580,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const $z = "date", cB = "dateEditor";
-  class Fz extends qd {
+  const Fz = "date", uB = "dateEditor";
+  class Bz extends qd {
     constructor() {
       super(...arguments), SE(this, "defaultDateFormat", "DD/MM/YYYY"), SE(this, "parentDestroyed", !1), SE(this, "$datePicker", null);
     }
     static get EDITOR_TYPE() {
-      return $z;
+      return Fz;
     }
     init() {
       if (typeof le != "function")
@@ -52654,7 +52654,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           this.$datePicker.adjustDate("add", 7);
         }
       }], {
-        group: cB
+        group: uB
       });
     }
     /**
@@ -52665,7 +52665,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this._opened = !1, (e = this.$datePicker) !== null && e !== void 0 && e.destroy && this.$datePicker.destroy(), this.hot._registerTimeout(() => {
         const s = this.hot._getEditorManager();
         s.closeEditor(), this.hot.view.render(), s.prepareEditor();
-      }), this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(cB), super.close();
+      }), this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(uB), super.close();
     }
     /**
      * Finishes editing and start saving or restoring process for editing cell or last selected range.
@@ -52683,7 +52683,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Event} event The event object.
      */
     showDatepicker(e) {
-      const t = this.cellProperties.dateFormat || this.defaultDateFormat, i = this.hot.view.isMouseDown(), s = e ? DO(e.keyCode) : !1;
+      const t = this.cellProperties.dateFormat || this.defaultDateFormat, i = this.hot.view.isMouseDown(), s = e ? NO(e.keyCode) : !1;
       let r;
       this.datePicker.style.display = "block", this.$datePicker = new PA(this.getDatePickerConfig()), typeof this.$datePicker.useMoment == "function" && this.$datePicker.useMoment(le), this.$datePicker._onInputFocus = function() {
       }, this.originalValue ? (r = this.originalValue, le(r, t, !0).isValid() && this.$datePicker.setMoment(le(r, t), !0), this.getValue() !== this.originalValue && this.setValue(this.originalValue), !s && !i && this.setValue("")) : this.cellProperties.defaultDate ? (r = this.cellProperties.defaultDate, le(r, t, !0).isValid() && this.$datePicker.setMoment(le(r, t), !0), !s && !i && this.setValue("")) : this.$datePicker.gotoToday();
@@ -52742,7 +52742,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   const t1e = "dropdown";
-  class NH extends HH {
+  class LH extends DH {
     static get EDITOR_TYPE() {
       return t1e;
     }
@@ -52762,17 +52762,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const i = this.propToCol(t);
     if (Number.isInteger(i)) {
       const s = this.getCellMeta(e, i);
-      s.editor === NH && s.strict === void 0 && (s.filter = !1, s.strict = !0);
+      s.editor === LH && s.strict === void 0 && (s.filter = !1, s.strict = !0);
     }
   });
   const n1e = "numeric";
-  class Bz extends qd {
+  class Vz extends qd {
     static get EDITOR_TYPE() {
       return n1e;
     }
   }
   const i1e = "password";
-  class Vz extends qd {
+  class Wz extends qd {
     static get EDITOR_TYPE() {
       return i1e;
     }
@@ -52780,8 +52780,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super.createElements(), this.TEXTAREA = this.hot.rootDocument.createElement("input"), this.TEXTAREA.setAttribute("type", "password"), this.TEXTAREA.setAttribute("data-hot-input", ""), this.TEXTAREA.className = "handsontableInput", this.textareaStyle = this.TEXTAREA.style, this.textareaStyle.width = 0, this.textareaStyle.height = 0, Ho(this.TEXTAREA_PARENT), this.TEXTAREA_PARENT.appendChild(this.TEXTAREA);
     }
   }
-  const _E = "ht_editor_visible", uB = "selectEditor", s1e = "select";
-  class Wz extends fp {
+  const _E = "ht_editor_visible", hB = "selectEditor", s1e = "select";
+  class jz extends fp {
     static get EDITOR_TYPE() {
       return s1e;
     }
@@ -52903,7 +52903,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     registerShortcuts() {
       const t = this.hot.getShortcutManager().getContext("editor"), i = {
-        group: uB
+        group: hB
       };
       this.isInFullEditMode() && t.addShortcuts([{
         keys: [["ArrowUp"]],
@@ -52925,11 +52925,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(uB);
+      this.hot.getShortcutManager().getContext("editor").removeShortcutsByGroup(hB);
     }
   }
   const r1e = "time";
-  class jz extends qd {
+  class zz extends qd {
     static get EDITOR_TYPE() {
       return r1e;
     }
@@ -52948,18 +52948,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function o1e() {
-    Os(fp), Os(HH), Os(Lz), Os(Fz), Os(NH), Os(kH), Os(Bz), Os(Vz), Os(Wz), Os(qd), Os(jz);
+    Os(fp), Os(DH), Os($z), Os(Bz), Os(LH), Os(HH), Os(Vz), Os(Wz), Os(jz), Os(qd), Os(zz);
   }
   const a1e = "html";
-  function LH(n, e, t, i, s, r, o) {
+  function $H(n, e, t, i, s, r, o) {
     wv.apply(this, [n, e, t, i, s, r, o]), Gd(e, r ?? "", !1);
   }
-  LH.RENDERER_TYPE = a1e;
+  $H.RENDERER_TYPE = a1e;
   const l1e = "autocomplete";
   function gp(n, e, t, i, s, r, o) {
     const {
       rootDocument: a
-    } = n, l = o.allowHtml ? LH : dc, c = a.createElement("DIV"), u = n.getSettings().ariaTags;
+    } = n, l = o.allowHtml ? $H : dc, c = a.createElement("DIV"), u = n.getSettings().ariaTags;
     if (c.className = "htAutocompleteArrow", u && c.setAttribute(...Ud()), c.appendChild(a.createTextNode("▼")), l.apply(this, [n, e, t, i, s, r, o]), e.firstChild || e.appendChild(a.createTextNode(" ")), e.insertBefore(c, e.firstChild), ae(e, "htAutocomplete"), !n.acArrowListener) {
       const h = new Ur(n);
       n.acArrowListener = function(d) {
@@ -52971,11 +52971,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   gp.RENDERER_TYPE = l1e;
   const c1e = "dropdown";
-  function $H(n, e, t, i, s, r, o) {
+  function FH(n, e, t, i, s, r, o) {
     gp.apply(this, [n, e, t, i, s, r, o]);
   }
-  $H.RENDERER_TYPE = c1e;
-  const hB = /* @__PURE__ */ new WeakMap(), dB = /* @__PURE__ */ new WeakMap(), u1e = "htBadValue", Vg = "data-row", Wg = "data-col", h1e = "checkboxRenderer", zz = "checkbox";
+  FH.RENDERER_TYPE = c1e;
+  const dB = /* @__PURE__ */ new WeakMap(), fB = /* @__PURE__ */ new WeakMap(), u1e = "htBadValue", Vg = "data-row", Wg = "data-col", h1e = "checkboxRenderer", Uz = "checkbox";
   Ee.getSingleton().add("modifyAutoColumnSizeSeed", function(n, e, t) {
     const {
       label: i,
@@ -52984,7 +52984,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       column: o,
       prop: a
     } = e;
-    if (s === zz) {
+    if (s === Uz) {
       if (i) {
         const {
           value: l,
@@ -53002,7 +53002,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return n;
     }
   });
-  function FH(n, e, t, i, s, r, o) {
+  function BH(n, e, t, i, s, r, o) {
     const {
       rootDocument: a
     } = n, l = n.getSettings().ariaTags;
@@ -53010,7 +53010,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     let c = f1e(a);
     const u = o.label;
     let h = !1;
-    if (typeof o.checkedTemplate > "u" && (o.checkedTemplate = !0), typeof o.uncheckedTemplate > "u" && (o.uncheckedTemplate = !1), Ho(e), r === o.checkedTemplate || kn(r).toLocaleLowerCase(o.locale) === kn(o.checkedTemplate).toLocaleLowerCase(o.locale) ? c.checked = !0 : r === o.uncheckedTemplate || kn(r).toLocaleLowerCase(o.locale) === kn(o.uncheckedTemplate).toLocaleLowerCase(o.locale) ? c.checked = !1 : Hn(r) ? ae(c, "noValue") : (c.style.display = "none", ae(c, u1e), h = !0), $e(c, [[Vg, t], [Wg, i]]), l && $e(c, [_S(c.checked ? n.getTranslatedPhrase(MH) : n.getTranslatedPhrase(AH)), G4(c.checked), Pme()]), !h && u) {
+    if (typeof o.checkedTemplate > "u" && (o.checkedTemplate = !0), typeof o.uncheckedTemplate > "u" && (o.uncheckedTemplate = !1), Ho(e), r === o.checkedTemplate || kn(r).toLocaleLowerCase(o.locale) === kn(o.checkedTemplate).toLocaleLowerCase(o.locale) ? c.checked = !0 : r === o.uncheckedTemplate || kn(r).toLocaleLowerCase(o.locale) === kn(o.uncheckedTemplate).toLocaleLowerCase(o.locale) ? c.checked = !1 : Hn(r) ? ae(c, "noValue") : (c.style.display = "none", ae(c, u1e), h = !0), $e(c, [[Vg, t], [Wg, i]]), l && $e(c, [_S(c.checked ? n.getTranslatedPhrase(AH) : n.getTranslatedPhrase(PH)), K4(c.checked), Pme()]), !h && u) {
       let p = "";
       if (u.value)
         p = typeof u.value == "function" ? u.value.call(this, t, i, s, r) : u.value;
@@ -53021,7 +53021,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const m = g1e(a, p, u.separated !== !0);
       u.position === "before" ? u.separated ? (e.appendChild(m), e.appendChild(c)) : (m.appendChild(c), c = m) : (!u.position || u.position === "after") && (u.separated ? (e.appendChild(c), e.appendChild(m)) : (m.insertBefore(c, m.firstChild), c = m));
     }
-    (!u || u && !u.separated) && e.appendChild(c), h && e.appendChild(a.createTextNode("#bad-value#")), hB.has(n) || (hB.set(n, !0), d());
+    (!u || u && !u.separated) && e.appendChild(c), h && e.appendChild(a.createTextNode("#bad-value#")), dB.has(n) || (dB.set(n, !0), d());
     function d() {
       const m = n.getShortcutManager().getContext("grid"), w = {
         group: h1e,
@@ -53115,14 +53115,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     }
   }
-  FH.RENDERER_TYPE = zz;
+  BH.RENDERER_TYPE = Uz;
   function d1e(n) {
-    let e = dB.get(n);
+    let e = fB.get(n);
     if (!e) {
       const {
         rootElement: t
       } = n;
-      e = new Ur(n), e.addEventListener(t, "click", (i) => m1e(i, n)), e.addEventListener(t, "mouseup", (i) => p1e(i, n)), e.addEventListener(t, "change", (i) => b1e(i, n)), dB.set(n, e);
+      e = new Ur(n), e.addEventListener(t, "click", (i) => m1e(i, n)), e.addEventListener(t, "mouseup", (i) => p1e(i, n)), e.addEventListener(t, "change", (i) => b1e(i, n)), fB.set(n, e);
     }
     return e;
   }
@@ -53138,13 +53138,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const {
       target: t
     } = n;
-    BH(t) && (!t.hasAttribute(Vg) || !t.hasAttribute(Wg) || setTimeout(e.listen, 10));
+    VH(t) && (!t.hasAttribute(Vg) || !t.hasAttribute(Wg) || setTimeout(e.listen, 10));
   }
   function m1e(n, e) {
     const {
       target: t
     } = n;
-    if (!BH(t) || !t.hasAttribute(Vg) || !t.hasAttribute(Wg))
+    if (!VH(t) || !t.hasAttribute(Vg) || !t.hasAttribute(Wg))
       return;
     const i = parseInt(t.getAttribute(Vg), 10), s = parseInt(t.getAttribute(Wg), 10);
     e.getCellMeta(i, s).readOnly && n.preventDefault();
@@ -53153,7 +53153,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const {
       target: t
     } = n;
-    if (!BH(t) || !t.hasAttribute(Vg) || !t.hasAttribute(Wg))
+    if (!VH(t) || !t.hasAttribute(Vg) || !t.hasAttribute(Wg))
       return;
     const i = parseInt(t.getAttribute(Vg), 10), s = parseInt(t.getAttribute(Wg), 10), r = e.getCellMeta(i, s);
     if (!r.readOnly) {
@@ -53161,18 +53161,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       n.target.checked ? o = r.uncheckedTemplate === void 0 ? !0 : r.checkedTemplate : o = r.uncheckedTemplate === void 0 ? !1 : r.uncheckedTemplate, e.setDataAtCell(i, s, o);
     }
   }
-  function BH(n) {
+  function VH(n) {
     return n.tagName === "INPUT" && n.getAttribute("type") === "checkbox";
   }
   const w1e = "handsontable";
-  function VH(n, e, t, i, s, r, o) {
+  function WH(n, e, t, i, s, r, o) {
     gp.apply(this, [n, e, t, i, s, r, o]);
   }
-  VH.RENDERER_TYPE = w1e;
+  WH.RENDERER_TYPE = w1e;
   function Ky(n) {
     throw new Error('Could not dynamically require "' + n + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
   }
-  var Uz = { exports: {} };
+  var Yz = { exports: {} };
   (function(n, e) {
     (function(t) {
       n.exports = t();
@@ -54606,10 +54606,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         }]
       }, {}, [7])(7);
     });
-  })(Uz);
-  var v1e = Uz.exports;
+  })(Yz);
+  var v1e = Yz.exports;
   const eh = /* @__PURE__ */ Tse(v1e), y1e = "numeric";
-  function Yz(n, e) {
+  function Gz(n, e) {
     if (Gi(n)) {
       const t = e.numericFormat, i = t && t.culture || "-", s = t && t.pattern;
       if (typeof i < "u" && !eh.languages()[i]) {
@@ -54620,17 +54620,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return n;
   }
-  function WH(n, e, t, i, s, r, o) {
+  function jH(n, e, t, i, s, r, o) {
     let a = r;
     if (Gi(a)) {
       const l = o.className || "", c = l.length ? l.split(" ") : [];
-      a = Yz(a, o), c.indexOf("htLeft") < 0 && c.indexOf("htCenter") < 0 && c.indexOf("htRight") < 0 && c.indexOf("htJustify") < 0 && c.push("htRight"), c.indexOf("htNumeric") < 0 && c.push("htNumeric"), o.className = c.join(" "), e.dir = "ltr";
+      a = Gz(a, o), c.indexOf("htLeft") < 0 && c.indexOf("htCenter") < 0 && c.indexOf("htRight") < 0 && c.indexOf("htJustify") < 0 && c.push("htRight"), c.indexOf("htNumeric") < 0 && c.push("htNumeric"), o.className = c.join(" "), e.dir = "ltr";
     }
     dc(n, e, t, i, s, a, o);
   }
-  WH.RENDERER_TYPE = y1e;
+  jH.RENDERER_TYPE = y1e;
   const C1e = "password";
-  function jH(n, e, t, i, s, r, o) {
+  function zH(n, e, t, i, s, r, o) {
     dc.apply(this, [n, e, t, i, s, r, o]);
     const a = o.hashLength || e.innerHTML.length, l = o.hashSymbol || "*";
     let c = "";
@@ -54638,19 +54638,19 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       c += l;
     }), Gd(e, c);
   }
-  jH.RENDERER_TYPE = C1e;
+  zH.RENDERER_TYPE = C1e;
   const S1e = "select";
-  function zH(n, e, t, i, s, r, o) {
+  function UH(n, e, t, i, s, r, o) {
     dc.apply(this, [n, e, t, i, s, r, o]);
   }
-  zH.RENDERER_TYPE = S1e;
+  UH.RENDERER_TYPE = S1e;
   const _1e = "time";
-  function UH(n, e, t, i, s, r, o) {
+  function YH(n, e, t, i, s, r, o) {
     dc.apply(this, [n, e, t, i, s, r, o]), e.dir = "ltr";
   }
-  UH.RENDERER_TYPE = _1e;
+  YH.RENDERER_TYPE = _1e;
   function R1e() {
-    zs(gp), zs(wv), zs(FH), zs($H), zs(VH), zs(LH), zs(WH), zs(jH), zs(zH), zs(dc), zs(UH);
+    zs(gp), zs(wv), zs(BH), zs(FH), zs(WH), zs($H), zs(jH), zs(zH), zs(UH), zs(dc), zs(YH);
   }
   const x1e = "autocomplete";
   function UR(n, e) {
@@ -54659,10 +54659,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       e(!0);
       return;
     }
-    this.strict && this.source ? typeof this.source == "function" ? this.source(t, fB(t, e)) : fB(t, e)(this.source) : e(!0);
+    this.strict && this.source ? typeof this.source == "function" ? this.source(t, gB(t, e)) : gB(t, e)(this.source) : e(!0);
   }
   UR.VALIDATOR_TYPE = x1e;
-  function fB(n, e) {
+  function gB(n, e) {
     const t = n;
     return function(i) {
       let s = !1;
@@ -54674,16 +54674,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       e(s);
     };
   }
-  function Gz(n) {
+  function Kz(n) {
     const e = new Date(n);
     return isNaN((/* @__PURE__ */ new Date(`${n}T00:00`)).getDate()) ? e : new Date(e.getTime() + e.getTimezoneOffset() * 6e4);
   }
   const E1e = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    getNormalizedDate: Gz
+    getNormalizedDate: Kz
   }, Symbol.toStringTag, { value: "Module" })), T1e = "date";
-  function YH(n, e) {
-    const t = I7($z, this.instance);
+  function GH(n, e) {
+    const t = O7(Fz, this.instance);
     let i = n, s = !0;
     i == null && (i = "");
     let r = le(i, this.dateFormat || t.defaultDateFormat, !0).isValid(), o = le(new Date(i)).isValid() || r;
@@ -54695,23 +54695,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         s = !1;
     e(s);
   }
-  YH.VALIDATOR_TYPE = T1e;
+  GH.VALIDATOR_TYPE = T1e;
   function M1e(n, e) {
-    const t = le(Gz(n)), i = le(n, e), s = n.search(/[A-z]/g) > -1;
+    const t = le(Kz(n)), i = le(n, e), s = n.search(/[A-z]/g) > -1;
     let r;
     return t.isValid() && t.format("x") === i.format("x") || !i.isValid() || s ? r = t : r = i, r.format(e);
   }
   const A1e = "dropdown";
-  function GH(n, e) {
+  function KH(n, e) {
     UR.apply(this, [n, e]);
   }
-  GH.VALIDATOR_TYPE = A1e;
+  KH.VALIDATOR_TYPE = A1e;
   const P1e = "numeric";
-  function KH(n, e) {
+  function qH(n, e) {
     let t = n;
     t == null && (t = ""), this.allowEmpty && t === "" ? e(!0) : e(t === "" ? !1 : Gi(n));
   }
-  KH.VALIDATOR_TYPE = P1e;
+  qH.VALIDATOR_TYPE = P1e;
   const I1e = [
     "YYYY-MM-DDTHH:mm:ss.SSSZ",
     "X",
@@ -54719,7 +54719,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     "x"
     // Unix ms timestamp
   ], O1e = "time";
-  function qH(n, e) {
+  function XH(n, e) {
     const t = this.timeFormat || "h:mm:ss a";
     let i = !0, s = n;
     s === null && (s = ""), s = /^\d{3,}$/.test(s) ? parseInt(s, 10) : s;
@@ -54735,72 +54735,72 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         i = !1;
     e(i);
   }
-  qH.VALIDATOR_TYPE = O1e;
+  XH.VALIDATOR_TYPE = O1e;
   function k1e() {
-    Fh(UR), Fh(GH), Fh(YH), Fh(KH), Fh(qH);
+    Fh(UR), Fh(KH), Fh(GH), Fh(qH), Fh(XH);
   }
   const H1e = "autocomplete", D1e = {
     CELL_TYPE: H1e,
-    editor: HH,
+    editor: DH,
     renderer: gp,
     validator: UR
   }, N1e = "checkbox", L1e = {
     CELL_TYPE: N1e,
-    editor: Lz,
-    renderer: FH
+    editor: $z,
+    renderer: BH
   }, $1e = "date";
-  function Kz(n, e, t, i, s, r, o) {
+  function qz(n, e, t, i, s, r, o) {
     gp.apply(this, [n, e, t, i, s, r, o]);
   }
-  Kz.RENDERER_TYPE = $1e;
+  qz.RENDERER_TYPE = $1e;
   const F1e = "date", B1e = {
     CELL_TYPE: F1e,
-    editor: Fz,
+    editor: Bz,
     // displays small gray arrow on right side of the cell
-    renderer: Kz,
-    validator: YH
+    renderer: qz,
+    validator: GH
   }, V1e = "dropdown", W1e = {
     CELL_TYPE: V1e,
-    editor: NH,
+    editor: LH,
     // displays small gray arrow on right side of the cell
-    renderer: $H,
-    validator: GH
+    renderer: FH,
+    validator: KH
   }, j1e = "handsontable", z1e = {
     CELL_TYPE: j1e,
-    editor: kH,
+    editor: HH,
     // displays small gray arrow on right side of the cell
-    renderer: VH
+    renderer: WH
   }, U1e = "numeric", Y1e = {
     CELL_TYPE: U1e,
-    editor: Bz,
-    renderer: WH,
-    validator: KH,
+    editor: Vz,
+    renderer: jH,
+    validator: qH,
     dataType: "number"
   }, G1e = "password", K1e = {
     CELL_TYPE: G1e,
-    editor: Vz,
-    renderer: jH,
+    editor: Wz,
+    renderer: zH,
     copyable: !1
   }, q1e = "select", X1e = {
     CELL_TYPE: q1e,
-    editor: Wz,
-    renderer: zH
+    editor: jz,
+    renderer: UH
   }, Q1e = "time", Z1e = {
     CELL_TYPE: Q1e,
-    editor: jz,
-    renderer: UH,
-    validator: qH
+    editor: zz,
+    renderer: YH,
+    validator: XH
   };
   function J1e() {
-    Er(D1e), Er(L1e), Er(B1e), Er(W1e), Er(z1e), Er(Y1e), Er(K1e), Er(X1e), Er(Nz), Er(Z1e);
+    Er(D1e), Er(L1e), Er(B1e), Er(W1e), Er(z1e), Er(Y1e), Er(K1e), Er(X1e), Er(Lz), Er(Z1e);
   }
   function exe(n, e) {
-    qz(n, e), e.add(n);
+    Xz(n, e), e.add(n);
   }
   function txe(n, e, t) {
-    qz(n, e), e.set(n, t);
+    Xz(n, e), e.set(n, t);
   }
-  function qz(n, e) {
+  function Xz(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function wf(n, e, t) {
@@ -54821,15 +54821,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function vf(n, e) {
-    return n.get(Xz(n, e));
+    return n.get(Qz(n, e));
   }
-  function Xz(n, e, t) {
+  function Qz(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const gB = /* @__PURE__ */ new Map([["plugin", ave], ["cell-type", Tz], ["editor", P7], ["renderer", $7], ["validator", F7]]), sxe = "base", RE = [];
+  const pB = /* @__PURE__ */ new Map([["plugin", ave], ["cell-type", Mz], ["editor", I7], ["renderer", F7], ["validator", B7]]), sxe = "base", RE = [];
   let qo = null;
-  var th = /* @__PURE__ */ new WeakMap(), pB = /* @__PURE__ */ new WeakSet();
+  var th = /* @__PURE__ */ new WeakMap(), mB = /* @__PURE__ */ new WeakSet();
   class Pt {
     static get PLUGIN_KEY() {
       return sxe;
@@ -54855,7 +54855,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {object} hotInstance Handsontable instance.
      */
     constructor(e) {
-      exe(this, pB), wf(this, "eventManager", new Ur(this)), wf(this, "pluginName", null), wf(this, "pluginsInitializedCallbacks", []), wf(this, "isPluginsReady", !1), wf(this, "enabled", !1), wf(this, "initialized", !1), txe(this, th, {}), Qa(this, "hot", e, {
+      exe(this, mB), wf(this, "eventManager", new Ur(this)), wf(this, "pluginName", null), wf(this, "pluginsInitializedCallbacks", []), wf(this, "isPluginsReady", !1), wf(this, "enabled", !1), wf(this, "initialized", !1), txe(this, th, {}), Qa(this, "hot", e, {
         writable: !1
       }), qo = null, this.hot.addHook("afterPluginsInitialized", () => this.onAfterPluginsInitialized()), this.hot.addHook("afterUpdateSettings", (t) => this.onUpdateSettings(t)), this.hot.addHook("beforeInit", () => this.init());
     }
@@ -54866,9 +54866,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const s = [];
         if (t.forEach((r) => {
           const [o, a] = r.split(":");
-          if (!gB.has(o))
+          if (!pB.has(o))
             throw new Error(`Unknown plugin dependency type "${o}" was found.`);
-          gB.get(o)(a) || s.push(` - ${a} (${o})`);
+          pB.get(o)(a) || s.push(` - ${a} (${o})`);
         }), s.length > 0) {
           const r = [`The ${this.pluginName} plugin requires the following modules:
 `, `${s.join(`
@@ -54877,7 +54877,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           RE.push(r);
         }
       }
-      if (qo || (qo = jO()), qo.indexOf("UndoRedo") >= 0 && qo.splice(qo.indexOf("UndoRedo"), 1), qo.indexOf(this.pluginName) >= 0 && qo.splice(qo.indexOf(this.pluginName), 1), this.hot.addHookOnce("afterPluginsInitialized", () => {
+      if (qo || (qo = zO()), qo.indexOf("UndoRedo") >= 0 && qo.splice(qo.indexOf("UndoRedo"), 1), qo.indexOf(this.pluginName) >= 0 && qo.splice(qo.indexOf(this.pluginName), 1), this.hot.addHookOnce("afterPluginsInitialized", () => {
         this.isEnabled && this.isEnabled() && this.enablePlugin();
       }), qo.length === 0) {
         if (RE.length > 0) {
@@ -54958,7 +54958,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {object} newSettings New set of settings passed to the `updateSettings` method.
      */
     onUpdateSettings(e) {
-      const t = Xz(pB, this, rxe).call(this, e);
+      const t = Qz(mB, this, rxe).call(this, e);
       this.isEnabled && (this.enabled && !this.isEnabled() && this.disablePlugin(), !this.enabled && this.isEnabled() && this.enablePlugin(), this.enabled && this.isEnabled() && t && this.updatePlugin(e));
     }
     /**
@@ -55006,7 +55006,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  let XH = class {
+  let QH = class {
     constructor(e) {
       nh(this, "hot", null), nh(this, "container", null), nh(this, "injected", !1), nh(this, "rows", []), nh(this, "columns", []), nh(this, "samples", null), nh(this, "settings", {
         useHeaders: !0
@@ -55411,12 +55411,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function uxe(n, e) {
-    Qz(n, e), e.add(n);
+    Zz(n, e), e.add(n);
   }
-  function mB(n, e, t) {
-    Qz(n, e), e.set(n, t);
+  function bB(n, e, t) {
+    Zz(n, e), e.set(n, t);
   }
-  function Qz(n, e) {
+  function Zz(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function om(n, e, t) {
@@ -55439,7 +55439,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function zh(n, e) {
     return n.get(da(n, e));
   }
-  function QH(n, e, t) {
+  function ZH(n, e, t) {
     return n.set(da(n, e), t), t;
   }
   function da(n, e, t) {
@@ -55472,7 +55472,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {GhostTable}
      */
     constructor(e) {
-      super(e), uxe(this, vl), om(this, "ghostTable", new XH(this.hot)), om(this, "samplesGenerator", new YR((t, i) => {
+      super(e), uxe(this, vl), om(this, "ghostTable", new QH(this.hot)), om(this, "samplesGenerator", new YR((t, i) => {
         const s = this.hot.toPhysicalRow(t), r = this.hot.toPhysicalColumn(i);
         if (this.hot.rowIndexMapper.isHidden(s) || this.hot.columnIndexMapper.isHidden(r))
           return !1;
@@ -55484,7 +55484,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           value: a,
           bundleSeed: l
         };
-      })), om(this, "inProgress", !1), om(this, "measuredColumns", 0), om(this, "columnWidthsMap", new Ou()), mB(this, qf, []), mB(this, jg, []), this.hot.columnIndexMapper.registerMap(gxe, this.columnWidthsMap), this.addHook("beforeColumnResize", (t, i, s) => da(vl, this, bB).call(this, t, i, s));
+      })), om(this, "inProgress", !1), om(this, "measuredColumns", 0), om(this, "columnWidthsMap", new Ou()), bB(this, qf, []), bB(this, jg, []), this.hot.columnIndexMapper.registerMap(gxe, this.columnWidthsMap), this.addHook("beforeColumnResize", (t, i, s) => da(vl, this, wB).call(this, t, i, s));
     }
     /**
      * Checks if the plugin is enabled in the handsontable settings. This method is executed in {@link Hooks#beforeInit}
@@ -55521,13 +55521,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Updates the plugin's state. This method is executed when {@link Core#updateSettings} is invoked.
      */
     updatePlugin() {
-      QH(jg, this, this.findColumnsWhereHeaderWasChanged()), super.updatePlugin();
+      ZH(jg, this, this.findColumnsWhereHeaderWasChanged()), super.updatePlugin();
     }
     /**
      * Disables the plugin functionality for this Handsontable instance.
      */
     disablePlugin() {
-      super.disablePlugin(), this.addHook("beforeColumnResize", (e, t, i) => da(vl, this, bB).call(this, e, t, i));
+      super.disablePlugin(), this.addHook("beforeColumnResize", (e, t, i) => da(vl, this, wB).call(this, e, t, i));
     }
     /**
      * Calculates widths for visible columns in the viewport only.
@@ -55634,7 +55634,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const e = this.hot.getSettings()[am];
       let t = Eb.SYNC_CALCULATION_LIMIT;
       const i = this.hot.countCols() - 1;
-      return tt(e) && (t = e.syncLimit, bO(t) ? t = VO(i, t) : t >>= 0), Math.min(t, i);
+      return tt(e) && (t = e.syncLimit, wO(t) ? t = WO(i, t) : t >>= 0), Math.min(t, i);
     }
     /**
      * Gets the calculated column width.
@@ -55725,7 +55725,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, !0), this.ghostTable.clean());
   }
   function mxe() {
-    this.calculateVisibleColumnsWidth(), this.inProgress || (da(vl, this, pxe).call(this, zh(jg, this)), QH(jg, this, []));
+    this.calculateVisibleColumnsWidth(), this.inProgress || (da(vl, this, pxe).call(this, zh(jg, this)), ZH(jg, this, []));
   }
   function bxe(n, e) {
     e || this.recalculateAllColumnsWidth();
@@ -55738,12 +55738,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, []);
     zh(jg, this).push(...e);
   }
-  function bB(n, e, t) {
+  function wB(n, e, t) {
     let i = n;
     return t && (this.calculateColumnsWidth(e, void 0, !0), i = this.getColumnWidth(e, void 0, !1)), i;
   }
   function vxe() {
-    QH(qf, this, this.hot.getColHeader()), this.recalculateAllColumnsWidth();
+    ZH(qf, this, this.hot.getColHeader()), this.recalculateAllColumnsWidth();
   }
   function yxe(n) {
     const e = n.reduce((t, i) => {
@@ -55803,20 +55803,20 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ee.getSingleton().register("modifyAutofillRange");
   Ee.getSingleton().register("beforeAutofill");
   Ee.getSingleton().register("afterAutofill");
-  const wB = "autofill", Txe = 20, Mxe = ["fillHandle"], Axe = "insert_row_below", Pxe = 200;
+  const vB = "autofill", Txe = 20, Mxe = ["fillHandle"], Axe = "insert_row_below", Pxe = 200;
   var Cf = /* @__PURE__ */ new WeakSet();
   class Ixe extends Pt {
     constructor() {
       super(...arguments), _xe(this, Cf), yf(this, "addingStarted", !1), yf(this, "mouseDownOnCellCorner", !1), yf(this, "mouseDragOutside", !1), yf(this, "handleDraggedCells", 0), yf(this, "directions", []), yf(this, "autoInsertRow", !1);
     }
     static get PLUGIN_KEY() {
-      return wB;
+      return vB;
     }
     static get PLUGIN_PRIORITY() {
       return Txe;
     }
     static get SETTING_KEYS() {
-      return [wB, ...Mxe];
+      return [vB, ...Mxe];
     }
     /**
      * Checks if the plugin is enabled in the Handsontable settings.
@@ -56118,12 +56118,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.addingStarted === !1 && this.handleDraggedCells > 0 && e ? (this.mouseDragOutside = !0, this.addingStarted = !0) : this.mouseDragOutside = !1, this.mouseDragOutside && this.autoInsertRow && this.addRow();
   }
   function Lxe(n, e) {
-    Zz(n, e), e.add(n);
+    Jz(n, e), e.add(n);
   }
   function $xe(n, e, t) {
-    Zz(n, e), e.set(n, t);
+    Jz(n, e), e.set(n, t);
   }
-  function Zz(n, e) {
+  function Jz(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Sf(n, e, t) {
@@ -56146,7 +56146,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function Vxe(n, e, t) {
     return n.set(fa(n, e), t), t;
   }
-  function ZH(n, e) {
+  function JH(n, e) {
     return n.get(fa(n, e));
   }
   function fa(n, e, t) {
@@ -56178,7 +56178,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {number}
      */
     constructor(e) {
-      super(e), Lxe(this, yl), Sf(this, "headerHeight", null), Sf(this, "ghostTable", new XH(this.hot)), Sf(this, "samplesGenerator", new YR((t, i) => {
+      super(e), Lxe(this, yl), Sf(this, "headerHeight", null), Sf(this, "ghostTable", new QH(this.hot)), Sf(this, "samplesGenerator", new YR((t, i) => {
         const s = this.hot.toPhysicalRow(t), r = this.hot.toPhysicalColumn(i);
         if (this.hot.rowIndexMapper.isHidden(s) || this.hot.columnIndexMapper.isHidden(r) || t >= 0 && i >= 0 && this.hot.getCellMeta(t, i).hidden)
           return !1;
@@ -56186,7 +56186,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return t >= 0 ? o = this.hot.getDataAtCell(t, i) : t === -1 && (o = this.hot.getColHeader(i)), {
           value: o
         };
-      })), Sf(this, "inProgress", !1), Sf(this, "measuredRows", 0), Sf(this, "rowHeightsMap", new Ou()), $xe(this, yw, []), this.hot.rowIndexMapper.registerMap(jxe, this.rowHeightsMap), this.addHook("beforeRowResize", (t, i, s) => fa(yl, this, vB).call(this, t, i, s));
+      })), Sf(this, "inProgress", !1), Sf(this, "measuredRows", 0), Sf(this, "rowHeightsMap", new Ou()), $xe(this, yw, []), this.hot.rowIndexMapper.registerMap(jxe, this.rowHeightsMap), this.addHook("beforeRowResize", (t, i, s) => fa(yl, this, yB).call(this, t, i, s));
     }
     /**
      * Checks if the plugin is enabled in the handsontable settings. This method is executed in {@link Hooks#beforeInit}
@@ -56221,7 +56221,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Disables the plugin functionality for this Handsontable instance.
      */
     disablePlugin() {
-      this.headerHeight = null, super.disablePlugin(), this.addHook("beforeRowResize", (e, t, i) => fa(yl, this, vB).call(this, e, t, i));
+      this.headerHeight = null, super.disablePlugin(), this.addHook("beforeRowResize", (e, t, i) => fa(yl, this, yB).call(this, e, t, i));
     }
     /**
      * Calculates heights for visible rows in the viewport only.
@@ -56331,7 +56331,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const e = this.hot.getSettings()[Xy];
       let t = Tb.SYNC_CALCULATION_LIMIT;
       const i = this.hot.countRows() - 1;
-      return tt(e) && (t = e.syncLimit, bO(t) ? t = VO(i, t) : t >>= 0), Math.min(t, i);
+      return tt(e) && (t = e.syncLimit, wO(t) ? t = WO(i, t) : t >>= 0), Math.min(t, i);
     }
     /**
      * Get a row's height, as measured in the DOM.
@@ -56442,9 +56442,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, !0), this.ghostTable.clean());
   }
   function Uxe() {
-    this.calculateVisibleRowsHeight(), this.inProgress || (fa(yl, this, zxe).call(this, ZH(yw, this)), Vxe(yw, this, []));
+    this.calculateVisibleRowsHeight(), this.inProgress || (fa(yl, this, zxe).call(this, JH(yw, this)), Vxe(yw, this, []));
   }
-  function vB(n, e, t) {
+  function yB(n, e, t) {
     let i = n;
     return t && (this.calculateRowsHeight(e, void 0, !0), i = this.getRowHeight(e)), i;
   }
@@ -56456,7 +56456,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       let [s] = i;
       return t.indexOf(s) === -1 && t.push(s), t;
     }, []);
-    ZH(yw, this).push(...e);
+    JH(yw, this).push(...e);
   }
   function Kxe() {
     this.recalculateAllRowsHeight();
@@ -56471,12 +56471,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
       return t;
     }, []);
-    ZH(yw, this).push(...e);
+    JH(yw, this).push(...e);
   }
   const {
     getListWithInsertedItems: Xxe,
     getListWithRemovedItems: Qxe
-  } = cz("physicallyIndexed");
+  } = uz("physicallyIndexed");
   class Zxe extends Kd {
     constructor() {
       super((e) => e);
@@ -56489,7 +56489,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {Array} insertedIndexes List of inserted indexes.
      */
     insert(e, t) {
-      const i = gk(this.indexedValues, t);
+      const i = pk(this.indexedValues, t);
       this.indexedValues = Xxe(i, e, t, this.initValueOrFn), super.insert(e, t);
     }
     /**
@@ -56500,13 +56500,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     remove(e) {
       const t = Qxe(this.indexedValues, e);
-      this.indexedValues = fk(t, e), super.remove(e);
+      this.indexedValues = gk(t, e), super.remove(e);
     }
   }
   const {
     getListWithInsertedItems: Jxe,
     getListWithRemovedItems: eEe
-  } = cz("physicallyIndexed");
+  } = uz("physicallyIndexed");
   class tEe extends Kd {
     constructor() {
       super((e) => e);
@@ -56568,10 +56568,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     throw new TypeError("Private element is not present on this object");
   }
   const xE = "bindRowsWithHeaders", lEe = 210, cEe = "loose", uEe = /* @__PURE__ */ new Map([["loose", Zxe], ["strict", tEe]]);
-  var yB = /* @__PURE__ */ new WeakSet();
+  var CB = /* @__PURE__ */ new WeakSet();
   class hEe extends Pt {
     constructor() {
-      super(...arguments), nEe(this, yB), sEe(this, "headerIndexes", null);
+      super(...arguments), nEe(this, CB), sEe(this, "headerIndexes", null);
     }
     static get PLUGIN_KEY() {
       return xE;
@@ -56597,7 +56597,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       let e = this.hot.getSettings()[xE];
       typeof e != "string" && (e = cEe);
       const t = uEe.get(e);
-      this.headerIndexes = this.hot.rowIndexMapper.registerMap("bindRowsWithHeaders", new t()), this.addHook("modifyRowHeader", (i) => aEe(yB, this, dEe).call(this, i)), super.enablePlugin();
+      this.headerIndexes = this.hot.rowIndexMapper.registerMap("bindRowsWithHeaders", new t()), this.addHook("modifyRowHeader", (i) => aEe(CB, this, dEe).call(this, i)), super.enablePlugin();
     }
     /**
      * Disables the plugin functionality for this Handsontable instance.
@@ -56616,15 +56616,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return this.headerIndexes.getValueAtIndex(this.hot.toPhysicalRow(n));
   }
   function fEe(n, e) {
-    Jz(n, e), e.add(n);
+    e9(n, e), e.add(n);
   }
   function gEe(n, e, t) {
-    Jz(n, e), e.set(n, t);
+    e9(n, e), e.set(n, t);
   }
-  function Jz(n, e) {
+  function e9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
-  function CB(n, e, t) {
+  function SB(n, e, t) {
     return (e = pEe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function pEe(n) {
@@ -56641,7 +56641,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function SB(n, e) {
+  function _B(n, e) {
     return n.get(hg(n, e));
   }
   function EE(n, e, t) {
@@ -56651,7 +56651,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const _C = "collapsibleColumns", bEe = 290, wEe = ["nestedHeaders"], xg = "collapsibleIndicator", _B = _C, RB = /* @__PURE__ */ new Map([["collapse", {
+  const _C = "collapsibleColumns", bEe = 290, wEe = ["nestedHeaders"], xg = "collapsibleIndicator", RB = _C, xB = /* @__PURE__ */ new Map([["collapse", {
     hideColumn: !0,
     beforeHook: "beforeColumnCollapse",
     afterHook: "afterColumnCollapse"
@@ -56663,7 +56663,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   var _f = /* @__PURE__ */ new WeakMap(), cm = /* @__PURE__ */ new WeakSet();
   class vEe extends Pt {
     constructor() {
-      super(...arguments), fEe(this, cm), CB(this, "nestedHeadersPlugin", null), CB(this, "headerStateManager", null), gEe(this, _f, null);
+      super(...arguments), fEe(this, cm), SB(this, "nestedHeadersPlugin", null), SB(this, "headerStateManager", null), gEe(this, _f, null);
     }
     static get PLUGIN_KEY() {
       return _C;
@@ -56765,7 +56765,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           var e, t;
           return ((e = this.hot.getSelectedRangeLast()) === null || e === void 0 ? void 0 : e.isSingle()) && ((t = this.hot.getSelectedRangeLast()) === null || t === void 0 ? void 0 : t.highlight.isHeader());
         },
-        group: _B,
+        group: RB,
         relativeToGroup: ku,
         position: "before"
       });
@@ -56776,7 +56776,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(_B);
+      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(RB);
     }
     /**
      * Clears the expand/collapse buttons.
@@ -56858,7 +56858,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @fires Hooks#afterColumnExpand
      */
     toggleCollapsibleSection(e, t) {
-      if (!RB.has(t))
+      if (!xB.has(t))
         throw new Error(`Unsupported action is passed (${t}).`);
       if (!Array.isArray(e))
         return;
@@ -56897,8 +56897,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
       const a = this.getCollapsedColumns();
       let l = [];
-      t === "collapse" ? l = pO([...a, ...o]) : t === "expand" && (l = Zl(a, (f) => !o.includes(f)));
-      const c = RB.get(t);
+      t === "collapse" ? l = mO([...a, ...o]) : t === "expand" && (l = Zl(a, (f) => !o.includes(f)));
+      const c = xB.get(t);
       if (this.hot.runHooks(c.beforeHook, a, l, s) === !1) {
         F(r, (f) => {
           f();
@@ -56907,7 +56907,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
       this.hot.batchExecution(() => {
         F(o, (f) => {
-          SB(_f, this).setValueAtIndex(this.hot.toPhysicalColumn(f), c.hideColumn);
+          _B(_f, this).setValueAtIndex(this.hot.toPhysicalColumn(f), c.hideColumn);
         });
       }, !0);
       const h = this.getCollapsedColumns().length !== a.length, d = this.hot.getSelectedRangeLast();
@@ -56930,7 +56930,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number[]}
      */
     getCollapsedColumns() {
-      return SB(_f, this).getHiddenIndexes();
+      return _B(_f, this).getHiddenIndexes();
     }
     /**
      * Destroys the plugin instance.
@@ -57108,7 +57108,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.hot.columnIndexMapper.unregisterMap(this.mapName), this.sortingStates = null;
     }
   }
-  function e9(n, e, t) {
+  function t9(n, e, t) {
     const i = e.locale;
     return function(s, r) {
       const {
@@ -57117,7 +57117,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return typeof s == "string" && (s = s.toLocaleLowerCase(i)), typeof r == "string" && (r = r.toLocaleLowerCase(i)), s === r ? Aa : Hn(s) ? Hn(r) ? Aa : o && n === "asc" ? In : On : Hn(r) ? o && n === "asc" ? On : In : isNaN(s) && !isNaN(r) ? n === "asc" ? On : In : !isNaN(s) && isNaN(r) || (isNaN(s) || isNaN(r) || (s = parseFloat(s), r = parseFloat(r)), s < r) ? n === "asc" ? In : On : s > r ? n === "asc" ? On : In : Aa;
     };
   }
-  const t9 = "default";
+  const n9 = "default";
   function IEe(n, e, t) {
     return function(i, s) {
       const r = parseFloat(i), o = parseFloat(s), {
@@ -57147,31 +57147,31 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         if (l === !1 && c)
           return In;
       }
-      return d === !1 && f ? n === "asc" ? In : On : d && f === !1 ? n === "asc" ? On : In : d === !1 && f === !1 ? e9(n, e, t)(o, a) : u === s && h === i ? n === "asc" ? In : On : u === i && h === s ? n === "asc" ? On : In : Aa;
+      return d === !1 && f ? n === "asc" ? In : On : d && f === !1 ? n === "asc" ? On : In : d === !1 && f === !1 ? t9(n, e, t)(o, a) : u === s && h === i ? n === "asc" ? In : On : u === i && h === s ? n === "asc" ? On : In : Aa;
     };
   }
   const HEe = "checkbox";
   function DEe(n, e, t) {
-    return a9(n, e.dateFormat, t);
+    return l9(n, e.dateFormat, t);
   }
   const NEe = "date";
   function LEe(n, e, t) {
-    return a9(n, e.timeFormat, t);
+    return l9(n, e.timeFormat, t);
   }
   const $Ee = "time", {
     register: vv,
-    getItem: xB,
+    getItem: EB,
     hasItem: FEe
   } = Vo("sorting.compareFunctionFactory"), {
-    register: n9,
+    register: i9,
     getItem: BEe
   } = Vo("sorting.mainSortComparator");
-  function i9(n) {
-    return FEe(n) ? xB(n) : xB(t9);
+  function s9(n) {
+    return FEe(n) ? EB(n) : EB(n9);
   }
   vv(HEe, kEe);
   vv(NEe, DEe);
-  vv(t9, e9);
+  vv(n9, t9);
   vv(OEe, IEe);
   vv($Ee, LEe);
   const Aa = 0, In = -1, On = 1;
@@ -57181,7 +57181,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       s[r - 2] = arguments[r];
     n.sort(t(...s));
   }
-  const BS = "asc", VS = "desc", s9 = "colHeader";
+  const BS = "asc", VS = "desc", r9 = "colHeader";
   function WEe(n) {
     if (tt(n) === !1)
       return !1;
@@ -57202,23 +57202,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     });
     return new Set(e).size === e.length;
   }
-  function EB(n) {
+  function TB(n) {
     if (n !== VS)
       return n === BS ? VS : BS;
   }
-  function r9(n) {
-    return n.querySelector(`.${s9}`);
+  function o9(n) {
+    return n.querySelector(`.${r9}`);
   }
-  function o9(n, e) {
+  function a9(n, e) {
     if (n < 0 || !e.parentNode)
       return !1;
     const t = e.parentNode.parentNode.childNodes;
     return Array.from(t).indexOf(e.parentNode) - t.length === -1;
   }
-  function JH(n, e, t) {
+  function eD(n, e, t) {
     return n === -1 && e >= 0 && pu(t) === !1;
   }
-  function a9(n, e, t) {
+  function l9(n, e, t) {
     return function(i, s) {
       const {
         sortEmptyCells: r
@@ -57233,23 +57233,23 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return o.isValid() ? a.isValid() ? a.isAfter(o) ? n === "asc" ? In : On : a.isBefore(o) ? n === "asc" ? On : In : Aa : In : On;
     };
   }
-  const zEe = "ascending", UEe = "descending", l9 = "indicatorDisabled", c9 = "columnSorting", u9 = "sortAction", h9 = /* @__PURE__ */ new Map([[BS, zEe], [VS, UEe]]);
+  const zEe = "ascending", UEe = "descending", c9 = "indicatorDisabled", u9 = "columnSorting", h9 = "sortAction", d9 = /* @__PURE__ */ new Map([[BS, zEe], [VS, UEe]]);
   function YEe(n, e, t, i) {
-    const s = [c9];
-    if (i && s.push(u9), t === !1)
-      return s.push(l9), s;
+    const s = [u9];
+    if (i && s.push(h9), t === !1)
+      return s.push(c9), s;
     const r = n.getSortOrderOfColumn(e);
-    return Me(r) && s.push(h9.get(r)), s;
+    return Me(r) && s.push(d9.get(r)), s;
   }
   function GEe() {
-    return Array.from(h9.values()).concat(u9, l9, c9);
+    return Array.from(d9.values()).concat(h9, c9, u9);
   }
   function KEe(n, e) {
     return function(t, i) {
       const [, ...s] = t, [, ...r] = i;
       return function(a) {
         const l = n[a], c = e[a], u = s[a], h = r[a], d = c.columnSorting;
-        return (d.compareFunctionFactory ? d.compareFunctionFactory : i9(c.type))(l, c, d)(u, h);
+        return (d.compareFunctionFactory ? d.compareFunctionFactory : s9(c.type))(l, c, d)(u, h);
       }(0);
     };
   }
@@ -57280,12 +57280,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const WS = "columnSorting", JEe = 50, jS = "append", eTe = "replace", TB = WS;
-  n9(WS, KEe);
+  const WS = "columnSorting", JEe = 50, jS = "append", eTe = "replace", MB = WS;
+  i9(WS, KEe);
   Ee.getSingleton().register("beforeColumnSort");
   Ee.getSingleton().register("afterColumnSort");
   var Oh = /* @__PURE__ */ new WeakSet();
-  class d9 extends Pt {
+  class f9 extends Pt {
     constructor() {
       super(...arguments), qEe(this, Oh), Qy(this, "columnStatesManager", null), Qy(this, "columnMetaCache", null), Qy(this, "pluginKey", WS), Qy(this, "indexesSequenceCache", null);
     }
@@ -57327,8 +57327,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     disablePlugin() {
       const e = (t, i) => {
-        const s = r9(i);
-        o9(t, i) === !1 || s === null || this.updateHeaderClasses(s);
+        const s = o9(i);
+        a9(t, i) === !1 || s === null || this.updateHeaderClasses(s);
       };
       this.hot.addHook("afterGetColHeader", e), this.hot.addHookOnce("afterViewRender", () => {
         this.hot.removeHook("afterGetColHeader", e);
@@ -57357,7 +57357,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         },
         relativeToGroup: ku,
         position: "before",
-        group: TB
+        group: MB
       });
     }
     /**
@@ -57366,7 +57366,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(TB);
+      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(MB);
     }
     // DIFF - MultiColumnSorting & ColumnSorting: changed function documentation.
     /**
@@ -57388,7 +57388,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     sort(e) {
       const t = this.getSortConfig(), i = this.getNormalizedSortConfigs(e), s = this.areValidSortConfigs(i);
-      this.hot.runHooks("beforeColumnSort", t, i, s) !== !1 && (t.length === 0 && this.indexesSequenceCache === null && (this.indexesSequenceCache = this.hot.rowIndexMapper.registerMap(this.pluginKey, new uz()), this.indexesSequenceCache.setValues(this.hot.rowIndexMapper.getIndexesSequence())), s && (this.columnStatesManager.setSortStates(i), this.sortByPresetSortStates(i), this.saveAllSortSettings(i)), this.hot.runHooks("afterColumnSort", t, s ? i : t, s), s && (this.hot.render(), this.hot.forceFullRender = !1, this.hot.view.render()));
+      this.hot.runHooks("beforeColumnSort", t, i, s) !== !1 && (t.length === 0 && this.indexesSequenceCache === null && (this.indexesSequenceCache = this.hot.rowIndexMapper.registerMap(this.pluginKey, new hz()), this.indexesSequenceCache.setValues(this.hot.rowIndexMapper.getIndexesSequence())), s && (this.columnStatesManager.setSortStates(i), this.sortByPresetSortStates(i), this.saveAllSortSettings(i)), this.hot.runHooks("afterColumnSort", t, s ? i : t, s), s && (this.hot.render(), this.hot.forceFullRender = !1, this.hot.view.render()));
     }
     /**
      * Clear the sort performed on the table.
@@ -57528,7 +57528,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     getColumnNextConfig(e) {
       const t = this.columnStatesManager.getSortOrderOfColumn(e);
       if (Me(t)) {
-        const s = EB(t);
+        const s = TB(t);
         return Me(s) ? {
           column: e,
           sortOrder: s
@@ -57538,7 +57538,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       if (Number.isInteger(e) && e >= 0 && e < i)
         return {
           column: e,
-          sortOrder: EB()
+          sortOrder: TB()
         };
     }
     /**
@@ -57695,7 +57695,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     wasClickableHeaderClicked(e, t) {
-      return this.getFirstCellSettings(t)[this.pluginKey].headerAction && Fe(e.target, s9);
+      return this.getFirstCellSettings(t)[this.pluginKey].headerAction && Fe(e.target, r9);
     }
     /**
      * Changes the behavior of selection / dragging.
@@ -57714,7 +57714,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {CellCoords} coords Visual coords of the selected cell.
      */
     onAfterOnCellMouseDown(e, t) {
-      if (JH(t.row, t.col, e) !== !1 && this.wasClickableHeaderClicked(e, t.col)) {
+      if (eD(t.row, t.col, e) !== !1 && this.wasClickableHeaderClicked(e, t.col)) {
         this.hot.getShortcutManager().isCtrlPressed() && (this.hot.deselectCell(), this.hot.selectColumns(t.col));
         const i = this.hot.getActiveEditor(), s = this.getColumnNextConfig(t.col);
         i != null && i.isOpened() && this.hot.getCellValidator(i.row, i.col) ? this.hot.addHookOnce("postAfterValidate", () => {
@@ -57740,8 +57740,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function tTe(n, e) {
-    const t = r9(e);
-    if (o9(n, e) === !1 || t === null)
+    const t = o9(e);
+    if (a9(n, e) === !1 || t === null)
       return;
     const i = this.getFirstCellSettings(n)[this.pluginKey], s = i.indicator, r = i.headerAction;
     if (this.updateHeaderClasses(t, this.columnStatesManager, n, s, r), this.hot.getSettings().ariaTags) {
@@ -57753,7 +57753,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     n === !0 && this.hot.view && Xf(Oh, this, IA).call(this);
   }
   function iTe(n, e, t, i) {
-    JH(e.row, e.col, n) !== !1 && this.wasClickableHeaderClicked(n, e.col) && this.hot.getShortcutManager().isCtrlPressed() && (i.column = !0);
+    eD(e.row, e.col, n) !== !1 && this.wasClickableHeaderClicked(n, e.col) && this.hot.getShortcutManager().isCtrlPressed() && (i.column = !0);
   }
   function sh(n, e, t) {
     return (e = sTe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
@@ -58349,28 +58349,28 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.endpoints.resetSetupBeforeStructureAlteration("move_row", n[0], n.length, n, this.pluginName), this.endpoints.resetSetupAfterStructureAlteration("move_row", e, n.length, n, this.pluginName);
   }
   function wTe(n, e) {
-    f9(n, e), e.add(n);
+    g9(n, e), e.add(n);
   }
   function AE(n, e, t) {
-    f9(n, e), e.set(n, t);
+    g9(n, e), e.set(n, t);
   }
-  function f9(n, e) {
+  function g9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Qf(n, e) {
-    return n.get(eD(n, e));
+    return n.get(tD(n, e));
   }
   function OA(n, e, t) {
-    return n.set(eD(n, e), t), t;
+    return n.set(tD(n, e), t), t;
   }
-  function eD(n, e, t) {
+  function tD(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  var zS = /* @__PURE__ */ new WeakMap(), Jy = /* @__PURE__ */ new WeakMap(), e0 = /* @__PURE__ */ new WeakMap(), MB = /* @__PURE__ */ new WeakSet();
-  class g9 {
+  var zS = /* @__PURE__ */ new WeakMap(), Jy = /* @__PURE__ */ new WeakMap(), e0 = /* @__PURE__ */ new WeakMap(), AB = /* @__PURE__ */ new WeakSet();
+  class p9 {
     constructor() {
-      wTe(this, MB), AE(this, zS, !0), AE(this, Jy, null), AE(this, e0, new ResizeObserver((e) => eD(MB, this, vTe).call(this, e)));
+      wTe(this, AB), AE(this, zS, !0), AE(this, Jy, null), AE(this, e0, new ResizeObserver((e) => tD(AB, this, vTe).call(this, e)));
     }
     /**
      * Sets the observed element.
@@ -58415,7 +58415,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.runLocalHooks("resize", i, s);
     });
   }
-  jt(g9, Li);
+  jt(p9, Li);
   function rh(n, e, t) {
     yTe(n, e), e.set(n, t);
   }
@@ -58423,12 +58423,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Kt(n, e) {
-    return n.get(p9(n, e));
+    return n.get(m9(n, e));
   }
   function ul(n, e, t) {
-    return n.set(p9(n, e), t), t;
+    return n.set(m9(n, e), t), t;
   }
-  function p9(n, e, t) {
+  function m9(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -58451,7 +58451,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     constructor(e, t) {
       var i = this;
-      rh(this, oh, void 0), rh(this, PE, !1), rh(this, hl, null), rh(this, ah, void 0), rh(this, bc, void 0), rh(this, t0, !0), rh(this, Rf, new g9()), ul(oh, this, e), ul(PE, this, t), ul(ah, this, this.createEditor()), ul(bc, this, Kt(ah, this).style), Kt(Rf, this).setObservedElement(this.getInputElement()), Kt(Rf, this).addLocalHook("resize", function() {
+      rh(this, oh, void 0), rh(this, PE, !1), rh(this, hl, null), rh(this, ah, void 0), rh(this, bc, void 0), rh(this, t0, !0), rh(this, Rf, new p9()), ul(oh, this, e), ul(PE, this, t), ul(ah, this, this.createEditor()), ul(bc, this, Kt(ah, this).style), Kt(Rf, this).setObservedElement(this.getInputElement()), Kt(Rf, this).addLocalHook("resize", function() {
         for (var s = arguments.length, r = new Array(s), o = 0; o < s; o++)
           r[o] = arguments[o];
         return i.runLocalHooks("resize", ...r);
@@ -58606,7 +58606,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   const _Te = 250, RTe = 250;
-  class m9 {
+  class b9 {
     constructor(e) {
       IE(this, "wasLastActionShow", !0), IE(this, "showDebounced", null), IE(this, "hidingTimer", null), this.updateDelay(e);
     }
@@ -58650,7 +58650,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.clearLocalHooks();
     }
   }
-  jt(m9, Li);
+  jt(b9, Li);
   function xTe(n, e) {
     return n.indexOf(e) !== -1 ? n : `${n.replace("htTop", "").replace("htMiddle", "").replace("htBottom", "").replace("  ", "")} ${e}`;
   }
@@ -58723,7 +58723,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: Ar,
       name() {
-        return this.getTranslatedPhrase(Fk);
+        return this.getTranslatedPhrase(Bk);
       },
       disabled() {
         if (this.countRows() === 0 || this.countCols() === 0)
@@ -58869,7 +58869,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: KR,
       name() {
-        return this.getTranslatedPhrase(xk);
+        return this.getTranslatedPhrase(Ek);
       },
       callback(n, e) {
         const t = e[0].start.col, i = e[0].end.col;
@@ -58886,7 +58886,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: yv,
       name() {
-        return this.getTranslatedPhrase(vk);
+        return this.getTranslatedPhrase(yk);
       },
       callback() {
         const n = this.getSelectedRangeLast().getTopLeftCorner(), e = this.isRtl() ? "insert_col_end" : "insert_col_start";
@@ -58908,7 +58908,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: Cv,
       name() {
-        return this.getTranslatedPhrase(yk);
+        return this.getTranslatedPhrase(Ck);
       },
       callback() {
         const n = this.getSelectedRangeLast().getTopRightCorner(), e = this.isRtl() ? "insert_col_start" : "insert_col_end";
@@ -58959,7 +58959,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: qR,
       name() {
-        return this.getTranslatedPhrase(Rk);
+        return this.getTranslatedPhrase(xk);
       },
       callback() {
         this.redo();
@@ -58987,7 +58987,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             const [, t, , i] = n[0];
             t - i !== 0 && (e = 1);
           }
-        return this.getTranslatedPhrase(Sk, e);
+        return this.getTranslatedPhrase(_k, e);
       },
       callback() {
         this.alter("remove_col", RSe(this), null, "ContextMenu.removeColumn");
@@ -59020,7 +59020,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             const [t, , i] = n[0];
             t - i !== 0 && (e = 1);
           }
-        return this.getTranslatedPhrase(Ck, e);
+        return this.getTranslatedPhrase(Sk, e);
       },
       callback() {
         this.alter("remove_row", xSe(this), 1, "ContextMenu.removeRow");
@@ -59042,7 +59042,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: QR,
       name() {
-        return this.getTranslatedPhrase(bk);
+        return this.getTranslatedPhrase(wk);
       },
       callback() {
         const n = this.getSelectedRangeLast().getTopLeftCorner();
@@ -59062,7 +59062,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: ZR,
       name() {
-        return this.getTranslatedPhrase(wk);
+        return this.getTranslatedPhrase(vk);
       },
       callback() {
         const n = this.getSelectedRangeLast().getBottomRightCorner();
@@ -59082,7 +59082,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: Cw,
       name() {
-        return this.getTranslatedPhrase(mk);
+        return this.getTranslatedPhrase(bk);
       },
       disabled: !0,
       isCommand: !1
@@ -59093,7 +59093,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: JR,
       name() {
-        return this.getTranslatedPhrase(_k);
+        return this.getTranslatedPhrase(Rk);
       },
       callback() {
         this.undo();
@@ -59122,7 +59122,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     [Sv]: HTe,
     [Ar]: PTe
   };
-  function b9() {
+  function w9() {
     const n = {};
     return nt(jTe, (e, t) => {
       n[t] = e();
@@ -59134,7 +59134,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       name() {
         var e;
         const t = (e = this.getSelectedRangeLast()) === null || e === void 0 ? void 0 : e.highlight;
-        return t != null && t.isCell() && n.getCommentAtCell(t.row, t.col) ? this.getTranslatedPhrase(Nk) : this.getTranslatedPhrase(Dk);
+        return t != null && t.isCell() && n.getCommentAtCell(t.row, t.col) ? this.getTranslatedPhrase(Lk) : this.getTranslatedPhrase(Nk);
       },
       callback() {
         const e = this.getSelectedRangeLast();
@@ -59150,7 +59150,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "commentsRemove",
       name() {
-        return this.getTranslatedPhrase(Lk);
+        return this.getTranslatedPhrase($k);
       },
       callback() {
         this.getSelectedRangeLast().forAll((t, i) => {
@@ -59167,7 +59167,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "commentsReadOnly",
       name() {
-        const e = this.getTranslatedPhrase($k);
+        const e = this.getTranslatedPhrase(Fk);
         return Mb(this.getSelectedRange(), (i, s) => n.getCommentMeta(i, s, RC)) ? Rl(e) : e;
       },
       callback() {
@@ -59187,12 +59187,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function GTe(n, e) {
-    w9(n, e), e.add(n);
+    v9(n, e), e.add(n);
   }
   function xf(n, e, t) {
-    w9(n, e), e.set(n, t);
+    v9(n, e), e.set(n, t);
   }
-  function w9(n, e) {
+  function v9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function KTe(n, e, t) {
@@ -59222,7 +59222,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const Ab = "comments", QTe = 60, xl = "comment", zm = "value", v9 = "style", RC = "readOnly", n0 = Ab, kA = `plugin:${Ab}`;
+  const Ab = "comments", QTe = 60, xl = "comment", zm = "value", y9 = "style", RC = "readOnly", n0 = Ab, kA = `plugin:${Ab}`;
   var Xt = /* @__PURE__ */ new WeakMap(), ca = /* @__PURE__ */ new WeakMap(), e1 = /* @__PURE__ */ new WeakMap(), xC = /* @__PURE__ */ new WeakMap(), HA = /* @__PURE__ */ new WeakMap(), US = /* @__PURE__ */ new WeakMap(), Xo = /* @__PURE__ */ new WeakSet();
   class ZTe extends Pt {
     constructor() {
@@ -59252,7 +59252,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
         return mo(Xo, e, rMe).call(e, ...i);
-      })), lt(ca, this) || Qc(ca, this, new m9(this.getDisplayDelaySetting())), this.addHook("afterContextMenuDefaultOptions", (t) => this.addToContextMenu(t)), this.addHook("afterRenderer", (t, i, s, r, o, a) => mo(Xo, this, nMe).call(this, t, a)), this.addHook("afterScroll", () => mo(Xo, this, aMe).call(this)), this.addHook("afterBeginEditing", () => this.hide()), this.addHook("afterDocumentKeyDown", (t) => mo(Xo, this, oMe).call(this, t)), lt(ca, this).addLocalHook("hide", () => this.hide()), lt(ca, this).addLocalHook("show", (t, i) => this.showAtCell(t, i)), this.registerShortcuts(), this.registerListeners(), super.enablePlugin());
+      })), lt(ca, this) || Qc(ca, this, new b9(this.getDisplayDelaySetting())), this.addHook("afterContextMenuDefaultOptions", (t) => this.addToContextMenu(t)), this.addHook("afterRenderer", (t, i, s, r, o, a) => mo(Xo, this, nMe).call(this, t, a)), this.addHook("afterScroll", () => mo(Xo, this, aMe).call(this)), this.addHook("afterBeginEditing", () => this.hide()), this.addHook("afterDocumentKeyDown", (t) => mo(Xo, this, oMe).call(this, t)), lt(ca, this).addLocalHook("hide", () => this.hide()), lt(ca, this).addLocalHook("show", (t, i) => this.showAtCell(t, i)), this.registerShortcuts(), this.registerListeners(), super.enablePlugin());
     }
     /**
      * Updates the plugin's state.
@@ -59502,7 +59502,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       } = g, m = g.getCell({
         row: l,
         col: c
-      }, !0), w = this.getCommentMeta(o, a, v9);
+      }, !0), w = this.getCommentMeta(o, a, y9);
       w ? lt(Xt, this).setSize(w.width, w.height) : lt(Xt, this).resetSize();
       const y = d ? 0 : p.getStretchedColumnWidth(c), C = u && !h ? Yn(m) : 0, {
         left: R,
@@ -59620,7 +59620,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function rMe(n, e) {
     this.updateCommentMeta(this.range.from.row, this.range.from.col, {
-      [v9]: {
+      [y9]: {
         width: n,
         height: e
       }
@@ -59632,9 +59632,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function aMe() {
     lt(xC, this) || this.hide();
   }
-  var AB = aR, lMe = TypeError, cMe = function(n, e) {
-    if (!delete n[e]) throw new lMe("Cannot delete property " + AB(e) + " of " + AB(n));
-  }, uMe = Ni, hMe = Zw, dMe = tv, fMe = E8, gMe = cMe, pMe = T8, mMe = [].unshift(0) !== 1, bMe = function() {
+  var PB = aR, lMe = TypeError, cMe = function(n, e) {
+    if (!delete n[e]) throw new lMe("Cannot delete property " + PB(e) + " of " + PB(n));
+  }, uMe = Ni, hMe = Zw, dMe = tv, fMe = T8, gMe = cMe, pMe = M8, mMe = [].unshift(0) !== 1, bMe = function() {
     try {
       Object.defineProperty([], "length", {
         writable: !1
@@ -59681,7 +59681,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class y9 {
+  class C9 {
     constructor(e) {
       OE(this, "hot", void 0), OE(this, "commands", {}), OE(this, "commonCallback", null), this.hot = e;
     }
@@ -59747,10 +59747,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class C9 {
+  class S9 {
     constructor(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
-      kE(this, "hot", void 0), kE(this, "predefinedItems", b9()), kE(this, "defaultOrderPattern", void 0), this.hot = e, this.defaultOrderPattern = t;
+      kE(this, "hot", void 0), kE(this, "predefinedItems", w9()), kE(this, "defaultOrderPattern", void 0), this.hot = e, this.defaultOrderPattern = t;
     }
     /**
      * Set predefined items.
@@ -59875,12 +59875,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function ft(n, e) {
-    return n.get(S9(n, e));
+    return n.get(_9(n, e));
   }
   function i0(n, e, t) {
-    return n.set(S9(n, e), t), t;
+    return n.set(_9(n, e), t), t;
   }
-  function S9(n, e, t) {
+  function _9(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -59976,7 +59976,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       ft(os, this).style.left = `${e}px`;
     }
   }
-  function _9(n) {
+  function R9(n) {
     let {
       initialPage: e = -1,
       size: t = () => 0,
@@ -60045,7 +60045,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function EC(n, e) {
     return n.disabled === !0 || typeof n.disabled == "function" && n.disabled.call(e) === !0;
   }
-  function PB(n) {
+  function IB(n) {
     return _n(n, "disableSelection");
   }
   function IMe(n) {
@@ -60063,7 +60063,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function DMe(n, e) {
     return !n.hidden || !(typeof n.hidden == "function" && n.hidden.call(e));
   }
-  function R9(n, e) {
+  function x9(n, e) {
     const t = n.slice(0);
     for (let i = 0; i < t.length && t[i].name === e; )
       t.shift();
@@ -60071,7 +60071,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function NMe(n, e) {
     let t = n.slice(0);
-    return t.reverse(), t = R9(t, e), t.reverse(), t;
+    return t.reverse(), t = x9(t, e), t.reverse(), t;
   }
   function LMe(n) {
     const e = [];
@@ -60081,13 +60081,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function $Me(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : st, t = n.slice(0);
-    return t = R9(t, e), t = NMe(t, e), t = LMe(t), t;
+    return t = x9(t, e), t = NMe(t, e), t = LMe(t), t;
   }
   function FMe(n) {
     return n.checkable === !0;
   }
   function BMe(n) {
-    return _9({
+    return R9({
       size: () => n.countRows(),
       onItemSelect(e, t) {
         const i = n.getCell(e, 0);
@@ -60162,7 +60162,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }
     }];
   }
-  const x9 = "menu", IB = x9;
+  const E9 = "menu", OB = E9;
   function WMe(n) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : [];
     const t = [];
@@ -60175,7 +60175,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     });
     function i(c, u) {
       a(u).addShortcuts(c, {
-        group: x9
+        group: E9
       });
     }
     function s(c, u) {
@@ -60194,7 +60194,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return [...t];
     }
     function o(c) {
-      return c ? `${IB}:${c}` : IB;
+      return c ? `${OB}:${c}` : OB;
     }
     function a(c) {
       var u;
@@ -60215,10 +60215,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e, t, i, s, r, o) => {
       const a = e.getSourceDataAtRow(i), l = n.rootDocument.createElement("div"), c = typeof o == "function" ? o.call(n) : o, u = typeof a.ariaLabel == "function" ? a.ariaLabel.call(n) : a.ariaLabel, h = typeof a.ariaChecked == "function" ? a.ariaChecked.call(n) : a.ariaChecked;
       if (Ho(t), ae(l, "htItemWrapper"), n.getSettings().ariaTags) {
-        const d = !EC(a, n) && !PB(a) && !NA(a);
-        $e(t, [...FMe(a) ? [Tme(), _S(u), G4(h)] : [Eme(), _S(c)], ...d ? [cp(-1)] : [], ...EC(a, n) ? [Hme()] : [], ...DA(a) ? [Br(!1)] : []]);
+        const d = !EC(a, n) && !IB(a) && !NA(a);
+        $e(t, [...FMe(a) ? [Tme(), _S(u), K4(h)] : [Eme(), _S(c)], ...d ? [cp(-1)] : [], ...EC(a, n) ? [Hme()] : [], ...DA(a) ? [Br(!1)] : []]);
       }
-      t.className = "", t.appendChild(l), NA(a) ? ae(t, "htSeparator") : typeof a.renderer == "function" ? (ae(t, "htCustomMenuRenderer"), t.appendChild(a.renderer(e, l, i, s, r, c))) : Gd(l, c), EC(a, n) ? ae(t, "htDisabled") : PB(a) ? ae(t, "htSelectionDisabled") : DA(a) && ae(t, "htSubmenu");
+      t.className = "", t.appendChild(l), NA(a) ? ae(t, "htSeparator") : typeof a.renderer == "function" ? (ae(t, "htCustomMenuRenderer"), t.appendChild(a.renderer(e, l, i, s, r, c))) : Gd(l, c), EC(a, n) ? ae(t, "htDisabled") : IB(a) ? ae(t, "htSelectionDisabled") : DA(a) && ae(t, "htSubmenu");
     };
   }
   function DE(n, e, t) {
@@ -60245,16 +60245,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function NE(n, e, t) {
-    return n.set(E9(n, e), t), t;
+    return n.set(T9(n, e), t), t;
   }
   function ch(n, e) {
-    return n.get(E9(n, e));
+    return n.get(T9(n, e));
   }
-  function E9(n, e, t) {
+  function T9(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const OB = 215;
+  const kB = 215;
   var dm = /* @__PURE__ */ new WeakMap(), s0 = /* @__PURE__ */ new WeakMap(), r0 = /* @__PURE__ */ new WeakMap();
   class pp {
     /**
@@ -60278,7 +60278,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         className: "",
         keepInViewport: !0,
         standalone: !1,
-        minWidth: OB,
+        minWidth: kB,
         container: this.hot.rootDocument.documentElement
       }, this.container = this.createContainer(this.options.name), this.positioner = new AMe(this.options.keepInViewport), this.parentMenu = this.options.parent || null, this.registerEvents(), this.isSubMenu() && this.addLocalHook("afterSelectionChange", function() {
         for (var s = arguments.length, r = new Array(s), o = 0; o < s; o++)
@@ -60352,10 +60352,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     open() {
       this.runLocalHooks("beforeOpen"), this.container.removeAttribute("style"), this.container.style.display = "block";
-      const e = MR((a) => this.openSubMenu(a), 300), t = this.options.minWidth || OB;
+      const e = MR((a) => this.openSubMenu(a), 300), t = this.options.minWidth || kB;
       let i = !1, s = Zl(this.menuItems, (a) => (a.key === Cw && (i = !0), DMe(a, this.hot)));
       if (s.length < 1 && !i)
-        s.push(b9()[Cw]);
+        s.push(w9()[Cw]);
       else if (s.length === 0)
         return;
       s = $Me(s, st);
@@ -60401,7 +60401,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           this.hasSelectedItem() && (r = !this.isCommandPassive(this.getSelectedItem()), this.executeCommand(a));
         },
         afterOnCellMouseUp: (a) => {
-          (!uA() || !pu(a)) && r && this.hasSelectedItem() && (Bl() || HO() ? this.hot._registerTimeout(() => this.close(!0), 325) : this.close(!0));
+          (!uA() || !pu(a)) && r && this.hasSelectedItem() && (Bl() || DO() ? this.hot._registerTimeout(() => this.close(!0), 325) : this.close(!0));
         },
         afterUnlisten: () => {
           !this.hasSelectedItem() && this.isOpened() && this.hotMenu.listen();
@@ -60632,7 +60632,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const Um = "contextMenu", QMe = 70, kB = Um;
+  const Um = "contextMenu", QMe = 70, HB = Um;
   Ee.getSingleton().register("afterContextMenuDefaultOptions");
   Ee.getSingleton().register("beforeContextMenuShow");
   Ee.getSingleton().register("afterContextMenuShow");
@@ -60641,7 +60641,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   var fm = /* @__PURE__ */ new WeakSet();
   class t1 extends Pt {
     constructor() {
-      super(...arguments), GMe(this, fm), LE(this, "commandExecutor", new y9(this.hot)), LE(this, "itemsFactory", null), LE(this, "menu", null);
+      super(...arguments), GMe(this, fm), LE(this, "commandExecutor", new C9(this.hot)), LE(this, "itemsFactory", null), LE(this, "menu", null);
     }
     static get PLUGIN_KEY() {
       return Um;
@@ -60729,7 +60729,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           const t = (e = this.hot.getSelectedRangeLast()) === null || e === void 0 ? void 0 : e.highlight;
           return t && this.hot.selection.isCellVisible(t) && !this.menu.isOpened();
         },
-        group: kB
+        group: HB
       });
     }
     /**
@@ -60738,7 +60738,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(kB);
+      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(HB);
     }
     /**
      * Opens menu and re-position it based on the passed coordinates.
@@ -60817,7 +60817,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @fires Hooks#beforeContextMenuSetItems
      */
     prepareMenuItems() {
-      this.itemsFactory = new C9(this.hot, t1.DEFAULT_ITEMS);
+      this.itemsFactory = new S9(this.hot, t1.DEFAULT_ITEMS);
       const e = this.hot.getSettings()[Um], t = {
         items: this.itemsFactory.getItems(e)
       };
@@ -60862,7 +60862,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "copy",
       name() {
-        return this.getTranslatedPhrase(Ek);
+        return this.getTranslatedPhrase(Tk);
       },
       callback() {
         n.copyCellsOnly();
@@ -60884,7 +60884,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       key: "copy_column_headers_only",
       name() {
         const e = this.getSelectedRangeLast(), t = e ? Bt(e.getWidth() - 1, 0, 1) : 0;
-        return this.getTranslatedPhrase(Ak, t);
+        return this.getTranslatedPhrase(Pk, t);
       },
       callback() {
         n.copyColumnHeadersOnly();
@@ -60906,7 +60906,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       key: "copy_with_column_group_headers",
       name() {
         const e = this.getSelectedRangeLast(), t = e ? Bt(e.getWidth() - 1, 0, 1) : 0;
-        return this.getTranslatedPhrase(Mk, t);
+        return this.getTranslatedPhrase(Ak, t);
       },
       callback() {
         n.copyWithAllColumnHeaders();
@@ -60928,7 +60928,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       key: "copy_with_column_headers",
       name() {
         const e = this.getSelectedRangeLast(), t = e ? Bt(e.getWidth() - 1, 0, 1) : 0;
-        return this.getTranslatedPhrase(Tk, t);
+        return this.getTranslatedPhrase(Mk, t);
       },
       callback() {
         n.copyWithColumnHeaders();
@@ -60949,7 +60949,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "cut",
       name() {
-        return this.getTranslatedPhrase(Pk);
+        return this.getTranslatedPhrase(Ik);
       },
       callback() {
         n.cut();
@@ -60985,12 +60985,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function cAe(n, e) {
-    T9(n, e), e.add(n);
+    M9(n, e), e.add(n);
   }
   function Tf(n, e, t) {
-    T9(n, e), e.set(n, t);
+    M9(n, e), e.set(n, t);
   }
-  function T9(n, e) {
+  function M9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function cs(n, e) {
@@ -61109,7 +61109,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function hAe(n, e) {
     return Math.min(e, Math.max(n + cs(LA, this).call(this) - 1, n));
   }
-  function M9(n) {
+  function A9(n) {
     const e = [], t = [];
     return F(n, (i) => {
       const s = Math.min(i.startRow, i.endRow), r = Math.max(i.startRow, i.endRow);
@@ -61126,12 +61126,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function dAe(n, e) {
-    A9(n, e), e.add(n);
+    P9(n, e), e.add(n);
   }
   function Cc(n, e, t) {
-    A9(n, e), e.set(n, t);
+    P9(n, e), e.set(n, t);
   }
-  function A9(n, e) {
+  function P9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function bm(n, e, t) {
@@ -61169,7 +61169,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ee.getSingleton().register("afterPaste");
   Ee.getSingleton().register("beforeCopy");
   Ee.getSingleton().register("afterCopy");
-  const a0 = "copyPaste", pAe = 80, mAe = ["fragmentSelection"], HB = ['<meta name="generator" content="Handsontable"/>', '<style type="text/css">td{white-space:normal}br{mso-data-placement:same-cell}</style>'].join("");
+  const a0 = "copyPaste", pAe = 80, mAe = ["fragmentSelection"], DB = ['<meta name="generator" content="Handsontable"/>', '<style type="text/css">td{white-space:normal}br{mso-data-placement:same-cell}</style>'].join("");
   var FA = /* @__PURE__ */ new WeakMap(), BA = /* @__PURE__ */ new WeakMap(), VA = /* @__PURE__ */ new WeakMap(), Af = /* @__PURE__ */ new WeakMap(), l0 = /* @__PURE__ */ new WeakMap(), c0 = /* @__PURE__ */ new WeakMap(), Pf = /* @__PURE__ */ new WeakMap(), YS = /* @__PURE__ */ new WeakMap(), Gs = /* @__PURE__ */ new WeakSet();
   class bAe extends Pt {
     constructor() {
@@ -61225,7 +61225,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return e.onCut(...arguments);
       }), this.eventManager.addEventListener(this.hot.rootDocument, "paste", function() {
         return e.onPaste(...arguments);
-      }), OO() && (this.eventManager.addEventListener(this.hot.rootDocument.body, "mouseenter", function() {
+      }), kO() && (this.eventManager.addEventListener(this.hot.rootDocument.body, "mouseenter", function() {
         for (var r = arguments.length, o = new Array(r), a = 0; a < r; a++)
           o[a] = arguments[a];
         return Ds(Gs, e, _Ae).call(e, ...o);
@@ -61268,7 +61268,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     copy() {
       let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "cells-only";
-      po(Af, this, e), po(l0, this, !0), Ds(Gs, this, DB).call(this, "copy");
+      po(Af, this, e), po(l0, this, !0), Ds(Gs, this, NB).call(this, "copy");
     }
     /**
      * Copies the contents of the selected cells.
@@ -61298,7 +61298,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Cuts the contents of the selected cells to the system clipboard.
      */
     cut() {
-      po(c0, this, !0), Ds(Gs, this, DB).call(this, "cut");
+      po(c0, this, !0), Ds(Gs, this, NB).call(this, "cut");
     }
     /**
      * Converts the contents of multiple ranges (`ranges`) into a single string.
@@ -61319,7 +61319,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const t = [], {
         rows: i,
         columns: s
-      } = M9(e);
+      } = A9(e);
       return F(i, (r) => {
         const o = [];
         F(s, (a) => {
@@ -61454,7 +61454,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const l = xb(r);
         if (e && e.clipboardData) {
           const c = wA(r, this.hot.rootDocument);
-          e.clipboardData.setData("text/plain", l), e.clipboardData.setData("text/html", [HB, c].join(""));
+          e.clipboardData.setData("text/plain", l), e.clipboardData.setData("text/html", [DB, c].join(""));
         } else typeof ClipboardEvent > "u" && this.hot.rootWindow.clipboardData.setData("Text", l);
         this.hot.runHooks("afterCopy", r, this.copyableRanges, o);
       }
@@ -61477,7 +61477,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const a = xb(r);
         if (e && e.clipboardData) {
           const l = wA(r, this.hot.rootDocument);
-          e.clipboardData.setData("text/plain", a), e.clipboardData.setData("text/html", [HB, l].join(""));
+          e.clipboardData.setData("text/plain", a), e.clipboardData.setData("text/html", [DB, l].join(""));
         } else typeof ClipboardEvent > "u" && this.hot.rootWindow.clipboardData.setData("Text", a);
         this.hot.emptySelectedCells("CopyPaste.cut"), this.hot.runHooks("afterCut", r, this.copyableRanges);
       }
@@ -61501,7 +61501,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           ADD_ATTR: ["content"],
           FORCE_BODY: !0
         });
-        u && /(<table)|(<TABLE)/g.test(u) ? r = H7(u, this.hot.rootDocument).data : r = e.clipboardData.getData("text/plain");
+        u && /(<table)|(<TABLE)/g.test(u) ? r = D7(u, this.hot.rootDocument).data : r = e.clipboardData.getData("text/plain");
       } else typeof ClipboardEvent > "u" && typeof this.hot.rootWindow.clipboardData < "u" && (r = this.hot.rootWindow.clipboardData.getData("Text"));
       if (typeof r == "string" && (r = PSe(r)), r === void 0 || r && r.length === 0 || this.hot.runHooks("beforePaste", r, this.copyableRanges) === !1)
         return;
@@ -61520,15 +61520,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super.destroy();
     }
   }
-  function DB(n) {
-    if (OO()) {
+  function NB(n) {
+    if (kO()) {
       const e = this.hot.getSelectedRangeLast();
       if (e) {
         const {
           row: t,
           col: i
         } = e.highlight, s = this.hot.getCell(t, i, !0);
-        s && a7(s, () => {
+        s && l7(s, () => {
           this.hot.rootDocument.execCommand(n);
         });
       }
@@ -61538,7 +61538,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function wAe(n) {
     const {
       rows: e
-    } = M9(n);
+    } = A9(n);
     let t = 0;
     for (let i = 0; i < e.length && !(e[i] >= 0); i++)
       t += 1;
@@ -61554,11 +61554,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           row: e,
           col: t
         } = n.highlight, i = this.hot.getCell(e, t, !0);
-        i && TO(i);
+        i && MO(i);
       }
     }
   }
-  function P9() {
+  function I9() {
     if (this.hot.isListening()) {
       const n = this.hot.getSelectedRangeLast();
       if (n) {
@@ -61566,7 +61566,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           row: e,
           col: t
         } = n.highlight, i = this.hot.getCell(e, t, !0);
-        i != null && i.hasAttribute("contenteditable") && MO(i);
+        i != null && i.hasAttribute("contenteditable") && AO(i);
       }
     }
   }
@@ -61582,15 +61582,15 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.isEditorOpened() || this.hot.getSettings().fragmentSelection || this.setCopyableText();
   }
   function _Ae() {
-    Ds(Gs, this, P9).call(this);
+    Ds(Gs, this, I9).call(this);
   }
   function RAe() {
     Ds(Gs, this, vAe).call(this);
   }
   function xAe() {
-    Ds(Gs, this, P9).call(this);
+    Ds(Gs, this, I9).call(this);
   }
-  function I9(n, e) {
+  function O9(n, e) {
     return `border_row${n}col${e}`;
   }
   function Ym() {
@@ -61627,7 +61627,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function VE(n, e) {
     return {
-      id: I9(n, e),
+      id: O9(n, e),
       border: EAe(),
       row: n,
       col: e,
@@ -61674,7 +61674,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "borders:bottom",
       name() {
-        let e = this.getTranslatedPhrase(jk);
+        let e = this.getTranslatedPhrase(zk);
         return Jl(this, "bottom") && (e = n1(e)), e;
       },
       callback(e, t) {
@@ -61688,7 +61688,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "borders:left",
       name() {
-        let t = this.getTranslatedPhrase(zk);
+        let t = this.getTranslatedPhrase(Uk);
         return Jl(this, e) && (t = n1(t)), t;
       },
       callback(t, i) {
@@ -61701,7 +61701,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "borders:no_borders",
       name() {
-        return this.getTranslatedPhrase(Uk);
+        return this.getTranslatedPhrase(Yk);
       },
       callback(e, t) {
         n.prepareBorder(t, "noBorders");
@@ -61716,7 +61716,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "borders:right",
       name() {
-        let t = this.getTranslatedPhrase(Wk);
+        let t = this.getTranslatedPhrase(jk);
         return Jl(this, e) && (t = n1(t)), t;
       },
       callback(t, i) {
@@ -61729,7 +61729,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "borders:top",
       name() {
-        let e = this.getTranslatedPhrase(Vk);
+        let e = this.getTranslatedPhrase(Wk);
         return Jl(this, "top") && (e = n1(e)), e;
       },
       callback(e, t) {
@@ -61761,7 +61761,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function NB(n, e, t) {
+  function LB(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -61790,7 +61790,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Enables the plugin functionality for this Handsontable instance.
      */
     enablePlugin() {
-      this.enabled || (this.addHook("afterContextMenuDefaultOptions", (e) => NB(WE, this, zAe).call(this, e)), this.addHook("init", () => NB(WE, this, UAe).call(this)), super.enablePlugin());
+      this.enabled || (this.addHook("afterContextMenuDefaultOptions", (e) => LB(WE, this, zAe).call(this, e)), this.addHook("init", () => LB(WE, this, UAe).call(this)), super.enablePlugin());
     }
     /**
      * Disables the plugin functionality for this Handsontable instance.
@@ -61956,7 +61956,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {number} column Visual column index.
      */
     removeAllBorders(e, t) {
-      const i = I9(e, t);
+      const i = O9(e, t);
       this.spliceBorder(i), this.clearBordersFromSelectionSettings(i), this.clearNullCellRange(), this.hot.removeCellMeta(e, t, "borders");
     }
     /**
@@ -62195,7 +62195,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, {
       key: "borders",
       name() {
-        return this.getTranslatedPhrase(Bk);
+        return this.getTranslatedPhrase(Vk);
       },
       disabled() {
         const e = this.getSelectedRangeLast();
@@ -62232,18 +62232,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function LB(n, e, t) {
+  function $B(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const $B = "dragToScroll", XAe = 100;
+  const FB = "dragToScroll", XAe = 100;
   var zE = /* @__PURE__ */ new WeakSet();
   class QAe extends Pt {
     constructor() {
       super(...arguments), YAe(this, zE), jE(this, "boundaries", null), jE(this, "callback", null), jE(this, "listening", !1);
     }
     static get PLUGIN_KEY() {
-      return $B;
+      return FB;
     }
     static get PLUGIN_PRIORITY() {
       return XAe;
@@ -62255,13 +62255,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isEnabled() {
-      return !!this.hot.getSettings()[$B];
+      return !!this.hot.getSettings()[FB];
     }
     /**
      * Enables the plugin functionality for this Handsontable instance.
      */
     enablePlugin() {
-      this.enabled || (this.addHook("afterOnCellMouseDown", (e) => LB(zE, this, FB).call(this, e)), this.addHook("afterOnCellCornerMouseDown", (e) => LB(zE, this, FB).call(this, e)), this.registerEvents(), super.enablePlugin());
+      this.enabled || (this.addHook("afterOnCellMouseDown", (e) => $B(zE, this, BB).call(this, e)), this.addHook("afterOnCellCornerMouseDown", (e) => $B(zE, this, BB).call(this, e)), this.registerEvents(), super.enablePlugin());
     }
     /**
      * Updates the plugin's state.
@@ -62374,7 +62374,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super.destroy();
     }
   }
-  function FB(n) {
+  function BB(n) {
     if (pu(n))
       return;
     const e = this.hot.view._wt.wtOverlays.topOverlay.mainTableScrollableElement;
@@ -62385,12 +62385,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }), this.listen();
   }
   function ZAe(n, e) {
-    O9(n, e), e.add(n);
+    k9(n, e), e.add(n);
   }
   function JAe(n, e, t) {
-    O9(n, e), e.set(n, t);
+    k9(n, e), e.set(n, t);
   }
-  function O9(n, e) {
+  function k9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function UE(n, e, t) {
@@ -62413,7 +62413,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function nPe(n, e) {
     return n.get(Pr(n, e));
   }
-  function k9(n, e, t) {
+  function H9(n, e, t) {
     return n.set(Pr(n, e), t), t;
   }
   function Pr(n, e, t) {
@@ -62452,7 +62452,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {CommandExecutor}
      */
     constructor(e) {
-      super(e), ZAe(this, bo), UE(this, "commandExecutor", new y9(this.hot)), UE(this, "itemsFactory", null), UE(this, "menu", null), JAe(this, i1, !1), this.hot.addHook("afterGetColHeader", (t, i) => Pr(bo, this, rPe).call(this, t, i));
+      super(e), ZAe(this, bo), UE(this, "commandExecutor", new C9(this.hot)), UE(this, "itemsFactory", null), UE(this, "menu", null), JAe(this, i1, !1), this.hot.addHook("afterGetColHeader", (t, i) => Pr(bo, this, rPe).call(this, t, i));
     }
     /**
      * Checks if the plugin is enabled in the handsontable settings. This method is executed in {@link Hooks#beforeInit}
@@ -62473,7 +62473,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       var e = this;
       if (this.enabled)
         return;
-      this.itemsFactory = new C9(this.hot, s1.DEFAULT_ITEMS), this.addHook("beforeOnCellMouseDown", function() {
+      this.itemsFactory = new S9(this.hot, s1.DEFAULT_ITEMS), this.addHook("beforeOnCellMouseDown", function() {
         for (var s = arguments.length, r = new Array(s), o = 0; o < s; o++)
           r[o] = arguments[o];
         return Pr(bo, e, hPe).call(e, ...r);
@@ -62657,7 +62657,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.close(), this.menu && this.menu.destroy(), super.destroy();
     }
   }
-  function H9(n) {
+  function D9(n) {
     n.getKeyboardShortcutsCtrl().addCustomShortcuts([{
       keys: [["Control/Meta", "A"]],
       callback: () => !1
@@ -62666,7 +62666,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function sPe(n) {
     if (Fe(n.target, Sw)) {
       const e = GR(this.menu.container, this.hot.rootDocument), t = n.target.getBoundingClientRect();
-      n.stopPropagation(), k9(i1, this, !1), this.open({
+      n.stopPropagation(), H9(i1, this, !1), this.open({
         left: t.left + e.left,
         top: t.top + n.target.offsetHeight + e.top
       }, {
@@ -62692,7 +62692,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return;
     }
     const o = this.hot.rootDocument.createElement("button");
-    o.className = Sw, o.type = "button", o.tabIndex = -1, this.hot.getSettings().ariaTags && ($e(o, [Ud(), _S(" ")]), $e(e, [z4("menu")])), o.onclick = function() {
+    o.className = Sw, o.type = "button", o.tabIndex = -1, this.hot.getSettings().ariaTags && ($e(o, [Ud(), _S(" ")]), $e(e, [U4("menu")])), o.onclick = function() {
       return !1;
     }, e.firstChild.insertBefore(o, e.firstChild.firstChild);
   }
@@ -62700,10 +62700,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.hot.runHooks("beforeDropdownMenuShow", this);
   }
   function aPe() {
-    this.hot.runHooks("afterDropdownMenuShow", this), Pr(bo, this, H9).call(this, this.menu);
+    this.hot.runHooks("afterDropdownMenuShow", this), Pr(bo, this, D9).call(this, this.menu);
   }
   function lPe(n) {
-    Pr(bo, this, H9).call(this, n);
+    Pr(bo, this, D9).call(this, n);
   }
   function cPe() {
     this.hot.listen(), this.hot.runHooks("afterDropdownMenuHide", this);
@@ -62712,12 +62712,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return nPe(i1, this) ? null : n;
   }
   function hPe(n) {
-    Fe(n.target, Sw) && k9(i1, this, !0);
+    Fe(n.target, Sw) && H9(i1, this, !0);
   }
   s1.SEPARATOR = {
     name: st
   };
-  function BB(n, e, t) {
+  function VB(n, e, t) {
     return (e = dPe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function dPe(n) {
@@ -62736,7 +62736,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   class gPe {
     constructor(e) {
-      BB(this, "hot", void 0), BB(this, "options", {}), this.hot = e;
+      VB(this, "hot", void 0), VB(this, "options", {}), this.hot = e;
     }
     /**
      * Set options for data provider.
@@ -62838,7 +62838,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return this.hot.columnIndexMapper.isHidden(this.hot.toPhysicalColumn(e));
     }
   }
-  function VB(n, e, t) {
+  function WB(n, e, t) {
     return (e = pPe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function pPe(n) {
@@ -62855,7 +62855,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class tD {
+  class nD {
     /**
      * Default options.
      *
@@ -62881,7 +62881,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {DataProvider}
      */
     constructor(e, t) {
-      VB(this, "dataProvider", void 0), VB(this, "options", void 0), this.dataProvider = e, this.options = this._mergeOptions(t), this.dataProvider.setOptions(this.options);
+      WB(this, "dataProvider", void 0), WB(this, "options", void 0), this.dataProvider = e, this.options = this._mergeOptions(t), this.dataProvider.setOptions(this.options);
     }
     /**
      * Merge options provided by users with defaults.
@@ -62892,7 +62892,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     _mergeOptions(e) {
       let t = Do(this.constructor.DEFAULT_OPTIONS);
       const i = /* @__PURE__ */ new Date();
-      return t = Zn(Do(tD.DEFAULT_OPTIONS), t), t = Zn(t, e), t.filename = wO(t.filename, {
+      return t = Zn(Do(nD.DEFAULT_OPTIONS), t), t = Zn(t, e), t.filename = vO(t.filename, {
         YYYY: i.getFullYear(),
         MM: `${i.getMonth() + 1}`.padStart(2, "0"),
         DD: `${i.getDate()}`.padStart(2, "0")
@@ -62901,7 +62901,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   const bPe = "\r", wPe = '"', vPe = `
 `;
-  class yPe extends tD {
+  class yPe extends nD {
     /**
      * Default options for exporting CSV format.
      *
@@ -63183,7 +63183,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return Hn(n.value);
   }
   ei(Pb, APe, {
-    name: Zk,
+    name: Jk,
     inputsCount: 0,
     showOperators: !0
   });
@@ -63192,7 +63192,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return !mu(Pb, e)(n);
   }
   ei(AC, PPe, {
-    name: Jk,
+    name: eH,
     inputsCount: 0,
     showOperators: !0
   });
@@ -63202,7 +63202,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return kn(n.value).toLocaleLowerCase(n.meta.locale) === kn(t);
   }
   ei(Ib, IPe, {
-    name: eH,
+    name: tH,
     inputsCount: 1,
     showOperators: !0
   });
@@ -63211,69 +63211,69 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return !mu(Ib, e)(n);
   }
   ei(PC, OPe, {
-    name: tH,
+    name: nH,
     inputsCount: 1,
     showOperators: !0
   });
-  const D9 = "gt";
+  const N9 = "gt";
   function kPe(n, e) {
     let [t] = e, i = t;
     return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value > i;
   }
-  ei(D9, kPe, {
-    name: oH,
-    inputsCount: 1,
-    showOperators: !0
-  });
-  const N9 = "gte";
-  function HPe(n, e) {
-    let [t] = e, i = t;
-    return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value >= i;
-  }
-  ei(N9, HPe, {
+  ei(N9, kPe, {
     name: aH,
     inputsCount: 1,
     showOperators: !0
   });
-  const L9 = "lt";
-  function DPe(n, e) {
+  const L9 = "gte";
+  function HPe(n, e) {
     let [t] = e, i = t;
-    return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value < i;
+    return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value >= i;
   }
-  ei(L9, DPe, {
+  ei(L9, HPe, {
     name: lH,
     inputsCount: 1,
     showOperators: !0
   });
-  const $9 = "lte";
-  function NPe(n, e) {
+  const $9 = "lt";
+  function DPe(n, e) {
     let [t] = e, i = t;
-    return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value <= i;
+    return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value < i;
   }
-  ei($9, NPe, {
+  ei($9, DPe, {
     name: cH,
     inputsCount: 1,
     showOperators: !0
   });
-  const nD = "date_after";
+  const F9 = "lte";
+  function NPe(n, e) {
+    let [t] = e, i = t;
+    return n.meta.type === "numeric" && (i = parseFloat(i, 10)), n.value <= i;
+  }
+  ei(F9, NPe, {
+    name: uH,
+    inputsCount: 1,
+    showOperators: !0
+  });
+  const iD = "date_after";
   function LPe(n, e) {
     let [t] = e;
     const i = le(n.value, n.meta.dateFormat), s = le(t, n.meta.dateFormat);
     return !i.isValid() || !s.isValid() ? !1 : i.diff(s) >= 0;
   }
-  ei(nD, LPe, {
-    name: dH,
+  ei(iD, LPe, {
+    name: fH,
     inputsCount: 1,
     showOperators: !0
   });
-  const iD = "date_before";
+  const sD = "date_before";
   function $Pe(n, e) {
     let [t] = e;
     const i = le(n.value, n.meta.dateFormat), s = le(t, n.meta.dateFormat);
     return !i.isValid() || !s.isValid() ? !1 : i.diff(s) <= 0;
   }
-  ei(iD, $Pe, {
-    name: fH,
+  ei(sD, $Pe, {
+    name: gH,
     inputsCount: 1,
     showOperators: !0
   });
@@ -63284,92 +63284,92 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       const o = parseFloat(s, 10), a = parseFloat(r, 10);
       s = Math.min(o, a), r = Math.max(o, a);
     } else if (n.meta.type === "date") {
-      const o = mu(iD, [r]), a = mu(nD, [s]);
+      const o = mu(sD, [r]), a = mu(iD, [s]);
       return o(n) && a(n);
     }
     return n.value >= s && n.value <= r;
   }
   ei(GS, FPe, {
-    name: uH,
-    inputsCount: 2,
-    showOperators: !0
-  });
-  const F9 = "not_between";
-  function BPe(n, e) {
-    return !mu(GS, e)(n);
-  }
-  ei(F9, BPe, {
     name: hH,
     inputsCount: 2,
     showOperators: !0
   });
-  const B9 = "begins_with";
+  const B9 = "not_between";
+  function BPe(n, e) {
+    return !mu(GS, e)(n);
+  }
+  ei(B9, BPe, {
+    name: dH,
+    inputsCount: 2,
+    showOperators: !0
+  });
+  const V9 = "begins_with";
   function VPe(n, e) {
     let [t] = e;
     return kn(n.value).toLocaleLowerCase(n.meta.locale).startsWith(kn(t));
   }
-  ei(B9, VPe, {
-    name: nH,
-    inputsCount: 1,
-    showOperators: !0
-  });
-  const V9 = "ends_with";
-  function WPe(n, e) {
-    let [t] = e;
-    return kn(n.value).toLocaleLowerCase(n.meta.locale).endsWith(kn(t));
-  }
-  ei(V9, WPe, {
+  ei(V9, VPe, {
     name: iH,
     inputsCount: 1,
     showOperators: !0
   });
-  const sD = "contains";
-  function jPe(n, e) {
+  const W9 = "ends_with";
+  function WPe(n, e) {
     let [t] = e;
-    return kn(n.value).toLocaleLowerCase(n.meta.locale).indexOf(kn(t)) >= 0;
+    return kn(n.value).toLocaleLowerCase(n.meta.locale).endsWith(kn(t));
   }
-  ei(sD, jPe, {
+  ei(W9, WPe, {
     name: sH,
     inputsCount: 1,
     showOperators: !0
   });
-  const W9 = "not_contains";
-  function zPe(n, e) {
-    return !mu(sD, e)(n);
+  const rD = "contains";
+  function jPe(n, e) {
+    let [t] = e;
+    return kn(n.value).toLocaleLowerCase(n.meta.locale).indexOf(kn(t)) >= 0;
   }
-  ei(W9, zPe, {
+  ei(rD, jPe, {
     name: rH,
     inputsCount: 1,
     showOperators: !0
   });
-  const j9 = "date_tomorrow";
+  const j9 = "not_contains";
+  function zPe(n, e) {
+    return !mu(rD, e)(n);
+  }
+  ei(j9, zPe, {
+    name: oH,
+    inputsCount: 1,
+    showOperators: !0
+  });
+  const z9 = "date_tomorrow";
   function UPe(n) {
     const e = le(n.value, n.meta.dateFormat);
     return e.isValid() ? e.isSame(le().subtract(-1, "days").startOf("day"), "d") : !1;
   }
-  ei(j9, UPe, {
-    name: pH,
+  ei(z9, UPe, {
+    name: mH,
     inputsCount: 0
   });
-  const z9 = "date_today";
+  const U9 = "date_today";
   function YPe(n) {
     const e = le(n.value, n.meta.dateFormat);
     return e.isValid() ? e.isSame(le().startOf("day"), "d") : !1;
   }
-  ei(z9, YPe, {
-    name: gH,
+  ei(U9, YPe, {
+    name: pH,
     inputsCount: 0
   });
-  const U9 = "date_yesterday";
+  const Y9 = "date_yesterday";
   function GPe(n) {
     const e = le(n.value, n.meta.dateFormat);
     return e.isValid() ? e.isSame(le().subtract(1, "days").startOf("day"), "d") : !1;
   }
-  ei(U9, GPe, {
-    name: mH,
+  ei(Y9, GPe, {
+    name: bH,
     inputsCount: 0
   });
-  m7();
+  b7();
   function KPe(n, e) {
     let t = n;
     return t === "" && (t = `(${e})`), t;
@@ -63382,14 +63382,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return jA ? i = e.has(t) : i = !!~e.indexOf(t), i;
     };
   }
-  function Y9(n) {
+  function G9(n) {
     return n ?? "";
   }
   function zA(n) {
     let e = n;
-    return qPe ? e = Array.from(new Set(e)) : e = pO(e), e = e.sort((t, i) => typeof t == "number" && typeof i == "number" ? t - i : t === i ? 0 : t > i ? 1 : -1), e;
+    return qPe ? e = Array.from(new Set(e)) : e = mO(e), e = e.sort((t, i) => typeof t == "number" && typeof i == "number" ? t - i : t === i ? 0 : t > i ? 1 : -1), e;
   }
-  function WB(n, e, t, i) {
+  function jB(n, e, t, i) {
     const s = [], r = n === e;
     let o;
     return r || (o = xv(e)), F(n, (a) => {
@@ -63429,38 +63429,38 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function ZPe(n) {
     return Rw[n].name;
   }
-  function rD(n, e, t) {
+  function oD(n, e, t) {
     Rw[n] = {
       name: e,
       func: t
     };
   }
-  const au = "conjunction", JPe = vH;
+  const au = "conjunction", JPe = yH;
   function eIe(n, e) {
     return n.every((t) => t.func(e));
   }
-  rD(au, JPe, eIe);
+  oD(au, JPe, eIe);
   const KS = "disjunction", tIe = VR;
   function nIe(n, e) {
     return n.some((t) => t.func(e));
   }
-  rD(KS, tIe, nIe);
-  const oD = "disjunctionWithExtraCondition", iIe = VR;
+  oD(KS, tIe, nIe);
+  const aD = "disjunctionWithExtraCondition", iIe = VR;
   function sIe(n, e) {
     if (n.length < 3)
       throw Error("Operation doesn't work on less then three conditions.");
     return n.slice(0, n.length - 1).some((t) => t.func(e)) && n[n.length - 1].func(e);
   }
-  rD(oD, iIe, sIe);
-  const rIe = "numeric", G9 = "text", oIe = "date", jB = {
-    [rIe]: [Ri, st, Pb, AC, st, Ib, PC, st, D9, N9, L9, $9, GS, F9],
-    [G9]: [Ri, st, Pb, AC, st, Ib, PC, st, B9, V9, st, sD, W9],
-    [oIe]: [Ri, st, Pb, AC, st, Ib, PC, st, iD, nD, GS, st, j9, z9, U9]
+  oD(aD, iIe, sIe);
+  const rIe = "numeric", K9 = "text", oIe = "date", zB = {
+    [rIe]: [Ri, st, Pb, AC, st, Ib, PC, st, N9, L9, $9, F9, GS, B9],
+    [K9]: [Ri, st, Pb, AC, st, Ib, PC, st, V9, W9, st, rD, j9],
+    [oIe]: [Ri, st, Pb, AC, st, Ib, PC, st, sD, iD, GS, st, z9, U9, Y9]
   };
   function aIe(n) {
     const e = [];
     let t = n;
-    return jB[t] || (t = G9), F(jB[t], (i) => {
+    return zB[t] || (t = K9), F(zB[t], (i) => {
       let s;
       i === st ? s = {
         name: st
@@ -63484,8 +63484,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const GE = "built", KE = "building", zB = ["click", "input", "keydown", "keypress", "keyup", "focus", "blur", "change"];
-  let Ao = class K9 {
+  const GE = "built", KE = "building", UB = ["click", "input", "keydown", "keypress", "keyup", "focus", "blur", "change"];
+  let Ao = class q9 {
     static get DEFAULTS() {
       return Do({
         className: "",
@@ -63501,7 +63501,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {Core}
      */
     constructor(e, t) {
-      vm(this, "hot", void 0), vm(this, "eventManager", new Ur(this)), vm(this, "options", void 0), vm(this, "_element", void 0), vm(this, "buildState", void 0), this.hot = e, this.options = Zn(K9.DEFAULTS, t), this._element = this.hot.rootDocument.createElement(this.options.wrapIt ? "div" : this.options.tagName);
+      vm(this, "hot", void 0), vm(this, "eventManager", new Ur(this)), vm(this, "options", void 0), vm(this, "_element", void 0), vm(this, "buildState", void 0), this.hot = e, this.options = Zn(q9.DEFAULTS, t), this._element = this.hot.rootDocument.createElement(this.options.wrapIt ? "div" : this.options.tagName);
     }
     /**
      * Set the element value.
@@ -63557,9 +63557,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         const t = this.hot.rootDocument.createElement(this.options.tagName);
         t.setAttribute("data-hot-input", !0), nt(this.options, (i, s) => {
           t[s] !== void 0 && s !== "className" && s !== "tagName" && s !== "children" && (t[s] = this.translateIfPossible(i));
-        }), this._element.appendChild(t), F(zB, (i) => e(t, i));
+        }), this._element.appendChild(t), F(UB, (i) => e(t, i));
       } else
-        F(zB, (t) => e(this._element, t));
+        F(UB, (t) => e(this._element, t));
     }
     /**
      * Update DOM structure.
@@ -63595,25 +63595,25 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   };
   jt(Ao, Li);
   function uIe(n, e) {
-    q9(n, e), e.add(n);
+    X9(n, e), e.add(n);
   }
   function hIe(n, e, t) {
-    q9(n, e), e.set(n, t);
+    X9(n, e), e.set(n, t);
   }
-  function q9(n, e) {
+  function X9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function u0(n, e) {
-    return n.get(aD(n, e));
+    return n.get(lD(n, e));
   }
   function dIe(n, e, t) {
-    return n.set(aD(n, e), t), t;
+    return n.set(lD(n, e), t), t;
   }
-  function aD(n, e, t) {
+  function lD(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  var Of = /* @__PURE__ */ new WeakMap(), UB = /* @__PURE__ */ new WeakSet();
+  var Of = /* @__PURE__ */ new WeakMap(), YB = /* @__PURE__ */ new WeakSet();
   class lu extends Ao {
     static get DEFAULTS() {
       return Do({
@@ -63629,13 +63629,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {HTMLInputElement}
      */
     constructor(e, t) {
-      super(e, Zn(lu.DEFAULTS, t)), uIe(this, UB), hIe(this, Of, void 0), this.registerHooks();
+      super(e, Zn(lu.DEFAULTS, t)), uIe(this, YB), hIe(this, Of, void 0), this.registerHooks();
     }
     /**
      * Register all necessary hooks.
      */
     registerHooks() {
-      this.addLocalHook("keyup", (e) => aD(UB, this, fIe).call(this, e));
+      this.addLocalHook("keyup", (e) => lD(YB, this, fIe).call(this, e));
     }
     /**
      * Build DOM structure.
@@ -63662,12 +63662,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.options.value = n.target.value;
   }
   function gIe(n, e) {
-    X9(n, e), e.add(n);
+    Q9(n, e), e.add(n);
   }
   function ym(n, e, t) {
-    X9(n, e), e.set(n, t);
+    Q9(n, e), e.set(n, t);
   }
-  function X9(n, e) {
+  function Q9(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function kf(n, e, t) {
@@ -63745,7 +63745,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }), t = new Ao(this.hot, {
         className: "htUISelectDropdown"
       });
-      kf(d0, this, e), kf(qE, this, e.element), kf(f0, this, t), this.hot.getSettings().ariaTags && ($e(t.element, [Ud()]), $e(this._element, [j4()])), F([e, t], (i) => this._element.appendChild(i.element)), Tn(hi, this).addLocalHook("select", (i) => Ob(g0, this, pIe).call(this, i)), Tn(hi, this).addLocalHook("afterClose", () => Ob(g0, this, mIe).call(this)), this.update();
+      kf(d0, this, e), kf(qE, this, e.element), kf(f0, this, t), this.hot.getSettings().ariaTags && ($e(t.element, [Ud()]), $e(this._element, [z4()])), F([e, t], (i) => this._element.appendChild(i.element)), Tn(hi, this).addLocalHook("select", (i) => Ob(g0, this, pIe).call(this, i)), Tn(hi, this).addLocalHook("afterClose", () => Ob(g0, this, mIe).call(this)), this.update();
     }
     /**
      * Update DOM structure.
@@ -63810,7 +63810,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function vIe(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
-  function YB(n, e, t) {
+  function GB(n, e, t) {
     return (e = yIe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function yIe(n) {
@@ -63827,7 +63827,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function GB(n, e, t) {
+  function KB(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -63837,12 +63837,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, {
         id: t.id,
         stateless: !1
-      }), wIe(this, XE), YB(this, "name", ""), YB(this, "addSeparator", !1), this.name = t.name, this.addSeparator = t.addSeparator, this.elements.push(new xw(this.hot, {
+      }), wIe(this, XE), GB(this, "name", ""), GB(this, "addSeparator", !1), this.name = t.name, this.addSeparator = t.addSeparator, this.elements.push(new xw(this.hot, {
         menuContainer: t.menuContainer
       })), this.elements.push(new lu(this.hot, {
-        placeholder: xH
-      })), this.elements.push(new lu(this.hot, {
         placeholder: EH
+      })), this.elements.push(new lu(this.hot, {
+        placeholder: TH
       })), this.registerHooks();
     }
     /**
@@ -63851,8 +63851,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     registerHooks() {
-      this.getSelectElement().addLocalHook("select", (e) => GB(XE, this, SIe).call(this, e)).addLocalHook("afterClose", () => this.runLocalHooks("afterClose")).addLocalHook("tabKeydown", (e) => this.runLocalHooks("selectTabKeydown", e)), F(this.getInputElements(), (e) => {
-        e.addLocalHook("keydown", (t) => GB(XE, this, _Ie).call(this, t));
+      this.getSelectElement().addLocalHook("select", (e) => KB(XE, this, SIe).call(this, e)).addLocalHook("afterClose", () => this.runLocalHooks("afterClose")).addLocalHook("tabKeydown", (e) => this.runLocalHooks("selectTabKeydown", e)), F(this.getInputElements(), (e) => {
+        e.addLocalHook("keydown", (t) => KB(XE, this, _Ie).call(this, t));
       });
     }
     /**
@@ -63968,19 +63968,19 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function _Ie(n) {
     hp(n.keyCode, "ESCAPE") && (this.runLocalHooks("cancel"), Zr(n));
   }
-  function KB(n, e, t) {
+  function qB(n, e, t) {
     RIe(n, e), e.set(n, t);
   }
   function RIe(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Cm(n, e) {
-    return n.get(Q9(n, e));
+    return n.get(Z9(n, e));
   }
-  function qB(n, e, t) {
-    return n.set(Q9(n, e), t), t;
+  function XB(n, e, t) {
+    return n.set(Z9(n, e), t), t;
   }
-  function Q9(n, e, t) {
+  function Z9(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -64000,7 +64000,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {HTMLInputElement}
      */
     constructor(e, t) {
-      super(e, Zn(qS.DEFAULTS, t)), KB(this, Hf, void 0), KB(this, QE, void 0);
+      super(e, Zn(qS.DEFAULTS, t)), qB(this, Hf, void 0), qB(this, QE, void 0);
     }
     /**
      * Build DOM structure.
@@ -64008,7 +64008,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     build() {
       super.build();
       const e = this.hot.rootDocument.createElement("label");
-      e.textContent = this.translateIfPossible(this.options.label.textContent), e.htmlFor = this.translateIfPossible(this.options.label.htmlFor), qB(QE, this, e), qB(Hf, this, this._element.firstChild), Cm(Hf, this).checked = this.options.checked, this._element.appendChild(e), this.update();
+      e.textContent = this.translateIfPossible(this.options.label.textContent), e.htmlFor = this.translateIfPossible(this.options.label.htmlFor), XB(QE, this, e), XB(Hf, this, this._element.firstChild), Cm(Hf, this).checked = this.options.checked, this._element.appendChild(e), this.update();
     }
     /**
      * Update element.
@@ -64067,14 +64067,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const XB = 0;
-  var QB = /* @__PURE__ */ new WeakSet();
+  const QB = 0;
+  var ZB = /* @__PURE__ */ new WeakSet();
   class IIe extends Rv {
     constructor(e, t) {
       super(e, {
         id: t.id,
         stateless: !1
-      }), xIe(this, QB), TIe(this, "name", ""), this.name = t.name, this.buildOperatorsElement();
+      }), xIe(this, ZB), TIe(this, "name", ""), this.name = t.name, this.buildOperatorsElement();
     }
     /**
      * Get menu object descriptor.
@@ -64106,10 +64106,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             textContent: ZPe(t)
           },
           value: t,
-          checked: t === e[XB],
+          checked: t === e[QB],
           id: t
         });
-        i.addLocalHook("change", (s) => PIe(QB, this, OIe).call(this, s)), this.elements.push(i);
+        i.addLocalHook("change", (s) => PIe(ZB, this, OIe).call(this, s)), this.elements.push(i);
       });
     }
     /**
@@ -64159,13 +64159,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     updateState() {
       let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : au, t = arguments.length > 1 ? arguments[1] : void 0, i = e;
-      i === oD && (i = KS), this.state.setValueAtIndex(t, i);
+      i === aD && (i = KS), this.state.setValueAtIndex(t, i);
     }
     /**
      * Reset elements to their initial state.
      */
     reset() {
-      this.setChecked(XB);
+      this.setChecked(QB);
     }
   }
   function OIe(n) {
@@ -64178,12 +64178,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function ZE(n, e) {
-    return n.get(Z9(n, e));
+    return n.get(J9(n, e));
   }
   function DIe(n, e, t) {
-    return n.set(Z9(n, e), t), t;
+    return n.set(J9(n, e), t), t;
   }
-  function Z9(n, e, t) {
+  function J9(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -64231,12 +64231,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function NIe(n, e) {
-    J9(n, e), e.add(n);
+    eU(n, e), e.add(n);
   }
   function Df(n, e, t) {
-    J9(n, e), e.set(n, t);
+    eU(n, e), e.set(n, t);
   }
-  function J9(n, e) {
+  function eU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Ze(n, e) {
@@ -64249,7 +64249,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const ZB = "multipleSelect.itemBox";
+  const JB = "multipleSelect.itemBox";
   var wo = /* @__PURE__ */ new WeakMap(), Kn = /* @__PURE__ */ new WeakMap(), JE = /* @__PURE__ */ new WeakMap(), dl = /* @__PURE__ */ new WeakMap(), Sc = /* @__PURE__ */ new WeakMap(), _c = /* @__PURE__ */ new WeakMap(), _m = /* @__PURE__ */ new WeakSet();
   class Tw extends Ao {
     static get DEFAULTS() {
@@ -64265,13 +64265,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     constructor(e, t) {
       super(e, Zn(Tw.DEFAULTS, t)), NIe(this, _m), Df(this, wo, []), Df(this, Kn, void 0), Df(this, JE, void 0), Df(this, dl, void 0), Df(this, Sc, void 0), Df(this, _c, void 0), uo(dl, this, new lu(this.hot, {
-        placeholder: RH,
+        placeholder: xH,
         className: "htUIMultipleSelectSearch"
       })), uo(Sc, this, new Ew(this.hot, {
-        textContent: yH,
+        textContent: CH,
         className: "htUISelectAll"
       })), uo(_c, this, new Ew(this.hot, {
-        textContent: CH,
+        textContent: SH,
         className: "htUIClearAll"
       })), this.registerHooks();
     }
@@ -64417,13 +64417,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           callback: (c) => {
             this.runLocalHooks("keydown", c, this);
           },
-          group: ZB
+          group: JB
         }), l.addShortcut({
           keys: [["Tab"], ["Shift", "Tab"]],
           callback: (c) => {
             Ze(Kn, this).deselectCell(), this.runLocalHooks("keydown", c, this), this.runLocalHooks("listTabKeydown", c, this);
           },
-          group: ZB
+          group: JB
         });
       };
       s(t), this.hot._registerTimeout(() => s(t), 100);
@@ -64460,18 +64460,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     e === "" ? t = [...Ze(wo, this)] : t = Ze(wo, this).filter((i) => `${i.value}`.toLocaleLowerCase(this.getLocale()).indexOf(e) >= 0), Ze(Kn, this).loadData(t);
   }
   function $Ie(n) {
-    this.runLocalHooks("keydown", n, this), AO(hp, n.keyCode)("ARROW_DOWN") && (n.preventDefault(), Zr(n), Ze(Kn, this).listen(), Ze(Kn, this).selectCell(0, 0));
+    this.runLocalHooks("keydown", n, this), PO(hp, n.keyCode)("ARROW_DOWN") && (n.preventDefault(), Zr(n), Ze(Kn, this).listen(), Ze(Kn, this).selectCell(0, 0));
   }
   function FIe(n) {
     const e = [];
     n.preventDefault(), Ze(Kn, this).getSourceData().forEach((t, i) => {
-      t.checked = !0, e.push(lk(t, i)[0]);
+      t.checked = !0, e.push(ck(t, i)[0]);
     }), Ze(Kn, this).setSourceDataAtCell(e);
   }
   function BIe(n) {
     const e = [];
     n.preventDefault(), Ze(Kn, this).getSourceData().forEach((t, i) => {
-      t.checked = !1, e.push(lk(t, i)[0]);
+      t.checked = !1, e.push(ck(t, i)[0]);
     }), Ze(Kn, this).setSourceDataAtCell(e);
   }
   function VIe(n, e) {
@@ -64575,8 +64575,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         if (l) {
           const h = o(i, a), d = ut(h, (y) => y.value), f = new Map(h.map((y) => [y.value, this.hot.getCellMeta(y.meta.visualRow, y.meta.visualCol)])), g = zA(d);
           r && (l.args[0] = r);
-          const p = [], m = WB(g, l.args[0], u, (y) => {
-            y.checked && p.push(y.value), p0(Rm, this, JB).call(this, y, f);
+          const p = [], m = jB(g, l.args[0], u, (y) => {
+            y.checked && p.push(y.value), p0(Rm, this, eV).call(this, y, f);
           }), w = e.editedConditionStack.column;
           c.locale = this.hot.getCellMeta(0, w).locale, c.args = [p], c.command = Gh(Kh), c.itemsSnapshot = m;
         } else
@@ -64616,8 +64616,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Reset elements to their initial state.
      */
     reset() {
-      const e = this.hot.getTranslatedPhrase(LS), t = this._getColumnVisibleValues(), i = t.map((l) => l.value), s = new Map(t.map((l) => [l.value, l.meta])), r = zA(i), o = WB(r, r, e, (l) => {
-        p0(Rm, this, JB).call(this, l, s);
+      const e = this.hot.getTranslatedPhrase(LS), t = this._getColumnVisibleValues(), i = t.map((l) => l.value), s = new Map(t.map((l) => [l.value, l.meta])), r = zA(i), o = jB(r, r, e, (l) => {
+        p0(Rm, this, eV).call(this, l, s);
       });
       this.getMultipleSelectElement().setItems(o), super.reset(), this.getMultipleSelectElement().setValue(r);
       const a = this.hot.getPlugin("filters").getSelectedColumn();
@@ -64632,7 +64632,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     _getColumnVisibleValues() {
       const e = this.hot.getPlugin("filters").getSelectedColumn();
       return e === null ? [] : ut(this.hot.getDataAtCol(e.visualIndex), (t, i) => ({
-        value: Y9(t),
+        value: G9(t),
         meta: this.hot.getCellMeta(i, e.visualIndex)
       }));
     }
@@ -64640,18 +64640,18 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function qIe(n) {
     hp(n.keyCode, "ESCAPE") && (this.runLocalHooks("cancel"), Zr(n));
   }
-  function JB(n, e) {
+  function eV(n, e) {
     this.hot.hasHook("modifyFiltersMultiSelectValue") && (n.visualValue = this.hot.runHooks("modifyFiltersMultiSelectValue", n.visualValue, e.get(n.value)));
   }
   function XIe(n, e) {
     switch (e.type) {
       case "numeric":
-        return Yz(n, e);
+        return Gz(n, e);
       default:
         return n;
     }
   }
-  var eU;
+  var tU;
   function QIe(n, e) {
     ZIe(n, e), e.add(n);
   }
@@ -64679,7 +64679,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  var eV = /* @__PURE__ */ new WeakSet();
+  var tV = /* @__PURE__ */ new WeakSet();
   class Mw extends Rv {
     static get BUTTON_OK() {
       return "ok";
@@ -64691,14 +64691,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       super(e, {
         id: t.id,
         stateless: !0
-      }), QIe(this, eV), JIe(this, "name", ""), this.name = t.name, this.elements.push(new lu(this.hot, {
+      }), QIe(this, tV), JIe(this, "name", ""), this.name = t.name, this.elements.push(new lu(this.hot, {
         type: "button",
-        value: SH,
+        value: _H,
         className: "htUIButton htUIButtonOK",
         identifier: Mw.BUTTON_OK
       })), this.elements.push(new lu(this.hot, {
         type: "button",
-        value: _H,
+        value: RH,
         className: "htUIButton htUIButtonCancel",
         identifier: Mw.BUTTON_CANCEL
       })), this.registerHooks();
@@ -64710,7 +64710,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     registerHooks() {
       F(this.elements, (e) => {
-        e.addLocalHook("click", (t, i) => nOe(eV, this, iOe).call(this, t, i));
+        e.addLocalHook("click", (t, i) => nOe(tV, this, iOe).call(this, t, i));
       });
     }
     /**
@@ -64741,9 +64741,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.runLocalHooks("cancel");
     }
   }
-  eU = Mw;
+  tU = Mw;
   function iOe(n, e) {
-    e.options.identifier === eU.BUTTON_OK ? this.accept() : this.cancel();
+    e.options.identifier === tU.BUTTON_OK ? this.accept() : this.cancel();
   }
   function m0(n, e, t) {
     return (e = sOe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
@@ -64762,11 +64762,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const tV = "ConditionCollection.filteringStates";
-  class lD {
+  const nV = "ConditionCollection.filteringStates";
+  class cD {
     constructor(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !0;
-      m0(this, "hot", void 0), m0(this, "isMapRegistrable", void 0), m0(this, "filteringStates", new FR()), m0(this, "previousConditionStack", null), this.hot = e, this.isMapRegistrable = t, this.isMapRegistrable === !0 ? this.hot.columnIndexMapper.registerMap(tV, this.filteringStates) : this.filteringStates.init(this.hot.columnIndexMapper.getNumberOfIndexes());
+      m0(this, "hot", void 0), m0(this, "isMapRegistrable", void 0), m0(this, "filteringStates", new FR()), m0(this, "previousConditionStack", null), this.hot = e, this.isMapRegistrable = t, this.isMapRegistrable === !0 ? this.hot.columnIndexMapper.registerMap(nV, this.filteringStates) : this.filteringStates.init(this.hot.columnIndexMapper.getNumberOfIndexes());
     }
     /**
      * Check if condition collection is empty (so no needed to filter data).
@@ -64962,11 +64962,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Destroy object.
      */
     destroy() {
-      this.isMapRegistrable && this.hot.columnIndexMapper.unregisterMap(tV), this.filteringStates = null, this.clearLocalHooks();
+      this.isMapRegistrable && this.hot.columnIndexMapper.unregisterMap(nV), this.filteringStates = null, this.clearLocalHooks();
     }
   }
-  jt(lD, Li);
-  function nV(n, e, t) {
+  jt(cD, Li);
+  function iV(n, e, t) {
     return (e = oOe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function oOe(n) {
@@ -64983,10 +64983,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class tU {
+  class nU {
     constructor(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : () => [];
-      nV(this, "conditionCollection", void 0), nV(this, "columnDataFactory", void 0), this.conditionCollection = e, this.columnDataFactory = t;
+      iV(this, "conditionCollection", void 0), iV(this, "columnDataFactory", void 0), this.conditionCollection = e, this.columnDataFactory = t;
     }
     /**
      * Filter data based on the conditions collection.
@@ -65058,7 +65058,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     throw new TypeError("Private element is not present on this object");
   }
   var b0 = /* @__PURE__ */ new WeakSet();
-  class nU {
+  class iU {
     constructor(e, t) {
       let i = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : () => [];
       lOe(this, b0), uh(this, "hot", void 0), uh(this, "conditionCollection", void 0), uh(this, "columnDataFactory", void 0), uh(this, "changes", []), uh(this, "grouping", !1), uh(this, "latestEditedColumnPosition", -1), uh(this, "latestOrderStack", []), this.hot = e, this.conditionCollection = t, this.columnDataFactory = i, this.conditionCollection.addLocalHook("beforeRemove", (s) => eT(b0, this, dOe).call(this, s)), this.conditionCollection.addLocalHook("afterRemove", (s) => this.updateStatesAtColumn(s)), this.conditionCollection.addLocalHook("afterAdd", (s) => this.updateStatesAtColumn(s)), this.conditionCollection.addLocalHook("beforeClean", () => eT(b0, this, fOe).call(this)), this.conditionCollection.addLocalHook("afterClean", () => eT(b0, this, gOe).call(this));
@@ -65098,13 +65098,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       r === -1 && (r = this.latestEditedColumnPosition);
       const o = s.slice(0, r), a = s.slice(r);
       a.length && a[0].column === e && a.shift();
-      const l = c7(function(u, h) {
+      const l = u7(function(u, h) {
         let d = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : [];
-        const f = new lD(i.hot, !1), g = [].concat(u, d);
+        const f = new cD(i.hot, !1), g = [].concat(u, d);
         f.importAllConditions(g);
         const p = i.columnDataFactory(h);
         let m;
-        f.isEmpty() ? m = p : m = new tU(f, (y) => i.columnDataFactory(y)).filter(), m = ut(m, (y) => y.meta.visualRow);
+        f.isEmpty() ? m = p : m = new nU(f, (y) => i.columnDataFactory(y)).filter(), m = ut(m, (y) => y.meta.visualRow);
         const w = xv(m);
         return f.destroy(), Zl(p, (y) => w(y.meta.visualRow));
       })(o), c = [].concat(this.conditionCollection.getConditions(e));
@@ -65143,9 +65143,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.updateStatesAtColumn(n);
     });
   }
-  jt(nU, Li);
+  jt(iU, Li);
   function pOe(n) {
-    return _9({
+    return R9({
       initialPage: 0,
       size: () => n.length,
       onItemSelect: (t, i) => {
@@ -65211,12 +65211,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function bOe(n, e) {
-    iU(n, e), e.add(n);
+    sU(n, e), e.add(n);
   }
   function wOe(n, e, t) {
-    iU(n, e), e.set(n, t);
+    sU(n, e), e.set(n, t);
   }
-  function iU(n, e) {
+  function sU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Em(n, e, t) {
@@ -65246,7 +65246,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const YA = "filters", SOe = 250, iV = YA;
+  const YA = "filters", SOe = 250, sV = YA;
   var hh = /* @__PURE__ */ new WeakMap(), Rr = /* @__PURE__ */ new WeakSet();
   class _Oe extends Pt {
     static get PLUGIN_KEY() {
@@ -65283,7 +65283,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       if (this.enabled)
         return;
       this.filtersRowsMap = this.hot.rowIndexMapper.registerMap(this.pluginName, new bv()), this.dropdownMenuPlugin = this.hot.getPlugin("dropdownMenu");
-      const e = this.hot.getSettings().dropdownMenu, t = e && e.uiContainer || this.hot.rootDocument.body, i = (o) => (o.addLocalHook("accept", () => Us(Rr, this, sV).call(this, "accept")), o.addLocalHook("cancel", () => Us(Rr, this, sV).call(this, "cancel")), o.addLocalHook("change", (a) => Us(Rr, this, MOe).call(this, o, a)), o), s = () => `${this.hot.getTranslatedPhrase(bH)}:`, r = () => `${this.hot.getTranslatedPhrase(wH)}:`;
+      const e = this.hot.getSettings().dropdownMenu, t = e && e.uiContainer || this.hot.rootDocument.body, i = (o) => (o.addLocalHook("accept", () => Us(Rr, this, rV).call(this, "accept")), o.addLocalHook("cancel", () => Us(Rr, this, rV).call(this, "cancel")), o.addLocalHook("change", (a) => Us(Rr, this, MOe).call(this, o, a)), o), s = () => `${this.hot.getTranslatedPhrase(wH)}:`, r = () => `${this.hot.getTranslatedPhrase(vH)}:`;
       if (!this.components.get("filter_by_condition")) {
         const o = new UA(this.hot, {
           id: "filter_by_condition",
@@ -65291,7 +65291,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           addSeparator: !1,
           menuContainer: t
         });
-        o.addLocalHook("afterClose", () => Us(Rr, this, rV).call(this)), this.components.set("filter_by_condition", i(o));
+        o.addLocalHook("afterClose", () => Us(Rr, this, oV).call(this)), this.components.set("filter_by_condition", i(o));
       }
       if (this.components.get("filter_operators") || this.components.set("filter_operators", new IIe(this.hot, {
         id: "filter_operators",
@@ -65303,7 +65303,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           addSeparator: !0,
           menuContainer: t
         });
-        o.addLocalHook("afterClose", () => Us(Rr, this, rV).call(this)), this.components.set("filter_by_condition2", i(o));
+        o.addLocalHook("afterClose", () => Us(Rr, this, oV).call(this)), this.components.set("filter_by_condition2", i(o));
       }
       if (this.components.get("filter_by_value") || this.components.set("filter_by_value", i(new KIe(this.hot, {
         id: "filter_by_value",
@@ -65311,7 +65311,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }))), this.components.get("filter_action_bar") || this.components.set("filter_action_bar", i(new Mw(this.hot, {
         id: "filter_action_bar",
         name: "Action bar"
-      }))), this.conditionCollection || (this.conditionCollection = new lD(this.hot)), this.conditionUpdateObserver || (this.conditionUpdateObserver = new nU(this.hot, this.conditionCollection, (o) => this.getDataMapAtColumn(o)), this.conditionUpdateObserver.addLocalHook("update", (o) => Us(Rr, this, POe).call(this, o))), this.components.forEach((o) => o.show()), this.addHook("afterDropdownMenuDefaultOptions", (o) => Us(Rr, this, TOe).call(this, o)), this.addHook("afterDropdownMenuShow", () => Us(Rr, this, xOe).call(this)), this.addHook("afterDropdownMenuHide", () => Us(Rr, this, EOe).call(this)), this.addHook("afterChange", (o) => Us(Rr, this, ROe).call(this, o)), this.hot.getSettings().dropdownMenu && this.dropdownMenuPlugin && (this.dropdownMenuPlugin.disablePlugin(), this.dropdownMenuPlugin.enablePlugin()), !Tm(hh, this) && this.dropdownMenuPlugin.enabled) {
+      }))), this.conditionCollection || (this.conditionCollection = new cD(this.hot)), this.conditionUpdateObserver || (this.conditionUpdateObserver = new iU(this.hot, this.conditionCollection, (o) => this.getDataMapAtColumn(o)), this.conditionUpdateObserver.addLocalHook("update", (o) => Us(Rr, this, POe).call(this, o))), this.components.forEach((o) => o.show()), this.addHook("afterDropdownMenuDefaultOptions", (o) => Us(Rr, this, TOe).call(this, o)), this.addHook("afterDropdownMenuShow", () => Us(Rr, this, xOe).call(this)), this.addHook("afterDropdownMenuHide", () => Us(Rr, this, EOe).call(this)), this.addHook("afterChange", (o) => Us(Rr, this, ROe).call(this, o)), this.hot.getSettings().dropdownMenu && this.dropdownMenuPlugin && (this.dropdownMenuPlugin.disablePlugin(), this.dropdownMenuPlugin.enablePlugin()), !Tm(hh, this) && this.dropdownMenuPlugin.enabled) {
         const o = this.dropdownMenuPlugin.menu, a = [
           // A fake menu item that once focused allows escaping from the focus navigation (using Tab keys)
           // to the menu navigation using arrow keys.
@@ -65359,7 +65359,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           const e = this.hot.getSelected();
           this.clearConditions(), this.filter(), e && this.hot.selectCells(e);
         },
-        group: iV
+        group: sV
       });
     }
     /**
@@ -65368,7 +65368,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(iV);
+      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(sV);
     }
     /* eslint-disable jsdoc/require-description-complete-sentence */
     /**
@@ -65592,7 +65592,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
             dateFormat: f,
             locale: g
           },
-          value: Y9(p)
+          value: G9(p)
         });
       }), i;
     }
@@ -65634,7 +65634,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     getOperationBasedOnArguments(e, t, i, s) {
       let r = e;
-      return r === KS && t.command.key !== Ri && i.command.key !== Ri && s.command.key !== Ri ? r = oD : s.command.key !== Ri && (t.command.key === Ri || i.command.key === Ri) && (r = au), r;
+      return r === KS && t.command.key !== Ri && i.command.key !== Ri && s.command.key !== Ri ? r = aD : s.command.key !== Ri && (t.command.key === Ri || i.command.key === Ri) && (r = au), r;
     }
     /**
      * On action bar submit listener.
@@ -65677,7 +65677,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     _createDataFilter() {
       let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : this.conditionCollection;
-      return new tU(e, (t) => this.getDataMapAtColumn(t));
+      return new nU(e, (t) => this.getDataMapAtColumn(t));
     }
     /**
      * It updates the components state. The state is triggered by ConditionUpdateObserver, which
@@ -65774,7 +65774,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       n.items.push(e.getMenuItemDescriptor());
     });
   }
-  function sV(n) {
+  function rV(n) {
     var e;
     if (n === "accept") {
       const i = this.getSelectedColumn();
@@ -65795,7 +65795,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function MOe(n, e) {
     this.updateDependentComponentsVisibility(), n.constructor === UA && !e.inputsCount && this.setListeningDropdownMenu();
   }
-  function rV() {
+  function oV() {
     this.setListeningDropdownMenu();
   }
   function AOe(n, e) {
@@ -65821,8 +65821,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       this.components.get("filter_by_condition").updateState(r[0], i), this.components.get("filter_by_condition2").updateState(r[1], i), this.components.get("filter_operators").updateState(o, i), this.components.get("filter_by_value").updateState(n);
     }
   }
-  const sU = "internal-use-in-handsontable", GA = {
-    licenseKey: sU,
+  const rU = "internal-use-in-handsontable", GA = {
+    licenseKey: rU,
     useArrayArithmetic: !0,
     useColumnIndex: !1,
     useStats: !1,
@@ -65847,7 +65847,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     decimalSeparator: ".",
     language: "enGB"
   };
-  function rU(n) {
+  function oU(n) {
     var e;
     return {
       maxColumns: n.maxColumns,
@@ -65855,12 +65855,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       language: (e = n[Ki]) === null || e === void 0 || (e = e.language) === null || e === void 0 ? void 0 : e.langCode
     };
   }
-  function oU(n) {
+  function aU(n) {
     return Object.keys(n).reduce((e, t) => (t !== "hyperformula" && (e[t] = n[t]), e), {});
   }
   function IOe(n) {
     var e;
-    const t = n[Ki], i = oU(t != null && (e = t.engine) !== null && e !== void 0 && e.hyperformula ? t.engine : {}), s = rU(n);
+    const t = n[Ki], i = aU(t != null && (e = t.engine) !== null && e !== void 0 && e.hyperformula ? t.engine : {}), s = oU(n);
     return {
       ...GA,
       ...i,
@@ -65869,7 +65869,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   function OOe(n) {
     var e;
-    const t = n[Ki], i = oU(t != null && (e = t.engine) !== null && e !== void 0 && e.hyperformula ? t.engine : {}), s = rU(n);
+    const t = n[Ki], i = aU(t != null && (e = t.engine) !== null && e !== void 0 && e.hyperformula ? t.engine : {}), s = oU(n);
     return {
       ...i,
       ...s
@@ -65882,7 +65882,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     const n = "engine_relationship", e = Vo(Ki);
     return e.hasItem(n) || e.register(n, /* @__PURE__ */ new Map()), e.getItem(n);
   }
-  function cD() {
+  function uD() {
     const n = "shared_engine_usage", e = Vo(Ki);
     return e.hasItem(n) || e.register(n, /* @__PURE__ */ new Map()), e.getItem(n);
   }
@@ -65894,16 +65894,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       var s;
       return DOe((s = i.hyperformula) !== null && s !== void 0 ? s : i, e, n);
     } else if (typeof i == "object" && sn(i.hyperformula)) {
-      const r = r1(), o = cD().get(i);
+      const r = r1(), o = uD().get(i);
       return r.has(i) || r.set(i, []), r.get(i).push(n), o && o.push(n.guid), i.getConfig().licenseKey || i.updateConfig({
-        licenseKey: sU
+        licenseKey: rU
       }), (i.getConfig().leapYear1900 !== GA.leapYear1900 || AR(i.getConfig().nullDate, GA.nullDate) === !1) && Vt(Wt`If you use HyperFormula with Handsontable, keep the default \`leapYear1900\` and \`nullDate\` 
       settings. Otherwise, HyperFormula's dates may not sync correctly with Handsontable's dates.`), i;
     }
     return null;
   }
   function DOe(n, e, t) {
-    const i = e[Ki], s = IOe(e), r = r1(), o = cD();
+    const i = e[Ki], s = IOe(e), r = r1(), o = uD();
     NOe(n, i.functions), LOe(n, i.language);
     const a = n.buildEmpty(s);
     return r.set(a, [t]), o.set(a, [t.guid]), $Oe(a, i.namedExpressions), a.on("sheetAdded", () => {
@@ -65912,14 +65912,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       a.rebuildAndRecalculate();
     }), a;
   }
-  function oV(n) {
+  function aV(n) {
     var e;
     const t = r1(), i = t.size === 0 ? [] : Array.from((e = t.get(n)) !== null && e !== void 0 ? e : []);
     return new Map(i.map((s) => [s.getPlugin("formulas").sheetId, s]));
   }
-  function aV(n, e) {
+  function lV(n, e) {
     if (n) {
-      const t = r1(), i = t.get(n), s = cD(), r = s.get(n);
+      const t = r1(), i = t.get(n), s = uD(), r = s.get(n);
       i && i.includes(e) && (i.splice(i.indexOf(e), 1), i.length === 0 && t.delete(n)), r && r.includes(e.guid) && (r.splice(r.indexOf(e.guid), 1), r.length === 0 && (s.delete(n), n.destroy()));
     }
   }
@@ -65967,29 +65967,29 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function FOe(n, e) {
     return (sn(e) || !n.doesSheetExist(e)) && (e = n.addSheet(e)), e;
   }
-  const aU = "DD/MM/YYYY";
-  function lU(n) {
+  const lU = "DD/MM/YYYY";
+  function cU(n) {
     return typeof n == "string" && n.charAt(0) === "'" && n.charAt(1) === "=";
   }
   function BOe(n) {
-    return lU(n) ? n.substr(1) : n;
+    return cU(n) ? n.substr(1) : n;
   }
   function VOe(n) {
     return typeof n == "string" && n.startsWith("=");
   }
-  function uD(n, e) {
+  function hD(n, e) {
     return typeof n == "string" && e === "date";
   }
-  function cU(n, e) {
+  function uU(n, e) {
     return le(n, e, !0).isValid();
   }
-  function uU(n, e) {
-    return le(n, e, !0).format(aU);
+  function hU(n, e) {
+    return le(n, e, !0).format(lU);
   }
   function WOe(n, e) {
-    return le(n, aU, !0).format(e);
+    return le(n, lU, !0).format(e);
   }
-  function hU(n, e) {
+  function dU(n, e) {
     const i = new Date(Date.UTC(0, 0, n + -1));
     return le(i).format(e);
   }
@@ -66022,7 +66022,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       });
     }), n;
   }
-  function hD(n, e, t) {
+  function dD(n, e, t) {
     const i = zOe(n, jOe(n, e, t));
     return UOe(i);
   }
@@ -66033,17 +66033,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function fn(n, e) {
-    return n.get(dU(n, e));
+    return n.get(fU(n, e));
   }
   function Rc(n, e, t) {
-    return n.set(dU(n, e), t), t;
+    return n.set(fU(n, e), t), t;
   }
-  function dU(n, e, t) {
+  function fU(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
   var Mm = /* @__PURE__ */ new WeakMap(), xc = /* @__PURE__ */ new WeakMap(), Bs = /* @__PURE__ */ new WeakMap(), w0 = /* @__PURE__ */ new WeakMap(), tT = /* @__PURE__ */ new WeakMap(), nT = /* @__PURE__ */ new WeakMap(), v0 = /* @__PURE__ */ new WeakMap();
-  class lV {
+  class cV {
     constructor(e, t, i) {
       dh(this, Mm, void 0), dh(this, xc, void 0), dh(this, Bs, void 0), dh(this, w0, []), dh(this, tT, []), dh(this, nT, void 0), dh(this, v0, []), Rc(Mm, this, e), Rc(xc, this, t), Rc(Bs, this, i);
     }
@@ -66112,7 +66112,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     calculateAndSyncMoves(e, t) {
       if (fn(Bs, this).isPerformingUndoRedo() || e === !1 || t === !1)
         return;
-      const i = hD(fn(tT, this), fn(nT, this), fn(xc, this).getNumberOfIndexes());
+      const i = dD(fn(tT, this), fn(nT, this), fn(xc, this).getNumberOfIndexes());
       fn(Bs, this).getSheetId() === null ? fn(Bs, this).getPostponeAction(() => this.syncMoves(i)) : this.syncMoves(i);
     }
     /**
@@ -66152,19 +66152,19 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function fl(n, e) {
-    return n.get(fU(n, e));
+    return n.get(gU(n, e));
   }
   function gh(n, e, t) {
-    return n.set(fU(n, e), t), t;
+    return n.set(gU(n, e), t), t;
   }
-  function fU(n, e, t) {
+  function gU(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
   var y0 = /* @__PURE__ */ new WeakMap(), C0 = /* @__PURE__ */ new WeakMap(), iT = /* @__PURE__ */ new WeakMap(), sT = /* @__PURE__ */ new WeakMap(), rT = /* @__PURE__ */ new WeakMap(), oT = /* @__PURE__ */ new WeakMap(), aT = /* @__PURE__ */ new WeakMap();
   class KOe {
     constructor(e, t, i) {
-      fh(this, y0, void 0), fh(this, C0, void 0), fh(this, iT, void 0), fh(this, sT, !1), fh(this, rT, !1), fh(this, oT, null), fh(this, aT, null), gh(y0, this, new lV("row", e, this)), gh(C0, this, new lV("column", t, this)), gh(iT, this, i);
+      fh(this, y0, void 0), fh(this, C0, void 0), fh(this, iT, void 0), fh(this, sT, !1), fh(this, rT, !1), fh(this, oT, null), fh(this, aT, null), gh(y0, this, new cV("row", e, this)), gh(C0, this, new cV("column", t, this)), gh(iT, this, i);
     }
     /**
      * Gets index synchronizer for a particular axis.
@@ -66235,7 +66235,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function qOe(n, e) {
-    gU(n, e), e.add(n);
+    pU(n, e), e.add(n);
   }
   function Nf(n, e, t) {
     return (e = XOe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
@@ -66255,9 +66255,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return (e === "string" ? String : Number)(n);
   }
   function lT(n, e, t) {
-    gU(n, e), e.set(n, t);
+    pU(n, e), e.set(n, t);
   }
-  function gU(n, e) {
+  function pU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function bu(n, e, t) {
@@ -66278,11 +66278,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ee.getSingleton().register("afterSheetRenamed");
   Ee.getSingleton().register("afterFormulasValuesUpdate");
   const mp = (n) => n === "UndoRedo.undo" || n === "UndoRedo.redo" || n === "auto";
-  var ec = /* @__PURE__ */ new WeakMap(), dD = /* @__PURE__ */ new WeakMap(), Am = /* @__PURE__ */ new WeakMap(), qt = /* @__PURE__ */ new WeakSet();
+  var ec = /* @__PURE__ */ new WeakMap(), fD = /* @__PURE__ */ new WeakMap(), Am = /* @__PURE__ */ new WeakMap(), qt = /* @__PURE__ */ new WeakSet();
   class eke extends Pt {
     constructor() {
       var e;
-      super(...arguments), e = this, qOe(this, qt), lT(this, ec, !1), lT(this, dD, !1), lT(this, Am, [["valuesUpdated", function() {
+      super(...arguments), e = this, qOe(this, qt), lT(this, ec, !1), lT(this, fD, !1), lT(this, Am, [["valuesUpdated", function() {
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
         return Ut(qt, e, mke).call(e, ...i);
@@ -66351,19 +66351,19 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         this.addHook("beforeLoadData", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
-          return Ut(qt, t, cV).call(t, ...s);
+          return Ut(qt, t, uV).call(t, ...s);
         }), this.addHook("afterLoadData", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
-          return Ut(qt, t, uV).call(t, ...s);
+          return Ut(qt, t, hV).call(t, ...s);
         }), this.addHook("beforeUpdateData", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
-          return Ut(qt, t, cV).call(t, ...s);
+          return Ut(qt, t, uV).call(t, ...s);
         }), this.addHook("afterUpdateData", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
-          return Ut(qt, t, uV).call(t, ...s);
+          return Ut(qt, t, hV).call(t, ...s);
         }), this.addHook("modifyData", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
@@ -66383,11 +66383,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         }), this.addHook("afterSetDataAtCell", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
-          return Ut(qt, t, hV).call(t, ...s);
+          return Ut(qt, t, dV).call(t, ...s);
         }), this.addHook("afterSetDataAtRowProp", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
-          return Ut(qt, t, hV).call(t, ...s);
+          return Ut(qt, t, dV).call(t, ...s);
         }), this.addHook("beforeCreateRow", function() {
           for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
             s[r] = arguments[r];
@@ -66473,7 +66473,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       Eg(Am, this).forEach((e) => {
         let [t, i] = e;
         return this.engine.off(t, i);
-      }), aV(this.engine, this.hot), this.engine = null, super.disablePlugin();
+      }), lV(this.engine, this.hot), this.engine = null, super.disablePlugin();
     }
     /**
      * Triggered on `updateSettings`.
@@ -66499,7 +66499,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         var t;
         let [i, s] = e;
         return (t = this.engine) === null || t === void 0 ? void 0 : t.off(i, s);
-      }), bu(Am, this, null), aV(this.engine, this.hot), this.engine = null, super.destroy();
+      }), bu(Am, this, null), lV(this.engine, this.hot), this.engine = null, super.destroy();
     }
     /**
      * Add a sheet to the shared HyperFormula instance.
@@ -66512,7 +66512,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * engine, the created sheet name otherwise.
      */
     addSheet(e, t) {
-      if (Me(t) && !az(t))
+      if (Me(t) && !lz(t))
         return Vt("The provided data should be an array of arrays."), !1;
       if (e != null && this.engine.doesSheetExist(e))
         return Vt("Sheet with the provided name already exists."), !1;
@@ -66531,7 +66531,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     switchSheet(e) {
       if (!this.engine.doesSheetExist(e)) {
-        LO(`The sheet named \`${e}\` does not exist, switch aborted.`);
+        $O(`The sheet named \`${e}\` does not exist, switch aborted.`);
         return;
       }
       this.sheetName = e;
@@ -66586,7 +66586,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         var r;
         const o = s == null || (r = s.address) === null || r === void 0 ? void 0 : r.sheet;
         o !== void 0 && (i.has(o) || i.add(o));
-      }), oV(this.engine).forEach((s, r) => {
+      }), aV(this.engine).forEach((s, r) => {
         if ((t || r !== this.sheetId) && i.has(r)) {
           var o;
           s.render(), (o = s.view) === null || o === void 0 || o.adjustElementsSize();
@@ -66621,7 +66621,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           return;
         const u = r == null || (a = r.address) === null || a === void 0 ? void 0 : a.sheet, h = i(r);
         if (u !== void 0 && !s.has(h)) {
-          const d = oV(this.engine).get(u);
+          const d = aV(this.engine).get(u);
           if (!d)
             return;
           d.validateCell(d.getDataAtCell(l, c), d.getCellMeta(l, c), () => {
@@ -66649,7 +66649,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         return;
       }
       const r = this.hot.getCellMeta(e, t);
-      return uD(i, r.type) && (cU(i, r.dateFormat) ? i = uU(i, r.dateFormat) : VOe(i) === !1 && (i = `'${i}`)), this.engine.setCellContents(s, i);
+      return hD(i, r.type) && (uU(i, r.dateFormat) ? i = hU(i, r.dateFormat) : VOe(i) === !1 && (i = `'${i}`)), this.engine.setCellContents(s, i);
     }
   }
   function tke(n, e, t) {
@@ -66661,7 +66661,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         sheet: this.sheetId
       }, r = this.hot.getCellMeta(e, i);
       let o = this.engine.getCellValue(s);
-      return r.type === "date" && Gi(o) && (o = hU(o, r.dateFormat)), typeof o == "object" && o !== null ? o.value : o;
+      return r.type === "date" && Gi(o) && (o = dU(o, r.dateFormat)), typeof o == "object" && o !== null ? o.value : o;
     }
     return n;
   }
@@ -66713,12 +66713,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     for (let R = 0; R < f.length; R += 1)
       for (let _ = 0; _ < f[R].length; _ += 1) {
         const x = f[R][_], M = g + R % y, I = p + _ % C, A = this.hot.getCellMeta(M, I);
-        uD(x, A.type) && (x.startsWith("'") ? f[R][_] = x.slice(1) : this.isFormulaCellType(M, I, this.sheetId) === !1 && (f[R][_] = WOe(x, A.dateFormat)));
+        hD(x, A.type) && (x.startsWith("'") ? f[R][_] = x.slice(1) : this.isFormulaCellType(M, I, this.sheetId) === !1 && (f[R][_] = WOe(x, A.dateFormat)));
       }
     return f;
   }
-  function cV(n, e) {
-    (arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "").includes(is(Ki)) || bu(dD, this, sn(this.hot.getSettings().data));
+  function uV(n, e) {
+    (arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "").includes(is(Ki)) || bu(fD, this, sn(this.hot.getSettings().data));
   }
   function ike() {
     const n = this.hot.getSourceDataArray();
@@ -66726,13 +66726,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     n.forEach((t, i) => {
       t.forEach((s, r) => {
         const o = this.hot.getCellMeta(i, r), a = o.dateFormat;
-        uD(s, o.type) && (e = !0, cU(s, a) ? n[i][r] = uU(s, a) : this.isFormulaCellType(i, r) === !1 && (n[i][r] = `'${s}`));
+        hD(s, o.type) && (e = !0, uU(s, a) ? n[i][r] = hU(s, a) : this.isFormulaCellType(i, r) === !1 && (n[i][r] = `'${s}`));
       });
     }), e === !0 && (bu(ec, this, !0), this.engine.setSheetContent(this.sheetId, n), bu(ec, this, !1));
   }
-  function uV(n, e) {
+  function hV(n, e) {
     if (!(arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "").includes(is(Ki)))
-      if (this.sheetName = FOe(this.engine, this.hot.getSettings()[Ki].sheetName), Eg(dD, this))
+      if (this.sheetName = FOe(this.engine, this.hot.getSettings()[Ki].sheetName), Eg(fD, this))
         this.switchSheet(this.sheetName);
       else {
         const i = this.hot.getSourceDataArray();
@@ -66750,7 +66750,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (s === null || e === null)
       return;
     if (!this.isFormulaCellType(s, e) && this.getCellType(s, e) !== "ARRAY") {
-      lU(t.value) && (t.value = BOe(t.value));
+      cU(t.value) && (t.value = BOe(t.value));
       return;
     }
     const o = {
@@ -66759,7 +66759,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       sheet: this.sheetId
     };
     let a = this.engine.getCellValue(o), l = this.hot.getCellsMeta().find((u) => u.visualRow === s && u.visualCol === e);
-    l === void 0 && (l = {}), l.type === "date" && Gi(a) && (a = hU(a, l.dateFormat));
+    l === void 0 && (l = {}), l.type === "date" && Gi(a) && (a = dU(a, l.dateFormat));
     const c = typeof a == "object" && a !== null ? a.value : a;
     t.value = c;
   }
@@ -66779,7 +66779,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
     t.value = this.engine.getCellSerialized(l);
   }
-  function hV(n, e) {
+  function dV(n, e) {
     if (mp(e))
       return;
     const t = [], i = [], s = this.engine.batch(() => {
@@ -66918,7 +66918,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           const [, i, , s] = e;
           i - s !== 0 && (t = 1);
         }
-        return this.getTranslatedPhrase(Kk, t);
+        return this.getTranslatedPhrase(qk, t);
       },
       callback() {
         const {
@@ -66943,7 +66943,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       key: "hidden_columns_show",
       name() {
         const t = e.length > 1 ? 1 : 0;
-        return this.getTranslatedPhrase(qk, t);
+        return this.getTranslatedPhrase(Xk, t);
       },
       callback() {
         var t, i;
@@ -66980,12 +66980,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function Rke(n, e) {
-    pU(n, e), e.add(n);
+    mU(n, e), e.add(n);
   }
-  function dV(n, e, t) {
-    pU(n, e), e.set(n, t);
+  function fV(n, e, t) {
+    mU(n, e), e.set(n, t);
   }
-  function pU(n, e) {
+  function mU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function er(n, e) {
@@ -67006,7 +67006,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   var xa = /* @__PURE__ */ new WeakMap(), Zo = /* @__PURE__ */ new WeakMap(), ph = /* @__PURE__ */ new WeakSet();
   class Eke extends Pt {
     constructor() {
-      super(...arguments), Rke(this, ph), dV(this, xa, {}), dV(this, Zo, null);
+      super(...arguments), Rke(this, ph), fV(this, xa, {}), fV(this, Zo, null);
     }
     static get PLUGIN_KEY() {
       return cT;
@@ -67210,7 +67210,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           const [i, , s] = e;
           i - s !== 0 && (t = 1);
         }
-        return this.getTranslatedPhrase(Xk, t);
+        return this.getTranslatedPhrase(Qk, t);
       },
       callback() {
         const {
@@ -67235,7 +67235,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       key: "hidden_rows_show",
       name() {
         const t = e.length > 1 ? 1 : 0;
-        return this.getTranslatedPhrase(Qk, t);
+        return this.getTranslatedPhrase(Zk, t);
       },
       callback() {
         var t, i;
@@ -67272,12 +67272,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function Dke(n, e) {
-    mU(n, e), e.add(n);
+    bU(n, e), e.add(n);
   }
-  function fV(n, e, t) {
-    mU(n, e), e.set(n, t);
+  function gV(n, e, t) {
+    bU(n, e), e.set(n, t);
   }
-  function mU(n, e) {
+  function bU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Or(n, e) {
@@ -67298,7 +67298,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   var Wl = /* @__PURE__ */ new WeakMap(), Jo = /* @__PURE__ */ new WeakMap(), mh = /* @__PURE__ */ new WeakSet();
   class Lke extends Pt {
     constructor() {
-      super(...arguments), Dke(this, mh), fV(this, Wl, {}), fV(this, Jo, null);
+      super(...arguments), Dke(this, mh), gV(this, Wl, {}), gV(this, Jo, null);
     }
     static get PLUGIN_KEY() {
       return uT;
@@ -67493,7 +67493,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "freeze_column",
       name() {
-        return this.getTranslatedPhrase(Ik);
+        return this.getTranslatedPhrase(Ok);
       },
       callback(e, t) {
         const [{
@@ -67514,7 +67514,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return {
       key: "unfreeze_column",
       name() {
-        return this.getTranslatedPhrase(Ok);
+        return this.getTranslatedPhrase(kk);
       },
       callback(e, t) {
         const [{
@@ -67532,12 +67532,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function Yke(n, e) {
-    bU(n, e), e.add(n);
+    wU(n, e), e.add(n);
   }
   function Gke(n, e, t) {
-    bU(n, e), e.set(n, t);
+    wU(n, e), e.set(n, t);
   }
-  function bU(n, e) {
+  function wU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function KA(n, e) {
@@ -67554,14 +67554,14 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ee.getSingleton().register("afterColumnFreeze");
   Ee.getSingleton().register("beforeColumnUnfreeze");
   Ee.getSingleton().register("afterColumnUnfreeze");
-  const gV = "manualColumnFreeze", Kke = 110;
+  const pV = "manualColumnFreeze", Kke = 110;
   var kh = /* @__PURE__ */ new WeakMap(), dT = /* @__PURE__ */ new WeakSet();
   class qke extends Pt {
     constructor() {
       super(...arguments), Yke(this, dT), Gke(this, kh, !1);
     }
     static get PLUGIN_KEY() {
-      return gV;
+      return pV;
     }
     static get PLUGIN_PRIORITY() {
       return Kke;
@@ -67573,7 +67573,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isEnabled() {
-      return !!this.hot.getSettings()[gV];
+      return !!this.hot.getSettings()[pV];
     }
     /**
      * Enables the plugin functionality for this Handsontable instance.
@@ -67647,8 +67647,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const fT = 0, pV = 1, mV = 2, Lf = "px";
-  let wU = class {
+  const fT = 0, mV = 1, bV = 2, Lf = "px";
+  let vU = class {
     constructor(e) {
       S0(this, "hot", void 0), S0(this, "_element", null), S0(this, "state", fT), S0(this, "inlineProperty", void 0), this.hot = e, this.inlineProperty = e.isRtl() ? "right" : "left";
     }
@@ -67658,13 +67658,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {HTMLElement} wrapper Element which are parent for our UI element.
      */
     appendTo(e) {
-      e.appendChild(this._element), this.state = mV;
+      e.appendChild(this._element), this.state = bV;
     }
     /**
      * Method for create UI element. Only create, without append to table.
      */
     build() {
-      this.state === fT && (this._element = this.hot.rootDocument.createElement("div"), this.state = pV);
+      this.state === fT && (this._element = this.hot.rootDocument.createElement("div"), this.state = mV);
     }
     /**
      * Method for remove UI element.
@@ -67678,7 +67678,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isAppended() {
-      return this.state === mV;
+      return this.state === bV;
     }
     /**
      * Check if UI element are built.
@@ -67686,7 +67686,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isBuilt() {
-      return this.state >= pV;
+      return this.state >= mV;
     }
     /**
      * Setter for position.
@@ -67752,7 +67752,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   };
   const eHe = "ht__manualColumnMove--backlight";
-  let tHe = class extends wU {
+  let tHe = class extends vU {
     /**
      * Custom className on build process.
      */
@@ -67761,7 +67761,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   };
   const nHe = "ht__manualColumnMove--guideline";
-  let iHe = class extends wU {
+  let iHe = class extends vU {
     /**
      * Custom className on build process.
      */
@@ -67770,12 +67770,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   };
   function sHe(n, e) {
-    vU(n, e), e.add(n);
+    yU(n, e), e.add(n);
   }
   function ho(n, e, t) {
-    vU(n, e), e.set(n, t);
+    yU(n, e), e.set(n, t);
   }
-  function vU(n, e) {
+  function yU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Ns(n, e, t) {
@@ -67790,7 +67790,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   Ee.getSingleton().register("beforeColumnMove");
   Ee.getSingleton().register("afterColumnMove");
-  const gT = "manualColumnMove", rHe = 120, bV = "ht__manualColumnMove", QS = "show-ui", qA = "on-moving--columns", XA = "after-selection--columns";
+  const gT = "manualColumnMove", rHe = 120, wV = "ht__manualColumnMove", QS = "show-ui", qA = "on-moving--columns", XA = "after-selection--columns";
   var fs = /* @__PURE__ */ new WeakMap(), Vc = /* @__PURE__ */ new WeakMap(), jl = /* @__PURE__ */ new WeakMap(), IC = /* @__PURE__ */ new WeakMap(), Zc = /* @__PURE__ */ new WeakMap(), us = /* @__PURE__ */ new WeakMap(), _0 = /* @__PURE__ */ new WeakMap(), Tr = /* @__PURE__ */ new WeakMap(), Zf = /* @__PURE__ */ new WeakMap(), ZS = /* @__PURE__ */ new WeakMap(), kb = /* @__PURE__ */ new WeakMap(), bh = /* @__PURE__ */ new WeakSet();
   class oHe extends Pt {
     constructor() {
@@ -67828,7 +67828,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
         return Dc(bh, e, dHe).call(e, ...i);
-      }), this.buildPluginUI(), this.registerEvents(), ae(this.hot.rootElement, bV), super.enablePlugin());
+      }), this.buildPluginUI(), this.registerEvents(), ae(this.hot.rootElement, wV), super.enablePlugin());
     }
     /**
      * Updates the plugin's state.
@@ -67843,7 +67843,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Disables the plugin functionality for this Handsontable instance.
      */
     disablePlugin() {
-      Ue(this.hot.rootElement, bV), this.unregisterEvents(), Pe(fs, this).destroy(), Pe(Vc, this).destroy(), super.disablePlugin();
+      Ue(this.hot.rootElement, wV), this.unregisterEvents(), Pe(fs, this).destroy(), Pe(Vc, this).destroy(), super.disablePlugin();
     }
     /**
      * Moves a single column.
@@ -68097,7 +68097,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     } = o, d = Math.min(u.col, h.col), f = Math.max(u.col, h.col);
     if (e.row < 0 && e.col >= d && e.col <= f) {
       i.column = !0, Ns(Zc, this, !0);
-      const g = t.firstChild ? x7(n, t.firstChild).x : n.offsetX;
+      const g = t.firstChild ? E7(n, t.firstChild).x : n.offsetX;
       Pe(us, this).eventPageX = n.pageX, Ns(Tr, this, e.col), Pe(us, this).TD = t, Pe(us, this).col = e.col, Ns(jl, this, this.prepareColumnsToMoving(d, f)), Ns(ZS, this, !!this.hot.getSettings().rowHeaders), Ns(IC, this, this.hot.countCols()), Ns(kb, this, this.hot.getSettings().fixedColumnsStart), Ns(Zf, this, gi(this.hot.rootElement).left);
       const p = Pe(ZS, this) ? -1 : 0, m = s.holder.scrollTop + s.getColumnHeaderHeight(0) + 1, w = e.col < Pe(kb, this), y = this.hot.view._wt.wtOverlays.inlineStartOverlay.getOverlayOffset(), C = Math.abs(g - (this.hot.isRtl() ? t.offsetWidth : 0)), R = this.getColumnsWidth(d, e.col - 1) + C, _ = this.getColumnsWidth(p, d - 1) + (w ? y : 0) + R;
       Pe(fs, this).setPosition(m, _), Pe(fs, this).setSize(this.getColumnsWidth(d, f), s.hider.offsetHeight - m), Pe(fs, this).setOffset(null, -R), ae(this.hot.rootElement, qA);
@@ -68129,12 +68129,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.moveBySettingsOrLoad();
   }
   function fHe(n, e) {
-    yU(n, e), e.add(n);
+    CU(n, e), e.add(n);
   }
   function Wi(n, e, t) {
-    yU(n, e), e.set(n, t);
+    CU(n, e), e.set(n, t);
   }
-  function yU(n, e) {
+  function CU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Vn(n, e, t) {
@@ -68147,7 +68147,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const JS = "manualColumnResize", gHe = 130, wV = "manualColumnWidths";
+  const JS = "manualColumnResize", gHe = 130, vV = "manualColumnWidths";
   var El = /* @__PURE__ */ new WeakMap(), R0 = /* @__PURE__ */ new WeakMap(), Xs = /* @__PURE__ */ new WeakMap(), e_ = /* @__PURE__ */ new WeakMap(), va = /* @__PURE__ */ new WeakMap(), pHe = /* @__PURE__ */ new WeakMap(), Tg = /* @__PURE__ */ new WeakMap(), x0 = /* @__PURE__ */ new WeakMap(), Ps = /* @__PURE__ */ new WeakMap(), Cl = /* @__PURE__ */ new WeakMap(), Md = /* @__PURE__ */ new WeakMap(), t_ = /* @__PURE__ */ new WeakMap(), Hb = /* @__PURE__ */ new WeakMap(), Db = /* @__PURE__ */ new WeakMap(), Zs = /* @__PURE__ */ new WeakMap(), Nb = /* @__PURE__ */ new WeakMap(), ea = /* @__PURE__ */ new WeakSet();
   class mHe extends Pt {
     static get PLUGIN_KEY() {
@@ -68205,7 +68205,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @fires Hooks#persistentStateSave
      */
     saveManualColumnWidths() {
-      this.hot.runHooks("persistentStateSave", wV, we(Zs, this).getValues());
+      this.hot.runHooks("persistentStateSave", vV, we(Zs, this).getValues());
     }
     /**
      * Loads the previously saved sizes using the persistentState plugin (the {@link Options#persistentState} option has to be enabled).
@@ -68215,7 +68215,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     loadManualColumnWidths() {
       const e = {};
-      return this.hot.runHooks("persistentStateLoad", wV, e), e.value;
+      return this.hot.runHooks("persistentStateLoad", vV, e), e.value;
     }
     /**
      * Sets the new width for specified column index.
@@ -68397,7 +68397,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }, !0);
   }
   function wHe(n) {
-    if (!EO(n.target) && we(t_, this) !== !0 && this.checkIfColumnHeader(n.target)) {
+    if (!TO(n.target) && we(t_, this) !== !0 && this.checkIfColumnHeader(n.target)) {
       const e = this.getClosestTHParent(n.target);
       if (!e)
         return;
@@ -68465,8 +68465,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const mT = 0, vV = 1, yV = 2, $f = "px";
-  let CU = class {
+  const mT = 0, yV = 1, CV = 2, $f = "px";
+  let SU = class {
     constructor(e) {
       pT(this, "hot", void 0), pT(this, "_element", null), pT(this, "state", mT), this.hot = e;
     }
@@ -68476,13 +68476,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {HTMLElement} wrapper Element which are parent for our UI element.
      */
     appendTo(e) {
-      e.appendChild(this._element), this.state = yV;
+      e.appendChild(this._element), this.state = CV;
     }
     /**
      * Method for create UI element. Only create, without append to table.
      */
     build() {
-      this.state === mT && (this._element = this.hot.rootDocument.createElement("div"), this.state = vV);
+      this.state === mT && (this._element = this.hot.rootDocument.createElement("div"), this.state = yV);
     }
     /**
      * Method for remove UI element.
@@ -68496,7 +68496,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isAppended() {
-      return this.state === yV;
+      return this.state === CV;
     }
     /**
      * Check if UI element are built.
@@ -68504,7 +68504,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {boolean}
      */
     isBuilt() {
-      return this.state >= vV;
+      return this.state >= yV;
     }
     /**
      * Setter for position.
@@ -68568,7 +68568,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   };
   const MHe = "ht__manualRowMove--backlight";
-  class AHe extends CU {
+  class AHe extends SU {
     /**
      * Custom className on build process.
      */
@@ -68577,7 +68577,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   const PHe = "ht__manualRowMove--guideline";
-  class IHe extends CU {
+  class IHe extends SU {
     /**
      * Custom className on build process.
      */
@@ -68586,12 +68586,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function OHe(n, e) {
-    SU(n, e), e.add(n);
+    _U(n, e), e.add(n);
   }
   function Ff(n, e, t) {
-    SU(n, e), e.set(n, t);
+    _U(n, e), e.set(n, t);
   }
-  function SU(n, e) {
+  function _U(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function qh(n, e, t) {
@@ -68606,7 +68606,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   }
   Ee.getSingleton().register("beforeRowMove");
   Ee.getSingleton().register("afterRowMove");
-  const bT = "manualRowMove", kHe = 140, CV = "ht__manualRowMove", n_ = "show-ui", QA = "on-moving--rows", ZA = "after-selection--rows";
+  const bT = "manualRowMove", kHe = 140, SV = "ht__manualRowMove", n_ = "show-ui", QA = "on-moving--rows", ZA = "after-selection--rows";
   var gs = /* @__PURE__ */ new WeakMap(), Wc = /* @__PURE__ */ new WeakMap(), zl = /* @__PURE__ */ new WeakMap(), Jc = /* @__PURE__ */ new WeakMap(), Ls = /* @__PURE__ */ new WeakMap(), E0 = /* @__PURE__ */ new WeakMap(), wh = /* @__PURE__ */ new WeakSet();
   class HHe extends Pt {
     constructor() {
@@ -68644,7 +68644,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
         return Nc(wh, e, BHe).call(e, ...i);
-      }), this.buildPluginUI(), this.registerEvents(), ae(this.hot.rootElement, CV), super.enablePlugin());
+      }), this.buildPluginUI(), this.registerEvents(), ae(this.hot.rootElement, SV), super.enablePlugin());
     }
     /**
      * Updates the plugin's state.
@@ -68659,7 +68659,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Disables the plugin functionality for this Handsontable instance.
      */
     disablePlugin() {
-      Ue(this.hot.rootElement, CV), this.unregisterEvents(), Ke(gs, this).destroy(), Ke(Wc, this).destroy(), super.disablePlugin();
+      Ue(this.hot.rootElement, SV), this.unregisterEvents(), Ke(gs, this).destroy(), Ke(Wc, this).destroy(), super.disablePlugin();
     }
     /**
      * Moves a single row.
@@ -68947,12 +68947,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     this.moveBySettingsOrLoad();
   }
   function VHe(n, e) {
-    _U(n, e), e.add(n);
+    RU(n, e), e.add(n);
   }
   function ji(n, e, t) {
-    _U(n, e), e.set(n, t);
+    RU(n, e), e.set(n, t);
   }
-  function _U(n, e) {
+  function RU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Pn(n, e, t) {
@@ -68965,8 +68965,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const i_ = "manualRowResize", WHe = 30, SV = "manualRowHeights";
-  var ua = /* @__PURE__ */ new WeakMap(), T0 = /* @__PURE__ */ new WeakMap(), Qs = /* @__PURE__ */ new WeakMap(), Lb = /* @__PURE__ */ new WeakMap(), jc = /* @__PURE__ */ new WeakMap(), fD = /* @__PURE__ */ new WeakMap(), Mg = /* @__PURE__ */ new WeakMap(), M0 = /* @__PURE__ */ new WeakMap(), ls = /* @__PURE__ */ new WeakMap(), la = /* @__PURE__ */ new WeakMap(), Ad = /* @__PURE__ */ new WeakMap(), s_ = /* @__PURE__ */ new WeakMap(), $b = /* @__PURE__ */ new WeakMap(), Fb = /* @__PURE__ */ new WeakMap(), yo = /* @__PURE__ */ new WeakMap(), Bb = /* @__PURE__ */ new WeakMap(), Ec = /* @__PURE__ */ new WeakSet();
+  const i_ = "manualRowResize", WHe = 30, _V = "manualRowHeights";
+  var ua = /* @__PURE__ */ new WeakMap(), T0 = /* @__PURE__ */ new WeakMap(), Qs = /* @__PURE__ */ new WeakMap(), Lb = /* @__PURE__ */ new WeakMap(), jc = /* @__PURE__ */ new WeakMap(), gD = /* @__PURE__ */ new WeakMap(), Mg = /* @__PURE__ */ new WeakMap(), M0 = /* @__PURE__ */ new WeakMap(), ls = /* @__PURE__ */ new WeakMap(), la = /* @__PURE__ */ new WeakMap(), Ad = /* @__PURE__ */ new WeakMap(), s_ = /* @__PURE__ */ new WeakMap(), $b = /* @__PURE__ */ new WeakMap(), Fb = /* @__PURE__ */ new WeakMap(), yo = /* @__PURE__ */ new WeakMap(), Bb = /* @__PURE__ */ new WeakMap(), Ec = /* @__PURE__ */ new WeakSet();
   class jHe extends Pt {
     static get PLUGIN_KEY() {
       return i_;
@@ -68978,7 +68978,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @type {HTMLTableCellElement}
      */
     constructor(e) {
-      super(e), VHe(this, Ec), ji(this, ua, null), ji(this, T0, null), ji(this, Qs, []), ji(this, Lb, null), ji(this, jc, null), ji(this, fD, null), ji(this, Mg, null), ji(this, M0, null), ji(this, ls, this.hot.rootDocument.createElement("DIV")), ji(this, la, this.hot.rootDocument.createElement("DIV")), ji(this, Ad, !1), ji(this, s_, !1), ji(this, $b, 0), ji(this, Fb, null), ji(this, yo, void 0), ji(this, Bb, void 0), ae(be(ls, this), "manualRowResizer"), ae(be(la, this), "manualRowResizerGuide");
+      super(e), VHe(this, Ec), ji(this, ua, null), ji(this, T0, null), ji(this, Qs, []), ji(this, Lb, null), ji(this, jc, null), ji(this, gD, null), ji(this, Mg, null), ji(this, M0, null), ji(this, ls, this.hot.rootDocument.createElement("DIV")), ji(this, la, this.hot.rootDocument.createElement("DIV")), ji(this, Ad, !1), ji(this, s_, !1), ji(this, $b, 0), ji(this, Fb, null), ji(this, yo, void 0), ji(this, Bb, void 0), ae(be(ls, this), "manualRowResizer"), ae(be(la, this), "manualRowResizerGuide");
     }
     /**
      * @private
@@ -69024,7 +69024,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @fires Hooks#persistentStateSave
      */
     saveManualRowHeights() {
-      this.hot.runHooks("persistentStateSave", SV, be(yo, this).getValues());
+      this.hot.runHooks("persistentStateSave", _V, be(yo, this).getValues());
     }
     /**
      * Loads the previously saved sizes using the persistentState plugin (the {@link Options#persistentState} option
@@ -69035,7 +69035,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     loadManualRowHeights() {
       const e = {};
-      return this.hot.runHooks("persistentStateLoad", SV, e), e.value;
+      return this.hot.runHooks("persistentStateLoad", _V, e), e.value;
     }
     /**
      * Sets the new height for specified row index.
@@ -69045,7 +69045,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {number} Returns new height.
      */
     setManualSize(e, t) {
-      const i = this.hot.toPhysicalRow(e), s = Math.max(t, j7);
+      const i = this.hot.toPhysicalRow(e), s = Math.max(t, z7);
       return be(yo, this).setValueAtIndex(i, s), s;
     }
     /**
@@ -69207,16 +69207,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function zHe(n) {
-    if (!EO(n.target) && be(s_, this) !== !0 && this.checkIfRowHeader(n.target)) {
+    if (!TO(n.target) && be(s_, this) !== !0 && this.checkIfRowHeader(n.target)) {
       const e = this.getClosestTHParent(n.target);
       e && (be(Ad, this) || this.setupHandlePosition(e));
     }
   }
   function UHe(n) {
-    Fe(n.target, "manualRowResizer") && (this.setupHandlePosition(be(ua, this)), this.setupGuidePosition(), Pn(Ad, this, !0), be(Fb, this) === null && (Pn(Fb, this, setTimeout(() => this.afterMouseDownTimeout(), 500)), this.hot._registerTimeout(be(Fb, this))), Pn($b, this, be($b, this) + 1), Pn(fD, this, n.pageY), Pn(jc, this, be(Mg, this)));
+    Fe(n.target, "manualRowResizer") && (this.setupHandlePosition(be(ua, this)), this.setupGuidePosition(), Pn(Ad, this, !0), be(Fb, this) === null && (Pn(Fb, this, setTimeout(() => this.afterMouseDownTimeout(), 500)), this.hot._registerTimeout(be(Fb, this))), Pn($b, this, be($b, this) + 1), Pn(gD, this, n.pageY), Pn(jc, this, be(Mg, this)));
   }
   function YHe(n) {
-    be(Ad, this) && (Pn(Lb, this, be(Mg, this) + (n.pageY - be(fD, this))), F(be(Qs, this), (e) => {
+    be(Ad, this) && (Pn(Lb, this, be(Mg, this) + (n.pageY - be(gD, this))), F(be(Qs, this), (e) => {
       Pn(jc, this, this.setManualSize(e, be(Lb, this)));
     }), this.refreshHandlePosition(), this.refreshGuidePosition());
   }
@@ -69280,13 +69280,13 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  function _V(n, e) {
-    return n.get(RU(n, e));
+  function RV(n, e) {
+    return n.get(xU(n, e));
   }
   function A0(n, e, t) {
-    return n.set(RU(n, e), t), t;
+    return n.set(xU(n, e), t), t;
   }
-  function RU(n, e, t) {
+  function xU(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -69510,7 +69510,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {CellRange}
      */
     getRange() {
-      return _V(yh, this) || A0(yh, this, this.cellRangeFactory(this.cellCoordsFactory(this.row, this.col), this.cellCoordsFactory(this.row, this.col), this.cellCoordsFactory(this.getLastRow(), this.getLastColumn()))), _V(yh, this);
+      return RV(yh, this) || A0(yh, this, this.cellRangeFactory(this.cellCoordsFactory(this.row, this.col), this.cellCoordsFactory(this.row, this.col), this.cellCoordsFactory(this.getLastRow(), this.getLastColumn()))), RV(yh, this);
     }
   }
   function tDe(n, e) {
@@ -69658,7 +69658,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     add(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
       const i = e.row, s = e.col, r = e.rowspan, o = e.colspan, a = new ha(i, s, r, o, this.hot._createCellCoords, this.hot._createCellRange), l = this.get(i, s), c = t ? !1 : this.isOverlapping(a);
-      return !l && !c ? (this.hot && a.normalize(this.hot), this.mergedCells.push(a), Ch(Tc, this, RV).call(this, a), a) : (Vt(r_.IS_OVERLAPPING_WARNING(a)), !1);
+      return !l && !c ? (this.hot && a.normalize(this.hot), this.mergedCells.push(a), Ch(Tc, this, xV).call(this, a), a) : (Vt(r_.IS_OVERLAPPING_WARNING(a)), !1);
     }
     /**
      * Remove a merged cell from the container. You can provide either the "starting coordinates"
@@ -69827,7 +69827,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }), r.forEach((o) => {
         this.mergedCells.splice(this.mergedCells.indexOf(o), 1);
       }), this.mergedCellsMatrix.clear(), this.mergedCells.forEach((o) => {
-        Ch(Tc, this, RV).call(this, o);
+        Ch(Tc, this, xV).call(this, o);
       });
     }
     /**
@@ -69853,7 +69853,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       return Array.from(a);
     })));
   }
-  function RV(n) {
+  function xV(n) {
     for (let e = n.row; e < n.row + n.rowspan; e++)
       for (let t = n.col; t < n.col + n.colspan; t++)
         this.mergedCellsMatrix.has(e) || this.mergedCellsMatrix.set(e, /* @__PURE__ */ new Map()), this.mergedCellsMatrix.get(e).set(t, n);
@@ -70222,9 +70222,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         if (e) {
           const t = n.mergedCellsCollection.get(e[0], e[1]);
           if (t.row === e[0] && t.col === e[1] && t.row + t.rowspan - 1 === e[2] && t.col + t.colspan - 1 === e[3])
-            return this.getTranslatedPhrase(Hk);
+            return this.getTranslatedPhrase(Dk);
         }
-        return this.getTranslatedPhrase(kk);
+        return this.getTranslatedPhrase(Hk);
       },
       callback() {
         const e = this.getSelectedRangeLast();
@@ -70266,7 +70266,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  class xV {
+  class EV {
     constructor(e) {
       Vb(this, "data", void 0), Vb(this, "next", null), Vb(this, "prev", null), this.data = e;
     }
@@ -70282,7 +70282,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @returns {NodeStructure} Returns the node which has been added.
      */
     push(e) {
-      const t = new xV(e);
+      const t = new EV(e);
       if (this.first === null)
         this.first = t, this.last = t;
       else {
@@ -70297,7 +70297,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {object} data Data which should be added.
      */
     unshift(e) {
-      const t = new xV(e);
+      const t = new EV(e);
       if (this.first === null)
         this.first = t, this.last = t;
       else {
@@ -70398,12 +70398,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
   }
   function pDe(n, e) {
-    xU(n, e), e.add(n);
+    EU(n, e), e.add(n);
   }
   function Sh(n, e, t) {
-    xU(n, e), e.set(n, t);
+    EU(n, e), e.set(n, t);
   }
-  function xU(n, e) {
+  function EU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Dt(n, e) {
@@ -70515,7 +70515,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           for (let a = t.col; a <= i.col; a++) {
             if (Dt(H0, this).isHidden(a))
               continue;
-            const l = o_(yT, this, EV).call(this, e, Dt(ta, this), s, o, a);
+            const l = o_(yT, this, TV).call(this, e, Dt(ta, this), s, o, a);
             l && Vs(ia, this, l);
           }
       Dt(ta, this).first && (Dt(ta, this).first.prev = Dt(ta, this).last, Dt(ta, this).last.next = Dt(ta, this).first);
@@ -70526,7 +70526,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           for (let a = t.row; a <= i.row; a++) {
             if (Dt(k0, this).isHidden(a))
               continue;
-            const l = o_(yT, this, EV).call(this, e, Dt(na, this), r, a, o);
+            const l = o_(yT, this, TV).call(this, e, Dt(na, this), r, a, o);
             l && Vs(sa, this, l);
           }
       Dt(na, this).first && (Dt(na, this).first.prev = Dt(na, this).last, Dt(na, this).last.next = Dt(na, this).first);
@@ -70560,7 +70560,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }), this;
     }
   }
-  function EV(n, e, t, i, s) {
+  function TV(n, e, t, i, s) {
     const r = n.getTopStartCorner(), o = n.getBottomEndCorner(), a = n.highlight.clone().normalize(), l = Dt(JA, this).call(this, i, s);
     if (l && t.has(l))
       return null;
@@ -70607,12 +70607,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     };
   }
   function wDe(n, e) {
-    EU(n, e), e.add(n);
+    TU(n, e), e.add(n);
   }
   function D0(n, e, t) {
-    EU(n, e), e.set(n, t);
+    TU(n, e), e.set(n, t);
   }
-  function EU(n, e) {
+  function TU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function CT(n, e, t) {
@@ -70646,8 +70646,8 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   Ee.getSingleton().register("afterMergeCells");
   Ee.getSingleton().register("beforeUnmergeCells");
   Ee.getSingleton().register("afterUnmergeCells");
-  const Wb = "mergeCells", CDe = 150, TV = Wb;
-  var Hr = /* @__PURE__ */ new WeakMap(), Dr = /* @__PURE__ */ new WeakMap(), ya = /* @__PURE__ */ new WeakMap(), MV = /* @__PURE__ */ new WeakMap(), zt = /* @__PURE__ */ new WeakSet();
+  const Wb = "mergeCells", CDe = 150, MV = Wb;
+  var Hr = /* @__PURE__ */ new WeakMap(), Dr = /* @__PURE__ */ new WeakMap(), ya = /* @__PURE__ */ new WeakMap(), AV = /* @__PURE__ */ new WeakMap(), zt = /* @__PURE__ */ new WeakSet();
   class SDe extends Pt {
     constructor() {
       super(...arguments), wDe(this, zt), CT(this, "mergedCellsCollection", null), CT(this, "autofillCalculations", null), CT(this, "selectionCalculations", null), D0(this, Hr, null), D0(this, Dr, {
@@ -70657,7 +70657,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         mergedCellsGetter: (e, t) => this.mergedCellsCollection.get(e, t),
         rowIndexMapper: this.hot.rowIndexMapper,
         columnIndexMapper: this.hot.columnIndexMapper
-      })), D0(this, MV, bDe(this));
+      })), D0(this, AV, bDe(this));
     }
     static get PLUGIN_KEY() {
       return Wb;
@@ -70702,11 +70702,11 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }), this.addHook("beforeSetRangeStart", function() {
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
-        return Ft(zt, e, AV).call(e, ...i);
+        return Ft(zt, e, PV).call(e, ...i);
       }), this.addHook("beforeSetRangeStartOnly", function() {
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
-        return Ft(zt, e, AV).call(e, ...i);
+        return Ft(zt, e, PV).call(e, ...i);
       }), this.addHook("beforeSelectionFocusSet", function() {
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
@@ -70728,7 +70728,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           i[s] = arguments[s];
         return Ft(zt, e, RDe).call(e, ...i);
       }), this.addHook("afterRenderer", function() {
-        return tn(MV, e).after(...arguments);
+        return tn(AV, e).after(...arguments);
       }), this.addHook("afterContextMenuDefaultOptions", function() {
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
@@ -70819,7 +70819,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     ifChromeForceRepaint() {
-      if (!IO())
+      if (!OO())
         return;
       const e = [];
       let t = [];
@@ -71025,7 +71025,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         },
         runOnlyIf: (i) => !i.altKey,
         // right ALT in some systems triggers ALT+CTRL
-        group: TV
+        group: MV
       });
     }
     /**
@@ -71034,7 +71034,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(TV);
+      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(MV);
     }
     /**
      * Modifies the information on whether the current selection contains multiple cells. The `afterIsMultipleSelection`
@@ -71280,7 +71280,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       name: "---------"
     }, dDe(this));
   }
-  function AV() {
+  function PV() {
     Aw(Hr, this, null);
   }
   function IDe() {
@@ -71437,7 +71437,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     return function(t, i) {
       const [, ...s] = t, [, ...r] = i;
       return function o(a) {
-        const l = n[a], c = e[a], u = s[a], h = r[a], d = c.multiColumnSorting, g = (d.compareFunctionFactory ? d.compareFunctionFactory : i9(c.type))(l, c, d)(u, h);
+        const l = n[a], c = e[a], u = s[a], h = r[a], d = c.multiColumnSorting, g = (d.compareFunctionFactory ? d.compareFunctionFactory : s9(c.type))(l, c, d)(u, h);
         if (g === Aa) {
           const p = a + 1;
           if (typeof e[p] < "u")
@@ -71447,17 +71447,17 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       }(0);
     };
   }
-  function PV() {
+  function IV() {
     Vt(Wt`Plugins \`columnSorting\` and \`multiColumnSorting\` should not be enabled simultaneously. 
     Only \`multiColumnSorting\` will work. The \`columnSorting\` plugin will be disabled.`);
   }
-  const TU = "sort";
+  const MU = "sort";
   function XDe(n, e, t) {
     const i = [];
-    return t === !1 || n.isColumnSorted(e) && n.getNumberOfSortedColumns() > 1 && i.push(`${TU}-${n.getIndexOfColumnInSortQueue(e) + 1}`), i;
+    return t === !1 || n.isColumnSorted(e) && n.getNumberOfSortedColumns() > 1 && i.push(`${MU}-${n.getIndexOfColumnInSortQueue(e) + 1}`), i;
   }
   function QDe(n) {
-    const e = n.className.split(" "), t = new RegExp(`^${TU}-[0-9]{1,2}$`);
+    const e = n.className.split(" "), t = new RegExp(`^${MU}-[0-9]{1,2}$`);
     return e.filter((i) => t.test(i));
   }
   function ZDe(n, e, t) {
@@ -71477,9 +71477,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const a_ = "multiColumnSorting", tNe = 170, ST = "columnSorting", IV = a_;
-  n9(a_, qDe);
-  class nNe extends d9 {
+  const a_ = "multiColumnSorting", tNe = 170, ST = "columnSorting", OV = a_;
+  i9(a_, qDe);
+  class nNe extends f9 {
     constructor() {
       super(...arguments), ZDe(this, "pluginKey", a_);
     }
@@ -71502,7 +71502,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * Enables the plugin functionality for this Handsontable instance.
      */
     enablePlugin() {
-      !this.enabled && this.hot.getSettings()[this.pluginKey] && this.hot.getSettings()[ST] && (PV(), this.hot.getPlugin(ST).disablePlugin()), super.enablePlugin();
+      !this.enabled && this.hot.getSettings()[this.pluginKey] && this.hot.getSettings()[ST] && (IV(), this.hot.getPlugin(ST).disablePlugin()), super.enablePlugin();
     }
     /**
      * Disables the plugin functionality for this Handsontable instance.
@@ -71531,7 +71531,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         },
         relativeToGroup: ku,
         position: "before",
-        group: IV
+        group: OV
       });
     }
     /**
@@ -71540,7 +71540,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @private
      */
     unregisterShortcuts() {
-      super.unregisterShortcuts(), this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(IV);
+      super.unregisterShortcuts(), this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(OV);
     }
     /**
      * Sorts the table by chosen columns and orders.
@@ -71655,7 +71655,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {object} newSettings New settings object.
      */
     onUpdateSettings(e) {
-      this.hot.getSettings()[this.pluginKey] && this.hot.getSettings()[ST] && PV(), super.onUpdateSettings(e);
+      this.hot.getSettings()[this.pluginKey] && this.hot.getSettings()[ST] && IV(), super.onUpdateSettings(e);
     }
     /**
      * Callback for the `onAfterOnCellMouseDown` hook.
@@ -71665,10 +71665,10 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      * @param {CellCoords} coords Visual coords of the selected cell.
      */
     onAfterOnCellMouseDown(e, t) {
-      JH(t.row, t.col, e) !== !1 && this.wasClickableHeaderClicked(e, t.col) && (this.hot.getShortcutManager().isCtrlPressed() ? (this.hot.deselectCell(), this.hot.selectColumns(t.col), this.sort(this.getNextSortConfig(t.col, jS))) : this.sort(this.getColumnNextConfig(t.col)));
+      eD(t.row, t.col, e) !== !1 && this.wasClickableHeaderClicked(e, t.col) && (this.hot.getShortcutManager().isCtrlPressed() ? (this.hot.deselectCell(), this.hot.selectColumns(t.col), this.sort(this.getNextSortConfig(t.col, jS))) : this.sort(this.getColumnNextConfig(t.col)));
     }
   }
-  function OV(n, e, t) {
+  function kV(n, e, t) {
     return (e = iNe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function iNe(n) {
@@ -71688,7 +71688,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   const rNe = "multipleSelectionHandles", oNe = 160;
   class aNe extends Pt {
     constructor() {
-      super(...arguments), OV(this, "dragged", []), OV(this, "lastSetCell", null);
+      super(...arguments), kV(this, "dragged", []), kV(this, "lastSetCell", null);
     }
     static get PLUGIN_KEY() {
       return rNe;
@@ -71896,7 +71896,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       headerClassNames: c
     };
   }
-  function MU() {
+  function AU() {
     return {
       label: "",
       isPlaceholder: !0
@@ -71925,7 +71925,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         let c = !1;
         if (o >= e && (l.colspan = l.origColspan - (o - e), l.origColspan = l.colspan, c = !0), r.push(l), l.colspan > 1)
           for (let u = 0; u < l.colspan - 1; u++)
-            r.push(MU());
+            r.push(AU());
         return !c;
       });
     });
@@ -71944,16 +71944,16 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function fo(n, e) {
-    return n.get(AU(n, e));
+    return n.get(PU(n, e));
   }
   function Om(n, e, t) {
-    return n.set(AU(n, e), t), t;
+    return n.set(PU(n, e), t), t;
   }
-  function AU(n, e, t) {
+  function PU(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const kV = ["label", "collapsible"];
+  const HV = ["label", "collapsible"];
   var gl = /* @__PURE__ */ new WeakMap(), _h = /* @__PURE__ */ new WeakMap(), RT = /* @__PURE__ */ new WeakMap();
   class uNe {
     constructor() {
@@ -71999,7 +71999,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           ...r
         } = t;
         const o = this.getHeaderSettings(i, s);
-        o !== null && Zn(o, r, kV);
+        o !== null && Zn(o, r, HV);
       });
     }
     /**
@@ -72016,7 +72016,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
           const s = e({
             ...i
           });
-          tt(s) && Zn(i, s, kV);
+          tt(s) && Zn(i, s, HV);
         });
       });
     }
@@ -72104,24 +72104,24 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     return (e === "string" ? String : Number)(n);
   }
-  const PU = "DF-pre-order";
-  function IU(n, e) {
+  const IU = "DF-pre-order";
+  function OU(n, e) {
     let t = n.call(e, this);
     for (let i = 0; i < this.childs.length; i++) {
       if (t === !1)
         return !1;
-      t = IU.call(this.childs[i], n, e);
+      t = OU.call(this.childs[i], n, e);
     }
     return t;
   }
   const fNe = "DF-post-order";
-  function OU(n, e) {
+  function kU(n, e) {
     for (let t = 0; t < this.childs.length; t++)
-      if (OU.call(this.childs[t], n, e) === !1)
+      if (kU.call(this.childs[t], n, e) === !1)
         return !1;
     return n.call(e, this);
   }
-  const kU = "BF";
+  const HU = "BF";
   function gNe(n, e) {
     const t = [this];
     function i() {
@@ -72132,7 +72132,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     }
     i();
   }
-  const pNe = kU, HV = /* @__PURE__ */ new Map([[PU, IU], [fNe, OU], [kU, gNe]]);
+  const pNe = HU, DV = /* @__PURE__ */ new Map([[IU, OU], [fNe, kU], [HU, gNe]]);
   class l_ {
     constructor(e) {
       xT(this, "data", {}), xT(this, "parent", null), xT(this, "childs", []), this.data = e;
@@ -72201,9 +72201,9 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
      */
     walkDown(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : pNe;
-      if (!HV.has(t))
+      if (!DV.has(t))
         throw new Error(`Traversal strategy "${t}" does not exist`);
-      HV.get(t).call(this, e, this);
+      DV.get(t).call(this, e, this);
     }
     /**
      * Traverses the tree structure through node parents.
@@ -72224,12 +72224,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function as(n, e) {
-    return n.get(HU(n, e));
+    return n.get(DU(n, e));
   }
   function bNe(n, e, t) {
-    return n.set(HU(n, e), t), t;
+    return n.set(DU(n, e), t), t;
   }
-  function HU(n, e, t) {
+  function DU(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -72351,7 +72351,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       as(Bf, this).clear(), as(Rh, this).clear();
     }
   }
-  function DU(n, e) {
+  function NU(n, e) {
     n.walkDown((t) => {
       let {
         data: i,
@@ -72372,7 +72372,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
   function u_(n) {
     return c_(n, "origColspan") === n.data.origColspan;
   }
-  function gD(n) {
+  function pD(n) {
     const {
       data: e,
       childs: t
@@ -72385,7 +72385,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         colspanCompensation: 0
       };
     if (u_(n))
-      return gD(t[0]);
+      return pD(t[0]);
     e.isCollapsed = !1;
     const s = t.slice(1), r = /* @__PURE__ */ new Set();
     let o = 0;
@@ -72393,7 +72393,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       F(s, (a) => {
         a.replaceTreeWith(a.data.clonedTree), a.data.clonedTree = null;
         const l = a.data;
-        o += l.colspan, DU(a, (c) => {
+        o += l.colspan, NU(a, (c) => {
           r.add(c);
         });
       });
@@ -72413,12 +72413,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       } = a;
       l.colspan += o, l.colspan >= l.origColspan ? (l.colspan = l.origColspan, l.isCollapsed = !1) : u_(a) && (l.isCollapsed = c_(a, "isCollapsed"));
     }), {
-      rollbackModification: () => pD(n),
+      rollbackModification: () => mD(n),
       affectedColumns: Array.from(r),
       colspanCompensation: o
     };
   }
-  function pD(n) {
+  function mD(n) {
     var e;
     const {
       data: t,
@@ -72432,12 +72432,12 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
         colspanCompensation: 0
       };
     if (u_(n))
-      return pD(i[0]);
+      return mD(i[0]);
     t.isCollapsed = !0;
     const r = i.slice(1), o = /* @__PURE__ */ new Set();
     if (r.length > 0)
       F(r, (l) => {
-        DU(l, (c) => {
+        NU(l, (c) => {
           o.add(c);
         }), l.data.clonedTree = l.cloneTree(), l.walkDown((c) => {
           let {
@@ -72463,7 +72463,7 @@ Arguments: ` + Array.prototype.slice.call(i).join("") + `
       } = l;
       c.colspan -= a, c.colspan <= 1 ? (c.colspan = 1, c.isCollapsed = !0) : u_(l) && (c.isCollapsed = c_(l, "isCollapsed"));
     }), {
-      rollbackModification: () => gD(n),
+      rollbackModification: () => pD(n),
       affectedColumns: Array.from(o),
       colspanCompensation: a
     };
@@ -72522,11 +72522,11 @@ the last node, the show column modification can be applied.`);
       r.crossHiddenColumns.splice(r.crossHiddenColumns.indexOf(e), 1), !r.isHidden && r.colspan < r.origColspan && (r.colspan += 1), r.isHidden = !1;
     });
   }
-  const DV = /* @__PURE__ */ new Map([["collapse", pD], ["expand", gD], ["hide-column", vNe], ["show-column", yNe]]);
+  const NV = /* @__PURE__ */ new Map([["collapse", mD], ["expand", pD], ["hide-column", vNe], ["show-column", yNe]]);
   function CNe(n, e, t) {
-    if (!DV.has(n))
+    if (!NV.has(n))
       throw new Error(`The node modifier action ("${n}") does not exist.`);
-    return DV.get(n)(e, t);
+    return NV.get(n)(e, t);
   }
   function N0(n) {
     const e = [];
@@ -72541,7 +72541,7 @@ the last node, the show column modification can be applied.`);
         let u = !1;
         for (let h = o; h < o + r; h++)
           if (l.includes(h) || u)
-            c.push(MU());
+            c.push(AU());
           else {
             const f = SNe(s);
             f.isRoot = !0, c.push(f), u = !0;
@@ -72567,12 +72567,12 @@ the last node, the show column modification can be applied.`);
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function km(n, e, t) {
-    return n.set(NU(n, e), t), t;
+    return n.set(LU(n, e), t), t;
   }
   function Mn(n, e) {
-    return n.get(NU(n, e));
+    return n.get(LU(n, e));
   }
-  function NU(n, e, t) {
+  function LU(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -72818,7 +72818,7 @@ the last node, the show column modification can be applied.`);
             isHidden: f
           } = c.data;
           f || d <= s && u >= e && u + d - 1 <= i && (o === null || h < o) && (o = h);
-        }, PU);
+        }, IU);
       }
       return r && o === null ? -1 : this.levelToRowCoords((t = o) !== null && t !== void 0 ? t : 0);
     }
@@ -72997,9 +72997,9 @@ the last node, the show column modification can be applied.`);
     }
   }
   function ANe(n, e) {
-    LU(n, e), e.add(n);
+    $U(n, e), e.add(n);
   }
-  function NV(n, e, t) {
+  function LV(n, e, t) {
     return (e = PNe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function PNe(n) {
@@ -73017,9 +73017,9 @@ the last node, the show column modification can be applied.`);
     return (e === "string" ? String : Number)(n);
   }
   function L0(n, e, t) {
-    LU(n, e), e.set(n, t);
+    $U(n, e), e.set(n, t);
   }
-  function LU(n, e) {
+  function $U(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function Xh(n, e, t) {
@@ -73032,14 +73032,14 @@ the last node, the show column modification can be applied.`);
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const LV = "nestedHeaders", ONe = 280;
+  const $V = "nestedHeaders", ONe = 280;
   var Yt = /* @__PURE__ */ new WeakMap(), Mc = /* @__PURE__ */ new WeakMap(), jb = /* @__PURE__ */ new WeakMap(), o1 = /* @__PURE__ */ new WeakMap(), $n = /* @__PURE__ */ new WeakSet();
   class kNe extends Pt {
     constructor() {
-      super(...arguments), ANe(this, $n), L0(this, Yt, new xNe()), L0(this, Mc, null), L0(this, jb, null), L0(this, o1, !1), NV(this, "ghostTable", new MNe(this.hot, (e, t) => this.getHeaderSettings(e, t))), NV(this, "detectedOverlappedHeaders", !1);
+      super(...arguments), ANe(this, $n), L0(this, Yt, new xNe()), L0(this, Mc, null), L0(this, jb, null), L0(this, o1, !1), LV(this, "ghostTable", new MNe(this.hot, (e, t) => this.getHeaderSettings(e, t))), LV(this, "detectedOverlappedHeaders", !1);
     }
     static get PLUGIN_KEY() {
-      return LV;
+      return $V;
     }
     static get PLUGIN_PRIORITY() {
       return ONe;
@@ -73050,7 +73050,7 @@ the last node, the show column modification can be applied.`);
      * @returns {boolean}
      */
     isEnabled() {
-      return !!this.hot.getSettings()[LV];
+      return !!this.hot.getSettings()[$V];
     }
     /**
      * Enables the plugin functionality for this Handsontable instance.
@@ -73331,10 +73331,10 @@ the last node, the show column modification can be applied.`);
       isRoot: a,
       colspan: l
     } = yt(Yt, this).getHeaderSettings(e, n);
-    if (r === QO) {
+    if (r === ZO) {
       if (!a)
         return i.columnIndex;
-    } else if (r === J7 && (l > o - s || !a))
+    } else if (r === ez && (l > o - s || !a))
       return null;
     return n;
   }
@@ -73376,7 +73376,7 @@ the last node, the show column modification can be applied.`);
       columnIndex: o,
       origColspan: a
     } = t, l = !i.inInSelection(e);
-    n.shiftKey && s ? e.col < s.from.col ? r.push(s.getTopEndCorner().col, o, e.row) : e.col > s.from.col ? r.push(s.getTopStartCorner().col, o + a - 1, e.row) : r.push(o, o + a - 1, e.row) : (OR(n) || pu(n) && l || R7(n)) && r.push(o, o + a - 1, e.row), i.selectColumns(...r);
+    n.shiftKey && s ? e.col < s.from.col ? r.push(s.getTopEndCorner().col, o, e.row) : e.col > s.from.col ? r.push(s.getTopStartCorner().col, o + a - 1, e.row) : r.push(o, o + a - 1, e.row) : (OR(n) || pu(n) && l || x7(n)) && r.push(o, o + a - 1, e.row), i.selectColumns(...r);
   }
   function FNe(n, e, t, i) {
     if (!this.hot.view.isMouseDown())
@@ -73921,7 +73921,7 @@ the last node, the show column modification can be applied.`);
       return this.plugin.collapsingUI ? this.plugin.collapsingUI.untranslateTrimmedRow(e) : e;
     }
   }
-  function $V(n, e, t) {
+  function FV(n, e, t) {
     return (e = eLe(e)) in n ? Object.defineProperty(n, e, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : n[e] = t, n;
   }
   function eLe(n) {
@@ -73938,12 +73938,12 @@ the last node, the show column modification can be applied.`);
     }
     return (e === "string" ? String : Number)(n);
   }
-  class mD {
+  class bD {
     constructor(e, t) {
-      $V(this, "hot", void 0), $V(this, "plugin", void 0), this.hot = t, this.plugin = e;
+      FV(this, "hot", void 0), FV(this, "plugin", void 0), this.hot = t, this.plugin = e;
     }
   }
-  class ga extends mD {
+  class ga extends bD {
     /**
      * CSS classes used in the row headers.
      *
@@ -73999,7 +73999,7 @@ the last node, the show column modification can be applied.`);
       t || (t = this.dataManager.cache.levelCount), this.rowHeaderWidthCache = Math.max(50, 11 + 10 * t + 25), this.hot.render();
     }
   }
-  class nLe extends mD {
+  class nLe extends bD {
     constructor(e, t) {
       var i;
       super(e, t), i = this, this.dataManager = this.plugin.dataManager, this.collapsedRows = [], this.collapsedRowsStash = {
@@ -74324,10 +74324,10 @@ the last node, the show column modification can be applied.`);
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  var FV = /* @__PURE__ */ new WeakMap();
-  class uLe extends mD {
+  var BV = /* @__PURE__ */ new WeakMap();
+  class uLe extends bD {
     constructor() {
-      super(...arguments), rLe(this, "dataManager", this.plugin.dataManager), iLe(this, FV, {
+      super(...arguments), rLe(this, "dataManager", this.plugin.dataManager), iLe(this, BV, {
         row_above: (e, t) => {
           const i = t[t.length - 1];
           this.dataManager.addSibling(i.start.row, "above");
@@ -74350,7 +74350,7 @@ the last node, the show column modification can be applied.`);
       const t = [{
         key: "add_child",
         name() {
-          return this.getTranslatedPhrase(Yk);
+          return this.getTranslatedPhrase(Gk);
         },
         callback: () => {
           const i = this.dataManager.translateTrimmedRow(this.hot.getSelectedLast()[0]), s = this.dataManager.getDataObject(i);
@@ -74363,7 +74363,7 @@ the last node, the show column modification can be applied.`);
       }, {
         key: "detach_from_parent",
         name() {
-          return this.getTranslatedPhrase(Gk);
+          return this.getTranslatedPhrase(Kk);
         },
         callback: () => {
           this.dataManager.detachFromParent(this.hot.getSelectedLast());
@@ -74391,7 +74391,7 @@ the last node, the show column modification can be applied.`);
      */
     modifyRowInsertingOptions(e) {
       return ke(0, e.items.length - 1, (t) => {
-        const i = lLe(FV, this)[e.items[t].key];
+        const i = lLe(BV, this)[e.items[t].key];
         i != null && (e.items[t].callback = i);
       }), e;
     }
@@ -74571,12 +74571,12 @@ the last node, the show column modification can be applied.`);
     }
   }
   function gLe(n, e) {
-    $U(n, e), e.add(n);
+    FU(n, e), e.add(n);
   }
-  function BV(n, e, t) {
-    $U(n, e), e.set(n, t);
+  function VV(n, e, t) {
+    FU(n, e), e.set(n, t);
   }
-  function $U(n, e) {
+  function FU(n, e) {
     if (e.has(n)) throw new TypeError("Cannot initialize the same private elements twice on an object");
   }
   function MT(n, e, t) {
@@ -74606,11 +74606,11 @@ the last node, the show column modification can be applied.`);
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
-  const d_ = "nestedRows", bLe = 300, VV = d_, wLe = "The Nested Rows plugin requires an Array of Objects as a dataset to be provided. The plugin has been disabled.";
+  const d_ = "nestedRows", bLe = 300, WV = d_, wLe = "The Nested Rows plugin requires an Array of Objects as a dataset to be provided. The plugin has been disabled.";
   var a1 = /* @__PURE__ */ new WeakMap(), Wf = /* @__PURE__ */ new WeakMap(), yi = /* @__PURE__ */ new WeakSet();
   class vLe extends Pt {
     constructor() {
-      super(...arguments), gLe(this, yi), MT(this, "dataManager", null), MT(this, "headersUI", null), MT(this, "collapsedRowsMap", null), BV(this, a1, !1), BV(this, Wf, !1);
+      super(...arguments), gLe(this, yi), MT(this, "dataManager", null), MT(this, "headersUI", null), MT(this, "collapsedRowsMap", null), VV(this, a1, !1), VV(this, Wf, !1);
     }
     static get PLUGIN_KEY() {
       return d_;
@@ -74698,7 +74698,7 @@ the last node, the show column modification can be applied.`);
         for (var t = arguments.length, i = new Array(t), s = 0; s < t; s++)
           i[s] = arguments[s];
         return fi(yi, e, yLe).call(e, ...i);
-      }), this.addHook("beforeLoadData", (t) => fi(yi, this, WV).call(this, t)), this.addHook("beforeUpdateData", (t) => fi(yi, this, WV).call(this, t)), this.registerShortcuts(), super.enablePlugin());
+      }), this.addHook("beforeLoadData", (t) => fi(yi, this, jV).call(this, t)), this.addHook("beforeUpdateData", (t) => fi(yi, this, jV).call(this, t)), this.registerShortcuts(), super.enablePlugin());
     }
     /**
      * Disables the plugin functionality for this Handsontable instance.
@@ -74736,7 +74736,7 @@ the last node, the show column modification can be applied.`);
           const i = (e = this.hot.getSelectedRangeLast()) === null || e === void 0 ? void 0 : e.highlight;
           return i && ((t = this.hot.getSelectedRangeLast()) === null || t === void 0 ? void 0 : t.isSingle()) && this.hot.selection.isCellVisible(i) && i.col === -1 && i.row >= 0;
         },
-        group: VV,
+        group: WV,
         relativeToGroup: ku,
         position: "before"
       });
@@ -74747,7 +74747,7 @@ the last node, the show column modification can be applied.`);
      * @private
      */
     unregisterShortcuts() {
-      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(VV);
+      this.hot.getShortcutManager().getContext("grid").removeShortcutsByGroup(WV);
     }
     /**
      * Enable the modify hook skipping flag - allows retrieving the data from Handsontable without this plugin's
@@ -74873,9 +74873,9 @@ the last node, the show column modification can be applied.`);
   function HLe(n, e) {
     OC(a1, this) && (e.skipRender = !0);
   }
-  function WV(n) {
-    if (!lz(n)) {
-      LO(wLe), this.hot.getSettings()[d_] = !1, this.disablePlugin();
+  function jV(n) {
+    if (!cz(n)) {
+      $O(wLe), this.hot.getSettings()[d_] = !1, this.disablePlugin();
       return;
     }
     this.dataManager.setData(n), this.dataManager.rewriteCache();
@@ -74987,13 +74987,13 @@ the last node, the show column modification can be applied.`);
   Ee.getSingleton().register("persistentStateSave");
   Ee.getSingleton().register("persistentStateLoad");
   Ee.getSingleton().register("persistentStateReset");
-  const jV = "persistentState", VLe = 0;
+  const zV = "persistentState", VLe = 0;
   class WLe extends Pt {
     constructor() {
       super(...arguments), $Le(this, "storage", void 0);
     }
     static get PLUGIN_KEY() {
-      return jV;
+      return zV;
     }
     static get PLUGIN_PRIORITY() {
       return VLe;
@@ -75005,7 +75005,7 @@ the last node, the show column modification can be applied.`);
      * @returns {boolean}
      */
     isEnabled() {
-      return !!this.hot.getSettings()[jV];
+      return !!this.hot.getSettings()[zV];
     }
     /**
      * Enables the plugin functionality for this Handsontable instance.
@@ -75084,7 +75084,7 @@ the last node, the show column modification can be applied.`);
     }
     return (e === "string" ? String : Number)(n);
   }
-  function zV(n, e, t) {
+  function UV(n, e, t) {
     if (typeof n == "function" ? n === e : n.has(e)) return arguments.length < 3 ? e : t;
     throw new TypeError("Private element is not present on this object");
   }
@@ -75124,7 +75124,7 @@ the last node, the show column modification can be applied.`);
       this.updatePluginSettings(t), this.addHook("beforeRenderer", function() {
         for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
           s[r] = arguments[r];
-        return zV(OT, e, UV).call(e, ...s);
+        return UV(OT, e, YV).call(e, ...s);
       }), super.enablePlugin();
     }
     /**
@@ -75135,7 +75135,7 @@ the last node, the show column modification can be applied.`);
       const t = function() {
         for (var i = arguments.length, s = new Array(i), r = 0; r < i; r++)
           s[r] = arguments[r];
-        return zV(OT, e, UV).call(e, ...s);
+        return UV(OT, e, YV).call(e, ...s);
       };
       this.hot.addHook("beforeRenderer", t), this.hot.addHookOnce("afterViewRender", () => {
         this.hot.removeHook("beforeRenderer", t);
@@ -75240,7 +75240,7 @@ the last node, the show column modification can be applied.`);
       super.destroy();
     }
   }
-  function UV(n, e, t, i, s, r) {
+  function YV(n, e, t, i, s, r) {
     const o = r.className || [];
     let a = [];
     typeof o == "string" ? a = o.split(" ") : a.push(...o), this.isEnabled() && r.isSearchResult ? a.includes(this.searchResultClass) || a.push(`${this.searchResultClass}`) : a.includes(this.searchResultClass) && a.splice(a.indexOf(this.searchResultClass), 1), r.className = a.join(" ");
@@ -75293,7 +75293,7 @@ the last node, the show column modification can be applied.`);
      * @returns {boolean}
      */
     isEnabled() {
-      return PO();
+      return IO();
     }
     /**
      * Enable the plugin.
@@ -75378,10 +75378,10 @@ the last node, the show column modification can be applied.`);
     throw new TypeError("Private element is not present on this object");
   }
   const kC = "trimRows", g$e = 330;
-  var YV = /* @__PURE__ */ new WeakSet();
+  var GV = /* @__PURE__ */ new WeakSet();
   class p$e extends Pt {
     constructor() {
-      super(...arguments), l$e(this, YV), u$e(this, "trimmedRowsMap", null);
+      super(...arguments), l$e(this, GV), u$e(this, "trimmedRowsMap", null);
     }
     static get PLUGIN_KEY() {
       return kC;
@@ -75402,7 +75402,7 @@ the last node, the show column modification can be applied.`);
      * Enables the plugin functionality for this Handsontable instance.
      */
     enablePlugin() {
-      this.enabled || (this.trimmedRowsMap = this.hot.rowIndexMapper.registerMap("trimRows", new bv()), this.trimmedRowsMap.addLocalHook("init", () => f$e(YV, this, m$e).call(this)), super.enablePlugin());
+      this.enabled || (this.trimmedRowsMap = this.hot.rowIndexMapper.registerMap("trimRows", new bv()), this.trimmedRowsMap.addLocalHook("init", () => f$e(GV, this, m$e).call(this)), super.enablePlugin());
     }
     /**
      * Updates the plugin's state.
@@ -75523,19 +75523,19 @@ the last node, the show column modification can be applied.`);
       });
     }, !0);
   }
-  var FU = {}, b$e = Pu, w$e = FU, v$e = b$e("iterator"), y$e = Array.prototype, C$e = function(n) {
+  var BU = {}, b$e = Pu, w$e = BU, v$e = b$e("iterator"), y$e = Array.prototype, C$e = function(n) {
     return n !== void 0 && (w$e.Array === n || y$e[v$e] === n);
-  }, S$e = y8, GV = lR, _$e = iR, R$e = FU, x$e = Pu, E$e = x$e("iterator"), BU = function(n) {
-    if (!_$e(n)) return GV(n, E$e) || GV(n, "@@iterator") || R$e[S$e(n)];
-  }, T$e = $o, M$e = Qw, A$e = ac, P$e = aR, I$e = BU, O$e = TypeError, k$e = function(n, e) {
+  }, S$e = C8, KV = lR, _$e = iR, R$e = BU, x$e = Pu, E$e = x$e("iterator"), VU = function(n) {
+    if (!_$e(n)) return KV(n, E$e) || KV(n, "@@iterator") || R$e[S$e(n)];
+  }, T$e = $o, M$e = Qw, A$e = ac, P$e = aR, I$e = VU, O$e = TypeError, k$e = function(n, e) {
     var t = arguments.length < 2 ? I$e(n) : e;
     if (M$e(t)) return A$e(T$e(t, n));
     throw new O$e(P$e(n) + " is not iterable");
-  }, H$e = N8, D$e = $o, N$e = ac, L$e = aR, $$e = C$e, F$e = tv, KV = rR, B$e = k$e, V$e = BU, qV = jI, W$e = TypeError, HC = function(n, e) {
+  }, H$e = L8, D$e = $o, N$e = ac, L$e = aR, $$e = C$e, F$e = tv, qV = rR, B$e = k$e, V$e = VU, XV = zI, W$e = TypeError, HC = function(n, e) {
     this.stopped = n, this.result = e;
-  }, XV = HC.prototype, j$e = function(n, e, t) {
+  }, QV = HC.prototype, j$e = function(n, e, t) {
     var i = t && t.that, s = !!(t && t.AS_ENTRIES), r = !!(t && t.IS_RECORD), o = !!(t && t.IS_ITERATOR), a = !!(t && t.INTERRUPTED), l = H$e(e, i), c, u, h, d, f, g, p, m = function(y) {
-      return c && qV(c, "normal", y), new HC(!0, y);
+      return c && XV(c, "normal", y), new HC(!0, y);
     }, w = function(y) {
       return s ? (N$e(y), a ? l(y[0], y[1], m) : l(y[0], y[1])) : a ? l(y, m) : l(y);
     };
@@ -75547,7 +75547,7 @@ the last node, the show column modification can be applied.`);
       if (u = V$e(n), !u) throw new W$e(L$e(n) + " is not iterable");
       if ($$e(u)) {
         for (h = 0, d = F$e(n); d > h; h++)
-          if (f = w(n[h]), f && KV(XV, f)) return f;
+          if (f = w(n[h]), f && qV(QV, f)) return f;
         return new HC(!1);
       }
       c = B$e(n, u);
@@ -75556,9 +75556,9 @@ the last node, the show column modification can be applied.`);
       try {
         f = w(p.value);
       } catch (y) {
-        qV(c, "throw", y);
+        XV(c, "throw", y);
       }
-      if (typeof f == "object" && f && KV(XV, f)) return f;
+      if (typeof f == "object" && f && qV(QV, f)) return f;
     }
     return new HC(!1);
   }, z$e = Lo, U$e = Iu, Y$e = nR, G$e = function(n, e, t) {
@@ -75577,7 +75577,7 @@ the last node, the show column modification can be applied.`);
       }), t;
     }
   });
-  const VU = "undoRedo", Q$e = "undoRedo";
+  const WU = "undoRedo", Q$e = "undoRedo";
   function me(n) {
     const e = this;
     this.instance = n, this.doneActions = [], this.undoneActions = [], this.ignoreNewActions = !1, this.enabled = !1, n.addHook("afterChange", function(i, s) {
@@ -75714,13 +75714,13 @@ the last node, the show column modification can be applied.`);
     if (this.isEnabled())
       return;
     const n = this.instance;
-    this.enabled = !0, e2e(n), this.registerShortcuts(), n.addHook("afterChange", WU);
+    this.enabled = !0, e2e(n), this.registerShortcuts(), n.addHook("afterChange", jU);
   };
   me.prototype.disable = function() {
     if (!this.isEnabled())
       return;
     const n = this.instance;
-    this.enabled = !1, t2e(n), this.unregisterShortcuts(), n.removeHook("afterChange", WU);
+    this.enabled = !1, t2e(n), this.unregisterShortcuts(), n.removeHook("afterChange", jU);
   };
   me.prototype.destroy = function() {
     this.clear(), this.instance = null, this.doneActions = null, this.undoneActions = null;
@@ -75893,7 +75893,7 @@ the last node, the show column modification can be applied.`);
   Bo(me.RowMoveAction, me.Action);
   me.RowMoveAction.prototype.undo = function(n, e) {
     const t = n.getPlugin("manualRowMove");
-    n.addHookOnce("afterViewRender", e), hD(this.rows, this.finalRowIndex, n.rowIndexMapper.getNumberOfIndexes()).reverse().forEach((s) => {
+    n.addHookOnce("afterViewRender", e), dD(this.rows, this.finalRowIndex, n.rowIndexMapper.getNumberOfIndexes()).reverse().forEach((s) => {
       let {
         from: r,
         to: o
@@ -75911,7 +75911,7 @@ the last node, the show column modification can be applied.`);
   Bo(me.ColumnMoveAction, me.Action);
   me.ColumnMoveAction.prototype.undo = function(n, e) {
     const t = n.getPlugin("manualColumnMove");
-    n.addHookOnce("afterViewRender", e), hD(this.columns, this.finalColumnIndex, n.columnIndexMapper.getNumberOfIndexes()).reverse().forEach((s) => {
+    n.addHookOnce("afterViewRender", e), dD(this.columns, this.finalColumnIndex, n.columnIndexMapper.getNumberOfIndexes()).reverse().forEach((s) => {
       let {
         from: r,
         to: o
@@ -75942,7 +75942,7 @@ the last node, the show column modification can be applied.`);
   me.prototype.registerShortcuts = function() {
     const e = this.instance.getShortcutManager().getContext("grid"), i = {
       runOnlyIf: (s) => !s.altKey,
-      group: VU
+      group: WU
     };
     e.addShortcuts([{
       keys: [["Control/Meta", "z"]],
@@ -75957,9 +75957,9 @@ the last node, the show column modification can be applied.`);
     }], i);
   };
   me.prototype.unregisterShortcuts = function() {
-    this.instance.getShortcutManager().getContext("grid").removeShortcutsByGroup(VU);
+    this.instance.getShortcutManager().getContext("grid").removeShortcutsByGroup(WU);
   };
-  function WU(n, e) {
+  function jU(n, e) {
     const t = this;
     if (e === "loadData")
       return t.undoRedo.clear();
@@ -75992,7 +75992,7 @@ the last node, the show column modification can be applied.`);
   me.PLUGIN_KEY = Q$e;
   me.SETTING_KEYS = !0;
   function n2e() {
-    St(Eb), St(Ixe), St(Tb), St(hEe), St(vEe), St(d9), St(fTe), St(ZTe), St(t1), St(bAe), St(jAe), St(QAe), St(s1), St(xPe), St(_Oe), St(eke), St(Eke), St(Lke), St(qke), St(oHe), St(mHe), St(HHe), St(jHe), St(SDe), St(nNe), St(aNe), St(kNe), St(vLe), St(WLe), St(QLe), St(s$e), St(p$e), St(me);
+    St(Eb), St(Ixe), St(Tb), St(hEe), St(vEe), St(f9), St(fTe), St(ZTe), St(t1), St(bAe), St(jAe), St(QAe), St(s1), St(xPe), St(_Oe), St(eke), St(Eke), St(Lke), St(qke), St(oHe), St(mHe), St(HHe), St(jHe), St(SDe), St(nNe), St(aNe), St(kNe), St(vLe), St(WLe), St(QLe), St(s$e), St(p$e), St(me);
   }
   function i2e() {
     o1e(), R1e(), k1e(), J1e(), n2e();
@@ -76020,7 +76020,7 @@ the last node, the show column modification can be applied.`);
   var HT, DT, NT, LT, $T;
   i2e();
   s2e(Ye);
-  Ye.__GhostTable = XH;
+  Ye.__GhostTable = QH;
   Ye._getListenersCounter = awe;
   Ye._getRegisteredMapsCounter = PCe;
   Ye.EventManager = Ur;
@@ -76039,10 +76039,10 @@ the last node, the show column modification can be applied.`);
   });
   Ye.cellTypes = (HT = Ye.cellTypes) !== null && HT !== void 0 ? HT : {};
   F(DSe(), (n) => {
-    Ye.cellTypes[n] = OH(n);
+    Ye.cellTypes[n] = kH(n);
   });
   Ye.cellTypes.registerCellType = Er;
-  Ye.cellTypes.getCellType = OH;
+  Ye.cellTypes.getCellType = kH;
   Ye.editors = (DT = Ye.editors) !== null && DT !== void 0 ? DT : {};
   F(twe(), (n) => {
     Ye.editors[`${is(n)}Editor`] = xS(n);
@@ -76058,19 +76058,19 @@ the last node, the show column modification can be applied.`);
   Ye.renderers.getRenderer = ES;
   Ye.validators = (LT = Ye.validators) !== null && LT !== void 0 ? LT : {};
   F(pve(), (n) => {
-    Ye.validators[`${is(n)}Validator`] = zO(n);
+    Ye.validators[`${is(n)}Validator`] = UO(n);
   });
   Ye.validators.registerValidator = Fh;
-  Ye.validators.getValidator = zO;
+  Ye.validators.getValidator = UO;
   Ye.plugins = ($T = Ye.plugins) !== null && $T !== void 0 ? $T : {};
-  F(jO(), (n) => {
+  F(zO(), (n) => {
     Ye.plugins[n] = fv(n);
   });
   Ye.plugins[`${is(Pt.PLUGIN_KEY)}Plugin`] = Pt;
   Ye.plugins.registerPlugin = St;
   Ye.plugins.getPlugin = fv;
-  var jU;
-  let zU;
+  var zU;
+  let UU;
   function a2e(n, e, t, i, s, r) {
     var o, a, l, c, u, h, d, f = Symbol.metadata || Symbol.for("Symbol.metadata"), g = Object.defineProperty, p = Object.create, m = [p(null), p(null)], w = e.length;
     function y(x, M, I) {
@@ -76096,11 +76096,11 @@ the last node, the show column modification can be applied.`);
       }
       if (!pe) {
         var E = {}, N = [], X = v ? "get" : S || b ? "set" : "value";
-        if (Z ? ($ || b ? E = { get: QV(function() {
+        if (Z ? ($ || b ? E = { get: ZV(function() {
           return te(this);
         }, A, "get"), set: function(oe) {
           M[4](this, oe);
-        } } : E[X] = te, $ || QV(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
+        } } : E[X] = te, $ || ZV(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
           if ((a = m[+Y][A]) && (a ^ O) != 7) throw Error("Decorating two elements with the same name (" + E[X].name + ") is not supported yet");
           m[+Y][A] = O < 3 ? 1 : O;
         }
@@ -76160,7 +76160,7 @@ the last node, the show column modification can be applied.`);
     }
     return (e === "string" ? String : Number)(n);
   }
-  function QV(n, e, t) {
+  function ZV(n, e, t) {
     typeof e == "symbol" && (e = (e = e.description) ? "[" + e + "]" : "");
     try {
       Object.defineProperty(n, "name", { configurable: !0, value: t ? t + " " + e : e });
@@ -76172,7 +76172,7 @@ the last node, the show column modification can be applied.`);
     if (Object(n) !== n) throw TypeError("right-hand side of 'in' should be an object, got " + (n !== null ? typeof n : "null"));
     return n;
   }
-  let UU;
+  let YU;
   class h2e {
     constructor() {
       this.mytable = void 0, this.hot = void 0;
@@ -76190,32 +76190,38 @@ the last node, the show column modification can be applied.`);
       });
     }
   }
-  jU = h2e;
-  [UU, zU] = a2e(jU, [z_({
+  zU = h2e;
+  [YU, UU] = a2e(zU, [z_({
     ...Ese,
     name: "sv-table"
   })], []).c;
-  zU();
-  const YU = "chartjs-geo", tP = `<div class="chartjsgeocontainer">
+  UU();
+  const GU = "chartjs-geo", tP = `<div class="chartjsgeocontainer">
 <canvas ref="geochart" class="chartjsgeo"></canvas>
-<div class="chartjsgeodesc">
-    Click on country to see details<br/>
-    <b>\${countryName}</b><br/>
+<div class="chartjsgeodesc">    
+    <button click.trigger='switchToEurope()' class="w3-blue w3-btn w3-ripple">Europe</button> 
+    <button click.trigger='switchToAsia()' class="w3-blue w3-btn w3-ripple">Asia</button> 
+    <button click.trigger='switchToNAmerica()' class="w3-blue w3-btn w3-ripple">N.America</button> 
+    <button click.trigger='switchToSAmerica()' class="w3-blue w3-btn w3-ripple">S.America</button><br/>    
+    <button click.trigger='switchToAfrica()' class="w3-blue w3-btn w3-ripple">Africa</button> 
+    <button click.trigger='switchToPacific()' class="w3-blue w3-btn w3-ripple">Pacific</button> 
+    <button click.trigger='switchToWorld()' class="w3-blue w3-btn w3-ripple">World</button><br/>
+    click country for details: <b>\${countryName}</b><br/>
     <span>\${projectName} \${projectStatus} \${projectStatusText}</span><br/>
     <i>\${projectPublication}</i><br/>
     <span repeat.for="url of projecturls"><a href.bind='url' target="_blank" class="truncate">\${url}</a><br/></span>    
 </div>
-</div>`, GU = [], KU = {};
+</div>`, KU = [], qU = {};
   let FT;
   function d2e(n) {
-    FT || (FT = rr.define({ name: YU, template: tP, dependencies: GU, bindables: KU })), n.register(FT);
+    FT || (FT = rr.define({ name: GU, template: tP, dependencies: KU, bindables: qU })), n.register(FT);
   }
   const f2e = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    bindables: KU,
+    bindables: qU,
     default: tP,
-    dependencies: GU,
-    name: YU,
+    dependencies: KU,
+    name: GU,
     register: d2e,
     template: tP
   }, Symbol.toStringTag, { value: "Module" }));
@@ -76247,7 +76253,7 @@ the last node, the show column modification can be applied.`);
     for (const e of n)
       yield* e;
   }
-  function qU(n) {
+  function XU(n) {
     return Array.from(g2e(n));
   }
   function gg(n, e, t) {
@@ -76256,10 +76262,10 @@ the last node, the show column modification can be applied.`);
       r[i] = n + i * t;
     return r;
   }
-  var je = 1e-6, bD = 1e-12, ht = Math.PI, jn = ht / 2, ZV = ht / 4, ur = ht * 2, hs = 180 / ht, Qt = ht / 180, Mt = Math.abs, bp = Math.atan, $a = Math.atan2, et = Math.cos, W0 = Math.ceil, XU = Math.exp, f_ = Math.log, BT = Math.pow, Xe = Math.sin, Fr = Math.sign || function(n) {
+  var je = 1e-6, wD = 1e-12, ht = Math.PI, jn = ht / 2, JV = ht / 4, ur = ht * 2, hs = 180 / ht, Qt = ht / 180, Mt = Math.abs, bp = Math.atan, $a = Math.atan2, et = Math.cos, W0 = Math.ceil, QU = Math.exp, f_ = Math.log, BT = Math.pow, Xe = Math.sin, Fr = Math.sign || function(n) {
     return n > 0 ? 1 : n < 0 ? -1 : 0;
-  }, ys = Math.sqrt, wD = Math.tan;
-  function QU(n) {
+  }, ys = Math.sqrt, vD = Math.tan;
+  function ZU(n) {
     return n > 1 ? 0 : n < -1 ? ht : Math.acos(n);
   }
   function Yr(n) {
@@ -76268,16 +76274,16 @@ the last node, the show column modification can be applied.`);
   function Ei() {
   }
   function g_(n, e) {
-    n && eW.hasOwnProperty(n.type) && eW[n.type](n, e);
+    n && tW.hasOwnProperty(n.type) && tW[n.type](n, e);
   }
-  var JV = {
+  var eW = {
     Feature: function(n, e) {
       g_(n.geometry, e);
     },
     FeatureCollection: function(n, e) {
       for (var t = n.features, i = -1, s = t.length; ++i < s; ) g_(t[i].geometry, e);
     }
-  }, eW = {
+  }, tW = {
     Sphere: function(n, e) {
       e.sphere();
     },
@@ -76294,10 +76300,10 @@ the last node, the show column modification can be applied.`);
       for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) nP(t[i], e, 0);
     },
     Polygon: function(n, e) {
-      tW(n.coordinates, e);
+      nW(n.coordinates, e);
     },
     MultiPolygon: function(n, e) {
-      for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) tW(t[i], e);
+      for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) nW(t[i], e);
     },
     GeometryCollection: function(n, e) {
       for (var t = n.geometries, i = -1, s = t.length; ++i < s; ) g_(t[i], e);
@@ -76308,13 +76314,13 @@ the last node, the show column modification can be applied.`);
     for (e.lineStart(); ++i < s; ) r = n[i], e.point(r[0], r[1], r[2]);
     e.lineEnd();
   }
-  function tW(n, e) {
+  function nW(n, e) {
     var t = -1, i = n.length;
     for (e.polygonStart(); ++t < i; ) nP(n[t], e, 1);
     e.polygonEnd();
   }
   function Bh(n, e) {
-    n && JV.hasOwnProperty(n.type) ? JV[n.type](n, e) : g_(n, e);
+    n && eW.hasOwnProperty(n.type) ? eW[n.type](n, e) : g_(n, e);
   }
   function iP(n) {
     return [$a(n[1], n[0]), Yr(n[2])];
@@ -76351,19 +76357,19 @@ the last node, the show column modification can be applied.`);
     return Mt(n) > ht && (n -= Math.round(n / ur) * ur), [n, e];
   }
   oP.invert = oP;
-  function ZU(n, e, t) {
-    return (n %= ur) ? e || t ? rP(iW(n), sW(e, t)) : iW(n) : e || t ? sW(e, t) : oP;
+  function JU(n, e, t) {
+    return (n %= ur) ? e || t ? rP(sW(n), rW(e, t)) : sW(n) : e || t ? rW(e, t) : oP;
   }
-  function nW(n) {
+  function iW(n) {
     return function(e, t) {
       return e += n, Mt(e) > ht && (e -= Math.round(e / ur) * ur), [e, t];
     };
   }
-  function iW(n) {
-    var e = nW(n);
-    return e.invert = nW(-n), e;
+  function sW(n) {
+    var e = iW(n);
+    return e.invert = iW(-n), e;
   }
-  function sW(n, e) {
+  function rW(n, e) {
     var t = et(n), i = Xe(n), s = et(e), r = Xe(e);
     function o(a, l) {
       var c = et(l), u = et(a) * c, h = Xe(a) * c, d = Xe(l), f = d * t + u * i;
@@ -76375,7 +76381,7 @@ the last node, the show column modification can be applied.`);
     }, o;
   }
   function p2e(n) {
-    n = ZU(n[0] * Qt, n[1] * Qt, n.length > 2 ? n[2] * Qt : 0);
+    n = JU(n[0] * Qt, n[1] * Qt, n.length > 2 ? n[2] * Qt : 0);
     function e(t) {
       return t = n(t[0] * Qt, t[1] * Qt), t[0] *= hs, t[1] *= hs, t;
     }
@@ -76386,17 +76392,17 @@ the last node, the show column modification can be applied.`);
   function m2e(n, e, t, i, s, r) {
     if (t) {
       var o = et(e), a = Xe(e), l = i * t;
-      s == null ? (s = e + i * ur, r = e - l / 2) : (s = rW(o, s), r = rW(o, r), (i > 0 ? s < r : s > r) && (s += i * ur));
+      s == null ? (s = e + i * ur, r = e - l / 2) : (s = oW(o, s), r = oW(o, r), (i > 0 ? s < r : s > r) && (s += i * ur));
       for (var c, u = s; i > 0 ? u > r : u < r; u -= l)
         c = iP([o, -a * et(u), -a * Xe(u)]), n.point(c[0], c[1]);
     }
   }
-  function rW(n, e) {
+  function oW(n, e) {
     e = zg(e), e[0] -= n, sP(e);
-    var t = QU(-e[1]);
+    var t = ZU(-e[1]);
     return ((-e[2] < 0 ? -t : t) + ur - je) % ur;
   }
-  function JU() {
+  function eY() {
     var n = [], e;
     return {
       point: function(t, i, s) {
@@ -76421,7 +76427,7 @@ the last node, the show column modification can be applied.`);
   function U0(n, e, t, i) {
     this.x = n, this.z = e, this.o = t, this.e = i, this.v = !1, this.n = this.p = null;
   }
-  function eY(n, e, t, i, s) {
+  function tY(n, e, t, i, s) {
     var r = [], o = [], a, l;
     if (n.forEach(function(g) {
       if (!((p = g.length - 1) <= 0)) {
@@ -76437,7 +76443,7 @@ the last node, the show column modification can be applied.`);
         r.push(y = new U0(m, g, null, !0)), o.push(y.o = new U0(m, null, y, !1)), r.push(y = new U0(w, g, null, !1)), o.push(y.o = new U0(w, null, y, !0));
       }
     }), !!r.length) {
-      for (o.sort(e), oW(r), oW(o), a = 0, l = o.length; a < l; ++a)
+      for (o.sort(e), aW(r), aW(o), a = 0, l = o.length; a < l; ++a)
         o[a].e = t = !t;
       for (var c = r[0], u, h; ; ) {
         for (var d = c, f = !0; d.v; ) if ((d = d.n) === c) return;
@@ -76462,7 +76468,7 @@ the last node, the show column modification can be applied.`);
       }
     }
   }
-  function oW(n) {
+  function aW(n) {
     if (e = n.length) {
       for (var e, t = 0, i = n[0], s; ++t < e; )
         i.n = s = n[t], s.p = i, i = s;
@@ -76472,13 +76478,13 @@ the last node, the show column modification can be applied.`);
   function WT(n) {
     return Mt(n[0]) <= ht ? n[0] : Fr(n[0]) * ((Mt(n[0]) + ht) % ur - ht);
   }
-  function tY(n, e) {
+  function nY(n, e) {
     var t = WT(e), i = e[1], s = Xe(i), r = [Xe(t), -et(t), 0], o = 0, a = 0, l = new wu();
     s === 1 ? i = jn + je : s === -1 && (i = -jn - je);
     for (var c = 0, u = n.length; c < u; ++c)
       if (d = (h = n[c]).length)
-        for (var h, d, f = h[d - 1], g = WT(f), p = f[1] / 2 + ZV, m = Xe(p), w = et(p), y = 0; y < d; ++y, g = R, m = x, w = M, f = C) {
-          var C = h[y], R = WT(C), _ = C[1] / 2 + ZV, x = Xe(_), M = et(_), I = R - g, A = I >= 0 ? 1 : -1, O = A * I, D = O > ht, j = m * x;
+        for (var h, d, f = h[d - 1], g = WT(f), p = f[1] / 2 + JV, m = Xe(p), w = et(p), y = 0; y < d; ++y, g = R, m = x, w = M, f = C) {
+          var C = h[y], R = WT(C), _ = C[1] / 2 + JV, x = Xe(_), M = et(_), I = R - g, A = I >= 0 ? 1 : -1, O = A * I, D = O > ht, j = m * x;
           if (l.add($a(j * A * Xe(O), w * M + j * et(O))), o += D ? I + A * ur : I, D ^ g >= t ^ R >= t) {
             var Y = p_(zg(f), zg(C));
             sP(Y);
@@ -76488,11 +76494,11 @@ the last node, the show column modification can be applied.`);
             (i > $ || i === $ && (Y[0] || Y[1])) && (a += D ^ I >= 0 ? 1 : -1);
           }
         }
-    return (o < -je || o < je && l < -bD) ^ a & 1;
+    return (o < -je || o < je && l < -wD) ^ a & 1;
   }
-  function nY(n, e, t, i) {
+  function iY(n, e, t, i) {
     return function(s) {
-      var r = e(s), o = JU(), a = e(o), l = !1, c, u, h, d = {
+      var r = e(s), o = eY(), a = e(o), l = !1, c, u, h, d = {
         point: f,
         lineStart: p,
         lineEnd: m,
@@ -76500,9 +76506,9 @@ the last node, the show column modification can be applied.`);
           d.point = w, d.lineStart = y, d.lineEnd = C, u = [], c = [];
         },
         polygonEnd: function() {
-          d.point = f, d.lineStart = p, d.lineEnd = m, u = qU(u);
-          var R = tY(c, i);
-          u.length ? (l || (s.polygonStart(), l = !0), eY(u, w2e, R, t, s)) : R && (l || (s.polygonStart(), l = !0), s.lineStart(), t(null, null, 1, s), s.lineEnd()), l && (s.polygonEnd(), l = !1), u = c = null;
+          d.point = f, d.lineStart = p, d.lineEnd = m, u = XU(u);
+          var R = nY(c, i);
+          u.length ? (l || (s.polygonStart(), l = !0), tY(u, w2e, R, t, s)) : R && (l || (s.polygonStart(), l = !0), s.lineStart(), t(null, null, 1, s), s.lineEnd()), l && (s.polygonEnd(), l = !1), u = c = null;
         },
         sphere: function() {
           s.polygonStart(), s.lineStart(), t(null, null, 1, s), s.lineEnd(), s.polygonEnd();
@@ -76549,7 +76555,7 @@ the last node, the show column modification can be applied.`);
   function w2e(n, e) {
     return ((n = n.x)[0] < 0 ? n[1] - jn - je : jn - n[1]) - ((e = e.x)[0] < 0 ? e[1] - jn - je : jn - e[1]);
   }
-  const aW = nY(function() {
+  const lW = iY(function() {
     return !0;
   }, v2e, C2e, [-ht, -jn]);
   function v2e(n) {
@@ -76640,7 +76646,7 @@ the last node, the show column modification can be applied.`);
       var d = i ? n : ht - n, f = 0;
       return u < -d ? f |= 1 : u > d && (f |= 2), h < -d ? f |= 4 : h > d && (f |= 8), f;
     }
-    return nY(o, a, r, i ? [0, -n] : [-ht, n - ht]);
+    return iY(o, a, r, i ? [0, -n] : [-ht, n - ht]);
   }
   function _2e(n, e, t, i, s, r) {
     var o = n[0], a = n[1], l = e[0], c = e[1], u = 0, h = 1, d = l - o, f = c - a, g;
@@ -76707,7 +76713,7 @@ the last node, the show column modification can be applied.`);
       return h !== d ? h - d : h === 0 ? u[1] - c[1] : h === 1 ? c[0] - u[0] : h === 2 ? c[1] - u[1] : u[0] - c[0];
     }
     return function(c) {
-      var u = c, h = JU(), d, f, g, p, m, w, y, C, R, _, x, M = {
+      var u = c, h = eY(), d, f, g, p, m, w, y, C, R, _, x, M = {
         point: I,
         lineStart: j,
         lineEnd: Y,
@@ -76727,8 +76733,8 @@ the last node, the show column modification can be applied.`);
         u = h, d = [], f = [], x = !0;
       }
       function D() {
-        var $ = A(), B = x && $, ie = (d = qU(d)).length;
-        (B || ie) && (c.polygonStart(), B && (c.lineStart(), r(null, null, 1, c), c.lineEnd()), ie && eY(d, a, $, r, c), c.polygonEnd()), u = c, d = f = g = null;
+        var $ = A(), B = x && $, ie = (d = XU(d)).length;
+        (B || ie) && (c.polygonStart(), B && (c.lineStart(), r(null, null, 1, c), c.lineEnd()), ie && tY(d, a, $, r, c), c.polygonEnd()), u = c, d = f = g = null;
       }
       function j() {
         M.point = Z, f && f.push(g = []), _ = !0, R = !1, y = C = NaN;
@@ -76782,7 +76788,7 @@ the last node, the show column modification can be applied.`);
   function uP(n, e) {
     return cP[0] = n, cP[1] = e, A2e(P2e);
   }
-  var lW = {
+  var cW = {
     Feature: function(n, e) {
       return m_(n.geometry, e);
     },
@@ -76790,29 +76796,29 @@ the last node, the show column modification can be applied.`);
       for (var t = n.features, i = -1, s = t.length; ++i < s; ) if (m_(t[i].geometry, e)) return !0;
       return !1;
     }
-  }, cW = {
+  }, uW = {
     Sphere: function() {
       return !0;
     },
     Point: function(n, e) {
-      return uW(n.coordinates, e);
-    },
-    MultiPoint: function(n, e) {
-      for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) if (uW(t[i], e)) return !0;
-      return !1;
-    },
-    LineString: function(n, e) {
       return hW(n.coordinates, e);
     },
-    MultiLineString: function(n, e) {
+    MultiPoint: function(n, e) {
       for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) if (hW(t[i], e)) return !0;
       return !1;
     },
-    Polygon: function(n, e) {
+    LineString: function(n, e) {
       return dW(n.coordinates, e);
     },
-    MultiPolygon: function(n, e) {
+    MultiLineString: function(n, e) {
       for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) if (dW(t[i], e)) return !0;
+      return !1;
+    },
+    Polygon: function(n, e) {
+      return fW(n.coordinates, e);
+    },
+    MultiPolygon: function(n, e) {
+      for (var t = n.coordinates, i = -1, s = t.length; ++i < s; ) if (fW(t[i], e)) return !0;
       return !1;
     },
     GeometryCollection: function(n, e) {
@@ -76821,32 +76827,32 @@ the last node, the show column modification can be applied.`);
     }
   };
   function m_(n, e) {
-    return n && cW.hasOwnProperty(n.type) ? cW[n.type](n, e) : !1;
-  }
-  function uW(n, e) {
-    return uP(n, e) === 0;
+    return n && uW.hasOwnProperty(n.type) ? uW[n.type](n, e) : !1;
   }
   function hW(n, e) {
+    return uP(n, e) === 0;
+  }
+  function dW(n, e) {
     for (var t, i, s, r = 0, o = n.length; r < o; r++) {
-      if (i = uP(n[r], e), i === 0 || r > 0 && (s = uP(n[r], n[r - 1]), s > 0 && t <= s && i <= s && (t + i - s) * (1 - Math.pow((t - i) / s, 2)) < bD * s))
+      if (i = uP(n[r], e), i === 0 || r > 0 && (s = uP(n[r], n[r - 1]), s > 0 && t <= s && i <= s && (t + i - s) * (1 - Math.pow((t - i) / s, 2)) < wD * s))
         return !0;
       t = i;
     }
     return !1;
   }
-  function dW(n, e) {
-    return !!tY(n.map(I2e), iY(e));
+  function fW(n, e) {
+    return !!nY(n.map(I2e), sY(e));
   }
   function I2e(n) {
-    return n = n.map(iY), n.pop(), n;
+    return n = n.map(sY), n.pop(), n;
   }
-  function iY(n) {
+  function sY(n) {
     return [n[0] * Qt, n[1] * Qt];
   }
   function O2e(n, e) {
-    return (n && lW.hasOwnProperty(n.type) ? lW[n.type] : m_)(n, e);
+    return (n && cW.hasOwnProperty(n.type) ? cW[n.type] : m_)(n, e);
   }
-  function fW(n, e, t) {
+  function gW(n, e, t) {
     var i = gg(n, e - je, t).concat(e);
     return function(s) {
       return i.map(function(r) {
@@ -76854,7 +76860,7 @@ the last node, the show column modification can be applied.`);
       });
     };
   }
-  function gW(n, e, t) {
+  function pW(n, e, t) {
     var i = gg(n, e - je, t).concat(e);
     return function(s) {
       return i.map(function(r) {
@@ -76862,7 +76868,7 @@ the last node, the show column modification can be applied.`);
       });
     };
   }
-  function sY() {
+  function rY() {
     var n, e, t, i, s, r, o, a, l = 10, c = l, u = 90, h = 360, d, f, g, p, m = 2.5;
     function w() {
       return {
@@ -76902,14 +76908,14 @@ the last node, the show column modification can be applied.`);
     }, w.stepMinor = function(C) {
       return arguments.length ? (l = +C[0], c = +C[1], w) : [l, c];
     }, w.precision = function(C) {
-      return arguments.length ? (m = +C, d = fW(r, s, 90), f = gW(e, n, m), g = fW(a, o, 90), p = gW(i, t, m), w) : m;
+      return arguments.length ? (m = +C, d = gW(r, s, 90), f = pW(e, n, m), g = gW(a, o, 90), p = pW(i, t, m), w) : m;
     }, w.extentMajor([[-180, -90 + je], [180, 90 - je]]).extentMinor([[-180, -80 - je], [180, 80 + je]]);
   }
   function k2e() {
-    return sY()();
+    return rY()();
   }
   const hP = (n) => n;
-  var jT = new wu(), dP = new wu(), rY, oY, fP, gP, Il = {
+  var jT = new wu(), dP = new wu(), oY, aY, fP, gP, Il = {
     point: Ei,
     lineStart: Ei,
     lineEnd: Ei,
@@ -76928,13 +76934,13 @@ the last node, the show column modification can be applied.`);
     Il.point = D2e;
   }
   function D2e(n, e) {
-    Il.point = aY, rY = fP = n, oY = gP = e;
+    Il.point = lY, oY = fP = n, aY = gP = e;
   }
-  function aY(n, e) {
+  function lY(n, e) {
     dP.add(gP * n - fP * e), fP = n, gP = e;
   }
   function N2e() {
-    aY(rY, oY);
+    lY(oY, aY);
   }
   var Yg = 1 / 0, b_ = Yg, Pw = -Yg, w_ = Pw, v_ = {
     point: L2e,
@@ -76950,15 +76956,15 @@ the last node, the show column modification can be applied.`);
   function L2e(n, e) {
     n < Yg && (Yg = n), n > Pw && (Pw = n), e < b_ && (b_ = e), e > w_ && (w_ = e);
   }
-  var pP = 0, mP = 0, Km = 0, y_ = 0, C_ = 0, pg = 0, bP = 0, wP = 0, qm = 0, lY, cY, Ca, Sa, Nr = {
+  var pP = 0, mP = 0, Km = 0, y_ = 0, C_ = 0, pg = 0, bP = 0, wP = 0, qm = 0, cY, uY, Ca, Sa, Nr = {
     point: Pd,
-    lineStart: pW,
-    lineEnd: mW,
+    lineStart: mW,
+    lineEnd: bW,
     polygonStart: function() {
       Nr.lineStart = B2e, Nr.lineEnd = V2e;
     },
     polygonEnd: function() {
-      Nr.point = Pd, Nr.lineStart = pW, Nr.lineEnd = mW;
+      Nr.point = Pd, Nr.lineStart = mW, Nr.lineEnd = bW;
     },
     result: function() {
       var n = qm ? [bP / qm, wP / qm] : pg ? [y_ / pg, C_ / pg] : Km ? [pP / Km, mP / Km] : [NaN, NaN];
@@ -76968,7 +76974,7 @@ the last node, the show column modification can be applied.`);
   function Pd(n, e) {
     pP += n, mP += e, ++Km;
   }
-  function pW() {
+  function mW() {
     Nr.point = $2e;
   }
   function $2e(n, e) {
@@ -76978,26 +76984,26 @@ the last node, the show column modification can be applied.`);
     var t = n - Ca, i = e - Sa, s = ys(t * t + i * i);
     y_ += s * (Ca + n) / 2, C_ += s * (Sa + e) / 2, pg += s, Pd(Ca = n, Sa = e);
   }
-  function mW() {
+  function bW() {
     Nr.point = Pd;
   }
   function B2e() {
     Nr.point = W2e;
   }
   function V2e() {
-    uY(lY, cY);
+    hY(cY, uY);
   }
   function W2e(n, e) {
-    Nr.point = uY, Pd(lY = Ca = n, cY = Sa = e);
+    Nr.point = hY, Pd(cY = Ca = n, uY = Sa = e);
   }
-  function uY(n, e) {
+  function hY(n, e) {
     var t = n - Ca, i = e - Sa, s = ys(t * t + i * i);
     y_ += s * (Ca + n) / 2, C_ += s * (Sa + e) / 2, pg += s, s = Sa * n - Ca * e, bP += s * (Ca + n), wP += s * (Sa + e), qm += s * 3, Pd(Ca = n, Sa = e);
   }
-  function hY(n) {
+  function dY(n) {
     this._context = n;
   }
-  hY.prototype = {
+  dY.prototype = {
     _radius: 4.5,
     pointRadius: function(n) {
       return this._radius = n, this;
@@ -77032,13 +77038,13 @@ the last node, the show column modification can be applied.`);
     },
     result: Ei
   };
-  var vP = new wu(), zT, dY, fY, Xm, Qm, Iw = {
+  var vP = new wu(), zT, fY, gY, Xm, Qm, Iw = {
     point: Ei,
     lineStart: function() {
       Iw.point = j2e;
     },
     lineEnd: function() {
-      zT && gY(dY, fY), Iw.point = Ei;
+      zT && pY(fY, gY), Iw.point = Ei;
     },
     polygonStart: function() {
       zT = !0;
@@ -77052,15 +77058,15 @@ the last node, the show column modification can be applied.`);
     }
   };
   function j2e(n, e) {
-    Iw.point = gY, dY = Xm = n, fY = Qm = e;
+    Iw.point = pY, fY = Xm = n, gY = Qm = e;
   }
-  function gY(n, e) {
+  function pY(n, e) {
     Xm -= n, Qm -= e, vP.add(ys(Xm * Xm + Qm * Qm)), Xm = n, Qm = e;
   }
-  let bW, S_, wW, vW;
-  class yW {
+  let wW, S_, vW, yW;
+  class CW {
     constructor(e) {
-      this._append = e == null ? pY : z2e(e), this._radius = 4.5, this._ = "";
+      this._append = e == null ? mY : z2e(e), this._radius = 4.5, this._ = "";
     }
     pointRadius(e) {
       return this._radius = +e, this;
@@ -77088,11 +77094,11 @@ the last node, the show column modification can be applied.`);
           break;
         }
         default: {
-          if (this._append`M${e},${t}`, this._radius !== wW || this._append !== S_) {
+          if (this._append`M${e},${t}`, this._radius !== vW || this._append !== S_) {
             const i = this._radius, s = this._;
-            this._ = "", this._append`m0,${i}a${i},${i} 0 1,1 0,${-2 * i}a${i},${i} 0 1,1 0,${2 * i}z`, wW = i, S_ = this._append, vW = this._, this._ = s;
+            this._ = "", this._append`m0,${i}a${i},${i} 0 1,1 0,${-2 * i}a${i},${i} 0 1,1 0,${2 * i}z`, vW = i, S_ = this._append, yW = this._, this._ = s;
           }
-          this._ += vW;
+          this._ += yW;
           break;
         }
       }
@@ -77102,7 +77108,7 @@ the last node, the show column modification can be applied.`);
       return this._ = "", e.length ? e : null;
     }
   }
-  function pY(n) {
+  function mY(n) {
     let e = 1;
     this._ += n[0];
     for (const t = n.length; e < t; ++e)
@@ -77111,10 +77117,10 @@ the last node, the show column modification can be applied.`);
   function z2e(n) {
     const e = Math.floor(n);
     if (!(e >= 0)) throw new RangeError(`invalid digits: ${n}`);
-    if (e > 15) return pY;
-    if (e !== bW) {
+    if (e > 15) return mY;
+    if (e !== wW) {
       const t = 10 ** e;
-      bW = e, S_ = function(s) {
+      wW = e, S_ = function(s) {
         let r = 1;
         this._ += s[0];
         for (const o = s.length; r < o; ++r)
@@ -77123,7 +77129,7 @@ the last node, the show column modification can be applied.`);
     }
     return S_;
   }
-  function CW(n, e) {
+  function SW(n, e) {
     let t = 3, i = 4.5, s, r;
     function o(a) {
       return a && (typeof i == "function" && r.pointRadius(+i.apply(this, arguments)), Bh(a, s(r))), r.result();
@@ -77139,7 +77145,7 @@ the last node, the show column modification can be applied.`);
     }, o.projection = function(a) {
       return arguments.length ? (s = a == null ? (n = null, hP) : (n = a).stream, o) : n;
     }, o.context = function(a) {
-      return arguments.length ? (r = a == null ? (e = null, new yW(t)) : new hY(e = a), typeof i != "function" && r.pointRadius(i), o) : e;
+      return arguments.length ? (r = a == null ? (e = null, new CW(t)) : new dY(e = a), typeof i != "function" && r.pointRadius(i), o) : e;
     }, o.pointRadius = function(a) {
       return arguments.length ? (i = typeof a == "function" ? a : (r.pointRadius(+a), +a), o) : i;
     }, o.digits = function(a) {
@@ -77150,10 +77156,10 @@ the last node, the show column modification can be applied.`);
         if (!(l >= 0)) throw new RangeError(`invalid digits: ${a}`);
         t = l;
       }
-      return e === null && (r = new yW(t)), o;
+      return e === null && (r = new CW(t)), o;
     }, o.projection(n).digits(t).context(e);
   }
-  function vD(n) {
+  function yD(n) {
     return function(e) {
       var t = new yP();
       for (var i in n) t[i] = n[i];
@@ -77183,37 +77189,37 @@ the last node, the show column modification can be applied.`);
       this.stream.polygonEnd();
     }
   };
-  function yD(n, e, t) {
+  function CD(n, e, t) {
     var i = n.clipExtent && n.clipExtent();
     return n.scale(150).translate([0, 0]), i != null && n.clipExtent(null), Bh(t, n.stream(v_)), e(v_.result()), i != null && n.clipExtent(i), n;
   }
-  function CD(n, e, t) {
-    return yD(n, function(i) {
+  function SD(n, e, t) {
+    return CD(n, function(i) {
       var s = e[1][0] - e[0][0], r = e[1][1] - e[0][1], o = Math.min(s / (i[1][0] - i[0][0]), r / (i[1][1] - i[0][1])), a = +e[0][0] + (s - o * (i[1][0] + i[0][0])) / 2, l = +e[0][1] + (r - o * (i[1][1] + i[0][1])) / 2;
       n.scale(150 * o).translate([a, l]);
     }, t);
   }
-  function mY(n, e, t) {
-    return CD(n, [[0, 0], e], t);
-  }
   function bY(n, e, t) {
-    return yD(n, function(i) {
+    return SD(n, [[0, 0], e], t);
+  }
+  function wY(n, e, t) {
+    return CD(n, function(i) {
       var s = +e, r = s / (i[1][0] - i[0][0]), o = (s - r * (i[1][0] + i[0][0])) / 2, a = -r * i[0][1];
       n.scale(150 * r).translate([o, a]);
     }, t);
   }
-  function wY(n, e, t) {
-    return yD(n, function(i) {
+  function vY(n, e, t) {
+    return CD(n, function(i) {
       var s = +e, r = s / (i[1][1] - i[0][1]), o = -r * i[0][0], a = (s - r * (i[1][1] + i[0][1])) / 2;
       n.scale(150 * r).translate([o, a]);
     }, t);
   }
-  var SW = 16, U2e = et(30 * Qt);
-  function _W(n, e) {
+  var _W = 16, U2e = et(30 * Qt);
+  function RW(n, e) {
     return +e ? G2e(n, e) : Y2e(n);
   }
   function Y2e(n) {
-    return vD({
+    return yD({
       point: function(e, t) {
         e = n(e, t), this.stream.point(e[0], e[1]);
       }
@@ -77247,7 +77253,7 @@ the last node, the show column modification can be applied.`);
       }
       function C(I, A) {
         var O = zg([I, A]), D = n(I, A);
-        t(h, d, u, f, g, p, h = D[0], d = D[1], u = I, f = O[0], g = O[1], p = O[2], SW, i), i.point(h, d);
+        t(h, d, u, f, g, p, h = D[0], d = D[1], u = I, f = O[0], g = O[1], p = O[2], _W, i), i.point(h, d);
       }
       function R() {
         m.point = w, i.lineEnd();
@@ -77259,18 +77265,18 @@ the last node, the show column modification can be applied.`);
         C(s = I, A), r = h, o = d, a = f, l = g, c = p, m.point = C;
       }
       function M() {
-        t(h, d, u, f, g, p, r, o, s, a, l, c, SW, i), m.lineEnd = R, R();
+        t(h, d, u, f, g, p, r, o, s, a, l, c, _W, i), m.lineEnd = R, R();
       }
       return m;
     };
   }
-  var K2e = vD({
+  var K2e = yD({
     point: function(n, e) {
       this.stream.point(n * Qt, e * Qt);
     }
   });
   function q2e(n) {
-    return vD({
+    return yD({
       point: function(e, t) {
         var i = n(e, t);
         return this.stream.point(i[0], i[1]);
@@ -77285,7 +77291,7 @@ the last node, the show column modification can be applied.`);
       return [(o - e) / n * i, (t - a) / n * s];
     }, r;
   }
-  function RW(n, e, t, i, s, r) {
+  function xW(n, e, t, i, s, r) {
     if (!r) return X2e(n, e, t, i, s);
     var o = et(r), a = Xe(r), l = o * n, c = a * n, u = o / n, h = a / n, d = (a * t - o * e) / n, f = (a * e + o * t) / n;
     function g(p, m) {
@@ -77296,12 +77302,12 @@ the last node, the show column modification can be applied.`);
     }, g;
   }
   function fc(n) {
-    return vY(function() {
+    return yY(function() {
       return n;
     })();
   }
-  function vY(n) {
-    var e, t = 150, i = 480, s = 250, r = 0, o = 0, a = 0, l = 0, c = 0, u, h = 0, d = 1, f = 1, g = null, p = aW, m = null, w, y, C, R = hP, _ = 0.5, x, M, I, A, O;
+  function yY(n) {
+    var e, t = 150, i = 480, s = 250, r = 0, o = 0, a = 0, l = 0, c = 0, u, h = 0, d = 1, f = 1, g = null, p = lW, m = null, w, y, C, R = hP, _ = 0.5, x, M, I, A, O;
     function D($) {
       return I($[0] * Qt, $[1] * Qt);
     }
@@ -77315,7 +77321,7 @@ the last node, the show column modification can be applied.`);
     }, D.postclip = function($) {
       return arguments.length ? (R = $, m = w = y = C = null, Z()) : R;
     }, D.clipAngle = function($) {
-      return arguments.length ? (p = +$ ? S2e(g = $ * Qt) : (g = null, aW), Z()) : g * hs;
+      return arguments.length ? (p = +$ ? S2e(g = $ * Qt) : (g = null, lW), Z()) : g * hs;
     }, D.clipExtent = function($) {
       return arguments.length ? (R = $ == null ? (m = w = y = C = null, hP) : R2e(m = +$[0][0], w = +$[0][1], y = +$[1][0], C = +$[1][1]), Z()) : m == null ? null : [[m, w], [y, C]];
     }, D.scale = function($) {
@@ -77333,19 +77339,19 @@ the last node, the show column modification can be applied.`);
     }, D.reflectY = function($) {
       return arguments.length ? (f = $ ? -1 : 1, Y()) : f < 0;
     }, D.precision = function($) {
-      return arguments.length ? (x = _W(M, _ = $ * $), Z()) : ys(_);
+      return arguments.length ? (x = RW(M, _ = $ * $), Z()) : ys(_);
     }, D.fitExtent = function($, B) {
-      return CD(D, $, B);
+      return SD(D, $, B);
     }, D.fitSize = function($, B) {
-      return mY(D, $, B);
-    }, D.fitWidth = function($, B) {
       return bY(D, $, B);
-    }, D.fitHeight = function($, B) {
+    }, D.fitWidth = function($, B) {
       return wY(D, $, B);
+    }, D.fitHeight = function($, B) {
+      return vY(D, $, B);
     };
     function Y() {
-      var $ = RW(t, 0, 0, d, f, h).apply(null, e(r, o)), B = RW(t, i - $[0], s - $[1], d, f, h);
-      return u = ZU(a, l, c), M = rP(e, B), I = rP(u, M), x = _W(M, _), Z();
+      var $ = xW(t, 0, 0, d, f, h).apply(null, e(r, o)), B = xW(t, i - $[0], s - $[1], d, f, h);
+      return u = JU(a, l, c), M = rP(e, B), I = rP(u, M), x = RW(M, _), Z();
     }
     function Z() {
       return A = O = null, D;
@@ -77354,8 +77360,8 @@ the last node, the show column modification can be applied.`);
       return e = n.apply(this, arguments), D.invert = e.invert && j, Y();
     };
   }
-  function SD(n) {
-    var e = 0, t = ht / 3, i = vY(n), s = i(e, t);
+  function _D(n) {
+    var e = 0, t = ht / 3, i = yY(n), s = i(e, t);
     return s.parallels = function(r) {
       return arguments.length ? i(e = r[0] * Qt, t = r[1] * Qt) : [e * hs, t * hs];
     }, s;
@@ -77383,9 +77389,9 @@ the last node, the show column modification can be applied.`);
     }, o;
   }
   function __() {
-    return SD(Z2e).scale(155.424).center([0, 33.6442]);
+    return _D(Z2e).scale(155.424).center([0, 33.6442]);
   }
-  function yY() {
+  function CY() {
     return __().parallels([29.5, 45.5]).scale(1070).translate([480, 250]).rotate([96, 0]).center([-0.6, 38.7]);
   }
   function J2e(n) {
@@ -77412,7 +77418,7 @@ the last node, the show column modification can be applied.`);
     };
   }
   function eFe() {
-    var n, e, t = yY(), i, s = __().rotate([154, 0]).center([-2, 58.5]).parallels([55, 65]), r, o = __().rotate([157, 0]).center([-3, 19.9]).parallels([8, 18]), a, l, c = {
+    var n, e, t = CY(), i, s = __().rotate([154, 0]).center([-2, 58.5]).parallels([55, 65]), r, o = __().rotate([157, 0]).center([-3, 19.9]).parallels([8, 18]), a, l, c = {
       point: function(d, f) {
         l = [d, f];
       }
@@ -77435,20 +77441,20 @@ the last node, the show column modification can be applied.`);
       var f = t.scale(), g = +d[0], p = +d[1];
       return i = t.translate(d).clipExtent([[g - 0.455 * f, p - 0.238 * f], [g + 0.455 * f, p + 0.238 * f]]).stream(c), r = s.translate([g - 0.307 * f, p + 0.201 * f]).clipExtent([[g - 0.425 * f + je, p + 0.12 * f + je], [g - 0.214 * f - je, p + 0.234 * f - je]]).stream(c), a = o.translate([g - 0.205 * f, p + 0.212 * f]).clipExtent([[g - 0.214 * f + je, p + 0.166 * f + je], [g - 0.115 * f - je, p + 0.234 * f - je]]).stream(c), h();
     }, u.fitExtent = function(d, f) {
-      return CD(u, d, f);
+      return SD(u, d, f);
     }, u.fitSize = function(d, f) {
-      return mY(u, d, f);
-    }, u.fitWidth = function(d, f) {
       return bY(u, d, f);
-    }, u.fitHeight = function(d, f) {
+    }, u.fitWidth = function(d, f) {
       return wY(u, d, f);
+    }, u.fitHeight = function(d, f) {
+      return vY(u, d, f);
     };
     function h() {
       return n = e = null, u;
     }
     return u.scale(1070);
   }
-  function CY(n) {
+  function SY(n) {
     return function(e, t) {
       var i = et(e), s = et(t), r = n(i * s);
       return r === 1 / 0 ? [2, 0] : [r * s * Xe(e), r * Xe(t)];
@@ -77460,34 +77466,34 @@ the last node, the show column modification can be applied.`);
       return [$a(e * r, i * o), Yr(i && t * r / i)];
     };
   }
-  var SY = CY(function(n) {
+  var _Y = SY(function(n) {
     return ys(2 / (1 + n));
   });
-  SY.invert = Tv(function(n) {
+  _Y.invert = Tv(function(n) {
     return 2 * Yr(n / 2);
   });
   function tFe() {
-    return fc(SY).scale(124.75).clipAngle(180 - 1e-3);
+    return fc(_Y).scale(124.75).clipAngle(180 - 1e-3);
   }
-  var _Y = CY(function(n) {
-    return (n = QU(n)) && n / Xe(n);
+  var RY = SY(function(n) {
+    return (n = ZU(n)) && n / Xe(n);
   });
-  _Y.invert = Tv(function(n) {
+  RY.invert = Tv(function(n) {
     return n;
   });
   function nFe() {
-    return fc(_Y).scale(79.4188).clipAngle(180 - 1e-3);
+    return fc(RY).scale(79.4188).clipAngle(180 - 1e-3);
   }
   function l1(n, e) {
-    return [n, f_(wD((jn + e) / 2))];
+    return [n, f_(vD((jn + e) / 2))];
   }
   l1.invert = function(n, e) {
-    return [n, 2 * bp(XU(e)) - jn];
+    return [n, 2 * bp(QU(e)) - jn];
   };
   function iFe() {
-    return RY(l1).scale(961 / ur);
+    return xY(l1).scale(961 / ur);
   }
-  function RY(n) {
+  function xY(n) {
     var e = fc(n), t = e.center, i = e.scale, s = e.translate, r = e.clipExtent, o = null, a, l, c;
     e.scale = function(h) {
       return arguments.length ? (i(h), u()) : i();
@@ -77505,7 +77511,7 @@ the last node, the show column modification can be applied.`);
     return u();
   }
   function G0(n) {
-    return wD((jn + n) / 2);
+    return vD((jn + n) / 2);
   }
   function sFe(n, e) {
     var t = et(n), i = n === e ? Xe(n) : f_(t / et(e)) / f_(G0(e) / G0(n)), s = t * BT(G0(n), i) / i;
@@ -77521,7 +77527,7 @@ the last node, the show column modification can be applied.`);
     }, r;
   }
   function rFe() {
-    return SD(sFe).scale(109.5).parallels([30, 30]);
+    return _D(sFe).scale(109.5).parallels([30, 30]);
   }
   function R_(n, e) {
     return [n, e];
@@ -77543,34 +77549,34 @@ the last node, the show column modification can be applied.`);
     }, r;
   }
   function lFe() {
-    return SD(aFe).scale(131.154).center([0, 13.9389]);
+    return _D(aFe).scale(131.154).center([0, 13.9389]);
   }
   var zb = 1.340264, Ub = -0.081106, Yb = 893e-6, Gb = 3796e-6, x_ = ys(3) / 2, cFe = 12;
-  function xY(n, e) {
+  function EY(n, e) {
     var t = Yr(x_ * Xe(e)), i = t * t, s = i * i * i;
     return [n * et(t) / (x_ * (zb + 3 * Ub * i + s * (7 * Yb + 9 * Gb * i))), t * (zb + Ub * i + s * (Yb + Gb * i))];
   }
-  xY.invert = function(n, e) {
-    for (var t = e, i = t * t, s = i * i * i, r = 0, o, a, l; r < cFe && (a = t * (zb + Ub * i + s * (Yb + Gb * i)) - e, l = zb + 3 * Ub * i + s * (7 * Yb + 9 * Gb * i), t -= o = a / l, i = t * t, s = i * i * i, !(Mt(o) < bD)); ++r)
+  EY.invert = function(n, e) {
+    for (var t = e, i = t * t, s = i * i * i, r = 0, o, a, l; r < cFe && (a = t * (zb + Ub * i + s * (Yb + Gb * i)) - e, l = zb + 3 * Ub * i + s * (7 * Yb + 9 * Gb * i), t -= o = a / l, i = t * t, s = i * i * i, !(Mt(o) < wD)); ++r)
       ;
     return [x_ * n * (zb + 3 * Ub * i + s * (7 * Yb + 9 * Gb * i)) / et(t), Yr(Xe(t) / x_)];
   };
   function uFe() {
-    return fc(xY).scale(177.158);
+    return fc(EY).scale(177.158);
   }
-  function EY(n, e) {
+  function TY(n, e) {
     var t = et(e), i = et(n) * t;
     return [t * Xe(n) / i, Xe(e) / i];
   }
-  EY.invert = Tv(bp);
+  TY.invert = Tv(bp);
   function hFe() {
-    return fc(EY).scale(144.049).clipAngle(60);
+    return fc(TY).scale(144.049).clipAngle(60);
   }
-  function TY(n, e) {
+  function MY(n, e) {
     var t = e * e, i = t * t;
     return [n * (0.8707 - 0.131979 * t + i * (-0.013791 + i * (3971e-6 * t - 1529e-6 * i))), e * (1.007226 + t * (0.015085 + i * (-0.044475 + 0.028874 * t - 5916e-6 * i)))];
   }
-  TY.invert = function(n, e) {
+  MY.invert = function(n, e) {
     var t = e, i = 25, s;
     do {
       var r = t * t, o = r * r;
@@ -77579,33 +77585,33 @@ the last node, the show column modification can be applied.`);
     return [n / (0.8707 + (r = t * t) * (-0.131979 + r * (-0.013791 + r * r * r * (3971e-6 - 1529e-6 * r)))), t];
   };
   function dFe() {
-    return fc(TY).scale(175.295);
-  }
-  function MY(n, e) {
-    return [et(e) * Xe(n), Xe(e)];
-  }
-  MY.invert = Tv(Yr);
-  function fFe() {
-    return fc(MY).scale(249.5).clipAngle(90 + je);
+    return fc(MY).scale(175.295);
   }
   function AY(n, e) {
+    return [et(e) * Xe(n), Xe(e)];
+  }
+  AY.invert = Tv(Yr);
+  function fFe() {
+    return fc(AY).scale(249.5).clipAngle(90 + je);
+  }
+  function PY(n, e) {
     var t = et(e), i = 1 + et(n) * t;
     return [t * Xe(n) / i, Xe(e) / i];
   }
-  AY.invert = Tv(function(n) {
+  PY.invert = Tv(function(n) {
     return 2 * bp(n);
   });
   function gFe() {
-    return fc(AY).scale(250).clipAngle(142);
+    return fc(PY).scale(250).clipAngle(142);
   }
-  function PY(n, e) {
-    return [f_(wD((jn + e) / 2)), -n];
+  function IY(n, e) {
+    return [f_(vD((jn + e) / 2)), -n];
   }
-  PY.invert = function(n, e) {
-    return [-e, 2 * bp(XU(n)) - jn];
+  IY.invert = function(n, e) {
+    return [-e, 2 * bp(QU(n)) - jn];
   };
   function pFe() {
-    var n = RY(PY), e = n.center, t = n.rotate;
+    var n = xY(IY), e = n.center, t = n.rotate;
     return n.center = function(i) {
       return arguments.length ? e([-i[1], i[0]]) : (i = e(), [i[1], -i[0]]);
     }, n.rotate = function(i) {
@@ -77619,14 +77625,14 @@ the last node, the show column modification can be applied.`);
   function c1(n, e, t) {
     n.prototype = e.prototype = t, t.constructor = n;
   }
-  function _D(n, e) {
+  function RD(n, e) {
     var t = Object.create(n.prototype);
     for (var i in e) t[i] = e[i];
     return t;
   }
   function wp() {
   }
-  var Id = 0.7, Gg = 1 / Id, Ag = "\\s*([+-]?\\d+)\\s*", Ow = "\\s*([+-]?(?:\\d*\\.)?\\d+(?:[eE][+-]?\\d+)?)\\s*", Pa = "\\s*([+-]?(?:\\d*\\.)?\\d+(?:[eE][+-]?\\d+)?)%\\s*", mFe = /^#([0-9a-f]{3,8})$/, bFe = new RegExp(`^rgb\\(${Ag},${Ag},${Ag}\\)$`), wFe = new RegExp(`^rgb\\(${Pa},${Pa},${Pa}\\)$`), vFe = new RegExp(`^rgba\\(${Ag},${Ag},${Ag},${Ow}\\)$`), yFe = new RegExp(`^rgba\\(${Pa},${Pa},${Pa},${Ow}\\)$`), CFe = new RegExp(`^hsl\\(${Ow},${Pa},${Pa}\\)$`), SFe = new RegExp(`^hsla\\(${Ow},${Pa},${Pa},${Ow}\\)$`), xW = {
+  var Id = 0.7, Gg = 1 / Id, Ag = "\\s*([+-]?\\d+)\\s*", Ow = "\\s*([+-]?(?:\\d*\\.)?\\d+(?:[eE][+-]?\\d+)?)\\s*", Pa = "\\s*([+-]?(?:\\d*\\.)?\\d+(?:[eE][+-]?\\d+)?)%\\s*", mFe = /^#([0-9a-f]{3,8})$/, bFe = new RegExp(`^rgb\\(${Ag},${Ag},${Ag}\\)$`), wFe = new RegExp(`^rgb\\(${Pa},${Pa},${Pa}\\)$`), vFe = new RegExp(`^rgba\\(${Ag},${Ag},${Ag},${Ow}\\)$`), yFe = new RegExp(`^rgba\\(${Pa},${Pa},${Pa},${Ow}\\)$`), CFe = new RegExp(`^hsl\\(${Ow},${Pa},${Pa}\\)$`), SFe = new RegExp(`^hsla\\(${Ow},${Pa},${Pa},${Ow}\\)$`), EW = {
     aliceblue: 15792383,
     antiquewhite: 16444375,
     aqua: 65535,
@@ -77776,53 +77782,53 @@ the last node, the show column modification can be applied.`);
     yellow: 16776960,
     yellowgreen: 10145074
   };
-  c1(wp, RD, {
+  c1(wp, xD, {
     copy(n) {
       return Object.assign(new this.constructor(), this, n);
     },
     displayable() {
       return this.rgb().displayable();
     },
-    hex: EW,
+    hex: TW,
     // Deprecated! Use color.formatHex.
-    formatHex: EW,
+    formatHex: TW,
     formatHex8: _Fe,
     formatHsl: RFe,
-    formatRgb: TW,
-    toString: TW
+    formatRgb: MW,
+    toString: MW
   });
-  function EW() {
+  function TW() {
     return this.rgb().formatHex();
   }
   function _Fe() {
     return this.rgb().formatHex8();
   }
   function RFe() {
-    return OY(this).formatHsl();
+    return kY(this).formatHsl();
   }
-  function TW() {
+  function MW() {
     return this.rgb().formatRgb();
   }
-  function RD(n) {
+  function xD(n) {
     var e, t;
-    return n = (n + "").trim().toLowerCase(), (e = mFe.exec(n)) ? (t = e[1].length, e = parseInt(e[1], 16), t === 6 ? MW(e) : t === 3 ? new Qi(e >> 8 & 15 | e >> 4 & 240, e >> 4 & 15 | e & 240, (e & 15) << 4 | e & 15, 1) : t === 8 ? K0(e >> 24 & 255, e >> 16 & 255, e >> 8 & 255, (e & 255) / 255) : t === 4 ? K0(e >> 12 & 15 | e >> 8 & 240, e >> 8 & 15 | e >> 4 & 240, e >> 4 & 15 | e & 240, ((e & 15) << 4 | e & 15) / 255) : null) : (e = bFe.exec(n)) ? new Qi(e[1], e[2], e[3], 1) : (e = wFe.exec(n)) ? new Qi(e[1] * 255 / 100, e[2] * 255 / 100, e[3] * 255 / 100, 1) : (e = vFe.exec(n)) ? K0(e[1], e[2], e[3], e[4]) : (e = yFe.exec(n)) ? K0(e[1] * 255 / 100, e[2] * 255 / 100, e[3] * 255 / 100, e[4]) : (e = CFe.exec(n)) ? IW(e[1], e[2] / 100, e[3] / 100, 1) : (e = SFe.exec(n)) ? IW(e[1], e[2] / 100, e[3] / 100, e[4]) : xW.hasOwnProperty(n) ? MW(xW[n]) : n === "transparent" ? new Qi(NaN, NaN, NaN, 0) : null;
+    return n = (n + "").trim().toLowerCase(), (e = mFe.exec(n)) ? (t = e[1].length, e = parseInt(e[1], 16), t === 6 ? AW(e) : t === 3 ? new Qi(e >> 8 & 15 | e >> 4 & 240, e >> 4 & 15 | e & 240, (e & 15) << 4 | e & 15, 1) : t === 8 ? K0(e >> 24 & 255, e >> 16 & 255, e >> 8 & 255, (e & 255) / 255) : t === 4 ? K0(e >> 12 & 15 | e >> 8 & 240, e >> 8 & 15 | e >> 4 & 240, e >> 4 & 15 | e & 240, ((e & 15) << 4 | e & 15) / 255) : null) : (e = bFe.exec(n)) ? new Qi(e[1], e[2], e[3], 1) : (e = wFe.exec(n)) ? new Qi(e[1] * 255 / 100, e[2] * 255 / 100, e[3] * 255 / 100, 1) : (e = vFe.exec(n)) ? K0(e[1], e[2], e[3], e[4]) : (e = yFe.exec(n)) ? K0(e[1] * 255 / 100, e[2] * 255 / 100, e[3] * 255 / 100, e[4]) : (e = CFe.exec(n)) ? OW(e[1], e[2] / 100, e[3] / 100, 1) : (e = SFe.exec(n)) ? OW(e[1], e[2] / 100, e[3] / 100, e[4]) : EW.hasOwnProperty(n) ? AW(EW[n]) : n === "transparent" ? new Qi(NaN, NaN, NaN, 0) : null;
   }
-  function MW(n) {
+  function AW(n) {
     return new Qi(n >> 16 & 255, n >> 8 & 255, n & 255, 1);
   }
   function K0(n, e, t, i) {
     return i <= 0 && (n = e = t = NaN), new Qi(n, e, t, i);
   }
-  function IY(n) {
-    return n instanceof wp || (n = RD(n)), n ? (n = n.rgb(), new Qi(n.r, n.g, n.b, n.opacity)) : new Qi();
+  function OY(n) {
+    return n instanceof wp || (n = xD(n)), n ? (n = n.rgb(), new Qi(n.r, n.g, n.b, n.opacity)) : new Qi();
   }
   function kw(n, e, t, i) {
-    return arguments.length === 1 ? IY(n) : new Qi(n, e, t, i ?? 1);
+    return arguments.length === 1 ? OY(n) : new Qi(n, e, t, i ?? 1);
   }
   function Qi(n, e, t, i) {
     this.r = +n, this.g = +e, this.b = +t, this.opacity = +i;
   }
-  c1(Qi, kw, _D(wp, {
+  c1(Qi, kw, RD(wp, {
     brighter(n) {
       return n = n == null ? Gg : Math.pow(Gg, n), new Qi(this.r * n, this.g * n, this.b * n, this.opacity);
     },
@@ -77838,20 +77844,20 @@ the last node, the show column modification can be applied.`);
     displayable() {
       return -0.5 <= this.r && this.r < 255.5 && -0.5 <= this.g && this.g < 255.5 && -0.5 <= this.b && this.b < 255.5 && 0 <= this.opacity && this.opacity <= 1;
     },
-    hex: AW,
+    hex: PW,
     // Deprecated! Use color.formatHex.
-    formatHex: AW,
+    formatHex: PW,
     formatHex8: xFe,
-    formatRgb: PW,
-    toString: PW
+    formatRgb: IW,
+    toString: IW
   }));
-  function AW() {
+  function PW() {
     return `#${Qh(this.r)}${Qh(this.g)}${Qh(this.b)}`;
   }
   function xFe() {
     return `#${Qh(this.r)}${Qh(this.g)}${Qh(this.b)}${Qh((isNaN(this.opacity) ? 1 : this.opacity) * 255)}`;
   }
-  function PW() {
+  function IW() {
     const n = E_(this.opacity);
     return `${n === 1 ? "rgb(" : "rgba("}${od(this.r)}, ${od(this.g)}, ${od(this.b)}${n === 1 ? ")" : `, ${n})`}`;
   }
@@ -77864,24 +77870,24 @@ the last node, the show column modification can be applied.`);
   function Qh(n) {
     return n = od(n), (n < 16 ? "0" : "") + n.toString(16);
   }
-  function IW(n, e, t, i) {
+  function OW(n, e, t, i) {
     return i <= 0 ? n = e = t = NaN : t <= 0 || t >= 1 ? n = e = NaN : e <= 0 && (n = NaN), new _o(n, e, t, i);
   }
-  function OY(n) {
+  function kY(n) {
     if (n instanceof _o) return new _o(n.h, n.s, n.l, n.opacity);
-    if (n instanceof wp || (n = RD(n)), !n) return new _o();
+    if (n instanceof wp || (n = xD(n)), !n) return new _o();
     if (n instanceof _o) return n;
     n = n.rgb();
     var e = n.r / 255, t = n.g / 255, i = n.b / 255, s = Math.min(e, t, i), r = Math.max(e, t, i), o = NaN, a = r - s, l = (r + s) / 2;
     return a ? (e === r ? o = (t - i) / a + (t < i) * 6 : t === r ? o = (i - e) / a + 2 : o = (e - t) / a + 4, a /= l < 0.5 ? r + s : 2 - r - s, o *= 60) : a = l > 0 && l < 1 ? 0 : o, new _o(o, a, l, n.opacity);
   }
   function EFe(n, e, t, i) {
-    return arguments.length === 1 ? OY(n) : new _o(n, e, t, i ?? 1);
+    return arguments.length === 1 ? kY(n) : new _o(n, e, t, i ?? 1);
   }
   function _o(n, e, t, i) {
     this.h = +n, this.s = +e, this.l = +t, this.opacity = +i;
   }
-  c1(_o, EFe, _D(wp, {
+  c1(_o, EFe, RD(wp, {
     brighter(n) {
       return n = n == null ? Gg : Math.pow(Gg, n), new _o(this.h, this.s, this.l * n, this.opacity);
     },
@@ -77893,17 +77899,17 @@ the last node, the show column modification can be applied.`);
       return new Qi(UT(n >= 240 ? n - 240 : n + 120, s, i), UT(n, s, i), UT(n < 120 ? n + 240 : n - 120, s, i), this.opacity);
     },
     clamp() {
-      return new _o(OW(this.h), q0(this.s), q0(this.l), E_(this.opacity));
+      return new _o(kW(this.h), q0(this.s), q0(this.l), E_(this.opacity));
     },
     displayable() {
       return (0 <= this.s && this.s <= 1 || isNaN(this.s)) && 0 <= this.l && this.l <= 1 && 0 <= this.opacity && this.opacity <= 1;
     },
     formatHsl() {
       const n = E_(this.opacity);
-      return `${n === 1 ? "hsl(" : "hsla("}${OW(this.h)}, ${q0(this.s) * 100}%, ${q0(this.l) * 100}%${n === 1 ? ")" : `, ${n})`}`;
+      return `${n === 1 ? "hsl(" : "hsla("}${kW(this.h)}, ${q0(this.s) * 100}%, ${q0(this.l) * 100}%${n === 1 ? ")" : `, ${n})`}`;
     }
   }));
-  function OW(n) {
+  function kW(n) {
     return n = (n || 0) % 360, n < 0 ? n + 360 : n;
   }
   function q0(n) {
@@ -77913,11 +77919,11 @@ the last node, the show column modification can be applied.`);
     return (n < 60 ? e + (t - e) * n / 60 : n < 180 ? t : n < 240 ? e + (t - e) * (240 - n) / 60 : e) * 255;
   }
   const TFe = Math.PI / 180, MFe = 180 / Math.PI;
-  var kY = -0.14861, xD = 1.78277, ED = -0.29227, u1 = -0.90649, Hw = 1.97294, kW = Hw * u1, HW = Hw * xD, DW = xD * ED - u1 * kY;
+  var HY = -0.14861, ED = 1.78277, TD = -0.29227, u1 = -0.90649, Hw = 1.97294, HW = Hw * u1, DW = Hw * ED, NW = ED * TD - u1 * HY;
   function AFe(n) {
     if (n instanceof ad) return new ad(n.h, n.s, n.l, n.opacity);
-    n instanceof Qi || (n = IY(n));
-    var e = n.r / 255, t = n.g / 255, i = n.b / 255, s = (DW * i + kW * e - HW * t) / (DW + kW - HW), r = i - s, o = (Hw * (t - s) - ED * r) / u1, a = Math.sqrt(o * o + r * r) / (Hw * s * (1 - s)), l = a ? Math.atan2(o, r) * MFe - 120 : NaN;
+    n instanceof Qi || (n = OY(n));
+    var e = n.r / 255, t = n.g / 255, i = n.b / 255, s = (NW * i + HW * e - DW * t) / (NW + HW - DW), r = i - s, o = (Hw * (t - s) - TD * r) / u1, a = Math.sqrt(o * o + r * r) / (Hw * s * (1 - s)), l = a ? Math.atan2(o, r) * MFe - 120 : NaN;
     return new ad(l < 0 ? l + 360 : l, a, s, n.opacity);
   }
   function Fa(n, e, t, i) {
@@ -77926,7 +77932,7 @@ the last node, the show column modification can be applied.`);
   function ad(n, e, t, i) {
     this.h = +n, this.s = +e, this.l = +t, this.opacity = +i;
   }
-  c1(ad, Fa, _D(wp, {
+  c1(ad, Fa, RD(wp, {
     brighter(n) {
       return n = n == null ? Gg : Math.pow(Gg, n), new ad(this.h, this.s, this.l * n, this.opacity);
     },
@@ -77935,7 +77941,7 @@ the last node, the show column modification can be applied.`);
     },
     rgb() {
       var n = isNaN(this.h) ? 0 : (this.h + 120) * TFe, e = +this.l, t = isNaN(this.s) ? 0 : this.s * e * (1 - e), i = Math.cos(n), s = Math.sin(n);
-      return new Qi(255 * (e + t * (kY * i + xD * s)), 255 * (e + t * (ED * i + u1 * s)), 255 * (e + t * (Hw * i)), this.opacity);
+      return new Qi(255 * (e + t * (HY * i + ED * s)), 255 * (e + t * (TD * i + u1 * s)), 255 * (e + t * (Hw * i)), this.opacity);
     }
   }));
   function PFe(n, e, t, i, s) {
@@ -77949,8 +77955,8 @@ the last node, the show column modification can be applied.`);
       return PFe((t - i / e) * e, o, s, r, a);
     };
   }
-  const TD = (n) => () => n;
-  function HY(n, e) {
+  const MD = (n) => () => n;
+  function DY(n, e) {
     return function(t) {
       return n + t * e;
     };
@@ -77962,16 +77968,16 @@ the last node, the show column modification can be applied.`);
   }
   function kFe(n, e) {
     var t = e - n;
-    return t ? HY(n, t > 180 || t < -180 ? t - 360 * Math.round(t / 360) : t) : TD(isNaN(n) ? e : n);
+    return t ? DY(n, t > 180 || t < -180 ? t - 360 * Math.round(t / 360) : t) : MD(isNaN(n) ? e : n);
   }
   function HFe(n) {
     return (n = +n) == 1 ? Pg : function(e, t) {
-      return t - e ? OFe(e, t, n) : TD(isNaN(e) ? t : e);
+      return t - e ? OFe(e, t, n) : MD(isNaN(e) ? t : e);
     };
   }
   function Pg(n, e) {
     var t = e - n;
-    return t ? HY(n, t) : TD(isNaN(n) ? e : n);
+    return t ? DY(n, t) : MD(isNaN(n) ? e : n);
   }
   (function n(e) {
     var t = HFe(e);
@@ -77994,7 +78000,7 @@ the last node, the show column modification can be applied.`);
     };
   }
   var NFe = DFe(IFe);
-  function DY(n) {
+  function NY(n) {
     return function e(t) {
       t = +t;
       function i(s, r) {
@@ -78006,8 +78012,8 @@ the last node, the show column modification can be applied.`);
       return i.gamma = e, i;
     }(1);
   }
-  DY(kFe);
-  var MD = DY(Pg);
+  NY(kFe);
+  var AD = NY(Pg);
   const an = (n) => NFe(n[n.length - 1]);
   var LFe = new Array(3).concat("d8b365f5f5f55ab4ac", "a6611adfc27d80cdc1018571", "a6611adfc27df5f5f580cdc1018571", "8c510ad8b365f6e8c3c7eae55ab4ac01665e", "8c510ad8b365f6e8c3f5f5f5c7eae55ab4ac01665e", "8c510abf812ddfc27df6e8c3c7eae580cdc135978f01665e", "8c510abf812ddfc27df6e8c3f5f5f5c7eae580cdc135978f01665e", "5430058c510abf812ddfc27df6e8c3c7eae580cdc135978f01665e003c30", "5430058c510abf812ddfc27df6e8c3f5f5f5c7eae580cdc135978f01665e003c30").map($t);
   const $Fe = an(LFe);
@@ -78066,8 +78072,8 @@ the last node, the show column modification can be applied.`);
   function LBe(n) {
     return n = Math.max(0, Math.min(1, n)), "rgb(" + Math.max(0, Math.min(255, Math.round(-4.54 - n * (35.34 - n * (2381.73 - n * (6402.7 - n * (7024.72 - n * 2710.57))))))) + ", " + Math.max(0, Math.min(255, Math.round(32.49 + n * (170.73 + n * (52.82 - n * (131.46 - n * (176.58 - n * 67.37))))))) + ", " + Math.max(0, Math.min(255, Math.round(81.24 + n * (442.36 - n * (2482.43 - n * (6167.24 - n * (6614.94 - n * 2475.67))))))) + ")";
   }
-  const $Be = MD(Fa(300, 0.5, 0), Fa(-240, 0.5, 1));
-  var FBe = MD(Fa(-100, 0.75, 0.35), Fa(80, 1.5, 0.8)), BBe = MD(Fa(260, 0.75, 0.35), Fa(80, 1.5, 0.8)), X0 = Fa();
+  const $Be = AD(Fa(300, 0.5, 0), Fa(-240, 0.5, 1));
+  var FBe = AD(Fa(-100, 0.75, 0.35), Fa(80, 1.5, 0.8)), BBe = AD(Fa(260, 0.75, 0.35), Fa(80, 1.5, 0.8)), X0 = Fa();
   function VBe(n) {
     (n < 0 || n > 1) && (n -= Math.floor(n));
     var e = Math.abs(n - 0.5);
@@ -78109,11 +78115,11 @@ the last node, the show column modification can be applied.`);
     return typeof e == "string" && (e = n.objects[e]), e.type === "GeometryCollection" ? {
       type: "FeatureCollection",
       features: e.geometries.map(function(t) {
-        return NW(n, t);
+        return LW(n, t);
       })
-    } : NW(n, e);
+    } : LW(n, e);
   }
-  function NW(n, e) {
+  function LW(n, e) {
     var t = e.id, i = e.bbox, s = e.properties == null ? {} : e.properties, r = eVe(n, e);
     return t == null && i == null ? {
       type: "Feature",
@@ -78197,7 +78203,7 @@ the last node, the show column modification can be applied.`);
     geoOrthographic: fFe,
     geoStereographic: gFe,
     geoEqualEarth: uFe,
-    geoAlbers: yY,
+    geoAlbers: CY,
     geoAlbersUsa: eFe,
     geoConicConformal: rFe,
     geoConicEqualArea: __,
@@ -78212,13 +78218,13 @@ the last node, the show column modification can be applied.`);
   });
   class Xd extends Mu {
     constructor(e) {
-      super(e), this.outlineBounds = null, this.oldChartBounds = null, this.geoPath = CW();
+      super(e), this.outlineBounds = null, this.oldChartBounds = null, this.geoPath = SW();
     }
     init(e) {
       e.position = "chartArea", super.init(e), typeof e.projection == "function" ? this.projection = e.projection : this.projection = (Kb[e.projection] || Kb.albersUsa)(), this.geoPath.projection(this.projection), this.outlineBounds = null, this.oldChartBounds = null;
     }
     computeBounds(e) {
-      const t = CW(this.projection.fitWidth(1e3, e)).bounds(e), i = Math.ceil(t[1][1] - t[0][1]), s = Math.ceil(t[1][0] - t[0][0]), r = this.projection.translate();
+      const t = SW(this.projection.fitWidth(1e3, e)).bounds(e), i = Math.ceil(t[1][1] - t[0][1]), s = Math.ceil(t[1][0] - t[0][0]), r = this.projection.translate();
       this.outlineBounds = {
         width: s,
         height: i,
@@ -78378,7 +78384,7 @@ the last node, the show column modification can be applied.`);
     _drawIndicator() {
     }
   }
-  class NY extends sp {
+  class LY extends sp {
     constructor() {
       super(...arguments), this.legendSize = {
         w: 0,
@@ -78451,7 +78457,7 @@ the last node, the show column modification can be applied.`);
   Object.keys(Ol).forEach((n) => {
     Ol[`${n.charAt(11).toLowerCase()}${n.slice(12)}`] = Ol[n], Ol[n.slice(11)] = Ol[n];
   });
-  function LY(n, e) {
+  function $Y(n, e) {
     const t = 1 / e;
     if (n <= t)
       return 0;
@@ -78462,7 +78468,7 @@ the last node, the show column modification can be applied.`);
         return i - t / 2;
     return n;
   }
-  const $Y = {
+  const FY = {
     interpolate: "blues",
     missing: "transparent",
     quantize: 0
@@ -78478,7 +78484,7 @@ the last node, the show column modification can be applied.`);
     }
     getColor(e) {
       let t = e;
-      return this.options.quantize > 0 && (t = LY(t, this.options.quantize)), this.interpolate(t);
+      return this.options.quantize > 0 && (t = $Y(t, this.options.quantize)), this.interpolate(t);
     }
     _drawIndicator() {
       const {
@@ -78514,12 +78520,12 @@ the last node, the show column modification can be applied.`);
     }
   }
   vu.id = "color";
-  vu.defaults = lr({}, [ip.defaults, d1, $Y]);
+  vu.defaults = lr({}, [ip.defaults, d1, FY]);
   vu.descriptors = {
     _scriptable: (n) => n !== "interpolate",
     _indexable: !1
   };
-  class AD extends NY {
+  class PD extends LY {
     constructor() {
       super(...arguments), this.interpolate = (e) => `rgb(${e},${e},${e})`;
     }
@@ -78531,19 +78537,19 @@ the last node, the show column modification can be applied.`);
     }
     getColor(e) {
       let t = e;
-      return this.options.quantize > 0 && (t = LY(t, this.options.quantize)), this.interpolate(t);
+      return this.options.quantize > 0 && (t = $Y(t, this.options.quantize)), this.interpolate(t);
     }
     _drawIndicator() {
       return vu.prototype._drawIndicator.call(this);
     }
   }
-  AD.id = "colorLogarithmic";
-  AD.defaults = lr({}, [sp.defaults, d1, $Y]);
-  AD.descriptors = {
+  PD.id = "colorLogarithmic";
+  PD.defaults = lr({}, [sp.defaults, d1, FY]);
+  PD.descriptors = {
     _scriptable: (n) => n !== "interpolate",
     _indexable: !1
   };
-  const FY = {
+  const BY = {
     missing: 1,
     mode: "area",
     range: [2, 20],
@@ -78613,12 +78619,12 @@ the last node, the show column modification can be applied.`);
     }
   }
   Od.id = "size";
-  Od.defaults = lr({}, [ip.defaults, d1, FY]);
+  Od.defaults = lr({}, [ip.defaults, d1, BY]);
   Od.descriptors = {
     _scriptable: !0,
     _indexable: (n) => n !== "range"
   };
-  class BY extends NY {
+  class VY extends LY {
     constructor() {
       super(...arguments), this._model = null;
     }
@@ -78633,8 +78639,8 @@ the last node, the show column modification can be applied.`);
       Od.prototype._drawIndicator.call(this);
     }
   }
-  BY.id = "sizeLogarithmic";
-  BY.defaults = lr({}, [sp.defaults, d1, FY]);
+  VY.id = "sizeLogarithmic";
+  VY.defaults = lr({}, [sp.defaults, d1, BY]);
   function iVe(n, e) {
     return [[n[0][0] - e, n[0][1] - e], [n[1][0] + e, n[1][1] + e]];
   }
@@ -78749,11 +78755,11 @@ the last node, the show column modification can be applied.`);
     outlineBorderColor: "borderColor",
     ...np.defaultRoutes || {}
   };
-  const VY = {
+  const WY = {
     showOutline: !1,
     showGraticule: !1,
     clipMap: !0
-  }, WY = {
+  }, jY = {
     scales: {
       projection: {
         axis: "x",
@@ -78763,7 +78769,7 @@ the last node, the show column modification can be applied.`);
       }
     }
   };
-  function LW(n) {
+  function $W(n) {
     const e = {
       ...n
     };
@@ -78779,7 +78785,7 @@ the last node, the show column modification can be applied.`);
       delete e[t], e[i] = n[t];
     }), e;
   }
-  class jY extends Kr {
+  class zY extends Kr {
     getGeoDataset() {
       return super.getDataset();
     }
@@ -78808,13 +78814,13 @@ the last node, the show column modification can be applied.`);
       if (this.showOutline()) {
         const r = t.dataset;
         if (s && delete r.cache, r.projectionScale = i, r.pixelRatio = this.chart.currentDevicePixelRatio, e !== "resize") {
-          const o = LW(this.resolveDatasetElementOptions(e)), a = {
+          const o = $W(this.resolveDatasetElementOptions(e)), a = {
             feature: this.resolveOutline(),
             options: o
           };
           this.updateElement(r, void 0, a, e), this.getGraticule() && (t.graticule = o);
         }
-      } else this.getGraticule() && e !== "resize" && (t.graticule = LW(this.resolveDatasetElementOptions(e)));
+      } else this.getGraticule() && e !== "resize" && (t.graticule = $W(this.resolveDatasetElementOptions(e)));
       this.updateElements(t.data, 0, t.data.length, e), s && t.data.forEach((r) => delete r.cache);
     }
     resolveOutline() {
@@ -78836,7 +78842,7 @@ the last node, the show column modification can be applied.`);
       if (i.save(), i.beginPath(), typeof e == "boolean")
         e && r(k2e());
       else {
-        const o = sY();
+        const o = rY();
         e.stepMajor && o.stepMajor(e.stepMajor), e.stepMinor && o.stepMinor(e.stepMinor), r(o());
       }
       i.strokeStyle = t.graticuleBorderColor, i.lineWidth = t.graticuleBorderWidth, i.stroke(), i.restore();
@@ -78849,12 +78855,12 @@ the last node, the show column modification can be applied.`);
       (t === !0 || t === "outline" || t === "outline+graticule") && (i = !0, td(e.ctx, e.chartArea)), this.showOutline() && this.getMeta().dataset && this.getMeta().dataset.draw.call(this.getMeta().dataset, e.ctx, e.chartArea), t === !0 || t === "graticule" || t === "outline+graticule" ? i || td(e.ctx, e.chartArea) : i && (i = !1, nd(e.ctx)), this.showGraticule(), t === !0 || t === "items" ? i || td(e.ctx, e.chartArea) : i && (i = !1, nd(e.ctx)), this.getMeta().data.forEach((s) => s.draw.call(s, e.ctx, e.chartArea)), i && (i = !1, nd(e.ctx));
     }
   }
-  function zY(n, e, t, i = [], s = []) {
+  function UY(n, e, t, i = [], s = []) {
     ds.addControllers(t), Array.isArray(i) ? ds.addElements(...i) : ds.addElements(i), Array.isArray(s) ? ds.addScales(...s) : ds.addScales(s);
     const r = e;
     return r.type = n, r;
   }
-  class vp extends jY {
+  class vp extends zY {
     initialize() {
       super.initialize(), this.enableOptionSharing = !0;
     }
@@ -78894,11 +78900,11 @@ the last node, the show column modification can be applied.`);
     }
   }
   vp.id = "choropleth";
-  vp.defaults = lr({}, [VY, {
+  vp.defaults = lr({}, [WY, {
     datasetElementType: tc.id,
     dataElementType: tc.id
   }]);
-  vp.overrides = lr({}, [WY, {
+  vp.overrides = lr({}, [jY, {
     plugins: {
       tooltip: {
         callbacks: {
@@ -78931,11 +78937,11 @@ the last node, the show column modification can be applied.`);
   }]);
   class sVe extends cr {
     constructor(e, t) {
-      super(e, zY("choropleth", t, vp, tc, [vu, Xd]));
+      super(e, UY("choropleth", t, vp, tc, [vu, Xd]));
     }
   }
   sVe.id = vp.id;
-  class Mv extends jY {
+  class Mv extends zY {
     initialize() {
       super.initialize(), this.enableOptionSharing = !0;
     }
@@ -78976,13 +78982,13 @@ the last node, the show column modification can be applied.`);
     }
   }
   Mv.id = "bubbleMap";
-  Mv.defaults = lr({}, [VY, {
+  Mv.defaults = lr({}, [WY, {
     dataElementType: Gw.id,
     datasetElementType: tc.id,
     showOutline: !0,
     clipMap: "outline+graticule"
   }]);
-  Mv.overrides = lr({}, [WY, {
+  Mv.overrides = lr({}, [jY, {
     plugins: {
       tooltip: {
         callbacks: {
@@ -79015,12 +79021,12 @@ the last node, the show column modification can be applied.`);
   }]);
   class rVe extends cr {
     constructor(e, t) {
-      super(e, zY("bubbleMap", t, Mv, tc, [Od, Xd]));
+      super(e, UY("bubbleMap", t, Mv, tc, [Od, Xd]));
     }
   }
   rVe.id = Mv.id;
-  var UY = {}, PD = {};
-  Object.defineProperty(PD, "__esModule", {
+  var CP = {}, ID = {};
+  Object.defineProperty(ID, "__esModule", {
     value: !0
   });
   const oVe = [{
@@ -80269,7 +80275,7 @@ the last node, the show column modification can be applied.`);
     alpha3: "ZWE",
     numeric: "716"
   }];
-  PD.default = oVe;
+  ID.default = oVe;
   (function(n) {
     var e = ag && ag.__importDefault || function(i) {
       return i && i.__esModule ? i : {
@@ -80279,7 +80285,7 @@ the last node, the show column modification can be applied.`);
     Object.defineProperty(n, "__esModule", {
       value: !0
     }), n.all = n.whereNumeric = n.whereAlpha3 = n.whereAlpha2 = n.whereCountry = void 0;
-    const t = e(PD);
+    const t = e(ID);
     n.whereCountry = (i) => t.default.find((s) => s.country.toUpperCase() === i.toUpperCase()), n.whereAlpha2 = (i) => t.default.find((s) => s.alpha2 === i.toUpperCase()), n.whereAlpha3 = (i) => t.default.find((s) => s.alpha3 === i.toUpperCase()), n.whereNumeric = (i) => t.default.find((s) => s.numeric === String(i)), n.all = () => t.default, n.default = {
       all: n.all,
       whereCountry: n.whereCountry,
@@ -80287,7 +80293,7 @@ the last node, the show column modification can be applied.`);
       whereAlpha3: n.whereAlpha3,
       whereNumeric: n.whereNumeric
     };
-  })(UY);
+  })(CP);
   var YY;
   let GY, KY, qY, XY, QY, ZY, JY;
   function aVe(n, e, t, i, s, r) {
@@ -80315,11 +80321,11 @@ the last node, the show column modification can be applied.`);
       }
       if (!pe) {
         var E = {}, N = [], X = v ? "get" : S || b ? "set" : "value";
-        if (Z ? ($ || b ? E = { get: $W(function() {
+        if (Z ? ($ || b ? E = { get: FW(function() {
           return te(this);
         }, A, "get"), set: function(oe) {
           M[4](this, oe);
-        } } : E[X] = te, $ || $W(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
+        } } : E[X] = te, $ || FW(E[X], A, T ? "" : X)) : $ || (E = Object.getOwnPropertyDescriptor(x, A)), !$ && !Z) {
           if ((a = m[+Y][A]) && (a ^ O) != 7) throw Error("Decorating two elements with the same name (" + E[X].name + ") is not supported yet");
           m[+Y][A] = O < 3 ? 1 : O;
         }
@@ -80379,7 +80385,7 @@ the last node, the show column modification can be applied.`);
     }
     return (e === "string" ? String : Number)(n);
   }
-  function $W(n, e, t) {
+  function FW(n, e, t) {
     typeof e == "symbol" && (e = (e = e.description) ? "[" + e + "]" : "");
     try {
       Object.defineProperty(n, "name", { configurable: !0, value: t ? t + " " + e : e });
@@ -80391,26 +80397,12 @@ the last node, the show column modification can be applied.`);
     if (Object(n) !== n) throw TypeError("right-hand side of 'in' should be an object, got " + (n !== null ? typeof n : "null"));
     return n;
   }
+  const hVe = (n) => n.startsWith("#") ? n.slice(1) : n;
   let eG;
-  class hVe {
+  class dVe {
     constructor() {
-      this.datasrc = KY(this, "g/National_Initiatives_Figure_Data.csv"), this.countriessrc = (qY(this), XY(this, "https://unpkg.com/world-atlas/countries-50m.json")), this.geochart = void QY(this), this.countryDataDesc = {}, this.projecturls = [], this.countryName = ZY(this, ""), JY(this);
+      this.datasrc = KY(this, "g/National_Initiatives_Figure_Data.csv"), this.countriessrc = (qY(this), XY(this, "g/countries-50m.json")), this.geochart = void QY(this), this.countryDataDesc = {}, this.projecturls = [], this.countryName = ZY(this, ""), JY(this);
     }
-    /*  constructor(taskQueue) {
-          this.taskQueue = taskQueue;
-      }
-      */
-    // Helper function to parse CSV
-    /*parseCSV(csv) {
-        const rows = csv.split('\n').map((row) => row.split(','));
-        const headers = rows.shift(); // Extract header row
-        return rows.map((row) =>
-            headers.reduce((acc, header, index) => {
-                acc[header] = row[index];
-                return acc;
-            }, {})
-        );
-    }*/
     parseCSV(e) {
       const t = [];
       let i = !1;
@@ -80447,52 +80439,53 @@ the last node, the show column modification can be applied.`);
       return t;
     }
     showSelected(e) {
-      this.countryDataDesc ? (this.selected = this.countryDataDesc[e], this.selected ? (this.countryName = this.selected[0], this.projectName = this.selected[3], this.projectPublication = this.selected[2], this.projectStatus = this.selected[8], this.projectStatusText = this.selected[7], this.selected[4] && (this.projecturls = this.selected[4].split(" / "))) : console.warn("showselected this.selected is null")) : console.warn("showselected countryDataDesc is null");
+      this.countryDataDesc ? (this.selected = this.countryDataDesc[e], this.selected ? (this.countryName = this.selected[0], this.projectName = this.selected[3], this.projectPublication = this.selected[2], this.projectStatus = this.selected[8], this.projectStatusText = this.selected[7], this.selected[4] ? this.projecturls = this.selected[4].split(" / ") : this.projecturls = []) : console.warn("showselected this.selected is null")) : console.warn("showselected countryDataDesc is null");
     }
-    bind() {
-      if (this.paramshash = window.location.hash, this.params = this.paramshash.split(";"), length(this.params) > 0) {
-        const e = this.params.length - 1;
-        this.datasrc = this.params[e];
+    bound() {
+      if (console.log("bound()"), this.paramshash = window.location.hash, this.params = this.paramshash.split(";"), this.params.length > 0) {
+        const e = this.params.length - 1, t = hVe(this.params[e]);
+        t && (this.datasrc = t), console.log("hash contains url:" + this.datasrc);
       }
     }
     attached() {
-      console.log("attached"), cr.register(vp, tc, Xd, vu, ...H5), Promise.all([
+      console.log("attached"), cr.register(vp, tc, Xd, vu, ...D5), Promise.all([
         fetch(this.countriessrc).then((e) => e.json()),
         fetch(this.datasrc).then((e) => e.text())
         // Fetch the CSV file
       ]).then(([e, t]) => {
         let i = this;
-        const s = JBe(e, e.objects.countries).features, r = this.parseCSV(t);
-        let o = {};
+        this.countries = JBe(e, e.objects.countries).features;
+        const s = this.parseCSV(t);
+        let r = {};
         this.countryDataDesc = {};
-        for (let l of r)
+        for (let o of s)
           try {
-            let c = UY.whereAlpha2(l[1]);
-            c && (o[c.numeric] = l[8], this.countryDataDesc[c.numeric] = l);
-          } catch (c) {
-            console.warn(c);
+            let a = CP.whereAlpha2(o[1]);
+            a && (r[a.numeric] = o[8], this.countryDataDesc[a.numeric] = o);
+          } catch (a) {
+            console.warn(a);
           }
-        let a = [];
-        for (let l of s) {
-          let c = 0, u = o[l.id];
-          u ? c = parseFloat(u) : console.warn("no data for country with id" + l.id + " name:" + l.properties.name), a.push({
-            feature: l,
-            value: c
+        this.myData = [];
+        for (let o of this.countries) {
+          let a = 0, l = r[o.id];
+          l ? a = parseFloat(l) : console.warn("no data for country with id" + o.id + " name:" + o.properties.name), this.myData.push({
+            feature: o,
+            value: a
           });
         }
-        new cr(this.geochart.getContext("2d"), {
+        this.worlddata = this.myData, this.worldcountries = this.countries, this.chart = new cr(this.geochart.getContext("2d"), {
           type: "choropleth",
           data: {
-            labels: s.map((l) => l.id + ":" + l.properties.name),
+            labels: this.countries.map((o) => o.id + ":" + o.properties.name),
             datasets: [{
               label: "Countries",
               //data: countries.map((d) => ({ feature: d, value: Math.random() })),
-              data: a,
-              outline: s
+              data: this.myData,
+              outline: this.countries
             }]
           },
           options: {
-            showOutline: !0,
+            showOutline: !1,
             showGraticule: !0,
             plugins: {
               legend: {
@@ -80502,7 +80495,9 @@ the last node, the show column modification can be applied.`);
             scales: {
               projection: {
                 axis: "x",
-                projection: "equalEarth"
+                projection: "equalEarth",
+                projectionScale: 1,
+                projectionOffset: [0, 0]
               },
               color: {
                 axis: "x",
@@ -80513,9 +80508,9 @@ the last node, the show column modification can be applied.`);
                 }
               }
             },
-            onClick: (l, c) => {
-              let u = c.map((h) => h.element.feature.id);
-              i.showSelected(u[0]);
+            onClick: (o, a) => {
+              let l = a.map((c) => c.element.feature.id);
+              i.showSelected(l[0]);
             }
           }
         });
@@ -80523,23 +80518,57 @@ the last node, the show column modification can be applied.`);
     }
     detached() {
     }
+    switchToEurope() {
+      this.chart.options.scales.projection.projectionScale = 4, this.chart.options.scales.projection.projectionOffset = [0, 950], this.chart.update();
+    }
+    switchToWorld() {
+      this.chart.options.scales.projection.projectionScale = 1, this.chart.options.scales.projection.projectionOffset = [0, 0], this.chart.update();
+    }
+    switchToAsia() {
+      this.chart.options.scales.projection.projectionScale = 2.3, this.chart.options.scales.projection.projectionOffset = [-1100, 250], this.chart.update();
+    }
+    switchToNAmerica() {
+      this.chart.options.scales.projection.projectionScale = 2.5, this.chart.options.scales.projection.projectionOffset = [1100, 550], this.chart.update();
+    }
+    switchToSAmerica() {
+      this.chart.options.scales.projection.projectionScale = 2, this.chart.options.scales.projection.projectionOffset = [800, -250], this.chart.update();
+    }
+    switchToAfrica() {
+      this.chart.options.scales.projection.projectionScale = 1.8, this.chart.options.scales.projection.projectionOffset = [0, 0], this.chart.update();
+    }
+    switchToPacific() {
+      this.chart.options.scales.projection.projectionScale = 2, this.chart.options.scales.projection.projectionOffset = [-1300, -250], this.chart.update();
+    }
+    zoomChart(e, t, i) {
+      console.log("zoomChart:", e), e.options.scales.xy.projection.center = t, e.options.scales.xy.projection.scale = i, e.update();
+    }
+    switchToEurope2() {
+      this.eucountryids = this.europeanCountryCodes.map((e) => {
+        console.log("mapping " + e + " to numeric");
+        let t = CP.whereAlpha2(e);
+        return console.log("numeric", t), t ? t.numeric : null;
+      }), this.eudata = this.worlddata.filter((e) => this.eucountryids.includes(e.feature.id)), this.eucountries = this.worldcountries.filter((e) => this.eucountryids.includes(e.id)), console.log("switching to EU view", this.eudata, this.eucountries), console.log("debug world data", this.worlddata, this.worldcountries), this.chart.data.labels = this.eucountries.map((e) => e.properties.name), this.chart.data.datasets[0].data = this.eudata, this.chart.data.outline = this.eucountries, this.chart.update();
+    }
+    switchToworld2() {
+      this.chart.data.labels = this.worldcountries.map((e) => e.properties.name), this.chart.data.datasets[0].data = this.worlddata, this.chart.data.outline = this.worldcountries, this.chart.update();
+    }
   }
-  YY = hVe;
+  YY = dVe;
   ({
     e: [KY, qY, XY, QY, ZY, JY],
     c: [eG, GY]
   } = aVe(YY, [z_({
     ...f2e,
     name: "sv-chartjs-geo"
-  })], [[kN, 0, "datasrc"], [kN, 0, "countriessrc"], [WX, 0, "countryName"]]));
+  })], [[HN, 0, "datasrc"], [HN, 0, "countriessrc"], [WX, 0, "countryName"]]));
   GY();
-  const ID = Hd.createContainer();
-  ID.register(ld.instance(Gr, zc.getOrCreate(globalThis)));
-  ID.register(sJ);
-  const f1 = ID.get(rJ);
+  const OD = Hd.createContainer();
+  OD.register(ld.instance(Gr, zc.getOrCreate(globalThis)));
+  OD.register(sJ);
+  const f1 = OD.get(rJ);
   f1.define("sv-chartjs", eR);
-  f1.define("sv-chartjs-scatter", j5);
-  f1.define("sv-table", UU);
+  f1.define("sv-chartjs-scatter", z5);
+  f1.define("sv-table", YU);
   f1.define("sv-chartjs-geo", eG);
 });
-export default dVe();
+export default fVe();

@@ -2,9 +2,7 @@ import { Chart, registerables } from "chart.js/auto";
 import { bindable, observable } from 'aurelia';
 import { topojson, ChoroplethController, GeoFeature, ProjectionScale, ColorScale } from "chartjs-chart-geo";
 import { whereNumeric,whereAlpha2 } from 'iso-3166-1'
-//import { TaskQueue } from '@aurelia/runtime-html';
-import { inject} from 'aurelia';
-import { PLATFORM } from 'aurelia';
+import '../w3.css';
 
 const removeFirstHash = str => str.startsWith('#') ? str.slice(1) : str;
 
@@ -12,28 +10,13 @@ const removeFirstHash = str => str.startsWith('#') ? str.slice(1) : str;
 //@inject(TaskQueue)
 export class ChartjsGeo {
     @bindable datasrc = 'g/National_Initiatives_Figure_Data.csv';
-    @bindable countriessrc = 'https://unpkg.com/world-atlas/countries-50m.json'
+    @bindable countriessrc = 'g/countries-50m.json'
     //@bindable selected = {};
     geochart;
     countryDataDesc = {};
     projecturls = [];
     @observable countryName='';
 
-  /*  constructor(taskQueue) {
-        this.taskQueue = taskQueue;
-    }
-    */
-    // Helper function to parse CSV
-    /*parseCSV(csv) {
-        const rows = csv.split('\n').map((row) => row.split(','));
-        const headers = rows.shift(); // Extract header row
-        return rows.map((row) =>
-            headers.reduce((acc, header, index) => {
-                acc[header] = row[index];
-                return acc;
-            }, {})
-        );
-    }*/
         parseCSV(str) {
             const arr = [];
             let quote = false;  // 'true' means we're inside a quoted field
@@ -83,7 +66,7 @@ export class ChartjsGeo {
               this.projectStatusText = this.selected[7];
               if (this.selected[4]) {
                 this.projecturls = this.selected[4].split(' / ');
-              }
+              } else this.projecturls = []
               //console.log('countryName',this.countryName)            
             } else 
             console.warn('showselected this.selected is null')
@@ -101,7 +84,9 @@ export class ChartjsGeo {
         this.params = this.paramshash.split(';');
         if (this.params.length>0) {
             const lastindex= this.params.length - 1;
-            this.datasrc = removeFirstHash(this.params[lastindex]); 
+            const newsrc = removeFirstHash(this.params[lastindex]); 
+            //assign only if non-empty
+            if (newsrc) this.datasrc=newsrc;
 
             console.log('hash contains url:'+this.datasrc);
         }
@@ -122,7 +107,7 @@ export class ChartjsGeo {
             fetch(this.datasrc).then((res) => res.text()), // Fetch the CSV file
         ]).then(([topoData, csvData]) => {
             let that = this;
-            const countries = topojson.feature(topoData, topoData.objects.countries).features;
+            this.countries = topojson.feature(topoData, topoData.objects.countries).features;
             // Parse the CSV
             const parsedCSV = this.parseCSV(csvData);
             // Create a lookup for ISO country codes to project status (number)
@@ -139,8 +124,8 @@ export class ChartjsGeo {
                     console.warn(exc);
                 }
             }
-            let myData = []
-            for (let country of countries) {
+            this.myData = []
+            for (let country of this.countries) {
                 //let isocountry = whereNumeric(country.id)
                 let myValue = 0;
                 //if (isocountry) {
@@ -154,27 +139,28 @@ export class ChartjsGeo {
                 if (rawValue) {
                     myValue = parseFloat(rawValue)
                 } else console.warn('no data for country with id'+ country.id+ ' name:' + country.properties.name);
-                myData.push({
+                this.myData.push({
                     feature: country,
                     value: myValue
                 })
             }
-
+            this.worlddata = this.myData;
+            this.worldcountries = this.countries;
             //console.log('countries',countries);
             
-            const chart = new Chart(this.geochart.getContext("2d"), {
+            this.chart = new Chart(this.geochart.getContext("2d"), {
                 type: 'choropleth',
                 data: {
-                    labels: countries.map((d) => d.id +':'+d.properties.name),
+                    labels: this.countries.map((d) => d.id +':'+d.properties.name),
                     datasets: [{
                         label: 'Countries',
                         //data: countries.map((d) => ({ feature: d, value: Math.random() })),
-                        data:myData,
-                        outline: countries
+                        data:this.myData,
+                        outline: this.countries
                     }]
                 },
                 options: {
-                    showOutline: true,
+                    showOutline: false,
                     showGraticule: true,
                     plugins: {
                         legend: {
@@ -185,7 +171,10 @@ export class ChartjsGeo {
                     scales: {
                         projection: {
                             axis: 'x',
-                            projection: 'equalEarth'
+                            projection: 'equalEarth',
+                            projectionScale:1,
+                            projectionOffset: [0,0],
+                            
                         },
                         color: {
                             axis: 'x',
@@ -210,5 +199,126 @@ export class ChartjsGeo {
           // Cancel the task if needed
   //this.task.cancel();
 
+    }
+    switchToEurope() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        console.log('switch chart:',this.chart)
+        let scale = 4
+        this.chart.options.scales.projection.projectionScale = scale;
+        let yy = scale * (3/8 * this.chart.chartArea.height );
+        this.chart.options.scales.projection.projectionOffset = [0,yy];
+        this.chart.update();
+    }
+    switchToWorld() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        this.chart.options.scales.projection.projectionScale = 1;
+        this.chart.options.scales.projection.projectionOffset = [0,0];
+        this.chart.update();
+    }
+    switchToAsia() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        let scale = 2.3
+        let xx = - scale * (2/8 * this.chart.chartArea.width);
+        let yy = scale * (3/16 * this.chart.chartArea.height );
+        this.chart.options.scales.projection.projectionScale = scale;
+        this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        //this.chart.options.scales.projection.left = 1400;
+        //this.chart.options.scales.projection.bottom =250;
+        this.chart.update();
+    }
+    switchToNAmerica() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        let scale = 2.5;
+        let xx = scale * (2/8 * this.chart.chartArea.width);
+        let yy = scale * (2/8 * this.chart.chartArea.height );
+        this.chart.options.scales.projection.projectionScale = scale;
+        this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        this.chart.update();
+    }
+    switchToSAmerica() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        let scale = 2;
+        let xx = scale * (1/8 * this.chart.chartArea.width);
+        let yy = -scale * (5/32 * this.chart.chartArea.height );
+        this.chart.options.scales.projection.projectionScale = scale;
+        this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        this.chart.update();
+    }
+    switchToAfrica() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        this.chart.options.scales.projection.projectionScale = 1.8;
+        this.chart.options.scales.projection.projectionOffset = [0,0];
+        this.chart.update();
+    }
+    switchToPacific() {
+        //this.zoomChart(this.chart,[10,50],800)
+        //projectionScale: 3,
+        //          projectionOffset: [0, 750]
+        let scale = 2;
+        let xx = -scale * (5/16 * this.chart.chartArea.width);
+        let yy = -scale * (1/8 * this.chart.chartArea.height );
+
+        this.chart.options.scales.projection.projectionScale = scale;
+        this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        this.chart.update();
+    }
+
+
+
+    zoomChart(chart, center, scale) {
+        // Access the projection configuration
+        console.log('zoomChart:',chart)
+        chart.options.scales.xy.projection.center = center; // Update center [longitude, latitude]
+        chart.options.scales.xy.projection.scale = scale;   // Update zoom scale
+      
+        // Apply the changes
+        chart.update();
+      }
+      switchToEurope2() {
+        //filter data and countries
+        this.eucountryids = this.europeanCountryCodes.map( (code) => {
+            console.log('mapping '+code+' to numeric');
+            let a = whereAlpha2(code)
+            console.log('numeric',a);
+            if (a) return a.numeric;
+            else return null;
+        })
+        this.eudata = this.worlddata.filter(item => this.eucountryids.includes(item.feature.id));
+        this.eucountries = this.worldcountries.filter(country => this.eucountryids.includes(country.id));
+        console.log('switching to EU view',this.eudata,this.eucountries)
+        console.log('debug world data',this.worlddata,this.worldcountries)
+        //switch chart
+        // Update the chart's data
+        this.chart.data.labels = this.eucountries.map(country => country.properties.name);
+        this.chart.data.datasets[0].data = this.eudata;
+        this.chart.data.outline = this.eucountries;
+
+        // Re-render the chart
+        this.chart.update();
+    }
+    switchToworld2() {
+        //filter data and countries
+        //this.eudata = this.worlddata.filter(item => this.europeanCountryCodes.includes(item.country.id));
+        //this.eucountries = this.worldcountries.filter(country => this.europeanCountryCodes.includes(country.id));
+        //switch chart
+        // Update the chart's data
+        this.chart.data.labels = this.worldcountries.map(country => country.properties.name);
+        this.chart.data.datasets[0].data = this.worlddata;
+        this.chart.data.outline = this.worldcountries;
+
+        // Re-render the chart
+        this.chart.update();
     }
 }

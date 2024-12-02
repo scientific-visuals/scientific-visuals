@@ -18,4 +18,5 @@ export default defineConfig({
     babel(),
     nodePolyfills(),
   ],
+  publicDir: 'static'
 });

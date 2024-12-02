@@ -1,8 +1,14 @@
 <div class="chartjsgeocontainer">
 <canvas ref="geochart" class="chartjsgeo"></canvas>
-<div class="chartjsgeodesc">
-    Click on country to see details<br/>
-    <b>${countryName}</b><br/>
+<div class="chartjsgeodesc">    
+    <button click.trigger='switchToEurope()' class="w3-blue w3-btn w3-ripple">Europe</button> 
+    <button click.trigger='switchToAsia()' class="w3-blue w3-btn w3-ripple">Asia</button> 
+    <button click.trigger='switchToNAmerica()' class="w3-blue w3-btn w3-ripple">N.America</button> 
+    <button click.trigger='switchToSAmerica()' class="w3-blue w3-btn w3-ripple">S.America</button><br/>    
+    <button click.trigger='switchToAfrica()' class="w3-blue w3-btn w3-ripple">Africa</button> 
+    <button click.trigger='switchToPacific()' class="w3-blue w3-btn w3-ripple">Pacific</button> 
+    <button click.trigger='switchToWorld()' class="w3-blue w3-btn w3-ripple">World</button><br/>
+    click country for details: <b>${countryName}</b><br/>
     <span>${projectName} ${projectStatus} ${projectStatusText}</span><br/>
     <i>${projectPublication}</i><br/>
     <span repeat.for="url of projecturls"><a href.bind='url' target="_blank" class="truncate">${url}</a><br/></span>    

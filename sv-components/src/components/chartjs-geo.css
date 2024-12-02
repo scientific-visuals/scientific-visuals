@@ -7,8 +7,8 @@
 }
 .chartjsgeodesc {
     position: absolute;
-    top:10px;
-    left:10px;
+    bottom:5px;
+    left:5px;
     background-color: lightgray;
     padding:10px;
     font-size:x-small;
@@ -20,3 +20,6 @@
     white-space: nowrap;      /* Prevent wrapping */
     text-overflow: ellipsis;  /* Add ellipsis for overflow */
   }
+
+
+  
