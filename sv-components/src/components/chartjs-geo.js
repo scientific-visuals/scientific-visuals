@@ -1,6 +1,6 @@
 import { Chart, registerables } from "chart.js/auto";
 import { bindable, observable } from 'aurelia';
-import { topojson, ChoroplethController, GeoFeature, ProjectionScale, ColorScale } from "chartjs-chart-geo";
+import { geoOrthographic, topojson, ChoroplethController, GeoFeature, ProjectionScale, ColorScale } from "chartjs-chart-geo";
 import { whereNumeric,whereAlpha2 } from 'iso-3166-1'
 import '../w3.css';
 
@@ -162,6 +162,7 @@ export class ChartjsGeo {
             this.worlddata = this.myData;
             this.worldcountries = this.countries;
             //console.log('countries',countries);
+            console.log('geoOrthographic function:',geoOrthographic);
             
             this.chart = new Chart(this.geochart.getContext("2d"), {
                 type: 'choropleth',
@@ -187,6 +188,7 @@ export class ChartjsGeo {
                         projection: {
                                   axis:'x',                                  
                                   projection: 'equalEarth', 
+                                  //projection: geoOrthographic().rotate([0,0,0]) //'equalEarth', 
                         },
                         color: {
                             axis: 'x',
@@ -216,7 +218,10 @@ export class ChartjsGeo {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
-        console.log('switch chart:',this.chart)
+        //console.log('switch chart:',this.chart)        
+        if (this.currentProjection == 'orthographic') {
+            this.chart.scales.projection.projection.rotate([0,0,0])
+        }         
         let scale = 4
         this.chart.options.scales.projection.projectionScale = scale;
         let yy = scale * (3/8 * this.chart.chartArea.height );
@@ -227,6 +232,9 @@ export class ChartjsGeo {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
+        if (this.currentProjection == 'orthographic') {
+            this.chart.scales.projection.projection.rotate([0,0,0])
+        }
         this.chart.options.scales.projection.projectionScale = 1;
         this.chart.options.scales.projection.projectionOffset = [0,0];
         this.chart.update();
@@ -235,6 +243,12 @@ export class ChartjsGeo {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
+        if (this.currentProjection == 'orthographic') {
+            let scale = 1
+            this.chart.options.scales.projection.projectionScale = scale;
+            this.chart.options.scales.projection.projectionOffset = [0,0];
+            this.chart.scales.projection.projection.rotate([-80,0,0])
+        } else {
         let scale = 2.3
         let xx = - scale * (2/8 * this.chart.chartArea.width);
         let yy = scale * (3/16 * this.chart.chartArea.height );
@@ -242,48 +256,77 @@ export class ChartjsGeo {
         this.chart.options.scales.projection.projectionOffset = [xx,yy];
         //this.chart.options.scales.projection.left = 1400;
         //this.chart.options.scales.projection.bottom =250;
+        }
         this.chart.update();
     }
     switchToNAmerica() {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
+        if (this.currentProjection == 'orthographic') {
+            let scale = 1
+            this.chart.options.scales.projection.projectionScale = scale;
+            this.chart.options.scales.projection.projectionOffset = [0,0];
+            this.chart.scales.projection.projection.rotate([90,0,0])
+        } else {
         let scale = 2.5;
         let xx = scale * (2/8 * this.chart.chartArea.width);
         let yy = scale * (2/8 * this.chart.chartArea.height );
         this.chart.options.scales.projection.projectionScale = scale;
         this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        }
         this.chart.update();
     }
     switchToSAmerica() {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
+        if (this.currentProjection == 'orthographic') {
+            let scale = 1
+            this.chart.options.scales.projection.projectionScale = scale;
+            this.chart.options.scales.projection.projectionOffset = [0,0];
+            this.chart.scales.projection.projection.rotate([60,0,0])
+        } else {
         let scale = 2;
         let xx = scale * (1/8 * this.chart.chartArea.width);
         let yy = -scale * (5/32 * this.chart.chartArea.height );
         this.chart.options.scales.projection.projectionScale = scale;
         this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        }
         this.chart.update();
     }
     switchToAfrica() {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
+        if (this.currentProjection == 'orthographic') {
+            let scale = 1
+            this.chart.options.scales.projection.projectionScale = scale;
+            this.chart.options.scales.projection.projectionOffset = [0,0];
+            this.chart.scales.projection.projection.rotate([0,0,0])
+        } else {
         this.chart.options.scales.projection.projectionScale = 1.8;
         this.chart.options.scales.projection.projectionOffset = [0,0];
+        }
         this.chart.update();
     }
     switchToPacific() {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
         //          projectionOffset: [0, 750]
+        if (this.currentProjection == 'orthographic') {
+            let scale = 1
+            this.chart.options.scales.projection.projectionScale = scale;
+            this.chart.options.scales.projection.projectionOffset = [0,0];
+            this.chart.scales.projection.projection.rotate([-160,0,0])
+        } else {
         let scale = 2;
         let xx = -scale * (5/16 * this.chart.chartArea.width);
         let yy = -scale * (1/8 * this.chart.chartArea.height );
 
         this.chart.options.scales.projection.projectionScale = scale;
         this.chart.options.scales.projection.projectionOffset = [xx,yy];
+        }
         this.chart.update();
     }
 
@@ -335,11 +378,55 @@ export class ChartjsGeo {
     }
     switchProjection(p) {
         console.log('switching projection:',p)
-        this.chart.options.scales.projection.projection = p ;
+        this.currentProjection = p;
+        if (p == 'orthographic') {
+            this.chart.options.scales.projection.projection = geoOrthographic().rotate([0,0,0])
+        } else 
+            this.chart.options.scales.projection.projection = p ;
         //this.chart.scales.projection.projection.scales
         this.chart.update();
     }
     resetView(){
         this.switchProjection('equalEarth');this.switchToWorld()
     }
+
+    animate() {
+        
+    }
+    isAnimating = false;
+    toggleAnimation() {
+        if (this.currentProjection == 'orthographic') {
+
+        
+        if (this.isAnimating) {
+          // Stop the animation
+          cancelAnimationFrame(this.animationFrameId);
+          this.isAnimating = false;
+          console.log('Animation stopped.');
+        } else {
+          // Start the animation
+          this.isAnimating = true;
+          console.log('Animation started.');
+          this.performAnimationFrame();
+        }
+    }
+      }
+      
+    performAnimationFrame() {
+        if (!this.isAnimating) return; // Ensure animation stops when the flag is false
+      
+        // Call your animation logic here
+        this.animate();
+      
+        // Request the next frame
+        this.animationFrameId = requestAnimationFrame(this.performAnimationFrame.bind(this));
+      }
+      
+    animate() {
+        // Your animation logic
+        //console.log('Animating frame at', performance.now());
+        let t = performance.now() / 1000;
+        this.chart.scales.projection.projection.rotate([t,0,0])
+        this.chart.update()
+      }    
 }
