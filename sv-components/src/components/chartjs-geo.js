@@ -3,6 +3,7 @@ import { bindable, observable } from 'aurelia';
 import { geoOrthographic, topojson, ChoroplethController, GeoFeature, ProjectionScale, ColorScale } from "chartjs-chart-geo";
 import { whereNumeric,whereAlpha2 } from 'iso-3166-1'
 import '../w3.css';
+import '../w3-theme-teal.css';
 
 const removeFirstHash = str => str.startsWith('#') ? str.slice(1) : str;
 

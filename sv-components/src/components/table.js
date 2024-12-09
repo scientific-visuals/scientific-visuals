@@ -1,23 +1,24 @@
+import { IEventAggregator, resolve, customElement, bindable} from 'aurelia';
 //import { Handsontable } from 'handsontable';
 import Handsontable from "handsontable";
 //import handsontablecss from 'handsontable/dist/handsontable.full.css';
 
 @customElement('sv-table')
-/*@customElement({
-    name: 'sv-table',
-    //template: `<div ref="hot"></div>`,
-    shadowOptions: { mode: 'open' },
-    css: handsontableStyles, // Inline CSS into the shadow DOM
-  })*/
 export class Table {
+    ea /* IEventAggregator*/ = resolve(IEventAggregator);
     mytable;
     hot;
+    @bindable datachannel;
+    @bindable tabid;
     attached() {
+        
         let data = [
-            ["", "Tesla", "Volvo", "Toyota", "Honda"],
-            ["2017", 10, 11, 12, 13],
-            ["2018", 20, 11, 14, 13],
-            ["2019", 30, 15, 12, 13]
+            ["Subject/Object/Predicate","type", "CRC Risk", "CRC Neoplasia","Physical Activity"],
+            ["Trans-Chlordane","environmental", 1, 1,0 ],
+            ["PCB194", "environmental" ,1, 1],
+            ["Sterilisation", "biometric", 1, 0],
+            ["Tobacco Consumption", "lifestyle", 1, 1,1],
+            ["PAC-RSK","Interaction Term",1,0,1]
           ];
            
           //let container = document.getElementById('example');
@@ -30,5 +31,14 @@ export class Table {
             autoWrapCol: true,
             licenseKey: 'non-commercial-and-evaluation' // for non-commercial use only
           });
+          
     }
+
+    submit(){
+      let mydata= this.hot.getData();
+      console.log('submit data:',mydata);
+      this.ea.publish(this.datachannel,mydata)
+    }
+
+    
 }

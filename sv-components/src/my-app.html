@@ -1,9 +1,11 @@
-<import from="./components/chartjs"></import>
+<!--import from="./components/chartjs"></import>
 <import from="./components/chartjs-scatter"></import>
 <import from="./components/table"></import>
 <import from="./components/chartjs-geo"></import>
-<sv-chartjs-geo datasrc="g/National_Initiatives_Figure_Data.csv"></sv-chartjs-geo>
-
-
-
-
+<import from="./components/network"></import-->
+<!--sv-chartjs-geo datasrc="g/National_Initiatives_Figure_Data.csv"></sv-chartjs-geo-->
+<!--sv-tabs idlist="all,help,table1,visual" titlelist="Help,Data Table,Network Graph Visualisation"></sv-tabs-->
+<div id="all">
+    <sv-table datachannel="data" tabid="all"></sv-table>
+    <sv-network tabid="visual" datachannel="data"></sv-network>
+</div>
