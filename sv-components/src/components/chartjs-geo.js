@@ -14,6 +14,7 @@ export class ChartjsGeo {
     @bindable countriessrc = 'g/countries-50m.json'
     //@bindable selected = {};
     geochart;
+    continent=''; //initial continent to show
     countryDataDesc = {};
     projecturls = [];
     projections = ['azimuthalEqualArea',
@@ -93,17 +94,21 @@ export class ChartjsGeo {
 //        console.log(this.selected)
     }
 
-    bound(){
-        console.log('bound()')
+    bound(){        
         // Get location of data src from url hash
         this.paramshash = window.location.hash
-        this.params = this.paramshash.split(';');
+        this.params = this.paramshash.split('&');
+        console.log('bound() params',this.params)
         if (this.params.length>0) {
-            const lastindex= this.params.length - 1;
-            const newsrc = removeFirstHash(this.params[lastindex]); 
-            //assign only if non-empty
-            if (newsrc) this.datasrc=newsrc;
-
+            const lastindex= this.params.length;
+            if (lastindex>0) {
+                const newsrc = removeFirstHash(this.params[0]); 
+                //assign only if non-empty
+                if (newsrc) this.datasrc=newsrc;
+            }
+            if (lastindex>1) {
+                this.continent=this.params[1];
+            }
             console.log('hash contains url:'+this.datasrc);
         }
     }
@@ -207,6 +212,34 @@ export class ChartjsGeo {
                     },
                 }
             });
+            if (this.continent) {
+                console.log('switching to continent',this.continent)
+                switch (this.continent) {
+                    case 'europe':
+                      this.switchToEurope();
+                      break;
+                    case 'asia':
+                      this.switchToAsia();
+                      break;
+                    case 'namerica':
+                      this.switchToNAmerica();
+                      break;
+                    case 'africa':
+                      this.switchToAfrica();
+                      break;
+                    case 'samerica':
+                      this.switchToSAmerica();
+                      break;
+                    case 'australia':
+                      this.switchToAustralia();
+                      break;
+                    default:
+                      console.warn('Unknown continent:', this.continent);
+                      this.switchToWorld();
+                      break;
+                  }
+                  
+            }
         });
     }
 
@@ -229,6 +262,7 @@ export class ChartjsGeo {
         this.chart.options.scales.projection.projectionOffset = [0,yy];
         this.chart.update();
     }
+
     switchToWorld() {
         //this.zoomChart(this.chart,[10,50],800)
         //projectionScale: 3,
