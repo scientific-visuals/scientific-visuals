@@ -167,8 +167,16 @@ export class Network {
  */
   transformDataToGraph(data) {
     // Initialize a new undirected graph
-    this.graph = new Graph({ type: 'undirected' });
+    if (this.graph) {
+      this.graph.clear();
+    } else {
+      this.graph = new Graph({ type: 'undirected' });
+    }
+    if (this.layout) {
+      this.layout.stop();
+    }
     // Your data array
+    console.log('transformDataToGraph data.length', data.length)
     if (data.length == 0) {
       data = [
         ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
@@ -193,14 +201,18 @@ export class Network {
     const objectNames = header.slice(2); // Exclude first two columns
 
     // Add Object nodes
-    objectNames.forEach(object => {
+    for (let i = 0; i < objectNames.length; i++) {
+      const object = objectNames[i];
+      let angle = (i * 2 * Math.PI) / data.length;  
       this.graph.addNode(object, {
         label: object,
         size: 15,
         color: 'orange', // Default color for objects without a type
-        //type: 'object' // Optional: Define type as 'object'
+        // type: 'object' // Optional: Define type as 'object'
+        x: 100 * Math.cos(angle),
+        y: 100 * Math.sin(angle)
       });
-    });
+    }
 
     // Iterate through each Subject row
     for (let i = 1; i < data.length; i++) {
@@ -210,7 +222,7 @@ export class Network {
 
       // Determine color based on type
       const color = typeColorMap[subjectType] || 'gray'; // Default to gray if type not mapped
-
+      let angle = (i * 2 * Math.PI) / data.length;      
       // Add Subject node
       if (!this.graph.hasNode(subject)) {
         this.graph.addNode(subject, {
@@ -218,6 +230,8 @@ export class Network {
           size: 7,
           color: color,
           //type: subjectType
+          x: 100*Math.cos(angle),
+          y: 100*Math.sin(angle)
         });
       }
 
@@ -227,7 +241,8 @@ export class Network {
         const relationship = row[j];
 
         // Check if relationship exists (value === 1)
-        if (relationship === 1) {
+        if (relationship == 1) {
+          console.log('transformDataToGraph adding edge',subject, object)
           // Add edge between Subject and Object
           const edgeKey = `${subject}-${object}`;
           if (!this.graph.hasEdge(edgeKey)) {
@@ -239,15 +254,17 @@ export class Network {
         }
       }
     }
-    this.graph.nodes().forEach((node, i) => {
+    /*this.graph.nodes().forEach((node, i) => {
       const angle = (i * 2 * Math.PI) / this.graph.order;
       this.graph.setNodeAttribute(node, "x", 100 * Math.cos(angle));
       this.graph.setNodeAttribute(node, "y", 100 * Math.sin(angle));
-    });
+    });*/
     if (!this.layout) {
+      console.log('no layout showgraph()')
       this.showgraph();
     } else {
-      this.layout.stop();
+      console.log('layout detected, stop(), start()')
+      
       this.layout.start();
     }
   }
