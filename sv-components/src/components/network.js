@@ -26,6 +26,7 @@ export class Network {
               //gradient: NodeGradientProgram,
             },
             renderEdgeLabels: true,
+            allowInvalidContainer: true
           });
 
           // Create the spring layout and start it
@@ -35,11 +36,11 @@ export class Network {
       }
     });
     if (this.datachannel) {
-    this.ea.subscribe(this.datachannel, (mydata) => { 
-      console.log('newtork received data:',mydata);
-      this.transformDataToGraph(mydata);
-      
-    })
+      this.ea.subscribe(this.datachannel, (mydata) => {
+        console.log('newtork received data:', mydata);
+        this.transformDataToGraph(mydata);
+
+      })
     } else console.warn('datachannel empty')
     //this.showgraph();
     this.data = []; //TODO put data from other components
@@ -79,6 +80,7 @@ export class Network {
     });
   }
   showgraph() {
+    console.log('showgraph()')
     this.renderer = new Sigma(this.graph, this.container, {
       // We don't have to declare edgeProgramClasses here, because we only use the default ones ("line" and "arrow")
       nodeProgramClasses: {
@@ -86,6 +88,10 @@ export class Network {
         //gradient: NodeGradientProgram,
       },
       renderEdgeLabels: true,
+      
+        allowInvalidContainer: true,
+      
+      
     });
 
     // Create the spring layout and start it
@@ -98,7 +104,7 @@ export class Network {
     if (this.graph) {
       this.graph.clear();
     } else {
-    this.graph = new Graph({ type: 'undirected' });
+      this.graph = new Graph({ type: 'undirected' });
     }
 
     // Your data array
@@ -168,7 +174,8 @@ export class Network {
   transformDataToGraph(data) {
     // Initialize a new undirected graph
     if (this.graph) {
-      this.graph.clear();
+      //this.graph.clear();
+      this.graph.clearEdges();
     } else {
       this.graph = new Graph({ type: 'undirected' });
     }
@@ -203,15 +210,17 @@ export class Network {
     // Add Object nodes
     for (let i = 0; i < objectNames.length; i++) {
       const object = objectNames[i];
-      let angle = (i * 2 * Math.PI) / data.length;  
-      this.graph.addNode(object, {
-        label: object,
-        size: 15,
-        color: 'orange', // Default color for objects without a type
-        // type: 'object' // Optional: Define type as 'object'
-        x: 100 * Math.cos(angle),
-        y: 100 * Math.sin(angle)
-      });
+      if (!this.graph.hasNode(object)) {
+        let angle = (i * 2 * Math.PI) / data.length;
+        this.graph.addNode(object, {
+          label: object,
+          size: 15,
+          color: 'orange', // Default color for objects without a type
+          // type: 'object' // Optional: Define type as 'object'
+          x: 100 * Math.cos(angle),
+          y: 100 * Math.sin(angle)
+        });
+      }
     }
 
     // Iterate through each Subject row
@@ -222,7 +231,7 @@ export class Network {
 
       // Determine color based on type
       const color = typeColorMap[subjectType] || 'gray'; // Default to gray if type not mapped
-      let angle = (i * 2 * Math.PI) / data.length;      
+      let angle = (i * 2 * Math.PI) / data.length;
       // Add Subject node
       if (!this.graph.hasNode(subject)) {
         this.graph.addNode(subject, {
@@ -230,26 +239,33 @@ export class Network {
           size: 7,
           color: color,
           //type: subjectType
-          x: 100*Math.cos(angle),
-          y: 100*Math.sin(angle)
+          x: 100 * Math.cos(angle),
+          y: 100 * Math.sin(angle)
         });
       }
 
+      // Remove all edges from the graph
+      
       // Iterate through predicate columns
       for (let j = 2; j < header.length; j++) {
         const object = header[j];
         const relationship = row[j];
 
         // Check if relationship exists (value === 1)
-        if (relationship == 1) {
-          console.log('transformDataToGraph adding edge',subject, object)
+        if (relationship && (relationship != 0)) {
+          console.log('transformDataToGraph adding edge', subject, object)
           // Add edge between Subject and Object
           const edgeKey = `${subject}-${object}`;
           if (!this.graph.hasEdge(edgeKey)) {
+            console.log('edge not exist adddge')
             this.graph.addEdge(subject, object, {
               relationship: 'related', // You can customize this as needed
-              type: "line", label: "corelates", size: 5
+              type: "line", 
+              label: relationship, 
+              size: 5
             });
+          } else {
+            console.log('edge exist adddge')
           }
         }
       }
@@ -264,7 +280,7 @@ export class Network {
       this.showgraph();
     } else {
       console.log('layout detected, stop(), start()')
-      
+
       this.layout.start();
     }
   }

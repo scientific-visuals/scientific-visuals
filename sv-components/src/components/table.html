@@ -1,2 +1,5 @@
-<button class="w3-button" click.trigger="submit()">submit</button>
-<div ref="mytable">here is table</div>
+<button class="w3-button w3-grey" click.trigger="submit()" show.bind="showtable">submit</button>
+<button class="w3-button w3-grey" click.trigger="addRow()" show.bind="showtable">+ Subject (row)</button>
+<button class="w3-button w3-grey" click.trigger="addColumn()" show.bind="showtable">+ Object (column)</button>
+<button class="w3-button w3-grey" click.trigger="showHide()">show/hide</button>
+<div ref="mytable" show.bind="showtable"></div>
