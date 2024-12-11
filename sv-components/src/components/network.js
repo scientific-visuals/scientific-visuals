@@ -13,6 +13,7 @@ export class Network {
   container;
   tabid;
   @bindable datachannel;
+
   attached() {
     this.ea.subscribe('showtab', (showtabid) => {
       if (this.tabid === this.showtabid) {
@@ -37,15 +38,124 @@ export class Network {
     });
     if (this.datachannel) {
       this.ea.subscribe(this.datachannel, (mydata) => {
-        console.log('newtork received data:', mydata);
-        this.transformDataToGraph(mydata);
-
+        console.log('network received data:', mydata);
+        if (Array.isArray(mydata)) {
+          this.transformDataToGraph(mydata);
+        } else {
+          //process changes
+          if (this.layout) this.layout.stop();
+          if (mydata.type == 'changeNode') {
+            console.log('network changeNode')
+            this.renameNode(mydata.old, mydata.value)
+          } else if (mydata.type == 'changeType') {
+            console.log('network changeType')
+            this.changeNodeType(mydata.node, mydata.value)
+          } else if (mydata.type == 'changeEdge') {
+            console.log('network changeEdge')
+            //        {'type':'changeEdge','subject':subjectName,'object':objectName,'old':oldValue,'value':newValue})              
+            this.updateEdge(mydata.subject, mydata.object, mydata.value)
+          } else {
+            console.warn('not recognized change', mydata);
+          }
+          if (this.layout) this.layout.start();
+        }
       })
     } else console.warn('datachannel empty')
     //this.showgraph();
     this.data = []; //TODO put data from other components
     this.transformDataToGraph(this.data);
   }
+
+  changeNodeType(nodeId, nodetype) {
+    const mycolor = this.typeColorMap[nodetype] || 'gray';
+
+    //    color: color,
+    //subjectType: subjectType,
+    if (!this.graph.hasNode(nodeId)) {
+      console.log(`Node "${nodeId}" does not exist. Creating.`);
+      const angle = (this.graph.order * 2 * Math.PI) / this.graph.order;
+      
+      this.graph.addNode(nodeId, {
+        label: nodeId,
+        size: 15,
+        color: mycolor, // Default color for objects without a type
+        // type: 'object' // Optional: Define type as 'object'
+        x: 100 * Math.cos(angle),
+        y: 100 * Math.sin(angle)
+      });
+
+    }
+    this.graph.setNodeAttribute(nodeId, 'color', mycolor);
+    this.graph.setNodeAttribute(nodeId, 'subjectType', nodetype);
+  }
+
+  renameNode(oldName, newName) {
+    if (!oldName) {
+      //oldname is null create Node
+      this.changeNodeType(newName,'default');
+      return;
+    }
+    if (!this.graph.hasNode(oldName)) {
+      console.error(`Node "${oldName}" does not exist.`);
+      return;
+    }
+    if (this.graph.hasNode(newName)) {
+      console.error(`Node "${newName}" already exists.`);
+      return;
+    }
+
+    // Get attributes of the old node
+    const attributes = this.graph.getNodeAttributes(oldName);
+    attributes.label = newName;
+
+    // Add the new node with the same attributes
+    this.graph.addNode(newName, attributes);
+
+    // Transfer all edges from old node to new node
+    this.graph.forEachEdge(oldName, (edge, attr, source, target) => {
+      const connectedNode = source === oldName ? target : source;
+      this.graph.addEdge(newName, connectedNode, attr);
+    });
+
+    // Remove the old node
+    this.graph.dropNode(oldName);
+  }
+
+  /**
+   * Updates or removes an edge based on the provided value.
+   *
+   * @param {string} subject - The source node identifier.
+   * @param {string} object - The target node identifier.
+   * @param {string|number} value - The value to determine the action.
+   */
+  updateEdge(subject, object, value) {
+    // Check if the edge exists between subject and object
+    if (this.graph.hasEdge(subject, object)) {
+      if (! value || value == 0) {
+        // Remove the edge if value is empty string or 0
+        this.graph.dropEdge(subject, object);
+        console.log(`Edge between "${subject}" and "${object}" has been removed.`);
+      } else {
+        // Update the 'label' attribute of the existing edge
+        this.graph.setEdgeAttribute(subject, object, 'label', value);
+        console.log(`Edge between "${subject}" and "${object}" updated with label: "${value}".`);
+      }
+    } else {
+      if (value !== '' && value !== 0) {
+        // Optionally, add the edge if it doesn't exist and value is valid
+        this.graph.addEdge(subject, object, {
+          relationship: 'related',
+          type: 'line',
+          label: value,
+          size: 5
+        });
+        console.log(`Edge between "${subject}" and "${object}" has been added with label: "${value}".`);
+      } else {
+        console.warn(`Edge between "${subject}" and "${object}" does not exist and no action was taken.`);
+      }
+    }
+  }
+
 
   creategraph() {
     // Step 1: Create a new graph
@@ -88,10 +198,10 @@ export class Network {
         //gradient: NodeGradientProgram,
       },
       renderEdgeLabels: true,
-      
-        allowInvalidContainer: true,
-      
-      
+
+      allowInvalidContainer: true,
+
+
     });
 
     // Create the spring layout and start it
@@ -110,11 +220,11 @@ export class Network {
     // Your data array
     data = [
       ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
-      ["Trans-Chlordane", "environmental", 1, 1, 0],
-      ["PCB194", "environmental", 1, 1],
-      ["Sterilisation", "biometric", 1, 0],
-      ["Tobacco Consumption", "lifestyle", 1, 1, 1],
-      ["PAC-RSK", "Interaction Term", 1, 0, 1]
+      ["Trans-Chlordane", "environmental", "corelates", "is", 0],
+      ["PCB194", "environmental", "corelates", 1],
+      ["Sterilisation", "biometric", "increase", 0],
+      ["Tobacco Consumption", "lifestyle", "increase", 1, 1],
+      ["PAC-RSK", "Interaction Term", "decrease", 0, 1]
     ];
 
     // Step 1: Extract Object Names from the Header Row
@@ -187,15 +297,15 @@ export class Network {
     if (data.length == 0) {
       data = [
         ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
-        ["Trans-Chlordane", "environmental", 1, 1, 0],
-        ["PCB194", "environmental", 1, 1],
-        ["Sterilisation", "biometric", 1, 0],
-        ["Tobacco Consumption", "lifestyle", 1, 1, 1],
-        ["PAC-RSK", "Interaction Term", 1, 0, 1]
+        ["Trans-Chlordane", "environmental", "corelates", "is", 0],
+        ["PCB194", "environmental", "corelates", 1],
+        ["Sterilisation", "biometric", "increase", 0],
+        ["Tobacco Consumption", "lifestyle", "increase", 1, 1],
+        ["PAC-RSK", "Interaction Term", "decrease", 0, 1]
       ];
     }
     // Define type to color mapping
-    const typeColorMap = {
+    this.typeColorMap = {
       'environmental': 'blue',
       'biometric': 'red',
       'lifestyle': 'green',
@@ -230,7 +340,7 @@ export class Network {
       const subjectType = row[1];
 
       // Determine color based on type
-      const color = typeColorMap[subjectType] || 'gray'; // Default to gray if type not mapped
+      const color = this.typeColorMap[subjectType] || 'gray'; // Default to gray if type not mapped
       let angle = (i * 2 * Math.PI) / data.length;
       // Add Subject node
       if (!this.graph.hasNode(subject)) {
@@ -238,14 +348,14 @@ export class Network {
           label: subject,
           size: 7,
           color: color,
-          //type: subjectType
+          subjectType: subjectType,
           x: 100 * Math.cos(angle),
           y: 100 * Math.sin(angle)
         });
       }
 
       // Remove all edges from the graph
-      
+
       // Iterate through predicate columns
       for (let j = 2; j < header.length; j++) {
         const object = header[j];
@@ -260,8 +370,8 @@ export class Network {
             console.log('edge not exist adddge')
             this.graph.addEdge(subject, object, {
               relationship: 'related', // You can customize this as needed
-              type: "line", 
-              label: relationship, 
+              type: "line",
+              label: relationship,
               size: 5
             });
           } else {

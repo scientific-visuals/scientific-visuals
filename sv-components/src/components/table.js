@@ -9,10 +9,10 @@ export class Table {
   mytable;
   hot;
   @bindable datachannel;
-  @bindable tabid;
-  showtable = true;
-  attached() {
+  @bindable tabid; //
+  showtable = true; //triggers showing/hiding table in view
 
+  attached() {
     let data = [
       ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
       ["Trans-Chlordane", "environmental", "corelates", "is", 0],
@@ -21,18 +21,52 @@ export class Table {
       ["Tobacco Consumption", "lifestyle", "increase", 1, 1],
       ["PAC-RSK", "Interaction Term", "decrease", 0, 1]
     ];
-
     //let container = document.getElementById('example');
     //this.hot = new Handsontable(container, {
+    let that = this;
     this.hot = new Handsontable(this.mytable, {
       data: data,
       rowHeaders: true,
       colHeaders: true,
       autoWrapRow: true,
       autoWrapCol: true,
-      licenseKey: 'non-commercial-and-evaluation' // for non-commercial use only
+      licenseKey: 'non-commercial-and-evaluation', // for non-commercial use only
+      // Define the afterChange hook
+      afterChange: function (changes, source) {
+        // Prevent triggering during initial data load
+        if (source === 'loadData' || !changes) return;
+        //this.layout.stop()
+        // Iterate over each change and call changeContent()
+        changes.forEach(([row, prop, oldValue, newValue]) => {
+          // Optional: Pass relevant details to changeContent
+          that.changeContent(row, prop, oldValue, newValue);
+        });
+        //this.layout.start()
+      }
     });
+  }
 
+  changeContent(row,prop,oldValue,newValue) {
+    console.log(`Cell at row ${row}, column ${prop} changed from "${oldValue}" to "${newValue}".`);
+    if (row == 0) {
+      //change Object
+      this.ea.publish(this.datachannel,{'type':'changeNode','old':oldValue,'value':newValue})
+    } else {
+      if (prop == 0) {
+        //change Subject
+        this.ea.publish(this.datachannel,{'type':'changeNode','old':oldValue,'value':newValue})
+      } else if (prop ==1) {
+        //change Subject type  
+        const nodeName = this.hot.getDataAtCell(row, 0);
+        this.ea.publish(this.datachannel,{'type':'changeType','node':nodeName,'old':oldValue,'value':newValue})
+      } else {
+        //change relationship
+        const subjectName = this.hot.getDataAtCell(row, 0);
+        const objectName = this.hot.getDataAtCell(0, prop);
+        this.ea.publish(this.datachannel,{'type':'changeEdge','subject':subjectName,'object':objectName,'old':oldValue,'value':newValue})
+      }
+    }
+    
   }
 
   submit() {
@@ -51,7 +85,7 @@ export class Table {
       this.hot.alter('insert_row_below', newRowIndex)
       this.hot.setDataAtCell(newRowIndex, 0, name);
       this.hot.setDataAtCell(newRowIndex, 1, 'environmental');
-      this.hot.selectCell(newRowIndex,0);
+      this.hot.selectCell(newRowIndex, 0);
     }
   }
   addColumn() {
