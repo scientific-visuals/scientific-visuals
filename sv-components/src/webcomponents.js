@@ -1,3 +1,4 @@
+
 import { WcCustomElementRegistry } from '@aurelia/web-components'; 
 import { DI, Registration  } from '@aurelia/kernel';
 import { StandardConfiguration, IPlatform } from '@aurelia/runtime-html';
@@ -16,11 +17,13 @@ import { Chartjs } from './components/chartjs';
 import { ChartjsScatter } from './components/chartjs-scatter';
 import { Table} from './components/table';
 import { ChartjsGeo } from './components/chartjs-geo';
+import { Network } from './components/network';
 
 registry.define('sv-chartjs', Chartjs);
 registry.define('sv-chartjs-scatter', ChartjsScatter);
 registry.define('sv-table', Table);
 registry.define('sv-chartjs-geo', ChartjsGeo);
+registry.define('sv-network', Network);
 
 // Optionally, export the registry for further use
 //export { registry };
