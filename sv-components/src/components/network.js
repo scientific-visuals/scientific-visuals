@@ -189,6 +189,7 @@ export class Network {
   ea /* IEventAggregator*/ = resolve(IEventAggregator);
   container;
   searchinput;
+  animationstarted = true;
   @bindable tabid;
   @bindable datachannel;
   @bindable searchValue;

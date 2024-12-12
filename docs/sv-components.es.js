@@ -88665,7 +88665,7 @@ void main() {
   let YX;
   class N4e {
     constructor() {
-      this.ea = fe(P6), this.container = void 0, this.searchinput = void 0, this.tabid = VX(this), this.datachannel = (WX(this), jX(this)), this.searchValue = (zX(this), UX(this)), this.state = (GX(this), {
+      this.ea = fe(P6), this.container = void 0, this.searchinput = void 0, this.animationstarted = !0, this.tabid = VX(this), this.datachannel = (WX(this), jX(this)), this.searchValue = (zX(this), UX(this)), this.state = (GX(this), {
         searchQuery: ""
       });
     }
