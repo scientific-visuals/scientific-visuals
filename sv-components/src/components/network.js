@@ -6,18 +6,48 @@ import ForceSupervisor from "graphology-layout-force/worker";
 import { createNodeImageProgram } from "@sigma/node-image";
 //import NodeGradientProgram from "./node-gradient";
 
+const TEXT_COLOR = "#000000";
+
+export function drawRoundRect(
+  ctx/*: CanvasRenderingContext2D*/,
+  x/*: number*/,
+  y/*: number*/,
+  width/*: number*/,
+  height/*: number*/,
+  radius/*: number*/,
+)/*: void*/ {
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.lineTo(x + width - radius, y);
+  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+  ctx.lineTo(x + width, y + height - radius);
+  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+  ctx.lineTo(x + radius, y + height);
+  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+  ctx.lineTo(x, y + radius);
+  ctx.quadraticCurveTo(x, y, x + radius, y);
+  ctx.closePath();
+}
+
 
 @customElement('sv-network')
 export class Network {
   ea /* IEventAggregator*/ = resolve(IEventAggregator);
   container;
-  tabid;
+  searchinput;
+  @bindable tabid;
   @bindable datachannel;
+  @bindable searchValue;
+
+  searchValueChanged(newValue,oldValue) {
+    console.log('searchValue changed',newValue,oldValue);
+    this.setSearchQuery(newValue) 
+  }
 
   attached() {
     this.ea.subscribe('showtab', (showtabid) => {
       if (this.tabid === this.showtabid) {
-        if (this.layout) this.layout.start();
+        if (this.layout) this.startAnimate();//this.layout.start();
         else {
           console.warn('empty layout')
           this.renderer = new Sigma(this.graph, this.container, {
@@ -32,7 +62,7 @@ export class Network {
 
           // Create the spring layout and start it
           this.layout = new ForceSupervisor(this.graph);
-          this.layout.start();
+          this.startAnimate();//this.layout.start();
         }
       }
     });
@@ -43,7 +73,7 @@ export class Network {
           this.transformDataToGraph(mydata);
         } else {
           //process changes
-          if (this.layout) this.layout.stop();
+          if (this.layout) this.stopAnimate();//this.layout.stop();
           if (mydata.type == 'changeNode') {
             console.log('network changeNode')
             this.renameNode(mydata.old, mydata.value)
@@ -57,7 +87,7 @@ export class Network {
           } else {
             console.warn('not recognized change', mydata);
           }
-          if (this.layout) this.layout.start();
+          if (this.layout) this.startAnimate();
         }
       })
     } else console.warn('datachannel empty')
@@ -65,6 +95,72 @@ export class Network {
     this.data = []; //TODO put data from other components
     this.transformDataToGraph(this.data);
   }
+  state =  { searchQuery: "" }
+  // Actions:
+  setSearchQuery(query) {
+    this.state.searchQuery = query;
+
+    if (this.searchValue !== query) this.searchValue = query;
+
+    if (query) {
+      const lcQuery = query.toLowerCase();
+      const suggestions = this.graph
+        .nodes()
+        .map((n) => ({ id: n, label: this.graph.getNodeAttribute(n, "label") }))
+        .filter(({ label }) => label.toLowerCase().includes(lcQuery));
+
+      // If we have a single perfect match, them we remove the suggestions, and
+      // we consider the user has selected a node through the datalist
+      // autocomplete:
+      if (suggestions.length === 1 && suggestions[0].label === query) {
+        this.state.selectedNode = suggestions[0].id;
+        this.state.suggestions = undefined;
+
+        // Move the camera to center it on the selected node:
+        const nodePosition = this.renderer.getNodeDisplayData(state.selectedNode);
+        this.renderer.getCamera().animate(nodePosition, {
+          duration: 500,
+        });
+      }
+      // Else, we display the suggestions list:
+      else {
+        this.state.selectedNode = undefined;
+        this.state.suggestions = new Set(suggestions.map(({ id }) => id));
+      }
+    }
+    // If the query is empty, then we reset the selectedNode / suggestions state:
+    else {
+      this.state.selectedNode = undefined;
+      this.state.suggestions = undefined;
+    }
+
+    // Refresh rendering
+    // You can directly call `renderer.refresh()`, but if you need performances
+    // you can provide some options to the refresh method.
+    // In this case, we don't touch the graph data so we can skip its reindexation
+    this.renderer.refresh({
+      skipIndexation: true,
+    });
+  }
+
+  setHoveredNode(node) {
+    if (node) {
+      this.state.hoveredNode = node;
+      this.state.hoveredNeighbors = new Set(this.graph.neighbors(node));
+    }
+
+    if (!node) {
+      this.state.hoveredNode = undefined;
+      this.state.hoveredNeighbors = undefined;
+    }
+
+    // Refresh rendering
+    this.renderer.refresh({
+      // We don't touch the graph data so we can skip its reindexation
+      skipIndexation: true,
+    });
+  }
+  
 
   changeNodeType(nodeId, nodetype) {
     const mycolor = this.typeColorMap[nodetype] || 'gray';
@@ -157,7 +253,7 @@ export class Network {
   }
 
 
-  creategraph() {
+  /*creategraph() {
     // Step 1: Create a new graph
     this.graph = new Graph();
 
@@ -189,6 +285,7 @@ export class Network {
       this.graph.setNodeAttribute(node, "y", 100 * Math.sin(angle));
     });
   }
+  */
   showgraph() {
     console.log('showgraph()')
     this.renderer = new Sigma(this.graph, this.container, {
@@ -198,18 +295,144 @@ export class Network {
         //gradient: NodeGradientProgram,
       },
       renderEdgeLabels: true,
-
       allowInvalidContainer: true,
-
-
     });
+  //hover feature
+    // Bind graph interactions:
+    this.renderer.on("enterNode", ({ node }) => {
+      this.setHoveredNode(node);
+    });
+    this.renderer.on("leaveNode", () => {
+      this.setHoveredNode(undefined);
+    });
+  //multiline label feature
+  // Custom rendering for multi-line labels
+/*this.renderer.on('afterRender', () => {
+  const ctx = this.renderer.context;
+  this.graph.forEachNode((node, attrs) => {
+    const { x, y } = this.renderer.getNodeDisplayData(node);
+    const lines = attrs.label.split('\n');
+    ctx.fillStyle = '#000'; // Text color
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    lines.forEach((line, index) => {
+      ctx.fillText(line, x, y - (lines.length / 2 - index) * 12); // Adjust 12 for line height
+    });
+  });
+});*/
+  this.renderer.setSetting("defaultDrawNodeHover", (context/*: CanvasRenderingContext2D*/, data/*: PlainObject*/, settings/*: PlainObject*/) => {
+    const size = settings.labelSize;
+    const font = settings.labelFont;
+    const weight = settings.labelWeight;
+    const subLabelSize = size - 2;
+  
+    const label = data.label;
+    const subLabel = data.tag !== "unknown" ? data.tag : "";
+    const clusterLabel = data.clusterLabel;
+  
+    // Then we draw the label background
+    context.beginPath();
+    context.fillStyle = "#fff";
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 2;
+    context.shadowBlur = 8;
+    context.shadowColor = "#000";
+  
+    context.font = `${weight} ${size}px ${font}`;
+    const labelWidth = context.measureText(label).width;
+    context.font = `${weight} ${subLabelSize}px ${font}`;
+    const subLabelWidth = subLabel ? context.measureText(subLabel).width : 0;
+    context.font = `${weight} ${subLabelSize}px ${font}`;
+    const clusterLabelWidth = clusterLabel ? context.measureText(clusterLabel).width : 0;
+  
+    const textWidth = Math.max(labelWidth, subLabelWidth, clusterLabelWidth);
+  
+    const x = Math.round(data.x);
+    const y = Math.round(data.y);
+    const w = Math.round(textWidth + size / 2 + data.size + 3);
+    const hLabel = Math.round(size / 2 + 4);
+    const hSubLabel = subLabel ? Math.round(subLabelSize / 2 + 9) : 0;
+    const hClusterLabel = Math.round(subLabelSize / 2 + 9);
+  
+    drawRoundRect(context, x, y - hSubLabel - 12, w, hClusterLabel + hLabel + hSubLabel + 12, 5);
+    context.closePath();
+    context.fill();
+  
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+    context.shadowBlur = 0;
+  
+    // And finally we draw the labels
+    context.fillStyle = TEXT_COLOR;
+    context.font = `${weight} ${size}px ${font}`;
+    context.fillText(label, data.x + data.size + 3, data.y + size / 3);
+  
+    if (subLabel) {
+      context.fillStyle = TEXT_COLOR;
+      context.font = `${weight} ${subLabelSize}px ${font}`;
+      context.fillText(subLabel, data.x + data.size + 3, data.y - (2 * size) / 3 - 2);
+    }
+  
+    context.fillStyle = data.color;
+    context.font = `${weight} ${subLabelSize}px ${font}`;
+    context.fillText(clusterLabel, data.x + data.size + 3, data.y + size / 3 + 3 + subLabelSize);
+  })
+  // search feature
+  // Render nodes accordingly to the internal state:
+  // 1. If a node is selected, it is highlighted
+  // 2. If there is query, all non-matching nodes are greyed
+  // 3. If there is a hovered node, all non-neighbor nodes are greyed
+  this.renderer.setSetting("nodeReducer", (node, data) => {
+    const res = { ...data };
+    if (this.state.hoveredNeighbors && !this.state.hoveredNeighbors.has(node) && this.state.hoveredNode !== node) {
+      res.label = "";
+      res.color = "#f6f6f6";
+    }
+    if (this.state.selectedNode === node) {
+      res.highlighted = true;
+    } else if (this.state.suggestions) {
+      if (this.state.suggestions.has(node)) {
+        res.forceLabel = true;
+      } else {
+        res.label = "";
+        res.color = "#f6f6f6";
+      }
+    }
+    return res;
+  });
+
+  // Render edges accordingly to the internal state:
+  // 1. If a node is hovered, the edge is hidden if it is not connected to the
+  //    node
+  // 2. If there is a query, the edge is only visible if it connects two
+  //    suggestions
+  this.renderer.setSetting("edgeReducer", (edge, data) => {
+    const res = { ...data };
+
+    if (
+      this.state.hoveredNode &&
+      !this.graph.extremities(edge).every((n) => n === this.state.hoveredNode || this.graph.areNeighbors(n, this.state.hoveredNode))
+    ) {
+      res.hidden = true;
+    }
+
+    if (
+      this.state.suggestions &&
+      (!this.state.suggestions.has(this.graph.source(edge)) || !this.state.suggestions.has(this.graph.target(edge)))
+    ) {
+      res.hidden = true;
+    }
+
+    return res;
+  });    
 
     // Create the spring layout and start it
     this.layout = new ForceSupervisor(this.graph);
-    this.layout.start();
+    this.startAnimate();
+    //this.layout.start();
   }
 
-  createGraphFromDatasheet(data) {
+  /*createGraphFromDatasheet(data) {
     // Initialize a new undirected graph (use 'directed' if your relationships are directional)
     if (this.graph) {
       this.graph.clear();
@@ -275,7 +498,7 @@ export class Network {
         continue;
       }
     }
-  }
+  }*/
 
   /**
  * Transforms a data array into a Graphology graph.
@@ -290,7 +513,8 @@ export class Network {
       this.graph = new Graph({ type: 'undirected' });
     }
     if (this.layout) {
-      this.layout.stop();
+      //this.layout.stop();
+      this.stopAnimate();
     }
     // Your data array
     console.log('transformDataToGraph data.length', data.length)
@@ -324,6 +548,8 @@ export class Network {
         let angle = (i * 2 * Math.PI) / data.length;
         this.graph.addNode(object, {
           label: object,
+          tag:'object',
+          clusterLabel:'cluster',
           size: 15,
           color: 'orange', // Default color for objects without a type
           // type: 'object' // Optional: Define type as 'object'
@@ -346,6 +572,8 @@ export class Network {
       if (!this.graph.hasNode(subject)) {
         this.graph.addNode(subject, {
           label: subject,
+          tag: subjectType,
+          clusterLabel:'cluster',
           size: 7,
           color: color,
           subjectType: subjectType,
@@ -391,7 +619,81 @@ export class Network {
     } else {
       console.log('layout detected, stop(), start()')
 
-      this.layout.start();
-    }
+      this.startAnimate();//this.layout.start();
+    }    
   }
+  layoutOnOff() {
+    this.animationstarted = ! this.animationstarted;    
+    if (this.animationstarted) this.layout.start()
+      else this.layout.stop()
+  }
+
+  stopAnimate() {    
+    this.layout.stop()
+  }
+  startAnimate(){
+    if (this.animationstarted) this.layout.start()
+  }
+
+/**
+ * Custom hover renderer
+ */
+drawHover(context/*: CanvasRenderingContext2D*/, data/*: PlainObject*/, settings/*: PlainObject*/) {
+  const size = settings.labelSize;
+  const font = settings.labelFont;
+  const weight = settings.labelWeight;
+  const subLabelSize = size - 2;
+
+  const label = data.label;
+  const subLabel = data.tag !== "unknown" ? data.tag : "";
+  const clusterLabel = data.clusterLabel;
+
+  // Then we draw the label background
+  context.beginPath();
+  context.fillStyle = "#fff";
+  context.shadowOffsetX = 0;
+  context.shadowOffsetY = 2;
+  context.shadowBlur = 8;
+  context.shadowColor = "#000";
+
+  context.font = `${weight} ${size}px ${font}`;
+  const labelWidth = context.measureText(label).width;
+  context.font = `${weight} ${subLabelSize}px ${font}`;
+  const subLabelWidth = subLabel ? context.measureText(subLabel).width : 0;
+  context.font = `${weight} ${subLabelSize}px ${font}`;
+  const clusterLabelWidth = clusterLabel ? context.measureText(clusterLabel).width : 0;
+
+  const textWidth = Math.max(labelWidth, subLabelWidth, clusterLabelWidth);
+
+  const x = Math.round(data.x);
+  const y = Math.round(data.y);
+  const w = Math.round(textWidth + size / 2 + data.size + 3);
+  const hLabel = Math.round(size / 2 + 4);
+  const hSubLabel = subLabel ? Math.round(subLabelSize / 2 + 9) : 0;
+  const hClusterLabel = Math.round(subLabelSize / 2 + 9);
+
+  drawRoundRect(context, x, y - hSubLabel - 12, w, hClusterLabel + hLabel + hSubLabel + 12, 5);
+  context.closePath();
+  context.fill();
+
+  context.shadowOffsetX = 0;
+  context.shadowOffsetY = 0;
+  context.shadowBlur = 0;
+
+  // And finally we draw the labels
+  context.fillStyle = TEXT_COLOR;
+  context.font = `${weight} ${size}px ${font}`;
+  context.fillText(label, data.x + data.size + 3, data.y + size / 3);
+
+  if (subLabel) {
+    context.fillStyle = TEXT_COLOR;
+    context.font = `${weight} ${subLabelSize}px ${font}`;
+    context.fillText(subLabel, data.x + data.size + 3, data.y - (2 * size) / 3 - 2);
+  }
+
+  context.fillStyle = data.color;
+  context.font = `${weight} ${subLabelSize}px ${font}`;
+  context.fillText(clusterLabel, data.x + data.size + 3, data.y + size / 3 + 3 + subLabelSize);
+}
+
 }
