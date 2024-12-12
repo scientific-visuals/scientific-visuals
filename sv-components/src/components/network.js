@@ -8,6 +8,160 @@ import { createNodeImageProgram } from "@sigma/node-image";
 
 const TEXT_COLOR = "#000000";
 
+class ColorMapper {
+  constructor() {
+    this.typeColorMap = {};
+    this.currentIndex = 0;
+  }
+
+  /**
+   * Generates a dynamic color based on the input number using the Golden Angle.
+   * @param {number} number - The input number to generate color.
+   * @returns {string} - The generated color in HSL format.
+   */
+  getDynamicColor(number) {
+    const goldenAngle = 137.508; // Degrees
+    const hue = (number * goldenAngle) % 360;
+    return this.hslToRgb(hue,70,50);
+  }
+
+  /**
+   * Returns a color for the given string. If the string is already mapped, returns the existing color.
+   * Otherwise, generates a new color, maps it to the string, and returns the new color.
+   * @param {string} str - The input string to get the color for.
+   * @returns {string} - The color associated with the input string.
+   */
+  getColor(str) {
+    if (this.typeColorMap.hasOwnProperty(str)) {
+      return this.typeColorMap[str];
+    } else {
+      const color = this.getDynamicColor(this.currentIndex);
+      this.typeColorMap[str] = color;
+      this.currentIndex++;
+      return color;
+    }
+  }
+/**
+ * Converts HSL color values to RGB hexadecimal format.
+ *
+ * @param {number} h - Hue value in degrees [0, 360).
+ * @param {number} s - Saturation percentage [0, 100].
+ * @param {number} l - Lightness percentage [0, 100].
+ * @returns {string} - RGB color in hexadecimal format (e.g., "#FF00FF").
+ */
+  hslToRgb(h, s, l) {
+  // Convert saturation and lightness from percentages to [0, 1]
+  s /= 100;
+  l /= 100;
+
+  const c = (1 - Math.abs(2 * l - 1)) * s; // Chroma
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  const m = l - c / 2;
+
+  let rPrime, gPrime, bPrime;
+
+  if (h >= 0 && h < 60) {
+    rPrime = c;
+    gPrime = x;
+    bPrime = 0;
+  } else if (h >= 60 && h < 120) {
+    rPrime = x;
+    gPrime = c;
+    bPrime = 0;
+  } else if (h >= 120 && h < 180) {
+    rPrime = 0;
+    gPrime = c;
+    bPrime = x;
+  } else if (h >= 180 && h < 240) {
+    rPrime = 0;
+    gPrime = x;
+    bPrime = c;
+  } else if (h >= 240 && h < 300) {
+    rPrime = x;
+    gPrime = 0;
+    bPrime = c;
+  } else {
+    rPrime = c;
+    gPrime = 0;
+    bPrime = x;
+  }
+
+  // Convert to RGB [0, 255] and add m
+  const r = Math.round((rPrime + m) * 255);
+  const g = Math.round((gPrime + m) * 255);
+  const b = Math.round((bPrime + m) * 255);
+
+  // Convert to hexadecimal and pad with zeros if necessary
+  const toHex = (num) => {
+    const hex = num.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+  };
+
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
+}
+/**
+ * Parses an HSL string and converts it to RGB hexadecimal format.
+ *
+ * @param {string} hslString - HSL color string (e.g., "hsl(300, 70%, 50%)").
+ * @returns {string} - RGB color in hexadecimal format (e.g., "#FF00FF").
+ */
+ hslStringToHex(hslString) {
+  // Regular expression to extract H, S, and L values
+  const regex = /hsl\(\s*(\d+),\s*(\d+)%,\s*(\d+)%\s*\)/i;
+  const result = regex.exec(hslString);
+
+  if (!result) {
+    throw new Error("Invalid HSL string format. Expected format: 'hsl(h, s%, l%)'");
+  }
+
+  const h = parseInt(result[1], 10);
+  const s = parseInt(result[2], 10);
+  const l = parseInt(result[3], 10);
+
+  return this.hslToRgb(h, s, l);
+}
+
+/**
+ * Returns a color based on the relationship value.
+ * -1 -> Pastel Blue (#ADD8E6)
+ *  0 -> Gray (#808080)
+ *  1 -> Pastel Red (#FFB6C1)
+ * Smoothly transitions between these colors for values between -1 and 1.
+ *
+ * @param {string} relationship - The relationship value as a string.
+ * @returns {string} - The corresponding color in hexadecimal format.
+ */
+getRelationshipColor(relationship) {
+  const num = parseFloat(relationship);
+  if (isNaN(num) || num < -1 || num > 1) {
+    return "#808080"; // Default Gray
+  }
+
+  let h, s, l;
+
+  if (num < 0) {
+    // Transition from Pastel Blue to Gray
+    const t = Math.abs(num); // 0 (for -0) to 1 (for -1)
+    h = 200 - 200 * t; // 200 -> 0
+    s = 100 - 100 * t; // 100% -> 0%
+    l = 80 - 30 * t;    // 80% -> 50%
+  } else if (num > 0) {
+    // Transition from Gray to Pastel Red
+    const t = num; // 0 (for 0) to 1 (for 1)
+    h = 0;        // Stay at 0 for red
+    s = 0 + 100 * t; // 0% -> 100%
+    l = 50 + 30 * t; // 50% -> 80%
+  } else {
+    // num === 0
+    return "#808080"; // Gray
+  }
+
+  return this.hslToRgb(h, s, l);
+}
+
+
+}
+
 export function drawRoundRect(
   ctx/*: CanvasRenderingContext2D*/,
   x/*: number*/,
@@ -45,6 +199,7 @@ export class Network {
   }
 
   attached() {
+    this.typeColorMap = new ColorMapper();
     this.ea.subscribe('showtab', (showtabid) => {
       if (this.tabid === this.showtabid) {
         if (this.layout) this.startAnimate();//this.layout.start();
@@ -163,17 +318,14 @@ export class Network {
   
 
   changeNodeType(nodeId, nodetype) {
-    const mycolor = this.typeColorMap[nodetype] || 'gray';
-
-    //    color: color,
-    //subjectType: subjectType,
+    const mycolor = this.typeColorMap.getColor(nodetype);
     if (!this.graph.hasNode(nodeId)) {
       console.log(`Node "${nodeId}" does not exist. Creating.`);
       const angle = (this.graph.order * 2 * Math.PI) / this.graph.order;
       
       this.graph.addNode(nodeId, {
         label: nodeId,
-        size: 15,
+        size: 5,
         color: mycolor, // Default color for objects without a type
         // type: 'object' // Optional: Define type as 'object'
         x: 100 * Math.cos(angle),
@@ -327,8 +479,8 @@ export class Network {
     const subLabelSize = size - 2;
   
     const label = data.label;
-    const subLabel = data.tag !== "unknown" ? data.tag : "";
-    const clusterLabel = data.clusterLabel;
+    const subLabel = data.clusterLabel;
+    const clusterLabel = data.tag !== "unknown" ? data.tag : "";
   
     // Then we draw the label background
     context.beginPath();
@@ -519,23 +671,25 @@ export class Network {
     // Your data array
     console.log('transformDataToGraph data.length', data.length)
     if (data.length == 0) {
+      
       data = [
-        ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
-        ["Trans-Chlordane", "environmental", "corelates", "is", 0],
-        ["PCB194", "environmental", "corelates", 1],
-        ["Sterilisation", "biometric", "increase", 0],
-        ["Tobacco Consumption", "lifestyle", "increase", 1, 1],
-        ["PAC-RSK", "Interaction Term", "decrease", 0, 1]
+        ['Gene','Type','CEA','CA19_9','Tumor Size','Metabolic Activity','ctDNA','CRP','Bowel MovementPatterns',
+          'Ki-67','Cascpase-3','MMP-1','Cell Proliferation'
+        ],
+        ["APC", "Tumor suppressor gene", 0.8, 0.3, 0.9, 0.7, 0.6, 0.2, 0.1, 0.9, -0.6, -0.7, 0.9],
+        ["KRAS", "Kirsten Rat Sarcoma Viral Oncogene Homolog", 0.7, 0.4, 0.8, 0.6, 0.5, 0.3, 0, 0.8, -0.5, 0.2, 0.8],
+        ["TP53", "Tumor Protein 53", 0.6, 0.2, 0.7, 0.5, 0.4, 0.4, 0.1, 0.7, 0.9, -0.4, 0.7],
+        ["MLH1", "Mismatch Repair gene", 0.5, 0.3, 0.6, 0.4, 0.7, 0.5, 0.2, 0.6, 0.7, -0.3, 0.6],
+        ["MSH2", "Mismatch Repair gene", 0.5, 0.3, 0.6, 0.4, 0.7, 0.5, 0.2, 0.6, 0.7, -0.3, 0.6],
+        ["BRAF", "Oncogene MAPK/ERK signaling pathway", 0.4, 0.5, 0.5, 0.8, 0.3, 0.3, 0, 0.5, -0.2, 0.5, 0.5],
+        ["SMAD4", "Tumor suppressor gene", 0.3, 0.2, 0.4, 0.3, 0.2, 0.4, 0.1, 0.4, 0.6, -0.5, 0.4],
+        ["PIK3CA", "Oncogene", 0.6, 0.4, 0.7, 0.6, 0.5, 0.3, 0, 0.7, -0.4, 0.3, 0.7],
+        ["NRAS", "Oncogene", 0.4, 0.3, 0.5, 0.5, 0.4, 0.2, 0.1, 0.5, -0.3, 0.2, 0.5],
+        ["CTNNB1", "Cell adhesion signaling pathway", 0.3, 0.2, 0.4, 0.3, 0.3, 0.1, 0, 0.4, -0.2, -0.1, 0.4],
+        ["FBXW7", "Tumor suppressor gene", 0.2, 0.1, 0.3, 0.2, 0.2, 0.3, 0.1, 0.3, 0.5, -0.4, 0.3]
       ];
     }
-    // Define type to color mapping
-    this.typeColorMap = {
-      'environmental': 'blue',
-      'biometric': 'red',
-      'lifestyle': 'green',
-      'Interaction Term': 'purple',
-      // Add more mappings as needed
-    };
+
 
     // Extract header row
     const header = data[0];
@@ -549,7 +703,7 @@ export class Network {
         this.graph.addNode(object, {
           label: object,
           tag:'object',
-          clusterLabel:'cluster',
+          clusterLabel:'feature',
           size: 15,
           color: 'orange', // Default color for objects without a type
           // type: 'object' // Optional: Define type as 'object'
@@ -566,14 +720,14 @@ export class Network {
       const subjectType = row[1];
 
       // Determine color based on type
-      const color = this.typeColorMap[subjectType] || 'gray'; // Default to gray if type not mapped
+      const color = this.typeColorMap.getColor(subjectType); // Default to gray if type not mapped
       let angle = (i * 2 * Math.PI) / data.length;
       // Add Subject node
       if (!this.graph.hasNode(subject)) {
         this.graph.addNode(subject, {
           label: subject,
           tag: subjectType,
-          clusterLabel:'cluster',
+          clusterLabel:'gene',
           size: 7,
           color: color,
           subjectType: subjectType,
@@ -600,7 +754,9 @@ export class Network {
               relationship: 'related', // You can customize this as needed
               type: "line",
               label: relationship,
-              size: 5
+              size: getLineSize(relationship,5),
+              color: this.typeColorMap.getRelationshipColor(relationship)
+
             });
           } else {
             console.log('edge exist adddge')
@@ -635,65 +791,19 @@ export class Network {
     if (this.animationstarted) this.layout.start()
   }
 
-/**
- * Custom hover renderer
- */
-drawHover(context/*: CanvasRenderingContext2D*/, data/*: PlainObject*/, settings/*: PlainObject*/) {
-  const size = settings.labelSize;
-  const font = settings.labelFont;
-  const weight = settings.labelWeight;
-  const subLabelSize = size - 2;
-
-  const label = data.label;
-  const subLabel = data.tag !== "unknown" ? data.tag : "";
-  const clusterLabel = data.clusterLabel;
-
-  // Then we draw the label background
-  context.beginPath();
-  context.fillStyle = "#fff";
-  context.shadowOffsetX = 0;
-  context.shadowOffsetY = 2;
-  context.shadowBlur = 8;
-  context.shadowColor = "#000";
-
-  context.font = `${weight} ${size}px ${font}`;
-  const labelWidth = context.measureText(label).width;
-  context.font = `${weight} ${subLabelSize}px ${font}`;
-  const subLabelWidth = subLabel ? context.measureText(subLabel).width : 0;
-  context.font = `${weight} ${subLabelSize}px ${font}`;
-  const clusterLabelWidth = clusterLabel ? context.measureText(clusterLabel).width : 0;
-
-  const textWidth = Math.max(labelWidth, subLabelWidth, clusterLabelWidth);
-
-  const x = Math.round(data.x);
-  const y = Math.round(data.y);
-  const w = Math.round(textWidth + size / 2 + data.size + 3);
-  const hLabel = Math.round(size / 2 + 4);
-  const hSubLabel = subLabel ? Math.round(subLabelSize / 2 + 9) : 0;
-  const hClusterLabel = Math.round(subLabelSize / 2 + 9);
-
-  drawRoundRect(context, x, y - hSubLabel - 12, w, hClusterLabel + hLabel + hSubLabel + 12, 5);
-  context.closePath();
-  context.fill();
-
-  context.shadowOffsetX = 0;
-  context.shadowOffsetY = 0;
-  context.shadowBlur = 0;
-
-  // And finally we draw the labels
-  context.fillStyle = TEXT_COLOR;
-  context.font = `${weight} ${size}px ${font}`;
-  context.fillText(label, data.x + data.size + 3, data.y + size / 3);
-
-  if (subLabel) {
-    context.fillStyle = TEXT_COLOR;
-    context.font = `${weight} ${subLabelSize}px ${font}`;
-    context.fillText(subLabel, data.x + data.size + 3, data.y - (2 * size) / 3 - 2);
-  }
-
-  context.fillStyle = data.color;
-  context.font = `${weight} ${subLabelSize}px ${font}`;
-  context.fillText(clusterLabel, data.x + data.size + 3, data.y + size / 3 + 3 + subLabelSize);
 }
 
+/**
+ * Calculates the size of a line based on the relationship value.
+ *
+ * @param {string} relationship - The relationship value as a string.
+ * @param {number} defaultSize - The default size of the line.
+ * @returns {number} - The calculated size of the line.
+ */
+function getLineSize(relationship, defaultSize) {
+  const num = parseFloat(relationship);
+  if (!isNaN(num) && num >= -1 && num <= 1) {
+    return Math.abs(num) * defaultSize;
+  }
+  return defaultSize;
 }

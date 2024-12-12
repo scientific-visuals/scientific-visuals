@@ -14,12 +14,20 @@ export class Table {
 
   attached() {
     let data = [
-      ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
-      ["Trans-Chlordane", "environmental", "corelates", "is", 0],
-      ["PCB194", "environmental", "corelates", 1],
-      ["Sterilisation", "biometric", "increase", 0],
-      ["Tobacco Consumption", "lifestyle", "increase", 1, 1],
-      ["PAC-RSK", "Interaction Term", "decrease", 0, 1]
+      ['Gene','Type','CEA','CA19_9','Tumor Size','Metabolic Activity','ctDNA','CRP','Bowel MovementPatterns',
+        'Ki-67','Cascpase-3','MMP-1','Cell Proliferation'
+      ],
+      ["APC", "Tumor suppressor gene", 0.8, 0.3, 0.9, 0.7, 0.6, 0.2, 0.1, 0.9, -0.6, -0.7, 0.9],
+      ["KRAS", "Kirsten Rat Sarcoma Viral Oncogene Homolog", 0.7, 0.4, 0.8, 0.6, 0.5, 0.3, 0, 0.8, -0.5, 0.2, 0.8],
+      ["TP53", "Tumor Protein 53", 0.6, 0.2, 0.7, 0.5, 0.4, 0.4, 0.1, 0.7, 0.9, -0.4, 0.7],
+      ["MLH1", "Mismatch Repair gene", 0.5, 0.3, 0.6, 0.4, 0.7, 0.5, 0.2, 0.6, 0.7, -0.3, 0.6],
+      ["MSH2", "Mismatch Repair gene", 0.5, 0.3, 0.6, 0.4, 0.7, 0.5, 0.2, 0.6, 0.7, -0.3, 0.6],
+      ["BRAF", "Oncogene MAPK/ERK signaling pathway", 0.4, 0.5, 0.5, 0.8, 0.3, 0.3, 0, 0.5, -0.2, 0.5, 0.5],
+      ["SMAD4", "Tumor suppressor gene", 0.3, 0.2, 0.4, 0.3, 0.2, 0.4, 0.1, 0.4, 0.6, -0.5, 0.4],
+      ["PIK3CA", "Oncogene", 0.6, 0.4, 0.7, 0.6, 0.5, 0.3, 0, 0.7, -0.4, 0.3, 0.7],
+      ["NRAS", "Oncogene", 0.4, 0.3, 0.5, 0.5, 0.4, 0.2, 0.1, 0.5, -0.3, 0.2, 0.5],
+      ["CTNNB1", "Cell adhesion signaling pathway", 0.3, 0.2, 0.4, 0.3, 0.3, 0.1, 0, 0.4, -0.2, -0.1, 0.4],
+      ["FBXW7", "Tumor suppressor gene", 0.2, 0.1, 0.3, 0.2, 0.2, 0.3, 0.1, 0.3, 0.5, -0.4, 0.3]
     ];
     //let container = document.getElementById('example');
     //this.hot = new Handsontable(container, {
