@@ -3,20 +3,52 @@ name: CI
 on:
   push:
     branches: ["main"]
+    paths:
+      - 'docs/**'  # Trigger only if changes are made in docs/ directory
   pull_request:
+    paths:
+      - 'docs/**'  # Trigger for PRs affecting docs/
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          submodules: true  # Include if your project uses submodules
+
+      # Step 2: Set up Ruby environment
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          ruby-version: '3.3'       # Specify the Ruby version you're using
+          bundler-cache: true       # Automatically caches installed gems
+          cache-version: 0          # Increment if you need to reset the cache
+
+      # Step 3: Install Dependencies
+      - name: Install Dependencies
+        working-directory: ./docs    # Navigate to the docs/ directory
+        run: |
+          bundle install             # Install gems as specified in Gemfile
+
+      # Step 4: Build the Jekyll Site
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        working-directory: ./docs    # Ensure Jekyll builds from docs/
+        run: |
+          bundle exec jekyll build    # Build the site, outputting to docs/_site by default
+
+      # (Optional) Step 5: Run Tests or Linting
+      # - name: Run Tests
+      #   working-directory: ./docs
+      #   run: |
+      #     bundle exec rake test    # Example command
+
+      # (Optional) Step 6: Upload Build Artifacts
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: jekyll-site
+      #     path: ./docs/_site
