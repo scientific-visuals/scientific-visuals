@@ -22,7 +22,7 @@ import { Network } from './components/network';
 registry.define('sv-chartjs', Chartjs);
 registry.define('sv-chartjs-scatter', ChartjsScatter);
 registry.define('sv-table', Table);
-registry.define('sv-chartjs-geo', ChartjsGeo);
+registry.define('sv-geochart', ChartjsGeo);
 registry.define('sv-network', Network);
 
 // Optionally, export the registry for further use

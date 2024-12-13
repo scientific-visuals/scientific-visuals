@@ -9,9 +9,10 @@ nav_order: 1
 
 Visualising geo chart.
 
+![geochart image](img/geochart.png)
+
 ## Usage
 
-![geochart image](img/geochart.png)
 <script> function generateURL() {
     const input = document.getElementById('userInput').value.trim();
     if(input) {
@@ -22,19 +23,6 @@ Visualising geo chart.
         document.getElementById('generatedEUURL').innerHTML = `<a href="${fullURL}" target="_blank">${fullURLEurope}</a>`;
     } else {
         document.getElementById('generatedURL').innerHTML = 'Please enter a value.';
-    }
-}
-</script>
-
-<script> function generateNetworkURL() {
-    const input = document.getElementById('userNetworkInput').value.trim();
-    if(input) {
-        const prefixURL = window.location.href+'networkgraph.html#';
-        const fullURL = prefixURL + encodeURIComponent(input);
-        document.getElementById('generatedNetworkURL').innerHTML = `<a href="${fullURL}" target="_blank">${fullURL}</a>`;
-        
-    } else {
-        document.getElementById('generatedNetworkURL').innerHTML = 'Please enter a value.';
     }
 }
 </script>

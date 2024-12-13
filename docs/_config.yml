@@ -2,7 +2,10 @@ title: Web Components for Scientific Visualisation
 description: Documentation for web components for scientific visualisation
 theme: just-the-docs
 
-url: https://digital-precision-helath.github.io
+url: https://digital-precision-health.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  source codes: https://github.com/digital-precision-health/scientific-visuals
+callouts:
+  note:    
+    color: yellow

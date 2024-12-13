@@ -6,7 +6,12 @@ nav_order: 1
 
 # Scientific Visuals - Introduction
 
+
 This site includes reusable web components to visualise scientific data. You may use the components static pages listed bellow. Or you may host the web components in your application.
+
+{: .note }
+version: 0.1<br/>Note that the components are in heavy development stage thus some of the feature may not work or may change, while the static URL should remain
+
 
 ## Usage
 
@@ -85,7 +90,7 @@ Complete minimal example:
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>  
-  <sv-chartjs-geo></sv-chartjs-geo>
+  <sv-geochart></sv-geochart>
 </body>
 </html>
 ```

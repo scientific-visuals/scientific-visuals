@@ -755,8 +755,8 @@ export class Network {
               relationship: 'related', // You can customize this as needed
               type: "line",
               label: relationship,
-              size: getLineSize(relationship,5),
-              color: this.typeColorMap.getRelationshipColor(relationship)
+              size: 1+getLineSize(relationship,5),
+              color: 'lightgrey'//this.typeColorMap.getRelationshipColor(relationship)
 
             });
           } else {

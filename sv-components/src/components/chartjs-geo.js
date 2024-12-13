@@ -7,11 +7,12 @@ import '../w3-theme-teal.css';
 
 const removeFirstHash = str => str.startsWith('#') ? str.slice(1) : str;
 
-@customElement('sv-chartjs-geo')
+@customElement('sv-geochart')
 //@inject(TaskQueue)
 export class ChartjsGeo {
     @bindable datasrc = 'g/National_Initiatives_Figure_Data.csv';
     @bindable countriessrc = 'g/countries-50m.json'
+    @bindable continent;
     //@bindable selected = {};
     geochart;
     continent=''; //initial continent to show
