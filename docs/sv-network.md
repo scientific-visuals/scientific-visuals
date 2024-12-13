@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 
-# sv-geochart
+# sv-network
 
 Visualising network graph.
 ![network graph image](img/networkgraph.png)
