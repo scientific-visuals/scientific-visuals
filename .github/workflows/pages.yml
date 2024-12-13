@@ -3,47 +3,42 @@ name: Build and Deploy Jekyll Site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger the workflow on pushes to the main branch
+      - main
     paths:
-      - 'docs/**'  # Only trigger if changes are made in the docs/ directory
+      - 'docs/**'
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          submodules: true  # If your site uses submodules
+          submodules: true  # If using submodules
 
-      # Step 2: Set up Ruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'  # Specify the Ruby version you are using
-          bundler-cache: true  # Caches installed gems automatically
+          ruby-version: '3.1'  # Specify your Ruby version
+          bundler-cache: true
 
-      # Step 3: Install dependencies
       - name: Install Dependencies
         working-directory: ./docs
         run: |
           bundle install
 
-      # Step 4: Build the site
       - name: Build Site
         working-directory: ./docs
         run: |
           bundle exec jekyll build
 
-      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_site
-          publish_branch: gh-pages  # The branch to deploy to
-          force_orphan: true  # Creates a new branch without history
-          keep_files: false  # Removes existing files before deploying
-
+          publish_branch: main  # Deploy to main branch
+          destination_dir: docs  # Place the site in the docs/ directory
+          force_orphan: false
+          keep_files: true
