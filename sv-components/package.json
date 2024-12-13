@@ -46,7 +46,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "pretest": "npm run lint",
     "start": "vite",
-    "build": "vite build; cp -r dist/* ../docs",
+    "build": "vite build",
     "buildwc": "vite build --config vite.webcomponents.config.js ; cp dist-webcomponents/* ../docs",
     "buildwcd": "vite build --mode development --config vite.webcomponents.config.js ; cp dist-webcomponents/* ../docs",
     "test": "vitest"
