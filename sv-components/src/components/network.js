@@ -22,7 +22,7 @@ class ColorMapper {
   getDynamicColor(number) {
     const goldenAngle = 137.508; // Degrees
     const hue = (number * goldenAngle) % 360;
-    return this.hslToRgb(hue,70,50);
+    return this.hslToRgb(hue, 70, 50);
   }
 
   /**
@@ -41,123 +41,123 @@ class ColorMapper {
       return color;
     }
   }
-/**
- * Converts HSL color values to RGB hexadecimal format.
- *
- * @param {number} h - Hue value in degrees [0, 360).
- * @param {number} s - Saturation percentage [0, 100].
- * @param {number} l - Lightness percentage [0, 100].
- * @returns {string} - RGB color in hexadecimal format (e.g., "#FF00FF").
- */
+  /**
+   * Converts HSL color values to RGB hexadecimal format.
+   *
+   * @param {number} h - Hue value in degrees [0, 360).
+   * @param {number} s - Saturation percentage [0, 100].
+   * @param {number} l - Lightness percentage [0, 100].
+   * @returns {string} - RGB color in hexadecimal format (e.g., "#FF00FF").
+   */
   hslToRgb(h, s, l) {
-  // Convert saturation and lightness from percentages to [0, 1]
-  s /= 100;
-  l /= 100;
+    // Convert saturation and lightness from percentages to [0, 1]
+    s /= 100;
+    l /= 100;
 
-  const c = (1 - Math.abs(2 * l - 1)) * s; // Chroma
-  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
-  const m = l - c / 2;
+    const c = (1 - Math.abs(2 * l - 1)) * s; // Chroma
+    const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+    const m = l - c / 2;
 
-  let rPrime, gPrime, bPrime;
+    let rPrime, gPrime, bPrime;
 
-  if (h >= 0 && h < 60) {
-    rPrime = c;
-    gPrime = x;
-    bPrime = 0;
-  } else if (h >= 60 && h < 120) {
-    rPrime = x;
-    gPrime = c;
-    bPrime = 0;
-  } else if (h >= 120 && h < 180) {
-    rPrime = 0;
-    gPrime = c;
-    bPrime = x;
-  } else if (h >= 180 && h < 240) {
-    rPrime = 0;
-    gPrime = x;
-    bPrime = c;
-  } else if (h >= 240 && h < 300) {
-    rPrime = x;
-    gPrime = 0;
-    bPrime = c;
-  } else {
-    rPrime = c;
-    gPrime = 0;
-    bPrime = x;
+    if (h >= 0 && h < 60) {
+      rPrime = c;
+      gPrime = x;
+      bPrime = 0;
+    } else if (h >= 60 && h < 120) {
+      rPrime = x;
+      gPrime = c;
+      bPrime = 0;
+    } else if (h >= 120 && h < 180) {
+      rPrime = 0;
+      gPrime = c;
+      bPrime = x;
+    } else if (h >= 180 && h < 240) {
+      rPrime = 0;
+      gPrime = x;
+      bPrime = c;
+    } else if (h >= 240 && h < 300) {
+      rPrime = x;
+      gPrime = 0;
+      bPrime = c;
+    } else {
+      rPrime = c;
+      gPrime = 0;
+      bPrime = x;
+    }
+
+    // Convert to RGB [0, 255] and add m
+    const r = Math.round((rPrime + m) * 255);
+    const g = Math.round((gPrime + m) * 255);
+    const b = Math.round((bPrime + m) * 255);
+
+    // Convert to hexadecimal and pad with zeros if necessary
+    const toHex = (num) => {
+      const hex = num.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
+  }
+  /**
+   * Parses an HSL string and converts it to RGB hexadecimal format.
+   *
+   * @param {string} hslString - HSL color string (e.g., "hsl(300, 70%, 50%)").
+   * @returns {string} - RGB color in hexadecimal format (e.g., "#FF00FF").
+   */
+  hslStringToHex(hslString) {
+    // Regular expression to extract H, S, and L values
+    const regex = /hsl\(\s*(\d+),\s*(\d+)%,\s*(\d+)%\s*\)/i;
+    const result = regex.exec(hslString);
+
+    if (!result) {
+      throw new Error("Invalid HSL string format. Expected format: 'hsl(h, s%, l%)'");
+    }
+
+    const h = parseInt(result[1], 10);
+    const s = parseInt(result[2], 10);
+    const l = parseInt(result[3], 10);
+
+    return this.hslToRgb(h, s, l);
   }
 
-  // Convert to RGB [0, 255] and add m
-  const r = Math.round((rPrime + m) * 255);
-  const g = Math.round((gPrime + m) * 255);
-  const b = Math.round((bPrime + m) * 255);
+  /**
+   * Returns a color based on the relationship value.
+   * -1 -> Pastel Blue (#ADD8E6)
+   *  0 -> Gray (#808080)
+   *  1 -> Pastel Red (#FFB6C1)
+   * Smoothly transitions between these colors for values between -1 and 1.
+   *
+   * @param {string} relationship - The relationship value as a string.
+   * @returns {string} - The corresponding color in hexadecimal format.
+   */
+  getRelationshipColor(relationship) {
+    const num = parseFloat(relationship);
+    if (isNaN(num) || num < -1 || num > 1) {
+      return "#808080"; // Default Gray
+    }
 
-  // Convert to hexadecimal and pad with zeros if necessary
-  const toHex = (num) => {
-    const hex = num.toString(16);
-    return hex.length === 1 ? '0' + hex : hex;
-  };
+    let h, s, l;
 
-  return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
-}
-/**
- * Parses an HSL string and converts it to RGB hexadecimal format.
- *
- * @param {string} hslString - HSL color string (e.g., "hsl(300, 70%, 50%)").
- * @returns {string} - RGB color in hexadecimal format (e.g., "#FF00FF").
- */
- hslStringToHex(hslString) {
-  // Regular expression to extract H, S, and L values
-  const regex = /hsl\(\s*(\d+),\s*(\d+)%,\s*(\d+)%\s*\)/i;
-  const result = regex.exec(hslString);
+    if (num < 0) {
+      // Transition from Pastel Blue to Gray
+      const t = Math.abs(num); // 0 (for -0) to 1 (for -1)
+      h = 200 - 200 * t; // 200 -> 0
+      s = 100 - 100 * t; // 100% -> 0%
+      l = 80 - 30 * t;    // 80% -> 50%
+    } else if (num > 0) {
+      // Transition from Gray to Pastel Red
+      const t = num; // 0 (for 0) to 1 (for 1)
+      h = 0;        // Stay at 0 for red
+      s = 0 + 100 * t; // 0% -> 100%
+      l = 50 + 30 * t; // 50% -> 80%
+    } else {
+      // num === 0
+      return "#808080"; // Gray
+    }
 
-  if (!result) {
-    throw new Error("Invalid HSL string format. Expected format: 'hsl(h, s%, l%)'");
+    return this.hslToRgb(h, s, l);
   }
-
-  const h = parseInt(result[1], 10);
-  const s = parseInt(result[2], 10);
-  const l = parseInt(result[3], 10);
-
-  return this.hslToRgb(h, s, l);
-}
-
-/**
- * Returns a color based on the relationship value.
- * -1 -> Pastel Blue (#ADD8E6)
- *  0 -> Gray (#808080)
- *  1 -> Pastel Red (#FFB6C1)
- * Smoothly transitions between these colors for values between -1 and 1.
- *
- * @param {string} relationship - The relationship value as a string.
- * @returns {string} - The corresponding color in hexadecimal format.
- */
-getRelationshipColor(relationship) {
-  const num = parseFloat(relationship);
-  if (isNaN(num) || num < -1 || num > 1) {
-    return "#808080"; // Default Gray
-  }
-
-  let h, s, l;
-
-  if (num < 0) {
-    // Transition from Pastel Blue to Gray
-    const t = Math.abs(num); // 0 (for -0) to 1 (for -1)
-    h = 200 - 200 * t; // 200 -> 0
-    s = 100 - 100 * t; // 100% -> 0%
-    l = 80 - 30 * t;    // 80% -> 50%
-  } else if (num > 0) {
-    // Transition from Gray to Pastel Red
-    const t = num; // 0 (for 0) to 1 (for 1)
-    h = 0;        // Stay at 0 for red
-    s = 0 + 100 * t; // 0% -> 100%
-    l = 50 + 30 * t; // 50% -> 80%
-  } else {
-    // num === 0
-    return "#808080"; // Gray
-  }
-
-  return this.hslToRgb(h, s, l);
-}
 
 
 }
@@ -194,9 +194,9 @@ export class Network {
   @bindable datachannel;
   @bindable searchValue;
 
-  searchValueChanged(newValue,oldValue) {
-    console.log('searchValue changed',newValue,oldValue);
-    this.setSearchQuery(newValue) 
+  searchValueChanged(newValue, oldValue) {
+    console.log('searchValue changed', newValue, oldValue);
+    this.setSearchQuery(newValue)
   }
 
   attached() {
@@ -251,7 +251,7 @@ export class Network {
     this.data = []; //TODO put data from other components
     this.transformDataToGraph(this.data);
   }
-  state =  { searchQuery: "" }
+  state = { searchQuery: "" }
   // Actions:
   setSearchQuery(query) {
     this.state.searchQuery = query;
@@ -316,14 +316,14 @@ export class Network {
       skipIndexation: true,
     });
   }
-  
+
 
   changeNodeType(nodeId, nodetype) {
     const mycolor = this.typeColorMap.getColor(nodetype);
     if (!this.graph.hasNode(nodeId)) {
       console.log(`Node "${nodeId}" does not exist. Creating.`);
       const angle = (this.graph.order * 2 * Math.PI) / this.graph.order;
-      
+
       this.graph.addNode(nodeId, {
         label: nodeId,
         size: 5,
@@ -341,7 +341,7 @@ export class Network {
   renameNode(oldName, newName) {
     if (!oldName) {
       //oldname is null create Node
-      this.changeNodeType(newName,'default');
+      this.changeNodeType(newName, 'default');
       return;
     }
     if (!this.graph.hasNode(oldName)) {
@@ -380,7 +380,7 @@ export class Network {
   updateEdge(subject, object, value) {
     // Check if the edge exists between subject and object
     if (this.graph.hasEdge(subject, object)) {
-      if (! value || value == 0) {
+      if (!value || value == 0) {
         // Remove the edge if value is empty string or 0
         this.graph.dropEdge(subject, object);
         console.log(`Edge between "${subject}" and "${object}" has been removed.`);
@@ -450,7 +450,7 @@ export class Network {
       renderEdgeLabels: true,
       allowInvalidContainer: true,
     });
-  //hover feature
+    //hover feature
     // Bind graph interactions:
     this.renderer.on("enterNode", ({ node }) => {
       this.setHoveredNode(node);
@@ -458,129 +458,139 @@ export class Network {
     this.renderer.on("leaveNode", () => {
       this.setHoveredNode(undefined);
     });
-  //multiline label feature
-  // Custom rendering for multi-line labels
-/*this.renderer.on('afterRender', () => {
-  const ctx = this.renderer.context;
-  this.graph.forEachNode((node, attrs) => {
-    const { x, y } = this.renderer.getNodeDisplayData(node);
-    const lines = attrs.label.split('\n');
-    ctx.fillStyle = '#000'; // Text color
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    lines.forEach((line, index) => {
-      ctx.fillText(line, x, y - (lines.length / 2 - index) * 12); // Adjust 12 for line height
-    });
-  });
-});*/
-  this.renderer.setSetting("defaultDrawNodeHover", (context/*: CanvasRenderingContext2D*/, data/*: PlainObject*/, settings/*: PlainObject*/) => {
-    const size = settings.labelSize;
-    const font = settings.labelFont;
-    const weight = settings.labelWeight;
-    const subLabelSize = size - 2;
-  
-    const label = data.label;
-    const subLabel = data.clusterLabel;
-    const clusterLabel = data.tag !== "unknown" ? data.tag : "";
-  
-    // Then we draw the label background
-    context.beginPath();
-    context.fillStyle = "#fff";
-    context.shadowOffsetX = 0;
-    context.shadowOffsetY = 2;
-    context.shadowBlur = 8;
-    context.shadowColor = "#000";
-  
-    context.font = `${weight} ${size}px ${font}`;
-    const labelWidth = context.measureText(label).width;
-    context.font = `${weight} ${subLabelSize}px ${font}`;
-    const subLabelWidth = subLabel ? context.measureText(subLabel).width : 0;
-    context.font = `${weight} ${subLabelSize}px ${font}`;
-    const clusterLabelWidth = clusterLabel ? context.measureText(clusterLabel).width : 0;
-  
-    const textWidth = Math.max(labelWidth, subLabelWidth, clusterLabelWidth);
-  
-    const x = Math.round(data.x);
-    const y = Math.round(data.y);
-    const w = Math.round(textWidth + size / 2 + data.size + 3);
-    const hLabel = Math.round(size / 2 + 4);
-    const hSubLabel = subLabel ? Math.round(subLabelSize / 2 + 9) : 0;
-    const hClusterLabel = Math.round(subLabelSize / 2 + 9);
-  
-    drawRoundRect(context, x, y - hSubLabel - 12, w, hClusterLabel + hLabel + hSubLabel + 12, 5);
-    context.closePath();
-    context.fill();
-  
-    context.shadowOffsetX = 0;
-    context.shadowOffsetY = 0;
-    context.shadowBlur = 0;
-  
-    // And finally we draw the labels
-    context.fillStyle = TEXT_COLOR;
-    context.font = `${weight} ${size}px ${font}`;
-    context.fillText(label, data.x + data.size + 3, data.y + size / 3);
-  
-    if (subLabel) {
-      context.fillStyle = TEXT_COLOR;
+    //multiline label feature
+    // Custom rendering for multi-line labels
+    /*this.renderer.on('afterRender', () => {
+      const ctx = this.renderer.context;
+      this.graph.forEachNode((node, attrs) => {
+        const { x, y } = this.renderer.getNodeDisplayData(node);
+        const lines = attrs.label.split('\n');
+        ctx.fillStyle = '#000'; // Text color
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        lines.forEach((line, index) => {
+          ctx.fillText(line, x, y - (lines.length / 2 - index) * 12); // Adjust 12 for line height
+        });
+      });
+    });*/
+    this.renderer.setSetting("defaultDrawNodeHover", (context/*: CanvasRenderingContext2D*/, data/*: PlainObject*/, settings/*: PlainObject*/) => {
+      const size = settings.labelSize;
+      const font = settings.labelFont;
+      const weight = settings.labelWeight;
+      const subLabelSize = size - 2;
+
+      const label = data.label;
+      const subLabel = data.clusterLabel;
+      const clusterLabel = data.tag !== "unknown" ? data.tag : "";
+
+      // Then we draw the label background
+      context.beginPath();
+      context.fillStyle = "#fff";
+      context.shadowOffsetX = 0;
+      context.shadowOffsetY = 2;
+      context.shadowBlur = 8;
+      context.shadowColor = "#000";
+
+      context.font = `${weight} ${size}px ${font}`;
+      const labelWidth = context.measureText(label).width;
       context.font = `${weight} ${subLabelSize}px ${font}`;
-      context.fillText(subLabel, data.x + data.size + 3, data.y - (2 * size) / 3 - 2);
-    }
-  
-    context.fillStyle = data.color;
-    context.font = `${weight} ${subLabelSize}px ${font}`;
-    context.fillText(clusterLabel, data.x + data.size + 3, data.y + size / 3 + 3 + subLabelSize);
-  })
-  // search feature
-  // Render nodes accordingly to the internal state:
-  // 1. If a node is selected, it is highlighted
-  // 2. If there is query, all non-matching nodes are greyed
-  // 3. If there is a hovered node, all non-neighbor nodes are greyed
-  this.renderer.setSetting("nodeReducer", (node, data) => {
-    const res = { ...data };
-    if (this.state.hoveredNeighbors && !this.state.hoveredNeighbors.has(node) && this.state.hoveredNode !== node) {
-      res.label = "";
-      res.color = "#f6f6f6";
-    }
-    if (this.state.selectedNode === node) {
-      res.highlighted = true;
-    } else if (this.state.suggestions) {
-      if (this.state.suggestions.has(node)) {
-        res.forceLabel = true;
-      } else {
+      const subLabelWidth = subLabel ? context.measureText(subLabel).width : 0;
+      context.font = `${weight} ${subLabelSize}px ${font}`;
+      const clusterLabelWidth = clusterLabel ? context.measureText(clusterLabel).width : 0;
+
+      const textWidth = Math.max(labelWidth, subLabelWidth, clusterLabelWidth);
+
+      const x = Math.round(data.x);
+      const y = Math.round(data.y);
+      const w = Math.round(textWidth + size / 2 + data.size + 3);
+      const hLabel = Math.round(size / 2 + 4);
+      const hSubLabel = subLabel ? Math.round(subLabelSize / 2 + 9) : 0;
+      const hClusterLabel = Math.round(subLabelSize / 2 + 9);
+
+      drawRoundRect(context, x, y - hSubLabel - 12, w, hClusterLabel + hLabel + hSubLabel + 12, 5);
+      context.closePath();
+      context.fill();
+
+      context.shadowOffsetX = 0;
+      context.shadowOffsetY = 0;
+      context.shadowBlur = 0;
+
+      // And finally we draw the labels
+      context.fillStyle = TEXT_COLOR;
+      context.font = `${weight} ${size}px ${font}`;
+      context.fillText(label, data.x + data.size + 3, data.y + size / 3);
+
+      if (subLabel) {
+        context.fillStyle = TEXT_COLOR;
+        context.font = `${weight} ${subLabelSize}px ${font}`;
+        context.fillText(subLabel, data.x + data.size + 3, data.y - (2 * size) / 3 - 2);
+      }
+
+      context.fillStyle = data.color;
+      context.font = `${weight} ${subLabelSize}px ${font}`;
+      context.fillText(clusterLabel, data.x + data.size + 3, data.y + size / 3 + 3 + subLabelSize);
+    })
+    // search feature
+    // Render nodes accordingly to the internal state:
+    // 1. If a node is selected, it is highlighted
+    // 2. If there is query, all non-matching nodes are greyed
+    // 3. If there is a hovered node, all non-neighbor nodes are greyed
+    this.renderer.setSetting("nodeReducer", (node, data) => {
+      const res = { ...data };
+      if (this.state.hoveredNeighbors && !this.state.hoveredNeighbors.has(node) && this.state.hoveredNode !== node) {
         res.label = "";
         res.color = "#f6f6f6";
       }
-    }
-    return res;
-  });
+      if (this.state.selectedNode === node) {
+        res.highlighted = true;
+      } else if (this.state.suggestions) {
+        if (this.state.suggestions.has(node)) {
+          res.forceLabel = true;
+        } else {
+          res.label = "";
+          res.color = "#f6f6f6";
+        }
+      }
+      return res;
+    });
 
-  // Render edges accordingly to the internal state:
-  // 1. If a node is hovered, the edge is hidden if it is not connected to the
-  //    node
-  // 2. If there is a query, the edge is only visible if it connects two
-  //    suggestions
-  this.renderer.setSetting("edgeReducer", (edge, data) => {
-    const res = { ...data };
+    // Render edges accordingly to the internal state:
+    // 1. If a node is hovered, the edge is hidden if it is not connected to the
+    //    node
+    // 2. If there is a query, the edge is only visible if it connects two
+    //    suggestions
+    this.renderer.setSetting("edgeReducer", (edge, data) => {
+      const res = { ...data };
 
-    if (
-      this.state.hoveredNode &&
-      !this.graph.extremities(edge).every((n) => n === this.state.hoveredNode || this.graph.areNeighbors(n, this.state.hoveredNode))
-    ) {
-      res.hidden = true;
-    }
+      if (
+        this.state.hoveredNode &&
+        !this.graph.extremities(edge).every((n) => n === this.state.hoveredNode || this.graph.areNeighbors(n, this.state.hoveredNode))
+      ) {
+        res.hidden = true;
+      }
 
-    if (
-      this.state.suggestions &&
-      (!this.state.suggestions.has(this.graph.source(edge)) || !this.state.suggestions.has(this.graph.target(edge)))
-    ) {
-      res.hidden = true;
-    }
+      if (
+        this.state.suggestions &&
+        (!this.state.suggestions.has(this.graph.source(edge)) || !this.state.suggestions.has(this.graph.target(edge)))
+      ) {
+        res.hidden = true;
+      }
 
-    return res;
-  });    
+      return res;
+    });
 
     // Create the spring layout and start it
-    this.layout = new ForceSupervisor(this.graph);
+    this.layout = new ForceSupervisor(this.graph, {
+      maxIterations: 50,
+      settings: {
+        gravity: 0.0006, // ?number 0.0001: importance of the gravity force, that attracts all nodes to the center.
+        attraction: 0.0005,
+        repulsion: 0.1, //importance of the repulsion force, that attracts each pair of nodes like magnets.
+        inertia: 0.5, // ?number 0.6: percentage of a node vector displacement that is preserved at each step. 0 means no inertia, 1 means no friction.
+        maxMove: 200 //200 ?number 200: Maximum length a node can travel at each step, in pixel.
+
+      }
+    });
     this.startAnimate();
     //this.layout.start();
   }
@@ -672,10 +682,10 @@ export class Network {
     // Your data array
     console.log('transformDataToGraph data.length', data.length)
     if (data.length == 0) {
-      
+
       data = [
-        ['Gene','Type','CEA','CA19_9','Tumor Size','Metabolic Activity','ctDNA','CRP','Bowel MovementPatterns',
-          'Ki-67','Cascpase-3','MMP-1','Cell Proliferation'
+        ['Gene', 'Type', 'CEA', 'CA19_9', 'Tumor Size', 'Metabolic Activity', 'ctDNA', 'CRP', 'Bowel MovementPatterns',
+          'Ki-67', 'Cascpase-3', 'MMP-1', 'Cell Proliferation'
         ],
         ["APC", "Tumor suppressor gene", 0.8, 0.3, 0.9, 0.7, 0.6, 0.2, 0.1, 0.9, -0.6, -0.7, 0.9],
         ["KRAS", "Kirsten Rat Sarcoma Viral Oncogene Homolog", 0.7, 0.4, 0.8, 0.6, 0.5, 0.3, 0, 0.8, -0.5, 0.2, 0.8],
@@ -703,8 +713,8 @@ export class Network {
         let angle = (i * 2 * Math.PI) / data.length;
         this.graph.addNode(object, {
           label: object,
-          tag:'object',
-          clusterLabel:'feature',
+          tag: 'object',
+          clusterLabel: 'feature',
           size: 15,
           color: 'orange', // Default color for objects without a type
           // type: 'object' // Optional: Define type as 'object'
@@ -728,7 +738,7 @@ export class Network {
         this.graph.addNode(subject, {
           label: subject,
           tag: subjectType,
-          clusterLabel:'gene',
+          clusterLabel: 'gene',
           size: 7,
           color: color,
           subjectType: subjectType,
@@ -755,7 +765,7 @@ export class Network {
               relationship: 'related', // You can customize this as needed
               type: "line",
               label: relationship,
-              size: 1+getLineSize(relationship,5),
+              size: 1 + getLineSize(relationship, 5),
               color: 'lightgrey'//this.typeColorMap.getRelationshipColor(relationship)
 
             });
@@ -777,18 +787,18 @@ export class Network {
       console.log('layout detected, stop(), start()')
 
       this.startAnimate();//this.layout.start();
-    }    
+    }
   }
   layoutOnOff() {
-    this.animationstarted = ! this.animationstarted;    
+    this.animationstarted = !this.animationstarted;
     if (this.animationstarted) this.layout.start()
-      else this.layout.stop()
+    else this.layout.stop()
   }
 
-  stopAnimate() {    
+  stopAnimate() {
     this.layout.stop()
   }
-  startAnimate(){
+  startAnimate() {
     if (this.animationstarted) this.layout.start()
   }
 

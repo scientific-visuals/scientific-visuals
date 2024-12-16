@@ -21581,10 +21581,24 @@ The ".call" binding command has been removed in v2. If you want to pass a callba
     name: "sv-chartjs-scatter"
   })], [], 0, void 0, a1).c;
   C8();
-  const _8 = "table", iP = `<button class="w3-button w3-grey" click.trigger="submit()" show.bind="showtable">submit</button>
-<button class="w3-button w3-grey" click.trigger="addRow()" show.bind="showtable">+ Subject (row)</button>
-<button class="w3-button w3-grey" click.trigger="addColumn()" show.bind="showtable">+ Object (column)</button>
-<button class="w3-button w3-grey" click.trigger="showHide()">show/hide</button>
+  const _8 = "table", iP = `<div class="w3-bar w3-light-grey w3-small">
+    <button class="w3-bar-item w3-button" click.trigger="showHide()"> &#9776;</button>    
+    <div class="w3-dropdown-hover"  show.bind="showtable">
+        <button class="w3-button">Table</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index:190">
+            <button class="w3-bar-item w3-button" click.trigger="addRow()">+ Add row (subject)</button>
+            <button class="w3-bar-item w3-button" click.trigger="addColumn()">+ Add column (object)</button>
+            <button class="w3-bar-item w3-button" click.trigger="submit()">Refresh</button>
+        </div>
+    </div>
+    <div class="w3-dropdown-hover" show.bind="showtable">
+        <button class="w3-button">View</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4"  style="z-index:190">
+            <button click.trigger='switchTo1Table()' class="w3-bar-item w3-button w3-ripple">1 table (subject,object,predicate)</button>
+            <button click.trigger='switchTo2Table()' class="w3-bar-item w3-button w3-ripple">2 tables (nodes, edges)</button>
+        </div>
+    </div>
+</div>
 <div ref="mytable" show.bind="showtable"></div>`, R8 = [], E8 = {};
   let wx;
   function Sle(n) {
@@ -88834,7 +88848,20 @@ void main() {
           ...t
         };
         return this.state.hoveredNode && !this.graph.extremities(e).every((r) => r === this.state.hoveredNode || this.graph.areNeighbors(r, this.state.hoveredNode)) && (i.hidden = !0), this.state.suggestions && (!this.state.suggestions.has(this.graph.source(e)) || !this.state.suggestions.has(this.graph.target(e))) && (i.hidden = !0), i;
-      }), this.layout = new u6(this.graph), this.startAnimate();
+      }), this.layout = new u6(this.graph, {
+        maxIterations: 50,
+        settings: {
+          gravity: 6e-4,
+          // ?number 0.0001: importance of the gravity force, that attracts all nodes to the center.
+          attraction: 5e-4,
+          repulsion: 0.1,
+          //importance of the repulsion force, that attracts each pair of nodes like magnets.
+          inertia: 0.5,
+          // ?number 0.6: percentage of a node vector displacement that is preserved at each step. 0 means no inertia, 1 means no friction.
+          maxMove: 200
+          //200 ?number 200: Maximum length a node can travel at each step, in pixel.
+        }
+      }), this.startAnimate();
     }
     /*createGraphFromDatasheet(data) {
       // Initialize a new undirected graph (use 'directed' if your relationships are directional)
