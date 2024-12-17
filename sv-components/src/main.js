@@ -6,6 +6,7 @@ import { ChartjsScatter } from './components/chartjs-scatter';
 import { Table } from './components/table';
 import {Network} from './components/network';
 import {Tabs} from './components/tabs';
+import {TableNetwork} from './components/table-network';
 
 Aurelia
 .register(Chartjs)
@@ -14,5 +15,6 @@ Aurelia
 .register(ChartjsGeo)
 .register(Network)
 .register(Tabs)
+.register(TableNetwork)
   .app(MyApp)
   .start();

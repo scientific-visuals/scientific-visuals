@@ -1,0 +1,24 @@
+<div id="all">
+    <div class="w3-bar w3-light-grey w3-small">
+        <button class="w3-bar-item w3-button" click.trigger="showHide()"> &#9776;</button>    
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Table</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index:190">
+                <button class="w3-bar-item w3-button" click.trigger="addRow()">+ Add row (subject)</button>
+                <button class="w3-bar-item w3-button" click.trigger="addColumn()">+ Add column (object)</button>                
+                <button click.trigger='switchTo1Table()' class="w3-bar-item w3-button w3-ripple">1 table (subject,object,predicate)</button>
+                <button click.trigger='switchTo2Table()' class="w3-bar-item w3-button w3-ripple">2 tables (nodes, edges)</button>
+                <button class="w3-bar-item w3-button" click.trigger="submit()">Refresh</button>
+                <button class="w3-bar-item w3-button" click.trigger="showHideTable()">show/hide table</button>    
+            </div>
+        </div>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Network</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4"  style="z-index:190">
+                <button class="w3-bar-item w3-button" click.trigger="colorEdges()">colorEdges</button>  
+            </div>
+        </div>
+    </div>    
+    <sv-table component.ref="svTable" show.bind ="!hidetable" datachannel="data" tabid="all" style="position:fixed;opacity:90%;z-index:1;"></sv-table>
+    <sv-network tabid="visual" datachannel="data"></sv-network>
+</div>

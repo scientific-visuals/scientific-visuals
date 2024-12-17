@@ -1,19 +1,1 @@
-<div class="w3-bar w3-light-grey w3-small">
-    <button class="w3-bar-item w3-button" click.trigger="showHide()"> &#9776;</button>    
-    <div class="w3-dropdown-hover"  show.bind="showtable">
-        <button class="w3-button">Table</button>
-        <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index:190">
-            <button class="w3-bar-item w3-button" click.trigger="addRow()">+ Add row (subject)</button>
-            <button class="w3-bar-item w3-button" click.trigger="addColumn()">+ Add column (object)</button>
-            <button class="w3-bar-item w3-button" click.trigger="submit()">Refresh</button>
-        </div>
-    </div>
-    <div class="w3-dropdown-hover" show.bind="showtable">
-        <button class="w3-button">View</button>
-        <div class="w3-dropdown-content w3-bar-block w3-card-4"  style="z-index:190">
-            <button click.trigger='switchTo1Table()' class="w3-bar-item w3-button w3-ripple">1 table (subject,object,predicate)</button>
-            <button click.trigger='switchTo2Table()' class="w3-bar-item w3-button w3-ripple">2 tables (nodes, edges)</button>
-        </div>
-    </div>
-</div>
 <div ref="mytable" show.bind="showtable"></div>

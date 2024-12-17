@@ -379,16 +379,17 @@ export class Network {
    */
   updateEdge(subject, object, value) {
     // Check if the edge exists between subject and object
+    if (!value || value == 0) {
+      // Remove the edge if value is empty string or 0
+      if (this.graph.hasEdge(subject, object)) this.graph.dropEdge(subject, object);
+      console.log(`Edge between "${subject}" and "${object}" has been removed.`);
+      return
+    }
     if (this.graph.hasEdge(subject, object)) {
-      if (!value || value == 0) {
-        // Remove the edge if value is empty string or 0
-        this.graph.dropEdge(subject, object);
-        console.log(`Edge between "${subject}" and "${object}" has been removed.`);
-      } else {
-        // Update the 'label' attribute of the existing edge
-        this.graph.setEdgeAttribute(subject, object, 'label', value);
-        console.log(`Edge between "${subject}" and "${object}" updated with label: "${value}".`);
-      }
+      // Update the 'label' attribute of the existing edge
+      this.graph.setEdgeAttribute(subject, object, 'label', value);
+      this.graph.setEdgeAttribute(subject, object, 'size', 1 + getLineSize(value, 5));
+      console.log(`Edge between "${subject}" and "${object}" updated with label: "${value}".`);
     } else {
       if (value !== '' && value !== 0) {
         // Optionally, add the edge if it doesn't exist and value is valid
@@ -396,7 +397,7 @@ export class Network {
           relationship: 'related',
           type: 'line',
           label: value,
-          size: 5
+          size: 1 + getLineSize(value, 5),
         });
         console.log(`Edge between "${subject}" and "${object}" has been added with label: "${value}".`);
       } else {
@@ -405,40 +406,6 @@ export class Network {
     }
   }
 
-
-  /*creategraph() {
-    // Step 1: Create a new graph
-    this.graph = new Graph();
-
-    const RED = "#FA4F40";
-    const BLUE = "#727EE0";
-    const GREEN = "#5DB346";
-
-    this.graph.addNode("John", { size: 15, label: "John", type: "image", image: "./user.svg", color: RED });
-    this.graph.addNode("Mary", { size: 15, label: "Mary", type: "image", image: "./user.svg", color: RED });
-    this.graph.addNode("Suzan", { size: 15, label: "Suzan", type: "image", image: "./user.svg", color: RED });
-    this.graph.addNode("Nantes", { size: 15, label: "Nantes", type: "image", image: "./city.svg", color: BLUE });
-    this.graph.addNode("New-York", { size: 15, label: "New-York", type: "image", image: "./city.svg", color: BLUE });
-    this.graph.addNode("Sushis", { size: 7, label: "Sushis", color: GREEN });
-    this.graph.addNode("Falafels", { size: 7, label: "Falafels", color: GREEN });
-    this.graph.addNode("Kouign Amann", { size: 7, label: "Kouign Amann", color: GREEN });
-
-    this.graph.addEdge("John", "Mary", { type: "line", label: "works with", size: 5 });
-    this.graph.addEdge("Mary", "Suzan", { type: "line", label: "works with", size: 5 });
-    this.graph.addEdge("Mary", "Nantes", { type: "arrow", label: "lives in", size: 5 });
-    this.graph.addEdge("John", "New-York", { type: "arrow", label: "lives in", size: 5 });
-    this.graph.addEdge("Suzan", "New-York", { type: "arrow", label: "lives in", size: 5 });
-    this.graph.addEdge("John", "Falafels", { type: "arrow", label: "eats", size: 5 });
-    this.graph.addEdge("Mary", "Sushis", { type: "arrow", label: "eats", size: 5 });
-    this.graph.addEdge("Suzan", "Kouign Amann", { type: "arrow", label: "eats", size: 5 });
-
-    this.graph.nodes().forEach((node, i) => {
-      const angle = (i * 2 * Math.PI) / this.graph.order;
-      this.graph.setNodeAttribute(node, "x", 100 * Math.cos(angle));
-      this.graph.setNodeAttribute(node, "y", 100 * Math.sin(angle));
-    });
-  }
-  */
   showgraph() {
     console.log('showgraph()')
     this.renderer = new Sigma(this.graph, this.container, {
@@ -584,84 +551,16 @@ export class Network {
       maxIterations: 50,
       settings: {
         gravity: 0.0006, // ?number 0.0001: importance of the gravity force, that attracts all nodes to the center.
-        attraction: 0.0005,
-        repulsion: 0.1, //importance of the repulsion force, that attracts each pair of nodes like magnets.
-        inertia: 0.5, // ?number 0.6: percentage of a node vector displacement that is preserved at each step. 0 means no inertia, 1 means no friction.
-        maxMove: 200 //200 ?number 200: Maximum length a node can travel at each step, in pixel.
+        attraction: 0.0005,//?number 0.0005: importance of the attraction force, that attracts each pair of connected nodes like elastics.
+        repulsion: 0.1, //0.1 importance of the repulsion force, that attracts each pair of nodes like magnets.
+        inertia: 0.8, // ?number 0.6: percentage of a node vector displacement that is preserved at each step. 0 means no inertia, 1 means no friction.
+        maxMove: 5 //200 ?number 200: Maximum length a node can travel at each step, in pixel.
 
       }
     });
     this.startAnimate();
     //this.layout.start();
   }
-
-  /*createGraphFromDatasheet(data) {
-    // Initialize a new undirected graph (use 'directed' if your relationships are directional)
-    if (this.graph) {
-      this.graph.clear();
-    } else {
-      this.graph = new Graph({ type: 'undirected' });
-    }
-
-    // Your data array
-    data = [
-      ["Subject/Object/Predicate", "type", "CRC Risk", "CRC Neoplasia", "Physical Activity"],
-      ["Trans-Chlordane", "environmental", "corelates", "is", 0],
-      ["PCB194", "environmental", "corelates", 1],
-      ["Sterilisation", "biometric", "increase", 0],
-      ["Tobacco Consumption", "lifestyle", "increase", 1, 1],
-      ["PAC-RSK", "Interaction Term", "decrease", 0, 1]
-    ];
-
-    // Step 1: Extract Object Names from the Header Row
-    const header = data[0];
-    const objectNames = header.slice(2); // Exclude first two columns
-
-    // Step 2: Add Object Nodes to the Graph
-    objectNames.forEach(obj => {
-      this.graph.addNode(obj, { type: 'object' });
-    });
-
-    // Step 3: Iterate Through Each Subject Row to Add Nodes and Edges
-    for (let i = 1; i < data.length; i++) {
-      const row = data[i];
-      const subject = row[0];
-      const subjectType = row[1];
-
-      // Add Subject Node with 'type' attribute
-      if (!this.graph.hasNode(subject)) {
-        this.graph.addNode(subject, { type: subjectType });
-      }
-
-      // Iterate through the predicate columns
-      for (let j = 2; j < header.length; j++) {
-        const object = header[j];
-        const relationship = row[j]; // This might be undefined
-
-        if (relationship === 1) {
-          // Ensure the Object node exists
-          if (!graph.hasNode(object)) {
-            graph.addNode(object, { type: 'object' });
-          }
-
-          // Define a unique edge key or let Graphology handle it
-          const edgeKey = `${subject}-${object}`;
-
-          // Add an edge if it doesn't already exist
-          if (!graph.hasEdge(edgeKey)) {
-            graph.addEdge(subject, object, { relationship: 'related' }); // You can specify the relationship type here
-          }
-        }
-      }
-
-      // Handle cases where the row might have fewer columns than the header
-      for (let j = header.length; j < row.length; j++) {
-        // If there are extra columns beyond the header, you can decide how to handle them
-        // For this example, we'll ignore them
-        continue;
-      }
-    }
-  }*/
 
   /**
  * Transforms a data array into a Graphology graph.
@@ -710,7 +609,7 @@ export class Network {
     for (let i = 0; i < objectNames.length; i++) {
       const object = objectNames[i];
       if (!this.graph.hasNode(object)) {
-        let angle = (i * 2 * Math.PI) / data.length;
+        let angle = (i * 2 * Math.PI) / (data.length + objectNames.length);
         this.graph.addNode(object, {
           label: object,
           tag: 'object',
@@ -732,7 +631,7 @@ export class Network {
 
       // Determine color based on type
       const color = this.typeColorMap.getColor(subjectType); // Default to gray if type not mapped
-      let angle = (i * 2 * Math.PI) / data.length;
+      let angle = ((i+objectNames.length) * 2 * Math.PI) / (data.length+objectNames.length);
       // Add Subject node
       if (!this.graph.hasNode(subject)) {
         this.graph.addNode(subject, {

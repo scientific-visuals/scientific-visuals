@@ -18,12 +18,11 @@ import { ChartjsScatter } from './components/chartjs-scatter';
 import { Table} from './components/table';
 import { ChartjsGeo } from './components/chartjs-geo';
 import { Network } from './components/network';
+import { TableNetwork } from './components/table-network';
 
 registry.define('sv-chartjs', Chartjs);
 registry.define('sv-chartjs-scatter', ChartjsScatter);
 registry.define('sv-table', Table);
 registry.define('sv-geochart', ChartjsGeo);
 registry.define('sv-network', Network);
-
-// Optionally, export the registry for further use
-//export { registry };
+registry.define('sv-table-network', TableNetwork);

@@ -113,5 +113,12 @@ export class Table {
     }
   }
 
+  switchTo1Table() {
+
+  }
+  switchTo2Table() {
+    
+  }
+
 
 }
