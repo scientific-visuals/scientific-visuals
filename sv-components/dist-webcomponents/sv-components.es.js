@@ -88818,7 +88818,7 @@ void main() {
           //?number 0.0005: importance of the attraction force, that attracts each pair of connected nodes like elastics.
           repulsion: 0.1,
           //0.1 importance of the repulsion force, that attracts each pair of nodes like magnets.
-          inertia: 0.8,
+          inertia: 0.4,
           // ?number 0.6: percentage of a node vector displacement that is preserved at each step. 0 means no inertia, 1 means no friction.
           maxMove: 5
           //200 ?number 200: Maximum length a node can travel at each step, in pixel.
